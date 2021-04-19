@@ -1,6 +1,9 @@
-# Student Project: HTML & CSS Assignment
+# Student Project: Javascript Assignment
 ![banner](public/media/image/course-banner.png)
 ***
+
+## Assignment Background
+2nd Development Phase of a 3-part assignment series for COSC2430 Web Programming at RMIT University Vietnam. Previous development history can be found here: https://github.com/kuri-team/yabe-online-mall.github.io
 
 ## Assignment Requirements
 
@@ -52,16 +55,17 @@ More requirements are listed below:
 - Accessibility needs to be enforced, e.g. always use the "alt" attribute to describe images; use the fallback mechanism for videos/audios/fonts to ensure at least visitors see something; etc.
 - Follow SEO guidelines to make the mall website search engine-friendly. Use semantic elements whenever possible.
 
-### More specific details provided on [RMIT Canvas](https://rmit.instructure.com/courses/86190/assignments/571060) (Login with RMIT ID)
+### More specific details provided on [RMIT Canvas](https://rmit.instructure.com/courses/86190/assignments/571064) (Login with RMIT ID)
 ***
 
 ## Implementation
 
 ### 1. Deployment
-Yabe online mall e-commerce website: https://kuri-team.github.io/yabe-online-mall.github.io/ (`main` branch)
+Yabe online mall e-commerce website: https://kuri-team.github.io/yabe-online-mall/ (`main` branch)
 
 ### 2. Coding styles & conventions
-[HTML & CSS The Right Way](http://htmlcsstherightway.org/)
+- [HTML & CSS The Right Way](http://htmlcsstherightway.org/)
+- [Kuri Front-end Guidelines](https://github.com/kuri-team/front-end-guidelines)
 
 ### 3. Key people
 
