@@ -1,0 +1,74 @@
+main div {
+    width: 80%;
+    margin: 0 auto 0;
+}
+
+#about-us-body {
+    padding: 100px 0 0 0;
+    margin: auto;
+}
+
+#about-us-content {
+    width: max-content;
+    width: -moz-max-content;
+    padding-left: 0;
+}
+
+#about-us-content h1 {
+    font-weight: 900;
+    font-size: xxx-large;
+}
+
+#about-us-content h1 span {
+    font-weight: normal;
+    font-size: medium;
+    margin: 1px;
+}
+
+#about-us-team-image {
+    align-self: center;
+}
+
+.team-image {
+    width: 100%;
+}
+
+#about-us-members {
+    padding: 50px 0 200px 0;
+}
+
+.about-us-member {
+    margin: 15px;
+}
+
+
+/* Responsive About Us */
+@media only screen and (max-width: 1290px) {
+    .flip-card, .about-us-member {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media only screen and (max-width: 1095px) {
+    .flip-card, .about-us-member {
+        width: 200px;
+        height: 200px;
+        font-size: small;
+    }
+}
+
+@media only screen and (max-width: 1095px) {
+    .flip-card, .about-us-member {
+        width: 300px;
+        height: 300px;
+        font-size: initial;
+    }
+
+    #about-us-members .flex-container {
+        -webkit-flex-flow: column;
+        flex-flow: column;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+}

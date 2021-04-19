@@ -1,0 +1,99 @@
+/* Contact form styling */
+.contact-form {
+    margin: auto;
+    padding: 3% 17%;
+}
+
+.contact-form .title, .contact-form p {
+    display: block;
+    font-size: 16px;
+    margin: 14px 0 7px;
+}
+
+.contact-form label {
+    font-size: 14px;
+}
+
+.field, .name-field, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+}
+
+.field, .name-field {
+    height: 40px;
+}
+
+textarea {
+    display: block;
+    height: 90px;
+    min-width: 45%;
+    max-width: 100%;
+    min-height: 45px;
+}
+
+.name {
+    width: 45%;
+    margin-bottom: 7px;
+}
+
+.contact-method {
+    display: inline;
+    margin-right: 60px;
+}
+
+.contact-form p ~ p {
+    padding-top: 6px;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 1023px) {
+    .name {
+        width: 100%;
+    }
+
+    .contact-method {
+        display: block;
+        padding-bottom: 7px;
+    }
+
+    .contact-day-checkbox {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .contact-day {
+        padding-bottom: 7px;
+    }
+}
+
+/* Form button styling */
+.clear-bttn, .send-bttn {
+    width: 120px;
+    height: 45px;
+    margin-top: 4%;
+}
+
+.clear-bttn:hover, .send-bttn:hover {
+    cursor: pointer;
+}
+
+.clear-bttn {
+    background-color: #fff;
+    border: 1px #000 solid;
+}
+
+.clear-bttn:active {
+    background-color: #ececec;
+    cursor: pointer;
+}
+
+.send-bttn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+}
+
+.send-bttn:active {
+    background-color: #403d39;
+    cursor: pointer;
+}

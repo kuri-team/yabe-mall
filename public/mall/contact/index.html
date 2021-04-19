@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../media/image/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/mall-contact.css">
+
+  <script src="https://kit.fontawesome.com/492245eeb1.js" crossorigin="anonymous"></script>
+
+  <title>Yabe | Contact Us</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <span id="nav-logo"><a href="../"><img class="nav-logo-sprite" alt="Yabe logo"
+        src="../../media/vector/logo-light.svg"></a></span>
+      <div id="nav-search-filter">Filter<i class="fas fa-caret-down ml-10"></i>
+        <div id="nav-search-filter-level-1">
+          <div class="nav-search-filter-option">All</div>
+          <hr>
+          <div class="nav-search-filter-option">Products
+            <div id="nav-search-filter-level-2-1">
+              <div class="nav-search-filter-option">Category</div>
+              <hr>
+              <div class="nav-search-filter-option">Date</div>
+            </div>
+          </div>
+          <hr>
+          <div class="nav-search-filter-option">Stores
+            <div id="nav-search-filter-level-2-2">
+              <div class="nav-search-filter-option">Category</div>
+              <hr>
+              <div class="nav-search-filter-option">Name</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="nav-search">
+        <form action="../browse" method="get" target="_blank">
+          <label for="q"></label>
+          <input class="nav-seach-bar" id="q" name="q" type="search" placeholder="Search" value="">
+        </form>
+      </div>
+      <div class="nav-search-bttn"><i class="fas fa-search"></i></div>
+      <a href="../cart"><button class="nav-cart-bttn">
+          <i class="fas fa-shopping-cart"></i>Cart</button></a>
+      <span id="nav-account">
+        <a href="../account/login">Login</a>
+        <span class="vl"></span>
+        <a href="../account/register">Register</a>
+      </span>
+
+      <span class="mobile-only">
+        <button onclick="toggleMobileMenu()" class="mobile-menu-bttn"><i class="fas fa-bars" id="mobile-menu-icon"></i></button>
+      </span>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li class="mobile-menu-cart"><a href="../cart"><i class="fas fa-shopping-cart"></i>Cart</a></li>
+        <li><a href="../account/login">My Account</a></li>
+        <li><a href="../">Home</a></li>
+        <li><a href="../browse">Browse</a></li>
+        <li><a href="../about-us">About Us</a></li>
+        <li><a href="../contact">Contact Us</a></li>
+        <li><a href="../support/faq">FAQs</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <ul class="breadcrumb">
+        <li><a href="../index.html">Home</a>/</li>
+        <li><a href="#">Contact Us</a></li>
+    </ul>
+    <h1 class="content-title">CONTACT US</h1>
+
+    <div class="content-body">
+        <form class="contact-form" action="" method="get">
+            <label for="purpose" class="title">Contact Purpose*</label>
+            <select id="purpose" name="contact_purpose" class="field" required>
+                <option value="" selected>Select an option</option>
+                <option value="order">Customer Order</option>
+                <option value="price">Pricing</option>
+                <option value="refund_return">Refund or Returns</option>
+                <option value="account">User Account</option>
+                <option value="other">Other</option>
+            </select>
+
+            <div class="flex-container flex-justify-content-space-between flex-wrap">
+                <div class="name">
+                    <label for="fname" class="title">First Name*</label>
+                    <input id="fname" type="text" name="fname" class="name-field"
+                           placeholder="This field is required" required>
+                </div>
+
+                <div class="name">
+                    <label for="lname" class="title">Last Name*</label>
+                    <input id="lname" type="text" name="lname" class="name-field"
+                           placeholder="This field is required" required>
+                </div>
+            </div>
+
+            <label for="email_add" class="title">Email*</label>
+            <input id="email_add" type="email" name="email_add" class="field"
+                placeholder="This field is required" required>
+
+            <label for="phone_num" class="title">Phone*</label>
+            <input id="phone_num" type="text" name="phone_num" class="field"
+                placeholder="This field is required" required>
+
+            <p>Preferred Contact Method*</p>
+            <div class="contact-method">
+                <input type="radio" id="email" name="contact_method" value="email" checked required>
+                <label for="email">Email</label>
+            </div>
+
+            <div class="contact-method">
+                <input type="radio" id="phone" name="contact_method" value="phone">
+                <label for="phone">Phone</label>
+            </div>
+
+            <p>Contact Days</p>
+            <div class="contact-day-checkbox flex-container flex-justify-content-space-between
+                flex-align-items-center flex-wrap">
+                <div class="contact-day">
+                    <input type="checkbox" id="mon" name="contact_day[]" value="monday">
+                    <label for="mon">Monday</label>
+                </div>
+
+                <div class="contact-day">
+                    <input type="checkbox" id="tues" name="contact_day[]" value="tuesday">
+                    <label for="tues">Tuesday</label>
+                </div>
+
+                <div class="contact-day">
+                    <input type="checkbox" id="wed" name="contact_day[]" value="wednesday">
+                    <label for="wed">Wednesday</label>
+                </div>
+
+                <div class="contact-day">
+                    <input type="checkbox" id="thur" name="contact_day[]" value="thursday">
+                    <label for="thur">Thursday</label>
+                </div>
+
+                <div class="contact-day">
+                    <input type="checkbox" id="fri" name="contact_day[]" value="friday">
+                    <label for="fri">Friday</label>
+                </div>
+
+                <div class="contact-day">
+                    <input type="checkbox" id="sat" name="contact_day[]" value="saturday">
+                    <label for="sat">Saturday</label>
+                </div>
+
+                <div class="contact-day">
+                    <input type="checkbox" id="sun" name="contact_day[]" value="sunday">
+                    <label for="sun">Sunday</label>
+                </div>
+            </div>
+
+            <label for="message" class="title">Message</label>
+            <textarea name="message" id="message" cols="50" rows="7"></textarea>
+
+            <div class="flex-container flex-justify-content-space-between flex-wrap">
+                <input class="clear-bttn" type="reset" name="reset" value="CLEAR">
+                <input class="send-bttn" type="submit" name="submit" value="SEND">
+            </div>
+        </form>
+    </div>
+  </main>
+
+  <footer>
+    <div class="flex-container flex-justify-content-center flex-align-items-start">
+      <div class="footer-menu-item" id="footer-logo">
+          <img alt="Yabe logo" src="../../media/vector/footer-logo.svg"></div>
+
+      <div class="footer-menu-item" id="footer-menu-main-pages">
+        <p>MAIN PAGES</p>
+        <ul>
+          <li><a href="../about-us">About Us</a></li>
+          <li><a href="../contact">Contact Us</a></li>
+          <li><a href="../support/pricing">Pricing</a></li>
+          <li><a href="../support/faq">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-menu-item" id="footer-menu-policy">
+        <p>POLICY</p>
+        <ul>
+          <li><a href="../legal/tos">Terms of Service</a></li>
+          <li><a href="../legal/privacy-policy">Privacy Policy</a></li>
+          <li><a href="../legal/copyright">Copyright</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-menu-item" id="footer-menu-browse">
+        <p>BROWSE</p>
+        <ul>
+          <li id="footer-menu-browse-product"><a href="../browse/by-product">Products</a>
+            <ul>
+              <li><a href="../browse/by-product/by-category.html">Browse by Category</a></li>
+              <li><a href="../browse/by-product/by-date.html">Browse by Date</a></li>
+            </ul>
+          </li>
+          <li id="footer-menu-browse-store"><a href="../browse/by-store">Stores</a>
+            <ul>
+              <li><a href="../browse/by-store/by-category.html">Browse by Category</a></li>
+              <li><a href="../browse/by-store/by-name.html">Browse by Name</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="footer-copyright">
+      <p>&copy;2021 YABE</p>
+    </div>
+  </footer>
+
+  <script src="../../js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+#pricing-content {
+    width: 80%;
+    margin: 0 10%;
+}
+
+#pricing-content .breadcrumb {
+    margin-left: 0;
+}
+
+#pricing-content h2 {
+    font-weight: normal;
+}
+
+#pricing-shopper {
+    margin: 40px 0 70px;
+    overflow: auto;
+}
+
+#pricing-shopper h4 {
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+.pricing-img {
+    display: block;
+    margin: 0 auto 30px;
+    width: 100px;
+    height: 100px;
+}
+
+#pricing-shopper p {
+    font-weight: bold;
+    color: #403d39;
+    font-size: 22px;
+}
+
+#pricing-shopper ul, #pricing-seller ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    line-height: 2.5;
+}
+
+#pricing-shopper li, .pricing-seller-notice li {
+    font-size: 14px;
+}
+
+#pricing-shopper i {
+    float: right;
+    padding-top: 10px;
+}
+
+.pricing-shopper-normal, .pricing-shopper-premium {
+    width: 27%;
+}
+
+.pricing-shopper-normal {
+    background-color: #dddddd;
+    min-height: 380px;
+    padding: 50px;
+    margin-top: 20px;
+}
+
+.pricing-shopper-premium, .pricing-seller-normal, .pricing-seller-premium {
+    background-color: white;
+}
+
+.pricing-shopper-premium {
+    min-height: 400px;
+    border: 1px #eb5e28 solid;
+    padding: 70px 50px 50px;
+}
+
+#pricing-seller {
+    overflow: auto;
+    margin: 60px 0 120px;
+}
+
+#pricing-seller h5 {
+    color: #403d39;
+}
+
+#pricing-seller .pricing-seller-fee {
+    color: #eb5e28;
+    padding-top: 50px;
+}
+
+#pricing-seller .pricing-seller-fee strong {
+    font-size: 30px;
+}
+
+.pricing-seller-normal, .pricing-seller-premium, .pricing-seller-notice  {
+    width: 24%;
+    min-height: 480px;
+    padding: 30px;
+}
+
+.pricing-seller-normal, .pricing-seller-premium {
+    border: 1px #fff solid;
+}
+
+.pricing-seller-notice {
+    background-color: transparent;
+    border: 1px #000 solid;
+}
+
+.pricing-seller-notice ul li::before {
+    content: "✓";
+    padding-right: 30px;
+}
+
+.pricing-seller-notice hr {
+    border-bottom: 1px black solid;
+    margin: 30px 0;
+}
+
+.pricing-seller-notice img {
+    width: 50px;
+    height: 50px;
+}
+
+.pricing-seller-notice-info {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.pricing-seller-notice-heading {
+    padding: 2px 0 0 0;
+    margin: 0;
+}
+
+.pricing-seller-notice-subheading {
+    font-size: 10px;
+}
+
+.pricing-seller-notice-details {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Responsive design */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .pricing-shopper-normal, .pricing-shopper-premium {
+        width: 33%;
+        margin-bottom: 30px;
+    }
+
+    .pricing-shopper-normal {
+        margin-top: 5px;
+    }
+
+    .pricing-seller-normal, .pricing-seller-premium, .pricing-seller-notice {
+        width: 60%;
+        margin: 0 auto 30px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .pricing-shopper-normal, .pricing-shopper-premium {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .pricing-shopper-normal {
+        margin-top: 5px;
+    }
+
+    .pricing-seller-normal, .pricing-seller-premium, .pricing-seller-notice {
+        width: 80%;
+        margin: 0 auto 30px;
+    }
+}

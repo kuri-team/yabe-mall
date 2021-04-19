@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../../media/image/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="../../../css/common.css">
+  <link rel="stylesheet" href="../../../css/browse.css">
+  <link rel="stylesheet" href="../../../css/cards.css">
+  <link rel="stylesheet" href="../../../css/pagination.css">
+
+  <script src="https://kit.fontawesome.com/492245eeb1.js" crossorigin="anonymous"></script>
+
+  <title>Yabe | Stores</title>
+</head>
+<body>
+<header>
+  <nav>
+    <span id="nav-logo"><a href="../../../mall"><img class="nav-logo-sprite" alt="Yabe logo" src="../../../media/vector/logo-light.svg"></a></span>
+    <div id="nav-search-filter">Filter<i class="fas fa-caret-down ml-10"></i>
+      <div id="nav-search-filter-level-1">
+        <div class="nav-search-filter-option">All</div>
+        <hr>
+        <div class="nav-search-filter-option">Products
+          <div id="nav-search-filter-level-2-1">
+            <div class="nav-search-filter-option">Category</div>
+            <hr>
+            <div class="nav-search-filter-option">Date</div>
+          </div>
+        </div>
+        <hr>
+        <div class="nav-search-filter-option">Stores
+          <div id="nav-search-filter-level-2-2">
+            <div class="nav-search-filter-option">Category</div>
+            <hr>
+            <div class="nav-search-filter-option">Name</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="nav-search">
+      <form action="../../browse" method="get" target="_blank">
+        <label for="q"></label>
+        <input class="nav-seach-bar" id="q" name="q" type="search" placeholder="Search" value="">
+      </form>
+    </div>
+    <div class="nav-search-bttn"><i class="fas fa-search"></i></div>
+    <a href="../../cart"><button class="nav-cart-bttn"><i class="fas fa-shopping-cart"></i>Cart</button></a>
+    <span id="nav-account">
+        <a href="../../account/login">Login</a>
+        <span class="vl"></span>
+        <a href="../../account/register">Register</a>
+      </span>
+
+    <span class="mobile-only">
+        <button onclick="toggleMobileMenu()" class="mobile-menu-bttn"><i class="fas fa-bars" id="mobile-menu-icon"></i></button>
+      </span>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li class="mobile-menu-cart"><a href="../../cart"><i class="fas fa-shopping-cart"></i>Cart</a></li>
+      <li><a href="../../account/login">My Account</a></li>
+      <li><a href="../">Home</a></li>
+      <li><a href="../../browse">Browse</a></li>
+      <li><a href="../../about-us">About Us</a></li>
+      <li><a href="../../contact">Contact Us</a></li>
+      <li><a href="../../support/faq">FAQs</a></li>
+    </ul>
+  </div>
+</header>
+
+  <main id="content">
+
+    <ul class=breadcrumb>
+      <li><a href="../../">Home</a>/</li>
+      <li><a href="../">Browse Products</a>/</li>
+      <li><a href="#">By Name</a></li>
+    </ul>
+
+  <div class="content-body">
+    <div>
+      <select class="select-list">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+        <option value="E">E</option>
+        <option value="F">F</option>
+        <option value="G">G</option>
+        <option value="H">H</option>
+        <option value="I">I</option>
+        <option value="J">J</option>
+        <option value="K">K</option>
+        <option value="L">L</option>
+        <option value="M">M</option>
+        <option value="N">N</option>
+        <option value="O">O</option>
+        <option value="P">P</option>
+        <option value="Q">Q</option>
+        <option value="R">R</option>
+        <option value="S">S</option>
+        <option value="T">T</option>
+        <option value="U">U</option>
+        <option value="V">V</option>
+        <option value="W">W</option>
+        <option value="X">X</option>
+        <option value="Y">A</option>
+        <option value="Z">Z</option>
+      </select>
+    </div>
+
+    <div class="store-list">
+
+      <div class="flex-container flex-justify-content-space-evenly flex-wrap">
+
+        <div class="store-card">
+          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/apple_logo.png"></a>
+          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+        </div>
+
+        <div class="store-card">
+          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/birkenstock_logo.png"></a>
+          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+        </div>
+
+        <div class="store-card">
+          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/canon_logo.jpg"></a>
+          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+        </div>
+
+        <div class="store-card">
+          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/dermalogica_logo.png"></a>
+          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+        </div>
+
+        <div class="store-card">
+          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/floralpunk_logo.png"></a>
+          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+        </div>
+
+        <div class="store-card">
+          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/hp_logo.png"></a>
+          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+        </div>
+
+        <div class="store-card">
+          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/jabra_logo.png"></a>
+          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+        </div>
+
+        <div class="store-card">
+          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/jordan_logo.png"></a>
+          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+        </div>
+
+        <div class="store-card">
+          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/paula_choice_logo.jpg"></a>
+          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+        </div>
+
+        <div class="store-card">
+          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/samsung_logo.png"></a>
+          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+        </div>
+
+        <div class="store-card">
+          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/nike_logo.jpg"></a>
+          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+        </div>
+
+        <div class="store-card">
+          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/webtoon_logo.jpg"></a>
+          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="pagination">
+      <a href="#" class="current-page">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">&gt;</a>
+      <a href="#">&raquo;</a>
+    </div>
+    
+  </div>
+
+  </main>
+
+<footer>
+  <div class="flex-container flex-justify-content-center flex-align-items-start flex-wrap">
+    <div class="footer-menu-item" id="footer-logo"><img alt="Yabe logo" src="../../../media/vector/footer-logo.svg"></div>
+
+    <div class="footer-menu-item" id="footer-menu-main-pages">
+      <p>MAIN PAGES</p>
+      <ul>
+        <li><a href="../../about-us">About Us</a></li>
+        <li><a href="../../contact">Contact Us</a></li>
+        <li><a href="../../support/pricing">Pricing</a></li>
+        <li><a href="../../support/faq">FAQs</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-menu-item" id="footer-menu-policy">
+      <p>POLICY</p>
+      <ul>
+        <li><a href="../../legal/tos">Terms of Service</a></li>
+        <li><a href="../../legal/privacy-policy">Privacy Policy</a></li>
+        <li><a href="../../legal/copyright">Copyright</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-menu-item" id="footer-menu-browse">
+      <p>BROWSE</p>
+      <ul>
+        <li id="footer-menu-browse-product"><a href="../../browse/by-product">Products</a>
+          <ul>
+            <li><a href="../../browse/by-product/by-category.html">Browse by Category</a></li>
+            <li><a href="../../browse/by-product/by-date.html">Browse by Date</a></li>
+          </ul>
+        </li>
+        <li id="footer-menu-browse-store"><a href="../../browse/by-store">Stores</a>
+          <ul>
+            <li><a href="../../browse/by-store/by-category.html">Browse by Category</a></li>
+            <li><a href="../../browse/by-store/by-name.html">Browse by Name</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="footer-copyright">
+    <p>&copy;2021 YABE</p>
+  </div>
+</footer>
+
+<script src="../../../js/common.js"></script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+.product-card {
+    background: #ccc5b9;
+    margin: 2% 0;
+}
+
+.product-card img {
+    width: 250px;
+    height: 250px;
+}
+
+.product-card a {
+    color: #252422;
+    text-decoration: none;
+}
+
+.product-card a:hover {
+    text-decoration: underline;
+}
+
+.product-card-details {
+    padding: 15px;
+}
+
+.product-card-title {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-size: 15pt;
+    display: block;
+}
+
+.product-card-shop {
+    margin-bottom: 20px;
+    font-size: 9pt;
+    display: block;
+}
+
+.product-card-price {
+    display: inline;
+}
+
+.product-card-price-crossed-out {
+    display: inline;
+    color: #fffcf2;
+    text-decoration: line-through;
+}
+
+.product-card-sale-card {
+    float: right;
+    background: #fffcf2;
+    border: 1px solid #252422;
+    padding: 2px 5px;
+    font-size: 9pt;
+}
+
+.store-card {
+    background: #fff;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+    padding: 50px 0;
+    margin: 2% 0;
+    width: 262px;
+}
+
+.store-card-thumbnail {
+    display: block;
+    margin: auto;
+    padding: 0 20px;
+    width: 143px;
+    height: 143px;
+    border-radius: 50%;
+}
+
+.store-card-name {
+    display: block;
+    color: #252422;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.store-card-name:hover {
+    text-decoration: underline;
+}
+
+
+/* Responsive cards */
+@media only screen and (max-width: 1370px) {
+    .store-card, .product-card {
+        margin: 10px;
+    }
+
+    .flex-wrap .product-card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .overflow-hidden .store-card:first-child, .overflow-hidden .product-card:first-child {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    .store-card, .product-card {
+        margin: 5px;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .store-card, .product-card {
+        margin: 2px;
+    }
+}
+
+
+/****************************
+    Navigation elements
+*****************************/
+
+.cards-load-more-bttn {
+    display: block;
+    margin: 20px auto 50px;
+    padding: 20px 0;
+    width: 262px;
+    color: #252422;
+    background: #f7f7f7;
+    border: 1px solid #252422;
+}
+
+.cards-load-more-bttn:active {
+    color: #f7f7f7;
+    background: #cdcdcd;
+}
+
+.card-gallery {
+    display: -ms-grid;
+    display: -moz-grid;
+    display: grid;
+    grid-template-columns: 10% auto 10%;
+    grid-template-rows: auto auto;
+    align-content: center;
+    width: 100%;
+}
+
+.card-gallery-left-bttn, .card-gallery-right-bttn {
+    display: block;
+    background: #ccc5b9;
+    border: none;
+    font-size: 15pt;
+    height: 50px;
+    padding: 0 7px;
+}
+
+.card-gallery-left-bttn:active, .card-gallery-right-bttn:active {
+    background: #bab1a0;
+    color: #fffcf2;
+}
+
+.card-gallery-title {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.card-gallery-left-bttn {
+    grid-column: 1;
+    grid-row: 2;
+    margin: auto 20px auto auto;
+}
+
+.card-gallery-content {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.card-gallery-right-bttn {
+    grid-column: 3;
+    grid-row: 2;
+    margin: auto auto auto 20px;
+}
+
+/* Responsive Cards & Navigation elements */
+@media only screen and (max-width: 767px) {
+    .card-gallery-left-bttn, .card-gallery-right-bttn {
+        display: none;
+    }
+
+    .card-gallery-title {
+        grid-column: 1 / span 3;
+    }
+
+    .card-gallery-content {
+        grid-column: 1 / span 3;
+        overflow: scroll;
+    }
+
+    .card-gallery-content .product-card, .card-gallery-content .product-card img {
+        width: 200px;
+    }
+
+    .product-card-title {
+        font-size: 12pt;
+    }
+
+    .product-card-sale-card {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1350px) {
+    .card-gallery-content .product-card, .card-gallery-content .store-card {
+        margin: 2% 10px;
+    }
+
+    .card-gallery-content .product-card:first-child, .card-gallery-content .store-card:first-child {
+        margin-left: 0;
+    }
+
+    .card-gallery-content .product-card:last-child, .card-gallery-content .store-card:last-child {
+        margin-right: 0;
+    }
+}

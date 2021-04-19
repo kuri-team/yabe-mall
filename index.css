@@ -1,0 +1,90 @@
+* {
+    font-family: 'Arial', sans-serif;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+header {
+    background: #000054;
+    height: 100vh;
+}
+
+@media only screen and (max-height: 800px) {
+    header {
+        height: 800px;
+    }
+}
+
+.header-img {
+    width: 100%;
+    box-shadow: 0 0 8px 0;
+    -webkit-box-shadow: 0 0 8px 0;
+    -o-box-shadow: 0 0 8px 0;
+    -moz-box-shadow: 0 0 8px 0;
+}
+
+.description {
+    color: #fff;
+    text-align: center;
+    margin-top: 0;
+}
+
+.header-title {
+    text-align: center;
+    font-weight: 900;
+    color: #fff;
+    padding: 50pt 50pt 10pt;
+    margin: 0;
+}
+
+.flex-container {
+    display: flex;
+    display: -webkit-flex;
+    display: -o-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    justify-content: space-evenly;
+}
+
+.item {
+    text-align: center;
+    text-align: -moz-center;
+    text-align: -webkit-center;
+    width: 30%;
+    text-decoration: none;
+    color: #000;
+    background: #fff;
+    margin-top: 50pt;
+    padding: 50pt 10pt;
+    font-weight: 700;
+    box-shadow: 0 3px 8px 0 #000;
+    -webkit-box-shadow: 0 3px 8px 0 #000;
+    -o-box-shadow: 0 3px 8px 0 #000;
+    -moz-box-shadow: 0 3px 8px 0 #000;
+}
+
+.item:hover {
+    background: #cdcdcd;
+}
+
+.main-item {
+    color: #fff;
+    background: #0078ff;
+}
+
+.main-item:hover {
+    color: #000;
+    background: #50d2ff;
+}

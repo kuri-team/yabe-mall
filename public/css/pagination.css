@@ -1,0 +1,34 @@
+.pagination {
+    padding: 30px 8% 60px 8%;
+}
+
+.pagination a {
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+    border: 1px black solid;
+    box-sizing: border-box;
+    padding: 3px 11px;
+    margin-right: 5px;
+}
+
+.pagination a:hover {
+    background-color: #ececec;
+}
+
+.pagination a:active {
+    background-color: #dddddd;
+}
+
+.pagination .current-page {
+    background-color: #eb5e28;
+    color: white;
+}
+
+.pagination .current-page:active {
+    background-color: #cd4813;
+}
+
+.pagination .current-page:hover {
+    background-color: #cd4813;
+}

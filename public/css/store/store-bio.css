@@ -1,0 +1,57 @@
+/* General styling */
+#store-page-content {
+    line-height: 1.8;
+    width: 80%;
+    margin: 0 auto 80px;
+}
+
+.store-content-heading {
+    font-weight: normal;
+    padding: 20px 0 30px;
+}
+
+/* "Our Leaders" section styling */
+.shop-founder-ceo, .shop-cfo {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.shop-founder-ceo {
+    padding-right: 25px;
+}
+
+.shop-cfo {
+    padding-left: 25px;
+}
+
+.shop-leader-name {
+    font-size: 20px;
+    font-weight: normal;
+    margin: 20px auto 5px;
+}
+
+.shop-leader-position {
+    font-size: 13px;
+    margin: 0 auto 30px;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 1023px) {
+    .shop-founder-ceo, .shop-cfo {
+        width: 100%;
+        padding: 5% 0 0;
+    }
+
+    .bio-content {
+        text-align: -moz-left;
+        text-align: -webkit-left;
+        text-align: left;
+        text-indent: 30px;
+    }
+
+    .bio-content-leaders {
+        text-align: -moz-center;
+        text-align: -webkit-center;
+        text-align: center;
+    }
+}

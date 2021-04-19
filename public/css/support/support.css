@@ -1,0 +1,25 @@
+.faq-item {
+    padding: 30px 0;
+    border-bottom: 1px solid #ccc5b9;
+}
+
+.faq-item:first-child {
+    padding-top: 0;
+}
+
+.faq-item:last-child {
+    padding-bottom: 0;
+}
+
+.faq-question:before {
+    content: "Q: ";
+}
+
+.faq-answer:before {
+    content: "A: ";
+}
+
+.faq-question:before, .faq-answer:before {
+    font-weight: 700;
+    color: #eb5e28;
+}

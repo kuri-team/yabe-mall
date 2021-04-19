@@ -1,0 +1,24 @@
+.store-home-content-new, .store-home-content-featured {
+    margin: auto;
+}
+
+.store-home-content-header h1 {
+    font-size: 22pt;
+    display: inline-block;
+}
+
+.store-home-content-featured .store-home-content-header {
+    margin-top: 80px;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 767px) {
+    .store-home-content-new, .store-home-content-featured {
+        width: 100%;
+        margin: 0;
+    }
+
+    .store-home-content-header h1 {
+        font-size: 18pt;
+    }
+}

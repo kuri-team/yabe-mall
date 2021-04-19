@@ -1,0 +1,256 @@
+.cart-product {
+    background: inherit;
+    margin: 15px 15px;
+    padding-bottom: 15px;
+    width: auto;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+}
+.cart-product:last-child {
+    border:none
+}
+.cart-product a {
+    color: #252422;
+    text-decoration: none;
+}
+
+.cart-product a:hover {
+    text-decoration: underline;
+}
+
+.cart-product-details {
+    margin: auto;
+    width: 100%;
+}
+
+.cart-product-title {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-size: 15pt;
+    display: block;
+}
+
+.cart-product-shop {
+    margin-bottom: 20px;
+    font-size: 9pt;
+    display: flex;
+}
+
+.cart-product-price {
+    display: inline;
+}
+
+.cart-product-price-crossed-out {
+    display: inline;
+    color: #555;
+    text-decoration: line-through;
+}
+
+
+.cart-product img {
+    width: 150px;
+    height: 150px;
+    padding: 20px;
+}
+
+.cart-product-remove {
+    padding: 50px 10px;
+    width: 10%;
+}
+
+.cart-product-remove-button {
+    height: 40px;
+    width: 80px;
+    background-color: #fff;
+}
+
+.cart-product-remove-button:hover {
+    color: #fff;
+    background: #252422;
+}
+.cart-product-quantity-input {
+    text-align: center;
+    width: 30px;
+    height: 30px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.cart-body {
+    width: 70%
+}
+
+.cart-product-quantity-button {
+    background-color: #ccc5b9;
+    border-color: #ccc5b9;
+    padding: 3px 8px;
+    height: 30px;
+    width: 30px;
+}
+
+.cart-product-quantity-button:active {
+    background: #bab1a0;
+}
+
+.cart-product-quantity-button i {
+    color: #403d39;
+    font-size: smaller;
+}
+
+.cart-product-total-fee {
+    float: right;
+}
+
+.cart-product-total-tag {
+    float: left;
+}
+.cart-fees {
+    margin: 50px;
+}
+
+.cart-fees-caption {
+    text-align: left;
+}
+
+.cart-product-summary-button-order {
+    background-color: #252422;
+    color: #fff;
+    margin:10px;
+    text-decoration: none;
+    border-color: #252422;
+}
+
+.cart-product-summary-button-continue {
+    background-color: #eb5e28;
+    color: #fff;
+    margin: 10px;
+    text-decoration: none;
+    border-color: #252422;
+}
+
+.cart-product-summary-button-continue:active {
+    background: #B0441E;
+}
+
+.cart-product-summary-button-order:active {
+    background: #555555;
+}
+
+.cart-product-list {
+    display: flex;
+    grid-area: content;
+    width: 100%;
+    justify-content: center;
+
+}
+
+.cart-product-summary {
+    grid-area: summary;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.cart-product-summary ul{
+    list-style-type: none;
+}
+.cart-body {
+    width: 100%;
+    margin: auto auto auto 0;
+}
+
+.cart-product-summary-table-caption {
+    text-align: left;
+    font-size: larger;
+    margin-top: 20px;
+}
+
+.cart-product-summary-button {
+    border: none;
+}
+
+.cart-product-summary-table li {
+    height: 40px;
+    border-bottom: 1px solid #ddd;
+}
+.cart-product-summary-table li:last-child {
+    border: none;
+    margin-bottom: 30px;
+}
+
+
+.cart-product-summary-button button {
+    height: 50px;
+    padding: 10px;
+    white-space: normal;
+}
+
+button {
+    border: 1px solid #252422;
+}
+
+.cart-body {
+    display: grid;
+    grid-gap: 0.5em;
+    grid-template:
+    "content summary";
+}
+
+
+/* responsive */
+@media (max-width: 768px) {
+    .cart-img img {
+        width: 70%;
+        height: auto;
+    }
+    .cart-product-details {
+        margin: 5px;
+    }
+    .cart-product-title {
+        font-size: 12pt;
+    }
+
+    .cart-product-shop {
+        font-size: 9px;
+    }
+
+    .cart-product-summary-button button {
+        width: 70px;
+        font-size: 7pt;
+    }
+    .cart-product-remove {
+        width: 20%;
+        height: 20%;
+    }
+    .cart-product-table {
+        padding: 0;
+    }
+}
+
+@media (max-width: 1370px) {
+    .cart-body {
+        margin: 0;
+        max-width: 60rem;
+        grid-template:
+    "content"
+    "summary";
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+    }
+    .cart-product-summary-button button {
+        width: 80px;
+        font-size: 7pt;
+    }
+    .cart-product-summary {
+        margin-right: 20px;
+    }
+}

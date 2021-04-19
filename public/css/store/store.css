@@ -1,0 +1,319 @@
+/* Common store header */
+.store-header {
+    text-align: center;
+    box-shadow: 0 3px 6px 0 #ddd;
+}
+
+.store-header .store-img {
+    width: 100%;
+    height: auto;
+}
+
+.store-header .store-card-thumbnail {
+    margin: 50px auto 20px;
+}
+
+.store-header h2 {
+    font-weight: normal;
+    margin: 5px auto;
+}
+
+.store-header a, .store-footer a {
+    color: #000;
+    text-decoration: none;
+}
+
+.store-header i {
+    padding: 7px;
+}
+
+.store-header p {
+    text-align: justify;
+    margin: 25px 10% 60px;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* Common store navigation bar */
+.store-nav {
+    display: flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-flex;
+    background-color: #ececec;
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+.store-nav-bttn, .store-footer-bttn {
+    flex: 1;
+    box-sizing: border-box;
+    background-color: inherit;
+    font-size: 16px;
+    margin: 0;
+    text-align: center;
+}
+
+.store-nav-bttn {
+    position: relative;
+    padding: 15px;
+    flex: 1;
+}
+
+.store-nav-bttn:hover {
+    background-color: #dddddd;
+}
+
+.store-nav .store-nav-dropdown-icon {
+    padding: 0;
+    margin-left: 20px;
+}
+
+.store-nav-dropdown-list {
+    background-color: #ececec;
+    width: 297px;
+    display: none;
+    position: absolute;
+    left: 0;
+    margin-top: 15px;
+    box-shadow: 0 3px 6px 0 #555;
+}
+
+.store-nav-dropdown-list a {
+    display: block;
+    padding: 12px;
+}
+
+.store-nav-dropdown-list a:hover {
+    background-color: #ddd;
+}
+
+.store-nav-dropdown-list hr {
+    border-bottom: 1px solid #403d39;
+    margin: 0;
+}
+
+.store-nav-dropdown:hover .store-nav-dropdown-list {
+    display: block;
+}
+
+/* Responsive store navigation bar */
+#responsive-store-navbar, #navbar-icon, #navbar-icon + label, #responsive-store-navbar ul, #nav-product-bttn {
+    display: none;
+}
+
+#responsive-store-navbar li {
+    background-color: #ececec;
+    padding: 15px;
+}
+
+#responsive-store-navbar a:hover {
+    background-color: #ddd;
+}
+
+@media only screen and (max-width: 767px) {
+    .store-header .store-img {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .store-img img {
+        position: absolute;
+        top: -9999px;
+        bottom: -9999px;
+        left: -9999px;
+        right: -9999px;
+        margin: auto;
+    }
+
+    .store-nav-bttn {
+        display: none;
+    }
+
+    #responsive-store-navbar {
+        display: block;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 15px;
+    }
+
+    .responsive-store-navbar-title {
+        font-size: larger;
+    }
+
+    .responsive-store-navbar i {
+        padding: 0;
+    }
+
+    #navbar-icon + label {
+        display: block;
+        margin: auto;
+        font-size: 20px;
+        background-color: inherit;
+    }
+
+    #nav-product-bttn + label {
+        display: block;
+    }
+
+    #navbar-icon:checked ~ ul, #nav-product-bttn:checked ~ ul {
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: column;
+        flex-flow: column;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .responsive-store-navbar-content {
+        position: relative;
+        top: 0;
+        padding: 0;
+    }
+
+    .responsive-store-navbar-content-dropdown {
+        font-size: smaller;
+    }
+}
+
+/* Product cards styling */
+.store-product-cards {
+    margin: 0 10%;
+}
+
+.store-product-cards .flex-wrap .product-card {
+    width: 27%;
+}
+
+.store-product-cards .product-card img {
+    width: 100%;
+}
+
+/* Responsive product cards */
+@media only screen and (max-width: 1370px) {
+    .store-product-cards .flex-wrap .product-card {
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    .store-product-cards .flex-wrap .product-card {
+        width: 48%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .store-product-cards {
+        margin: 0;
+        width: 100%;
+    }
+}
+
+/* Common store footer */
+.store-footer {
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-flex;
+    display: flex;
+    height: 80px;
+    background-color: #dddddd;
+    margin: 40px 0 0;
+}
+
+.store-footer-bttn {
+    flex: 1;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-flex;
+    display: flex;
+    height: 100%;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.store-footer-bttn a {
+    color: #252422;
+}
+
+.store-footer-bttn a:hover {
+    text-decoration: underline;
+}
+
+.store-logo {
+    padding: 5px;
+    margin: 1px 0 0 40px;
+}
+
+.store-logo img {
+    width: 50px;
+    height: 50px;
+}
+/* Responsive store footer */
+#responsive-store-navbar label:hover, .responsive-store-navbar-content a:hover {
+    text-decoration: underline;
+}
+
+#store-footer-icon, #store-footer-icon + label, #responsive-store-footer ul {
+    display: none;
+}
+
+#responsive-store-footer li {
+    color: #252422;
+    background-color: #dddddd;
+    padding: 20px;
+    text-align: -webkit-center;
+    text-align: -moz-center;
+    text-align: center;
+}
+
+#responsive-store-footer a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 767px) {
+    .store-footer-bttn, .store-logo {
+        display: none;
+    }
+
+    #responsive-store-footer {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #store-footer-icon + label {
+        display: block;
+        text-align: -moz-center;
+        text-align: -webkit-center;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    #store-footer-icon:checked ~ ul {
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: column;
+        flex-flow: column;
+        margin: auto;
+        padding: 0;
+        list-style: none;
+        box-shadow: 0 3px 6px 0 #555;
+        width: 100%;
+    }
+
+    #responsive-store-footer-dropdown {
+        transform-origin: top;
+    }
+}

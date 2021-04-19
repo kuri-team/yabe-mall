@@ -1,0 +1,107 @@
+/* General styling */
+#store-page-content {
+    width: 80%;
+    margin: 0 auto 80px;
+}
+
+.store-content-heading {
+    font-weight: normal;
+    padding: 20px 0 30px;
+}
+
+/* Contact form styling */
+#store-contact-form, #store-contact-info {
+    width: 47%;
+    min-height: 350px;
+    box-sizing: border-box;
+}
+
+#store-contact-form {
+    padding: 20px 0;
+    margin-right: 6%;
+}
+
+#store-contact-form .contact-field, #store-contact-form textarea {
+    display: block;
+    font-family: 'Noto Sans JP', 'Arial', sans-serif;
+    width: 100%;
+    border: 1px solid #403d39;
+    border-radius: 7px;
+    margin-bottom: 20px;
+}
+
+#store-contact-form .contact-field {
+    height: 35px;
+}
+
+#store-contact-form textarea {
+    height: 100px;
+    min-height: 50px;
+    min-width: 45%;
+    max-width: 100%;
+}
+
+#store-contact-form .reset-bttn, #store-contact-form .submit-bttn {
+    min-width: 25%;
+    padding: 10px 20px;
+    border: 1px #000 solid;
+    box-sizing: border-box;
+}
+
+#store-contact-form .reset-bttn {
+    background-color: #fff;
+}
+
+#store-contact-form .reset-bttn:hover, #store-contact-form .reset-bttn:active {
+    background-color: #ececec;
+    cursor: pointer;
+}
+
+#store-contact-form .submit-bttn {
+    color: #fff;
+    background-color: #000;
+}
+
+#store-contact-form .submit-bttn:hover, #store-contact-form .submit-bttn:active {
+    background-color: #403d39;
+    cursor: pointer;
+}
+
+/* Contact info box styling */
+#store-contact-info {
+    background-color: #ececec;
+    padding: 20px;
+    box-shadow: 0 3px 6px 0 #ddd;
+}
+
+#store-contact-info h3 {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+#store-contact-info h4 {
+    font-size: 16px;
+    padding-bottom: 10px;
+    margin: 0;
+}
+
+#store-contact-info p {
+    padding-bottom: 30px;
+    margin: 0;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 1080px) {
+    #store-contact-form, #store-contact-info {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #store-contact-form {
+        padding-top: 0;
+    }
+
+    #store-contact-info {
+        margin-top: 7%;
+    }
+}

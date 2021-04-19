@@ -1,0 +1,71 @@
+.header-hero {
+    width: 100%;
+    height: auto;
+}
+
+.header-hero img {
+    width: inherit;
+    height: inherit;
+}
+
+#mall-main {
+    padding: 30px 0;
+}
+
+.mall-home-section {
+    width: 80%;
+    margin: 30px auto;
+}
+
+.mall-home-section > h1 {
+    font-size: 22pt;
+    text-align: left;
+    padding-top: 1em;
+}
+
+.mall-home-section-heading-link {
+    margin-left: 12px;
+    font-size: 11pt;
+}
+
+
+/* Responsive Mall Home Cards */
+@media only screen and (max-width: 1370px) {
+    .mall-home-section .flex-wrap .product-card, .mall-home-section .flex-wrap .store-card {
+        width: 31%;
+    }
+
+    .mall-home-section .flex-wrap .product-card img {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    .mall-home-section .flex-wrap .product-card, .mall-home-section .flex-wrap .store-card {
+        width: 48%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #mall-main {
+        padding: 0 0 100px 0;
+    }
+
+    .mall-home-section {
+        margin: 0;
+        width: 100%;
+    }
+
+    .mall-home-section > h1 {
+        font-size: 16pt;
+        text-align: -webkit-center;
+        text-align: -moz-center;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .flex-wrap .store-card img {
+        width: 60%;
+    }
+}
