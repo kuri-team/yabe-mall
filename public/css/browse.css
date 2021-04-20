@@ -18,6 +18,7 @@
     -webkit-appearance: button;  /* Compatibility with Safari */
 }
 
+/** RESPONSIVE FOR MOBILE DEVICES **/
 @media only screen and (max-width: 1080px) {
     .product-card, .store-list .flex-wrap .store-card{
         width: 48%;

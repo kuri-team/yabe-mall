@@ -1,3 +1,26 @@
+/** CONTENT BODY **/
+.content-body {
+    text-align: center;
+}
+/****/
+
+/** THANK YOU CONTENT**/
+.thank-you-frame {
+    padding: 150px 0 40px 0;
+    font-size: 2.5em;
+}
+
+.thank-you-sentence {
+    padding: 0 75px;
+}
+
+.fa-check {
+    color: #008000;
+    font-size:200%;
+}
+/****/
+
+/* continue shopping and home button */
 .href-button button{
     width: 200px;
     height: 50px;
@@ -28,21 +51,4 @@
 
 .href-button-home:active {
     background: #B0441E;
-}
-.content-body {
-    text-align: center;
-}
-
-.thank-you-frame {
-    padding: 150px 0 40px 0;
-    font-size: 2.5em;
-}
-
-.thank-you-sentence {
-    padding: 0 75px;
-}
-
-.fa-check {
-    color: #008000;
-    font-size:200%;
 }
