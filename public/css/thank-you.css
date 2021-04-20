@@ -21,32 +21,29 @@
 /****/
 
 /* continue shopping and home button */
+.href-button-continue {
+    background-color: #252422;
+}
+
+.href-button-home {
+    background-color: #eb5e28;
+}
+
 .href-button button{
     width: 200px;
     height: 50px;
-}
-
-.href-button {
-    padding-bottom: 200px;
-}
-.href-button-continue {
-    background-color: #252422;
     color: #fff;
     margin:10px;
     text-decoration: none;
     border-color: #252422;
 }
 
-.href-button-continue:active {
-    background: #555555;
+.href-button {
+    padding-bottom: 200px;
 }
 
-.href-button-home {
-    background-color: #eb5e28;
-    color: #fff;
-    margin: 10px;
-    text-decoration: none;
-    border-color: #252422;
+.href-button-continue:active {
+    background: #555555;
 }
 
 .href-button-home:active {
