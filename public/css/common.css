@@ -252,6 +252,9 @@ hr {
     margin-right: 11px;
 }
 
+.circle-img {
+    border-radius: 50%;
+}
 
 /******************************
     YABE Common navigation bar
