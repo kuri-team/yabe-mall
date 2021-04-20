@@ -380,7 +380,12 @@ nav a {
 }
 
 .nav-search-filter-option:hover {
+    cursor: pointer;
     background: #bab1a0;
+}
+
+.nav-search-filter-option:active {
+    background: #eb5e28;
 }
 
 #nav-search {

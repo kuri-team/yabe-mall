@@ -40,7 +40,9 @@ const NAV_SEARCH_FILTER_OPTIONS = document.querySelectorAll(".nav-search-filter-
 for (let i = 0; i < NAV_SEARCH_FILTER_OPTIONS.length; i++) {
     let option = NAV_SEARCH_FILTER_OPTIONS.item(i);
     option.addEventListener("click", function (event) {
-        NAV_SEARCH_FILTER.firstChild.nodeValue = option.innerText.split(/\s/, 1)[0];
-        event.stopPropagation();
+        if (event.target === option) {
+            NAV_SEARCH_FILTER.firstChild.nodeValue = "";
+        }
+        NAV_SEARCH_FILTER.firstChild.nodeValue += option.innerText.split(/\s/)[0] + " ";
     });
 }
