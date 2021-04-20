@@ -11,6 +11,10 @@
 *******************************/
 
 /* Reset */
+html {
+    scroll-behavior: smooth; !important;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -612,6 +616,20 @@ nav a {
 
 .content-text {
     padding: 30px 70px;
+}
+
+.content-nav-bttn {
+    color: #eb5e28;
+    text-decoration: underline;
+    font-size: 12pt;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.content-nav-bttn:hover {
+    cursor: pointer;
+    text-decoration: none;
 }
 
 footer {
