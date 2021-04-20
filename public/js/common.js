@@ -1,3 +1,15 @@
+/**
+ *
+ * common.js
+ * YABE common functions. Must be included site-wide at the end of <body></body> in every pages
+ * Syntax: <script scr="relative/path/to/public/js/common.js">
+ *
+ */
+
+
+/**
+ * This function is used to toggle the Mall navbar links on mobile devices
+ */
 function toggleMobileMenu() {
     const ICON = document.getElementById("mobile-menu-icon");
     const MENU = document.getElementById("mobile-menu");
@@ -11,6 +23,24 @@ function toggleMobileMenu() {
     }
 }
 
+/**
+ * Go to previous page in browser history
+ */
 function previousPage() {
     window.history.back();
+}
+
+
+/**
+ * Navbar search filter
+ */
+const NAV_SEARCH_FILTER = document.getElementById("nav-search-filter");
+const NAV_SEARCH_FILTER_OPTIONS = document.querySelectorAll(".nav-search-filter-option");
+
+for (let i = 0; i < NAV_SEARCH_FILTER_OPTIONS.length; i++) {
+    let option = NAV_SEARCH_FILTER_OPTIONS.item(i);
+    option.addEventListener("click", function (event) {
+        NAV_SEARCH_FILTER.firstChild.nodeValue = option.innerText.split(/\s/, 1)[0];
+        event.stopPropagation();
+    });
 }
