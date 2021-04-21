@@ -241,11 +241,7 @@ input[type=number] {
         padding: 0;
         margin: -2px;
     }
-
-    .cart-product-quantity-button i{
-        font-size: 5pt;
-    }
-
+    
     .cart-product-quantity-input {
         width: 15px;
         height: 15px;
