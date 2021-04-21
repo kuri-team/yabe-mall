@@ -60,6 +60,20 @@ body {
     background: #EB5E28;
 }
 
+.login-container input:valid ~ span{
+    display: block;
+
+}
+
+.login-container span {
+    cursor: pointer;
+    display: none;
+}
+
+.login-container span i.hide-btn:before {
+    content: "\f070";
+}
+
 .level {
     margin-bottom:1.5rem;
     font-size: 0.75rem;

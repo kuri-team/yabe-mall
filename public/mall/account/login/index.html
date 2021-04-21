@@ -73,9 +73,9 @@
     <h1>READY? GO</h1>
     <input type="text" name="" placeholder="username or email"  autocomplete="username" required>
     <input type="password" name="" placeholder="Password" autocomplete="current-password" required>
+    <span><i class="fas fa-eye"></i> </span>
     <input type="submit" name="" value="LOGIN">
 
-    <br>
     <nav class="level">
       <div id="forgot-pw">
         <div>
@@ -90,6 +90,21 @@
     </nav>
 
   </form>
+
+  <script>
+    const passField = document.querySelector("input");
+    const showBtn = document.querySelector("span i");
+    showBtn.onclick = (()=>{
+      if(passField.type === "password"){
+        passField.type = "text";
+        showBtn.classList.add("hide-btn");
+      }else{
+        passField.type = "password";
+        showBtn.classList.remove("hide-btn");
+      }
+    });
+  </script>
+
 
 </main>
 
