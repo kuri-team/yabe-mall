@@ -51,6 +51,7 @@ NAV_SEARCH_FILTER.addEventListener("mouseover", function () {
 });
 
 // On user choice, close the menus and add that choice to Navbar Filter
+let newFilterTexts = NAV_SEARCH_FILTER.firstChild.nodeValue.split(/\s/);
 for (let i = 0; i < NAV_SEARCH_FILTER_OPTIONS.length; i++) {
     let option = NAV_SEARCH_FILTER_OPTIONS.item(i);
     option.addEventListener("click", function (event) {
