@@ -90,10 +90,11 @@
     </section>
 
   </form>
-<!--  TODO: move these script to external file-->
-  <script>
+
+  <script> <!-- TODO: move these scripts to external file -->
     const passField = document.querySelector("input");
     const showBtn = document.querySelector("span i");
+
     showBtn.onclick = (()=>{
       if(passField.type === "password"){
         passField.type = "text";
