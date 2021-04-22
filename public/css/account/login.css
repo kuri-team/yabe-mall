@@ -16,11 +16,3 @@
     width: 280px;
     border-color: #eb5e28;
 }
-
-.toggle-password-visibility {
-    cursor: pointer;
-    display: none;
-    border: none;
-    background: none;
-    margin: 0 auto;
-}

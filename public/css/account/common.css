@@ -54,6 +54,14 @@ body {
     color: #cd4813;
 }
 
+.toggle-password-visibility {
+    cursor: pointer;
+    display: none;
+    border: none;
+    background: none;
+    margin: 0 auto;
+}
+
 
 /* Responsive dialog */
 @media only screen and (max-width: 767px) {
