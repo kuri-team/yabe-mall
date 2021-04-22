@@ -36,14 +36,26 @@ function previousPage() {
  */
 const NAV_SEARCH_FILTER = document.getElementById("nav-search-filter");
 const NAV_SEARCH_FILTER_OPTIONS = document.querySelectorAll(".nav-search-filter-option");
+const NAV_SEARCH_FILTER_LEVEL_1 = document.getElementById("nav-search-filter-level-1");
+const NAV_SEARCH_FILTER_LEVEL_2_1 = document.getElementById("nav-search-filter-level-2-1");
+const NAV_SEARCH_FILTER_LEVEL_2_2 = document.getElementById("nav-search-filter-level-2-2");
 let separator = " by ";
 
-let newFilterTexts = NAV_SEARCH_FILTER.firstChild.nodeValue.split(/\s/);
-console.log(newFilterTexts);
+// Automatic display, width, and position on mouseover of Navbar Filter
+NAV_SEARCH_FILTER.addEventListener("mouseover", function () {
+    let width = NAV_SEARCH_FILTER_LEVEL_1.offsetWidth;
+    console.log(width);
+    NAV_SEARCH_FILTER_LEVEL_1.setAttribute("style", "display: block");
+    NAV_SEARCH_FILTER_LEVEL_2_1.setAttribute("style", `left: ${width}px;`);
+    NAV_SEARCH_FILTER_LEVEL_2_2.setAttribute("style", `left: ${width}px;`);
+});
+
+// On user choice, close the menus and add that choice to Navbar Filter
 for (let i = 0; i < NAV_SEARCH_FILTER_OPTIONS.length; i++) {
     let option = NAV_SEARCH_FILTER_OPTIONS.item(i);
     option.addEventListener("click", function (event) {
         if (event.target === option) {
+            NAV_SEARCH_FILTER_LEVEL_1.setAttribute("style", "display: none");
             newFilterTexts = [];
         }
         newFilterTexts.unshift(option.innerText.split(/\s/)[0] + " ");
