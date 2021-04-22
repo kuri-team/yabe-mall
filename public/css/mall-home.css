@@ -30,6 +30,16 @@
 
 
 /* Responsive Mall Home Cards */
+@media only screen and (min-width: 1560px) {
+    .mall-home-section {
+        width: 1248px; /* Maximum width */
+    }
+
+    .mall-home-section-gallery {
+        width: 1560px !important; /* Maximum width, overrides cards.css .card-gallery */
+    }
+}
+
 @media only screen and (max-width: 1370px) {
     .mall-home-section .flex-wrap .product-card, .mall-home-section .flex-wrap .store-card {
         width: 31%;

@@ -11,6 +11,10 @@
 *******************************/
 
 /* Reset */
+html {
+    scroll-behavior: smooth; !important;
+}
+
 body {
     margin: 0;
     padding: 0;
