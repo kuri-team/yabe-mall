@@ -4,7 +4,7 @@
 }
 /****/
 
-/** THANK YOU CONTENT**/
+/** THANK YOU CONTENT **/
 .thank-you-frame {
     padding: 150px 0 40px 0;
     font-size: 2.5em;
@@ -16,17 +16,13 @@
 
 .fa-check {
     color: #008000;
-    font-size:200%;
+    font-size: 200%;
 }
 /****/
 
 /* continue shopping and home button */
-.href-button-continue {
-    background-color: #252422;
-}
-
-.href-button-home {
-    background-color: #eb5e28;
+.href-button {
+    padding-bottom: 200px;
 }
 
 .href-button button{
@@ -38,8 +34,12 @@
     border-color: #252422;
 }
 
-.href-button {
-    padding-bottom: 200px;
+.href-button-continue {
+    background-color: #252422;
+}
+
+.href-button-home {
+    background-color: #eb5e28;
 }
 
 .href-button-continue:active {
