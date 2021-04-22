@@ -50,6 +50,11 @@ NAV_SEARCH_FILTER.addEventListener("mouseover", function () {
     NAV_SEARCH_FILTER_LEVEL_2_2.setAttribute("style", `left: ${width}px;`);
 });
 
+// Auto closing on mouseleave
+NAV_SEARCH_FILTER.addEventListener("mouseleave", function () {
+    NAV_SEARCH_FILTER_LEVEL_1.setAttribute("style", "display: none");
+});
+
 // On user choice, close the menus and add that choice to Navbar Filter
 let newFilterTexts = NAV_SEARCH_FILTER.firstChild.nodeValue.split(/\s/);
 for (let i = 0; i < NAV_SEARCH_FILTER_OPTIONS.length; i++) {
