@@ -1,14 +1,23 @@
-const PWD_VIS_TOGGLE = document.querySelector(".toggle-password-visibility");
-const PWD_FIELD = document.getElementById("password");
+const PWD_VIS_TOGGLES = document.querySelectorAll(".toggle-password-visibility");
+const PWD_FIELDS = document.querySelectorAll(".password-field");
 
-PWD_FIELD.addEventListener("input", function () {
-    PWD_VIS_TOGGLE.setAttribute("style", "display: inline;");
-});
-
-PWD_VIS_TOGGLE.addEventListener("click", function () {
-    if (PWD_FIELD.getAttribute("type") === "password") {
-        PWD_FIELD.setAttribute("type", "text");
-    } else if (PWD_FIELD.getAttribute("type") === "text") {
-        PWD_FIELD.setAttribute("type", "password");
+if (PWD_FIELDS.length === PWD_VIS_TOGGLES.length) {
+    console.log("success");
+    for (let index = 0; index < PWD_FIELDS.length; index++) {
+        PWD_FIELDS[index].addEventListener("input", function () {
+            PWD_VIS_TOGGLES[index].setAttribute("style", "display: inline;");
+        });
     }
-});
+
+    for (let index = 0; index < PWD_VIS_TOGGLES.length; index++) {
+        PWD_VIS_TOGGLES[index].addEventListener("click", function () {
+            if (PWD_FIELDS[index].getAttribute("type") === "password") {
+                PWD_FIELDS[index].setAttribute("type", "text");
+            } else if (PWD_FIELDS[index].getAttribute("type") === "text") {
+                PWD_FIELDS[index].setAttribute("type", "password");
+            }
+        });
+    }
+} else {
+    console.log("ERROR: Number of .password-field elements must be equal to number of .toggle-password-visibility elements");
+}

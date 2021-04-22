@@ -15,7 +15,7 @@ body {
 }
 
 .dialog-container input[type="submit"] {
-    background: none;
+    background: #eb5e28;
     display: block;
     margin: 20px auto;
     text-align: center;
@@ -23,15 +23,14 @@ body {
     padding: 14px 30px;
     width: 200px;
     outline: none;
-    color: #252422;
+    color: #fff;
     border-radius: 24px;
     transition: 0.5s;
     cursor: pointer;
 }
 
 .dialog-container input[type="submit"]:hover {
-    background: #eb5e28;
-    color: #fff;
+    background: #cd4813;
 }
 
 .level {
