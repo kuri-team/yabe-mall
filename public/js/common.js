@@ -36,13 +36,17 @@ function previousPage() {
  */
 const NAV_SEARCH_FILTER = document.getElementById("nav-search-filter");
 const NAV_SEARCH_FILTER_OPTIONS = document.querySelectorAll(".nav-search-filter-option");
+let separator = " by ";
 
+let newFilterTexts = NAV_SEARCH_FILTER.firstChild.nodeValue.split(/\s/);
+console.log(newFilterTexts);
 for (let i = 0; i < NAV_SEARCH_FILTER_OPTIONS.length; i++) {
     let option = NAV_SEARCH_FILTER_OPTIONS.item(i);
     option.addEventListener("click", function (event) {
         if (event.target === option) {
-            NAV_SEARCH_FILTER.firstChild.nodeValue = "";
+            newFilterTexts = [];
         }
-        NAV_SEARCH_FILTER.firstChild.nodeValue += option.innerText.split(/\s/)[0] + " ";
+        newFilterTexts.unshift(option.innerText.split(/\s/)[0] + " ");
+        NAV_SEARCH_FILTER.firstChild.nodeValue = newFilterTexts.join(separator);
     });
 }
