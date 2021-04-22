@@ -1,20 +1,4 @@
-body {
-    margin: 0;
-    padding: 0;
-    background: #ECECEC;
-}
-
-.login-container {
-    width: 600px;
-    padding: 40px;
-    margin: 100px auto;
-    top: 50%;
-    left: 50%;
-    background: #f7f7f7;
-    text-align: center;
-}
-
-.login-container input[type="text"], .login-container input[type="password"] {
+.dialog-container input[type="text"], .dialog-container input[type="password"] {
     background: none;
     display: block;
     margin: 20px auto;
@@ -28,29 +12,9 @@ body {
     transition: 0.5s;
 }
 
-.login-container input[type="text"]:focus, .login-container input[type="password"]:focus {
+.dialog-container input[type="text"]:focus, .dialog-container input[type="password"]:focus {
     width: 280px;
     border-color: #eb5e28;
-}
-
-.login-container input[type="submit"] {
-    background: none;
-    display: block;
-    margin: 20px auto;
-    text-align: center;
-    border: 1px solid #eb5e28;
-    padding: 14px 30px;
-    width: 200px;
-    outline: none;
-    color: #252422;
-    border-radius: 24px;
-    transition: 0.5s;
-    cursor: pointer;
-}
-
-.login-container input[type="submit"]:hover {
-    background: #eb5e28;
-    color: #fff;
 }
 
 .toggle-password-visibility {
@@ -59,43 +23,4 @@ body {
     border: none;
     background: none;
     margin: 0 auto;
-}
-
-.level {
-    margin-bottom:1.5rem;
-    font-size: 0.75rem;
-}
-
-.level a {
-    margin: 0 10px;
-    color: #555555;
-}
-
-/* mouse over link */
-.level a:hover {
-    color: #eb5e28;
-}
-
-/* selected link */
-.level a:active {
-    color: #cd4813;
-}
-
-
-/* Responsive login */
-@media only screen and (max-width: 767px) {
-    .login-container {
-        width: 100%;
-        margin: 0;
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    .login-container input[type="text"], .login-container input[type="password"] {
-        width: 70%;
-    }
-
-    .login-container input[type="text"]:focus, .login-container input[type="password"]:focus {
-        width: 60%;
-    }
 }

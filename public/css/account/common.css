@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #ececec;
+}
+
+.dialog-container {
+    width: 600px;
+    padding: 40px;
+    margin: 100px auto;
+    top: 50%;
+    left: 50%;
+    background: #f7f7f7;
+    text-align: center;
+}
+
+.dialog-container input[type="submit"] {
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 1px solid #eb5e28;
+    padding: 14px 30px;
+    width: 200px;
+    outline: none;
+    color: #252422;
+    border-radius: 24px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.dialog-container input[type="submit"]:hover {
+    background: #eb5e28;
+    color: #fff;
+}
+
+.level {
+    margin-bottom:1.5rem;
+    font-size: 0.75rem;
+}
+
+.level a {
+    margin: 0 10px;
+    color: #555555;
+}
+
+/* mouse over link */
+.level a:hover {
+    color: #eb5e28;
+}
+
+/* selected link */
+.level a:active {
+    color: #cd4813;
+}
+
+
+/* Responsive dialog */
+@media only screen and (max-width: 767px) {
+    .dialog-container {
+        width: 100%;
+        margin: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .dialog-container input[type="text"], .dialog-container input[type="password"] {
+        width: 70%;
+    }
+
+    .dialog-container input[type="text"]:focus, .dialog-container input[type="password"]:focus {
+        width: 60%;
+    }
+}
