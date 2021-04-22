@@ -2,7 +2,6 @@ const PWD_VIS_TOGGLES = document.querySelectorAll(".toggle-password-visibility")
 const PWD_FIELDS = document.querySelectorAll(".password-field");
 
 if (PWD_FIELDS.length === PWD_VIS_TOGGLES.length) {
-    console.log("success");
     for (let index = 0; index < PWD_FIELDS.length; index++) {
         PWD_FIELDS[index].addEventListener("input", function () {
             PWD_VIS_TOGGLES[index].setAttribute("style", "display: inline;");
