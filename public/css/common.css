@@ -12,25 +12,25 @@
 
 /* Reset */
 html {
-    scroll-behavior: smooth; !important;
+    scroll-behavior: smooth !important;
 }
 
 body {
     margin: 0;
     padding: 0;
     background: #f7f7f7;
-    font-family: 'Noto Sans JP', 'Arial', sans-serif; !important;
+    font-family: 'Noto Sans JP', 'Arial', sans-serif !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto', 'Arial', sans-serif; !important;
+    font-family: 'Roboto', 'Arial', sans-serif !important;
 }
 
 a {
     color: #eb5e28;
 }
 
-a:hover {
+a:hover, a:focus {
     text-decoration: none;
 }
 
@@ -521,6 +521,9 @@ nav a {
     width: 120px;
     height: 50px;
     margin-left: 50px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
 }
 
 .nav-cart-bttn:active {
@@ -559,10 +562,16 @@ nav a {
     color: #fff;
     background: #252422;
     border: none;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
 }
 
 .mobile-menu-bttn i {
     font-size: 32pt;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
 }
 
 .mobile-menu-bttn:active {
