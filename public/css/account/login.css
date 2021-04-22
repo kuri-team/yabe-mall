@@ -21,7 +21,6 @@ body {
 }
 
 .login-container input[type = "text"],.login-container input[type = "password"] {
-    border: 0;
     background: none;
     display: block;
     margin: 20px auto;
@@ -41,7 +40,6 @@ body {
 }
 
 .login-container input[type = "submit"] {
-    border: 0;
     background: none;
     display: block;
     margin: 20px auto;
@@ -79,6 +77,10 @@ body {
     font-size: 0.75rem;
 }
 
+.level a{
+    margin: 0 10px;
+}
+
 /* unvisited link */
 main a {
     color: #CCC5B9;
@@ -91,7 +93,7 @@ main a:visited {
 
 /* mouse over link */
 main a:hover {
-    color: white;
+    color: #cd4813;
 }
 
 /* selected link */
