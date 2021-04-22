@@ -7,7 +7,7 @@ const GALLERIES_CONTENTS = document.querySelectorAll(".card-gallery-content");
 
 // Gallery auto infinite scrolling
 const DEFAULT_SCROLL_SPEED = 0.05;
-const MAX_SCROLL_SPEED = 10;
+const MAX_SCROLL_SPEED = 5;
 const DEFAULT_SCROLL_VECTOR = 1;
 
 if (GALLERIES.length !== GALLERIES_CONTENTS.length ||
@@ -87,7 +87,7 @@ if (GALLERIES.length !== GALLERIES_CONTENTS.length ||
 
             GALLERIES_LEFT_BTTNS[index].addEventListener("mousedown", function () {
                 scrollFastStatus[index] = true;
-                scrollVector = -1;
+                scrollVector = -DEFAULT_SCROLL_VECTOR * MAX_SCROLL_SPEED;
             });
 
             GALLERIES_LEFT_BTTNS[index].addEventListener("mouseup", function () {
@@ -97,7 +97,7 @@ if (GALLERIES.length !== GALLERIES_CONTENTS.length ||
 
             GALLERIES_RIGHT_BTTNS[index].addEventListener("mousedown", function () {
                 scrollFastStatus[index] = true;
-                scrollVector = 1;
+                scrollVector = DEFAULT_SCROLL_VECTOR * MAX_SCROLL_SPEED;
             });
 
             GALLERIES_RIGHT_BTTNS[index].addEventListener("mouseup", function () {
