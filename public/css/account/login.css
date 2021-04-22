@@ -14,62 +14,51 @@ body {
     text-align: center;
 }
 
-.box h1 {
-    color: black;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-.login-container input[type = "text"],.login-container input[type = "password"] {
+.login-container input[type="text"], .login-container input[type="password"] {
     background: none;
     display: block;
     margin: 20px auto;
     text-align: center;
-    border: 2px solid black;
+    border: 1px solid #252422;
     padding: 14px 10px;
     width: 300px;
     outline: none;
-    color: #CCC5B9;
+    color: #ccc5b9;
     border-radius: 24px;
     transition: 0.5s;
 }
 
-.login-container input[type = "text"]:focus,.login-container input[type = "password"]:focus {
+.login-container input[type="text"]:focus, .login-container input[type="password"]:focus {
     width: 280px;
-    border-color: #EB5E28;
+    border-color: #eb5e28;
 }
 
-.login-container input[type = "submit"] {
+.login-container input[type="submit"] {
     background: none;
     display: block;
     margin: 20px auto;
     text-align: center;
-    border: 2px solid #EB5E28;
+    border: 1px solid #eb5e28;
     padding: 14px 30px;
     width: 200px;
     outline: none;
-    color: black;
+    color: #252422;
     border-radius: 24px;
     transition: 0.5s;
     cursor: pointer;
 }
 
-.login-container input[type = "submit"]:hover {
-    background: #EB5E28;
+.login-container input[type="submit"]:hover {
+    background: #eb5e28;
+    color: #fff;
 }
 
-.login-container input:valid ~ span{
-    display: block;
-
-}
-
-.login-container span {
+.toggle-password-visibility {
     cursor: pointer;
     display: none;
-}
-
-.login-container span i.hide-btn:before {
-    content: "\f070";
+    border: none;
+    background: none;
+    margin: 0 auto;
 }
 
 .level {
@@ -77,27 +66,36 @@ body {
     font-size: 0.75rem;
 }
 
-.level a{
+.level a {
     margin: 0 10px;
-}
-
-/* unvisited link */
-main a {
-    color: #CCC5B9;
-}
-
-/* visited link */
-main a:visited {
-    color: #EB5E28;
+    color: #555555;
 }
 
 /* mouse over link */
-main a:hover {
-    color: #cd4813;
+.level a:hover {
+    color: #eb5e28;
 }
 
 /* selected link */
-main a:active {
-    color: #EB5E28;
+.level a:active {
+    color: #cd4813;
 }
 
+
+/* Responsive login */
+@media only screen and (max-width: 767px) {
+    .login-container {
+        width: 100%;
+        margin: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .login-container input[type="text"], .login-container input[type="password"] {
+        width: 70%;
+    }
+
+    .login-container input[type="text"]:focus, .login-container input[type="password"]:focus {
+        width: 60%;
+    }
+}
