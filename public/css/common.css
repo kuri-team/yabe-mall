@@ -252,9 +252,66 @@ hr {
     margin-right: 11px;
 }
 
+.breadcrumb {
+    margin: 30px auto 50px;
+    padding: 0;
+    width: 80%;
+}
+
+.breadcrumb li {
+    display: inline;
+}
+
+.breadcrumb li:first-child a {
+    padding-left: 0;
+}
+
+.breadcrumb a {
+    color: #403d39;
+    text-decoration: none;
+    padding: 0 7px;
+    margin-right: 10px;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.content-title {
+    margin: 30px auto 5px;
+    width: 80%;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: normal;
+}
+
+.content-body {
+    margin: 30px auto 100px;
+    width: 80%;
+    background-color: #fff;
+}
+
+.content-text {
+    padding: 30px 70px;
+}
+
+.content-nav-bttn {
+    color: #eb5e28;
+    text-decoration: underline;
+    font-size: 12pt;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.content-nav-bttn:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
 .circle-img {
     border-radius: 50%;
 }
+
 
 /******************************
     YABE Common navigation bar
@@ -303,7 +360,6 @@ nav a {
     position: relative;
     -webkit-justify-content: center;
     justify-content: center;
-    width: 80px;
     height: 50px;
     padding: 0 20px;
     color: #403d39;
@@ -387,7 +443,12 @@ nav a {
 }
 
 .nav-search-filter-option:hover {
+    cursor: pointer;
     background: #bab1a0;
+}
+
+.nav-search-filter-option:active {
+    background: #eb5e28;
 }
 
 #nav-search {
@@ -579,62 +640,10 @@ nav a {
     }
 }
 
-.breadcrumb {
-    margin: 30px auto 50px;
-    padding: 0;
-    width: 80%;
-}
 
-.breadcrumb li {
-    display: inline;
-}
-
-.breadcrumb li:first-child a {
-    padding-left: 0;
-}
-
-.breadcrumb a {
-    color: #403d39;
-    text-decoration: none;
-    padding: 0 7px;
-    margin-right: 10px;
-}
-
-.breadcrumb a:hover {
-    text-decoration: underline;
-}
-
-.content-title {
-    margin: 30px auto 5px;
-    width: 80%;
-    font-family: 'Roboto', 'Arial', sans-serif;
-    font-weight: normal;
-}
-
-.content-body {
-    margin: 30px auto 100px;
-    width: 80%;
-    background-color: #fff;
-}
-
-.content-text {
-    padding: 30px 70px;
-}
-
-.content-nav-bttn {
-    color: #eb5e28;
-    text-decoration: underline;
-    font-size: 12pt;
-    background: transparent;
-    border: none;
-    padding: 0;
-}
-
-.content-nav-bttn:hover {
-    cursor: pointer;
-    text-decoration: none;
-}
-
+/******************************
+    YABE Common footer
+*******************************/
 footer {
     padding-top: 70px;
     background: #ccc5b9;
@@ -716,7 +725,7 @@ footer {
 
 
 /******************************
-    Mobile responsive
+    Mobile responsive nav & footer
 *******************************/
 @media only screen and (max-width: 767px) {
     nav {
