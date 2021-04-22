@@ -1,12 +1,8 @@
 const PWD_VIS_TOGGLE = document.querySelector(".toggle-password-visibility");
 const PWD_FIELD = document.getElementById("password");
 
-PWD_FIELD.addEventListener("focusin", function () {
+PWD_FIELD.addEventListener("input", function () {
     PWD_VIS_TOGGLE.setAttribute("style", "display: inline;");
-});
-
-PWD_FIELD.addEventListener("", function () {
-    PWD_VIS_TOGGLE.setAttribute("style", "display: none;");
 });
 
 PWD_VIS_TOGGLE.addEventListener("click", function () {
