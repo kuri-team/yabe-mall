@@ -248,6 +248,48 @@ hr {
     margin-right: 11px;
 }
 
+.breadcrumb {
+    margin: 30px auto 50px;
+    padding: 0;
+    width: 80%;
+}
+
+.breadcrumb li {
+    display: inline;
+}
+
+.breadcrumb li:first-child a {
+    padding-left: 0;
+}
+
+.breadcrumb a {
+    color: #403d39;
+    text-decoration: none;
+    padding: 0 7px;
+    margin-right: 10px;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.content-title {
+    margin: 30px auto 5px;
+    width: 80%;
+    font-family: 'Roboto', 'Arial', sans-serif;
+    font-weight: normal;
+}
+
+.content-body {
+    margin: 30px auto 100px;
+    width: 80%;
+    background-color: #fff;
+}
+
+.content-text {
+    padding: 30px 70px;
+}
+
 
 /******************************
     YABE Common navigation bar
@@ -577,48 +619,10 @@ nav a {
     }
 }
 
-.breadcrumb {
-    margin: 30px auto 50px;
-    padding: 0;
-    width: 80%;
-}
 
-.breadcrumb li {
-    display: inline;
-}
-
-.breadcrumb li:first-child a {
-    padding-left: 0;
-}
-
-.breadcrumb a {
-    color: #403d39;
-    text-decoration: none;
-    padding: 0 7px;
-    margin-right: 10px;
-}
-
-.breadcrumb a:hover {
-    text-decoration: underline;
-}
-
-.content-title {
-    margin: 30px auto 5px;
-    width: 80%;
-    font-family: 'Roboto', 'Arial', sans-serif;
-    font-weight: normal;
-}
-
-.content-body {
-    margin: 30px auto 100px;
-    width: 80%;
-    background-color: #fff;
-}
-
-.content-text {
-    padding: 30px 70px;
-}
-
+/******************************
+    YABE Common footer
+*******************************/
 footer {
     padding-top: 70px;
     background: #ccc5b9;
@@ -700,7 +704,7 @@ footer {
 
 
 /******************************
-    Mobile responsive
+    Mobile responsive nav & footer
 *******************************/
 @media only screen and (max-width: 767px) {
     nav {
