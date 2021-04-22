@@ -290,6 +290,24 @@ hr {
     padding: 30px 70px;
 }
 
+.content-nav-bttn {
+    color: #eb5e28;
+    text-decoration: underline;
+    font-size: 12pt;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.content-nav-bttn:hover {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.circle-img {
+    border-radius: 50%;
+}
+
 
 /******************************
     YABE Common navigation bar
