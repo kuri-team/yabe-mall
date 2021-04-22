@@ -8,7 +8,7 @@ const GALLERIES_CONTENTS = document.querySelectorAll(".card-gallery-content");
 // Gallery auto infinite scrolling
 const DEFAULT_SCROLL_SPEED = 0.05;
 const MAX_SCROLL_SPEED = 5;
-const DEFAULT_SCROLL_VECTOR = 1;
+const DEFAULT_SCROLL_VECTOR = 1;  // This number must always be positive for card gallery buttons to work as intended
 
 if (GALLERIES.length !== GALLERIES_CONTENTS.length ||
     GALLERIES_LEFT_BTTNS.length !== GALLERIES.length ||
