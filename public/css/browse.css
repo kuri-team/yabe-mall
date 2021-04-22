@@ -9,7 +9,7 @@
     -webkit-appearance: button;  /* Compatibility with Safari */
 }
 
-.store-list .product-list {
+.store-list, .product-list {
     text-align: left;
     padding-bottom: 1em;
 }
