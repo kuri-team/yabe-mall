@@ -7,8 +7,8 @@ const GALLERIES_CONTENTS = document.querySelectorAll(".card-gallery-content");
 
 // Gallery auto infinite scrolling
 const DEFAULT_SCROLL_SPEED = 0.05;
-const MAX_SCROLL_SPEED = 100;
-const DEFAULT_SCROLL_DIR = 1;
+const MAX_SCROLL_SPEED = 10;
+const DEFAULT_SCROLL_VECTOR = 1;
 
 if (GALLERIES.length !== GALLERIES_CONTENTS.length ||
     GALLERIES_LEFT_BTTNS.length !== GALLERIES.length ||
@@ -33,7 +33,7 @@ if (GALLERIES.length !== GALLERIES_CONTENTS.length ||
     }
 
     // Scrolling implementation
-    let scrollDir = DEFAULT_SCROLL_DIR;
+    let scrollVector = DEFAULT_SCROLL_VECTOR;
     let scrollStatus = [];
     let scrollFastStatus = [];
     let scrollPositions = [];
@@ -52,7 +52,7 @@ if (GALLERIES.length !== GALLERIES_CONTENTS.length ||
             setInterval(function () {
                 if (scrollStatus[index]) {
                     GALLERIES_CONTENTS[index].scroll(scrollPositions[index], 0);
-                    scrollPositions[index] += scrollDir;
+                    scrollPositions[index] += scrollVector;
                 }
             }, 1 / DEFAULT_SCROLL_SPEED);
 
@@ -77,7 +77,7 @@ if (GALLERIES.length !== GALLERIES_CONTENTS.length ||
             setInterval(function () {
                 if (scrollFastStatus[index] && scrollPositions[index] >= 0) {
                     GALLERIES_CONTENTS[index].scroll(scrollPositions[index], 0);
-                    scrollPositions[index] += scrollDir;
+                    scrollPositions[index] += scrollVector;
                 }
 
                 if (scrollPositions[index] < 0) {
@@ -87,22 +87,22 @@ if (GALLERIES.length !== GALLERIES_CONTENTS.length ||
 
             GALLERIES_LEFT_BTTNS[index].addEventListener("mousedown", function () {
                 scrollFastStatus[index] = true;
-                scrollDir = -1;
+                scrollVector = -1;
             });
 
             GALLERIES_LEFT_BTTNS[index].addEventListener("mouseup", function () {
                 scrollFastStatus[index] = false;
-                scrollDir = DEFAULT_SCROLL_DIR;
+                scrollVector = DEFAULT_SCROLL_VECTOR;
             });
 
             GALLERIES_RIGHT_BTTNS[index].addEventListener("mousedown", function () {
                 scrollFastStatus[index] = true;
-                scrollDir = 1;
+                scrollVector = 1;
             });
 
             GALLERIES_RIGHT_BTTNS[index].addEventListener("mouseup", function () {
                 scrollFastStatus[index] = false;
-                scrollDir = DEFAULT_SCROLL_DIR;
+                scrollVector = DEFAULT_SCROLL_VECTOR;
             });
 
             // Infinite scrolling
