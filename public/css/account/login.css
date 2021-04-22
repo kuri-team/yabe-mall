@@ -80,22 +80,22 @@ body {
 }
 
 /* unvisited link */
-a:link {
+main a {
     color: #CCC5B9;
 }
 
 /* visited link */
-a:visited {
+main a:visited {
     color: #EB5E28;
 }
 
 /* mouse over link */
-a:hover {
-    color: black;
+main a:hover {
+    color: white;
 }
 
 /* selected link */
-a:active {
+main a:active {
     color: #EB5E28;
 }
 
