@@ -1,12 +1,3 @@
-.store-list {
-    text-align: left;
-    padding-bottom: 1em;
-}
-
-.product-list {
-    text-align: left;
-    padding-bottom: 1em;
-}
 .select-list {
     outline: none;
     border: none;
@@ -18,8 +9,14 @@
     -webkit-appearance: button;  /* Compatibility with Safari */
 }
 
+.store-list, .product-list {
+    text-align: left;
+    padding-bottom: 1em;
+}
+
+/** RESPONSIVE FOR MOBILE DEVICES **/
 @media only screen and (max-width: 1080px) {
-    .product-card, .store-list .flex-wrap .store-card{
+    .store-list .flex-wrap .store-card, .product-card{
         width: 48%;
         margin: 2px;
     }
@@ -35,3 +32,4 @@
         justify-content: space-between;
     }
 }
+/****/
