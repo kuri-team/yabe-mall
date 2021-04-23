@@ -1,30 +1,15 @@
-main {
-    margin: 0;
-    padding: 0;
-    outline: none;
-}
-
-.container {
-    margin: 100px auto;
-    width: 330px;
-    background: #fff;
-    text-align: center;
-    border-radius: 24px;
-    padding: 50px 35px 10px 35px;
-}
-
-.container h1 {
+h1 {
     font-size: 35px;
     font-weight: 600;
     margin: 0 0 30px 0;
 }
 
-.container .form-outer {
+.form-outer {
     width: 100%;
-    overflow: hidden;
+    overflow: scroll;
 }
 
-.container .form-outer form {
+.form-outer form {
     display: flex;
     width: 400%;
 }
@@ -39,7 +24,7 @@ main {
     font-weight: 500;
 }
 
-.form-outer form .page .field{
+.form-outer form .page .field {
     width: 330px;
     height: 45px;
     margin: 45px 0;
@@ -47,8 +32,8 @@ main {
     position: relative;
 }
 
-form .page .field .label{
-    /*for the label to be on top of the input field*/
+form .page .field .label {
+    /* for the label to be on top of the input field */
     position: absolute;
     top: -30px;
     font-weight: 500;
@@ -66,11 +51,11 @@ form .page .field .label{
     background: #555555;
 }
 
-#shopper, #store_owner {
+#shopper, #store-owner {
     width: 5%;
 }
 
-#store_owner {
+#store-owner {
     margin-top: -2%;
 }
 
@@ -98,7 +83,7 @@ form .page .field select {
     border-radius: 24px;
 }
 
-form .page .field button{
+form .page .field button {
     width: 100%;
     height: calc(100% + 5px);
     border: none;
@@ -113,34 +98,34 @@ form .page .field button{
     transition: 0.5s ease;
 }
 
-form .page .field button:hover{
+form .page .field button:hover {
     background: #cd4813;
 }
 
-form .page .btns button.next{
+form .page .btns button.next {
     margin-left: 3px;
 }
 
-.container .progress-bar{
+.progress-bar {
     display: flex;
     margin: 40px 0;
     user-select: none;
 }
 
-.container .progress-bar .step{
+.progress-bar .step {
     text-align: center;
     width: 100%;
     position: relative;
 }
 
-.container .progress-bar .step p{
+.progress-bar .step p {
     font-weight: 500;
     font-size: 18px;
     color: #000;
     margin-bottom: 8px;
 }
 
-.progress-bar .step .point{
+.progress-bar .step .point {
     height: 25px;
     width: 25px;
     border: 2px solid #000;
@@ -152,63 +137,38 @@ form .page .btns button.next{
     line-height: 25px;
 }
 
-.progress-bar .step .point.active{
-    border-color: #BAB1A0;
-    background: #BAB1A0;
+.progress-bar .step .point.active {
+    border-color: #bab1a0;
+    background: #bab1a0;
 }
 
-.progress-bar .step .point span{
-    /*position: absolute;*/
+.progress-bar .step .point span {
     left: 50%;
     transform: translateX(-50%);
 }
 
-.progress-bar .step .point.active span{
+.progress-bar .step .point.active span {
     display: none;
 }
 
-.progress-bar .step .point:before,
-.progress-bar .step .point:after{
-    /* the progress line transition */
-    position: absolute;
-    content: '';
-    bottom: 11px;
-    right: -51px;
-    height: 3px;
-    width: 44px;
-    background: #262626;
-}
-
-.progress-bar .step .point.active:after{
-    background: #EB5E28;
-    transform: scaleX(0);
-    transform-origin: left;
-    animation: animate 0.3s linear forwards;
-}
-
-@keyframes animate {
-    100%{
-        transform: scaleX(1);
-    }
-}
-
-.progress-bar .step:last-child .point:before,
-.progress-bar .step:last-child .point:after{
-    display: none;
-}
-
-.progress-bar .step p.active{
-    color: #EB5E28;
+.progress-bar .step p.active {
+    color: #eb5e28;
     transition: 0.2s linear;
 }
 
-.progress-bar .step .check{
+.progress-bar .step .check {
     left: 50%;
     top: 70%;
     display: none;
 }
 
-.progress-bar .step .check.active{
+.progress-bar .step .check.active {
     display: block;
     color: #fff;
+}
+
+@keyframes animate {
+    100% {
+        transform: scaleX(1);
+    }
 }
