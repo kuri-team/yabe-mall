@@ -79,10 +79,6 @@ if (GALLERIES.length !== GALLERIES_CONTENTS.length ||
                     GALLERIES_CONTENTS[index].scroll(scrollPositions[index], 0);
                     scrollPositions[index] += scrollVector;
                 }
-
-                if (scrollPositions[index] < 0) {
-                    scrollPositions[index] = 0;
-                }
             }, 1 / MAX_SCROLL_SPEED);
 
             GALLERIES_LEFT_BTTNS[index].addEventListener("mousedown", function () {
@@ -109,9 +105,7 @@ if (GALLERIES.length !== GALLERIES_CONTENTS.length ||
             setInterval(function () {
                 if (scrollPositions[index] < 0) {
                     scrollPositions[index] = GALLERIES_CONTENTS[index].scrollWidth / 2;
-                }
-
-                if (scrollPositions[index] > GALLERIES_CONTENTS[index].scrollWidth / 2) {
+                } else if (scrollPositions[index] > GALLERIES_CONTENTS[index].scrollWidth / 2) {
                     scrollPositions[index] = 0;
                 }
             }, 1 / MAX_SCROLL_SPEED);
