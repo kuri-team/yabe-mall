@@ -73,3 +73,23 @@ for (let i = 0; i < NAV_SEARCH_FILTER_OPTIONS.length; i++) {
         NAV_SEARCH_FILTER.firstChild.nodeValue = newFilterTexts.join(separator);
     });
 }
+
+/**
+ * Cookie consent message
+ */
+const COOKIE_CONSENT= document.querySelector(".cookie-consent");
+acceptButton = COOKIE_CONSENT.querySelector(".cookie-consent-accept");
+
+function hideAfterClick(){
+    document.cookie = "yabe=yabe-online-mall; max-age=60*60*24*30" //cookie exists for 30 days
+    if(document.cookie) { //if the cookie is activated
+        COOKIE_CONSENT.classList.add("hide"); // add "hide" to activate ".cookie-consent.hide"
+    }
+    else {
+        alert("cannot set cookies");
+    }
+}
+
+// create cookie after clicking "accept"
+acceptButton.addEventListener("click",hideAfterClick);
+// create cookie after clicking an item
