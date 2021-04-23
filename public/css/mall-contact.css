@@ -24,6 +24,10 @@
     height: 40px;
 }
 
+span {
+    font-size: .5rem;
+}
+
 textarea {
     display: block;
     height: 90px;
@@ -44,6 +48,10 @@ textarea {
 
 .contact-form p ~ p {
     padding-top: 6px;
+}
+/*highlight the border if users does not put any input*/
+input:invalid {
+    border-color: #EB5E28;
 }
 
 /* Responsive design */

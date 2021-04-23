@@ -79,7 +79,7 @@
     <h1 class="content-title">CONTACT US</h1>
 
     <div class="content-body">
-        <form class="contact-form" action="" method="get" name="contact-form">
+        <form id="contact-form" class="contact-form" action="" method="get" name="contact-form">
             <label for="purpose" class="title">Contact Purpose*</label>
             <select id="purpose" name="contact_purpose" class="field" required>
                 <option value="" selected>Select an option</option>
@@ -108,9 +108,13 @@
             <input id="email_add" type="email" name="email_add" class="field"
                 placeholder="This field is required" required>
 
-            <label for="phone_num" class="title">Phone*</label>
-            <input id="phone_num" type="text" name="phone_num" class="field"
-                placeholder="This field is required" required>
+            <label for="phone_num" class="title">Phone*
+                <span>Ex: 0123456789 or 0-1-2-3.4.5 6.7-8-9 or 012.345-6789</span>
+            </label>
+<!--            minlength 9, maxlength 11 character validation-->
+            <input id="phone_num" type="tel" name="phone_num" class="field"
+                   pattern=".{9,11}" placeholder="This field is required" required>
+
 
             <p>Preferred Contact Method*</p>
             <div class="contact-method">
@@ -124,7 +128,7 @@
             </div>
 
             <p>Contact Days</p>
-            <div class="contact-day-checkbox flex-container flex-justify-content-space-between
+            <div id="checkbox-form" class="contact-day-checkbox flex-container flex-justify-content-space-between
                 flex-align-items-center flex-wrap">
                 <div class="contact-day">
                     <input type="checkbox" id="mon" name="contact_day[]" value="monday">
@@ -163,7 +167,7 @@
             </div>
 
             <label for="message" class="title">Message</label>
-            <textarea name="message" id="message" cols="50" rows="7"></textarea>
+            <textarea name="message" id="message" cols="50" rows="7" required></textarea>
 
             <div class="flex-container flex-justify-content-space-between flex-wrap">
                 <input class="clear-bttn" type="reset" name="reset" value="CLEAR">
@@ -172,8 +176,6 @@
         </form>
     </div>
   </main>
-  <script src="../../js/contact/contact.js"></script>
-
   <footer>
     <div class="flex-container flex-justify-content-center flex-align-items-start">
       <div class="footer-menu-item" id="footer-logo">
@@ -220,6 +222,7 @@
       <p>&copy;2021 YABE</p>
     </div>
   </footer>
+  <script src="../../js/contact/contact.js"></script>
   <script src="../../js/common.js"></script>
 </body>
 </html>
