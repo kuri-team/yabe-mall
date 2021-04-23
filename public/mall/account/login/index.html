@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="../../../css/common.css">
+  <link rel="stylesheet" href="../../../css/account/common.css">
   <link rel="stylesheet" href="../../../css/account/login.css">
 
   <script src="https://kit.fontawesome.com/492245eeb1.js" crossorigin="anonymous"></script>
@@ -68,45 +69,27 @@
   </div>
 </header>
 
-<main>
-  <form class="login-container" action="" method="post">  <!-- TODO: Add .content-body from common.css -->
+<main class="dialog-container">
+  <form action="../my-account" method="post" autocomplete="on">
     <h1>READY? GO</h1>
-    <label><input type="text" name="" placeholder="Username or email"  autocomplete="username" required></label>
-    <label><input type="password" name="" placeholder="Password" autocomplete="current-password" required></label>
-    <span><i class="fas fa-eye"></i> </span>
+    <label><input id="username" type="text" name="username" placeholder="Phone / Email" required></label>
+    <label><input class="password-field" type="password" name="password" placeholder="Password" required></label>
+    <div class="toggle-password-visibility"><i class="fas fa-eye"></i></div>
     <input type="submit" name="" value="LOGIN">
-
-    <section class="level">
-      <div id="forgot-pw">
-        <div>
-          <a href="../forgot-password">Forgot Password?</a>
-        </div>
-      </div>
-      <div id="create-account">
-        <div>
-          <a href="../my-account">Create an Account</a>
-        </div>
-      </div>
-    </section>
-
   </form>
 
-  <script> <!-- TODO: move these scripts to external file -->
-    const passField = document.querySelector("input");
-    const showBtn = document.querySelector("span i");
-
-    showBtn.onclick = (()=>{
-      if(passField.type === "password"){
-        passField.type = "text";
-        showBtn.classList.add("hide-btn");
-      }else{
-        passField.type = "password";
-        showBtn.classList.remove("hide-btn");
-      }
-    });
-  </script>
-
-
+  <section class="level">
+    <div id="forgot-pw">
+      <div>
+        <a href="../forgot-password">Forgot Password?</a>
+      </div>
+    </div>
+    <div id="create-account">
+      <div>
+        <a href="../my-account">Create an Account</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -156,5 +139,6 @@
 </footer>
 
 <script src="../../../js/common.js"></script>
+<script src="../../../js/account/common.js"></script>
 </body>
 </html>
