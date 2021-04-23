@@ -29,6 +29,27 @@ body {
     cursor: pointer;
 }
 
+.dialog-container input[type="text"],
+.dialog-container input[type="password"] {
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 1px solid #252422;
+    padding: 14px 10px;
+    width: 300px;
+    outline: none;
+    color: #252422;
+    border-radius: 24px;
+    transition: 0.5s;
+}
+
+.dialog-container input[type="text"]:focus,
+.dialog-container input[type="password"]:focus {
+    width: 280px;
+    border-color: #eb5e28;
+}
+
 .dialog-container input[type="submit"]:hover {
     background: #cd4813;
 }
