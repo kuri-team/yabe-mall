@@ -135,11 +135,11 @@
         <div class="page">
           <div class="field">
             <label class="label" for="email">Email Address</label>
-            <input id="email" type="text">
+            <input id="email" name="email" type="text">
           </div>
           <div class="field">
             <label class="label" for="phone">Phone Number</label>
-            <input id="phone" type="Number">
+            <input id="phone" name="tel" type="text">
           </div>
           <div class="field">
             <button class="prev">Previous</button>
@@ -150,15 +150,15 @@
         <div class="page">
           <div class="field">
             <label class="label" for="address">Address</label>
-            <input id="address" type="text">
+            <input id="address" name="addr" type="text">
           </div>
           <div class="field">
             <label class="label" for="city">City</label>
-            <input id="city" type="text">
+            <input id="city" name="city" type="text">
           </div>
           <div class="field">
             <label class="label" for="zipcode">Zipcode</label>
-            <input id="zipcode" type="text">
+            <input id="zipcode" name="zip" type="text">
           </div>
           <div class="field">
             <label class="label" for="country">Country</label>
@@ -415,7 +415,7 @@
               <option name="country" value="Zimbabwe">Zimbabwe</option>
             </select>
           </div>
-          <div class="field btns">
+          <div class="field">
             <button class="prev">Previous</button>
             <button class="next">Next</button>
           </div>
@@ -428,23 +428,22 @@
           </div>
           <div class="field">
             <label class="label" for="pwd">Password</label>
-            <input id="pwd" name="pwd" type="password" required="required">
+            <input id="pwd" name="pwd" type="password" required>
           </div>
           <div class="field">
-            <div class="label">
-              Reset Password</div>
-            <label><input type="password" required="required"></label>
+            <label class="label" for="retype-pwd">Reset Password</label>
+            <input id="retype-pwd" name="retype-pwd" type="password" required>
           </div>
           <div class="field">
-            <div class="label">Who are you?</div>
-            <input type="radio" name="Account_type" id="store-owner" value="Store Owner" required="required">
-            <label for="store-owner">Store Owner</label>
-            <input type="radio" name="Account_type" id="shopper" value="Shopper" required="required">
-            <label id="shopper-text" for="shopper">Shopper</label>
+            <p>Account Type</p>
+            <label class="label" for="store-owner">Store Owner</label>
+            <input type="radio" name="account_type" id="store-owner" value="Store Owner" required>
+            <label class="label" for="shopper">Shopper</label>
+            <input type="radio" name="account_type" id="shopper" value="Shopper" required>
           </div>
-          <div class="field btns">
-            <button class="prev-3 prev">Previous</button>
-            <button class="submit">Submit</button>
+          <div class="field">
+            <button class="prev">Previous</button>
+            <label><input class="submit" value="Submit"></label>
           </div>
         </div>
       </form>
