@@ -12,12 +12,32 @@ main h1 {
 }
 
 .label {
-    display: none;
+    margin: auto 10px;
 }
 
 .subtitle {
     margin: 0;
     padding: 0;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.register-item {
+    border: 1px solid #252422;
+    border-radius: 45px;
+}
+
+.register-item {
+    padding: 1rem;
+    margin: 0 20px;
+    border: 1px solid #252422;
+    border-radius: 45px;
+    outline: none;
+    transition: 0.5s;
+}
+
+.register-item:hover {
+    border: 1px solid #eb5e28;
 }
 
 .register-field select {
@@ -32,20 +52,9 @@ main h1 {
 .register-field input {
     padding: 1rem;
     margin: 0 20px;
-    border: 1px solid #252422;
-    border-radius: 45px;
+    border: none;
     outline: none;
     width: 100%;
-    transition: 0.5s;
-}
-
-.register-field select:focus,
-.register-field input:focus {
-    padding: 1rem;
-    margin: 0 20px;
-    border: 1px solid #eb5e28;
-    border-radius: 45px;
-    outline: none;
 }
 
 .register-field select,
