@@ -406,44 +406,46 @@
         <p class="subtitle">Account Type</p>
         <div class="register-field flex-container">
           <div class="register-field flex-container flex-align-items-center">
-            <label for="store-owner">Store Owner</label>
-            <input type="radio" name="account_type" id="store-owner" value="Store Owner" required checked>
+            <label for="shopper">Shopper</label>
+            <input type="radio" name="account_type" id="shopper" value="shopper" required checked>
           </div>
           <div class="register-field flex-container flex-align-items-center">
-            <label for="shopper">Shopper</label>
-            <input type="radio" name="account_type" id="shopper" value="Shopper" required>
+            <label for="store-owner">Store Owner</label>
+            <input type="radio" name="account_type" id="store-owner" value="store_owner" required>
           </div>
         </div>
       </div>
 
-      <div class="register-field flex-container">
-        <label class="label" for="business-name">Business Name</label>
-        <input type="text" name="business_name" id="business-name" value="" placeholder="Business Name">
-      </div>
+      <div id="store-owner-only">
+        <div class="register-field flex-container">
+          <label class="label" for="business-name">Business Name</label>
+          <input type="text" name="business_name" id="business-name" value="" placeholder="Business Name">
+        </div>
 
-      <div class="register-field">
-        <label class="label" for="store-name">Store Name</label>
-        <input type="text" name="store_name" id="store-name" value="" placeholder="Store Name">
-      </div>
+        <div class="register-field">
+          <label class="label" for="store-name">Store Name</label>
+          <input type="text" name="store_name" id="store-name" value="" placeholder="Store Name">
+        </div>
 
-      <div class="register-field">
-        <label class="label" for="store-category">Business Category</label>
-        <select name="store_cat" id="store-category">
-          <option name="store_cat" value="category">Business Category</option>
-          <option name="store_cat" value="department">Department Store</option>
-          <option name="store_cat" value="grocery">Grocery Store</option>
-          <option name="store_cat" value="restaurant">Restaurant</option>
-          <option name="store_cat" value="clothing">Clothing Store</option>
-          <option name="store_cat" value="accessory">Accessory Store</option>
-          <option name="store_cat" value="pharmacy">Pharmacy</option>
-          <option name="store_cat" value="technology">Technology Store</option>
-          <option name="store_cat" value="pet">Pet Store</option>
-          <option name="store_cat" value="toy">Toy Store</option>
-          <option name="store_cat" value="specialty">Specialty Store</option>
-          <option name="store_cat" value="thrift">Thrift Store</option>
-          <option name="store_cat" value="service">Service</option>
-          <option name="store_cat" value="kiosk">Kiosk</option>
-        </select>
+        <div class="register-field">
+          <label class="label" for="store-category">Business Category</label>
+          <select name="store_cat" id="store-category">
+            <option name="store_cat" value="category">Business Category</option>
+            <option name="store_cat" value="department">Department Store</option>
+            <option name="store_cat" value="grocery">Grocery Store</option>
+            <option name="store_cat" value="restaurant">Restaurant</option>
+            <option name="store_cat" value="clothing">Clothing Store</option>
+            <option name="store_cat" value="accessory">Accessory Store</option>
+            <option name="store_cat" value="pharmacy">Pharmacy</option>
+            <option name="store_cat" value="technology">Technology Store</option>
+            <option name="store_cat" value="pet">Pet Store</option>
+            <option name="store_cat" value="toy">Toy Store</option>
+            <option name="store_cat" value="specialty">Specialty Store</option>
+            <option name="store_cat" value="thrift">Thrift Store</option>
+            <option name="store_cat" value="service">Service</option>
+            <option name="store_cat" value="kiosk">Kiosk</option>
+          </select>
+        </div>
       </div>
       
       <div class="register-field flex-container flex-justify-content-space-between">
