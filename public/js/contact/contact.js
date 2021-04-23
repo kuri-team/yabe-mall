@@ -6,20 +6,20 @@ const phone_num = document.getElementById("phone_num");
 
 //Check email
 function checkEmail(input) {
-    let x=document.contact-form.email_add.value;
+    let x = document.contact - form.email_add.value;
     // email contains the @ and . character
-    let atposition=x.indexOf("@");
-    let dotposition=x.lastIndexOf(".");
+    let atposition = x.indexOf("@");
+    let dotposition = x.lastIndexOf(".");
     const char = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (char.test(input.value.trim())) {
         ShowSuccess(input);
-    }else {
+    } else {
         ShowError(input, "Invalid Email");
     }
     // At least one character before and after the @.
     // At least two characters after . (dot).
-    if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){
-        alert("Please enter a valid e-mail \n atpostion:"+atposition+"\n dotposition:"+dotposition);
+    if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= x.length) {
+        alert("Please enter a valid e-mail \n atpostion:" + atposition + "\n dotposition:" + dotposition);
         return false;
     }
 }
