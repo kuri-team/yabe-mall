@@ -57,20 +57,36 @@ if (GALLERIES.length !== GALLERIES_CONTENTS.length ||
             }, 1 / DEFAULT_SCROLL_SPEED);
 
             // Stop scrolling on mouseover and touch events
-            GALLERIES[index].addEventListener("mouseenter", function () {
+            GALLERIES_CONTENTS[index].addEventListener("mouseenter", function () {
                 scrollStatus[index] = false;
             });
 
-            GALLERIES[index].addEventListener("touchstart", function () {
+            GALLERIES_CONTENTS[index].addEventListener("touchstart", function () {
                 scrollStatus[index] = false;
             });
 
-            GALLERIES[index].addEventListener("mouseleave", function () {
+            GALLERIES_CONTENTS[index].addEventListener("mouseleave", function () {
                 scrollStatus[index] = true;
             });
 
-            GALLERIES[index].addEventListener("touchend", function () {
+            GALLERIES_CONTENTS[index].addEventListener("touchend", function () {
+                scrollStatus[index] = true;
+            });
+
+            GALLERIES_LEFT_BTTNS[index].addEventListener("mouseenter", function () {
                 scrollStatus[index] = false;
+            });
+
+            GALLERIES_LEFT_BTTNS[index].addEventListener("mouseleave", function () {
+                scrollStatus[index] = true;
+            });
+
+            GALLERIES_RIGHT_BTTNS[index].addEventListener("mouseenter", function () {
+                scrollStatus[index] = false;
+            });
+
+            GALLERIES_RIGHT_BTTNS[index].addEventListener("mouseleave", function () {
+                scrollStatus[index] = true;
             });
 
             // Gallery buttons behaviors
