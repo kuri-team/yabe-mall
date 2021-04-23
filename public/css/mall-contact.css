@@ -51,7 +51,11 @@ textarea {
 }
 /*highlight the border if users does not put any input*/
 input:invalid {
-    border-color: #EB5E28;
+    border-color: red;
+}
+input,
+input:valid {
+    border-color: #ccc;
 }
 
 /* Responsive design */

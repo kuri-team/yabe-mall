@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -94,13 +94,13 @@
                 <div class="name">
                     <label for="fname" class="title">First Name*</label>
                     <input id="fname" type="text" name="fname" class="name-field"
-                           placeholder="This field is required" required>
+                           placeholder="This field is required" pattern="[a-z]{3,15}" required>
                 </div>
 
                 <div class="name">
                     <label for="lname" class="title">Last Name*</label>
                     <input id="lname" type="text" name="lname" class="name-field"
-                           placeholder="This field is required" required>
+                           placeholder="This field is required" pattern="[a-z]{3,15}" required>
                 </div>
             </div>
 
@@ -113,7 +113,7 @@
             </label>
 <!--            minlength 9, maxlength 11 character validation-->
             <input id="phone_num" type="tel" name="phone_num" class="field"
-                   pattern=".{9,11}" placeholder="This field is required" required>
+                   pattern="{9,11}" placeholder="This field is required" required>
 
 
             <p>Preferred Contact Method*</p>
@@ -169,6 +169,7 @@
 
             <label for="message" class="title">Message</label>
             <textarea name="message" id="message" cols="50" rows="7" required></textarea>
+            <div id="remaining-letters">500 letters remaining</div>
 
             <div class="flex-container flex-justify-content-space-between flex-wrap">
                 <input class="clear-bttn" type="reset" name="reset" value="CLEAR">

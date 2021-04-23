@@ -103,4 +103,22 @@ form.addEventListener('submit', function(e){
 
     init();
 })();
+// error message for name
+let nameError = document.getElementById('fname, lname');
+nameError.oninvalid = function(event) {
+    event.target.setCustomValidity('PLease enter at least 3 characters!');
+}
 
+let messageError = document.getElementById('message');
+messageError.oninvalid = function(event) {
+    event.target.setCustomValidity('PLease enter 50 to 500 letters!');
+}
+
+const messageCharacter = document.getElementById("message");
+const remainingLetter = document.getElementById("remaining-letters");
+const maxCharacter = 250;
+
+message.addEventListener("input", () => {
+    const remaining = maxCharacter - messageCharacter.value.length;
+    remainingLetter.textContent = `${remaining} letters remaining`;
+})
