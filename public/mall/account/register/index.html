@@ -76,55 +76,59 @@
       <div class="register-field flex-container">
         <div class="register-field flex-container">
           <label class="label" for="fname">First Name</label>
-          <input id="fname" name="fname" type="text">
+          <input id="fname" name="fname" type="text" placeholder="First Name" required>
         </div>
 
         <div class="register-field flex-container">
           <label class="label" for="lname">Last Name</label>
-          <input id="lname" name="lname" type="text">
+          <input id="lname" name="lname" type="text" placeholder="Last Name" required>
         </div>
       </div>
 
-      <div class="register-field flex-container flex-direction-column">
-        <label class="label" for="gender">Gender</label>
-        <select id="gender" name="gender">
-          <option value="male" name="gender">Male</option>
-          <option value="female" name="gender">Female</option>
-          <option value="pnts" name="gender">Prefer not to say</option>
-        </select>
+      <div class="register-field flex-container">
+        <div class="register-field flex-container">
+          <label class="label" for="gender">Gender</label>
+          <select id="gender" name="gender">
+            <option value="gender" name="gender">Gender</option>
+            <option value="male" name="gender">Male</option>
+            <option value="female" name="gender">Female</option>
+            <option value="pnts" name="gender">Prefer not to say</option>
+          </select>
+        </div>
+        <div class="register-field flex-container">
+          <label class="label" for="birthdate">Birthdate</label>
+          <input id="birthdate" type="date" name="birthdate">
+        </div>
       </div>
 
-      <div class="register-field flex-container flex-direction-column">
-        <label class="label" for="birthdate">Birthdate</label>
-        <input id="birthdate" type="date" name="birthdate">
+      <div class="register-field flex-container">
+        <label class="label" for="email">Email</label>
+        <input id="email" name="email" type="text" placeholder="Email" required>
       </div>
 
-      <div class="register-field flex-container flex-direction-column">
-        <label class="label" for="email">Email Address</label>
-        <input id="email" name="email" type="text">
-      </div>
-
-      <div class="register-field">
+      <div class="register-field flex-container">
         <label class="label" for="phone">Phone Number</label>
-        <input id="phone" name="tel" type="text">
+        <input id="phone" name="tel" type="text" placeholder="Phone Number">
       </div>
 
-      <div class="register-field">
+      <div class="register-field flex-container">
         <label class="label" for="address">Address</label>
-        <input id="address" name="addr" type="text">
+        <input id="address" name="addr" type="text" placeholder="Address">
       </div>
 
-      <div class="register-field">
-        <label class="label" for="city">City</label>
-        <input id="city" name="city" type="text">
+      <div class="register-field flex-container">
+        <div class="register-field flex-container">
+          <label class="label" for="city">City</label>
+          <input id="city" name="city" type="text" placeholder="City">
+        </div>
+
+        <div class="register-field flex-container">
+          <label class="label" for="zipcode">Zipcode</label>
+          <input id="zipcode" name="zip" type="text" placeholder="Zipcode">
+        </div>
       </div>
 
-      <div class="register-field">
-        <label class="label" for="zipcode">Zipcode</label>
-        <input id="zipcode" name="zip" type="text">
-      </div>
-
-      <div class="register-field">
+      <div class="register-field flex-container">
         <label class="label" for="country">Country</label>
         <select id="country" name="country">
           <option name="country" value="Country">Country</option>
@@ -380,46 +384,52 @@
         </select>
       </div>
 
-      <div class="register-field">
+      <div class="register-field flex-container">
         <label class="label" for="usrname">Username</label>
-        <input id="usrname" name="usrname" type="text">
+        <input id="usrname" name="usrname" type="text" placeholder="Username" required>
       </div>
 
-      <div class="register-field">
-        <div class="register-field">
+      <div class="register-field flex-container">
+        <div class="register-field flex-container">
           <label class="label" for="pwd">Password</label>
-          <input id="pwd" class="password-field" name="pwd" type="password" required>
+          <input id="pwd" class="password-field" name="pwd" type="password" placeholder="Verify Password" required>
           <div class="toggle-password-visibility"><i class="fas fa-eye"></i></div>
         </div>
-
-        <div class="register-field">
+        <div class="register-field flex-container">
           <label class="label" for="verify-pwd">Verify Password</label>
-          <input id="verify-pwd" class="password-field" name="verify-pwd" type="password" required>
+          <input id="verify-pwd" class="password-field" name="verify-pwd" type="password" placeholder="Verify Password" required>
           <div class="toggle-password-visibility"><i class="fas fa-eye"></i></div>
         </div>
       </div>
 
-      <div class="register-field">
-        <p>Account Type</p>
-        <label class="label" for="store-owner">Store Owner</label>
-        <input type="radio" name="account_type" id="store-owner" value="Store Owner" required checked>
-        <label class="label" for="shopper">Shopper</label>
-        <input type="radio" name="account_type" id="shopper" value="Shopper" required>
+      <div class="register-field flex-container flex-direction-column">
+        <p class="subtitle">Account Type</p>
+        <div class="register-field flex-container">
+          <div class="register-field flex-container flex-align-items-center">
+            <label for="store-owner">Store Owner</label>
+            <input type="radio" name="account_type" id="store-owner" value="Store Owner" required checked>
+          </div>
+          <div class="register-field flex-container flex-align-items-center">
+            <label for="shopper">Shopper</label>
+            <input type="radio" name="account_type" id="shopper" value="Shopper" required>
+          </div>
+        </div>
       </div>
 
-      <div class="register-field">
+      <div class="register-field flex-container">
         <label class="label" for="business-name">Business Name</label>
-        <input type="text" name="business_name" id="business-name" value="">
+        <input type="text" name="business_name" id="business-name" value="" placeholder="Business Name">
       </div>
 
       <div class="register-field">
         <label class="label" for="store-name">Store Name</label>
-        <input type="text" name="store_name" id="store-name" value="">
+        <input type="text" name="store_name" id="store-name" value="" placeholder="Store Name">
       </div>
 
       <div class="register-field">
-        <label class="label" for="store-category">Business Name</label>
+        <label class="label" for="store-category">Business Category</label>
         <select name="store_cat" id="store-category">
+          <option name="store_cat" value="category">Business Category</option>
           <option name="store_cat" value="department">Department Store</option>
           <option name="store_cat" value="grocery">Grocery Store</option>
           <option name="store_cat" value="restaurant">Restaurant</option>
@@ -436,7 +446,7 @@
         </select>
       </div>
       
-      <div class="register-field">
+      <div class="register-field flex-container flex-justify-content-space-between">
         <label><input type="reset" value="CLEAR"></label>
         <label><input type="submit" value="REGISTER"></label>
       </div>
