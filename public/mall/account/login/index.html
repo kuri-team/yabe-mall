@@ -6,6 +6,7 @@
 
   <link rel="stylesheet" href="../../../css/common.css">
   <link rel="stylesheet" href="../../../css/account/common.css">
+  <link rel="stylesheet" href="../../../css/account/login.css">
 
   <script src="https://kit.fontawesome.com/492245eeb1.js" crossorigin="anonymous"></script>
 
@@ -68,8 +69,27 @@
   </div>
 </header>
 
-<main>
+<main class="dialog-container">
+  <form action="../my-account" method="post" autocomplete="on">
+    <h1>READY? GO</h1>
+    <label><input id="username" type="text" name="username" placeholder="Phone / Email" required></label>
+    <label><input class="password-field" type="password" name="password" placeholder="Password" required></label>
+    <div class="toggle-password-visibility"><i class="fas fa-eye"></i></div>
+    <input type="submit" name="" value="LOGIN">
+  </form>
 
+  <section class="level">
+    <div id="forgot-pw">
+      <div>
+        <a href="../forgot-password">Forgot Password?</a>
+      </div>
+    </div>
+    <div id="create-account">
+      <div>
+        <a href="../my-account">Create an Account</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
