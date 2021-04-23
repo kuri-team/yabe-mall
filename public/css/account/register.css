@@ -7,3 +7,18 @@ main h1 {
 .register-form {}
 
 .register-field {}
+
+.register-field select {
+    overflow: hidden;
+    white-space: pre;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.toggle-password-visibility {
+    display: none;
+}
