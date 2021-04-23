@@ -23,11 +23,7 @@ main h1 {
 }
 
 .register-item {
-    border: 1px solid #252422;
-    border-radius: 45px;
-}
-
-.register-item {
+    width: 100%;
     padding: 1rem;
     margin: 0 20px;
     border: 1px solid #252422;
@@ -37,6 +33,7 @@ main h1 {
 }
 
 .register-item:hover {
+    width: 95%;
     border: 1px solid #eb5e28;
 }
 
@@ -54,7 +51,7 @@ main h1 {
     margin: 0 20px;
     border: none;
     outline: none;
-    width: 100%;
+    max-width: content-box;
 }
 
 .register-field select,
@@ -120,5 +117,8 @@ main h1 {
 }
 
 @media only screen and (max-width: 767px) {
-
+    .content-text {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
