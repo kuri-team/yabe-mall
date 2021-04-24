@@ -78,34 +78,35 @@
   <h1 class="content-title">My Account</h1>
 
   <div class="content-body">
-    <section class="content-text">
-      <article class="my-account-box">
-        <ul>
-          <li><span class="my-account-label">Username</span>tnathu-ai</li>
-          <li><span class="my-account-label">First Name</span>Anh Thu</li>
-          <li><span class="my-account-label">Last Name</span>Tran Ngoc</li>
-          <li><span class="my-account-label">Gender</span>Female</li>
-          <li><span class="my-account-label">Birthdate</span>10/20/2002</li>
-          <li><span class="my-account-label">Email</span>s3879312@rmit.edu.vn</li>
-          <li><span class="my-account-label">Phone Number</span>0123-456-789</li>
-          <li><span class="my-account-label">Address</span>702 Nguyen Van Linh Blvd., District 7</li>
-          <li><span class="my-account-label">City - Zipcode</span>Ho Chi Minh City 700000</li>
-          <li><span class="my-account-label">Country</span>Vietnam</li>
-          <li><span class="my-account-label">Account Type</span>Shopper</li>
+    <section class="content-text grid-container my-account-content">
+      <article class="my-account-box my-account-info-wrapper">
+        <ul class="my-account-info">
+          <li><label>Username</label>tnathu-ai</li>
+          <li><label>First Name</label>Anh Thu</li>
+          <li><label>Last Name</label>Tran Ngoc</li>
+          <li><label>Gender</label>Female</li>
+          <li><label>Birthdate</label>10/20/2002</li>
+          <li><label>Email</label>s3879312@rmit.edu.vn</li>
+          <li><label>Phone Number</label>0123-456-789</li>
+          <li><label>Address</label>702 Nguyen Van Linh Blvd., District 7</li>
+          <li><label>City - Zipcode</label>Ho Chi Minh City 700000</li>
+          <li><label>Country</label>Vietnam</li>
+          <li><label>Account Type</label>Shopper</li>
         </ul>
-        <a href=""><button>Edit</button></a>
+        <button class="my-account-info-edit-bttn">Edit</button>
       </article>
 
-      <article class="my-account-box">
+      <article class="my-account-box my-account-avatar-wrapper flex-container flex-justify-content-center flex-align-items-center">
         <img class="my-account-avatar circle-img" alt="profile picture" src="../../../media/image/thu.jpg">
       </article>
 
-      <article class="my-account-box">
-        <ul>
-          <li><a href="">My Orders</a></li>
-          <li><a href="">Payment Information</a></li>
-          <li><a href="">Password & Security</a></li>
-        </ul>
+      <article class="my-account-box my-account-links-wrapper">
+        <div class="my-account-links flex-container flex-direction-column flex-justify-content-space-evenly">
+          <a class="active" href="">Info</a>
+          <a href="">My Orders</a>
+          <a href="">Payment Information</a>
+          <a href="">Password & Security</a>
+        </div>
       </article>
     </section>
   </div>
