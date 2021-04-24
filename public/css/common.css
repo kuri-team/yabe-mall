@@ -772,17 +772,18 @@ footer {
 ***********************************/
 /* sticky cookie consent message as bottom banner */
 .cookie-consent {
+    display: none;
+}
+
+/* cookie consent message become invisible after clicking "accept" */
+.cookie-consent.active {
+    display: block;
     position: sticky;
     bottom: 0;
     background: #fff;
     box-shadow: 0 0 6px 0;
     padding: 16px;
     margin: 0 auto;
-}
-
-/* cookie consent message become invisible after clicking "accept" */
-.cookie-consent.hide {
-    display: none;
 }
 
 /* centralize content in the banner */
@@ -817,4 +818,15 @@ footer {
 
 .cookie-consent-accept:active {
     background: #555555;
+}
+
+/*responsive cookie consent message */
+@media (max-width: 768px) {
+    .cookie-consent.active{
+        padding: 1px 16px 18px;
+        font-size: 11pt;
+    }
+    .cookie-consent.active .text-align-justify{
+        margin-bottom: 5px;
+    }
 }
