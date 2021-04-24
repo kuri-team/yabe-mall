@@ -42,7 +42,7 @@
     outline: none;
 }
 
-.modal-box button:hover, .modal-box button:active {
+.modal-box button:hover {
     cursor: pointer;
 }
 /****/
