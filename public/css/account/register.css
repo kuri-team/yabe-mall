@@ -1,3 +1,7 @@
+body {
+    background: #ececec;
+}
+
 main h1 {
     font-size: 35px;
     font-weight: 600;
@@ -5,8 +9,17 @@ main h1 {
     padding: 0 50px;
 }
 
+.register-body {
+    background: #f7f7f7;
+}
+
 .no-border {
     border: none !important;
+}
+
+.animated-hover:hover {
+    margin-left: 20px !important;
+    margin-right: 20px !important;
 }
 
 .register-field {
@@ -39,8 +52,10 @@ main h1 {
     transition: 0.5s;
 }
 
-.register-item:hover {
+.register-item:hover,
+.register-item:focus-within {
     border: 1px solid #eb5e28;
+    background: #fff;
 }
 
 .register-field select {
@@ -58,6 +73,7 @@ main h1 {
     border: none;
     outline: none;
     max-width: content-box;
+    background: transparent;
 }
 
 .register-field select,
@@ -107,7 +123,8 @@ main h1 {
 
 .register-field input[type="submit"]:hover {
     border: 1px solid #252422;
-    background: #555555;
+    color: #252422;
+    background: #cdcdcd;
 }
 
 .register-field input[type="submit"]:active {
@@ -132,12 +149,31 @@ main h1 {
     form > .register-field {
         flex-direction: column;
     }
+
+    .register-item {
+        width: auto;
+    }
+
+    #store-owner-only .register-item {
+        width: inherit;
+    }
 }
 
 @media only screen and (max-width: 767px) {
     .content-text {
         padding-left: 0;
         padding-right: 0;
+    }
 
+    .register-field {
+        flex-direction: column;
+    }
+
+    .register-item {
+        width: auto !important;
+    }
+
+    #register-account-type-capture-area .register-item {
+        padding: 0;
     }
 }
