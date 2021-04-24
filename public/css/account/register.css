@@ -43,6 +43,16 @@ main h1 {
     border-bottom: 1px solid #cdcdcd;
 }
 
+#register-avatar img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+#register-avatar img:hover {
+    cursor: pointer;
+}
+
 .register-item {
     width: inherit;
     padding: 1rem;
