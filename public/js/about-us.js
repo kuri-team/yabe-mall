@@ -3,7 +3,7 @@ function toggleModalBox(modalBoxId) {
     const OVERLAY = document.getElementById("overlay-modal-window");
     let modalBox = document.getElementById(modalBoxId);
 
-    if (PAGEDIM.style.display === "none") {
+    if (window.getComputedStyle(PAGEDIM).display === "none") {
     PAGEDIM.style.display = "block";
     OVERLAY.style.display = "flex";
     modalBox.style.display = "block";
