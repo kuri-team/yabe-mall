@@ -2,9 +2,12 @@ main h1 {
     font-size: 35px;
     font-weight: 600;
     margin: 50px 0 100px 0;
+    padding: 0 50px;
 }
 
-.register-form {}
+.no-border {
+    border: none !important;
+}
 
 .register-field {
     width: 100%;
@@ -18,10 +21,12 @@ main h1 {
 }
 
 .subtitle {
-    margin: 0;
-    padding: 0;
+    margin: 100px 0 20px 0;
+    padding: 0 50px 5px 50px;
     font-size: larger;
     font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #cdcdcd;
 }
 
 .register-item {
@@ -32,10 +37,6 @@ main h1 {
     border-radius: 45px;
     outline: none;
     transition: 0.5s;
-}
-
-.register-form > .register-item {
-    margin: 20px 10px;
 }
 
 .register-item:hover {
@@ -71,8 +72,16 @@ main h1 {
     margin: auto 20px auto 0;
 }
 
+.register-form input[type="radio"] {
+    width: initial;
+}
+
 #store-owner-only {
     display: none;
+}
+
+.register-bttn-field {
+    margin: 100px 0 30px 0;
 }
 
 .register-field input[type="reset"] {
@@ -108,12 +117,13 @@ main h1 {
 
 .register-field input[type="reset"],
 .register-field input[type="submit"] {
-    margin: 0;
+    margin: 10px auto;
     width: 30%;
-    min-width: 150px;
+    min-width: 200px;
     height: 54px;
     border: 1px solid #252422;
     border-radius: 45px;
+    transition: 0.5s;
 }
 
 
