@@ -124,8 +124,8 @@ function myFunction() {
         advice = (50-T) + " more letters are needed !!"
         document.getElementById('remaining-letters').innerHTML = advice.fontcolor("red")
     }
-    else if (50 < T & T < 500) {
-        advice = "You can type" + T + " more letters"
+    else if (50 < T < 500) {
+        advice = "You can type " + (500-T) + " more letters"
         document.getElementById('remaining-letters').innerHTML = advice.fontcolor("blue")
     }
     else if( T > 500){
