@@ -805,18 +805,18 @@ footer {
 }
 
 .cookie-consent-learn-more {
-    background: #EB5E28;
+    background: #eb5e28;
 }
 
-.cookie-consent-learn-more:active{
-    background:#B0441E;;
+.cookie-consent-learn-more:hover {
+    background: #b0441e;
 }
 
 .cookie-consent-accept {
     background: #252422;
 }
 
-.cookie-consent-accept:active {
+.cookie-consent-accept:hover {
     background: #555555;
 }
 
