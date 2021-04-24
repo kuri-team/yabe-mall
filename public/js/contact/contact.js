@@ -104,21 +104,32 @@ form.addEventListener('submit', function(e){
     init();
 })();
 // error message for name
-let nameError = document.getElementById('fname, lname');
-nameError.oninvalid = function(event) {
-    event.target.setCustomValidity('PLease enter at least 3 characters!');
+// let nameError = document.getElementById('fname, lname');
+// nameError.oninvalid = function(event) {
+//     event.target.setCustomValidity('PLease enter at least 3 characters!');
+// }
+//
+// let messageError = document.getElementById('message');
+// messageError.oninvalid = function(event) {
+//     event.target.setCustomValidity('PLease enter 50 to 500 letters!');
+// }
+
+// message style to help visitors recognize the error easily
+document.getElementById("message").addEventListener("keyup", myFunction);
+function myFunction() {
+    let message = document.getElementById("message").value;
+    let T = message.length;
+    let advice;
+    if (T < 50){
+        advice = (50-T) + " more letters are needed !!"
+        document.getElementById('remaining-letters').innerHTML = advice.fontcolor("red")
+    }
+    else if (50 < T & T < 500) {
+        advice = "You can type" + T + " more letters"
+        document.getElementById('remaining-letters').innerHTML = advice.fontcolor("blue")
+    }
+    else if( T > 500){
+        advice = "Deleting "+ (T-500)+" letters is needed!!"
+        document.getElementById('remaining-letters').innerHTML = advice.fontcolor("red")
+    }
 }
-
-let messageError = document.getElementById('message');
-messageError.oninvalid = function(event) {
-    event.target.setCustomValidity('PLease enter 50 to 500 letters!');
-}
-
-const messageCharacter = document.getElementById("message");
-const remainingLetter = document.getElementById("remaining-letters");
-const maxCharacter = 250;
-
-message.addEventListener("input", () => {
-    const remaining = maxCharacter - messageCharacter.value.length;
-    remainingLetter.textContent = `${remaining} letters remaining`;
-})
