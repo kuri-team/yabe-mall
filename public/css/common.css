@@ -774,3 +774,68 @@ footer {
         transform: scaleY(1);
     }
 }
+
+
+/**********************************
+    YABE Cookie consent message
+***********************************/
+/* sticky cookie consent message as bottom banner */
+.cookie-consent {
+    display: none;
+}
+
+/* cookie consent message become invisible after clicking "accept" */
+.cookie-consent.active {
+    display: block;
+    position: sticky;
+    bottom: 0;
+    background: #fff;
+    box-shadow: 0 0 6px 0;
+    padding: 16px;
+    margin: 0 auto;
+}
+
+/* centralize content in the banner */
+.cookie-consent-container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* styling for buttons */
+.cookie-consent-button {
+    text-align: right;
+}
+
+.cookie-consent-button button {
+    padding: 10px 20px;
+    margin: 7px;
+    border: none;
+    color: #fff;
+}
+
+.cookie-consent-learn-more {
+    background: #eb5e28;
+}
+
+.cookie-consent-learn-more:hover {
+    background: #b0441e;
+}
+
+.cookie-consent-accept {
+    background: #252422;
+}
+
+.cookie-consent-accept:hover {
+    background: #555555;
+}
+
+/*responsive cookie consent message */
+@media (max-width: 768px) {
+    .cookie-consent.active{
+        padding: 1px 16px 18px;
+        font-size: 11pt;
+    }
+    .cookie-consent.active .text-align-justify{
+        margin-bottom: 5px;
+    }
+}
