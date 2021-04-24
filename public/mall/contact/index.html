@@ -106,7 +106,8 @@
 
             <label for="email_add" class="title">Email*</label>
             <input id="email_add" type="email" name="email_add" class="field"
-                placeholder="This field is required" required>
+                pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+            placeholder="This field is required" required>
 
             <label for="phone_num" class="title">Phone*
                 <span>Ex: 0123456789 or 0-1-2-3.4.5 6.7-8-9 or 012.345-6789</span>

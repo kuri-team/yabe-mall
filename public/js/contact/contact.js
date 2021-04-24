@@ -4,13 +4,14 @@ const lname = document.getElementById("lname");
 const email = document.getElementById("email");
 const phone_num = document.getElementById("phone_num");
 
+
 //Check email
 function checkEmail(input) {
     let x = document.contact - form.email_add.value;
     // email contains the @ and . character
     let atposition = x.indexOf("@");
     let dotposition = x.lastIndexOf(".");
-    const char = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const char = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (char.test(input.value.trim())) {
         ShowSuccess(input);
     } else {
@@ -25,13 +26,12 @@ function checkEmail(input) {
 }
 
 //check phone number
-function checkPhoneNum (inputtxt)
-{
+function checkPhoneNum (input) {
     let phone = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
-    if(inputtxt.contact-form.match(phone)) {
+    if(input.contact-form.match(phone)) {
         return true;
     }
-    else if (password.length < 11) {
+    else if (phone.length < 11) {
         alert("Phone number must be at least 11 characters long.");
         return false;
     }
@@ -103,16 +103,7 @@ form.addEventListener('submit', function(e){
 
     init();
 })();
-// error message for name
-// let nameError = document.getElementById('fname, lname');
-// nameError.oninvalid = function(event) {
-//     event.target.setCustomValidity('PLease enter at least 3 characters!');
-// }
-//
-// let messageError = document.getElementById('message');
-// messageError.oninvalid = function(event) {
-//     event.target.setCustomValidity('PLease enter 50 to 500 letters!');
-// }
+
 
 // message style to help visitors recognize the error easily
 document.getElementById("message").addEventListener("keyup", myFunction);
@@ -133,3 +124,4 @@ function myFunction() {
         document.getElementById('remaining-letters').innerHTML = advice.fontcolor("red");
     }
 }
+
