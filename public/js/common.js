@@ -91,6 +91,6 @@ setTimeout(function () {
 }, CONSENT_TIMEOUT);
 
 ACCEPT_BUTTON.addEventListener("click", function () {
-    document.cookie = "yabe=yabe-online-mall; max-age=60*60*24*30; path=/; SameSite=None; Secure";  //cookie exists for 30 days
+    document.cookie = "yabe=yabe-online-mall; max-age=60*60*24*30; path=/; SameSite=None; Secure";  // cookie exists for 30 days
     COOKIE_CONSENT.classList.remove("active");
 });
