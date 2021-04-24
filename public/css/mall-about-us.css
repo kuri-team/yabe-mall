@@ -1,3 +1,4 @@
+/** MODAL WINDOW STYLING **/
 #dimmed-page, #overlay-modal-window, .modal-box {
     display: none;
     position: -ms-device-fixed;
@@ -31,6 +32,20 @@
     padding: 20px;
     border-radius: 15px;
 }
+
+.modal-box button {
+    font-size: 20px;
+    background-color: inherit;
+    padding: 0 0 10px;
+    border: none;
+    outline: none;
+}
+
+.modal-box button:hover, .modal-box button:active {
+    cursor: pointer;
+}
+/****/
+
 
 main div {
     width: 80%;
