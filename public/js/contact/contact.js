@@ -50,7 +50,7 @@ function checkLenght(input, min, max) {
     if (input.value.length < min) {
         ShowError(input, `${getFieldName(input)} must be at least ${min} characters`);
     }else if(input.value.length > max){
-        ShowError(input, `${getFieldName(input)} must be less then ${max} characters`);
+        ShowError(input, `${getFieldName(input)} must be less than ${max} characters`);
     }else {
         ShowSuccess(input);
     }
