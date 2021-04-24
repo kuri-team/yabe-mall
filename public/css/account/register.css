@@ -152,7 +152,7 @@ main h1 {
     }
 
     .register-item {
-        width: auto;
+        width: 80% !important;
     }
 
     #store-owner-only .register-item {
@@ -168,10 +168,6 @@ main h1 {
 
     .register-field {
         flex-direction: column;
-    }
-
-    .register-item {
-        width: auto !important;
     }
 
     #register-account-type-capture-area .register-item {
