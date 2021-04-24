@@ -44,10 +44,13 @@ body {
     transition: 0.5s;
 }
 
+.dialog-container input[type="text"]:hover,
 .dialog-container input[type="text"]:focus,
+.dialog-container input[type="password"]:hover,
 .dialog-container input[type="password"]:focus {
     width: 280px;
     border-color: #eb5e28;
+    background: #fff;
 }
 
 .dialog-container input[type="submit"]:hover {
