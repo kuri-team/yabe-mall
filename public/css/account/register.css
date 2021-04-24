@@ -45,12 +45,24 @@ main h1 {
 
 #register-avatar img {
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 195px;
+    height: 195px;
+    transition: 0.1s;
 }
 
 #register-avatar img:hover {
     cursor: pointer;
+    border: 1px solid #eb5e28;
+    width: 200px;
+    height: 200px;
+}
+
+#register-avatar-upload-field {
+    display: none;
+}
+
+#register-avatar-upload-field .register-item {
+    background: #fff;
 }
 
 .register-item {
