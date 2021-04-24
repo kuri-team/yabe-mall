@@ -178,11 +178,11 @@ main h1 {
     }
 
     .register-item {
-        width: 80%;
+        width: 90%;
     }
 
     #store-owner-only .register-item {
-        width: inherit;
+        width: 100%;
     }
 }
 
@@ -196,7 +196,15 @@ main h1 {
         flex-direction: column;
     }
 
+    .register-item {
+        width: 80%;
+    }
+
     #register-account-type-capture-area .register-item {
         padding: 0;
+    }
+
+    #store-owner-only .register-item {
+        width: 80%;
     }
 }
