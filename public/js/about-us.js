@@ -1,15 +1,15 @@
 function toggleModalBox(modalBoxId) {
-    const PAGEDIM = document.getElementById("dimmed-page");
+    const PAGE_DIM = document.getElementById("dimmed-page");
     const OVERLAY = document.getElementById("overlay-modal-window");
-    let modalBox = document.getElementById(modalBoxId);
+    const MODAL_BOX = document.getElementById(modalBoxId);
 
-    if (window.getComputedStyle(PAGEDIM).display === "none") {
-    PAGEDIM.style.display = "block";
+    if (window.getComputedStyle(PAGE_DIM).display === "none") {
+    PAGE_DIM.style.display = "block";
     OVERLAY.style.display = "flex";
-    modalBox.style.display = "block";
+    MODAL_BOX.style.display = "block";
     } else {
-        PAGEDIM.style.display = "none";
+        PAGE_DIM.style.display = "none";
         OVERLAY.style.display = "none";
-        modalBox.style.display = "none";
+        MODAL_BOX.style.display = "none";
     }
 }
