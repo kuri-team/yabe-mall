@@ -94,13 +94,13 @@
                 <div class="name">
                     <label for="fname" class="title">First Name*</label>
                     <input id="fname" type="text" name="fname" class="name-field"
-                           placeholder="This field is required" pattern="[a-z]{3,15}" required>
+                           placeholder="This field is required" pattern="{3,15}" required>
                 </div>
 
                 <div class="name">
                     <label for="lname" class="title">Last Name*</label>
                     <input id="lname" type="text" name="lname" class="name-field"
-                           placeholder="This field is required" pattern="[a-z]{3,15}" required>
+                           placeholder="This field is required" pattern="{3,15}" required>
                 </div>
             </div>
 
@@ -113,7 +113,8 @@
             </label>
 <!--            minlength 9, maxlength 11 character validation-->
             <input id="phone_num" type="tel" name="phone_num" class="field"
-                   pattern="{9,11}" placeholder="This field is required" required>
+                   pattern="{9,11}" placeholder="This field is required"
+                   title="Phone number should only contain contains 9 to 11 digits" required>
 
 
             <p>Preferred Contact Method*</p>
