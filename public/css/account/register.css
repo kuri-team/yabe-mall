@@ -59,6 +59,10 @@ main h1 {
     background: #fff;
 }
 
+.register-item-photo-upload {
+    width: auto;
+}
+
 .register-field select {
     overflow: hidden;
     white-space: pre;
@@ -152,7 +156,7 @@ main h1 {
     }
 
     .register-item {
-        width: 80% !important;
+        width: 80%;
     }
 
     #store-owner-only .register-item {
