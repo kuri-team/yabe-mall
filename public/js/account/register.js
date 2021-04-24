@@ -4,7 +4,7 @@ const CAPTURE_AREA = document.getElementById("register-account-type-capture-area
 
 CAPTURE_AREA.addEventListener("click", function () {
     if (RADIO_STORE_OWNER.checked) {
-        STORE_OWNER_ONLY_FIELDS.setAttribute("style", "display: initial; animation: expand-top 0.5s; transform-origin: top;");
+        STORE_OWNER_ONLY_FIELDS.setAttribute("style", "display: initial; animation: expand-top 10s; transform-origin: top;");
     } else {
         STORE_OWNER_ONLY_FIELDS.setAttribute("style", "display: none;");
     }
