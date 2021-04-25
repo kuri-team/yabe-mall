@@ -43,7 +43,7 @@ function validation(selector) {
     }
 
     /* Check the phone number : If phone number is empty or value length less than 12 or is not a null then show error Invalid Phone number */
-    if (gPhone == "" || 9 <= gPhone.length <= 11 || isNaN(gPhone) || phonePattern.test(gPhone)) {
+    if (gPhone == "" || 9 <= gPhone.length <= 11 || phonePattern.test(gPhone)) {
         errNum++;
         err += errNum + ". Invalid phone number. Valid phone number contains 9 to 11 digits\n";
     }
@@ -62,7 +62,7 @@ function validation(selector) {
     }
 
     /* If you don't Enter anything in Message field than show error */
-    if (gMessage == "") {
+    if (gMessage == "" || 50 <= gPhone.length <= 500) {
         errNum++;
         err += errNum + ". Enter message contains 50 to 500 letters.\n";
     }
