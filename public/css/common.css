@@ -83,6 +83,46 @@ i {
     margin-right: 50px;
 }
 
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.mt-60 {
+    margin-top: 60px;
+}
+
+.mt-70 {
+    margin-top: 70px;
+}
+
+.mt-80 {
+    margin-top: 80px;
+}
+
+.mt-90 {
+    margin-top: 90px;
+}
+
+.mt-100 {
+    margin-top: 100px;
+}
+
 .mb-10 {
     margin-bottom: 10px;
 }
@@ -171,8 +211,32 @@ i {
     overflow: visible;
 }
 
+.inline {
+    display: inline;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: -moz-inline-block;
+    display: inline-block;
+}
+
 .flex-container {
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-flex;
     display: flex;
+    flex-direction: row;
+}
+
+.inline-flex-container {
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
     flex-direction: row;
 }
 
@@ -225,15 +289,15 @@ i {
 }
 
 .grid-container {
-    display: grid;
     display: -moz-grid;
     display: -ms-grid;
+    display: grid;
 }
 
 .grid-container-inline {
-    display: inline-grid;
     display: -moz-inline-grid;
     display: -ms-inline-grid;
+    display: inline-grid;
 }
 
 
@@ -565,6 +629,7 @@ nav a {
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     -moz-transition: 0.5s;
+    transition: 0.5s;
 }
 
 .mobile-menu-bttn i {
@@ -572,6 +637,7 @@ nav a {
     -webkit-transition: 0.5s;
     -o-transition: 0.5s;
     -moz-transition: 0.5s;
+    transition: 0.5s;
 }
 
 .mobile-menu-bttn:active {
