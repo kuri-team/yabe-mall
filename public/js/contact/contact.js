@@ -3,18 +3,18 @@ const FORM = document.getElementById("contact-form");
 
 FORM.addEventListener("submit", function () {
     // Get form values
-    const firstName = FORM.fname.value;
-    const lastName = FORM.lname.value;
-    const gPhone = FORM.phone_num.value;
-    const gEmail = FORM.email_add.value;
+    const FIRST_NAME = FORM.fname.value;
+    const LAST_NAME = FORM.lname.value;
+    const PHONE = FORM.phone_num.value;
+    const EMAIL = FORM.email_add.value;
     const CHECKBOXES = document.querySelector("#checkbox-form").querySelectorAll("input[type=checkbox]");
-    const gMessage = FORM.message.value;
+    const MESSAGE = FORM.message.value;
 
     // Create RegExp patterns
-    const emailPattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    const phonePattern = /^([0-9][-. ]?){9,11}[^-. ]$/;
-    const namePattern = /\./;  // Find a single character, except newline or line terminator
-    const namePatDgt = /\d/;  // Only digits find
+    const REGEX_EMAIL = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const REGEX_PHONE = /^([0-9][-. ]?){9,11}[^-. ]$/;
+    const REGEX_NAME = /\./;  // Find a single character, except newline or line terminator
+    const REGEX_NAME_DIGIT = /\d/;  // Only digits find
 
     // Variables
     let err = "";  // err variable is used to show error message.
@@ -22,30 +22,30 @@ FORM.addEventListener("submit", function () {
 
 
     // Logic
-    if (firstName === "" || firstName.length < 3 || namePattern.test(firstName) || namePatDgt.test(firstName)) {
-        // Checks the value: If Value empty  or value length less than 3 or value is digit than Show error Indvalid Name
+    if (FIRST_NAME === "" || FIRST_NAME.length < 3 || REGEX_NAME.test(FIRST_NAME) || REGEX_NAME_DIGIT.test(FIRST_NAME)) {
+        // Checks the value: If Value empty  or value length less than 3 or value is digit than Show error Invalid Name
         errNum++;
         err += errNum + ". Invalid name. Valid first name contains at least 3 letters.\n";
     }
 
-    if (lastName === "" || firstName.length < 3 || namePattern.test(firstName) || namePatDgt.test(firstName)) {
+    if (LAST_NAME === "" || FIRST_NAME.length < 3 || REGEX_NAME.test(FIRST_NAME) || REGEX_NAME_DIGIT.test(FIRST_NAME)) {
         errNum++;
         err += errNum + ". Invalid name. Valid last name contains at least 3 letters.\n";
     }
 
-    if (gPhone === "" || !phonePattern.test(gPhone)) {
+    if (PHONE === "" || !REGEX_PHONE.test(PHONE)) {
         // Check the phone number : If phone number is empty or value length less than 12 or is not a null then show error Invalid Phone number
         errNum++;
         err += errNum + ". Invalid phone number. Valid phone number contains 9 to 11 digits\n";
     }
 
-    if (gEmail === "") {
+    if (EMAIL === "") {
         // If you don't Enter anything in Email field than show error(Enter Email)
         errNum++;
         err += errNum + ". Enter Email.\n";
     } else {
-        // If you don't Enter Email address in email pattern format (i already described "emailPattern") then see error (Invalid Email)
-        if(!emailPattern.test(gEmail)){
+        // If you don't Enter Email address in email pattern format (i already described "REGEX_EMAIL") then see error (Invalid Email)
+        if(!REGEX_EMAIL.test(EMAIL)){
             errNum++;
             err += errNum + ". Invalid Email. Valid email has the form [name]@[domain]\n";
         }
@@ -64,7 +64,7 @@ FORM.addEventListener("submit", function () {
         err += errNum + ". At least one checkbox must be checked.\n";
     }
 
-    if (gMessage === "" || 50 <= gPhone.length <= 500) {
+    if (MESSAGE === "" || 50 <= PHONE.length <= 500) {
         // If you don't Enter anything in Message field than show error
         errNum++;
         err += errNum + ". Enter message contains 50 to 500 letters.\n";
