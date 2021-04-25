@@ -43,14 +43,19 @@ main h1 {
     border-bottom: 1px solid #cdcdcd;
 }
 
-#register-avatar img {
+#register-avatar .avatar-img {
     border-radius: 50%;
     width: 195px;
     height: 195px;
     transition: 0.1s;
 }
 
-#register-avatar img:hover {
+#register-avatar .avatar-img img {
+    width: 100%;
+    height: auto;
+}
+
+#register-avatar .avatar-img:hover {
     cursor: pointer;
     border: 1px solid #eb5e28;
     width: 200px;
@@ -67,7 +72,7 @@ main h1 {
     top: -50px;
 }
 
-#register-avatar img:hover + .edit-icon {
+#register-avatar .avatar-img:hover .edit-icon {
     display: block;
 }
 

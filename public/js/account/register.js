@@ -1,5 +1,5 @@
 // Display file upload field when user clicks on #register-avatar img
-const AVATAR_AREA = document.querySelector("#register-avatar img");
+const AVATAR_AREA = document.querySelector("#register-avatar .avatar-img");
 const EDIT_ICON = document.querySelector("#register-avatar .edit-icon");
 const UPLOAD_FIELD = document.getElementById("register-avatar-upload-field");
 const DISPLAY_ATTRIBUTE = "display: flex; animation: expand-top 0.45s; transform-origin: top;";
