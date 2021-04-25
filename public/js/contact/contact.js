@@ -1,3 +1,4 @@
+// Form validation
 const FORM = document.getElementById("contact-form");
 
 FORM.addEventListener("submit", function () {
@@ -6,6 +7,7 @@ FORM.addEventListener("submit", function () {
     const lastName = FORM.lname.value;
     const gPhone = FORM.phone_num.value;
     const gEmail = FORM.email_add.value;
+    const CHECKBOXES = document.querySelector("#checkbox-form").querySelectorAll("input[type=checkbox]");
     const gMessage = FORM.message.value;
 
     // Create RegExp patterns
@@ -49,6 +51,19 @@ FORM.addEventListener("submit", function () {
         }
     }
 
+    let atLeastOneCheckboxChecked = false;
+    for (let i = 0; i < CHECKBOXES.length; i++) {
+        if (CHECKBOXES[i].checked) {
+            atLeastOneCheckboxChecked = true;
+            break;
+        }
+    }
+
+    if (!atLeastOneCheckboxChecked) {
+        errNum++;
+        err += errNum + ". At least one checkbox must be checked.\n";
+    }
+
     if (gMessage === "" || 50 <= gPhone.length <= 500) {
         // If you don't Enter anything in Message field than show error
         errNum++;
@@ -77,33 +92,6 @@ FORM.addEventListener("submit", function () {
         return true;
     }
 });
-
-
-// At least one checkbox must be checked
-const CHECKBOXES = document.querySelector('#checkbox-form').querySelectorAll('input[type=checkbox]');
-const CHECK_BOX_LENGTH = CHECKBOXES.length;
-const FIRST_CHECK_BOX = CHECK_BOX_LENGTH > 0 ? CHECKBOXES[0] : null;
-
-function isChecked() {
-    for (let i = 0; i < CHECK_BOX_LENGTH; i++) {
-        if (CHECKBOXES[i].checked) return true;
-    }
-    return false;
-}
-
-function checkValidity() {
-    const ERROR_MESSAGE = !isChecked() ? "Should select at least a box" : "";
-    FIRST_CHECK_BOX.setCustomValidity(ERROR_MESSAGE);
-}
-
-if (FIRST_CHECK_BOX) {
-    for (let i = 0; i < CHECK_BOX_LENGTH; i++) {
-        CHECKBOXES[i].addEventListener("change", checkValidity);
-    }
-
-    checkValidity();
-}
-
 
 
 // Word-count Messages
