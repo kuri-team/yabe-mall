@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="../../../css/common.css">
+  <link rel="stylesheet" href="../../../css/account/common.css">
+  <link rel="stylesheet" href="../../../css/account/my-account.css">
 
   <script src="https://kit.fontawesome.com/492245eeb1.js" crossorigin="anonymous"></script>
-
 
   <title>Yabe | My Account</title>
 </head>
@@ -69,7 +70,46 @@
 </header>
 
 <main>
+  <ul class=breadcrumb>
+    <li><a href="../../">Home</a>/</li>
+    <li><a href="#">My Account</a></li>
+  </ul>
 
+  <h1 class="content-title">My Account</h1>
+
+  <div class="content-body">
+    <section class="content-text grid-container my-account-content">
+      <article class="my-account-box my-account-info-wrapper">
+        <ul class="my-account-info">
+          <li><label>Username</label>tnathu-ai</li>
+          <li><label>First Name</label>Anh Thu</li>
+          <li><label>Last Name</label>Tran Ngoc</li>
+          <li><label>Gender</label>Female</li>
+          <li><label>Birthdate</label>10/20/2002</li>
+          <li><label>Email</label>s3879312@rmit.edu.vn</li>
+          <li><label>Phone Number</label>0123-456-789</li>
+          <li><label>Address</label>702 Nguyen Van Linh Blvd., District 7</li>
+          <li><label>City - Zipcode</label>Ho Chi Minh City 700000</li>
+          <li><label>Country</label>Vietnam</li>
+          <li><label>Account Type</label>Shopper</li>
+        </ul>
+        <button class="my-account-info-edit-bttn">Edit</button>
+      </article>
+
+      <article class="my-account-box my-account-avatar-wrapper flex-container flex-justify-content-center flex-align-items-center">
+        <img class="my-account-avatar circle-img" alt="profile picture" src="../../../media/image/thu.jpg">
+      </article>
+
+      <article class="my-account-box my-account-links-wrapper">
+        <div class="my-account-links flex-container flex-direction-column flex-justify-content-space-evenly">
+          <a class="active" href="">Info</a>
+          <a href="">My Orders</a>
+          <a href="">Payment Information</a>
+          <a href="">Password & Security</a>
+        </div>
+      </article>
+    </section>
+  </div>
 </main>
 
 <footer>
@@ -130,5 +170,6 @@
 </div>
 
 <script src="../../../js/common.js"></script>
+<script src="../../../js/account/common.js"></script>
 </body>
 </html>
