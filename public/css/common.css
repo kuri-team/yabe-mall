@@ -12,25 +12,25 @@
 
 /* Reset */
 html {
-    scroll-behavior: smooth; !important;
+    scroll-behavior: smooth !important;
 }
 
 body {
     margin: 0;
     padding: 0;
     background: #f7f7f7;
-    font-family: 'Noto Sans JP', 'Arial', sans-serif; !important;
+    font-family: 'Noto Sans JP', 'Arial', sans-serif !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Roboto', 'Arial', sans-serif; !important;
+    font-family: 'Roboto', 'Arial', sans-serif !important;
 }
 
 a {
     color: #eb5e28;
 }
 
-a:hover {
+a:hover, a:focus {
     text-decoration: none;
 }
 
@@ -81,6 +81,46 @@ i {
 
 .mr-50 {
     margin-right: 50px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.mt-40 {
+    margin-top: 40px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.mt-60 {
+    margin-top: 60px;
+}
+
+.mt-70 {
+    margin-top: 70px;
+}
+
+.mt-80 {
+    margin-top: 80px;
+}
+
+.mt-90 {
+    margin-top: 90px;
+}
+
+.mt-100 {
+    margin-top: 100px;
 }
 
 .mb-10 {
@@ -171,8 +211,32 @@ i {
     overflow: visible;
 }
 
+.inline {
+    display: inline;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: -moz-inline-block;
+    display: inline-block;
+}
+
 .flex-container {
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-flex;
     display: flex;
+    flex-direction: row;
+}
+
+.inline-flex-container {
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
     flex-direction: row;
 }
 
@@ -225,15 +289,15 @@ i {
 }
 
 .grid-container {
-    display: grid;
     display: -moz-grid;
     display: -ms-grid;
+    display: grid;
 }
 
 .grid-container-inline {
-    display: inline-grid;
     display: -moz-inline-grid;
     display: -ms-inline-grid;
+    display: inline-grid;
 }
 
 
@@ -521,6 +585,9 @@ nav a {
     width: 120px;
     height: 50px;
     margin-left: 50px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
 }
 
 .nav-cart-bttn:active {
@@ -559,10 +626,18 @@ nav a {
     color: #fff;
     background: #252422;
     border: none;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
 }
 
 .mobile-menu-bttn i {
     font-size: 32pt;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
 }
 
 .mobile-menu-bttn:active {
@@ -763,5 +838,70 @@ footer {
 
     to {
         transform: scaleY(1);
+    }
+}
+
+
+/**********************************
+    YABE Cookie consent message
+***********************************/
+/* sticky cookie consent message as bottom banner */
+.cookie-consent {
+    display: none;
+}
+
+/* cookie consent message become invisible after clicking "accept" */
+.cookie-consent.active {
+    display: block;
+    position: sticky;
+    bottom: 0;
+    background: #fff;
+    box-shadow: 0 0 6px 0;
+    padding: 16px;
+    margin: 0 auto;
+}
+
+/* centralize content in the banner */
+.cookie-consent-container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+/* styling for buttons */
+.cookie-consent-button {
+    text-align: right;
+}
+
+.cookie-consent-button button {
+    padding: 10px 20px;
+    margin: 7px;
+    border: none;
+    color: #fff;
+}
+
+.cookie-consent-learn-more {
+    background: #eb5e28;
+}
+
+.cookie-consent-learn-more:hover {
+    background: #b0441e;
+}
+
+.cookie-consent-accept {
+    background: #252422;
+}
+
+.cookie-consent-accept:hover {
+    background: #555555;
+}
+
+/*responsive cookie consent message */
+@media (max-width: 768px) {
+    .cookie-consent.active{
+        padding: 1px 16px 18px;
+        font-size: 11pt;
+    }
+    .cookie-consent.active .text-align-justify{
+        margin-bottom: 5px;
     }
 }

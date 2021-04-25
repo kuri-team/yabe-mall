@@ -14,6 +14,52 @@
   <title>Yabe | About Us</title>
 </head>
 <body>
+<!-- dim rest of page when modal box is opened -->
+<div id="dimmed-page"></div>
+
+<!-- Modal box container -->
+<div id="overlay-modal-window">
+  <div id="nhi-modal-box" class="modal-box">
+    <button class="float-right" onclick="toggleModalBox('nhi-modal-box')">
+      <i class="fas fa-times"></i>
+    </button>
+    <h2 class="clear-both">Doan Yen Nhi</h2>
+    <h3>S-3880599</h3>
+    <p>Developer<br>Chief Secretary</p>
+    <p>Visit my GitHub page <a href="https://github.com/doanyennhi" target="_blank">here</a></p>
+  </div>
+
+  <div id="mike-modal-box" class="modal-box">
+    <button class="float-right" onclick="toggleModalBox('mike-modal-box')">
+      <i class="fas fa-times"></i>
+    </button>
+    <h2 class="clear-both">Tuong-Minh "Mike" Vo</h2>
+    <h3>S-3877562</h3>
+    <p>Designer<br>Project Coordinator<br>Technical Officer</p>
+    <p>Visit my GitHub page <a href="https://github.com/miketvo" target="_blank">here</a></p>
+  </div>
+
+  <div id="manh-modal-box" class="modal-box">
+    <button class="float-right" onclick="toggleModalBox('manh-modal-box')">
+      <i class="fas fa-times"></i>
+    </button>
+    <h2 class="clear-both">Du Duc Manh</h2>
+    <h3 >S-3878480</h3>
+    <p>Developer<br>Operation Officer</p>
+    <p>Visit my GitHub page <a href="https://github.com/rider3458" target="_blank">here</a></p>
+  </div>
+
+  <div id="thu-modal-box" class="modal-box">
+    <button class="float-right" onclick="toggleModalBox('thu-modal-box')">
+      <i class="fas fa-times"></i>
+    </button>
+    <h2 class="clear-both">Tran Ngoc Anh Thu</h2>
+    <h3>S-3879312</h3>
+    <p>Developer<br>Designer<br>Content Officer</p>
+    <p>Visit my GitHub page <a href="https://github.com/tnathu-ai" target="_blank">here</a></p>
+  </div>
+</div>
+
 <header>
   <nav>
     <span id="nav-logo"><a href="../"><img class="nav-logo-sprite" alt="Yabe logo" src="../../media/vector/logo-light.svg"></a></span>
@@ -95,56 +141,48 @@
     <div id="about-us-members" class="flex-container flex-direction-column flex-wrap flex-justify-content-center flex-align-items-center">
       <div class="flex-container flex-wrap">
         <div class="flip-card about-us-member">
-          <div class="flip-card-inner">
+          <div class="flip-card-inner" onclick="toggleModalBox('nhi-modal-box')">
             <div class="flip-card-front">
               <img alt="Portrait of Nhi" src="../../media/image/nhi.jpg">
             </div>
-            <a href="https://github.com/doanyennhi"><div class="flip-card-back">
+            <div class="flip-card-back">
               <h2>Doan Yen Nhi</h2>
-              <h3>S-3880599</h3>
-              <p>Developer<br>Chief Secretary</p>
-            </div></a>
+            </div>
           </div>
         </div>
 
         <div class="flip-card about-us-member">
-          <div class="flip-card-inner">
+          <div class="flip-card-inner" onclick="toggleModalBox('mike-modal-box')">
             <div class="flip-card-front">
               <img alt="Portrait of Mike" src="../../media/image/mike.png">
             </div>
-            <a href="https://miketvo.com/"><div class="flip-card-back">
+            <div class="flip-card-back">
               <h2>Tuong-Minh "Mike" Vo</h2>
-              <h3>S-3877562</h3>
-              <p>Designer<br>Project Coordinator<br>Technical Officer</p>
-            </div></a>
+            </div>
           </div>
         </div>
       </div>
 
       <div class="flex-container flex-wrap">
         <div class="flip-card about-us-member">
-          <div class="flip-card-inner">
+          <div class="flip-card-inner" onclick="toggleModalBox('manh-modal-box')">
             <div class="flip-card-front">
               <img alt="Portrait of Manh" src="../../media/image/manh.jpg">
             </div>
-            <a href="https://github.com/rider3458"><div class="flip-card-back">
+            <div class="flip-card-back">
               <h2>Du Duc Manh</h2>
-              <h3>S-3878480</h3>
-              <p>Developer<br>Operation Officer</p>
-            </div></a>
+            </div>
           </div>
         </div>
 
         <div class="flip-card about-us-member">
-          <div class="flip-card-inner">
+          <div class="flip-card-inner" onclick="toggleModalBox('thu-modal-box')">
             <div class="flip-card-front">
               <img alt="Portrait of Thu" src="../../media/image/thu.jpg">
             </div>
-            <a href="https://github.com/tnathu-ai"><div class="flip-card-back">
+            <div class="flip-card-back">
               <h2>Tran Ngoc Anh Thu</h2>
-              <h3>S-3879312</h3>
-              <p>Developer<br>Designer<br>Content Officer</p>
-            </div></a>
+            </div>
           </div>
         </div>
       </div>
@@ -198,6 +236,18 @@
   </div>
 </footer>
 
+<div class="cookie-consent">
+  <div class="cookie-consent-container">
+    <p class="text-align-justify">We use cookies to find out the way to provide the best experience for you. By clicking "Accept" ,
+      you agree to the use of cookies and other technologies on our website.</p>
+    <div class="cookie-consent-button">
+      <a href="https://gdpr-info.eu/" target="_blank"><button class="cookie-consent-learn-more">Learn more</button></a>
+      <button class="cookie-consent-accept">Accept</button>
+    </div>
+  </div>
+</div>
+
 <script src="../../js/common.js"></script>
+<script src="../../js/about-us.js"></script>
 </body>
 </html>
