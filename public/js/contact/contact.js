@@ -10,7 +10,7 @@ FORM.addEventListener("submit", function () {
 
     //Create RegExp patterns
     const emailPattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    const phonePattern = /^([0-9][-. ]?)+[^-. ]$/;
+    const phonePattern = /^([0-9][-. ]?){9,11}[^-. ]$/;
 
     // Find a single character, except newline or line terminator
     const namePattern = /\./;
@@ -35,7 +35,7 @@ FORM.addEventListener("submit", function () {
     }
 
     /* Check the phone number : If phone number is empty or value length less than 12 or is not a null then show error Invalid Phone number */
-    if (gPhone === "" || 9 <= gPhone.length <= 11 || phonePattern.test(gPhone)) {
+    if (gPhone === "" || !phonePattern.test(gPhone)) {
         errNum++;
         err += errNum + ". Invalid phone number. Valid phone number contains 9 to 11 digits\n";
     }
