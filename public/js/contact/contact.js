@@ -8,76 +8,71 @@ FORM.addEventListener("submit", function () {
     const gEmail = FORM.email_add.value;
     const gMessage = FORM.message.value;
 
-    //Create RegExp patterns
+    // Create RegExp patterns
     const emailPattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const phonePattern = /^([0-9][-. ]?){9,11}[^-. ]$/;
+    const namePattern = /\./;  // Find a single character, except newline or line terminator
+    const namePatDgt = /\d/;  // Only digits find
 
-    // Find a single character, except newline or line terminator
-    const namePattern = /\./;
+    // Variables
+    let err = "";  // err variable is used to show error message.
+    let errNum = 0;  // errNum variable is used to show error index
 
-    //Only digits find
-    const namePatDgt = /\d/;
 
-    // err variable is used to show error message.
-    let err = "";
-
-    // errNum variable is used to show error index
-    let errNum = 0;
-
-    //  Checks the value : If Value empty  or value length less than 3 or value is digit than Show error Indvalid Name
+    // Logic
     if (firstName === "" || firstName.length < 3 || namePattern.test(firstName) || namePatDgt.test(firstName)) {
+        // Checks the value: If Value empty  or value length less than 3 or value is digit than Show error Indvalid Name
         errNum++;
         err += errNum + ". Invalid name. Valid first name contains at least 3 letters.\n";
     }
+
     if (lastName === "" || firstName.length < 3 || namePattern.test(firstName) || namePatDgt.test(firstName)) {
         errNum++;
         err += errNum + ". Invalid name. Valid last name contains at least 3 letters.\n";
     }
 
-    /* Check the phone number : If phone number is empty or value length less than 12 or is not a null then show error Invalid Phone number */
     if (gPhone === "" || !phonePattern.test(gPhone)) {
+        // Check the phone number : If phone number is empty or value length less than 12 or is not a null then show error Invalid Phone number
         errNum++;
         err += errNum + ". Invalid phone number. Valid phone number contains 9 to 11 digits\n";
     }
 
-    /* If you don't Enter anything in Email field than show error(Enter Email)  */
     if (gEmail === "") {
+        // If you don't Enter anything in Email field than show error(Enter Email)
         errNum++;
         err += errNum + ". Enter Email.\n";
-    }
-    /*  If you don't Enter Email address in email pattern format (i already described "emailPattern") then see error (Invalid Email)  */
-    else{
+    } else {
+        // If you don't Enter Email address in email pattern format (i already described "emailPattern") then see error (Invalid Email)
         if(!emailPattern.test(gEmail)){
             errNum++;
             err += errNum + ". Invalid Email. Valid email has the form [name]@[domain]\n";
         }
     }
 
-    /* If you don't Enter anything in Message field than show error */
     if (gMessage === "" || 50 <= gPhone.length <= 500) {
+        // If you don't Enter anything in Message field than show error
         errNum++;
         err += errNum + ". Enter message contains 50 to 500 letters.\n";
     }
 
-    /* If you don't  checked 0 index of gender field  or 1 index than show error(Contact Method)*/
     if (!FORM.contact_method[0].checked && !FORM.contact_method[1].checked) {
+        // If you don't  checked 0 index of gender field  or 1 index than show error(Contact Method)
         errNum++;
         err += errNum + ". Select Preferred Contact Method.\n";
     }
 
-    /*  Check your selection index if your index is less than 1 than show error (Contact Purpose) */
     if (FORM.contact_purpose.selectedIndex < 1) {
+        // Check your selection index if your index is less than 1 than show error (Contact Purpose)
         errNum++;
         err += errNum + ". PLease select your contact Purpose.\n";
     }
 
-    /*  If errNum is greater than 0 than alert error and return "false" */
     if (errNum>0) {
+        // If errNum is greater than 0 than alert error and return "false"
         alert(err);
         return false;
-    }
-    /* If errNum is less than 0 or 0 than alert "done" and return "true"*/
-    else{
+    } else {
+        // If errNum is less than 0 or 0 than alert "done" and return "true"
         alert('done');
         return true;
     }
@@ -97,13 +92,13 @@ function isChecked() {
 }
 
 function checkValidity() {
-    const ERROR_MESSAGE = !isChecked() ? 'Should select at least a box' : '';
+    const ERROR_MESSAGE = !isChecked() ? "Should select at least a box" : "";
     FIRST_CHECK_BOX.setCustomValidity(ERROR_MESSAGE);
 }
 
 if (FIRST_CHECK_BOX) {
     for (let i = 0; i < CHECK_BOX_LENGTH; i++) {
-        CHECKBOXES[i].addEventListener('change', checkValidity);
+        CHECKBOXES[i].addEventListener("change", checkValidity);
     }
 
     checkValidity();
