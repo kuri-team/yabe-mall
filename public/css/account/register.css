@@ -57,6 +57,20 @@ main h1 {
     height: 200px;
 }
 
+#register-avatar .edit-icon {
+    display: none;
+    color: #252422;
+    background: #f7f7f7;
+    padding: 2px 15px;
+    position: relative;
+    border-radius: 12px;
+    top: -50px;
+}
+
+#register-avatar img:hover + .edit-icon {
+    display: block;
+}
+
 #register-avatar-upload-field {
     display: none;
 }
