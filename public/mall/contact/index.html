@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,7 +39,7 @@
         </div>
       </div>
       <div id="nav-search">
-        <form action="../browse" method="get" target="_blank">
+        <form action="../browse" method="get" target="_blank" onsubmit="return validation(this)">
           <label for="q"></label>
           <input class="nav-seach-bar" id="q" name="q" type="search" placeholder="Search" value="">
         </form>
@@ -79,97 +79,98 @@
     <h1 class="content-title">CONTACT US</h1>
 
     <div class="content-body">
-        <form class="contact-form" action="" method="get">
-            <label for="purpose" class="title">Contact Purpose*</label>
-            <select id="purpose" name="contact_purpose" class="field" required>
-                <option value="" selected>Select an option</option>
-                <option value="order">Customer Order</option>
-                <option value="price">Pricing</option>
-                <option value="refund_return">Refund or Returns</option>
-                <option value="account">User Account</option>
-                <option value="other">Other</option>
-            </select>
+      <form id="contact-form" class="contact-form" action="" method="get" name="contact-form">
+        <label for="purpose" class="title required">Contact Purpose</label>
+        <select id="purpose" name="contact_purpose" class="field" required>
+          <option value="" selected>Select an option</option>
+          <option value="order">Customer Order</option>
+          <option value="price">Pricing</option>
+          <option value="refund_return">Refund or Returns</option>
+          <option value="account">User Account</option>
+          <option value="other">Other</option>
+        </select>
 
-            <div class="flex-container flex-justify-content-space-between flex-wrap">
-                <div class="name">
-                    <label for="fname" class="title">First Name*</label>
-                    <input id="fname" type="text" name="fname" class="name-field"
-                           placeholder="This field is required" required>
-                </div>
+        <div class="flex-container flex-justify-content-space-between flex-wrap">
+          <div class="name">
+            <label for="fname" class="title required">First Name</label>
+            <input id="fname" type="text" name="fname" class="name-field" placeholder="This field is required" required>
+          </div>
 
-                <div class="name">
-                    <label for="lname" class="title">Last Name*</label>
-                    <input id="lname" type="text" name="lname" class="name-field"
-                           placeholder="This field is required" required>
-                </div>
-            </div>
+          <div class="name">
+            <label for="lname" class="title required">Last Name</label>
+            <input id="lname" type="text" name="lname" class="name-field" placeholder="This field is required" required>
+          </div>
+        </div>
 
-            <label for="email_add" class="title">Email*</label>
-            <input id="email_add" type="email" name="email_add" class="field"
-                placeholder="This field is required" required>
+        <label for="email_add" class="title required">Email</label>
+        <input id="email_add" type="email" name="email_add" class="field" placeholder="This field is required" required>
 
-            <label for="phone_num" class="title">Phone*</label>
-            <input id="phone_num" type="text" name="phone_num" class="field"
-                placeholder="This field is required" required>
+        <label for="phone_num" class="title required">Phone
+          <span class="requirement-text">Ex: 0123456789 or 0-1-2-3.4.5 6.7-8-9 or 012.345-6789</span>
+        </label>
+        <!-- minlength 9, maxlength 11 character validation-->
+        <input id="phone_num" type="tel" name="phone_num" class="field" placeholder="This field is required" title="Phone number should only contain contains 9 to 11 digits" required>
 
-            <p>Preferred Contact Method*</p>
-            <div class="contact-method">
-                <input type="radio" id="email" name="contact_method" value="email" checked required>
-                <label for="email">Email</label>
-            </div>
+        <p class="required">Preferred Contact Method</p>
+        <div class="contact-method">
+          <input type="radio" id="email" name="contact_method" value="email" checked required>
+          <label for="email">Email</label>
+        </div>
 
-            <div class="contact-method">
-                <input type="radio" id="phone" name="contact_method" value="phone">
-                <label for="phone">Phone</label>
-            </div>
+        <div class="contact-method">
+          <input type="radio" id="phone" name="contact_method" value="phone">
+          <label for="phone">Phone</label>
+        </div>
 
-            <p>Contact Days</p>
-            <div class="contact-day-checkbox flex-container flex-justify-content-space-between
+        <p>Contact Days</p>
+        <div id="checkbox-form" class="contact-day-checkbox flex-container flex-justify-content-space-between
                 flex-align-items-center flex-wrap">
-                <div class="contact-day">
-                    <input type="checkbox" id="mon" name="contact_day[]" value="monday">
-                    <label for="mon">Monday</label>
-                </div>
+          <div class="contact-day">
+            <input type="checkbox" id="mon" name="contact_day[]" value="monday">
+            <label for="mon">Monday</label>
+          </div>
 
-                <div class="contact-day">
-                    <input type="checkbox" id="tues" name="contact_day[]" value="tuesday">
-                    <label for="tues">Tuesday</label>
-                </div>
+          <div class="contact-day">
+            <input type="checkbox" id="tues" name="contact_day[]" value="tuesday">
+            <label for="tues">Tuesday</label>
+          </div>
 
-                <div class="contact-day">
-                    <input type="checkbox" id="wed" name="contact_day[]" value="wednesday">
-                    <label for="wed">Wednesday</label>
-                </div>
+          <div class="contact-day">
+            <input type="checkbox" id="wed" name="contact_day[]" value="wednesday">
+            <label for="wed">Wednesday</label>
+          </div>
 
-                <div class="contact-day">
-                    <input type="checkbox" id="thur" name="contact_day[]" value="thursday">
-                    <label for="thur">Thursday</label>
-                </div>
+          <div class="contact-day">
+            <input type="checkbox" id="thur" name="contact_day[]" value="thursday">
+            <label for="thur">Thursday</label>
+          </div>
 
-                <div class="contact-day">
-                    <input type="checkbox" id="fri" name="contact_day[]" value="friday">
-                    <label for="fri">Friday</label>
-                </div>
+          <div class="contact-day">
+            <input type="checkbox" id="fri" name="contact_day[]" value="friday">
+            <label for="fri">Friday</label>
+          </div>
 
-                <div class="contact-day">
-                    <input type="checkbox" id="sat" name="contact_day[]" value="saturday">
-                    <label for="sat">Saturday</label>
-                </div>
+          <div class="contact-day">
+            <input type="checkbox" id="sat" name="contact_day[]" value="saturday">
+            <label for="sat">Saturday</label>
+          </div>
 
-                <div class="contact-day">
-                    <input type="checkbox" id="sun" name="contact_day[]" value="sunday">
-                    <label for="sun">Sunday</label>
-                </div>
-            </div>
+          <div class="contact-day">
+            <input type="checkbox" id="sun" name="contact_day[]" value="sunday">
+            <label for="sun">Sunday</label>
+          </div>
 
-            <label for="message" class="title">Message</label>
-            <textarea name="message" id="message" cols="50" rows="7"></textarea>
+        </div>
 
-            <div class="flex-container flex-justify-content-space-between flex-wrap">
-                <input class="clear-bttn" type="reset" name="reset" value="CLEAR">
-                <input class="send-bttn" type="submit" name="submit" value="SEND">
-            </div>
-        </form>
+        <label for="message" class="title required">Message</label>
+        <textarea name="message" id="message" cols="50" rows="7" required></textarea>
+        <span class="requirement-text" id="remaining-letters">500 letters remaining</span>
+
+        <div class="flex-container flex-justify-content-space-between flex-wrap">
+          <input class="clear-bttn" type="reset" name="reset" value="CLEAR">
+          <input class="send-bttn" type="submit" id="submit" name="submit" value="SEND">
+        </div>
+      </form>
     </div>
   </main>
 
