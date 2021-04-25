@@ -39,7 +39,7 @@
         </div>
       </div>
       <div id="nav-search">
-        <form action="../browse" method="get" target="_blank">
+        <form action="../browse" method="get" target="_blank" onsubmit="return validation(this)">
           <label for="q"></label>
           <input class="nav-seach-bar" id="q" name="q" type="search" placeholder="Search" value="">
         </form>
@@ -79,7 +79,7 @@
     <h1 class="content-title">CONTACT US</h1>
 
     <div class="content-body">
-        <form id="contact-form" class="contact-form" action="" method="get" name="contact-form">
+        <form id="contact-form" class="contact-form" action="" method="get" name="contact-form" onsubmit="return validation(this)">
             <label for="purpose" class="title">Contact Purpose*</label>
             <select id="purpose" name="contact_purpose" class="field" required>
                 <option value="" selected>Select an option</option>
@@ -175,7 +175,7 @@
 
             <div class="flex-container flex-justify-content-space-between flex-wrap">
                 <input class="clear-bttn" type="reset" name="reset" value="CLEAR">
-                <input class="send-bttn" type="submit" name="submit" value="SEND">
+                <input class="send-bttn" type="submit" id="submit" name="submit" value="SEND">
             </div>
         </form>
     </div>
@@ -226,6 +226,8 @@
       <p>&copy;2021 YABE</p>
     </div>
   </footer>
+
+
   <script src="../../js/contact/contact.js"></script>
   <script src="../../js/common.js"></script>
 </body>

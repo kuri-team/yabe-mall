@@ -1,87 +1,117 @@
-const form = document.getElementById("contact-form");
-const fname = document.getElementById("fname");
-const lname = document.getElementById("lname");
-const email = document.getElementById("email");
-const phone_num = document.getElementById("phone_num");
+// Selector pass value to a function
+function validation(selector) {
 
+    //Get the value of name(selecter) and put in firstName(variable)
+    let firstName = selector.fname.value;
+    let lastName = selector.lname.value;
 
-//Check email
-function checkEmail(input) {
-    let x = document.contact - form.email_add.value;
-    // email contains the @ and . character
-    let atposition = x.indexOf("@");
-    let dotposition = x.lastIndexOf(".");
-    const char = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (char.test(input.value.trim())) {
-        ShowSuccess(input);
-    } else {
-        ShowError(input, "Invalid Email");
+    //Get the value of phone(selecter) and put in phone_num(Variable)
+    let gPhone = selector.phone_num.value;
+
+    //Get the value of email(selecter) and put in gEmail(Variable)
+    let gEmail = selector.email_add.value;
+
+    //Get the Value of message(selecter) and put in gMessage (Variable)
+    let gMessage = selector.message.value;
+
+    //Create RegExp pattern to validate our email address value coming from a form field.
+    let emailPattern = /^[a-z-._0-9]+@[a-z0-9]+\.[a-z.]{2,5}$/;
+
+    //Create RegExp pattern to validate our phone number value coming from a form field.
+    let phonePattern =/^([0-9][-. ]?){1,}[^-. ]$/;
+
+    //Find a single character, except newline or line terminator
+    let namePattern = /\./;
+
+    //Only digits find
+    let namePatDgt = /\d/;
+
+    // err variable is used to show error message.
+    let err = "";
+
+    // errNum variable is used to show error index
+    let errNum = 0;
+
+    //  Checks the value : If Value empty  or value length less than 3 or value is digit than Show error Indvalid Name
+    if (firstName == "" || firstName.length < 3 || namePattern.test(firstName) || namePatDgt.test(firstName)) {
+        errNum++;
+        err += errNum + ". Invalid name. Valid first name contains at least 3 letters.\n";
     }
-    // At least one character before and after the @.
-    // At least two characters after . (dot).
-    if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= x.length) {
-        alert("Please enter a valid e-mail \n atpostion:" + atposition + "\n dotposition:" + dotposition);
+    if (lastName == "" || firstName.length < 3 || namePattern.test(firstName) || namePatDgt.test(firstName)) {
+        errNum++;
+        err += errNum + ". Invalid name. Valid last name contains at least 3 letters.\n";
+    }
+
+    /* Check the phone number : If phone number is empty or value length less than 12 or is not a null then show error Invalid Phone number */
+    if (gPhone == "" || 9 <= gPhone.length <= 11 || isNaN(gPhone) || phonePattern.test(gPhone)) {
+        errNum++;
+        err += errNum + ". Invalid phone number. Valid phone number contains 9 to 11 digits\n";
+    }
+
+    /* If you don't Enter anything in Email field than show error(Enter Email)  */
+    if (gEmail == "") {
+        errNum++;
+        err += errNum + ". Enter Email.\n";
+    }
+    /*  If you don't Enter Email address in email pattern format (i already described "emailPattern") then see error (Invalid Email)  */
+    else{
+        if(!emailPattern.test(gEmail)){
+            errNum++;
+            err += errNum + ". Invalid Email. Valid email has the form [name]@[domain]\n";
+        }
+    }
+
+    /* If you don't Enter anything in Message field than show error */
+    if (gMessage == "") {
+        errNum++;
+        err += errNum + ". Enter message contains 50 to 500 letters.\n";
+    }
+
+    /* If you don't  checked 0 index of gender field  or 1 index than show error(Contact Method)*/
+    if (!selector.contact_method[0].checked && !selector.contact_method[1].checked) {
+        errNum++;
+        err += errNum + ". Select Preferred Contact Method.\n";
+    }
+
+    /*  If you don't checked any contact day then show error(contact-day-checkbox) */
+    if (!selector.mon.checked && !selector.tues.checked &&
+        !selector.wed.checked && !selector.thur.checked &&
+        !selector.fri.checked && !selector.sat.checked &&
+        !aselectorrg.sun.checked) {
+        errNum++;
+        err += errNum + ". Select at least 1 Contact Day.\n";
+    }
+
+    /*  Check your selection index if your index is less than 1 than show error (Contact Purpose) */
+    if (selector.contact_purpose.selectedIndex < 1) {
+        errNum++;
+        err += errNum + ". PLease select your contact Purpose.\n";
+    }
+
+    /*  If errNum is greater than 0 than alert error and return "false" */
+    if (errNum>0) {
+        alert(err);
         return false;
     }
-}
-
-//check phone number
-function checkPhoneNum (input) {
-    let phone = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;
-    if(input.contact-form.match(phone)) {
+    /* If errNum is less than 0 or 0 than alert "done" and return "true"*/
+    else{
+        alert('done');
         return true;
     }
-    else if (phone.length < 11) {
-        alert("Phone number must be at least 11 characters long.");
-        return false;
-    }
 }
-
-function checkRequired(inputErr) {
-    inputErr.forEach(function(input){
-        if (input.value.trim() === "") {
-            ShowError(input, `${getFieldName(input)} is required`);
-        }else {
-            ShowSuccess(input);
-        }
-    });
-}
-function checkLenght(input, min, max) {
-    if (input.value.length < min) {
-        ShowError(input, `${getFieldName(input)} must be at least ${min} characters`);
-    }else if(input.value.length > max){
-        ShowError(input, `${getFieldName(input)} must be less than ${max} characters`);
-    }else {
-        ShowSuccess(input);
-    }
-}
-function getFieldName(input) {
-    return input.id.charAt(0).toUpperCase() + input.id.slice(1)
-}
-
-form.addEventListener('submit', function(e){
-    e.preventDefault();
-    checkRequired([fname, email, phone_num,]);
-    checkLenght(fname, 3, 25);
-    checkLenght(lname, 3, 25);
-    checkLenght(phone_num, 9, 11);
-    checkEmail(email);
-    getFieldName(fname, lname)
-    checkPhoneNum(phone_num)
-});
 
 
 // checked boxes must be selected at least 1 option
 (function() {
-    const form = document.querySelector('#checkbox-form');
-    const checkboxes = form.querySelectorAll('input[type=checkbox]');
-    const checkboxLength = checkboxes.length;
-    const firstCheckbox = checkboxLength > 0 ? checkboxes[0] : null;
+    const FORM = document.querySelector('#checkbox-form');
+    const CHECKBOXES = FORM.querySelectorAll('input[type=checkbox]');
+    const CHECKBOXLENGTH = CHECKBOXES.length;
+    const FIRSTCHECKBOX = CHECKBOXLENGTH > 0 ? CHECKBOXES[0] : null;
 
     function init() {
-        if (firstCheckbox) {
-            for (let i = 0; i < checkboxLength; i++) {
-                checkboxes[i].addEventListener('change', checkValidity);
+        if (FIRSTCHECKBOX) {
+            for (let i = 0; i < CHECKBOXLENGTH; i++) {
+                CHECKBOXES[i].addEventListener('change', checkValidity);
             }
 
             checkValidity();
@@ -89,16 +119,16 @@ form.addEventListener('submit', function(e){
     }
 
     function isChecked() {
-        for (let i = 0; i < checkboxLength; i++) {
-            if (checkboxes[i].checked) return true;
+        for (let i = 0; i < CHECKBOXLENGTH; i++) {
+            if (CHECKBOXES[i].checked) return true;
         }
 
         return false;
     }
 
     function checkValidity() {
-        const errorMessage = !isChecked() ? 'Should select at least a box' : '';
-        firstCheckbox.setCustomValidity(errorMessage);
+        const ERRORMESSAGE = !isChecked() ? 'Should select at least a box' : '';
+        FIRSTCHECKBOX.setCustomValidity(ERRORMESSAGE);
     }
 
     init();
@@ -124,4 +154,3 @@ function myFunction() {
         document.getElementById('remaining-letters').innerHTML = advice.fontcolor("red");
     }
 }
-
