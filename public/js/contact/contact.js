@@ -15,7 +15,7 @@ function validation(selector) {
     let gMessage = selector.message.value;
 
     //Create RegExp pattern to validate our email address value coming from a form field.
-    let emailPattern = /^[a-z-._0-9]+@[a-z0-9]+\.[a-z.]{2,5}$/;
+    let emailPattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     //Create RegExp pattern to validate our phone number value coming from a form field.
     let phonePattern =/^([0-9][-. ]?){1,}[^-. ]$/;
