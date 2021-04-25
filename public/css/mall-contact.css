@@ -20,8 +20,18 @@
 }
 
 .field, .name-field, textarea {
+    outline: none;
+    padding: 10px;
     width: 100%;
     box-sizing: border-box;
+    transition: 0.5s;
+}
+
+.field:focus,
+.name-field:focus,
+textarea:focus {
+    border: 1px solid #555555;
+    border-radius: 10px;
 }
 
 .field, .name-field {

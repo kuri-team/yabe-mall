@@ -64,20 +64,20 @@ FORM.addEventListener("submit", function () {
         err += errNum + ". At least one checkbox must be checked.\n";
     }
 
-    if (MESSAGE === "" || 50 <= PHONE.length <= 500) {
-        // If you don't Enter anything in Message field than show error
+    if (MESSAGE === "" || MESSAGE.length < 50 || MESSAGE.length > 500) {
+        // If the user didn't enter anything in Message field than show error
         errNum++;
         err += errNum + ". Enter message contains 50 to 500 letters.\n";
     }
 
     if (!FORM.contact_method[0].checked && !FORM.contact_method[1].checked) {
-        // If you don't  checked 0 index of gender field  or 1 index than show error(Contact Method)
+        // If the user didn't check 0 index of gender field  or 1 index than show error(Contact Method)
         errNum++;
         err += errNum + ". Select Preferred Contact Method.\n";
     }
 
     if (FORM.contact_purpose.selectedIndex < 1) {
-        // Check your selection index if your index is less than 1 than show error (Contact Purpose)
+        // Check the user's selection index if your index is less than 1 than show error (Contact Purpose)
         errNum++;
         err += errNum + ". PLease select your contact Purpose.\n";
     }
@@ -88,7 +88,7 @@ FORM.addEventListener("submit", function () {
         return false;
     } else {
         // If errNum is less than 0 or 0 than alert "done" and return "true"
-        alert('done');
+        alert("Sent!");
         return true;
     }
 });
