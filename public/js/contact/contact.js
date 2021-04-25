@@ -1,30 +1,22 @@
 const FORM = document.getElementById("contact-form");
 
 FORM.addEventListener("submit", function () {
-    //Get the value of name(selecter) and put in firstName(variable)
-    let firstName = FORM.fname.value;
-    let lastName = FORM.lname.value;
+    // Get form values
+    const firstName = FORM.fname.value;
+    const lastName = FORM.lname.value;
+    const gPhone = FORM.phone_num.value;
+    const gEmail = FORM.email_add.value;
+    const gMessage = FORM.message.value;
 
-    //Get the value of phone(selecter) and put in phone_num(Variable)
-    let gPhone = FORM.phone_num.value;
+    //Create RegExp patterns
+    const emailPattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const phonePattern = /^([0-9][-. ]?)+[^-. ]$/;
 
-    //Get the value of email(selecter) and put in gEmail(Variable)
-    let gEmail = FORM.email_add.value;
-
-    //Get the Value of message(selecter) and put in gMessage (Variable)
-    let gMessage = FORM.message.value;
-
-    //Create RegExp pattern to validate our email address value coming from a form field.
-    let emailPattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    //Create RegExp pattern to validate our phone number value coming from a form field.
-    let phonePattern =/^([0-9][-. ]?){1,}[^-. ]$/;
-
-    //Find a single character, except newline or line terminator
-    let namePattern = /\./;
+    // Find a single character, except newline or line terminator
+    const namePattern = /\./;
 
     //Only digits find
-    let namePatDgt = /\d/;
+    const namePatDgt = /\d/;
 
     // err variable is used to show error message.
     let err = "";
@@ -33,23 +25,23 @@ FORM.addEventListener("submit", function () {
     let errNum = 0;
 
     //  Checks the value : If Value empty  or value length less than 3 or value is digit than Show error Indvalid Name
-    if (firstName == "" || firstName.length < 3 || namePattern.test(firstName) || namePatDgt.test(firstName)) {
+    if (firstName === "" || firstName.length < 3 || namePattern.test(firstName) || namePatDgt.test(firstName)) {
         errNum++;
         err += errNum + ". Invalid name. Valid first name contains at least 3 letters.\n";
     }
-    if (lastName == "" || firstName.length < 3 || namePattern.test(firstName) || namePatDgt.test(firstName)) {
+    if (lastName === "" || firstName.length < 3 || namePattern.test(firstName) || namePatDgt.test(firstName)) {
         errNum++;
         err += errNum + ". Invalid name. Valid last name contains at least 3 letters.\n";
     }
 
     /* Check the phone number : If phone number is empty or value length less than 12 or is not a null then show error Invalid Phone number */
-    if (gPhone == "" || 9 <= gPhone.length <= 11 || phonePattern.test(gPhone)) {
+    if (gPhone === "" || 9 <= gPhone.length <= 11 || phonePattern.test(gPhone)) {
         errNum++;
         err += errNum + ". Invalid phone number. Valid phone number contains 9 to 11 digits\n";
     }
 
     /* If you don't Enter anything in Email field than show error(Enter Email)  */
-    if (gEmail == "") {
+    if (gEmail === "") {
         errNum++;
         err += errNum + ". Enter Email.\n";
     }
@@ -62,7 +54,7 @@ FORM.addEventListener("submit", function () {
     }
 
     /* If you don't Enter anything in Message field than show error */
-    if (gMessage == "" || 50 <= gPhone.length <= 500) {
+    if (gMessage === "" || 50 <= gPhone.length <= 500) {
         errNum++;
         err += errNum + ". Enter message contains 50 to 500 letters.\n";
     }
@@ -71,15 +63,6 @@ FORM.addEventListener("submit", function () {
     if (!FORM.contact_method[0].checked && !FORM.contact_method[1].checked) {
         errNum++;
         err += errNum + ". Select Preferred Contact Method.\n";
-    }
-
-    /*  If you don't checked any contact day then show error(contact-day-checkbox) */
-    if (!FORM.mon.checked && !FORM.tues.checked &&
-        !FORM.wed.checked && !FORM.thur.checked &&
-        !FORM.fri.checked && !FORM.sat.checked &&
-        !aelementrg.sun.checked) {
-        errNum++;
-        err += errNum + ". Select at least 1 Contact Day.\n";
     }
 
     /*  Check your selection index if your index is less than 1 than show error (Contact Purpose) */
@@ -134,7 +117,7 @@ document.getElementById("message").addEventListener("keyup", updateRequirementMe
 function updateRequirementMessage() {
     let message = document.getElementById("message").value;
     let T = message.length;
-    let advice = "";
+    let advice;
 
     if (T < 50) {
         advice = "Your message needs " + (50-T) + " more letters.";

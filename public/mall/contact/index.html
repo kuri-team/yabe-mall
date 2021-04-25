@@ -93,30 +93,23 @@
         <div class="flex-container flex-justify-content-space-between flex-wrap">
           <div class="name">
             <label for="fname" class="title">First Name*</label>
-            <input id="fname" type="text" name="fname" class="name-field"
-                   placeholder="This field is required" pattern="{3,15}" required>
+            <input id="fname" type="text" name="fname" class="name-field" placeholder="This field is required" required>
           </div>
 
           <div class="name">
             <label for="lname" class="title">Last Name*</label>
-            <input id="lname" type="text" name="lname" class="name-field"
-                   placeholder="This field is required" pattern="{3,15}" required>
+            <input id="lname" type="text" name="lname" class="name-field" placeholder="This field is required" required>
           </div>
         </div>
 
         <label for="email_add" class="title">Email*</label>
-        <input id="email_add" type="email" name="email_add" class="field"
-               pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
-               placeholder="This field is required" required>
+        <input id="email_add" type="email" name="email_add" class="field" placeholder="This field is required" required>
 
         <label for="phone_num" class="title">Phone*
           <span>Ex: 0123456789 or 0-1-2-3.4.5 6.7-8-9 or 012.345-6789</span>
         </label>
         <!-- minlength 9, maxlength 11 character validation-->
-        <input id="phone_num" type="tel" name="phone_num" class="field"
-               pattern="{9,11}" placeholder="This field is required"
-               title="Phone number should only contain contains 9 to 11 digits" required>
-
+        <input id="phone_num" type="tel" name="phone_num" class="field" placeholder="This field is required" title="Phone number should only contain contains 9 to 11 digits" required>
 
         <p>Preferred Contact Method*</p>
         <div class="contact-method">
