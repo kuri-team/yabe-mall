@@ -10,6 +10,11 @@
     margin: 14px 0 7px;
 }
 
+.contact-form .required:before {
+    content: "*";
+    color: #eb5e28;
+}
+
 .contact-form label {
     font-size: 14px;
 }
@@ -49,14 +54,7 @@ textarea {
 .contact-form p ~ p {
     padding-top: 6px;
 }
-/*highlight the border if users does not put any input*/
-input:invalid {
-    border-color: red;
-}
-input,
-input:valid {
-    border-color: #ccc;
-}
+
 
 /* Responsive design */
 @media only screen and (max-width: 1023px) {
