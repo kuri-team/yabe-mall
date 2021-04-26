@@ -126,3 +126,11 @@ main div {
         align-items: center;
     }
 }
+
+@media only screen and (max-width: 767px) {
+    .modal-box {
+        width: 70%;
+        font-size: smaller;
+        padding: 5px;
+    }
+}
