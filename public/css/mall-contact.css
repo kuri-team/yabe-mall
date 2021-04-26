@@ -10,18 +10,37 @@
     margin: 14px 0 7px;
 }
 
+.contact-form .required:before {
+    content: "*";
+    color: #eb5e28;
+}
+
 .contact-form label {
     font-size: 14px;
 }
 
 .field, .name-field, textarea {
+    outline: none;
+    padding: 10px;
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 12px;
+    transition: 0.5s;
+}
+
+.field:focus,
+.name-field:focus,
+textarea:focus {
+    border: 1px solid #555555;
+    border-radius: 10px;
 }
 
 .field, .name-field {
     height: 40px;
+}
+
+.requirement-text {
+    color: #555555;
+    font-size: 10pt;
 }
 
 textarea {
@@ -45,6 +64,7 @@ textarea {
 .contact-form p ~ p {
     padding-top: 6px;
 }
+
 
 /* Responsive design */
 @media only screen and (max-width: 1023px) {
