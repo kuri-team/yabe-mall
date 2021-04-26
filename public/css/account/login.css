@@ -4,6 +4,7 @@
 }
 
 #wrong-pwd {
+    display: none;
     font-size: smaller;
     color: #f40823;
     padding: 0 20px;
