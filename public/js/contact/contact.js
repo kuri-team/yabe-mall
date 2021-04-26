@@ -28,7 +28,7 @@ FORM.addEventListener("submit", function () {
         err += errNum + ". Invalid name. Valid first name contains at least 3 letters.\n";
     }
 
-    if (LAST_NAME === "" || FIRST_NAME.length < 3 || REGEX_NAME.test(FIRST_NAME) || REGEX_NAME_DIGIT.test(FIRST_NAME)) {
+    if (LAST_NAME === "" || LAST_NAME.length < 3 || REGEX_NAME.test(LAST_NAME) || REGEX_NAME_DIGIT.test(LAST_NAME)) {
         errNum++;
         err += errNum + ". Invalid name. Valid last name contains at least 3 letters.\n";
     }
