@@ -2,3 +2,10 @@
     width: 280px;
     border-color: #eb5e28;
 }
+
+#wrong-pwd {
+    font-size: smaller;
+    color: #f40823;
+    padding: 0 20px;
+    margin: 30px;
+}
