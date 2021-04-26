@@ -3,8 +3,8 @@
 * elements, then add an eventListener to each .password-field element listening for the "input" event. On that event,
 * display the matching .toggle-password-visibility element.
 *
-* Each .toggle-password-visibility works as a button that listens for "click" event to toggle the .password-field type
-* between type="text" and type="password". I.e. toggling the password visibility.
+* Each .toggle-password-visibility element works as a button that listens for "click" event to toggle its matching
+* .password-field type between type="text" and type="password". I.e. toggling the password visibility.
 * */
 const PWD_VIS_TOGGLES = document.querySelectorAll(".toggle-password-visibility");
 const PWD_FIELDS = document.querySelectorAll(".password-field");
@@ -29,5 +29,5 @@ if (PWD_FIELDS.length === PWD_VIS_TOGGLES.length) {
     }
 } else {
     // Disable password toggling feature and display a console error message
-    console.log("ERROR: Number of .password-field elements must be equal to number of .toggle-password-visibility elements");
+    console.log("ERROR: Number of .password-field elements must be equal to number of .toggle-password-visibility elements. All .toggle-password-visibility elements are disabled.");
 }
