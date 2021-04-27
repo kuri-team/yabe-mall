@@ -1,4 +1,4 @@
-/**
+/*
  *
  * common.js
  * YABE common functions. Must be included site-wide at the end of <body></body> in every pages
@@ -36,7 +36,7 @@ function previousPage() {
 }
 
 
-/**
+/*
  * Navbar search filter
  */
 const NAV_SEARCH_FILTER = document.getElementById("nav-search-filter");
@@ -50,7 +50,7 @@ let separator = " by ";
 NAV_SEARCH_FILTER.addEventListener("mouseover", function () {
     let width = NAV_SEARCH_FILTER_LEVEL_1.offsetWidth;
     console.log(width);
-    NAV_SEARCH_FILTER_LEVEL_1.setAttribute("style", "display: block");
+    NAV_SEARCH_FILTER_LEVEL_1.setAttribute("style", "display: block; animation: expand-top 0.1s; transform-origin: top;");
     NAV_SEARCH_FILTER_LEVEL_2_1.setAttribute("style", `left: ${width}px;`);
     NAV_SEARCH_FILTER_LEVEL_2_2.setAttribute("style", `left: ${width}px;`);
 });
