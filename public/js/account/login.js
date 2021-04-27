@@ -2,7 +2,7 @@ const CORRECT_PWD = "password";
 const LOGIN_FORM = document.getElementById("login-form");
 
 // Check entered password with correct password
-LOGIN_FORM.addEventListener("submit", function () {
+LOGIN_FORM.addEventListener("submit", function (event) {
     // Get password value and wrong password message
     const ENTERED_PWD = LOGIN_FORM.password.value;
     const WRONG_PWD_MSG = document.getElementById("wrong-pwd");
