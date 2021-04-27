@@ -80,6 +80,17 @@
 
     <h1 class="content-title">CART</h1>
     <div class="content-body">
+
+        <div class="empty-cart">
+          <div class="empty-message">
+            <i class="fas fa-shopping-cart"></i>
+            <p class="empty-note">The cart is currently empty</p>
+          </div>
+          <div class="href-button">
+            <a href="../"><button class="href-button-home">HOME</button></a>
+          </div>
+        </div>
+
         <div class="cart-body">
           <div class="cart-product-list">
           <ul  class="cart-product-table">
@@ -104,71 +115,6 @@
                 <button class="cart-product-remove-button">REMOVE</button>
               </div>
             </li>
-
-            <li class="cart-product">
-              <div class="cart-img">
-                <a href="../../store/store-template/product-detail/"><img alt="image of a product" src="../../media/image/best_buy_shop/watches/6_best_buy.jpg"></a>
-              </div>
-              <div class="cart-product-details">
-                <a class="cart-product-title" href="../../store/store-template/product-detail/">Product Title Goes Here</a>
-                <a class="cart-product-shop" href="../../store/store-template/">Shop Name Goes Here</a>
-                <p class="cart-product-price-crossed-out">$32.00</p>
-                <p class="cart-product-price">$25.60</p>
-                <div class="cart-product-quantity">
-                  <button class="cart-product-quantity-button"><i class="fas fa-minus"></i></button>
-                  <label><input class="cart-product-quantity-input" type="number" value=1 min=0></label>
-                  <button class="cart-product-quantity-button"><i class="fas fa-plus"></i></button>
-                </div>
-              </div>
-
-              <div class="cart-product-remove">
-                <button class="cart-product-remove-button">REMOVE</button>
-              </div>
-            </li>
-
-            <li class="cart-product">
-              <div class="cart-img">
-                <a href="../../store/store-template/product-detail/"><img alt="image of a product" src="../../media/image/hsy_shop/HSY2.jpg"></a>
-              </div>
-              <div class="cart-product-details">
-                <a class="cart-product-title" href="../../store/store-template/product-detail/">Product Title Goes Here</a>
-                <a class="cart-product-shop" href="../../store/store-template/">Shop Name Goes Here</a>
-                <p class="cart-product-price-crossed-out">$32.00</p>
-                <p class="cart-product-price">$25.60</p>
-                <div class="cart-product-quantity">
-                  <button class="cart-product-quantity-button"><i class="fas fa-minus"></i></button>
-                  <label><input class="cart-product-quantity-input" type="number" value=1 min=0></label>
-                  <button class="cart-product-quantity-button"><i class="fas fa-plus"></i></button>
-                </div>
-              </div>
-
-              <div class="cart-product-remove">
-                <button class="cart-product-remove-button">REMOVE</button>
-              </div>
-            </li>
-
-            <li class="cart-product">
-              <div class="cart-img">
-                <a href="../../store/store-template/product-detail/"><img alt="image of a product" src="../../media/image/zappos_shop/sneakers/20_zappos.jpg"></a>
-              </div>
-              <div class="cart-product-details">
-                <a class="cart-product-title" href="../../store/store-template/product-detail/">Product Title Goes Here</a>
-                <a class="cart-product-shop" href="../../store/store-template/">Shop Name Goes Here</a>
-                <p class="cart-product-price-crossed-out">$32.00</p>
-                <p class="cart-product-price">$25.60</p>
-                <div class="cart-product-quantity">
-                  <button class="cart-product-quantity-button"><i class="fas fa-minus"></i></button>
-                  <label><input class="cart-product-quantity-input" type="number" value=1 min=0></label>
-                  <button class="cart-product-quantity-button"><i class="fas fa-plus"></i></button>
-                </div>
-              </div>
-
-              <div class="cart-product-remove">
-                <button class="cart-product-remove-button">REMOVE</button>
-              </div>
-            </li>
-
-
           </ul>
           </div>
 
@@ -255,5 +201,6 @@
   </div>
 
   <script src="../../js/common.js"></script>
+  <script src="../../js/cart/cart.js"></script>
 </body>
 </html>

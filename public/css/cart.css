@@ -2,10 +2,14 @@
 .cart-body {
     width: 100%;
     margin: auto auto auto 0;
-    display: grid;
+    display: none;
     grid-gap: 0.5em;
     grid-template:
     "content summary";
+}
+
+.cart-body.active {
+    display: grid;
 }
 /****/
 
@@ -13,6 +17,55 @@
 button {
     border: 1px solid #252422;
 }
+/****/
+
+/** EMPTY CART **/
+
+.empty-cart {
+    text-align: center;
+    display:block;
+}
+
+.empty-cart.hide {
+    display: none
+}
+
+.empty-message {
+    padding: 100px 0 20px 0;
+    font-size: 1.5em;
+}
+
+.empty-note {
+    padding: 0 75px;
+}
+
+.empty-cart .fa-shopping-cart {
+    color: #252422;
+    font-size: 200%;
+}
+
+/* home button */
+.href-button {
+    padding-bottom: 150px;
+}
+
+.href-button button{
+    width: 200px;
+    height: 50px;
+    color: #fff;
+    margin:10px;
+    text-decoration: none;
+    border-color: #252422;
+}
+
+.href-button-home {
+    background-color: #eb5e28;
+}
+
+.href-button-home:active {
+    background: #B0441E;
+}
+
 /****/
 
 /** PRODUCT LIST **/
