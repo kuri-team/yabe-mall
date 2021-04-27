@@ -49,7 +49,6 @@ let separator = " by ";
 // Automatic display, width, and position on mouseover of Navbar Filter
 NAV_SEARCH_FILTER.addEventListener("mouseover", function () {
     let width = NAV_SEARCH_FILTER_LEVEL_1.offsetWidth;
-    console.log(width);
     NAV_SEARCH_FILTER_LEVEL_1.setAttribute("style", "display: block");
     NAV_SEARCH_FILTER_LEVEL_2_1.setAttribute("style", `left: ${width}px;`);
     NAV_SEARCH_FILTER_LEVEL_2_2.setAttribute("style", `left: ${width}px;`);
