@@ -1,7 +1,9 @@
 // Form validation
-const FORM = document.getElementById("contact-form");
+var FORM = document.getElementById("contact-form");
 
-FORM.addEventListener("submit", function () {
+FORM.addEventListener("submit", function() {
+    console.log("function called");
+
     // Get form values
     const FIRST_NAME = FORM.fname.value;
     const LAST_NAME = FORM.lname.value;
@@ -68,6 +70,7 @@ FORM.addEventListener("submit", function () {
         // If the user didn't enter anything in Message field than show error
         errNum++;
         err += errNum + ". Enter message contains 50 to 500 letters.\n";
+        document.getElementById("message").style.color = red
     }
 
     if (!FORM.contact_method[0].checked && !FORM.contact_method[1].checked) {
@@ -82,6 +85,8 @@ FORM.addEventListener("submit", function () {
         err += errNum + ". PLease select your contact Purpose.\n";
     }
 
+    console.log(errNum);
+
     if (errNum>0) {
         // If errNum is greater than 0 than alert error and return "false"
         alert(err);
@@ -95,7 +100,8 @@ FORM.addEventListener("submit", function () {
 
 
 // Word-count Messages
-document.getElementById("message").addEventListener("keyup", updateRequirementMessage);
+// keydown for keeping the backspace
+document.getElementById("message").addEventListener("keydown", updateRequirementMessage);
 
 function updateRequirementMessage() {
     let message = document.getElementById("message").value;
@@ -115,3 +121,4 @@ function updateRequirementMessage() {
         document.getElementById('remaining-letters').innerHTML = advice.fontcolor("red");
     }
 }
+
