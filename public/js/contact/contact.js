@@ -70,7 +70,6 @@ FORM.addEventListener("submit", function() {
         // If the user didn't enter anything in Message field than show error
         errNum++;
         err += errNum + ". Enter message contains 50 to 500 letters.\n";
-        document.getElementById("message").style.color = red
     }
 
     if (!FORM.contact_method[0].checked && !FORM.contact_method[1].checked) {
