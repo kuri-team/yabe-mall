@@ -29,3 +29,13 @@ CAPTURE_AREA.addEventListener("click", function () {
         STORE_OWNER_ONLY_FIELDS.setAttribute("style", "display: none;");
     }
 });
+
+
+// Automatic focus to input fields when the wrapper field (.register-item) is in focus
+const REGISTER_ITEMS = document.querySelectorAll(".register-item");
+for (let index = 0; index < REGISTER_ITEMS.length; index++) {
+    REGISTER_ITEMS[index].addEventListener("click", function () {
+        const INPUT = REGISTER_ITEMS[index].querySelector("input") || REGISTER_ITEMS[index].querySelector("select");
+        INPUT.focus();
+    });
+}
