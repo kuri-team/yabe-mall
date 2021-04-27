@@ -724,20 +724,28 @@ footer {
     background: #ccc5b9;
 }
 
+footer > .flex-container {
+    height: 230px;
+}
+
 #footer-menu-main-pages, #footer-menu-policy, #footer-menu-browse {
-    transform: translateY(-9px);
     -o-transform: translateY(-9px);
     -webkit-transform: translateY(-9px);
     -ms-transform: translateY(-9px);
     -moz-transform: translateY(-9px);
+    transform: translateY(-9px);
 }
 
 #footer-menu-browse-product:hover ul {
     display: block;
+    animation: expand-top 0.25s;
+    transform-origin: top;
 }
 
 #footer-menu-browse-store:hover ul {
     display: block;
+    animation: expand-top 0.25s;
+    transform-origin: top;
 }
 
 #footer-logo {
