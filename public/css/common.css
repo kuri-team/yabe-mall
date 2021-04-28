@@ -828,20 +828,6 @@ footer {
 }
 
 
-/******************************
-    Animations
-*******************************/
-@keyframes expand-top {
-    from {
-        transform: scaleY(0);
-    }
-
-    to {
-        transform: scaleY(1);
-    }
-}
-
-
 /**********************************
     YABE Cookie consent message
 ***********************************/
@@ -903,5 +889,19 @@ footer {
     }
     .cookie-consent.active .text-align-justify{
         margin-bottom: 5px;
+    }
+}
+
+
+/******************************
+    Animations
+*******************************/
+@keyframes expand-top {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        transform: scaleY(1);
     }
 }
