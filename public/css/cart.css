@@ -21,12 +21,12 @@ button {
 
 /** EMPTY CART **/
 
-.empty-cart {
+.empty-cart.active {
     text-align: center;
     display:block;
 }
 
-.empty-cart.hide {
+.empty-cart{
     display: none
 }
 
@@ -75,6 +75,10 @@ button {
     width: 100%;
     justify-content: center;
 
+}
+/* hidden product list to clone from */
+.cart-product-list.sample {
+    display: none;
 }
 
 /* For each product card */
