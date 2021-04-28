@@ -79,7 +79,7 @@
       </div>
     </div>
 
-    <form class="register-form" action="" method="post" target="_self" enctype="multipart/form-data">
+    <form id="register-form" class="register-form" action="" method="post" target="_self" enctype="multipart/form-data">
       <div id="register-avatar-upload-field" class="register-field flex-container flex-align-items-center flex-justify-content-center">
         <div class="register-item no-border register-item-photo-upload flex-container animated">
           <label><input id="avatar" name="avatar" type="file" accept=".png,.jpg,.jpeg,image/bmp,image/jpeg,image/png"></label>
@@ -88,18 +88,20 @@
 
       <div class="mt-30"></div>
 
-      <div class="register-field flex-container flex-align-items-center flex-justify-content-center flex-align-items-center">
+      <div class="input-field-validation register-field flex-container flex-align-items-center flex-justify-content-center flex-align-items-center">
         <div class="register-item flex-container animated">
           <label class="label" for="fname">First Name</label>
           <input id="fname" name="fname" type="text" placeholder="This field is required" required>
+          <span class="message-error"></span>
         </div>
-        <div class="register-item flex-container animated animated">
+        <div class="input-field-validation register-item flex-container animated animated">
           <label class="label" for="lname">Last Name</label>
           <input id="lname" name="lname" type="text" placeholder="This field is required" required>
+          <span class="message-error"></span>
         </div>
       </div>
 
-      <div class="register-field flex-container flex-align-items-center flex-justify-content-center">
+      <div class="input-field-validation register-field flex-container flex-align-items-center flex-justify-content-center">
         <div class="register-item flex-container animated">
           <label class="label" for="gender">Gender</label>
           <select id="gender" name="gender">
@@ -109,46 +111,52 @@
             <option value="pnts" name="gender">Prefer not to say</option>
           </select>
           <i class="fas fa-caret-down"></i>
+          <span class="message-error"></span>
         </div>
-        <div class="register-item flex-container animated">
+        <div class="input-field-validation register-item flex-container animated">
           <label class="label" for="birthdate">Birthdate</label>
           <input id="birthdate" type="date" name="birthdate">
         </div>
       </div>
 
-      <div class="register-field flex-container flex-align-items-center flex-justify-content-center">
+      <div class="input-field-validation register-field flex-container flex-align-items-center flex-justify-content-center">
         <div class="register-item flex-container animated">
           <label class="label" for="email">Email</label>
           <input id="email" name="email" type="text" placeholder="This field is required" required>
+          <span class="message-error"></span>
         </div>
       </div>
 
-      <div class="register-field flex-container flex-align-items-center flex-justify-content-center">
+      <div class="input-field-validation register-field flex-container flex-align-items-center flex-justify-content-center">
         <div class="register-item flex-container animated">
           <label class="label" for="phone">Phone Number</label>
           <input id="phone" name="tel" type="text">
+          <span class="message-error"></span>
         </div>
       </div>
 
-      <div class="register-field flex-container flex-align-items-center flex-justify-content-center">
+      <div class="input-field-validation register-field flex-container flex-align-items-center flex-justify-content-center">
         <div class="register-item flex-container animated">
           <label class="label" for="address">Address</label>
           <input id="address" name="addr" type="text">
+          <span class="message-error"></span>
         </div>
       </div>
 
-      <div class="register-field flex-container flex-align-items-center flex-justify-content-center">
+      <div class="input-field-validation register-field flex-container flex-align-items-center flex-justify-content-center">
         <div class="register-item flex-container animated">
           <label class="label" for="city">City</label>
           <input id="city" name="city" type="text">
+          <span class="message-error"></span>
         </div>
-        <div class="register-item flex-container animated">
+        <div class="input-field-validation register-item flex-container animated">
           <label class="label" for="zipcode">Zipcode</label>
           <input id="zipcode" name="zip" type="text">
+          <span class="message-error"></span>
         </div>
       </div>
 
-      <div class="register-field flex-container flex-align-items-center flex-justify-content-center">
+      <div class="input-field-validation register-field flex-container flex-align-items-center flex-justify-content-center">
         <div class="register-item flex-container animated">
           <label class="label" for="country">Country</label>
           <select id="country" name="country">
@@ -404,30 +412,34 @@
             <option name="country" value="ZW">Zimbabwe</option>
           </select>
           <i class="fas fa-caret-down"></i>
+          <span class="message-error"></span>
         </div>
       </div>
 
-      <div class="register-field flex-container flex-align-items-center flex-justify-content-center">
+      <div class="input-field-validation register-field flex-container flex-align-items-center flex-justify-content-center">
         <div class="register-item flex-container animated">
           <label class="label" for="usrname">Username</label>
           <input id="usrname" name="usrname" type="text" placeholder="This field is required" required>
+          <span class="message-error"></span>
         </div>
       </div>
 
-      <div class="register-field flex-container flex-align-items-center flex-justify-content-center">
+      <div class="input-field-validation register-field flex-container flex-align-items-center flex-justify-content-center">
         <div class="register-item flex-container animated">
           <label class="label" for="pwd">Password</label>
           <input id="pwd" class="password-field" name="pwd" type="password" placeholder="This field is required" required>
           <div class="toggle-password-visibility"><i class="fas fa-eye"></i></div>
+          <span class="message-error"></span>
         </div>
-        <div class="register-item flex-container animated">
+        <div class="input-field-validation register-item flex-container animated">
           <label class="label" for="verify-pwd">Verify Password</label>
           <input id="verify-pwd" class="password-field" name="verify-pwd" type="password" placeholder="This field is required" required>
           <div class="toggle-password-visibility"><i class="fas fa-eye"></i></div>
+          <span class="message-error"></span>
         </div>
       </div>
 
-      <div id="register-account-type-capture-area" class="register-field flex-container flex-justify-content-center flex-direction-column">
+      <div id="register-account-type-capture-area" class="input-field-validation register-field flex-container flex-justify-content-center flex-direction-column">
         <p class="subtitle">Account Type</p>
         <div class="register-field flex-container flex-align-items-center flex-justify-content-center flex-justify-content-space-between">
           <div class="register-item no-border flex-container flex-align-items-center flex-justify-content-center">
