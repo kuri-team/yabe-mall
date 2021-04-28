@@ -83,7 +83,7 @@ if (localStorage["isLoggedIn"] === "true") {
 
     NAV_LOGIN_REG.setAttribute("style", "display: none");
     NAV_MY_ACCOUNT.setAttribute("style", "display: block");
-}
+    }
 
 
 /**
