@@ -75,11 +75,14 @@ for (let i = 0; i < NAV_SEARCH_FILTER_OPTIONS.length; i++) {
 
 
 /**
- * This function is used to check the login status and change Login field to 'My Account'
+ * Check the login status and change Login field to 'My Account'
  */
 if (localStorage["isLoggedIn"] === "true") {
-    const NAV_ACCOUNT = document.getElementById("nav-account");
-    NAV_ACCOUNT.innerHTML = '<a href="">My Account</a>'
+    const NAV_LOGIN_REG = document.getElementById("nav-login-reg");
+    const NAV_MY_ACCOUNT = document.getElementById("nav-my-account");
+
+    NAV_LOGIN_REG.setAttribute("style", "display: none");
+    NAV_MY_ACCOUNT.setAttribute("style", "display: block");
 }
 
 
