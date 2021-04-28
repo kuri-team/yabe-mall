@@ -1,11 +1,11 @@
-const VIEW_CART_ITEMS = document.querySelector(".cart-body")
-const EMPTY_MESSAGE = document.querySelector(".empty-cart")
+const VIEW_CART_ITEMS = document.querySelector(".cart-body");
+const EMPTY_MESSAGE = document.querySelector(".empty-cart");
 
 // check if cart has any product
 if (localStorage.getItem("cartProducts") != null){
     VIEW_CART_ITEMS.classList.add("active");
     EMPTY_MESSAGE.classList.remove("active");
-    listItemInCart()
+    listItemInCart();
 } else {
     VIEW_CART_ITEMS.classList.remove("active");
     EMPTY_MESSAGE.classList.add("active");
@@ -37,6 +37,6 @@ function  listItemInCart() {
                 <div class="cart-product-remove">
                   <button class="cart-product-remove-button">REMOVE</button>
                 </div>
-              </li>`
+              </li>`;
     })
 }
