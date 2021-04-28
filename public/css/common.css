@@ -736,12 +736,7 @@ footer > .flex-container {
     transform: translateY(-9px);
 }
 
-#footer-menu-browse-product:hover ul {
-    display: block;
-    animation: expand-top 0.25s;
-    transform-origin: top;
-}
-
+#footer-menu-browse-product:hover ul,
 #footer-menu-browse-store:hover ul {
     display: block;
     animation: expand-top 0.25s;
