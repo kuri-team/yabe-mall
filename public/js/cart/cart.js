@@ -30,8 +30,7 @@ function addItemToCart() {
             }
         }
         cartProducts[productID].product_quantity += 1
-    }
-    else {
+    } else {
         cartItem.product_quantity= 1
         cartProducts = {
             [productID]: cartItem
