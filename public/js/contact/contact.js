@@ -15,8 +15,6 @@ FORM.addEventListener("submit", function() {
     // Create RegExp patterns
     const REGEX_EMAIL = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const REGEX_PHONE = /^([0-9][-. ]?){9,11}[^-. ]$/;
-    const REGEX_NAME = /\./;  // Find a single character, except newline or line terminator
-    const REGEX_NAME_DIGIT = /\d/;  // Only digits find
 
     // Variables
     let err = "";  // err variable is used to show error message.
@@ -24,15 +22,15 @@ FORM.addEventListener("submit", function() {
 
 
     // Logic
-    if (FIRST_NAME === "" || FIRST_NAME.length < 3 || REGEX_NAME.test(FIRST_NAME) || REGEX_NAME_DIGIT.test(FIRST_NAME)) {
+    if (FIRST_NAME === "" || FIRST_NAME.length < 3) {
         // Checks the value: If Value empty  or value length less than 3 or value is digit than Show error Invalid Name
         errNum++;
-        err += errNum + ". Invalid name. Valid first name contains at least 3 letters.\n";
+        err += errNum + ". Invalid first name. Valid first name contains at least 3 letters.\n";
     }
 
-    if (LAST_NAME === "" || LAST_NAME.length < 3 || REGEX_NAME.test(LAST_NAME) || REGEX_NAME_DIGIT.test(LAST_NAME)) {
+    if (LAST_NAME === "" || LAST_NAME.length < 3) {
         errNum++;
-        err += errNum + ". Invalid name. Valid last name contains at least 3 letters.\n";
+        err += errNum + ". Invalid last name. Valid last name contains at least 3 letters.\n";
     }
 
     if (PHONE === "" || !REGEX_PHONE.test(PHONE)) {
@@ -69,7 +67,7 @@ FORM.addEventListener("submit", function() {
     if (MESSAGE === "" || MESSAGE.length < 50 || MESSAGE.length > 500) {
         // If the user didn't enter anything in Message field than show error
         errNum++;
-        err += errNum + ". Enter message contains 50 to 500 letters.\n";
+        err += errNum + ". Valid message contains 50 to 500 letters.\n";
     }
 
     if (!FORM.contact_method[0].checked && !FORM.contact_method[1].checked) {
