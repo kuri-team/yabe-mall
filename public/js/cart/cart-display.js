@@ -1,6 +1,11 @@
 const VIEW_CART_ITEMS = document.querySelector(".cart-body");
 const EMPTY_MESSAGE = document.querySelector(".empty-cart");
 
+// clear the localStorage if all items has been removed
+if (localStorage.getItem("cartProducts")=="{}") {
+    localStorage.removeItem("cartProducts")
+}
+
 // check if cart has any product
 if (localStorage.getItem("cartProducts") != null){
     VIEW_CART_ITEMS.classList.add("active");
@@ -78,3 +83,15 @@ document.querySelectorAll(".cart-product-quantity-button.minus").forEach(functio
         document.getElementById(`${productID} product-quantity`).value = productQuantity;
     });
 });
+
+// remove product
+document.querySelectorAll(".cart-product-remove-button").forEach(function (item){
+    item.addEventListener("click", function (){
+        let productList = localStorage.getItem("cartProducts");
+        productList = JSON.parse(productList);
+        let productID = this.parentNode.parentNode.id;
+        delete productList[productID];
+        localStorage.setItem("cartProducts", JSON.stringify(productList));
+        location.reload();
+    })
+})

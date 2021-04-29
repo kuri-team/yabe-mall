@@ -56,4 +56,7 @@ function addToCartMsg () {
         const doneMsg = document.querySelector(".done-msg");
         doc.removeChild(doneMsg);
     },2000)
+    setTimeout(function() {
+        location.reload()
+    },1000)
 }
