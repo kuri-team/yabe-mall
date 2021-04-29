@@ -680,10 +680,12 @@ nav a {
     text-align: -webkit-center;
     text-align: -moz-center;
     text-align: center;
+    transition: 0.5s;
 }
 
 .mobile-menu ul li:active {
     background: #252422;
+    transition: none;
 }
 
 .mobile-menu-cart {
