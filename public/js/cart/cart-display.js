@@ -16,7 +16,7 @@ function  listItemInCart() {
     let productList = localStorage.getItem("cartProducts");
     productList = JSON.parse(productList);
     let productTable = document.querySelector(".cart-product-table");
-    Object.values(productList).map(function(item) {
+    Object.values(productList).map(function(item) { //for each product, insert <li> to html
         productTable.innerHTML += `
             <li class="cart-product" id="${item.product_ID}">
                 <div class="cart-img">
@@ -42,32 +42,32 @@ function  listItemInCart() {
 }
 
 // change quantity with + - buttons
+// + button: update current quantity on the page and local storage
 document.querySelectorAll(".cart-product-quantity-button.plus").forEach(function (item) {
     item.addEventListener("click", function() {
-    let productList = localStorage.getItem("cartProducts");
+    let productList = localStorage.getItem("cartProducts"); // local storage
     productList = JSON.parse(productList);
     let productID = item.parentNode.parentNode.parentNode.id;
     productList[productID].product_quantity+=1;
-    let inputValue = document.getElementById(`${ productID } product-quantity`).value;
+    localStorage.setItem("cartProducts",JSON.stringify(productList));
+    let inputValue = document.getElementById(`${ productID } product-quantity`).value; // page
     let productQuantity = parseInt(inputValue)
     productQuantity += 1;
     document.getElementById(`${ productID } product-quantity`).value = productQuantity;
-    localStorage.setItem("cartProducts",JSON.stringify(productList));
 });
 });
 
-
-
+//- button:  update current quantity on the page and local storage
 document.querySelectorAll(".cart-product-quantity-button.minus").forEach(function (item) {
     item.addEventListener("click", function() {
-        let productList = localStorage.getItem("cartProducts");
+        let productList = localStorage.getItem("cartProducts"); //local storage
         productList = JSON.parse(productList);
         let productID = this.parentNode.parentNode.parentNode.id;
         productList[productID].product_quantity -= 1;
-        let inputValue = document.getElementById(`${productID} product-quantity`).value;
+        localStorage.setItem("cartProducts", JSON.stringify(productList));
+        let inputValue = document.getElementById(`${productID} product-quantity`).value; // page
         let productQuantity = parseInt(inputValue)
         productQuantity -= 1;
         document.getElementById(`${productID} product-quantity`).value = productQuantity;
-        localStorage.setItem("cartProducts", JSON.stringify(productList));
     });
 });

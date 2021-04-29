@@ -26,17 +26,16 @@ function addItemToCart() {
     if(cartProducts != null) {
         if(cartProducts[productID] === undefined) {
             cartProducts = {
-                ...cartProducts,
+                ...cartProducts, // for product that is added 1st time
                 [productID]: cartItem
             };
         }
-        cartProducts[productID].product_quantity += 1;
-    } else {
+        cartProducts[productID].product_quantity += 1; // for products that are already in cart
+    } else { //
         cartItem.product_quantity= 1;
         cartProducts = {
-            [productID]: cartItem
+            [productID]: cartItem // for empty cart
         };
     }
-
     localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
 }
