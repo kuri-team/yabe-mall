@@ -75,9 +75,14 @@ for (let i = 0; i < NAV_SEARCH_FILTER_OPTIONS.length; i++) {
 
 
 /**
- * Check the login status and change Login field to 'My Account'
+ * Persistent log in features
  */
 if (localStorage["isLoggedIn"] === "true") {
+    // Mobile menu display Logged In status
+    document.querySelector(".mobile-menu-my-account").setAttribute("style", "display: block;");
+    document.querySelector(".mobile-menu-login").setAttribute("style", "display: none;");
+
+    // Check the login status and change Login field to 'My Account'
     const NAV_LOGIN_REG = document.getElementById("nav-login-reg");
     const NAV_MY_ACCOUNT = document.getElementById("nav-my-account");
 
