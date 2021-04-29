@@ -99,7 +99,11 @@ if (localStorage["isLoggedIn"] === "true") {
         currentURL.indexOf("forgot-password") !== -1
     ) {
         // Auto redirect to "My Account" if already logged in
-        let myAccountURL = currentURL.replace("login", "") + "my-account";
+        let myAccountURL = currentURL;
+        myAccountURL = myAccountURL.replace("login", "");
+        myAccountURL = myAccountURL.replace("register", "");
+        myAccountURL = myAccountURL.replace("forgot-password", "");
+        myAccountURL += "my-account";
         window.location.replace(myAccountURL);
     }
 }

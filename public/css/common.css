@@ -830,7 +830,8 @@ footer > .flex-container {
         width: 100%;
     }
 
-    footer .flex-container {
+    footer > .flex-container {
+        height: 650px;
         -webkit-flex-flow: column;
         flex-flow: column;
         -webkit-align-items: center;
