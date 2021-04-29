@@ -17,7 +17,10 @@ let cartItem = {
 const BUY_NOW_BUTTON = document.querySelector(".buy-now");
 const ADD_BUTTON = document.querySelector(".add-to-cart");
 ADD_BUTTON.addEventListener("click", addItemToCart);
-BUY_NOW_BUTTON.addEventListener("click", addItemToCart);
+BUY_NOW_BUTTON.addEventListener("click", function (){
+    addItemToCart();
+    window.location.href = BUY_NOW_BUTTON.querySelector("a").href;
+});
 
 function addItemToCart() {
     let cartProducts = localStorage.getItem("cartProducts");
