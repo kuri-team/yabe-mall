@@ -2,7 +2,7 @@ const VIEW_CART_ITEMS = document.querySelector(".cart-body");
 const EMPTY_MESSAGE = document.querySelector(".empty-cart");
 
 // clear the localStorage if all items has been removed
-if (localStorage.getItem("cartProducts")=="{}") {
+if (localStorage.getItem("cartProducts") === "{}") {
     localStorage.removeItem("cartProducts")
 }
 
@@ -25,7 +25,7 @@ function  listItemInCart() {
         productTable.innerHTML += `
             <li class="cart-product" id="${item.product_ID}">
                 <div class="cart-img">
-                  <a href="../../store/store-template/product-detail/"><img alt="image of a product" src="${item.product_img}"></a>
+                  <a href="../../store/store-template/${item.product_img}"><img alt="image of a product" src="${item.product_img}"></a>
                 </div>
                 <div class="cart-product-details">
                   <a class="cart-product-title" href="${item.product_Link}">${item.product_name}</a>
