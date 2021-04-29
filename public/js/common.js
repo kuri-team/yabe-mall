@@ -81,9 +81,23 @@ if (localStorage["isLoggedIn"] === "true") {
     const NAV_LOGIN_REG = document.getElementById("nav-login-reg");
     const NAV_MY_ACCOUNT = document.getElementById("nav-my-account");
 
-    NAV_LOGIN_REG.setAttribute("style", "display: none");
-    NAV_MY_ACCOUNT.setAttribute("style", "display: block");
+    if (NAV_LOGIN_REG && NAV_MY_ACCOUNT) {
+        NAV_LOGIN_REG.setAttribute("style", "display: none");
+        NAV_MY_ACCOUNT.setAttribute("style", "display: block");
     }
+
+    // Redirect to My Account if the user is already logged in and tries to open either Login, Register, or Forgot Password
+    let currentURL = window.location.href;
+    if (
+        currentURL.indexOf("login") !== -1 ||
+        currentURL.indexOf("register") !== -1 ||
+        currentURL.indexOf("forgot-password") !== -1
+    ) {
+        // Auto redirect to "My Account" if already logged in
+        let myAccountURL = currentURL.replace("login", "") + "my-account";
+        window.location.replace(myAccountURL);
+    }
+}
 
 
 /**
