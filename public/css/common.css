@@ -695,6 +695,14 @@ nav a {
     margin-right: 5px;
 }
 
+.mobile-menu-my-account {
+    display: none;
+}
+
+.mobile-menu-login {
+    display: block;
+}
+
 /* Responsive header nav */
 @media only screen and (max-width: 950px) {
     nav {
