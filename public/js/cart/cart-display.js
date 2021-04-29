@@ -64,10 +64,17 @@ document.querySelectorAll(".cart-product-quantity-button.minus").forEach(functio
         productList = JSON.parse(productList);
         let productID = this.parentNode.parentNode.parentNode.id;
         productList[productID].product_quantity -= 1;
+        if ( productList[productID].product_quantity < 1){
+            productList[productID].product_quantity = 1
+        }
         localStorage.setItem("cartProducts", JSON.stringify(productList));
+
         let inputValue = document.getElementById(`${productID} product-quantity`).value; // page
         let productQuantity = parseInt(inputValue)
         productQuantity -= 1;
+        if (productQuantity < 1){
+            productQuantity = 1
+        }
         document.getElementById(`${productID} product-quantity`).value = productQuantity;
     });
 });
