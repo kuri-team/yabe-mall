@@ -5,6 +5,7 @@ let storeName = document.querySelector(".product-info-main p").innerHTML;
 let finalPrice = parseFloat(document.querySelector(".product-info-price").innerHTML.slice(1,));
 let productImg = document.querySelector(".product-info-main-img img").src;
 let cartItem = {
+    "product_ID": productID,
     "product_name": productName,
     "product_Link": productLink,
     "store_name": storeName,
