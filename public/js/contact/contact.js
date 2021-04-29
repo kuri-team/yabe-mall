@@ -1,5 +1,5 @@
 // Form validation
-var FORM = document.getElementById("contact-form");
+const FORM = document.getElementById("contact-form");
 
 FORM.addEventListener("submit", function() {
     console.log("function called");

@@ -118,15 +118,8 @@ textarea {
     cursor: pointer;
 }
 
-/*input:invalid, textarea:invalid, select:invalid, input[type=checkbox] {*/
-/*    background-color:#eb5e28;*/
-/*}*/
-
-/*.invalid contact-day-checkbox:required:invalid {*/
-/*    border: 3px solid #900;*/
-/*}*/
 
 input:invalid, textarea:invalid, select:invalid, .contact-method:invalid, .contact-day:invalid {
     background-color: #ffdddd;
-    border-color: #c00000;
+    border: 2px solid #cd4813;
 }
