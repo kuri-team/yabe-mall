@@ -101,6 +101,14 @@ if (localStorage["isLoggedIn"] === "true") {
 
 
 /**
+ * Logout mechanism
+ */
+function logOut() {
+    localStorage["isLoggedIn"] = "false";
+}
+
+
+/**
  * Cookie consent message
  */
 const COOKIE_CONSENT = document.querySelector(".cookie-consent");
