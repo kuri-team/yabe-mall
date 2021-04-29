@@ -25,7 +25,7 @@ function  listItemInCart() {
         productTable.innerHTML += `
             <li class="cart-product" id="${item.product_ID}">
                 <div class="cart-img">
-                  <a href="../../store/store-template/${item.product_Link}"><img alt="image of a product" src="${item.product_img}"></a>
+                  <a href="${item.product_Link}"><img alt="image of a product" src="${item.product_img}"></a>
                 </div>
                 <div class="cart-product-details">
                   <a class="cart-product-title" href="${item.product_Link}">${item.product_name}</a>
