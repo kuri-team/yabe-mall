@@ -615,7 +615,7 @@ nav a {
     text-decoration: underline;
 }
 
-.mobile-only {
+#nav-my-account, .mobile-only {
     display: none;
 }
 
@@ -693,6 +693,14 @@ nav a {
 
 .mobile-menu-cart i {
     margin-right: 5px;
+}
+
+.mobile-menu-my-account {
+    display: none;
+}
+
+.mobile-menu-login {
+    display: block;
 }
 
 /* Responsive header nav */

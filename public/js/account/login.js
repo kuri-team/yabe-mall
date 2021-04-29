@@ -1,3 +1,8 @@
+// localStorage initialization
+if (localStorage.getItem("isLoggedIn") === null) {
+    localStorage.setItem("isLoggedIn", "false");
+}
+
 const CORRECT_PWD = "password";
 const LOGIN_FORM = document.getElementById("login-form");
 
@@ -17,6 +22,8 @@ LOGIN_FORM.addEventListener("submit", function (event) {
         event.preventDefault();   // Stop form from submitting
         return false;
     } else {
+        // Set login status to 'true'
+        localStorage["isLoggedIn"] = "true";
         return true;
     }
 })

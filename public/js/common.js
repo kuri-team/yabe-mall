@@ -75,6 +75,45 @@ for (let i = 0; i < NAV_SEARCH_FILTER_OPTIONS.length; i++) {
 
 
 /**
+ * Persistent log in features
+ */
+if (localStorage["isLoggedIn"] === "true") {
+    // Mobile menu display Logged In status
+    document.querySelector(".mobile-menu-my-account").setAttribute("style", "display: block;");
+    document.querySelector(".mobile-menu-login").setAttribute("style", "display: none;");
+
+    // Check the login status and change Login field to 'My Account'
+    const NAV_LOGIN_REG = document.getElementById("nav-login-reg");
+    const NAV_MY_ACCOUNT = document.getElementById("nav-my-account");
+
+    if (NAV_LOGIN_REG && NAV_MY_ACCOUNT) {
+        NAV_LOGIN_REG.setAttribute("style", "display: none");
+        NAV_MY_ACCOUNT.setAttribute("style", "display: block");
+    }
+
+    // Redirect to My Account if the user is already logged in and tries to open either Login, Register, or Forgot Password
+    let currentURL = window.location.href;
+    if (
+        currentURL.indexOf("login") !== -1 ||
+        currentURL.indexOf("register") !== -1 ||
+        currentURL.indexOf("forgot-password") !== -1
+    ) {
+        // Auto redirect to "My Account" if already logged in
+        let myAccountURL = currentURL.replace("login", "") + "my-account";
+        window.location.replace(myAccountURL);
+    }
+}
+
+
+/**
+ * Logout mechanism
+ */
+function logOut() {
+    localStorage["isLoggedIn"] = "false";
+}
+
+
+/**
  * Cookie consent message
  */
 const COOKIE_CONSENT = document.querySelector(".cookie-consent");
