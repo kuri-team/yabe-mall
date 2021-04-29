@@ -615,7 +615,7 @@ nav a {
     text-decoration: underline;
 }
 
-.mobile-only {
+#nav-my-account, .mobile-only {
     display: none;
 }
 
@@ -695,6 +695,14 @@ nav a {
     margin-right: 5px;
 }
 
+.mobile-menu-my-account {
+    display: none;
+}
+
+.mobile-menu-login {
+    display: block;
+}
+
 /* Responsive header nav */
 @media only screen and (max-width: 950px) {
     nav {
@@ -724,20 +732,23 @@ footer {
     background: #ccc5b9;
 }
 
+footer > .flex-container {
+    height: 230px;
+}
+
 #footer-menu-main-pages, #footer-menu-policy, #footer-menu-browse {
-    transform: translateY(-9px);
     -o-transform: translateY(-9px);
     -webkit-transform: translateY(-9px);
     -ms-transform: translateY(-9px);
     -moz-transform: translateY(-9px);
+    transform: translateY(-9px);
 }
 
-#footer-menu-browse-product:hover ul {
-    display: block;
-}
-
+#footer-menu-browse-product:hover ul,
 #footer-menu-browse-store:hover ul {
     display: block;
+    animation: expand-top 0.25s;
+    transform-origin: top;
 }
 
 #footer-logo {
@@ -828,20 +839,6 @@ footer {
 }
 
 
-/******************************
-    Animations
-*******************************/
-@keyframes expand-top {
-    from {
-        transform: scaleY(0);
-    }
-
-    to {
-        transform: scaleY(1);
-    }
-}
-
-
 /**********************************
     YABE Cookie consent message
 ***********************************/
@@ -903,5 +900,19 @@ footer {
     }
     .cookie-consent.active .text-align-justify{
         margin-bottom: 5px;
+    }
+}
+
+
+/******************************
+    Animations
+*******************************/
+@keyframes expand-top {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        transform: scaleY(1);
     }
 }
