@@ -17,10 +17,15 @@ if (localStorage.getItem("cartProducts") != null){
 }
 
 // input <li> to list the products
+// store subTotal and totalPrice in localStorage for updating totalPrice whenever a plus or minus button is clicked
 function  listItemInCart() {
     let productList = localStorage.getItem("cartProducts");
     productList = JSON.parse(productList);
     let productTable = document.querySelector(".cart-product-table");
+    let subTotal = 0;
+    let deliveryCharge = document.querySelector(".cart-product-delivery .cart-product-total-fee").innerHTML;
+    deliveryCharge = deliveryCharge.replace("$","");
+    deliveryCharge = parseFloat(deliveryCharge);
     Object.values(productList).map(function(item) { //for each product, insert <li> to html
         productTable.innerHTML += `
             <li class="cart-product" id="${item.product_ID}">
@@ -43,22 +48,48 @@ function  listItemInCart() {
                   <button class="cart-product-remove-button">REMOVE</button>
                 </div>
               </li>`;
+        subTotal += item.product_quantity * item.final_price;
+        subTotal = parseFloat(subTotal.toFixed(2));
+        localStorage.setItem("subTotal", JSON.stringify(subTotal));
     })
+    let totalPrice = subTotal + deliveryCharge;
+    localStorage.setItem("totalPrice",totalPrice);
+    let displaySubTotal = document.querySelector(".cart-product-total .cart-product-total-fee");
+    let displayTotalPrice = document.querySelector(".cart-product-fees-total .cart-product-total-fee");
+    subTotal = localStorage.getItem("subTotal");
+    totalPrice = localStorage.getItem("totalPrice");
+    displaySubTotal.innerHTML = "$"+subTotal;
+    displayTotalPrice.innerHTML = "$"+totalPrice;
 }
 
 // change quantity with + - buttons
-// + button: update current quantity on the page and local storage
+// + button: update current quantity, subTotal and totalPrice on the page and local storage
 document.querySelectorAll(".cart-product-quantity-button.plus").forEach(function (item) {
     item.addEventListener("click", function() {
-    let productList = localStorage.getItem("cartProducts"); // local storage
-    productList = JSON.parse(productList);
-    let productID = item.parentNode.parentNode.parentNode.id;
-    productList[productID].product_quantity+=1;
-    localStorage.setItem("cartProducts",JSON.stringify(productList));
-    let inputValue = document.getElementById(`${ productID } product-quantity`).value; // page
-    let productQuantity = parseInt(inputValue)
-    productQuantity += 1;
-    document.getElementById(`${ productID } product-quantity`).value = productQuantity;
+        let productList = localStorage.getItem("cartProducts"); // local storage
+        productList = JSON.parse(productList);
+        let productID = item.parentNode.parentNode.parentNode.id;
+        productList[productID].product_quantity+=1;
+        let subTotal = localStorage.getItem("subTotal"); // update subTotal in localStorage
+        subTotal = parseFloat(subTotal);
+        subTotal += productList[productID].final_price;
+        subTotal = parseFloat(subTotal.toFixed(2));
+        localStorage.setItem("subTotal",JSON.stringify(subTotal));
+        let totalPrice = localStorage.getItem("totalPrice"); // update totalPrice in localStorage
+        totalPrice = parseFloat(totalPrice);
+        totalPrice += productList[productID].final_price;
+        totalPrice = parseFloat(totalPrice.toFixed(2));
+        localStorage.setItem("totalPrice",JSON.stringify(totalPrice));
+        localStorage.setItem("cartProducts",JSON.stringify(productList));
+
+        let inputValue = document.getElementById(`${ productID } product-quantity`).value; // page
+        let productQuantity = parseInt(inputValue)
+        productQuantity += 1;
+        document.getElementById(`${ productID } product-quantity`).value = productQuantity;
+        let displaySubTotal = document.querySelector(".cart-product-total .cart-product-total-fee");
+        let displayTotalPrice = document.querySelector(".cart-product-fees-total .cart-product-total-fee");
+        displaySubTotal.innerHTML = "$"+subTotal;
+        displayTotalPrice.innerHTML = "$"+totalPrice;
 });
 });
 
@@ -69,6 +100,16 @@ document.querySelectorAll(".cart-product-quantity-button.minus").forEach(functio
         productList = JSON.parse(productList);
         let productID = this.parentNode.parentNode.parentNode.id;
         productList[productID].product_quantity -= 1;
+        let subTotal = localStorage.getItem("subTotal"); // update subTotal in localStorage
+        subTotal = parseFloat(subTotal);
+        subTotal -= productList[productID].final_price;
+        subTotal = parseFloat(subTotal.toFixed(2));
+        localStorage.setItem("subTotal",JSON.stringify(subTotal));
+        let totalPrice = localStorage.getItem("totalPrice"); // update totalPrice in localStorage
+        totalPrice = parseFloat(totalPrice);
+        totalPrice -= productList[productID].final_price;
+        totalPrice = parseFloat(totalPrice.toFixed(2));
+        localStorage.setItem("totalPrice",JSON.stringify(totalPrice));
         if ( productList[productID].product_quantity < 1){
             productList[productID].product_quantity = 1
         }
@@ -81,6 +122,10 @@ document.querySelectorAll(".cart-product-quantity-button.minus").forEach(functio
             productQuantity = 1
         }
         document.getElementById(`${productID} product-quantity`).value = productQuantity;
+        let displaySubTotal = document.querySelector(".cart-product-total .cart-product-total-fee");
+        let displayTotalPrice = document.querySelector(".cart-product-fees-total .cart-product-total-fee");
+        displaySubTotal.innerHTML = "$"+subTotal;
+        displayTotalPrice.innerHTML = "$"+totalPrice;
     });
 });
 
