@@ -26,6 +26,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', 'Arial', sans-serif !important;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 a {
     color: #eb5e28;
 }
@@ -917,5 +921,17 @@ footer > .flex-container {
 
     to {
         transform: scaleY(1);
+    }
+}
+
+@keyframes fadeInExpand {
+    from {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scaleY(1);
+        opacity: 1;
     }
 }
