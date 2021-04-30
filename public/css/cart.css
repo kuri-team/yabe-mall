@@ -76,6 +76,11 @@ button {
     justify-content: center;
 
 }
+
+.cart-product-table {
+    padding: 0;
+}
+
 /* hidden product list to clone from */
 .cart-product-list.sample {
     display: none;
@@ -151,6 +156,7 @@ button {
 .cart-product-remove {
     padding: 50px 10px;
     width: 10%;
+    min-width: 80px;
 }
 
 .cart-product-remove-button {
@@ -271,10 +277,6 @@ input[type=number] {
 
 /** RESPONSIVE LAYOUT AND STYLING FOR MOBILE DEVICES **/
 @media (max-width: 768px) {
-    .cart-product-table {
-        padding: 0;
-    }
-
     .cart-img img {
         width: 85px;
         height: auto;
