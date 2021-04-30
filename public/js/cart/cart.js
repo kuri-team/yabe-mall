@@ -45,21 +45,23 @@ function addItemToCart() {
     addToCartMsg();
 }
 
-function addToCartMsg () {
+function addToCartMsg() {
     let msg = document.getElementById("product-content");
     let msgOnTop =
-        `<div class="done-msg">
-            <i class="fas fa-check"></i>
-            <p class="done-add-to-cart">Product has been added to the cart</p>
+        `<div class="done-msg-wrapper">
+            <div class="done-msg">
+                <i class="fas fa-check"></i>
+                <p class="done-add-to-cart">Product has been added to the cart</p>
+            </div>
         </div>`
     msgOnTop += msg.innerHTML
-    msg.innerHTML = msgOnTop;
+    msg.innerHTML += msgOnTop;
     setTimeout(function() {
         const doc = document.querySelector("main");
         const doneMsg = document.querySelector(".done-msg");
         doc.removeChild(doneMsg);
-    },3000)
+    },3000);
     setTimeout(function() {
         location.reload()
-    },5000)
+    },5000);
 }

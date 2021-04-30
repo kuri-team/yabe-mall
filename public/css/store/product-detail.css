@@ -191,30 +191,37 @@
 }
 
 /* successfully add to cart message */
+.done-msg-wrapper {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+}
+
 .done-msg {
     display: block;
-    border-radius: 24px ;
+    border-radius: 50px ;
     font-size: 12pt;
     position: fixed;
+    top: 120px;
     max-width: fit-content;
     background: #118811;
-    padding: 5px 10px;
-    transform: translateX(-50%);
-    margin-left: calc(50% + 5px);
+    padding: 20px 50px;
     text-align: center;
+    animation: fadeInExpand 0.2s;
+    transform-origin: top;
 }
 
 .done-msg i {
+    color: #fff;
     display: inline;
 }
 
 .done-add-to-cart {
     display: inline;
-    color:#fff;
-}
-
-.fa-check {
-    color:#fff;
+    color: #fff;
 }
 
 @media (max-width: 767px) {
