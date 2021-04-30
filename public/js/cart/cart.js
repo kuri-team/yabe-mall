@@ -58,8 +58,8 @@ function addToCartMsg () {
         const doc = document.querySelector("main");
         const doneMsg = document.querySelector(".done-msg");
         doc.removeChild(doneMsg);
-    },2000)
+    },3000)
     setTimeout(function() {
         location.reload()
-    },1000)
+    },2000)
 }
