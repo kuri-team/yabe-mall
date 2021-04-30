@@ -589,9 +589,6 @@ nav a {
     width: 120px;
     height: 50px;
     margin-left: 50px;
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
-    -moz-transition: 0.5s;
 }
 
 .nav-cart-bttn:active {
