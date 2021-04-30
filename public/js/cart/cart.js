@@ -61,5 +61,5 @@ function addToCartMsg () {
     },3000)
     setTimeout(function() {
         location.reload()
-    },2000)
+    },5000)
 }
