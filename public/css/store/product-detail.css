@@ -54,7 +54,7 @@
 
 .shop-bttn a {
     text-decoration: none;
-    color: white;
+    color: inherit;
 }
 
 .shop-bttn button {
@@ -65,7 +65,12 @@
     margin-right: 5%;
 }
 
+.shop-bttn button:hover {
+    cursor: pointer;
+}
+
 .add-to-cart {
+    color: #fff;
     background-color: #000;
     margin-bottom: 7px;
 }
@@ -75,6 +80,7 @@
 }
 
 .buy-now {
+    color: #fff;
     background-color: #eb5e28;
 }
 
