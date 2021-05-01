@@ -126,13 +126,37 @@ function logOut() {
 /**
  * Disable cart features when user is not logged in
  */
-const NAV_CART_BTTN = document.querySelector(".nav-cart-bttn");
+// functions to display and hide disabled cart message
+function displayCartMessage(dimPage, overlay, disabledMsg) {
+    dimPage.setAttribute("style", "display: block");
+    overlay.setAttribute("style", "display: flex");
+    disabledMsg.setAttribute("style", "display: flex");
+}
+
+function hideCartMessage(dimPage, overlay, disabledMsg) {
+    dimPage.setAttribute("style", "display: none");
+    overlay.setAttribute("style", "display: none");
+    disabledMsg.setAttribute("style", "display: none");
+}
 
 if (localStorage["isLoggedIn"] !== "true") {
-    const DISABLED_CART_MSG = document.getElementById("disabled-cart-msg");
+    // Get all disabled cart elements
+    const NAV_CART_BTTN = document.querySelector(".nav-cart-bttn");
     const PAGE_DIM = document.getElementById("dimmed-page");
+    const OVERLAY = document.getElementById("overlay-modal-window");
+    const DISABLED_CART_MSG = document.getElementById("disabled-cart-msg");
 
+    // Grey out nav cart bttn
     NAV_CART_BTTN.setAttribute("style", "background: #999999");
+
+    // Display disabled cart message when clicking on cart bttn
+    NAV_CART_BTTN.addEventListener("click", function(event) {
+        displayCartMessage(PAGE_DIM, OVERLAY, DISABLED_CART_MSG);
+        setTimeout(function() {
+            hideCartMessage(PAGE_DIM, OVERLAY, DISABLED_CART_MSG)
+        }, 2000);          // Message disappears after 2 seconds
+        event.preventDefault();   // prevent page redirection to cart page
+    });
 }
 
 
