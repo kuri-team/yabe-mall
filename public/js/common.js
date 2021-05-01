@@ -126,13 +126,14 @@ function logOut() {
 /**
  * Disable cart features when user is not logged in
  */
-// Functions to display and hide disabled cart message
+// Functions to display disabled cart message
 function displayCartMessage(dimPage, overlay, disabledMsg) {
     dimPage.setAttribute("style", "display: block");
     overlay.setAttribute("style", "display: flex");
     disabledMsg.setAttribute("style", "display: flex");
 }
 
+// Functions to hide disabled cart message
 function hideCartMessage(dimPage, overlay, disabledMsg) {
     dimPage.setAttribute("style", "display: none");
     overlay.setAttribute("style", "display: none");
@@ -147,7 +148,7 @@ function disableCartBttn(bttn, dimPage, overlay, disabledMsg) {
     bttn.addEventListener("click", function (event) {
         displayCartMessage(dimPage, overlay, disabledMsg);
         setTimeout(function() {
-            hideCartMessage(dimPage, overlay, disabledMsg)
+            hideCartMessage(dimPage, overlay, disabledMsg);
         }, 2000);           // Message disappears after 2 seconds
         event.preventDefault();    // Prevent redirection to cart page
     });
