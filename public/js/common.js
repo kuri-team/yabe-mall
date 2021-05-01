@@ -149,11 +149,13 @@ function disabledCartMessage(dimPage, overlay, disabledMsg) {
 
 if (localStorage["isLoggedIn"] !== "true") {
     // Get all disabled cart elements
-    const NAV_CART_BTTN = document.querySelector(".nav-cart-bttn");
-    const MOBILE_CART = document.querySelector(".mobile-menu-cart");
     const PAGE_DIM_CART = document.getElementById("dimmed-page");
     const OVERLAY_CART = document.getElementById("overlay-cart-window");
     const DISABLED_CART_MSG = document.getElementById("disabled-cart-msg");
+    const NAV_CART_BTTN = document.querySelector(".nav-cart-bttn");
+    const MOBILE_CART = document.querySelector(".mobile-menu-cart");
+    const ADD_TO_CART = document.querySelector(".add-to-cart");
+    const BUY_NOW = document.querySelector(".buy-now");
 
     // Grey out nav cart buttons
     NAV_CART_BTTN.setAttribute("style", "background: #999999");
@@ -169,6 +171,21 @@ if (localStorage["isLoggedIn"] !== "true") {
         disabledCartMessage(PAGE_DIM_CART, OVERLAY_CART, DISABLED_CART_MSG);
         event.preventDefault();
     });
+
+    if (ADD_TO_CART && BUY_NOW) {
+        ADD_TO_CART.setAttribute("style", "background: #999999");
+        BUY_NOW.setAttribute("style", "background: #999999");
+
+
+        ADD_TO_CART.addEventListener("click", function(event) {
+            disabledCartMessage(PAGE_DIM_CART, OVERLAY_CART, DISABLED_CART_MSG);
+            event.preventDefault();
+        });
+        BUY_NOW.addEventListener("click", function(event) {
+            disabledCartMessage(PAGE_DIM_CART, OVERLAY_CART, DISABLED_CART_MSG);
+            event.preventDefault();
+        });
+    }
 }
 
 
