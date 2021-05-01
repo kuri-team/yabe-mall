@@ -164,8 +164,12 @@ if (localStorage["isLoggedIn"] !== "true") {
     const ADD_TO_CART = document.querySelector(".add-to-cart");
     const BUY_NOW = document.querySelector(".buy-now");
 
+    // Clear all previous eventListeners for .mobile-menu-cart by cloning and replacing it with a new element
+    const MOBILE_CART_CLONE = MOBILE_CART.cloneNode(true);
+    MOBILE_CART.parentElement.replaceChild(MOBILE_CART_CLONE, MOBILE_CART);
+
     disableCartBttn(NAV_CART_BTTN, PAGE_DIM_CART, OVERLAY_CART, DISABLED_CART_MSG);
-    disableCartBttn(MOBILE_CART, PAGE_DIM_CART, OVERLAY_CART, DISABLED_CART_MSG);
+    disableCartBttn(MOBILE_CART_CLONE, PAGE_DIM_CART, OVERLAY_CART, DISABLED_CART_MSG);
 
     // Check if page has "add to cart" and "buy now" buttons
     if (ADD_TO_CART && BUY_NOW) {
