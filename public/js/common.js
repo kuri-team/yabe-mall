@@ -124,6 +124,19 @@ function logOut() {
 
 
 /**
+ * Disable cart features when user is not logged in
+ */
+const NAV_CART_BTTN = document.querySelector(".nav-cart-bttn");
+
+if (localStorage["isLoggedIn"] !== "true") {
+    const DISABLED_CART_MSG = document.getElementById("disabled-cart-msg");
+    const PAGE_DIM = document.getElementById("dimmed-page");
+
+    NAV_CART_BTTN.setAttribute("style", "background: #999999");
+}
+
+
+/**
  * Cookie consent message
  */
 const COOKIE_CONSENT = document.querySelector(".cookie-consent");
