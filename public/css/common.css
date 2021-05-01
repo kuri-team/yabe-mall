@@ -632,11 +632,17 @@ nav a {
     -moz-transition: 0.5s;
 }
 
+.nav-cart-bttn a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .nav-cart-bttn:active {
     background: #cd4813;
 }
 
 .nav-cart-bttn i {
+    color: inherit;
     margin-right: 10px;
 }
 
