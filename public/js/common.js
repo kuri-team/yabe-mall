@@ -126,7 +126,12 @@ function logOut() {
 /**
  * Disable cart features when user is not logged in
  */
-// functions to display and hide disabled cart message
+// Change colors of cart-related buttons to grey
+function greyBttn(bttn) {
+    bttn.setAttribute("style", "background: #999999");
+}
+
+// Functions to display and hide disabled cart message
 function displayCartMessage(dimPage, overlay, disabledMsg) {
     dimPage.setAttribute("style", "display: block");
     overlay.setAttribute("style", "display: flex");
@@ -139,16 +144,19 @@ function hideCartMessage(dimPage, overlay, disabledMsg) {
     disabledMsg.setAttribute("style", "display: none");
 }
 
-// Message disappears after displaying for 2 seconds
-function disabledCartMessage(dimPage, overlay, disabledMsg) {
-    displayCartMessage(dimPage, overlay, disabledMsg);
-    setTimeout(function() {
-        hideCartMessage(dimPage, overlay, disabledMsg)
-    }, 2000);          // Message disappears after 2 seconds
+// Disable cart features when clicking buttons
+function disableCartBttn(bttn, dimPage, overlay, disabledMsg) {
+    bttn.addEventListener("click", function (event) {
+        displayCartMessage(dimPage, overlay, disabledMsg);
+        setTimeout(function() {
+            hideCartMessage(dimPage, overlay, disabledMsg)
+        }, 2000);           // Message disappears after 2 seconds
+        event.preventDefault();    // Prevent redirection to cart page
+    });
 }
 
 if (localStorage["isLoggedIn"] !== "true") {
-    // Get all disabled cart elements
+    // Get all cart-related elements
     const PAGE_DIM_CART = document.getElementById("dimmed-page");
     const OVERLAY_CART = document.getElementById("overlay-cart-window");
     const DISABLED_CART_MSG = document.getElementById("disabled-cart-msg");
@@ -157,34 +165,19 @@ if (localStorage["isLoggedIn"] !== "true") {
     const ADD_TO_CART = document.querySelector(".add-to-cart");
     const BUY_NOW = document.querySelector(".buy-now");
 
-    // Grey out nav cart buttons
-    NAV_CART_BTTN.setAttribute("style", "background: #999999");
-    MOBILE_CART.setAttribute("style", "background: #999999");
+    greyBttn(NAV_CART_BTTN);
+    greyBttn(MOBILE_CART);
 
+    disableCartBttn(NAV_CART_BTTN, PAGE_DIM_CART, OVERLAY_CART, DISABLED_CART_MSG);
+    disableCartBttn(MOBILE_CART, PAGE_DIM_CART, OVERLAY_CART, DISABLED_CART_MSG);
 
-    NAV_CART_BTTN.addEventListener("click", function(event) {
-        disabledCartMessage(PAGE_DIM_CART, OVERLAY_CART, DISABLED_CART_MSG);
-        event.preventDefault();   // prevent redirection to cart page
-    });
-
-    MOBILE_CART.addEventListener("click", function (event) {
-        disabledCartMessage(PAGE_DIM_CART, OVERLAY_CART, DISABLED_CART_MSG);
-        event.preventDefault();
-    });
-
+    // Check if page has "add to cart" and "buy now" buttons
     if (ADD_TO_CART && BUY_NOW) {
-        ADD_TO_CART.setAttribute("style", "background: #999999");
-        BUY_NOW.setAttribute("style", "background: #999999");
+        greyBttn(ADD_TO_CART);
+        greyBttn(BUY_NOW);
 
-
-        ADD_TO_CART.addEventListener("click", function(event) {
-            disabledCartMessage(PAGE_DIM_CART, OVERLAY_CART, DISABLED_CART_MSG);
-            event.preventDefault();
-        });
-        BUY_NOW.addEventListener("click", function(event) {
-            disabledCartMessage(PAGE_DIM_CART, OVERLAY_CART, DISABLED_CART_MSG);
-            event.preventDefault();
-        });
+        disableCartBttn(ADD_TO_CART, PAGE_DIM_CART, OVERLAY_CART, DISABLED_CART_MSG);
+        disableCartBttn(BUY_NOW, PAGE_DIM_CART, OVERLAY_CART, DISABLED_CART_MSG);
     }
 }
 
