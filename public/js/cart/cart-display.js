@@ -102,25 +102,22 @@ document.querySelectorAll(".cart-product-quantity-button.minus").forEach(functio
         productList[productID].product_quantity -= 1;
         let subTotal = localStorage.getItem("subTotal");
         subTotal = parseFloat(subTotal);
-        let totalPrice = localStorage.getItem("totalPrice"); // update totalPrice in localStorage
+        let totalPrice = localStorage.getItem("totalPrice");
         totalPrice = parseFloat(totalPrice);
 
-        if (productList[productID].product_quantity > 0) {          // update subTotal in localStorage
-            subTotal -= productList[productID].final_price;
+        if (productList[productID].product_quantity > 0) {  // condition to prevent negative value,
+            subTotal -= productList[productID].final_price; //   0 because quantity -= 1 above
             subTotal = parseFloat(subTotal.toFixed(2));
-            localStorage.setItem("subTotal",JSON.stringify(subTotal));
+            localStorage.setItem("subTotal",JSON.stringify(subTotal));// update subTotal in localStorage
             totalPrice -= productList[productID].final_price;
             totalPrice = parseFloat(totalPrice.toFixed(2));
-            localStorage.setItem("totalPrice",JSON.stringify(totalPrice));
+            localStorage.setItem("totalPrice",JSON.stringify(totalPrice)); // update totalPrice in localStorage
         }
-
 
         if ( productList[productID].product_quantity < 1){
             productList[productID].product_quantity = 1
         }
-
-
-        localStorage.setItem("cartProducts", JSON.stringify(productList));
+        localStorage.setItem("cartProducts", JSON.stringify(productList)); // update products in localStorage
 
         let inputValue = document.getElementById(`${productID} product-quantity`).value; // page
         let productQuantity = parseInt(inputValue)
@@ -128,6 +125,7 @@ document.querySelectorAll(".cart-product-quantity-button.minus").forEach(functio
         if (productQuantity < 1){
             productQuantity = 1
         }
+
         document.getElementById(`${productID} product-quantity`).value = productQuantity;
         let displaySubTotal = document.querySelector(".cart-product-total .cart-product-total-fee");
         let displayTotalPrice = document.querySelector(".cart-product-fees-total .cart-product-total-fee");
