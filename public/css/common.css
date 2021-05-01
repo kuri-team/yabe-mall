@@ -306,7 +306,7 @@ i {
 *******************************/
 
 /** MODAL WINDOW STYLING **/
-#dimmed-page, #overlay-modal-window, #disabled-cart-msg {
+#dimmed-page, #overlay-cart-window, #overlay-modal-window, #disabled-cart-msg {
     display: none;
     position: -ms-device-fixed;
     position: fixed;
@@ -320,7 +320,7 @@ i {
     z-index: 100;
 }
 
-#overlay-modal-window {
+#overlay-cart-window, #overlay-modal-window {
     justify-content: center;
     align-items: center;
     width: 100%;

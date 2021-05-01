@@ -143,7 +143,7 @@ if (localStorage["isLoggedIn"] !== "true") {
     // Get all disabled cart elements
     const NAV_CART_BTTN = document.querySelector(".nav-cart-bttn");
     const PAGE_DIM = document.getElementById("dimmed-page");
-    const OVERLAY = document.getElementById("overlay-modal-window");
+    const OVERLAY = document.getElementById("overlay-cart-window");
     const DISABLED_CART_MSG = document.getElementById("disabled-cart-msg");
 
     // Grey out nav cart bttn
