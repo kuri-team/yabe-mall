@@ -126,11 +126,6 @@ function logOut() {
 /**
  * Disable cart features when user is not logged in
  */
-// Change colors of cart-related buttons to grey
-function greyBttn(bttn) {
-    bttn.setAttribute("style", "background: #999999");
-}
-
 // Functions to display and hide disabled cart message
 function displayCartMessage(dimPage, overlay, disabledMsg) {
     dimPage.setAttribute("style", "display: block");
@@ -146,6 +141,9 @@ function hideCartMessage(dimPage, overlay, disabledMsg) {
 
 // Disable cart features when clicking buttons
 function disableCartBttn(bttn, dimPage, overlay, disabledMsg) {
+    // Change colors of cart-related buttons to grey
+    bttn.setAttribute("style", "background: #999999");
+
     bttn.addEventListener("click", function (event) {
         displayCartMessage(dimPage, overlay, disabledMsg);
         setTimeout(function() {
@@ -165,17 +163,11 @@ if (localStorage["isLoggedIn"] !== "true") {
     const ADD_TO_CART = document.querySelector(".add-to-cart");
     const BUY_NOW = document.querySelector(".buy-now");
 
-    greyBttn(NAV_CART_BTTN);
-    greyBttn(MOBILE_CART);
-
     disableCartBttn(NAV_CART_BTTN, PAGE_DIM_CART, OVERLAY_CART, DISABLED_CART_MSG);
     disableCartBttn(MOBILE_CART, PAGE_DIM_CART, OVERLAY_CART, DISABLED_CART_MSG);
 
     // Check if page has "add to cart" and "buy now" buttons
     if (ADD_TO_CART && BUY_NOW) {
-        greyBttn(ADD_TO_CART);
-        greyBttn(BUY_NOW);
-
         disableCartBttn(ADD_TO_CART, PAGE_DIM_CART, OVERLAY_CART, DISABLED_CART_MSG);
         disableCartBttn(BUY_NOW, PAGE_DIM_CART, OVERLAY_CART, DISABLED_CART_MSG);
     }
