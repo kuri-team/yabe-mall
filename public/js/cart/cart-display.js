@@ -100,19 +100,26 @@ document.querySelectorAll(".cart-product-quantity-button.minus").forEach(functio
         productList = JSON.parse(productList);
         let productID = this.parentNode.parentNode.parentNode.id;
         productList[productID].product_quantity -= 1;
-        let subTotal = localStorage.getItem("subTotal"); // update subTotal in localStorage
+        let subTotal = localStorage.getItem("subTotal");
         subTotal = parseFloat(subTotal);
-        subTotal -= productList[productID].final_price;
-        subTotal = parseFloat(subTotal.toFixed(2));
-        localStorage.setItem("subTotal",JSON.stringify(subTotal));
         let totalPrice = localStorage.getItem("totalPrice"); // update totalPrice in localStorage
         totalPrice = parseFloat(totalPrice);
-        totalPrice -= productList[productID].final_price;
-        totalPrice = parseFloat(totalPrice.toFixed(2));
-        localStorage.setItem("totalPrice",JSON.stringify(totalPrice));
+
+        if (productList[productID].product_quantity > 0) {          // update subTotal in localStorage
+            subTotal -= productList[productID].final_price;
+            subTotal = parseFloat(subTotal.toFixed(2));
+            localStorage.setItem("subTotal",JSON.stringify(subTotal));
+            totalPrice -= productList[productID].final_price;
+            totalPrice = parseFloat(totalPrice.toFixed(2));
+            localStorage.setItem("totalPrice",JSON.stringify(totalPrice));
+        }
+
+
         if ( productList[productID].product_quantity < 1){
             productList[productID].product_quantity = 1
         }
+
+
         localStorage.setItem("cartProducts", JSON.stringify(productList));
 
         let inputValue = document.getElementById(`${productID} product-quantity`).value; // page
