@@ -139,23 +139,35 @@ function hideCartMessage(dimPage, overlay, disabledMsg) {
     disabledMsg.setAttribute("style", "display: none");
 }
 
+// Message disappears after displaying for 2 seconds
+function disabledCartMessage(dimPage, overlay, disabledMsg) {
+    displayCartMessage(dimPage, overlay, disabledMsg);
+    setTimeout(function() {
+        hideCartMessage(dimPage, overlay, disabledMsg)
+    }, 2000);          // Message disappears after 2 seconds
+}
+
 if (localStorage["isLoggedIn"] !== "true") {
     // Get all disabled cart elements
     const NAV_CART_BTTN = document.querySelector(".nav-cart-bttn");
-    const PAGE_DIM = document.getElementById("dimmed-page");
-    const OVERLAY = document.getElementById("overlay-cart-window");
+    const MOBILE_CART = document.querySelector(".mobile-menu-cart");
+    const PAGE_DIM_CART = document.getElementById("dimmed-page");
+    const OVERLAY_CART = document.getElementById("overlay-cart-window");
     const DISABLED_CART_MSG = document.getElementById("disabled-cart-msg");
 
-    // Grey out nav cart bttn
+    // Grey out nav cart buttons
     NAV_CART_BTTN.setAttribute("style", "background: #999999");
+    MOBILE_CART.setAttribute("style", "background: #999999");
 
-    // Display disabled cart message when clicking on cart bttn
+
     NAV_CART_BTTN.addEventListener("click", function(event) {
-        displayCartMessage(PAGE_DIM, OVERLAY, DISABLED_CART_MSG);
-        setTimeout(function() {
-            hideCartMessage(PAGE_DIM, OVERLAY, DISABLED_CART_MSG)
-        }, 2000);          // Message disappears after 2 seconds
-        event.preventDefault();   // prevent page redirection to cart page
+        disabledCartMessage(PAGE_DIM_CART, OVERLAY_CART, DISABLED_CART_MSG);
+        event.preventDefault();   // prevent redirection to cart page
+    });
+
+    MOBILE_CART.addEventListener("click", function (event) {
+        disabledCartMessage(PAGE_DIM_CART, OVERLAY_CART, DISABLED_CART_MSG);
+        event.preventDefault();
     });
 }
 
