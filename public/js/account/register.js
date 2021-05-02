@@ -201,7 +201,7 @@ Validator.phone = function (selector, message) {
     return {
         selector: selector,
         test: function (value) {
-            let regex = /^([0-9][-. ]?){1,}[^-. ]$/;
+            let regex = /^([0-9][-. ]?){9,11}[^-. ]$/;
             return regex.test(value) ? undefined :  message || 'Valid phone contains 9 to 11 digits which space, dot, and dash cannot be positioned at the beginning or at the end';
         }
     };
@@ -212,7 +212,7 @@ Validator.pwd = function (selector, message) {
         selector: selector,
         test: function (value) {
             let regex = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(.{8,20})$/;
-            return regex.test(value) ? undefined :  message || 'Valid phone contains 9 to 11 digits which space, dot, and dash cannot be positioned at the beginning or at the end';
+            return regex.test(value) ? undefined :  message || 'Valid password contains 9 to 11 digits which space, dot, and dash cannot be positioned at the beginning or at the end';
         }
     };
 }
@@ -221,7 +221,7 @@ Validator.zipcode = function (selector, message) {
     return {
         selector: selector,
         test: function (value) {
-            let regex = /[0,9]{4,6}/;
+            let regex = /^[0-9]{4,6}$/;
             return regex.test(value) ? undefined :  message || 'Valid Zipcode contains 4 to 6 digits.';
         }
     };
