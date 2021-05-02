@@ -1,4 +1,4 @@
-/**
+/*
  *
  * common.js
  * YABE common functions. Must be included site-wide at the end of <body></body> in every pages
@@ -23,6 +23,12 @@ function toggleMobileMenu() {
     }
 }
 
+document.querySelectorAll(".mobile-menu li").forEach(function (element) {
+    element.addEventListener("click", function () {
+        window.location.href = element.querySelector("a").href;
+    });
+});
+
 function scrollToTop() {
     document.body.scrollTop = 0;  // For Safari
     document.documentElement.scrollTop = 0;  // For Chrome, Firefox, IE and Opera
@@ -36,7 +42,7 @@ function previousPage() {
 }
 
 
-/**
+/*
  * Navbar search filter
  */
 const NAV_SEARCH_FILTER = document.getElementById("nav-search-filter");
@@ -49,8 +55,7 @@ let separator = " by ";
 // Automatic display, width, and position on mouseover of Navbar Filter
 NAV_SEARCH_FILTER.addEventListener("mouseover", function () {
     let width = NAV_SEARCH_FILTER_LEVEL_1.offsetWidth;
-    console.log(width);
-    NAV_SEARCH_FILTER_LEVEL_1.setAttribute("style", "display: block");
+    NAV_SEARCH_FILTER_LEVEL_1.setAttribute("style", "display: block; animation: expand-top 0.1s; transform-origin: top;");
     NAV_SEARCH_FILTER_LEVEL_2_1.setAttribute("style", `left: ${width}px;`);
     NAV_SEARCH_FILTER_LEVEL_2_2.setAttribute("style", `left: ${width}px;`);
 });
@@ -72,6 +77,49 @@ for (let i = 0; i < NAV_SEARCH_FILTER_OPTIONS.length; i++) {
         newFilterTexts.unshift(option.innerText.split(/\s/)[0] + " ");
         NAV_SEARCH_FILTER.firstChild.nodeValue = newFilterTexts.join(separator);
     });
+}
+
+
+/**
+ * Persistent log in features
+ */
+if (localStorage["isLoggedIn"] === "true") {
+    // Mobile menu display Logged In status
+    document.querySelector(".mobile-menu-my-account").setAttribute("style", "display: block;");
+    document.querySelector(".mobile-menu-login").setAttribute("style", "display: none;");
+
+    // Check the login status and change Login field to 'My Account'
+    const NAV_LOGIN_REG = document.getElementById("nav-login-reg");
+    const NAV_MY_ACCOUNT = document.getElementById("nav-my-account");
+
+    if (NAV_LOGIN_REG && NAV_MY_ACCOUNT) {
+        NAV_LOGIN_REG.setAttribute("style", "display: none");
+        NAV_MY_ACCOUNT.setAttribute("style", "display: block");
+    }
+
+    // Redirect to My Account if the user is already logged in and tries to open either Login, Register, or Forgot Password
+    let currentURL = window.location.href;
+    if (
+        currentURL.indexOf("login") !== -1 ||
+        currentURL.indexOf("register") !== -1 ||
+        currentURL.indexOf("forgot-password") !== -1
+    ) {
+        // Auto redirect to "My Account" if already logged in
+        let myAccountURL = currentURL;
+        myAccountURL = myAccountURL.replace("login", "");
+        myAccountURL = myAccountURL.replace("register", "");
+        myAccountURL = myAccountURL.replace("forgot-password", "");
+        myAccountURL += "my-account";
+        window.location.replace(myAccountURL);
+    }
+}
+
+
+/**
+ * Logout mechanism
+ */
+function logOut() {
+    localStorage["isLoggedIn"] = "false";
 }
 
 

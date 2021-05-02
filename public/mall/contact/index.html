@@ -37,26 +37,42 @@
           </div>
         </div>
       </div>
-    </div>
-    <div id="nav-search">
-      <form action="../browse" method="get" target="_blank" onsubmit="return validation(this)">
-        <label for="q"></label>
-        <input class="nav-seach-bar" id="q" name="q" type="search" placeholder="Search" value="">
-      </form>
-    </div>
-    <div class="nav-search-bttn"><i class="fas fa-search"></i></div>
-    <a href="../cart"><button class="nav-cart-bttn">
-      <i class="fas fa-shopping-cart"></i>Cart</button></a>
-    <span id="nav-account">
-        <a href="../account/login">Login</a>
-        <span class="vl"></span>
-        <a href="../account/register">Register</a>
+      <div id="nav-search">
+        <form action="../browse" method="get" target="_blank" onsubmit="return validation(this)">
+          <label for="q"></label>
+          <input class="nav-seach-bar" id="q" name="q" type="search" placeholder="Search" value="">
+        </form>
+      </div>
+      <div class="nav-search-bttn"><i class="fas fa-search"></i></div>
+      <a href="../cart"><button class="nav-cart-bttn">
+          <i class="fas fa-shopping-cart"></i>Cart</button></a>
+      <span id="nav-account">
+        <span id="nav-login-reg">
+          <a href="../account/login">Login</a>
+          <span class="vl"></span>
+          <a href="../account/register">Register</a>
+        </span>
+        <span id="nav-my-account"><a href="../account/my-account/">My Account</a></span>
       </span>
 
     <span class="mobile-only">
         <button onclick="toggleMobileMenu()" class="mobile-menu-bttn"><i class="fas fa-bars" id="mobile-menu-icon"></i></button>
       </span>
-  </nav>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li class="mobile-menu-cart"><a href="../cart"><i class="fas fa-shopping-cart"></i>Cart</a></li>
+        <li class="mobile-menu-my-account"><a href="../account/my-account">My Account</a></li>
+        <li class="mobile-menu-login"><a href="../account/login">Login</a></li>
+        <li><a href="../">Home</a></li>
+        <li><a href="../browse">Browse</a></li>
+        <li><a href="../about-us">About Us</a></li>
+        <li><a href="../contact">Contact Us</a></li>
+        <li><a href="../support/faq">FAQs</a></li>
+      </ul>
+    </div>
+  </header>
 
   <div class="mobile-menu" id="mobile-menu">
     <ul>
