@@ -130,7 +130,7 @@ function logOut() {
 function displayCartMessage(dimPage, overlay, disabledMsg) {
     dimPage.setAttribute("style", "display: block");
     overlay.setAttribute("style", "display: flex");
-    disabledMsg.setAttribute("style", "display: flex");
+    disabledMsg.setAttribute("style", "display: block");
 }
 
 // Functions to hide disabled cart message
@@ -147,9 +147,6 @@ function disableCartBttn(bttn, dimPage, overlay, disabledMsg) {
 
     bttn.addEventListener("click", function (event) {
         displayCartMessage(dimPage, overlay, disabledMsg);
-        setTimeout(function() {
-            hideCartMessage(dimPage, overlay, disabledMsg);
-        }, 2000);           // Message disappears after 2 seconds
         event.preventDefault();    // Prevent redirection to cart page
     });
 }

@@ -329,18 +329,35 @@ i {
 }
 
 #disabled-cart-msg {
-    width: 35%;
-    height: 15%;
+    width: 40%;
     background-color: #eb5e28;
     color: #fff;
+    line-height: 2.7;
     padding: 20px;
     border-radius: 15px;
+}
+
+#disabled-cart-msg a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+#disabled-cart-msg a:hover {
+    text-decoration: none;
 }
 
 /* Responsive disabled cart message */
 @media only screen and (max-width: 767px) {
     #disabled-cart-msg {
-        width: 50%;
+        width: 60%;
+    }
+}
+
+@media only screen and (min-width: 1320px) {
+    #disabled-cart-msg {
+        width: 35%;
+        font-size: larger;
+        padding: 3%;
     }
 }
 /**/
