@@ -264,7 +264,7 @@ input[type=number] {
     text-align: center;
 }
 
-.apply-coupon-button {
+.apply-coupon-button,.remove-coupon-button.active {
     display: inline;
     height: fit-content;
     background: #eb5e28;
@@ -272,6 +272,10 @@ input[type=number] {
     padding: 6px;
     margin: 10px 5px 10px 0;
     font-size: 9pt;
+}
+
+.apply-coupon-button.hide, .remove-coupon-button {
+    display: none;
 }
 
 .cart-product-coupon .cart-product-total-fee {
@@ -282,6 +286,11 @@ input[type=number] {
     margin: -20px 0;
     font-size: 9pt;
     text-align: left;
+    color: #118811;
+}
+
+.coupon-msg.invalid {
+    color: #ff0000;
 }
 
 /* Continue shopping and place order buttons */
