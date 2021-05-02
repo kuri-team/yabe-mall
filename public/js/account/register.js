@@ -57,7 +57,7 @@ function Validator(object) {
     // validating function
     function validate(inputElement, rule) {
         let errorElement = getParent(inputElement, object.formGroupSelector).querySelector(object.errorSelector);
-        let errorMessage;
+        let messageError;
 
         // get rules from selector
         let rules = selectorRules[rule.selector];
@@ -68,25 +68,25 @@ function Validator(object) {
             switch (inputElement.type) {
                 case 'radio':
                 case 'checkbox':
-                    errorMessage = rules[i](
+                    messageError = rules[i](
                         formInput.querySelector(rule.selector + ':checked')
                     );
                     break;
                 default:
-                    errorMessage = rules[i](inputElement.value);
+                    messageError = rules[i](inputElement.value);
             }
-            if (errorMessage) break;
+            if (messageError) break;
         }
 
-        if (errorMessage) {
-            errorElement.innerText = errorMessage;
+        if (messageError) {
+            errorElement.innerText = messageError;
             getParent(inputElement, object.formGroupSelector).classList.add('invalid');
         } else {
             errorElement.innerText = '';
             getParent(inputElement, object.formGroupSelector).classList.remove('invalid');
         }
 
-        return !errorMessage;
+        return !messageError;
     }
 
     // get element from forms that requires validation
@@ -111,7 +111,7 @@ function Validator(object) {
                 // Submit
                 if (typeof object.onSubmit === 'function') {
                     let enableInputs = formInput.querySelectorAll('[name]');
-                    let formValues = Array.from(enableInputs).reduce(function (values, input) {
+                    let inputForm = Array.from(enableInputs).reduce(function (values, input) {
 
                         switch(input.type) {
                             case 'radio':
@@ -136,7 +136,7 @@ function Validator(object) {
 
                         return values;
                     }, {});
-                    object.onSubmit(formValues);
+                    object.onSubmit(inputForm);
                 }
                 // default submit
                 else {
@@ -259,6 +259,7 @@ document.addEventListener('DOMContentLoaded', function () {
             Validator.minLength('#lname', 3),
             Validator.minLength('#address', 3),
             Validator.minLength('#city', 3),
+            Validator.zipcode('#zipcode'),
             Validator.phone('#phone'),
             Validator.required('#verify-pwd'),
             Validator.pwd('#pwd'),
