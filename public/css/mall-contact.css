@@ -153,3 +153,8 @@ textarea {
 .invalid:before {
     content: "✖";
 }
+
+/*Hide the first option to prevent user from selecting the default option*/
+select option:first-of-type{
+    display:none;
+}

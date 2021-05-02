@@ -141,18 +141,6 @@ FORM.addEventListener("submit", function() {
         err += errNum + ". Select Preferred Contact Method.\n";
     }
 
-    if (FORM.contact_purpose.selectedIndex < 1) {
-        // Check the user's selection index if your index is less than 1 than show error (Contact Purpose)
-        errNum++;
-        err += errNum + ". PLease select your contact Purpose.\n";
-    }
-
-    // if(strUser === 0)
-    // {
-    //     errNum++;
-    //     err += errNum + ". PLease select your contact Purpose.\n";
-    // }
-
     console.log(errNum);
 
     if (errNum>0) {
@@ -166,18 +154,6 @@ FORM.addEventListener("submit", function() {
     }
 
 });
-
-// select an non default option for dropdown menu
-// function myFunction()
-// {
-//     let e = document.getElementById("purpose");
-//     let strUser = e.options[e.selectedIndex].value;
-//
-//     if(strUser === 0)
-//     {
-//         alert("Please select a user");
-//     }
-// }
 
 
 // Word-count Messages
