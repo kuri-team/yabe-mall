@@ -337,6 +337,23 @@ i {
     border-radius: 15px;
 }
 
+/* close box button styling */
+.modal-box button, #disabled-cart-msg button {
+    font-size: 20px;
+    background-color: inherit;
+    border: none;
+    outline: none;
+}
+
+#disabled-cart-msg button {
+    color: #fff;
+}
+
+.modal-box button:hover, #disabled-cart-msg button:hover {
+    cursor: pointer;
+}
+/**/
+
 #disabled-cart-msg a {
     color: #fff;
     text-decoration: underline;
@@ -350,17 +367,17 @@ i {
 @media only screen and (max-width: 767px) {
     #disabled-cart-msg {
         width: 60%;
+        padding: 10px;
     }
 }
 
 @media only screen and (min-width: 1320px) {
     #disabled-cart-msg {
-        width: 35%;
-        font-size: larger;
-        padding: 3%;
+        font-size: 22px;
+        line-height: 3.2;
     }
 }
-/**/
+/****/
 
 
 hr {

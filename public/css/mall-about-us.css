@@ -5,28 +5,12 @@
     position: fixed;
     width: 35%;
     min-height: 30%;
-    text-align: -moz-center;
-    text-align: -webkit-center;
-    text-align: center;
     background-color: #ccc5b9;
     color: #252422;
     padding: 20px;
     border-radius: 15px;
 }
-
-/* close box button styling */
-.modal-box button {
-    font-size: 20px;
-    background-color: inherit;
-    padding: 0 0 10px;
-    border: none;
-    outline: none;
-}
-
-.modal-box button:hover {
-    cursor: pointer;
-}
-/**/
+/****/
 
 
 main div {
