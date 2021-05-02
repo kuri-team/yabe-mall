@@ -110,8 +110,8 @@ function Validator(object) {
             if (isFormValid) {
                 // Submit
                 if (typeof object.onSubmit === 'function') {
-                    let enableInputs = formInput.querySelectorAll('[name]');
-                    let inputForm = Array.from(enableInputs).reduce(function (values, input) {
+                    let enterInput = formInput.querySelectorAll('[name]');
+                    let inputForm = Array.from(enterInput).reduce(function (values, input) {
 
                         switch(input.type) {
                             case 'radio':
@@ -191,7 +191,7 @@ Validator.email = function (selector, message) {
     return {
         selector: selector,
         test: function (value) {
-            let regex = /^[a-z-._0-9]+@[a-z0-9]+\.[a-z.]{2,5}$/;
+            let regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return regex.test(value) ? undefined :  message || 'Valid email has the form [name]@[domain]';
         }
     };
