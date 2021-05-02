@@ -10,6 +10,8 @@ const EMAIL_REQUIREMENT = document.getElementById("email-pattern");
 const PHONE_REQUIREMENT = document.getElementById("phone-pattern")
 
 
+
+
 // First name validation
 // When the user clicks on the first name field, show the message box
 FIRST_NAME.onfocus = function() {
@@ -145,6 +147,12 @@ FORM.addEventListener("submit", function() {
         err += errNum + ". PLease select your contact Purpose.\n";
     }
 
+    // if(strUser === 0)
+    // {
+    //     errNum++;
+    //     err += errNum + ". PLease select your contact Purpose.\n";
+    // }
+
     console.log(errNum);
 
     if (errNum>0) {
@@ -156,9 +164,21 @@ FORM.addEventListener("submit", function() {
         alert("Sent!");
         return true;
     }
+
 });
 
-
+// select an non default option for dropdown menu
+// function myFunction()
+// {
+//     let e = document.getElementById("purpose");
+//     let strUser = e.options[e.selectedIndex].value;
+//
+//     let strUser1 = e.options[e.selectedIndex].text;
+//     if(strUser === 0)
+//     {
+//         alert("Please select a user");
+//     }
+// }
 
 
 // Word-count Messages
