@@ -1,20 +1,112 @@
-// Form validation
-const FORM = document.getElementById("contact-form");
+const FORM = document.getElementById("contact-form")
+const FIRST_NAME = document.getElementById("fname");
+const LAST_NAME = document.getElementById("lname");
+const EMAIL = document.getElementById("email_add");
+const PHONE = document.getElementById("phone_num");
+
+const FNAME_REQUIREMENT = document.getElementById("fname-greater-3");
+const LNAME_REQUIREMENT = document.getElementById("lname-greater-3");
+const EMAIL_REQUIREMENT = document.getElementById("email-pattern");
+const PHONE_REQUIREMENT = document.getElementById("phone-pattern")
+
+
+// First name validation
+// When the user clicks on the first name field, show the message box
+FIRST_NAME.onfocus = function() {
+    document.getElementById("message-fname").style.display = "block";
+}
+// When the user clicks outside of the first name field, hide the message box
+FIRST_NAME.onblur = function() {
+    document.getElementById("message-fname").style.display = "none";
+}
+// When the user starts to type something inside the first name field
+FIRST_NAME.onkeyup = function() {
+
+    // Validate FNAME_REQUIREMENT
+    if(FIRST_NAME.value.length >= 3) {
+        FNAME_REQUIREMENT.classList.remove("invalid");
+        FNAME_REQUIREMENT.classList.add("valid");
+    } else {
+        FNAME_REQUIREMENT.classList.remove("valid");
+        FNAME_REQUIREMENT.classList.add("invalid");
+    }
+}
+
+// Last name validation
+// When the user clicks on the password field, show the message box
+LAST_NAME.onfocus = function() {
+    document.getElementById("message-lname").style.display = "block";
+}
+// When the user clicks outside of the password field, hide the message box
+LAST_NAME.onblur = function() {
+    document.getElementById("message-lname").style.display = "none";
+}
+// When the user starts to type something inside the password field
+LAST_NAME.onkeyup = function() {
+
+    // Validate FNAME_REQUIREMENT
+    if(LAST_NAME.value.length >= 3) {
+        LNAME_REQUIREMENT.classList.remove("invalid");
+        LNAME_REQUIREMENT.classList.add("valid");
+    } else {
+        LNAME_REQUIREMENT.classList.remove("valid");
+        LNAME_REQUIREMENT.classList.add("invalid");
+    }
+}
+
+
+// Email validation
+EMAIL.onfocus = function() {
+    document.getElementById("message-email").style.display = "block";
+}
+// When the user clicks outside of the password field, hide the message box
+EMAIL.onblur = function() {
+    document.getElementById("message-email").style.display = "none";
+}
+// When the user starts to type something inside the password field
+EMAIL.onkeyup = function() {
+
+    // Validate FNAME_REQUIREMENT
+    let emailRegEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if(EMAIL.value.match(emailRegEx)) {
+        EMAIL_REQUIREMENT.classList.remove("invalid");
+        EMAIL_REQUIREMENT.classList.add("valid");
+    } else {
+        EMAIL_REQUIREMENT.classList.remove("valid");
+        EMAIL_REQUIREMENT.classList.add("invalid");
+    }
+}
+
+
+// Phone validation
+PHONE.onfocus = function() {
+    document.getElementById("message-phone").style.display = "block";
+}
+// When the user clicks outside of the password field, hide the message box
+PHONE.onblur = function() {
+    document.getElementById("message-phone").style.display = "none";
+}
+// When the user starts to type something inside the password field
+PHONE.onkeyup = function() {
+
+    // Validate FNAME_REQUIREMENT
+    let phoneRegEx = /^([0-9][-. ]?){9,11}[^-. ]$/;
+    if(PHONE.value.match(phoneRegEx)) {
+        PHONE_REQUIREMENT.classList.remove("invalid");
+        PHONE_REQUIREMENT.classList.add("valid");
+    } else {
+        PHONE_REQUIREMENT.classList.remove("valid");
+        PHONE_REQUIREMENT.classList.add("invalid");
+    }
+}
+
 
 FORM.addEventListener("submit", function() {
     console.log("function called");
 
     // Get form values
-    const FIRST_NAME = FORM.fname.value;
-    const LAST_NAME = FORM.lname.value;
-    const PHONE = FORM.phone_num.value;
-    const EMAIL = FORM.email_add.value;
     const CHECKBOXES = document.querySelector("#checkbox-form").querySelectorAll("input[type=checkbox]");
     const MESSAGE = FORM.message.value;
-
-    // Create RegExp patterns
-    const REGEX_EMAIL = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    const REGEX_PHONE = /^([0-9][-. ]?){9,11}[^-. ]$/;
 
     // Variables
     let err = "";  // err variable is used to show error message.
@@ -22,35 +114,6 @@ FORM.addEventListener("submit", function() {
 
 
     // Logic
-    if (FIRST_NAME === "" || FIRST_NAME.length < 3) {
-        // Checks the value: If Value empty  or value length less than 3 or value is digit than Show error Invalid Name
-        errNum++;
-        err += errNum + ". Invalid first name. Valid first name contains at least 3 letters.\n";
-    }
-
-    if (LAST_NAME === "" || LAST_NAME.length < 3) {
-        errNum++;
-        err += errNum + ". Invalid last name. Valid last name contains at least 3 letters.\n";
-    }
-
-    if (PHONE === "" || !REGEX_PHONE.test(PHONE)) {
-        // Check the phone number : If phone number is empty or value length less than 12 or is not a null then show error Invalid Phone number
-        errNum++;
-        err += errNum + ". Invalid phone number. Valid phone number contains 9 to 11 digits\n";
-    }
-
-    if (EMAIL === "") {
-        // If you don't Enter anything in Email field than show error(Enter Email)
-        errNum++;
-        err += errNum + ". Enter Email.\n";
-    } else {
-        // If you don't Enter Email address in email pattern format (i already described "REGEX_EMAIL") then see error (Invalid Email)
-        if(!REGEX_EMAIL.test(EMAIL)){
-            errNum++;
-            err += errNum + ". Invalid Email. Valid email has the form [name]@[domain]\n";
-        }
-    }
-
     let atLeastOneCheckboxChecked = false;
     for (let i = 0; i < CHECKBOXES.length; i++) {
         if (CHECKBOXES[i].checked) {
@@ -94,6 +157,8 @@ FORM.addEventListener("submit", function() {
         return true;
     }
 });
+
+
 
 
 // Word-count Messages

@@ -94,22 +94,38 @@
         <div class="name">
           <label for="fname" class="title required">First Name</label>
           <input id="fname" type="text" name="fname" class="name-field" placeholder="This field is required" required>
+          <div class="error-message" id="message-fname">
+            <h6>First name must contain the following:</h6>
+            <p class="name-greater-3 invalid" id="fname-greater-3">First name contains <b> at least 3 </b> letters</p>
+          </div>
         </div>
 
         <div class="name">
           <label for="lname" class="title required">Last Name</label>
           <input id="lname" type="text" name="lname" class="name-field" placeholder="This field is required" required>
+          <div class="error-message" id="message-lname">
+            <h6>Last name must contain the following:</h6>
+            <p class="name-greater-3 invalid" id="lname-greater-3">First name contains <b> at least 3 </b> letters</p>
+          </div>
         </div>
       </div>
 
       <label for="email_add" class="title required">Email</label>
+        <span class="requirement-text">Ex: 123@1.me or 1.2.3@domain.name or this.is.my.email@sub.sub.123.main</span>
       <input id="email_add" type="email" name="email_add" class="field" placeholder="This field is required" required>
+      <div class="error-message" id="message-email">
+        <h6>Last name must contain the following:</h6>
+        <p class="invalid" id="email-pattern">Valid email has the form <b> [name]@[domain]</b></p>
+      </div>
 
       <label for="phone_num" class="title required">Phone
         <span class="requirement-text">Ex: 0123456789 or 0-1-2-3.4.5 6.7-8-9 or 012.345-6789</span>
       </label>
-      <!-- minlength 9, maxlength 11 character validation-->
       <input id="phone_num" type="tel" name="phone_num" class="field" placeholder="This field is required" title="Phone number should only contain contains 9 to 11 digits" required>
+      <div class="error-message" id="message-phone">
+        <h6>Last name must contain the following:</h6>
+        <p class="invalid" id="phone-pattern">Valid phone number contains 9 to 11 digits. Space, dot, and dash can be used but cannot be positioned at the beginning or at the end or next to each other of a phone</p>
+      </div>
 
       <p class="required">Preferred Contact Method</p>
       <div class="contact-method">

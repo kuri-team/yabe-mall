@@ -119,7 +119,37 @@ textarea {
 }
 
 
-input:invalid, textarea:invalid, select:invalid, .contact-method:invalid, .contact-day:invalid {
-    background-color: #ffdddd;
-    border: 2px solid #cd4813;
+/*input:invalid, textarea:invalid, select:invalid, .contact-method:invalid, .contact-day:invalid {*/
+/*    background-color: #ffdddd;*/
+/*    border: 2px solid #cd4813;*/
+/*}*/
+
+
+/* The message box is shown when the user clicks on the password field */
+.error-message {
+    display:none;
+    background: #f7f7f7;
+    color: #000;
+}
+
+.error-message p {
+    font-size: 0.7rem;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+    color: green;
+}
+
+.valid:before {
+    content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    content: "✖";
 }
