@@ -173,7 +173,6 @@ FORM.addEventListener("submit", function() {
 //     let e = document.getElementById("purpose");
 //     let strUser = e.options[e.selectedIndex].value;
 //
-//     let strUser1 = e.options[e.selectedIndex].text;
 //     if(strUser === 0)
 //     {
 //         alert("Please select a user");

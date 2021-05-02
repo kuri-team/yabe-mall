@@ -136,7 +136,7 @@ textarea {
     font-size: 0.7rem;
 }
 
-/* Add a green text color and a checkmark when the requirements are right */
+/* Add a green text and a checkmark when the requirements are correct */
 .valid {
     color: green;
 }
@@ -145,7 +145,7 @@ textarea {
     content: "✔";
 }
 
-/* Add a red text color and an "x" when the requirements are wrong */
+/* Add a orange text  "x" when the requirements are wrong */
 .invalid {
     color: #cd4813;
 }
@@ -153,10 +153,3 @@ textarea {
 .invalid:before {
     content: "✖";
 }
-
-
-
-/*Hide the first option to prevent user from selecting the default option*/
-/*select option:first-of-type{*/
-/*    display:none;*/
-/*}*/

@@ -115,7 +115,16 @@
       <input id="email_add" type="email" name="email_add" class="field" placeholder="This field is required" required>
       <div class="error-message" id="message-email">
         <h6>Last name must contain the following:</h6>
-        <p class="invalid" id="email-pattern">Valid email has the form <b> [name]@[domain]</b></p>
+        <p class="invalid" id="email-pattern"> Valid email has the form [name]@[domain] <br>
+          [name] consists of letters (a to z, both lower and upper cases), digits, and dots <br>
+          Two dots cannot be positioned next to each other and dots cannot be located at the beginning or at the end of [name] <br>
+          The length of [name] is at least 3 <br>
+          [domain] consists of letters, digits, and dots <br>
+          There should be at least one dot in [domain] & [name] <br>
+          Two dots cannot be positioned next to each other <br>
+          Dots cannot be located at the beginning or at the end of [domain] <br>
+          The part of [domain] after the last dot contains only letters and has a minimum length of 2 and a maximum length of 5 <br>
+        </p>
       </div>
 
       <label for="phone_num" class="title required">Phone
@@ -124,7 +133,7 @@
       <input id="phone_num" type="tel" name="phone_num" class="field" placeholder="This field is required" title="Phone number should only contain contains 9 to 11 digits" required>
       <div class="error-message" id="message-phone">
         <h6>Last name must contain the following:</h6>
-        <p class="invalid" id="phone-pattern">Valid phone number contains 9 to 11 digits. Space, dot, and dash can be used but cannot be positioned at the beginning or at the end or next to each other of a phone</p>
+        <p class="invalid" id="phone-pattern">Valid phone number contains 9 to 11 digits. <br>Space, dot, and dash can be used but cannot be positioned at the beginning or at the end or next to each other of a phone</p>
       </div>
 
       <p class="required">Preferred Contact Method</p>
