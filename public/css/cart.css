@@ -265,13 +265,18 @@ input[type=number] {
 }
 
 .apply-coupon-button,.remove-coupon-button.active {
+    background: #ccc5b9;
+    color: #403d39;
     display: inline;
     height: fit-content;
-    background: #eb5e28;
-    color: #fff;
+
     padding: 6px;
     margin: 10px 5px 10px 0;
     font-size: 9pt;
+}
+.apply-coupon-button:hover,.remove-coupon-button.active:hover {
+    background: #403d39;
+    color: #ccc5b9;
 }
 
 .apply-coupon-button.hide, .remove-coupon-button {
