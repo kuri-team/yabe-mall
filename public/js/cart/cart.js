@@ -2,7 +2,7 @@ let productID = window.location.pathname.split('/')[5];
 let productName = document.querySelector(".product-info-main h2").innerHTML;
 let productLink = window.location.href;
 let storeName = document.querySelector(".product-info-main p").innerHTML;
-let finalPrice = parseFloat(document.querySelector(".product-info-price").innerHTML.slice(1,));
+let finalPrice = document.querySelector(".product-info-price").innerHTML.slice(1,);
 let productImg = document.querySelector(".product-info-main-img img").src;
 let cartItem = {
     "product_ID": productID,

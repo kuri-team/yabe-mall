@@ -61,9 +61,11 @@ function  listItemInCart() {
     let displaySubTotal = document.querySelector(".cart-product-total .cart-product-total-fee");
     let displayTotalPrice = document.querySelector(".cart-product-fees-total .cart-product-total-fee");
     subTotal = localStorage.getItem("subTotal");
-    totalPrice = localStorage.getItem("totalPrice");
+    finalPrice = localStorage.getItem("totalPrice");
+    subTotal = parseFloat(subTotal).toFixed(2);
+    finalPrice = parseFloat(finalPrice).toFixed(2);
     displaySubTotal.innerHTML = "$"+subTotal;
-    displayTotalPrice.innerHTML = "$"+totalPrice;
+    displayTotalPrice.innerHTML = "$"+finalPrice;
 }
 
 let subTotal = localStorage.getItem("subTotal");
@@ -83,15 +85,14 @@ document.querySelectorAll(".cart-product-quantity-button.plus").forEach(function
         productList[productID].product_quantity+=1;
         let subTotal = localStorage.getItem("subTotal"); // update subTotal in localStorage
         subTotal = parseFloat(subTotal);
-        subTotal += productList[productID].final_price;
+        subTotal += parseFloat(productList[productID].final_price);
         subTotal = parseFloat(subTotal.toFixed(2));
         localStorage.setItem("subTotal",JSON.stringify(subTotal));
         let totalPrice = localStorage.getItem("totalPrice"); // update totalPrice in localStorage
         totalPrice = parseFloat(totalPrice);
-        totalPrice += productList[productID].final_price;
+        totalPrice += parseFloat(productList[productID].final_price);
         discountValue = totalPrice * discountAmount;
         finalPrice = totalPrice - discountValue;
-        totalPrice = parseFloat(totalPrice.toFixed(2));
         discountValue = parseFloat(discountValue.toFixed(2));
         finalPrice = parseFloat(finalPrice.toFixed(2));
         localStorage.setItem("totalPrice",JSON.stringify(totalPrice));
@@ -104,6 +105,8 @@ document.querySelectorAll(".cart-product-quantity-button.plus").forEach(function
         let productQuantity = parseInt(inputValue)
         productQuantity += 1;
         document.getElementById(`${ productID } product-quantity`).value = productQuantity;
+        subTotal = subTotal.toFixed(2);
+        finalPrice = finalPrice.toFixed(2);
         let displaySubTotal = document.querySelector(".cart-product-total .cart-product-total-fee");
         let displayFinalPrice = document.querySelector(".cart-product-fees-total .cart-product-total-fee");
         displaySubTotal.innerHTML = "$" + subTotal;
@@ -111,7 +114,9 @@ document.querySelectorAll(".cart-product-quantity-button.plus").forEach(function
 
         if (document.getElementById("insert-coupon").disabled === true) {
             let displayDiscountValue = document.querySelector(".cart-product-coupon .cart-product-total-fee");
+            discountValue = discountValue.toFixed(2);
             displayDiscountValue.innerHTML = "- $" + discountValue;
+            discountValue = parseFloat(discountValue);
         }
 });
 });
@@ -129,10 +134,9 @@ document.querySelectorAll(".cart-product-quantity-button.minus").forEach(functio
         totalPrice = parseFloat(totalPrice);
 
         if (productList[productID].product_quantity > 0) {  // condition to prevent negative value,
-            subTotal -= productList[productID].final_price; //   0 because quantity -= 1 above
-            subTotal = parseFloat(subTotal.toFixed(2));
+            subTotal -= parseFloat(productList[productID].final_price); //   0 because quantity -= 1 above
             localStorage.setItem("subTotal",JSON.stringify(subTotal));// update subTotal in localStorage
-            totalPrice -= productList[productID].final_price;
+            totalPrice -= parseFloat(productList[productID].final_price);
             discountValue = totalPrice * discountAmount;
             finalPrice = totalPrice - discountValue;
             totalPrice = parseFloat(totalPrice.toFixed(2));
@@ -157,15 +161,19 @@ document.querySelectorAll(".cart-product-quantity-button.minus").forEach(functio
             productQuantity = 1
         }
 
-        document.getElementById(`${productID} product-quantity`).value = productQuantity;
+        document.getElementById(`${productID} product-quantity`).value = productQuantity
+        subTotal = subTotal.toFixed(2);
+        finalPrice = finalPrice.toFixed(2);
         let displaySubTotal = document.querySelector(".cart-product-total .cart-product-total-fee");
         let displayFinalPrice = document.querySelector(".cart-product-fees-total .cart-product-total-fee");
         displaySubTotal.innerHTML = "$"+subTotal;
         displayFinalPrice.innerHTML = "$"+finalPrice;
 
         if (document.getElementById("insert-coupon").disabled === true) {
-            let displayDiscountValue = document.querySelector(".cart-product-coupon .cart-product-total-fee");
+            let displayDiscountValue = document.querySelector(".cart-product-coupon .cart-product-total-fee")
+            discountValue = discountValue.toFixed(2)
             displayDiscountValue.innerHTML = "- $" + discountValue;
+            discountValue = parseFloat(discountValue);
         }
     });
 });
@@ -214,6 +222,8 @@ function applyDiscount () {
     finalPrice = parseFloat(finalPrice.toFixed(2));
     localStorage.setItem("discountValue",discountValue);
     localStorage.setItem("finalPrice", JSON.stringify(finalPrice));
+    finalPrice = finalPrice.toFixed(2);
+    discountValue = discountValue.toFixed(2);
     displayFinalPrice.innerHTML = "$" + finalPrice;
     document.querySelector(".cart-product-coupon .cart-product-total-fee").innerHTML = "- $"+discountValue;
     removeAfterApply.classList.add("hide");
@@ -221,6 +231,7 @@ function applyDiscount () {
     couponMsg.classList.remove("invalid");
     couponMsg.innerHTML = "Coupon applied";
     document.getElementById("insert-coupon").disabled = true;
+    discountValue = parseFloat(discountValue);
 }
 
 // reload after remove coupon
