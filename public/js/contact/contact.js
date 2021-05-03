@@ -95,7 +95,7 @@ FORM.addEventListener("submit", function() {
         return false;
     } else {
         // If errNum is less than 0 or 0 than alert "done" and return "true"
-        alert("Your contact from successfully submitted!");
+        alert("Your contact form successfully submitted!");
         return true;
     }
 });
