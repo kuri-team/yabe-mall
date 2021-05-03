@@ -127,7 +127,7 @@ textarea {
 
 /* The message box is shown when the user clicks on the password field */
 .error-message {
-    padding: 3%;
+    padding: 3% 5%;
     display:none;
     background: #f7f7f7;
     color: #000;
