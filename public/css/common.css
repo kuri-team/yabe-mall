@@ -336,18 +336,22 @@ i {
     width: 40%;
     background-color: #eb5e28;
     color: #fff;
-    line-height: 2.7;
+    line-height: 2;
     padding: 20px;
     border-radius: 15px;
 }
 
 /* close message button styling */
 #disabled-cart-msg button {
-    font-size: 20px;
+    width: 24px;
+    height: 24px;
+    font-size: 18px;
     background-color: inherit;
     border: none;
+    border-radius: 12px;
     outline: none;
     color: #fff;
+    transition: 0.5s;
 }
 
 #disabled-cart-msg button:hover {
@@ -355,6 +359,11 @@ i {
     background-color: #cd4813;
 }
 /**/
+
+#disabled-cart-msg p {
+    font-size: medium;
+    padding: 20px 20px 30px 20px;
+}
 
 #disabled-cart-msg a {
     color: #fff;
