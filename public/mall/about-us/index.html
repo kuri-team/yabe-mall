@@ -17,9 +17,17 @@
 <!-- dim rest of page when modal box is opened -->
 <div id="dimmed-page"></div>
 
+<div id="overlay-cart-window">
+    <div id="disabled-cart-msg" class="text-align-center">
+      <button id="cart-closing-bttn" class="float-right"><i class="fas fa-times"></i></button>
+      <p class="clear-both">This feature is only available for registered user. Please
+        <a href="../account/login">login</a> or <a href="../account/register">register</a>.</p>
+    </div>
+</div>
+
 <!-- Modal box container -->
 <div id="overlay-modal-window">
-  <div id="nhi-modal-box" class="modal-box">
+  <div id="nhi-modal-box" class="modal-box text-align-center">
     <button class="float-right" onclick="toggleModalBox('nhi-modal-box')">
       <i class="fas fa-times"></i>
     </button>
@@ -29,7 +37,7 @@
     <p>Visit my GitHub page <a href="https://github.com/doanyennhi" target="_blank">here</a></p>
   </div>
 
-  <div id="mike-modal-box" class="modal-box">
+  <div id="mike-modal-box" class="modal-box text-align-center">
     <button class="float-right" onclick="toggleModalBox('mike-modal-box')">
       <i class="fas fa-times"></i>
     </button>
@@ -39,7 +47,7 @@
     <p>Visit my GitHub page <a href="https://github.com/miketvo" target="_blank">here</a></p>
   </div>
 
-  <div id="manh-modal-box" class="modal-box">
+  <div id="manh-modal-box" class="modal-box text-align-center">
     <button class="float-right" onclick="toggleModalBox('manh-modal-box')">
       <i class="fas fa-times"></i>
     </button>
@@ -49,7 +57,7 @@
     <p>Visit my GitHub page <a href="https://github.com/rider3458" target="_blank">here</a></p>
   </div>
 
-  <div id="thu-modal-box" class="modal-box">
+  <div id="thu-modal-box" class="modal-box text-align-center">
     <button class="float-right" onclick="toggleModalBox('thu-modal-box')">
       <i class="fas fa-times"></i>
     </button>
@@ -91,7 +99,7 @@
       </form>
     </div>
     <div class="nav-search-bttn"><i class="fas fa-search"></i></div>
-    <a href="../cart"><button class="nav-cart-bttn"><i class="fas fa-shopping-cart"></i>Cart</button></a>
+   <button class="nav-cart-bttn"><a href="../cart"><i class="fas fa-shopping-cart"></i>Cart</a></button>
     <span id="nav-account">
       <span id="nav-login-reg">
         <a href="../account/login">Login</a>
