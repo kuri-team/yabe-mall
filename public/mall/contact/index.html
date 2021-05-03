@@ -38,25 +38,24 @@
               <div class="nav-search-filter-option">Date</div>
             </div>
           </div>
-        </div>
-        <hr>
-        <div class="nav-search-filter-option">Stores
-          <div id="nav-search-filter-level-2-2">
-            <div class="nav-search-filter-option">Category</div>
-            <hr>
-            <div class="nav-search-filter-option">Name</div>
+          <hr>
+          <div class="nav-search-filter-option">Stores
+            <div id="nav-search-filter-level-2-2">
+              <div class="nav-search-filter-option">Category</div>
+              <hr>
+              <div class="nav-search-filter-option">Name</div>
+            </div>
           </div>
         </div>
       </div>
       <div id="nav-search">
-        <form action="../browse" method="get" target="_blank" onsubmit="return validation(this)">
+        <form action="../browse" method="get" target="_blank">
           <label for="q"></label>
           <input class="nav-seach-bar" id="q" name="q" type="search" placeholder="Search" value="">
         </form>
       </div>
       <div class="nav-search-bttn"><i class="fas fa-search"></i></div>
-      <button class="nav-cart-bttn"><a href="../cart">
-          <i class="fas fa-shopping-cart"></i>Cart</a></button>
+      <button class="nav-cart-bttn"><a href="../cart"><i class="fas fa-shopping-cart"></i>Cart</a></button>
       <span id="nav-account">
         <span id="nav-login-reg">
           <a href="../account/login">Login</a>
@@ -69,13 +68,7 @@
       <span class="mobile-only">
         <button onclick="toggleMobileMenu()" class="mobile-menu-bttn"><i class="fas fa-bars" id="mobile-menu-icon"></i></button>
       </span>
-      <span id="nav-my-account"><a href="../account/my-account/">My Account</a></span>
-    </span>
-
-    <span class="mobile-only">
-      <button onclick="toggleMobileMenu()" class="mobile-menu-bttn"><i class="fas fa-bars" id="mobile-menu-icon"></i></button>
-    </span>
-  </nav>
+    </nav>
 
   <div class="mobile-menu" id="mobile-menu">
     <ul>
@@ -272,7 +265,7 @@
       you agree to the use of cookies and other technologies on our website.</p>
     <div class="cookie-consent-button">
       <a href="https://gdpr-info.eu/" target="_blank"><button class="cookie-consent-learn-more">Learn more</button></a>
-      <button class="cookie-consent-accept" type="button" onclick="myFunction()">Accept</button>
+      <button class="cookie-consent-accept" type="button">Accept</button>
     </div>
   </div>
 </div>
