@@ -128,18 +128,20 @@ function updateRequirementMessage() {
 FIRST_NAME.onfocus = function() {
     document.getElementById("message-fname").style.display = "block";
 }
+
 // Focus mouse outside of the first name field, hide the message box
 FIRST_NAME.onblur = function() {
     document.getElementById("message-fname").style.display = "none";
 }
+
 // Starts typing something inside the first name field
 // correct => remove error style with a checkmark
 // wrong => add error style with an x indicator
-FIRST_NAME.onkeyup = function() {
+FIRST_NAME.oninput = function() {
 
     // Validate FNAME_REQUIREMENT
     let firstNameRegEx = /^[A-Za-z]{3,}/;
-    if(FIRST_NAME.value.match(firstNameRegEx)) {
+    if (FIRST_NAME.value.match(firstNameRegEx)) {
         FNAME_REQUIREMENT.classList.remove("invalid");
         FNAME_REQUIREMENT.classList.add("valid");
     } else {
@@ -154,16 +156,18 @@ FIRST_NAME.onkeyup = function() {
 LAST_NAME.onfocus = function() {
     document.getElementById("message-lname").style.display = "block";
 }
+
 // When the user clicks outside of the last name field, hide the message box
 LAST_NAME.onblur = function() {
     document.getElementById("message-lname").style.display = "none";
 }
+
 // When the user starts to type something inside the last name field
-LAST_NAME.onkeyup = function() {
+LAST_NAME.oninput = function() {
 
     // Validate FNAME_REQUIREMENT
     let firstNameRegEx = /^[A-Za-z]{3,}/;
-    if(LAST_NAME.value.match(firstNameRegEx)) {
+    if (LAST_NAME.value.match(firstNameRegEx)) {
         LNAME_REQUIREMENT.classList.remove("invalid");
         LNAME_REQUIREMENT.classList.add("valid");
     } else {
@@ -177,16 +181,18 @@ LAST_NAME.onkeyup = function() {
 EMAIL.onfocus = function() {
     document.getElementById("message-email").style.display = "block";
 }
+
 // When the user clicks outside of the password field, hide the message box
 EMAIL.onblur = function() {
     document.getElementById("message-email").style.display = "none";
 }
+
 // When the user starts to type something inside the email field
-EMAIL.onkeyup = function() {
+EMAIL.oninput = function() {
 
     // Validate EMAIL_REQUIREMENT
     let emailRegEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,5}))$/;
-    if(EMAIL.value.match(emailRegEx)) {
+    if (EMAIL.value.match(emailRegEx)) {
         EMAIL_REQUIREMENT.classList.remove("invalid");
         EMAIL_REQUIREMENT.classList.add("valid");
     } else {
@@ -205,11 +211,11 @@ PHONE.onblur = function() {
     document.getElementById("message-phone").style.display = "none";
 }
 // When the user starts to type something inside the phone field
-PHONE.onkeyup = function() {
+PHONE.oninput = function() {
 
     // Validate PHONE_REQUIREMENT
     let phoneRegEx = /^([0-9][-. ]?){8,10}[0-9]$/;
-    if(PHONE.value.match(phoneRegEx)) {
+    if (PHONE.value.match(phoneRegEx)) {
         PHONE_REQUIREMENT.classList.remove("invalid");
         PHONE_REQUIREMENT.classList.add("valid");
     } else {
