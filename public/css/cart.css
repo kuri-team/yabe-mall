@@ -245,7 +245,7 @@ input[type=number] {
 }
 
 .cart-product-summary-table .cart-product-coupon {
-    height: 70px;
+    height: 80px;
 }
 
 .cart-product-coupon .cart-product-total-tag p {
@@ -380,6 +380,10 @@ input[type=number] {
         margin-left: -15px;
         padding: 5px;
         font-size: 9pt;
+    }
+
+    .coupon-msg {
+        margin: 0;
     }
 
     .cart-product-summary-button button {
