@@ -95,7 +95,7 @@ FORM.addEventListener("submit", function() {
         return false;
     } else {
         // If errNum is less than 0 or 0 than alert "done" and return "true"
-        alert("Your contact form successfully submitted!");
+        alert("Your contact form is successfully submitted");
         return true;
     }
 });
@@ -140,13 +140,15 @@ FIRST_NAME.onblur = function() {
 FIRST_NAME.onkeyup = function() {
 
     // Validate FNAME_REQUIREMENT
-    if(FIRST_NAME.value.length >= 3) {
+    let firstNameRegEx = /^[A-Za-z]{3,}/;
+    if(FIRST_NAME.value.match(firstNameRegEx)) {
         FNAME_REQUIREMENT.classList.remove("invalid");
         FNAME_REQUIREMENT.classList.add("valid");
     } else {
         FNAME_REQUIREMENT.classList.remove("valid");
         FNAME_REQUIREMENT.classList.add("invalid");
     }
+
 }
 
 // Last name validation instant feedback
@@ -162,7 +164,8 @@ LAST_NAME.onblur = function() {
 LAST_NAME.onkeyup = function() {
 
     // Validate FNAME_REQUIREMENT
-    if(LAST_NAME.value.length >= 3) {
+    let firstNameRegEx = /^[A-Za-z]{3,}/;
+    if(LAST_NAME.value.match(firstNameRegEx)) {
         LNAME_REQUIREMENT.classList.remove("invalid");
         LNAME_REQUIREMENT.classList.add("valid");
     } else {
@@ -207,7 +210,7 @@ PHONE.onblur = function() {
 PHONE.onkeyup = function() {
 
     // Validate PHONE_REQUIREMENT
-    let phoneRegEx = /^([0-9][-. ]?){9,11}[^-. ]$/;
+    let phoneRegEx = /^([0-9][-. ]?){8,10}[^-. ]$/;
     if(PHONE.value.match(phoneRegEx)) {
         PHONE_REQUIREMENT.classList.remove("invalid");
         PHONE_REQUIREMENT.classList.add("valid");
