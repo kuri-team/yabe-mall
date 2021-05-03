@@ -239,9 +239,68 @@ input[type=number] {
     float: right;
 }
 
+/* coupon */
+.cart-product-coupon {
+    padding: 5px 0;
+}
+
+.cart-product-summary-table .cart-product-coupon {
+    height: 80px;
+}
+
+.cart-product-coupon .cart-product-total-tag p {
+    display: inline;
+}
+
+.insert-coupon {
+    display: inline;
+    max-width: 100px;
+    width: auto;
+    font-size: 8pt;
+    height: fit-content;
+    padding: 7px 0;
+    margin: 10px 0 10px 5px;
+    border: 1px solid;
+    text-align: center;
+}
+
+.apply-coupon-button,.remove-coupon-button.active {
+    background: #ccc5b9;
+    color: #403d39;
+    display: inline;
+    height: fit-content;
+    padding: 6px;
+    margin: 10px 5px 10px 0;
+    font-size: 9pt;
+}
+.apply-coupon-button:hover,.remove-coupon-button.active:hover {
+    background: #403d39;
+    color: #ccc5b9;
+}
+
+.apply-coupon-button.hide, .remove-coupon-button {
+    display: none;
+}
+
+.cart-product-coupon .cart-product-total-fee {
+    padding: 10px 0;
+}
+
+.coupon-msg {
+    margin: -20px 0;
+    font-size: 9pt;
+    text-align: left;
+    color: #118811;
+}
+
+.coupon-msg.invalid {
+    color: #ff0000;
+}
+
 /* Continue shopping and place order buttons */
 .cart-product-summary-button {
     border: none;
+    text-align: center;
 }
 
 .cart-product-summary-button button {
@@ -313,8 +372,18 @@ input[type=number] {
 
     .cart-product-remove-button {
         height: 30px;
-        width: 60px;
+        width: 55px;
         font-size: 7pt;
+    }
+
+    .cart-product-summary-table {
+        margin-left: -15px;
+        padding: 5px;
+        font-size: 9pt;
+    }
+
+    .coupon-msg {
+        margin: 0;
     }
 
     .cart-product-summary-button button {

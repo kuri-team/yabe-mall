@@ -47,7 +47,7 @@
         </form>
       </div>
       <div class="nav-search-bttn"><i class="fas fa-search"></i></div>
-      <a href="../cart"><button class="nav-cart-bttn"><i class="fas fa-shopping-cart"></i>Cart</button></a>
+      <button class="nav-cart-bttn"><a href="../cart"><i class="fas fa-shopping-cart"></i>Cart</a></button>
       <span id="nav-account">
         <span id="nav-login-reg">
           <a href="../account/login">Login</a>
@@ -110,7 +110,17 @@
                 </li>
                 <li class="cart-product-delivery">
                   <span class="cart-product-total-tag">Delivery</span>
-                  <span class="cart-product-total-fee">$15.0</span>
+                  <span class="cart-product-total-fee">$15.00</span>
+                </li>
+                <li class="cart-product-coupon">
+                  <span class="cart-product-total-tag">
+                    <label for="insert-coupon">Coupon</label>
+                    <input class="insert-coupon" id="insert-coupon" type="text">
+                    <button class="apply-coupon-button">APPLY</button>
+                    <button class="remove-coupon-button"><i class="fas fa-times"></i></button>
+                   </span>
+                  <span class="cart-product-total-fee"></span> <br><br><br>
+                  <p class="coupon-msg"></p>
                 </li>
                 <li class="cart-product-fees-total">
                   <span class="cart-product-total-tag">Total</span>
