@@ -86,8 +86,6 @@ FORM.addEventListener("submit", function(event) {
         err += errNum + ". Select Preferred Contact Method.\n";
     }
 
-    console.log(errNum);
-
     if (errNum>0) {
         // If errNum is greater than 0 than alert error and return "false"
         alert(err);
