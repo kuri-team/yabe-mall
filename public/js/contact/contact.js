@@ -11,8 +11,7 @@ const PHONE = document.getElementById("phone_num");
 // Form validation
 const FORM = document.getElementById("contact-form");
 
-FORM.addEventListener("submit", function() {
-    console.log("function called");
+FORM.addEventListener("submit", function(event) {
 
     // Get form values
     const FORM = document.getElementById("contact-form")
@@ -92,6 +91,7 @@ FORM.addEventListener("submit", function() {
     if (errNum>0) {
         // If errNum is greater than 0 than alert error and return "false"
         alert(err);
+        event.preventDefault();
         return false;
     } else {
         // If errNum is less than 0 or 0 than alert "done" and return "true"
