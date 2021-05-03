@@ -210,7 +210,7 @@ PHONE.onblur = function() {
 PHONE.onkeyup = function() {
 
     // Validate PHONE_REQUIREMENT
-    let phoneRegEx = /^([0-9][-. ]?){8,10}[^-. ]$/;
+    let phoneRegEx = /^([0-9][-. ]?){8,10}[0-9]$/;
     if(PHONE.value.match(phoneRegEx)) {
         PHONE_REQUIREMENT.classList.remove("invalid");
         PHONE_REQUIREMENT.classList.add("valid");
