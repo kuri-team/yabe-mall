@@ -201,7 +201,7 @@ Validator.phone = function (selector, message) {
     return {
         selector: selector,
         test: function (value) {
-            let regex = /^([0-9][-. ]?){9,11}[^-. ]$/;
+            let regex = /^([0-9][-. ]?){8,10}[0-9]$/;
             return regex.test(value) ? undefined :  message || 'Valid phone contains 9 to 11 digits which space, dot, and dash cannot be positioned at the beginning or at the end';
         }
     };
