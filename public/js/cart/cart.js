@@ -42,19 +42,15 @@ function addItemToCart() {
 }
 
 function addToCartMsg() {
-    let msg = document.getElementById("product-content");
-    let msgOnTop =
-        `<div class="done-msg-wrapper">
-            <div class="done-msg">
-                <i class="fas fa-check"></i>
-                <p class="done-add-to-cart">Product has been added to the cart</p>
-            </div>
-        </div>`
-    msgOnTop += msg.innerHTML
-    msg.innerHTML += msgOnTop;
+    document.body.insertAdjacentHTML("beforeend", "<div class=\"done-msg-wrapper\">\n" +
+        "<div class=\"done-msg\">\n" +
+        "<i class=\"fas fa-check\"></i>\n" +
+        "<p class=\"done-add-to-cart\">Product has been added to the cart</p>\n"+
+        " </div>\n" +
+        " </div>");
     setTimeout(function() {
-        const doc = document.querySelector("main");
-        const doneMsg = document.querySelector(".done-msg");
+        const doc = document.querySelector(".product-content");
+        const doneMsg = document.querySelector(".done-msg-wrapper");
         doc.removeChild(doneMsg);
     },3000);
     setTimeout(function() {
