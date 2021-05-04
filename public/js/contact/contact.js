@@ -101,7 +101,7 @@ FORM.addEventListener("submit", function(event) {
 
 // Word-count Messages
 // keydown for keeping the backspace
-document.getElementById("message").addEventListener("keydown", updateRequirementMessage);
+document.getElementById("message").addEventListener("input", updateRequirementMessage);
 
 function updateRequirementMessage() {
     let message = document.getElementById("message").value;

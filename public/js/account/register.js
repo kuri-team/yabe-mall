@@ -191,7 +191,7 @@ Validator.email = function (selector, message) {
     return {
         selector: selector,
         test: function (value) {
-            let regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*){2,}|(.+){2,})@(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,5})$/;
             return regex.test(value) ? undefined :  message || 'Valid email has the form [name]@[domain]';
         }
     };
