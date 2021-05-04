@@ -80,6 +80,16 @@ for (let i = 0; i < NAV_SEARCH_FILTER_OPTIONS.length; i++) {
 }
 
 
+// Redirect to Cart page on user click of .nav-cart-bttn (need to be logged in first)
+if (localStorage.isLoggedIn === true) {
+    console.log("logged in");
+    const NAV_CART_BTTN = document.querySelector(".nav-cart-bttn");
+    NAV_CART_BTTN.addEventListener("click", function () {
+        window.location.href = NAV_CART_BTTN.querySelector("a").href;
+    });
+}
+
+
 /**
  * Persistent log in features
  */
