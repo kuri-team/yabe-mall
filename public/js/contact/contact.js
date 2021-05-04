@@ -191,7 +191,7 @@ EMAIL.onblur = function() {
 EMAIL.oninput = function() {
 
     // Validate EMAIL_REQUIREMENT
-    let emailRegEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*){2,}|(.+){2,})@(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,5})$/;
+    let emailRegEx = /^[^.](([^<>()\[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*){2,}|(.+){2,})@(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,5})$/;
     if (EMAIL.value.match(emailRegEx)) {
         EMAIL_REQUIREMENT.classList.remove("invalid");
         EMAIL_REQUIREMENT.classList.add("valid");
