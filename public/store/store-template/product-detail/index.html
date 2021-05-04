@@ -14,6 +14,16 @@
   <title>Purple Hyacinth comic</title>
 </head>
 <body>
+  <div id="dimmed-page"></div>
+
+  <div id="overlay-cart-window">
+    <div id="disabled-cart-msg" class="text-align-center">
+      <button id="cart-closing-bttn" class="float-right"><i class="fas fa-times"></i></button>
+      <p class="clear-both">This feature is only available for registered user. Please
+        <a href="../../../mall/account/login">login</a> or <a href="../../../mall/account/register">register</a>.</p>
+    </div>
+  </div>
+
   <header>
     <nav>
         <span id="nav-logo"><a href="../../../mall/"><img class="nav-logo-sprite"
@@ -46,13 +56,18 @@
         </form>
       </div>
       <div class="nav-search-bttn"><i class="fas fa-search"></i></div>
-      <a href="../../../mall/cart"><button class="nav-cart-bttn">
-        <i class="fas fa-shopping-cart"></i>Cart</button></a>
+      <button class="nav-cart-bttn"><a href="../../../mall/cart">
+        <i class="fas fa-shopping-cart"></i>Cart</a></button>
       <span id="nav-account">
+        <span id="nav-login-reg">
           <a href="../../../mall/account/login">Login</a>
           <span class="vl"></span>
           <a href="../../../mall/account/register">Register</a>
         </span>
+        <span id="nav-my-account">
+          <a href="../../../mall/account/my-account/">My Account</a>
+        </span>
+      </span>
 
       <span class="mobile-only">
           <button onclick="toggleMobileMenu()" class="mobile-menu-bttn">
@@ -64,8 +79,9 @@
       <ul>
         <li class="mobile-menu-cart"><a href="../../../mall/cart">
           <i class="fas fa-shopping-cart"></i>Cart</a></li>
-        <li><a href="../../../mall/account/login">My Account</a></li>
-        <li><a href="../../">Home</a></li>
+        <li class="mobile-menu-my-account"><a href="../../../mall/account/my-account">My Account</a></li>
+        <li class="mobile-menu-login"><a href="../../../mall/account/login">Login</a></li>
+        <li><a href="../../../mall/">Home</a></li>
         <li><a href="../../../mall/browse">Browse</a></li>
         <li><a href="../../../mall/about-us">About Us</a></li>
         <li><a href="../../../mall/contact">Contact Us</a></li>
@@ -108,7 +124,7 @@
           <p class="product-info-date float-left">18/6/2018</p>
         </div>
         <div class="shop-bttn clear-both">
-          <button class="add-to-cart"><a href="">ADD TO CART</a></button>
+          <button class="add-to-cart">ADD TO CART</button>
           <button class="buy-now"><a href="../../../mall/cart">BUY NOW</a></button>
         </div>
       </div>
@@ -284,5 +300,6 @@
 
   <script src="../../../js/common.js"></script>
   <script src="../../../js/cards.js"></script>
+  <script src="../../../js/cart/cart.js"></script>
 </body>
 </html>

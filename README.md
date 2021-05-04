@@ -3,7 +3,9 @@
 ***
 
 ## Assignment Background
-2nd Development Phase of a 3-part assignment series for COSC2430 Web Programming at RMIT University Vietnam. Previous development history can be found here: https://github.com/kuri-team/yabe-online-mall.github.io
+2nd Development Phase of a 3-part assignment series for COSC2430 Web Programming at RMIT University Vietnam. Previous development history can be found here:
+- Phase 1: https://github.com/kuri-team/yabe-online-mall.github.io
+- Phase 2: https://github.com/kuri-team/yabe-online-mall
 
 ## Assignment Requirements
 

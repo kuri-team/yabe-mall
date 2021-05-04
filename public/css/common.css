@@ -26,6 +26,10 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', 'Arial', sans-serif !important;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 a {
     color: #eb5e28;
 }
@@ -304,6 +308,89 @@ i {
 /******************************
     UI elements
 *******************************/
+
+/** MODAL WINDOW STYLING **/
+#dimmed-page, #overlay-cart-window, #overlay-modal-window, #disabled-cart-msg {
+    display: none;
+    position: -ms-device-fixed;
+    position: fixed;
+}
+
+#dimmed-page {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.8;
+    z-index: 100;
+}
+
+#overlay-cart-window, #overlay-modal-window {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 101;
+}
+
+#disabled-cart-msg {
+    width: 40%;
+    background-color: #eb5e28;
+    color: #fff;
+    line-height: 2;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+/* close message button styling */
+#disabled-cart-msg button {
+    width: 24px;
+    height: 24px;
+    font-size: 18px;
+    background-color: inherit;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+    color: #fff;
+    transition: 0.5s;
+}
+
+#disabled-cart-msg button:hover {
+    cursor: pointer;
+    background-color: #cd4813;
+}
+/**/
+
+#disabled-cart-msg p {
+    font-size: medium;
+    padding: 20px 20px 30px 20px;
+}
+
+#disabled-cart-msg a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+#disabled-cart-msg a:hover {
+    text-decoration: none;
+}
+
+/* Responsive disabled cart message */
+@media only screen and (max-width: 767px) {
+    #disabled-cart-msg {
+        width: 60%;
+        padding: 10px;
+    }
+}
+
+@media only screen and (min-width: 1320px) {
+    #disabled-cart-msg {
+        font-size: 22px;
+        line-height: 3.2;
+    }
+}
+/****/
+
+
 hr {
     border: none;
     border-bottom: 1px solid inherit;
@@ -585,9 +672,11 @@ nav a {
     width: 120px;
     height: 50px;
     margin-left: 50px;
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
-    -moz-transition: 0.5s;
+}
+
+.nav-cart-bttn a {
+    color: #fff;
+    text-decoration: none;
 }
 
 .nav-cart-bttn:active {
@@ -595,6 +684,7 @@ nav a {
 }
 
 .nav-cart-bttn i {
+    color: inherit;
     margin-right: 10px;
 }
 
@@ -615,7 +705,7 @@ nav a {
     text-decoration: underline;
 }
 
-.mobile-only {
+#nav-my-account, .mobile-only {
     display: none;
 }
 
@@ -680,10 +770,12 @@ nav a {
     text-align: -webkit-center;
     text-align: -moz-center;
     text-align: center;
+    transition: 0.5s;
 }
 
 .mobile-menu ul li:active {
     background: #252422;
+    transition: none;
 }
 
 .mobile-menu-cart {
@@ -693,6 +785,14 @@ nav a {
 
 .mobile-menu-cart i {
     margin-right: 5px;
+}
+
+.mobile-menu-my-account {
+    display: none;
+}
+
+.mobile-menu-login {
+    display: block;
 }
 
 /* Responsive header nav */
@@ -724,20 +824,23 @@ footer {
     background: #ccc5b9;
 }
 
+footer > .flex-container {
+    height: 230px;
+}
+
 #footer-menu-main-pages, #footer-menu-policy, #footer-menu-browse {
-    transform: translateY(-9px);
     -o-transform: translateY(-9px);
     -webkit-transform: translateY(-9px);
     -ms-transform: translateY(-9px);
     -moz-transform: translateY(-9px);
+    transform: translateY(-9px);
 }
 
-#footer-menu-browse-product:hover ul {
-    display: block;
-}
-
+#footer-menu-browse-product:hover ul,
 #footer-menu-browse-store:hover ul {
     display: block;
+    animation: expand-top 0.25s;
+    transform-origin: top;
 }
 
 #footer-logo {
@@ -819,25 +922,12 @@ footer {
         width: 100%;
     }
 
-    footer .flex-container {
+    footer > .flex-container {
+        height: 650px;
         -webkit-flex-flow: column;
         flex-flow: column;
         -webkit-align-items: center;
         align-items: center;
-    }
-}
-
-
-/******************************
-    Animations
-*******************************/
-@keyframes expand-top {
-    from {
-        transform: scaleY(0);
-    }
-
-    to {
-        transform: scaleY(1);
     }
 }
 
@@ -903,5 +993,31 @@ footer {
     }
     .cookie-consent.active .text-align-justify{
         margin-bottom: 5px;
+    }
+}
+
+
+/******************************
+    Animations
+*******************************/
+@keyframes expand-top {
+    from {
+        transform: scaleY(0);
+    }
+
+    to {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes fadeInExpand {
+    from {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scaleY(1);
+        opacity: 1;
     }
 }

@@ -10,7 +10,7 @@
     margin: 14px 0 7px;
 }
 
-.contact-form .required:before {
+.contact-form .required:before, .contact-form #contact-day-required:before  {
     content: "*";
     color: #eb5e28;
 }
@@ -116,4 +116,46 @@ textarea {
 .send-bttn:active {
     background-color: #403d39;
     cursor: pointer;
+}
+
+
+/*input:invalid, textarea:invalid, select:invalid, .contact-method:invalid, .contact-day:invalid {*/
+/*    background-color: #ffdddd;*/
+/*    border: 2px solid #cd4813;*/
+/*}*/
+
+
+/* The message box is shown when the user clicks on the password field */
+.error-message {
+    padding: 3% 5%;
+    display:none;
+    background: #f7f7f7;
+    color: #000;
+}
+
+.error-message p {
+    font-size: 0.7rem;
+}
+
+/* Add a green text and a checkmark when the requirements are correct */
+.valid {
+    color: green;
+}
+
+.valid:before {
+    content: "✔";
+}
+
+/* Add a orange text  "x" when the requirements are wrong */
+.invalid {
+    color: #cd4813;
+}
+
+.invalid:before {
+    content: "✖";
+}
+
+/*Hide the first option to prevent user from selecting the default option*/
+select option:first-of-type{
+    display:none;
 }
