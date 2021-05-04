@@ -56,6 +56,11 @@ function listItemInCart() {
         subTotal = parseFloat(subTotal.toFixed(2));
         localStorage.setItem("subTotal", JSON.stringify(subTotal));
     })
+
+    Object.values(productList).map(function(item) {
+        document.getElementById(`${item.product_ID} product-quantity`).disabled = true;
+    })
+
     let totalPrice = subTotal + deliveryCharge;
     localStorage.setItem("totalPrice",totalPrice);
     let displaySubTotal = document.querySelector(".cart-product-total .cart-product-total-fee");
