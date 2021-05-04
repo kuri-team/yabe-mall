@@ -58,7 +58,7 @@ function addToCartMsg() {
         doc.removeChild(doneMsg);
     },3000);
     setTimeout(function() {
-        location.reload()
+        location.reload();
     },5000);
 }
 
