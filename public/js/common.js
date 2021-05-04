@@ -203,6 +203,7 @@ const CONSENT_TIMEOUT = 2000;
 setTimeout(function () {
     if (document.cookie.indexOf("yabe=yabe-online-mall") === -1) {
         COOKIE_CONSENT.classList.add("active");  // add "active" to activate ".cookie-consent.active"
+        COOKIE_CONSENT.setAttribute("style", "animation: fadeInExpand 0.5s; transform-origin: bottom;");
     } else {
         COOKIE_CONSENT.classList.remove("active");
     }
