@@ -24,7 +24,7 @@ FORM.addEventListener("submit", function(event) {
 
 
     // Create RegExp patterns
-    const REGEX_EMAIL_CONSOLE_ALERT = /^[^.](([^<>()\[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*){2,}|(.+){2,})@(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,5})$/;
+    const REGEX_EMAIL_CONSOLE_ALERT = /^(([a-zA-Z0-9][.]?){2,}|([a-zA-Z0-9]\.)+)([a-zA-Z0-9]|(?!\.))+?[a-zA-Z0-9]@(([a-zA-Z0-9]+\.)+[a-zA-Z]{2,5})$/;
     const REGEX_PHONE_CONSOLE_ALERT = /^([0-9][-. ]?){9,11}[^-. ]$/;
 
     // Variables
@@ -55,7 +55,7 @@ FORM.addEventListener("submit", function(event) {
         err += errNum + ". Enter Email.\n";
     } else {
         // If you don't Enter Email address in email pattern format (i already described "REGEX_EMAIL_CONSOLE_ALERT") then see error (Invalid Email)
-        if(!REGEX_EMAIL_CONSOLE_ALERT.test(EMAIL_CONSOLE_ALERT)){
+        if(!REGEX_EMAIL_CONSOLE_ALERT.test(EMAIL_CONSOLE_ALERT)) {
             errNum++;
             err += errNum + ". Invalid Email. Valid email has the form [name]@[domain]\n";
         }
@@ -109,7 +109,7 @@ function updateRequirementMessage() {
     let advice;
 
     if (T < 50) {
-        advice = "Your message needs " + (50-T) + " more letters.";
+        advice = "Your message needs " + (50 - T) + " more letters.";
         document.getElementById('remaining-letters').innerHTML = advice.fontcolor("red");
     }
     else if (T <= 500) {
@@ -191,7 +191,7 @@ EMAIL.onblur = function() {
 EMAIL.oninput = function() {
 
     // Validate EMAIL_REQUIREMENT
-    let emailRegEx = /^(([a-zA-Z0-9][.]?){2,})[a-zA-Z0-9]@(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,5})$/;
+    let emailRegEx = /^(([a-zA-Z0-9][.]?){2,}|([a-zA-Z0-9]\.)+)([a-zA-Z0-9]|(?!\.))+?[a-zA-Z0-9]@(([a-zA-Z0-9]+\.)+[a-zA-Z]{2,5})$/;
     if (EMAIL.value.match(emailRegEx)) {
         EMAIL_REQUIREMENT.classList.remove("invalid");
         EMAIL_REQUIREMENT.classList.add("valid");
