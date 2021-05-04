@@ -80,6 +80,15 @@ for (let i = 0; i < NAV_SEARCH_FILTER_OPTIONS.length; i++) {
 }
 
 
+// Redirect to Cart page on user click of .nav-cart-bttn (need to be logged in first)
+if (localStorage.isLoggedIn === "true") {
+    const NAV_CART_BTTN = document.querySelector(".nav-cart-bttn");
+    NAV_CART_BTTN.addEventListener("click", function () {
+        window.location.href = NAV_CART_BTTN.querySelector("a").href;
+    });
+}
+
+
 /**
  * Persistent log in features
  */
@@ -194,6 +203,7 @@ const CONSENT_TIMEOUT = 2000;
 setTimeout(function () {
     if (document.cookie.indexOf("yabe=yabe-online-mall") === -1) {
         COOKIE_CONSENT.classList.add("active");  // add "active" to activate ".cookie-consent.active"
+        COOKIE_CONSENT.setAttribute("style", "animation: fadeInExpand 0.5s; transform-origin: bottom;");
     } else {
         COOKIE_CONSENT.classList.remove("active");
     }

@@ -22,7 +22,7 @@ if (localStorage.getItem("cartProducts") != null){
 
 // input <li> to list the products
 // store subTotal and totalPrice in localStorage for updating totalPrice whenever a plus or minus button is clicked
-function  listItemInCart() {
+function listItemInCart() {
     let productList = localStorage.getItem("cartProducts");
     productList = JSON.parse(productList);
     let productTable = document.querySelector(".cart-product-table");
@@ -118,7 +118,9 @@ document.querySelectorAll(".cart-product-quantity-button.plus").forEach(function
             displayDiscountValue.innerHTML = "- $" + discountValue;
             discountValue = parseFloat(discountValue);
         }
-});
+
+        location.reload();
+    });
 });
 
 //- button:  update current quantity on the page and local storage
@@ -175,6 +177,8 @@ document.querySelectorAll(".cart-product-quantity-button.minus").forEach(functio
             displayDiscountValue.innerHTML = "- $" + discountValue;
             discountValue = parseFloat(discountValue);
         }
+
+        location.reload();
     });
 });
 
@@ -239,4 +243,11 @@ function removeCoupon () {
     applyAfterRemove.addEventListener("click", function() {
         location.reload();
     })
+}
+
+// Redirect the user to Login page if the user hasn't logged in
+if (localStorage.isLoggedIn === null || localStorage.isLoggedIn === "false") {
+    let url = window.location.href;
+    url = url.replace("cart", "account/login");
+    window.location.replace(url);
 }

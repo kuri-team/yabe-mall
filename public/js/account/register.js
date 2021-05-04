@@ -191,7 +191,7 @@ Validator.email = function (selector, message) {
     return {
         selector: selector,
         test: function (value) {
-            let regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            let regex = /^(([a-zA-Z0-9][.]?){2,}|([a-zA-Z0-9]\.)+)([a-zA-Z0-9]|(?!\.))+?[a-zA-Z0-9]@(([a-zA-Z0-9]+\.)+[a-zA-Z]{2,5})$/;
             return regex.test(value) ? undefined :  message || 'Valid email has the form [name]@[domain]';
         }
     };
@@ -211,8 +211,8 @@ Validator.pwd = function (selector, message) {
     return {
         selector: selector,
         test: function (value) {
-            let regex = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(.{8,20})$/;
-            return regex.test(value) ? undefined :  message || 'Valid password contains 8 to 20 characters, no space, with at least 1 lower case letter, at least 1 upper case letter, at least 1 digit, and at least 1 special character in the set !@#$%^&*';
+            let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
+            return regex.test(value) ? undefined :  message || 'Valid pw contains 8 to 20 characters, no space, with at least 1 lower case letter, at least 1 upper case letter, at least 1 digit, and at least 1 special character in the set !@#$%^&*';
         }
     };
 }

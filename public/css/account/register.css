@@ -104,6 +104,11 @@ main h1 {
     width: auto;
 }
 
+.register-item i {
+    position: relative;
+    left: -20px;
+}
+
 .register-field select {
     overflow: hidden;
     white-space: pre;
@@ -120,6 +125,11 @@ main h1 {
     outline: none;
     max-width: content-box;
     background: transparent;
+}
+
+.register-field select {
+    margin-right: 0;
+    z-index: 2;
 }
 
 .register-field select,

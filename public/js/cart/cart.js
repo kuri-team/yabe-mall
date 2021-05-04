@@ -16,14 +16,8 @@ let cartItem = {
 
 const BUY_NOW_BUTTON = document.querySelector(".buy-now");
 const ADD_BUTTON = document.querySelector(".add-to-cart");
-ADD_BUTTON.addEventListener("click", function() {
-    addItemToCart();
-    addToCartMsg();
-});
-BUY_NOW_BUTTON.addEventListener("click", function (){
-    addItemToCart();
-    window.location.href = BUY_NOW_BUTTON.querySelector("a").href;
-});
+ADD_BUTTON.addEventListener("click", addToCartEvents);
+BUY_NOW_BUTTON.addEventListener("click", buyNowEvents);
 
 function addItemToCart() {
     let cartProducts = localStorage.getItem("cartProducts");
@@ -64,6 +58,21 @@ function addToCartMsg() {
         doc.removeChild(doneMsg);
     },3000);
     setTimeout(function() {
-        location.reload()
+        location.reload();
     },5000);
+}
+
+function addToCartEvents() {
+    addItemToCart();
+    addToCartMsg();
+}
+
+function buyNowEvents() {
+    addItemToCart();
+    window.location.href = BUY_NOW_BUTTON.querySelector("a").href;
+}
+
+if (localStorage["isLoggedIn"] !== "true") {
+    ADD_BUTTON.removeEventListener("click", addToCartEvents);
+    BUY_NOW_BUTTON.removeEventListener("click", buyNowEvents)
 }
