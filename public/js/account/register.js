@@ -190,7 +190,7 @@ Validator.email = function (selector, message) {
     return {
         selector: selector,
         test: function (value) {
-            let regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*){2,}|(.+){2,})@(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,5})$/;
+            let regex = /^(([a-zA-Z0-9][.]?){2,}|([a-zA-Z0-9]\.)+)([a-zA-Z0-9]|(?!\.))+?[a-zA-Z0-9][@](?=[^\.])[a-zA-Z0-9.]+[.][a-zA-Z]{2,5}$/;
             return regex.test(value) ? undefined :  message || 'Valid email has the form [name]@[domain]';
         }
     };
@@ -289,7 +289,7 @@ FORM.addEventListener("submit", function(event) {
 
 
     // Create RegExp patterns
-    const REGEX_EMAIL_CONSOLE_ALERT = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*){2,}|(.+){2,})@(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,5})$/;
+    const REGEX_EMAIL_CONSOLE_ALERT = /^(([a-zA-Z0-9][.]?){2,}|([a-zA-Z0-9]\.)+)([a-zA-Z0-9]|(?!\.))+?[a-zA-Z0-9][@](?=[^.])[a-zA-Z0-9.]+[.][a-zA-Z]{2,5}$/;
     const REGEX_PHONE_CONSOLE_ALERT = /^([0-9][-. ]?){8,10}[0-9]$/;
     const REGEX_PASSWORD_CONSOLE_ALERT = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
     const REGEX_ZIP_CODE_CONSOLE_ALERT = /^[0-9]{4,6}$/;
