@@ -81,7 +81,7 @@ FORM.addEventListener("submit", function(event) {
     }
 
     if (!FORM.contact_method[0].checked && !FORM.contact_method[1].checked) {
-        // If the user didn't check 0 index of gender field  or 1 index than show error(Contact Method)
+        // If the user didn't check 0 index of gender field  or 1 index than show error (Radio)
         errNum++;
         err += errNum + ". Select Preferred Contact Method.\n";
     }
