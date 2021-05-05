@@ -25,7 +25,7 @@ FORM.addEventListener("submit", function(event) {
 
     // Create RegExp patterns
     const REGEX_EMAIL_CONSOLE_ALERT = /^(([a-zA-Z0-9][.]?){2,}|([a-zA-Z0-9]\.)+)([a-zA-Z0-9]|(?!\.))+?[a-zA-Z0-9]@(([a-zA-Z0-9]+\.)+[a-zA-Z]{2,5})$/;
-    const REGEX_PHONE_CONSOLE_ALERT = /^([0-9][-. ]?){9,11}[^-. ]$/;
+    const REGEX_PHONE_CONSOLE_ALERT = /^([0-9][-. ]?){8,10}[0-9]$/;
 
     // Variables
     let err = "";  // err variable is used to show error message.
