@@ -212,6 +212,11 @@ main h1 {
     font-size: 12px;
 }
 
+.register-form .required:before {
+    content: "*";
+    color: #eb5e28;
+}
+
 /* Responsive Register */
 @media only screen and (max-width: 950px) {
     form > .register-field {
