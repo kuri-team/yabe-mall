@@ -30,122 +30,6 @@ CAPTURE_AREA.addEventListener("click", function () {
     }
 });
 
-// Form validation
-const FORM = document.getElementById("register-form");
-FORM.addEventListener("submit", function(event) {
-
-    // Get form values
-    const FORM = document.getElementById("register-form")
-    const EMAIL_CONSOLE_ALERT = FORM.email_add.value;
-    const PHONE_CONSOLE_ALERT = FORM.phone_num.value;
-    const PASSWORD_CONSOLE_ALERT = FORM.pwd.value;
-    // const RETYPE_PASSWORD_CONSOLE_ALERT = FORM.verify-pwd.value;
-    const FIRST_NAME_CONSOLE_ALERT = FORM.fname.value;
-    const LAST_NAME_CONSOLE_ALERT = FORM.lname.value;
-    const ADDRESS_CONSOLE_ALERT = FORM.address.value;
-    const CITY_CONSOLE_ALERT = FORM.city.value;
-    const ZIP_CODE_CONSOLE_ALERT = FORM.zipcode.value;
-
-    // Create RegExp patterns
-    const REGEX_EMAIL_CONSOLE_ALERT = /^(([a-zA-Z0-9][.]?){2,}|([a-zA-Z0-9]\.)+)([a-zA-Z0-9]|(?!\.))+?[a-zA-Z0-9][@](?=[^.])[a-zA-Z0-9.]+[.][a-zA-Z]{2,5}$/;
-    const REGEX_PHONE_CONSOLE_ALERT = /^([0-9][-. ]?){8,10}[0-9]$/;
-    const REGEX_PASSWORD_CONSOLE_ALERT = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
-    const REGEX_ZIP_CODE_CONSOLE_ALERT = /^[0-9]{4,6}$/;
-
-    // Variables
-    let err = "";  // err variable is used to show error message.
-    let errNum = 0;  // errNum variable is used to show error index
-
-    // Logic
-    if (EMAIL_CONSOLE_ALERT === "") {
-        // If you don't Enter anything in Email field than show error(Enter Email)
-        errNum++;
-        err += errNum + ". Enter Email.\n";
-    } else {
-        // If you don't Enter Email address in email pattern format (i already described "REGEX_EMAIL_CONSOLE_ALERT") then see error (Invalid Email)
-        if(!REGEX_EMAIL_CONSOLE_ALERT.test(EMAIL_CONSOLE_ALERT)){
-            errNum++;
-            err += errNum + ". Invalid Email. Valid email has the form [name]@[domain]\n";
-        }
-    }
-
-    if (PHONE_CONSOLE_ALERT === "") {
-        // If you don't Enter anything in Email field than show error(Enter Email)
-        errNum++;
-        err += errNum + ". Enter Your Phone number.\n";
-    } else {
-        // If you don't Enter Email address in email pattern format (i already described "REGEX_EMAIL_CONSOLE_ALERT") then see error (Invalid Email)
-        if(!REGEX_PHONE_CONSOLE_ALERT.test(PHONE_CONSOLE_ALERT)){
-            errNum++;
-            err += errNum + ". Invalid phone number. Valid phone number contains 9 to 11 digits. Space, dot, and dash cannot be positioned at the beginning or at the end of a phone. Furthermore, they cannot be positioned next to each other. \n";
-        }
-    }
-
-    if (PASSWORD_CONSOLE_ALERT === "") {
-        // If you don't Enter anything in pw field than show error(Enter pw)
-        errNum++;
-        err += errNum + ". Enter Password.\n";
-    } else {
-        // If you don't Enter pw in pw pattern format then see error
-        if(!REGEX_PASSWORD_CONSOLE_ALERT.test(PASSWORD_CONSOLE_ALERT)){
-            errNum++;
-            err += errNum + ". Invalid Password. Valid Password contains 8 to 20 characters, no space, with at least 1 lower case letter, at least 1 upper case letter, at least 1 digit, and at least 1 special character in the set !@#$%^&*\n";
-        }
-    }
-
-    // if (RETYPE_PASSWORD_CONSOLE_ALERT !== PASSWORD_CONSOLE_ALERT) {
-    //     // If you don't Enter anything in pw field than show error(Enter pw)
-    //     errNum++;
-    //     err += errNum + ". Enter Retype password.\n";
-    // } else {
-    //     // If you don't Enter pw in pw pattern format then see error
-    //     if(!REGEX_RETYPE_PASSWORD_CONSOLE_ALERT.test(RETYPE_PASSWORD_CONSOLE_ALERT)){
-    //         errNum++;
-    //         err += errNum + ". Invalid Retype password. Valid Retype password contains the same value as Password.\n";
-    //     }
-    // }
-
-    if (FIRST_NAME_CONSOLE_ALERT === "" || FIRST_NAME_CONSOLE_ALERT.length < 3) {
-        // Checks the value: If Value empty  or value length less than 3 or value is digit than Show error Invalid Name
-        errNum++;
-        err += errNum + ". Invalid first name. Valid first name contains at least 3 characters.\n";
-    }
-
-    if (LAST_NAME_CONSOLE_ALERT === "" || LAST_NAME_CONSOLE_ALERT.length < 3) {
-        errNum++;
-        err += errNum + ". Invalid last name. Valid last name contains at least 3 characters.\n";
-    }
-
-    if (ADDRESS_CONSOLE_ALERT === "" || ADDRESS_CONSOLE_ALERT.length < 3) {
-        // Checks the value: If Value empty  or value length less than 3 or value is digit than Show error Invalid Name
-        errNum++;
-        err += errNum + ". Invalid Address. Valid Address contains at least 3 characters.\n";
-    }
-
-    if (CITY_CONSOLE_ALERT === "" || CITY_CONSOLE_ALERT.length < 3) {
-        // Checks the value: If Value empty  or value length less than 3 or value is digit then show error
-        errNum++;
-        err += errNum + ". Invalid city. Valid city contains at least 3 characters.\n";
-    }
-
-    if (ZIP_CODE_CONSOLE_ALERT === "" || !REGEX_ZIP_CODE_CONSOLE_ALERT.test(ZIP_CODE_CONSOLE_ALERT)) {
-        // Check the zip code number : If zip code number is empty or value length does not contain 4 to 6 digits. or is not a null then show error
-        errNum++;
-        err += errNum + ". Invalid zip code. Valid Zipcode contains 4 to 6 digits.\n";
-    }
-
-    if (errNum>0) {
-        // If errNum is greater than 0 than alert error and return "false"
-        alert(err);
-        event.preventDefault();
-        return false;
-    } else {
-        // If errNum is less than 0 or 0 than alert "Your register form is successfully submitted" and return "true"
-        alert("Your register form is successfully submitted");
-        return true;
-    }
-});
-
 
 // Automatic focus to input fields when the wrapper field (.register-item) is in focus
 const REGISTER_ITEMS = document.querySelectorAll(".register-item");
@@ -176,7 +60,6 @@ function Validator(object) {
 
         // get rules from selector
         let rules = selectorRules[rule.selector];
-
 
         // Looping through rules to check (existing error = stop looping)
         for (let i = 0; i < rules.length; ++i) {
