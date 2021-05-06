@@ -95,8 +95,8 @@ FORM.addEventListener("submit", function(event) {
         err += errNum + ". Select Preferred Contact Method.\n";
     }
 
-    if (MESSAGE_CONSOLE_ALERT === "" || !REGEX_MESSAGE_CONSOLE_ALERT.test(MESSAGE_CONSOLE_ALERT)) {
-        // If the user didn't enter 50 to 500 letters in Message field then show error
+    if (MESSAGE_CONSOLE_ALERT === "" || MESSAGE_CONSOLE_ALERT.length < 50 || MESSAGE_CONSOLE_ALERT.length > 500) {
+        // If the user didn't enter anything in Message field than show error
         errNum++;
         err += errNum + ". Valid message contains 50 to 500 letters.\n";
     }
@@ -117,20 +117,9 @@ FORM.addEventListener("submit", function(event) {
 // Word-count Messages
 // input for keeping counting the backspace, deleting whole string at the same time
 document.getElementById("message").addEventListener("input", updateRequirementMessage);
-
 function updateRequirementMessage() {
     let message = document.getElementById("message").value;
-
-    // message errors only count letters
-    // Does not count non-word characters (excluding a-z, A-Z, 0-9, underscore characters)
-    let message_removeNonWordCharacters = message.replace(/\W+/g, '');
-    // Does not count digits
-    let message_removeDigits = message_removeNonWordCharacters.replace(/\d+/g, '');
-    // Does not count Underscore
-    let message_removeUnderscore = message_removeDigits.replace(/_/g, '');
-
-    // Validate length of valid counted message
-    let T = message_removeUnderscore.length;
+    let T = message.length;
     let advice;
 
     if (T < 50) {
@@ -146,6 +135,7 @@ function updateRequirementMessage() {
         document.getElementById('remaining-letters').innerHTML = advice.fontcolor("red");
     }
 }
+
 
 // First name validation instant feedback
 // Focus mouse on the first name field, show the message box
