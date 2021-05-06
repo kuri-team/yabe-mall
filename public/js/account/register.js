@@ -29,7 +29,6 @@ CAPTURE_AREA.addEventListener("click", function () {
         STORE_OWNER_ONLY_FIELDS.setAttribute("style", "display: none;");
     }
 });
-debug
 
 // Form validation
 const FORM = document.getElementById("register-form");
@@ -40,7 +39,7 @@ FORM.addEventListener("submit", function(event) {
     const EMAIL_CONSOLE_ALERT = FORM.email_add.value;
     const PHONE_CONSOLE_ALERT = FORM.phone_num.value;
     const PASSWORD_CONSOLE_ALERT = FORM.pwd.value;
-    const RETYPE_PASSWORD_CONSOLE_ALERT = FORM.verify-pwd.value;
+    // const RETYPE_PASSWORD_CONSOLE_ALERT = FORM.verify-pwd.value;
     const FIRST_NAME_CONSOLE_ALERT = FORM.fname.value;
     const LAST_NAME_CONSOLE_ALERT = FORM.lname.value;
     const ADDRESS_CONSOLE_ALERT = FORM.address.value;
@@ -141,7 +140,7 @@ FORM.addEventListener("submit", function(event) {
         event.preventDefault();
         return false;
     } else {
-        // If errNum is less than 0 or 0 than alert "done" and return "true"
+        // If errNum is less than 0 or 0 than alert "Your register form is successfully submitted" and return "true"
         alert("Your register form is successfully submitted");
         return true;
     }
@@ -326,7 +325,7 @@ Validator.pwd = function (selector, message) {
     return {
         selector: selector,
         test: function (value) {
-            let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
+            let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,20}$/;
             return regex.test(value) ? undefined :  message || 'Please enter a valid password';
         }
     };
