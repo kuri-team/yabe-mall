@@ -73,7 +73,7 @@ if (GALLERIES.length !== GALLERIES_CONTENTS.length ||
                 setTimeout(function () {
                     scrollStatus[index] = true;
                     scrollPositions[index] = GALLERIES_CONTENTS[index].scrollLeft;
-                }, 300);
+                }, 300);  // Smooth scrolling buffer duration of 300ms
             });
 
             GALLERIES_LEFT_BTTNS[index].addEventListener("mouseenter", function () {
