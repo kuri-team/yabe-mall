@@ -221,11 +221,6 @@
 }
 
 @media only screen and (min-width: 1350px) {
-    .product-card-title,
-    .product-card-shop {
-        max-width: 220px;
-    }
-
     .card-gallery-content .product-card, .card-gallery-content .store-card {
         margin: 2% 10px;
     }
@@ -236,5 +231,12 @@
 
     .card-gallery-content .product-card:last-child, .card-gallery-content .store-card:last-child {
         margin-right: 0;
+    }
+}
+
+@media only screen and (min-width: 1370px) {
+    .product-card-title,
+    .product-card-shop {
+        max-width: 220px;
     }
 }
