@@ -43,6 +43,20 @@
     text-decoration: line-through;
 }
 
+.product-card-title,
+.product-card-shop {
+    max-width: 320px;
+}
+
+.product-card-title,
+.product-card-shop,
+.product-card-price,
+.product-card-price-crossed-out {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .product-card-sale-card {
     float: right;
     background: #fffcf2;
@@ -207,6 +221,11 @@
 }
 
 @media only screen and (min-width: 1350px) {
+    .product-card-title,
+    .product-card-shop {
+        max-width: 220px;
+    }
+
     .card-gallery-content .product-card, .card-gallery-content .store-card {
         margin: 2% 10px;
     }
