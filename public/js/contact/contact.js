@@ -22,25 +22,40 @@ FORM.addEventListener("submit", function(event) {
     const CHECKBOXES_CONSOLE_ALERT = document.querySelector("#checkbox-form").querySelectorAll("input[type=checkbox]");
     const MESSAGE_CONSOLE_ALERT = FORM.message.value;
 
-
     // Create RegExp patterns
     const REGEX_EMAIL_CONSOLE_ALERT = /^(([a-zA-Z0-9][.]?){2,}|([a-zA-Z0-9]\.)+)([a-zA-Z0-9]|(?!\.))+?[a-zA-Z0-9]@(([a-zA-Z0-9]+\.)+[a-zA-Z]{2,5})$/;
     const REGEX_PHONE_CONSOLE_ALERT = /^([0-9][-. ]?){8,10}[0-9]$/;
+    const REGEX_FIRST_NAME_CONSOLE_ALERT = /^[A-Za-z]{3,}/;
+    const REGEX_LAST_NAME_CONSOLE_ALERT = /^[A-Za-z]{3,}/;
+    const REGEX_MESSAGE_CONSOLE_ALERT = /^[A-Za-z]{50,500}/;
 
     // Variables
     let err = "";  // err variable is used to show error message.
     let errNum = 0;  // errNum variable is used to show error index
 
     // Logic
-    if (FIRST_NAME_CONSOLE_ALERT === "" || FIRST_NAME_CONSOLE_ALERT.length < 3) {
-        // Checks the value: If Value empty  or value length less than 3 or value is digit than Show error Invalid Name
+    if (FIRST_NAME_CONSOLE_ALERT === "") {
+        // If you don't Enter anything in Email field than show error(Enter Email)
         errNum++;
-        err += errNum + ". Invalid first name. Valid first name contains at least 3 letters.\n";
+        err += errNum + ". Please enter your First Name.\n";
+    } else {
+        // Checks the value: If Value empty  or value length less than 3 or value is digit than Show error Invalid Name
+        if(!REGEX_FIRST_NAME_CONSOLE_ALERT.test(FIRST_NAME_CONSOLE_ALERT)) {
+            errNum++;
+            err += errNum + ". Invalid First Name. Valid First Name contains at least 3 letters\n";
+        }
     }
 
-    if (LAST_NAME_CONSOLE_ALERT === "" || LAST_NAME_CONSOLE_ALERT.length < 3) {
+    if (LAST_NAME_CONSOLE_ALERT === "") {
+        // If you don't Enter anything in Email field than show error(Enter Email)
         errNum++;
-        err += errNum + ". Invalid last name. Valid last name contains at least 3 letters.\n";
+        err += errNum + ". Please enter your Last Name.\n";
+    } else {
+        // Checks the value: If Value empty  or value length less than 3 or value is digit than Show error Invalid Name
+        if(!REGEX_LAST_NAME_CONSOLE_ALERT.test(LAST_NAME_CONSOLE_ALERT)) {
+            errNum++;
+            err += errNum + ". Invalid Last Name. Valid Last Name contains at least 3 letters\n";
+        }
     }
 
     if (PHONE_CONSOLE_ALERT === "" || !REGEX_PHONE_CONSOLE_ALERT.test(PHONE_CONSOLE_ALERT)) {
@@ -74,16 +89,16 @@ FORM.addEventListener("submit", function(event) {
         err += errNum + ". At least one checkbox must be checked.\n";
     }
 
-    if (MESSAGE_CONSOLE_ALERT === "" || MESSAGE_CONSOLE_ALERT.length < 50 || MESSAGE_CONSOLE_ALERT.length > 500) {
-        // If the user didn't enter anything in Message field than show error
-        errNum++;
-        err += errNum + ". Valid message contains 50 to 500 letters.\n";
-    }
-
     if (!FORM.contact_method[0].checked && !FORM.contact_method[1].checked) {
-        // If the user didn't check 0 index of gender field  or 1 index than show error(Contact Method)
+        // If the user didn't check 0 index of gender field  or 1 index then show error (Contact Method)
         errNum++;
         err += errNum + ". Select Preferred Contact Method.\n";
+    }
+
+    if (MESSAGE_CONSOLE_ALERT === "" || !REGEX_MESSAGE_CONSOLE_ALERT.test(MESSAGE_CONSOLE_ALERT)) {
+        // If the user didn't enter 50 to 500 letters in Message field then show error
+        errNum++;
+        err += errNum + ". Valid message contains 50 to 500 letters.\n";
     }
 
     if (errNum>0) {
@@ -100,12 +115,22 @@ FORM.addEventListener("submit", function(event) {
 
 
 // Word-count Messages
-// keydown for keeping the backspace
+// input for keeping counting the backspace, deleting whole string at the same time
 document.getElementById("message").addEventListener("input", updateRequirementMessage);
 
 function updateRequirementMessage() {
     let message = document.getElementById("message").value;
-    let T = message.length;
+
+    // message errors only count letters
+    // Does not count non-word characters (excluding a-z, A-Z, 0-9, underscore characters)
+    let message_removeNonWordCharacters = message.replace(/\W+/g, '');
+    // Does not count digits
+    let message_removeDigits = message_removeNonWordCharacters.replace(/\d+/g, '');
+    // Does not count Underscore
+    let message_removeUnderscore = message_removeDigits.replace(/_/g, '');
+
+    // Validate length of valid counted message
+    let T = message_removeUnderscore.length;
     let advice;
 
     if (T < 50) {
@@ -121,7 +146,6 @@ function updateRequirementMessage() {
         document.getElementById('remaining-letters').innerHTML = advice.fontcolor("red");
     }
 }
-
 
 // First name validation instant feedback
 // Focus mouse on the first name field, show the message box
