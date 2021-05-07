@@ -266,4 +266,8 @@ document.addEventListener('DOMContentLoaded', function () {
         ],
     });
 });
+// document.getElementById('fname').style.borderColor = "red";
 
+function myFunction() {
+    alert("Sent");
+}
