@@ -257,11 +257,10 @@ main h1 {
 
 
 /*Color feedback for input fields*/
-
-input:required:invalid {
+input:invalid {
     background-color: #ffdddd;
 }
 
 input:required:valid {
-    background-color: #ddffdd;
+    background-color: #F7F7F7;
 }

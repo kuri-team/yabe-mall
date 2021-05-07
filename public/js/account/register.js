@@ -92,6 +92,7 @@ function Validator(object) {
     if (formInput) {
         // Register form
         formInput.onsubmit = function (e) {
+            alert("Your register form is successfully submitted");
             e.preventDefault();
 
             let isFormValid = true;
@@ -189,6 +190,7 @@ Validator.email = function (selector, message) {
         selector: selector,
         test: function (value) {
             let regex = /^(([a-zA-Z0-9][.]?){2,}|([a-zA-Z0-9]\.)+)([a-zA-Z0-9]|(?!\.))+?[a-zA-Z0-9][@](?=[^.])[a-zA-Z0-9.]+[.][a-zA-Z]{2,5}$/;
+            EMAIL.style.borderColor = "red";
             return regex.test(value) ? undefined :  message || 'Valid email has the form [name]@[domain]';
         }
     };
@@ -266,8 +268,3 @@ document.addEventListener('DOMContentLoaded', function () {
         ],
     });
 });
-// document.getElementById('fname').style.borderColor = "red";
-
-function myFunction() {
-    alert("Sent");
-}
