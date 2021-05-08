@@ -464,6 +464,109 @@ hr {
 }
 
 
+/* Hide default radio and checkboxes */
+input[type="radio"],
+input[type="checkbox"] {
+    opacity: 0;
+    width: 1em;
+    height: 1em;
+}
+
+
+/** YABE radio **/
+.radio-control {
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+    background: transparent;
+    border: 1.2pt solid #555555;
+    transform: translate(-1.3em, 0.15em);
+    transition: 0.2s;
+}
+
+input[type="radio"]:checked + .radio-control:after {
+    content: "";
+    display: block;
+    width: 0.4em;
+    height: 0.4em;
+    border-radius: 50%;
+    background: #eb5e28;
+    transform: translate(0.15em, 0.15em);
+    -webkit-animation: fadeIn 0.2s;
+    -o-animation: fadeIn 0.2s;
+    animation: fadeIn 0.2s;
+}
+
+
+/** YABE checkbox **/
+.checkbox-control {
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 15%;
+    background: transparent;
+    border: 1.2pt solid #555555;
+    transform: translate(-1.3em, 0.14em);
+    transition: 0.2s;
+    -webkit-animation: fadeIn 0.2s;
+    -o-animation: fadeIn 0.2s;
+    animation: fadeIn 0.2s;
+}
+
+input[type="checkbox"]:checked + .checkbox-control:after {
+    content: "";
+    display: block;
+    width: 0.3em;
+    height: 0.9em;
+    border: solid #eb5e28;
+    border-width: 0 0.2em 0.2em 0;
+    position: relative;
+    top: -0.45em;
+    left: 0.3em;
+    transform: rotate(45deg);
+    -webkit-animation: fadeIn 0.2s;
+    -o-animation: fadeIn 0.2s;
+    animation: fadeIn 0.2s;
+}
+
+
+/* Custom radio and checkbox hover and checked state */
+.radio-control:hover,
+input[type="radio"]:focus + .radio-control,
+.checkbox-control:hover,
+input[type="checkbox"]:focus + .checkbox-control {
+    cursor: pointer;
+    border-color: #eb5e28;
+}
+
+
+/* Custom radio and checkbox disabled state */
+input[type="radio"]:disabled + .radio-control,
+input[type="checkbox"]:disabled + .checkbox-control {
+    background: #555555;
+    opacity: 0.25;
+}
+
+input[type="radio"]:disabled + .radio-control + label,
+input[type="checkbox"]:disabled + .checkbox-control + label {
+    color: #555555;
+    opacity: 0.25;
+}
+
+
+/* Disable selection highlighting for radio and checkbox related elements */
+input[type="radio"],
+input[type="checkbox"],
+label {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+
 /******************************
     YABE Common navigation bar
 *******************************/
@@ -1018,6 +1121,16 @@ footer > .flex-container {
 
     to {
         transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
         opacity: 1;
     }
 }
