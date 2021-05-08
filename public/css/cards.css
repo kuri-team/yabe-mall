@@ -67,7 +67,6 @@
     margin: auto;
     padding: 0 20px;
     width: 143px;
-    height: 143px;
     border-radius: 50%;
 }
 
@@ -91,7 +90,6 @@
     }
 
     .flex-wrap .product-card img {
-        width: 100%;
         height: auto;
     }
 

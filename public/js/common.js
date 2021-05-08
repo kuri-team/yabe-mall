@@ -210,6 +210,8 @@ setTimeout(function () {
 }, CONSENT_TIMEOUT);
 
 ACCEPT_BUTTON.addEventListener("click", function () {
-    document.cookie = "yabe=yabe-online-mall; max-age=60*60*24*30; path=/; SameSite=None; Secure";  // cookie exists for 30 days
+    let date = new Date();  // Get current time
+    date.setTime(date.getTime() + 1000*60*60*24*30);  // Set time to 30 days from current time
+    document.cookie = `yabe=yabe-online-mall; expires=${date.toUTCString()}; path=/; samesite=none; secure`;  // cookie exists for 30 days
     COOKIE_CONSENT.classList.remove("active");
 });
