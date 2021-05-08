@@ -10,7 +10,6 @@ const PHONE = document.getElementById("phone_num");
 
 // Form validation
 const FORM = document.getElementById("contact-form");
-
 FORM.addEventListener("submit", function(event) {
 
     // Get form values
@@ -22,10 +21,9 @@ FORM.addEventListener("submit", function(event) {
     const CHECKBOXES_CONSOLE_ALERT = document.querySelector("#checkbox-form").querySelectorAll("input[type=checkbox]");
     const MESSAGE_CONSOLE_ALERT = FORM.message.value;
 
-
     // Create RegExp patterns
     const REGEX_EMAIL_CONSOLE_ALERT = /^(([a-zA-Z0-9][.]?){2,}|([a-zA-Z0-9]\.)+)([a-zA-Z0-9]|(?!\.))+?[a-zA-Z0-9]@(([a-zA-Z0-9]+\.)+[a-zA-Z]{2,5})$/;
-    const REGEX_PHONE_CONSOLE_ALERT = /^([0-9][-. ]?){9,11}[^-. ]$/;
+    const REGEX_PHONE_CONSOLE_ALERT = /^([0-9][-. ]?){8,10}[0-9]$/;
 
     // Variables
     let err = "";  // err variable is used to show error message.
@@ -74,16 +72,16 @@ FORM.addEventListener("submit", function(event) {
         err += errNum + ". At least one checkbox must be checked.\n";
     }
 
+    if (!FORM.contact_method[0].checked && !FORM.contact_method[1].checked) {
+        // If the user didn't check 0 index of gender field  or 1 index then show error (Contact Method)
+        errNum++;
+        err += errNum + ". Select Preferred Contact Method.\n";
+    }
+
     if (MESSAGE_CONSOLE_ALERT === "" || MESSAGE_CONSOLE_ALERT.length < 50 || MESSAGE_CONSOLE_ALERT.length > 500) {
         // If the user didn't enter anything in Message field than show error
         errNum++;
         err += errNum + ". Valid message contains 50 to 500 letters.\n";
-    }
-
-    if (!FORM.contact_method[0].checked && !FORM.contact_method[1].checked) {
-        // If the user didn't check 0 index of gender field  or 1 index than show error(Contact Method)
-        errNum++;
-        err += errNum + ". Select Preferred Contact Method.\n";
     }
 
     if (errNum>0) {
@@ -98,16 +96,13 @@ FORM.addEventListener("submit", function(event) {
     }
 });
 
-
 // Word-count Messages
-// keydown for keeping the backspace
+// input for keeping counting the backspace, deleting whole string at the same time
 document.getElementById("message").addEventListener("input", updateRequirementMessage);
-
 function updateRequirementMessage() {
     let message = document.getElementById("message").value;
     let T = message.length;
     let advice;
-
     if (T < 50) {
         advice = "Your message needs " + (50 - T) + " more letters.";
         document.getElementById('remaining-letters').innerHTML = advice.fontcolor("red");
@@ -122,33 +117,27 @@ function updateRequirementMessage() {
     }
 }
 
-
 // First name validation instant feedback
 // Focus mouse on the first name field, show the message box
 FIRST_NAME.onfocus = function() {
     document.getElementById("message-fname").style.display = "block";
 }
-
 // Focus mouse outside of the first name field, hide the message box
 FIRST_NAME.onblur = function() {
     document.getElementById("message-fname").style.display = "none";
 }
-
 // Starts typing something inside the first name field
 // correct => remove error style with a checkmark
 // wrong => add error style with an x indicator
 FIRST_NAME.oninput = function() {
-
     // Validate FNAME_REQUIREMENT
-    let firstNameRegEx = /^[A-Za-z]{3,}/;
-    if (FIRST_NAME.value.match(firstNameRegEx)) {
+    if(FIRST_NAME.value.length >= 3) {
         FNAME_REQUIREMENT.classList.remove("invalid");
         FNAME_REQUIREMENT.classList.add("valid");
     } else {
         FNAME_REQUIREMENT.classList.remove("valid");
         FNAME_REQUIREMENT.classList.add("invalid");
     }
-
 }
 
 // Last name validation instant feedback
@@ -156,18 +145,14 @@ FIRST_NAME.oninput = function() {
 LAST_NAME.onfocus = function() {
     document.getElementById("message-lname").style.display = "block";
 }
-
 // When the user clicks outside of the last name field, hide the message box
 LAST_NAME.onblur = function() {
     document.getElementById("message-lname").style.display = "none";
 }
-
 // When the user starts to type something inside the last name field
 LAST_NAME.oninput = function() {
-
     // Validate FNAME_REQUIREMENT
-    let firstNameRegEx = /^[A-Za-z]{3,}/;
-    if (LAST_NAME.value.match(firstNameRegEx)) {
+    if(LAST_NAME.value.length >= 3) {
         LNAME_REQUIREMENT.classList.remove("invalid");
         LNAME_REQUIREMENT.classList.add("valid");
     } else {
@@ -176,17 +161,14 @@ LAST_NAME.oninput = function() {
     }
 }
 
-
 // Email validation instant feedback
 EMAIL.onfocus = function() {
     document.getElementById("message-email").style.display = "block";
 }
-
 // When the user clicks outside of the password field, hide the message box
 EMAIL.onblur = function() {
     document.getElementById("message-email").style.display = "none";
 }
-
 // When the user starts to type something inside the email field
 EMAIL.oninput = function() {
 
@@ -201,7 +183,6 @@ EMAIL.oninput = function() {
     }
 }
 
-
 // Phone validation instant feedback
 PHONE.onfocus = function() {
     document.getElementById("message-phone").style.display = "block";
@@ -212,7 +193,6 @@ PHONE.onblur = function() {
 }
 // When the user starts to type something inside the phone field
 PHONE.oninput = function() {
-
     // Validate PHONE_REQUIREMENT
     let phoneRegEx = /^([0-9][-. ]?){8,10}[0-9]$/;
     if (PHONE.value.match(phoneRegEx)) {
