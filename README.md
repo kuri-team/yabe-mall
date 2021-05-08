@@ -6,6 +6,7 @@
 2nd Development Phase of a 3-part assignment series for COSC2430 Web Programming at RMIT University Vietnam. Previous development history can be found here:
 - Phase 1: https://github.com/kuri-team/yabe-online-mall.github.io
 - Phase 2: https://github.com/kuri-team/yabe-online-mall
+- Phase 3: https://github.com/kuri-team/yabe-mall
 
 ## Assignment Requirements
 
@@ -63,7 +64,8 @@ More requirements are listed below:
 ## Implementation
 
 ### 1. Deployment
-Yabe online mall e-commerce website: https://kuri-team.github.io/yabe-online-mall/ (`main` branch)
+Yabe online mall e-commerce website, deployed with Heroku: https://yabe-mall.herokuapp.com/ (`main` branch)
+Static backup: https://kuri-team.github.io/yabe-mall/ (`main` branch)
 
 ### 2. Coding styles & conventions
 - [HTML & CSS The Right Way](http://htmlcsstherightway.org/)
