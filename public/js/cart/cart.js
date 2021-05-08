@@ -1,7 +1,10 @@
 let productID = window.location.pathname.split('/')[5];
 let productName = document.querySelector(".product-info-main h2").innerHTML;
 let productLink = window.location.href;
-let storeName = document.querySelector(".product-info-main p").innerHTML;
+let productLinkArray = productLink.split('/');
+productLinkArray.splice(productLinkArray.length - 2);
+let storeName = document.getElementById("store-name").innerHTML;
+let storeLink = productLinkArray.join('/');
 let finalPrice = document.querySelector(".product-info-price").innerHTML.slice(1,);
 let productImg = document.querySelector(".product-info-main-img img").src;
 let cartItem = {
@@ -9,6 +12,7 @@ let cartItem = {
     "product_name": productName,
     "product_Link": productLink,
     "store_name": storeName,
+    "store_Link": storeLink,
     "final_price": finalPrice,
     "product_img": productImg,
     "product_quantity": 0
@@ -42,19 +46,15 @@ function addItemToCart() {
 }
 
 function addToCartMsg() {
-    let msg = document.getElementById("product-content");
-    let msgOnTop =
-        `<div class="done-msg-wrapper">
-            <div class="done-msg">
-                <i class="fas fa-check"></i>
-                <p class="done-add-to-cart">Product has been added to the cart</p>
-            </div>
-        </div>`
-    msgOnTop += msg.innerHTML
-    msg.innerHTML += msgOnTop;
+    document.body.insertAdjacentHTML("beforeend", "<div class=\"done-msg-wrapper\">\n" +
+        "<div class=\"done-msg\">\n" +
+        "<i class=\"fas fa-check\"></i>\n" +
+        "<p class=\"done-add-to-cart\">Product has been added to the cart</p>\n"+
+        " </div>\n" +
+        " </div>");
     setTimeout(function() {
-        const doc = document.querySelector("main");
-        const doneMsg = document.querySelector(".done-msg");
+        const doc = document.querySelector(".product-content");
+        const doneMsg = document.querySelector(".done-msg-wrapper");
         doc.removeChild(doneMsg);
     },3000);
     setTimeout(function() {

@@ -215,3 +215,28 @@ ACCEPT_BUTTON.addEventListener("click", function () {
     document.cookie = `yabe=yabe-online-mall; expires=${date.toUTCString()}; path=/; samesite=none; secure`;  // cookie exists for 30 days
     COOKIE_CONSENT.classList.remove("active");
 });
+
+
+/**
+ * Custom radio and checkbox input behavior
+ */
+const RADIOS = document.querySelectorAll("input[type='radio']");
+const RADIO_CONTROLS = Array.from(document.getElementsByClassName("radio-control"));
+const CHECKBOXES = document.querySelectorAll("input[type='checkbox']");
+const CHECKBOX_CONTROLS = Array.from(document.getElementsByClassName("checkbox-control"));
+
+if (RADIOS.length === RADIO_CONTROLS.length) {
+    RADIO_CONTROLS.forEach(function (element, index) {
+        element.addEventListener("click", function () {
+            RADIOS[index].checked = true;
+        })
+    });
+}
+
+if (CHECKBOXES.length === CHECKBOX_CONTROLS.length) {
+    CHECKBOX_CONTROLS.forEach(function (element, index) {
+        element.addEventListener("click", function () {
+            CHECKBOXES[index].checked = !CHECKBOXES[index].checked;
+        })
+    });
+}
