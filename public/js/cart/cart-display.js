@@ -38,7 +38,7 @@ function listItemInCart() {
                 </div>
                 <div class="cart-product-details">
                   <a class="cart-product-title" href="${item.product_Link}">${item.product_name}</a>
-                  <a class="cart-product-shop" href="../../store/store-template/">${item.store_name}</a>
+                  <a class="cart-product-shop" href=${item.store_Link}>${item.store_name}</a>
                   <p class="cart-product-price-crossed-out"></p>
                   <p class="cart-product-price">$${item.final_price}</p>
                 <div class="cart-product-quantity">
