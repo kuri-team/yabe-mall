@@ -1,7 +1,10 @@
 let productID = window.location.pathname.split('/')[5];
 let productName = document.querySelector(".product-info-main h2").innerHTML;
 let productLink = window.location.href;
-let storeName = document.querySelector(".product-info-main p").innerHTML;
+let productLinkArray = productLink.split('/');
+productLinkArray.splice(productLinkArray.length - 2);
+let storeName = document.getElementById("store-name").innerHTML;
+let storeLink = productLinkArray.join('/');
 let finalPrice = document.querySelector(".product-info-price").innerHTML.slice(1,);
 let productImg = document.querySelector(".product-info-main-img img").src;
 let cartItem = {
@@ -9,6 +12,7 @@ let cartItem = {
     "product_name": productName,
     "product_Link": productLink,
     "store_name": storeName,
+    "store_Link": storeLink,
     "final_price": finalPrice,
     "product_img": productImg,
     "product_quantity": 0
