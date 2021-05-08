@@ -70,10 +70,8 @@ if (GALLERIES.length !== GALLERIES_CONTENTS.length ||
             });
 
             GALLERIES_CONTENTS[index].addEventListener("touchend", function () {
-                setTimeout(function () {
-                    scrollStatus[index] = true;
-                    scrollPositions[index] = GALLERIES_CONTENTS[index].scrollLeft;
-                }, 300);  // Smooth scrolling buffer duration of 300ms
+                scrollStatus[index] = true;
+                scrollPositions[index] = GALLERIES_CONTENTS[index].scrollLeft;
             });
 
             GALLERIES_LEFT_BTTNS[index].addEventListener("mouseenter", function () {

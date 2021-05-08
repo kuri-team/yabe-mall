@@ -55,7 +55,9 @@ SUBMIT_BTTN.addEventListener("click", function () {
         // Get the matching input and its label
         const INPUT = REGISTER_ITEMS[index].querySelector("input") || REGISTER_ITEMS[index].querySelector("select");
         const LABEL = REGISTER_ITEMS[index].querySelector("label");
-        highlightInvalidField(REGISTER_ITEMS[index], INPUT, LABEL);
+        if (INPUT.id !== "pwd" && INPUT.id !== "verify_pwd") {  // Excludes the password fields. See line 46.
+            highlightInvalidField(REGISTER_ITEMS[index], INPUT, LABEL);
+        }
     }
 });
 
