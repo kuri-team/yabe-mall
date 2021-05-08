@@ -1,4 +1,4 @@
-# Student Project: Javascript Assignment
+# Student Project: Fullstack Assignment
 ![banner](public/media/image/course-banner.png)
 ***
 
@@ -58,14 +58,14 @@ More requirements are listed below:
 - Accessibility needs to be enforced, e.g. always use the "alt" attribute to describe images; use the fallback mechanism for videos/audios/fonts to ensure at least visitors see something; etc.
 - Follow SEO guidelines to make the mall website search engine-friendly. Use semantic elements whenever possible.
 
-### More specific details provided on [RMIT Canvas](https://rmit.instructure.com/courses/86190/assignments/571064) (Login with RMIT ID)
+### More specific details provided on [RMIT Canvas](https://rmit.instructure.com/courses/86190/assignments/571078) (Login with RMIT ID)
 ***
 
 ## Implementation
 
 ### 1. Deployment
-Yabe online mall e-commerce website, deployed with Heroku: https://yabe-mall.herokuapp.com/ (`main` branch)
-Static backup: https://kuri-team.github.io/yabe-mall/ (`main` branch)
+#### Yabe online mall e-commerce website, deployed with Heroku: https://yabe-mall.herokuapp.com/ (`main` branch)
+Backup: https://kuri-team.github.io/yabe-mall/ (`main` branch) - static website
 
 ### 2. Coding styles & conventions
 - [HTML & CSS The Right Way](http://htmlcsstherightway.org/)
