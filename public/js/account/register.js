@@ -31,14 +31,32 @@ CAPTURE_AREA.addEventListener("click", function () {
 });
 
 
-// Automatic focus to input fields when the wrapper field (.register-item) is in focus
 const REGISTER_ITEMS = document.querySelectorAll(".register-item");
 for (let index = 0; index < REGISTER_ITEMS.length; index++) {
+    // Get the matching input
+    const INPUT = REGISTER_ITEMS[index].querySelector("input") || REGISTER_ITEMS[index].querySelector("select");
+
+    // Automatic focus to input fields when the wrapper field (.register-item) is in focus
     REGISTER_ITEMS[index].addEventListener("click", function () {
-        const INPUT = REGISTER_ITEMS[index].querySelector("input") || REGISTER_ITEMS[index].querySelector("select");
         INPUT.focus();
     });
+
+    // Invalid fields highlighting
+    INPUT.addEventListener("input", function () {
+        if (INPUT.required) {
+            const LABEL = REGISTER_ITEMS[index].querySelector("label");
+
+            if (!INPUT.validity.valid) {
+                REGISTER_ITEMS[index].setAttribute("style", "background: #ffdddd");
+                LABEL.setAttribute("style", "color: #ff2222");
+            } else {
+                REGISTER_ITEMS[index].setAttribute("style", "");
+                LABEL.setAttribute("style", "");
+            }
+        }
+    });
 }
+
 
 // Validator Object
 function Validator(object) {
@@ -173,6 +191,7 @@ function Validator(object) {
     }
 
 }
+
 
 //  Invalid input => return error message
 //  Valid input => return nothing

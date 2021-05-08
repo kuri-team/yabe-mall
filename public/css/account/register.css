@@ -254,13 +254,3 @@ main h1 {
         width: 80%;
     }
 }
-
-
-/*Color feedback for input fields*/
-input:invalid {
-    background-color: #ffdddd;
-}
-
-input:required:valid {
-    background-color: #F7F7F7;
-}
