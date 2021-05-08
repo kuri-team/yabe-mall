@@ -95,10 +95,10 @@ function Validator(object) {
         // Looping through rules to check (existing error = stop looping)
         for (let i = 0; i < rules.length; ++i) {
             switch (inputElement.type) {
-                case 'radio':
-                case 'checkbox':
+                case "radio":
+                case "checkbox":
                     messageError = rules[i](
-                        formInput.querySelector(rule.selector + ':checked')
+                        formInput.querySelector(rule.selector + ":checked")
                     );
                     break;
                 default:
@@ -109,10 +109,10 @@ function Validator(object) {
 
         if (messageError) {
             errorElement.innerText = messageError;
-            getParent(inputElement, object.formGroupSelector).classList.add('invalid');
+            getParent(inputElement, object.formGroupSelector).classList.add("invalid");
         } else {
-            errorElement.innerText = '';
-            getParent(inputElement, object.formGroupSelector).classList.remove('invalid');
+            errorElement.innerText = "";
+            getParent(inputElement, object.formGroupSelector).classList.remove("invalid");
         }
 
         return !messageError;
@@ -139,17 +139,17 @@ function Validator(object) {
 
             if (isFormValid) {
                 // Register
-                if (typeof object.onSubmit === 'function') {
-                    let enterInput = formInput.querySelectorAll('[name]');
+                if (typeof object.onSubmit === "function") {
+                    let enterInput = formInput.querySelectorAll("[name]");
                     let inputForm = Array.from(enterInput).reduce(function (values, input) {
 
                         switch(input.type) {
-                            case 'radio':
-                                values[input.name] = formInput.querySelector('input[name="' + input.name + '"]:checked').value;
+                            case "radio":
+                                values[input.name] = formInput.querySelector("input[name=' + input.name + ']:checked").value;
                                 break;
-                            case 'checkbox':
-                                if (!input.matches(':checked')) {
-                                    values[input.name] = '';
+                            case "checkbox":
+                                if (!input.matches(":checked")) {
+                                    values[input.name] = "";
                                     return values;
                                 }
                                 if (!Array.isArray(values[input.name])) {
@@ -157,7 +157,7 @@ function Validator(object) {
                                 }
                                 values[input.name].push(input.value);
                                 break;
-                            case 'file':
+                            case "file":
                                 values[input.name] = input.files;
                                 break;
                             default:
@@ -196,8 +196,8 @@ function Validator(object) {
                 // Entering input behavior
                 inputElement.oninput = function () {
                     let errorElement = getParent(inputElement, object.formGroupSelector).querySelector(object.errorSelector);
-                    errorElement.innerText = '';
-                    getParent(inputElement, object.formGroupSelector).classList.remove('invalid');
+                    errorElement.innerText = "";
+                    getParent(inputElement, object.formGroupSelector).classList.remove("invalid");
                 }
             });
         });
@@ -212,7 +212,7 @@ Validator.required = function (selector, message) {
     return {
         selector: selector,
         test: function (value) {
-            return value ? undefined :  message || 'Please enter this field'
+            return value ? undefined :  message || "Please enter this field"
         }
     };
 }
@@ -223,7 +223,7 @@ Validator.email = function (selector, message) {
         test: function (value) {
             let regex = /^(([a-zA-Z0-9][.]?){2,}|([a-zA-Z0-9]\.)+)([a-zA-Z0-9]|(?!\.))+?[a-zA-Z0-9][@](?=[^.])[a-zA-Z0-9.]+[.][a-zA-Z]{2,5}$/;
             EMAIL.style.borderColor = "red";
-            return regex.test(value) ? undefined :  message || 'Valid email has the form [name]@[domain]';
+            return regex.test(value) ? undefined :  message || "Valid email has the form [name]@[domain]";
         }
     };
 }
@@ -233,7 +233,7 @@ Validator.phone = function (selector, message) {
         selector: selector,
         test: function (value) {
             let regex = /^([0-9][-. ]?){8,10}[0-9]$/;
-            return regex.test(value) ? undefined :  message || 'Valid phone contains 9 to 11 digits which space, dot, and dash cannot be positioned at the beginning or at the end';
+            return regex.test(value) ? undefined :  message || "Valid phone contains 9 to 11 digits which space, dot, and dash cannot be positioned at the beginning or at the end";
         }
     };
 }
@@ -243,7 +243,7 @@ Validator.pwd = function (selector, message) {
         selector: selector,
         test: function (value) {
             let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,20}$/;
-            return regex.test(value) ? undefined :  message || 'Please enter a valid password';
+            return regex.test(value) ? undefined : message || "Please enter a valid password";
         }
     };
 }
@@ -253,7 +253,7 @@ Validator.zipcode = function (selector, message) {
         selector: selector,
         test: function (value) {
             let regex = /^[0-9]{4,6}$/;
-            return regex.test(value) ? undefined :  message || 'Valid Zipcode contains 4 to 6 digits.';
+            return regex.test(value) ? undefined :  message || "Valid Zipcode contains 4 to 6 digits.";
         }
     };
 }
@@ -271,32 +271,32 @@ Validator.verified = function (selector, getConfirmValue, message) {
     return {
         selector: selector,
         test: function (value) {
-            return value === getConfirmValue() ? undefined : message || 'Invalid input';
+            return value === getConfirmValue() ? undefined : message || "Invalid input";
         }
     }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("input", function () {
     // Input form expected to be validated
     Validator({
-        form: '#register-form',
-        formGroupSelector: '.input-field-validation',
-        errorSelector: '.message-error',
+        form: "#register-form",
+        formGroupSelector: ".input-field-validation",
+        errorSelector: ".message-error",
         rules: [
-            Validator.required('#fname', 'Please enter your first name'),
-            Validator.required('#lname', 'Please enter your last name'),
-            Validator.email('#email'),
-            Validator.minLength('#fname', 3),
-            Validator.minLength('#lname', 3),
-            Validator.minLength('#address', 3),
-            Validator.minLength('#city', 3),
-            Validator.zipcode('#zipcode'),
-            Validator.phone('#phone'),
-            Validator.required('#verify-pwd'),
-            Validator.pwd('#pwd'),
-            Validator.verified('#verify-pwd', function () {
-                return document.querySelector('#register-form #pwd').value;
-            }, 'Password does not match')
+            Validator.required("#fname", "Please enter your first name"),
+            Validator.required("#lname", "Please enter your last name"),
+            Validator.email("#email"),
+            Validator.minLength("#fname", 3),
+            Validator.minLength("#lname", 3),
+            Validator.minLength("#address", 3),
+            Validator.minLength("#city", 3),
+            Validator.zipcode("#zipcode"),
+            Validator.phone("#phone"),
+            Validator.required("#verify-pwd"),
+            Validator.pwd("#pwd"),
+            Validator.verified("#verify-pwd", function () {
+                return document.querySelector("#register-form #pwd").value;
+            }, "Password does not match")
         ],
     });
 });
