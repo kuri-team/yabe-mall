@@ -31,13 +31,45 @@ CAPTURE_AREA.addEventListener("click", function () {
 });
 
 
-// Automatic focus to input fields when the wrapper field (.register-item) is in focus
+const SUBMIT_BTTN = document.querySelector(".register-form input[type='submit']");
 const REGISTER_ITEMS = document.querySelectorAll(".register-item");
 for (let index = 0; index < REGISTER_ITEMS.length; index++) {
+    // Get the matching input and its label
+    const INPUT = REGISTER_ITEMS[index].querySelector("input") || REGISTER_ITEMS[index].querySelector("select");
+    const LABEL = REGISTER_ITEMS[index].querySelector("label");
+
+    // Automatic focus to input fields when the wrapper field (.register-item) is in focus
     REGISTER_ITEMS[index].addEventListener("click", function () {
-        const INPUT = REGISTER_ITEMS[index].querySelector("input") || REGISTER_ITEMS[index].querySelector("select");
         INPUT.focus();
     });
+
+    if (INPUT.type !== "password") {  // Workaround: Disable highlighting for password fields. Right now it would raise a bug on firefox: https://github.com/kuri-team/yabe-online-mall/issues/67#issue-880275945
+        INPUT.addEventListener("input", function () {
+            highlightInvalidField(REGISTER_ITEMS[index], INPUT, LABEL);
+        });
+    }
+}
+
+SUBMIT_BTTN.addEventListener("click", function () {
+    for (let index = 0; index < REGISTER_ITEMS.length; index++) {
+        // Get the matching input and its label
+        const INPUT = REGISTER_ITEMS[index].querySelector("input") || REGISTER_ITEMS[index].querySelector("select");
+        const LABEL = REGISTER_ITEMS[index].querySelector("label");
+        highlightInvalidField(REGISTER_ITEMS[index], INPUT, LABEL);
+    }
+});
+
+// Invalid fields highlighting
+function highlightInvalidField(registerItem, inputElement, labelElement) {
+    if (inputElement.required) {
+        if (!inputElement.validity.valid || inputElement.value === "" || inputElement.value === undefined) {
+            registerItem.setAttribute("style", "background: #ffdddd");
+            labelElement.setAttribute("style", "color: #ff2222");
+        } else {
+            registerItem.setAttribute("style", "");
+            labelElement.setAttribute("style", "");
+        }
+    }
 }
 
 
@@ -62,14 +94,13 @@ function Validator(object) {
         // get rules from selector
         let rules = selectorRules[rule.selector];
 
-
         // Looping through rules to check (existing error = stop looping)
         for (let i = 0; i < rules.length; ++i) {
             switch (inputElement.type) {
-                case 'radio':
-                case 'checkbox':
+                case "radio":
+                case "checkbox":
                     messageError = rules[i](
-                        formInput.querySelector(rule.selector + ':checked')
+                        formInput.querySelector(rule.selector + ":checked")
                     );
                     break;
                 default:
@@ -80,10 +111,10 @@ function Validator(object) {
 
         if (messageError) {
             errorElement.innerText = messageError;
-            getParent(inputElement, object.formGroupSelector).classList.add('invalid');
+            getParent(inputElement, object.formGroupSelector).classList.add("invalid");
         } else {
-            errorElement.innerText = '';
-            getParent(inputElement, object.formGroupSelector).classList.remove('invalid');
+            errorElement.innerText = "";
+            getParent(inputElement, object.formGroupSelector).classList.remove("invalid");
         }
 
         return !messageError;
@@ -92,8 +123,9 @@ function Validator(object) {
     // get element from forms that requires validation
     let formInput = document.querySelector(object.form);
     if (formInput) {
-        // Submit form
+        // Register form
         formInput.onsubmit = function (e) {
+            alert("Your register form is successfully submitted");
             e.preventDefault();
 
             let isFormValid = true;
@@ -108,18 +140,18 @@ function Validator(object) {
             });
 
             if (isFormValid) {
-                // Submit
-                if (typeof object.onSubmit === 'function') {
-                    let enterInput = formInput.querySelectorAll('[name]');
+                // Register
+                if (typeof object.onSubmit === "function") {
+                    let enterInput = formInput.querySelectorAll("[name]");
                     let inputForm = Array.from(enterInput).reduce(function (values, input) {
 
                         switch(input.type) {
-                            case 'radio':
-                                values[input.name] = formInput.querySelector('input[name="' + input.name + '"]:checked').value;
+                            case "radio":
+                                values[input.name] = formInput.querySelector("input[name=' + input.name + ']:checked").value;
                                 break;
-                            case 'checkbox':
-                                if (!input.matches(':checked')) {
-                                    values[input.name] = '';
+                            case "checkbox":
+                                if (!input.matches(":checked")) {
+                                    values[input.name] = "";
                                     return values;
                                 }
                                 if (!Array.isArray(values[input.name])) {
@@ -127,7 +159,7 @@ function Validator(object) {
                                 }
                                 values[input.name].push(input.value);
                                 break;
-                            case 'file':
+                            case "file":
                                 values[input.name] = input.files;
                                 break;
                             default:
@@ -166,8 +198,8 @@ function Validator(object) {
                 // Entering input behavior
                 inputElement.oninput = function () {
                     let errorElement = getParent(inputElement, object.formGroupSelector).querySelector(object.errorSelector);
-                    errorElement.innerText = '';
-                    getParent(inputElement, object.formGroupSelector).classList.remove('invalid');
+                    errorElement.innerText = "";
+                    getParent(inputElement, object.formGroupSelector).classList.remove("invalid");
                 }
             });
         });
@@ -182,7 +214,7 @@ Validator.required = function (selector, message) {
     return {
         selector: selector,
         test: function (value) {
-            return value ? undefined :  message || 'Please enter this field'
+            return value ? undefined :  message || "Please enter this field"
         }
     };
 }
@@ -191,8 +223,9 @@ Validator.email = function (selector, message) {
     return {
         selector: selector,
         test: function (value) {
-            let regex = /^(([a-zA-Z0-9][.]?){2,}|([a-zA-Z0-9]\.)+)([a-zA-Z0-9]|(?!\.))+?[a-zA-Z0-9]@(([a-zA-Z0-9]+\.)+[a-zA-Z]{2,5})$/;
-            return regex.test(value) ? undefined :  message || 'Valid email has the form [name]@[domain]';
+            let regex = /^(([a-zA-Z0-9][.]?){2,}|([a-zA-Z0-9]\.)+)([a-zA-Z0-9]|(?!\.))+?[a-zA-Z0-9][@](?=[^.])[a-zA-Z0-9.]+[.][a-zA-Z]{2,5}$/;
+            EMAIL.style.borderColor = "red";
+            return regex.test(value) ? undefined :  message || "Valid email has the form [name]@[domain]";
         }
     };
 }
@@ -202,7 +235,7 @@ Validator.phone = function (selector, message) {
         selector: selector,
         test: function (value) {
             let regex = /^([0-9][-. ]?){8,10}[0-9]$/;
-            return regex.test(value) ? undefined :  message || 'Valid phone contains 9 to 11 digits which space, dot, and dash cannot be positioned at the beginning or at the end';
+            return regex.test(value) ? undefined :  message || "Valid phone contains 9 to 11 digits which space, dot, and dash cannot be positioned at the beginning or at the end";
         }
     };
 }
@@ -211,8 +244,8 @@ Validator.pwd = function (selector, message) {
     return {
         selector: selector,
         test: function (value) {
-            let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
-            return regex.test(value) ? undefined :  message || 'Valid pw contains 8 to 20 characters, no space, with at least 1 lower case letter, at least 1 upper case letter, at least 1 digit, and at least 1 special character in the set !@#$%^&*';
+            let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,20}$/;
+            return regex.test(value) ? undefined : message || "Please enter a valid password";
         }
     };
 }
@@ -222,7 +255,7 @@ Validator.zipcode = function (selector, message) {
         selector: selector,
         test: function (value) {
             let regex = /^[0-9]{4,6}$/;
-            return regex.test(value) ? undefined :  message || 'Valid Zipcode contains 4 to 6 digits.';
+            return regex.test(value) ? undefined :  message || "Valid Zipcode contains 4 to 6 digits.";
         }
     };
 }
@@ -240,33 +273,32 @@ Validator.verified = function (selector, getConfirmValue, message) {
     return {
         selector: selector,
         test: function (value) {
-            return value === getConfirmValue() ? undefined : message || 'Invalid input';
+            return value === getConfirmValue() ? undefined : message || "Invalid input";
         }
     }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("input", function () {
     // Input form expected to be validated
     Validator({
-        form: '#register-form',
-        formGroupSelector: '.input-field-validation',
-        errorSelector: '.message-error',
+        form: "#register-form",
+        formGroupSelector: ".input-field-validation",
+        errorSelector: ".message-error",
         rules: [
-            Validator.required('#fname', 'Please enter your first name'),
-            Validator.required('#lname', 'Please enter your last name'),
-            Validator.email('#email'),
-            Validator.minLength('#fname', 3),
-            Validator.minLength('#lname', 3),
-            Validator.minLength('#address', 3),
-            Validator.minLength('#city', 3),
-            Validator.zipcode('#zipcode'),
-            Validator.phone('#phone'),
-            Validator.required('#verify-pwd'),
-            Validator.pwd('#pwd'),
-            Validator.verified('#verify-pwd', function () {
-                return document.querySelector('#register-form #pwd').value;
-            }, 'Password does not match')
+            Validator.required("#fname", "Please enter your first name"),
+            Validator.required("#lname", "Please enter your last name"),
+            Validator.email("#email"),
+            Validator.minLength("#fname", 3),
+            Validator.minLength("#lname", 3),
+            Validator.minLength("#address", 3),
+            Validator.minLength("#city", 3),
+            Validator.zipcode("#zipcode"),
+            Validator.phone("#phone"),
+            Validator.required("#verify-pwd"),
+            Validator.pwd("#pwd"),
+            Validator.verified("#verify-pwd", function () {
+                return document.querySelector("#register-form #pwd").value;
+            }, "Password does not match")
         ],
     });
 });
-
