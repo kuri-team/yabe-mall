@@ -43,9 +43,11 @@ for (let index = 0; index < REGISTER_ITEMS.length; index++) {
         INPUT.focus();
     });
 
-    INPUT.addEventListener("input", function () {
-        highlightInvalidField(REGISTER_ITEMS[index], INPUT, LABEL);
-    });
+    if (INPUT.type !== "password") {  // Workaround: Disable highlighting for password fields. Right now it would raise a bug on firefox: https://github.com/kuri-team/yabe-online-mall/issues/67#issue-880275945
+        INPUT.addEventListener("input", function () {
+            highlightInvalidField(REGISTER_ITEMS[index], INPUT, LABEL);
+        });
+    }
 }
 
 SUBMIT_BTTN.addEventListener("click", function () {
