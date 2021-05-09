@@ -1,0 +1,27 @@
+{
+  "name": "kuri-team/yabe-mall",
+  "description": "RMIT University Vietnam - COSC2430 Web Programming - Student Project - Development Phase 3: Full stack",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "miketvo",
+      "email": "info@miketvo.com"
+    },
+    {
+      "name": "doanyennhi",
+      "email": "s3880599@rmit.edu.vn"
+    },
+    {
+      "name": "rider3458",
+      "email": "s3878480@rmit.edu.vn"
+    },
+    {
+      "name": "tnathu-ai",
+      "email": "s3879312@rmit.edu.vn"
+    }
+  ],
+  "require": {
+    "heroku/heroku-buildpack-php": "*"
+  }
+}
