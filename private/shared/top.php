@@ -34,13 +34,13 @@
   <div id="disabled-cart-msg" class="text-align-center">
     <button id="cart-closing-bttn" class="float-right"><i class="fas fa-times"></i></button>
     <p class="clear-both">This feature is only available for registered user. Please
-      <a href="<?=url_for("/account/login");?>">login</a> or <a href="<?=url_for("/account/register");?>">register</a>.</p>
+      <a href="<?=url_for("mall/account/login");?>">login</a> or <a href="<?=url_for("mall/account/register");?>">register</a>.</p>
   </div>
 </div>
 
 <header>
   <nav>
-    <span id="nav-logo"><a href="<?=url_for("/");?>"><img class="nav-logo-sprite" alt="Yabe logo" src="<?=url_for("/media/vector/logo-light.svg");?>"></a></span>
+    <span id="nav-logo"><a href="<?=url_for("/mall/");?>"><img class="nav-logo-sprite" alt="Yabe logo" src="<?=url_for("/media/vector/logo-light.svg");?>"></a></span>
     <div id="nav-search-filter">Filter<i class="fas fa-caret-down ml-10"></i>
       <div id="nav-search-filter-level-1">
         <div class="nav-search-filter-option">All</div>
@@ -63,20 +63,20 @@
       </div>
     </div>
     <div id="nav-search">
-      <form action="<?=url_for("/browse");?>" method="get" target="_blank">
+      <form action="<?=url_for("/mall/browse");?>" method="get" target="_blank">
         <label for="q"></label>
         <input class="nav-seach-bar" id="q" name="q" type="search" placeholder="Search" value="">
       </form>
     </div>
     <div class="nav-search-bttn"><i class="fas fa-search"></i></div>
-    <button class="nav-cart-bttn"><a href="<?=url_for("/cart");?>"><i class="fas fa-shopping-cart"></i>Cart</a></button>
+    <button class="nav-cart-bttn"><a href="<?=url_for("/mall/cart");?>"><i class="fas fa-shopping-cart"></i>Cart</a></button>
     <span id="nav-account">
         <span id="nav-login-reg">
-          <a href="<?=url_for("/account/login");?>">Login</a>
+          <a href="<?=url_for("/mall/account/login");?>">Login</a>
           <span class="vl"></span>
-          <a href="<?=url_for("/account/register");?>">Register</a>
+          <a href="<?=url_for("/mall/account/register");?>">Register</a>
         </span>
-        <span id="nav-my-account"><a href="<?=url_for("/account/my-account");?>">My Account</a></span>
+        <span id="nav-my-account"><a href="<?=url_for("/mall/account/my-account");?>">My Account</a></span>
       </span>
 
     <span class="mobile-only">
@@ -86,14 +86,14 @@
 
   <div class="mobile-menu" id="mobile-menu">
     <ul>
-      <li class="mobile-menu-cart"><a href="<?=url_for("/cart");?>"><i class="fas fa-shopping-cart"></i>Cart</a></li>
-      <li class="mobile-menu-my-account"><a href="<?=url_for("/account/my-account");?>">My Account</a></li>
-      <li class="mobile-menu-login"><a href="<?=url_for("/account/login");?>">Login</a></li>
-      <li><a href="<?=url_for("/");?>">Home</a></li>
-      <li><a href="<?=url_for("/browse");?>">Browse</a></li>
-      <li><a href="<?=url_for("/about-us");?>">About Us</a></li>
-      <li><a href="<?=url_for("/contact");?>">Contact Us</a></li>
-      <li><a href="<?=url_for("/support/faq");?>">FAQs</a></li>
+      <li class="mobile-menu-cart"><a href="<?=url_for("/mall/cart");?>"><i class="fas fa-shopping-cart"></i>Cart</a></li>
+      <li class="mobile-menu-my-account"><a href="<?=url_for("/mall/account/my-account");?>">My Account</a></li>
+      <li class="mobile-menu-login"><a href="<?=url_for("/mall/account/login");?>">Login</a></li>
+      <li><a href="<?=url_for("/mall/");?>">Home</a></li>
+      <li><a href="<?=url_for("/mall/browse");?>">Browse</a></li>
+      <li><a href="<?=url_for("/mall/about-us");?>">About Us</a></li>
+      <li><a href="<?=url_for("/mall/contact");?>">Contact Us</a></li>
+      <li><a href="<?=url_for("/mall/support/faq");?>">FAQs</a></li>
     </ul>
   </div>
 </header>

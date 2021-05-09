@@ -11,35 +11,35 @@
         <div class="footer-menu-item" id="footer-menu-main-pages">
             <p>MAIN PAGES</p>
             <ul>
-                <li><a href="<?=url_for("about-us");?>">About Us</a></li>
-                <li><a href="<?=url_for("contact");?>">Contact Us</a></li>
-                <li><a href="<?=url_for("support/pricing");?>">Pricing</a></li>
-                <li><a href="<?=url_for("support/faq");?>">FAQs</a></li>
+                <li><a href="<?=url_for("/mall/about-us");?>">About Us</a></li>
+                <li><a href="<?=url_for("/mall/contact");?>">Contact Us</a></li>
+                <li><a href="<?=url_for("/mall/support/pricing");?>">Pricing</a></li>
+                <li><a href="<?=url_for("/mall/support/faq");?>">FAQs</a></li>
             </ul>
         </div>
 
         <div class="footer-menu-item" id="footer-menu-policy">
             <p>POLICY</p>
             <ul>
-                <li><a href="<?=url_for("legal/tos");?>">Terms of Service</a></li>
-                <li><a href="<?=url_for("legal/privacy-policy");?>">Privacy Policy</a></li>
-                <li><a href="<?=url_for("legal/copyright");?>">Copyright</a></li>
+                <li><a href="<?=url_for("/mall/legal/tos");?>">Terms of Service</a></li>
+                <li><a href="<?=url_for("/mall/legal/privacy-policy");?>">Privacy Policy</a></li>
+                <li><a href="<?=url_for("/mall/legal/copyright");?>">Copyright</a></li>
             </ul>
         </div>
 
         <div class="footer-menu-item" id="footer-menu-browse">
             <p>BROWSE</p>
             <ul>
-                <li id="footer-menu-browse-product"><a href="<?=url_for("browse/by-product");?>">Products</a>
+                <li id="footer-menu-browse-product"><a href="<?=url_for("/mall/browse/by-product");?>">Products</a>
                     <ul>
-                        <li><a href="<?=url_for("browse/by-product/by-category.html");?>">Browse by Category</a></li>
-                        <li><a href="<?=url_for("browse/by-product/by-date.html");?>">Browse by Date</a></li>
+                        <li><a href="<?=url_for("/mall/browse/by-product/by-category.html");?>">Browse by Category</a></li>
+                        <li><a href="<?=url_for("/mall/browse/by-product/by-date.html");?>">Browse by Date</a></li>
                     </ul>
                 </li>
                 <li id="footer-menu-browse-store"><a href="<?=url_for("browse/by-store");?>">Stores</a>
                     <ul>
-                        <li><a href="<?=url_for("browse/by-store/by-category.html");?>">Browse by Category</a></li>
-                        <li><a href="<?=url_for("browse/by-store/by-name.html");?>">Browse by Name</a></li>
+                        <li><a href="<?=url_for("/mall/browse/by-store/by-category.html");?>">Browse by Category</a></li>
+                        <li><a href="<?=url_for("/mall/browse/by-store/by-name.html");?>">Browse by Name</a></li>
                     </ul>
                 </li>
             </ul>
