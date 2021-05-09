@@ -25,6 +25,8 @@
     "heroku-local": "heroku local"
   },
   "require": {
+  },
+  "require-dev": {
     "heroku/heroku-buildpack-php": "*"
   }
 }
