@@ -21,9 +21,6 @@
             "email": "s3879312@rmit.edu.vn"
         }
     ],
-    "scripts": {
-        "heroku-local": "heroku local"
-    },
     "require": {
         "php": "~7.4.0"
     },
