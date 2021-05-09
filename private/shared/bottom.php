@@ -36,7 +36,7 @@
                         <li><a href="<?=url_for("/mall/browse/by-product/by-date.html");?>">Browse by Date</a></li>
                     </ul>
                 </li>
-                <li id="footer-menu-browse-store"><a href="<?=url_for("browse/by-store");?>">Stores</a>
+                <li id="footer-menu-browse-store"><a href="<?=url_for("/mall/browse/by-store");?>">Stores</a>
                     <ul>
                         <li><a href="<?=url_for("/mall/browse/by-store/by-category.html");?>">Browse by Category</a></li>
                         <li><a href="<?=url_for("/mall/browse/by-store/by-name.html");?>">Browse by Name</a></li>
