@@ -1,4 +1,5 @@
 <?php
+
   ob_start(); // output buffering is turned on
 
   // Assign file paths to PHP constants
