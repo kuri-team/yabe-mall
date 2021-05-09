@@ -3,5 +3,6 @@
 -->
 
 <?php
-
-  header("Location: mall/");  // Automatically re-route to Mall Home
+    
+    require_once('../private/initialize.php');
+    redirect_to("mall/");  // Automatically re-route to Mall Home
