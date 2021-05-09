@@ -2,8 +2,6 @@
 
 <?php
     
-    echo WWW_ROOT;
-    
     $page_title = 'Yabe | Home';
     $style_sheets = [
         "/css/common.css",
