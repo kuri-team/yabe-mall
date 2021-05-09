@@ -3,9 +3,9 @@
 ***
 
 ## Assignment Background
-2nd Development Phase of a 3-part assignment series for COSC2430 Web Programming at RMIT University Vietnam. Previous development history can be found here:
-- Phase 1: https://github.com/kuri-team/yabe-online-mall.github.io
-- Phase 2: https://github.com/kuri-team/yabe-online-mall
+3-part assignment series for COSC2430 Web Programming at RMIT University Vietnam. Development history can be found here:
+- Phase 1: https://github.com/kuri-team/yabe-online-mall.github.io (archived on Jun 1st 2021)
+- Phase 2: https://github.com/kuri-team/yabe-online-mall (archived on Jun 1st 2021)
 - Phase 3: https://github.com/kuri-team/yabe-mall
 
 ## Assignment Requirements
@@ -68,8 +68,18 @@ More requirements are listed below:
 Backup: https://kuri-team.github.io/yabe-mall/ (`main` branch) - static website
 
 ### 2. Coding styles & conventions
+#### Front-end
 - [HTML & CSS The Right Way](http://htmlcsstherightway.org/)
 - [Kuri Front-end Guidelines](https://github.com/kuri-team/front-end-guidelines)
+
+#### Back-end
+- [Clean Code PHP by @jupeter](https://github.com/jupeter/clean-code-php/tree/master#readme)
+- [Clean Code PHP - Variables by @jupeter](https://github.com/jupeter/clean-code-php/tree/var_dump#readme)
+- [PSR-1 by PHP-Fig](https://www.php-fig.org/psr/psr-1/)
+- [PSR-12 by PHP-Fig](https://www.php-fig.org/psr/psr-12/)
+
+#### Further readings
+- [PHP The Right Way](https://phptherightway.com/)
 
 ### 3. Key people
 
