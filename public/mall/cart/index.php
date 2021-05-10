@@ -1,20 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="../../media/image/favicon.ico" type="image/x-icon">
+<?php require_once('../../../private/initialize.php'); ?>
 
-  <link rel="stylesheet" href="../../css/common.css">
-  <link rel="stylesheet" href="../../css/browse.css">
-  <link rel="stylesheet" href="../../css/cards.css">
-  <link rel="stylesheet" href="../../css/pagination.css">
-  <link rel="stylesheet" href="../../css/cart.css">
+<?php
 
-  <script src="https://kit.fontawesome.com/492245eeb1.js" crossorigin="anonymous"></script>
+$page_title = 'Yabe | Home';
+$style_sheets = [
+    "../../css/common.css",
+    "../../css/cart.css",
+];
+$scripts = [
+    "../../js/common.js",
+    "../../js/cart/display-cart.js"
+];
 
-  <title>Yabe | Cart</title>
-</head>
+include(SHARED_PATH . '/top.php');
+
+?>
+
 <body>
   <header>
     <nav>
@@ -128,7 +129,7 @@
                 </li>
                 <li class="cart-product-summary-button">
                   <span ><a href="../"><button class="cart-product-summary-button-continue">CONTINUE SHOPPING</button></a></span>
-                  <span ><a href="thank-you.html"><button class="cart-product-summary-button-order">PLACE ORDER</button></a></span>
+                  <span ><a href="thank-you.php"><button class="cart-product-summary-button-order">PLACE ORDER</button></a></span>
                 </li>
           </ul>
           </div>
@@ -136,64 +137,4 @@
      </div>
   </main>
 
-  <footer>
-    <div class="flex-container flex-justify-content-center flex-align-items-start flex-wrap">
-      <div class="footer-menu-item" id="footer-logo"><img alt="Yabe logo" src="../../media/vector/footer-logo.svg"></div>
-
-      <div class="footer-menu-item" id="footer-menu-main-pages">
-        <p>MAIN PAGES</p>
-        <ul>
-          <li><a href="../about-us">About Us</a></li>
-          <li><a href="../contact">Contact Us</a></li>
-          <li><a href="../support/pricing">Pricing</a></li>
-          <li><a href="../support/faq">FAQs</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-menu-item" id="footer-menu-policy">
-        <p>POLICY</p>
-        <ul>
-          <li><a href="../legal/tos">Terms of Service</a></li>
-          <li><a href="../legal/privacy-policy">Privacy Policy</a></li>
-          <li><a href="../legal/copyright">Copyright</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-menu-item" id="footer-menu-browse">
-        <p>BROWSE</p>
-        <ul>
-          <li id="footer-menu-browse-product"><a href="../browse/by-product">Products</a>
-            <ul>
-              <li><a href="../browse/by-product/by-category.html">Browse by Category</a></li>
-              <li><a href="../browse/by-product/by-date.html">Browse by Date</a></li>
-            </ul>
-          </li>
-          <li id="footer-menu-browse-store"><a href="../browse/by-store">Stores</a>
-            <ul>
-              <li><a href="../browse/by-store/by-category.html">Browse by Category</a></li>
-              <li><a href="../browse/by-store/by-name.html">Browse by Name</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div id="footer-copyright">
-      <p>&copy;2021 YABE</p>
-    </div>
-  </footer>
-
-  <div class="cookie-consent">
-    <div class="cookie-consent-container">
-      <p class="text-align-justify">We use cookies to find out the way to provide the best experience for you. By clicking "Accept" ,
-        you agree to the use of cookies and other technologies on our website.</p>
-      <div class="cookie-consent-button">
-        <a href="https://gdpr-info.eu/" target="_blank"><button class="cookie-consent-learn-more">Learn more</button></a>
-        <button class="cookie-consent-accept">Accept</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="../../js/common.js"></script>
-  <script src="../../js/cart/cart-display.js"></script>
-</body>
-</html>
+<?php include(SHARED_PATH . '/bottom.php'); ?>
