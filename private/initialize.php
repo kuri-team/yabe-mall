@@ -17,9 +17,7 @@
   // define("WWW_ROOT", '/public');
   // define("WWW_ROOT", '');
   // * Can dynamically find everything in URL up to "/public"
-  $public_end = strpos($_SERVER['SCRIPT_NAME'], '/public');
-  $doc_root = substr($_SERVER['SCRIPT_NAME'], 0, $public_end);
-  define("WWW_ROOT", $doc_root);
+  define("WWW_ROOT", "");
 
   require_once('functions.php');
 
