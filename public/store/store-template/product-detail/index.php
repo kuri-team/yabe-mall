@@ -6,7 +6,7 @@
     $style_sheets = [
         "/css/common.css",
         "/css/cards.css",
-        "css/store/product-detail.css",
+        "/css/store/product-detail.css",
     ];
     $scripts = [
         "/js/common.js",
