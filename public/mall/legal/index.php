@@ -2,7 +2,7 @@
 
 <?php
 
-$page_title = 'Copyright';
+$page_title = 'Terms of service';
 $style_sheets = [
     "/css/common.css",
     "/css/legal/legal.css",
