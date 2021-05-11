@@ -6,7 +6,7 @@
   <link rel="icon" href="media/image/favicon.ico" type="image/x-icon">
   
   <link rel="stylesheet" href="css/common.css">
-  <link rel="stylesheet" href="css/account/register.css">
+  <link rel="stylesheet" href="css/form.css">
   <link rel="stylesheet" href="css/install.css">
 
   <script src="https://kit.fontawesome.com/492245eeb1.js" crossorigin="anonymous"></script>
@@ -26,31 +26,31 @@
     <p class="text-align-center"><strong>IMPORTANT:</strong> Delete this file (/install.php) after submitting this form for the application to start working with your provided administrator credentials.</p>
   </section>
   <section class="install-form-wrapper">
-    <form action="install.php" method="post" target="_self">
-      <div class="input-field-validation register-field flex-container flex-align-items-center flex-justify-content-center">
-        <div class="register-item flex-container animated">
+    <form action="install.php" method="post" target="_self" autocomplete="off">
+      <div class="input-field-validation form-field flex-container flex-align-items-center flex-justify-content-center">
+        <div class="form-item flex-container animated">
           <label class="label required" for="username">Username</label>
           <input id="username" name="username" type="text" placeholder="admin" required>
         </div>
       </div>
 
-      <div class="input-field-validation register-field flex-container flex-align-items-center flex-justify-content-center">
-        <div class="register-item flex-container animated">
+      <div class="input-field-validation form-field flex-container flex-align-items-center flex-justify-content-center">
+        <div class="form-item flex-container animated">
           <label class="label required" for="pwd">Password</label>
           <input class="password-field" id="pwd" name="pwd" type="password" required>
           <div class="toggle-password-visibility"><i class="fas fa-eye"></i></div>
         </div>
       </div>
 
-      <div class="input-field-validation register-field flex-container flex-align-items-center flex-justify-content-center">
-        <div class="register-item flex-container animated">
+      <div class="input-field-validation form-field flex-container flex-align-items-center flex-justify-content-center">
+        <div class="form-item flex-container animated">
           <label class="label required" for="pwd-verify">Verify Password</label>
           <input class="password-field" id="pwd-verify" name="pwd-verify" type="password" required>
           <div class="toggle-password-visibility"><i class="fas fa-eye"></i></div>
         </div>
       </div>
 
-      <div class="register-field register-bttn-field flex-container flex-direction-column flex-align-items-center">
+      <div class="form-field form-bttn-field flex-container flex-direction-column flex-align-items-center">
         <label><input type="reset" value="CLEAR"></label>
         <label><input type="submit" value="SUBMIT"></label>
       </div>
@@ -64,7 +64,7 @@
   </div>
 </footer>
 
-<script src="js/account/common.js"></script>
+<script src="js/form.js"></script>
 <script src="js/install.js"></script>
 </body>
 </html>
