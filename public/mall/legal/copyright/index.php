@@ -2,7 +2,7 @@
 
 <?php
 
-$page_title = 'Copyright';
+$page_title = "Yabe | Copyright";
 $style_sheets = [
     "/css/common.css",
     "/css/legal/legal.css",
@@ -11,7 +11,7 @@ $scripts = [
     "/js/common.js",
 ];
 
-include(SHARED_PATH . '/top.php');
+include(SHARED_PATH . "/top.php");
 
 ?>
 
@@ -51,4 +51,4 @@ include(SHARED_PATH . '/top.php');
     </div>
   </main>
 
-<?php include(SHARED_PATH . '/bottom.php'); ?>
+<?php include(SHARED_PATH . "/bottom.php"); ?>

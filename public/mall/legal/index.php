@@ -2,7 +2,7 @@
 
 <?php
 
-$page_title = 'Terms of service';
+$page_title = "Terms of service";
 $style_sheets = [
     "/css/common.css",
     "/css/legal/legal.css",
@@ -11,7 +11,7 @@ $scripts = [
     "/js/common.js",
 ];
 
-include(SHARED_PATH . '/top.php');
+include(SHARED_PATH . "/top.php");
 
 ?>
 
@@ -22,4 +22,4 @@ include(SHARED_PATH . '/top.php');
     <li><a href="copyright">Copyright</a></li>
   </ul>
 
-<?php include(SHARED_PATH . '/bottom.php'); ?>
+<?php include(SHARED_PATH . "/bottom.php"); ?>
