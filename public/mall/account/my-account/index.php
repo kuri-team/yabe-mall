@@ -2,7 +2,7 @@
 
 <?php
 
-$page_title = 'My Account';
+$page_title = "My Account";
 $style_sheets = [
     "/css/common.css",
     "/css/account/common.css",
@@ -14,7 +14,7 @@ $scripts = [
     "/js/account/my-account.js",
 ];
 
-include(SHARED_PATH . '/top.php');
+include(SHARED_PATH . "/top.php");
 
 ?>
 
@@ -62,5 +62,5 @@ include(SHARED_PATH . '/top.php');
   </div>
 </main>
 
-<?php include(SHARED_PATH . '/bottom.php'); ?>
+<?php include(SHARED_PATH . "/bottom.php"); ?>
 

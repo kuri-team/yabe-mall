@@ -2,7 +2,7 @@
 
 <?php
     
-    $page_title = 'Yabe | Home';
+    $page_title = "Yabe | Home";
     $style_sheets = [
         "/css/common.css",
         "/css/mall-home.css",
@@ -13,7 +13,7 @@
         "/js/cards.js"
     ];
     
-    include(SHARED_PATH . '/top.php');
+    include(SHARED_PATH . "/top.php");
     
 ?>
 
@@ -341,4 +341,4 @@
     </section>
   </main>
 
-<?php include(SHARED_PATH . '/bottom.php'); ?>
+<?php include(SHARED_PATH . "/bottom.php"); ?>

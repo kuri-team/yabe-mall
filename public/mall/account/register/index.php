@@ -2,7 +2,7 @@
 
 <?php
 
-$page_title = 'Register';
+$page_title = "Yabe | Register";
 $style_sheets = [
     "/css/common.css",
     "/css/account/common.css",
@@ -14,7 +14,7 @@ $scripts = [
     "/js/account/register.js",
 ];
 
-include(SHARED_PATH . '/top.php');
+include(SHARED_PATH . "/top.php");
 
 ?>
 
@@ -458,4 +458,4 @@ include(SHARED_PATH . '/top.php');
   </div>
 </main>
 
-<?php include(SHARED_PATH . '/bottom.php'); ?>
+<?php include(SHARED_PATH . "/bottom.php"); ?>

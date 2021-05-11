@@ -2,7 +2,7 @@
 
 <?php
 
-$page_title = 'Forgot Password';
+$page_title = "Forgot Password";
 $style_sheets = [
     "/css/common.css",
     "/css/account/common.css",
@@ -13,7 +13,7 @@ $scripts = [
     "/js/account/common.js",
 ];
 
-include(SHARED_PATH . '/top.php');
+include(SHARED_PATH . "/top.php");
 
 ?>
 
@@ -50,4 +50,4 @@ include(SHARED_PATH . '/top.php');
   </form>
 </main>
 
-<?php include(SHARED_PATH . '/bottom.php'); ?>
+<?php include(SHARED_PATH . "/bottom.php"); ?>

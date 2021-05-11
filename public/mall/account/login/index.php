@@ -2,7 +2,7 @@
 
 <?php
 
-$page_title = 'Login';
+$page_title = "Yabe | Login";
 $style_sheets = [
     "/css/common.css",
     "/css/account/common.css",
@@ -14,7 +14,7 @@ $scripts = [
     "/js/account/login.js",
 ];
 
-include(SHARED_PATH . '/top.php');
+include(SHARED_PATH . "/top.php");
 
 ?>
 
@@ -42,4 +42,4 @@ include(SHARED_PATH . '/top.php');
   </section>
 </main>
 
-<?php include(SHARED_PATH . '/bottom.php'); ?>
+<?php include(SHARED_PATH . "/bottom.php"); ?>
