@@ -1,27 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="../../../media/image/favicon.ico" type="image/x-icon">
+<?php require_once('../../../../private/initialize.php'); ?>
 
-  <link rel="stylesheet" href="../../../css/common.css">
-  <link rel="stylesheet" href="../../../css/legal/legal.css">
+<?php
+    
+    $page_title = "Yabe | Terms of Service";
+    $style_sheets = [
+        "/css/common.css",
+        "/css/legal/legal.css",
+    ];
+    $scripts = [
+        "/js/common.js",
+    ];
+    
+    include(SHARED_PATH . "/top.php");
 
-  <script src="https://kit.fontawesome.com/492245eeb1.js" crossorigin="anonymous"></script>
-
-  <title>Yabe | Terms of Service</title>
-</head>
-<body>
-<div id="dimmed-page"></div>
-
-<div id="overlay-cart-window">
-  <div id="disabled-cart-msg" class="text-align-center">
-    <button id="cart-closing-bttn" class="float-right"><i class="fas fa-times"></i></button>
-    <p class="clear-both">This feature is only available for registered user. Please
-      <a href="../../account/login">login</a> or <a href="../../account/register">register</a>.</p>
-  </div>
-</div>
+?>
 
 <header>
   <nav>
@@ -180,63 +172,4 @@
   </div>
 </main>
 
-<footer>
-  <div class="flex-container flex-justify-content-center flex-align-items-start flex-wrap">
-    <div class="footer-menu-item" id="footer-logo"><img alt="Yabe logo" src="../../../media/vector/footer-logo.svg"></div>
-
-    <div class="footer-menu-item" id="footer-menu-main-pages">
-      <p>MAIN PAGES</p>
-      <ul>
-        <li><a href="../../about-us">About Us</a></li>
-        <li><a href="../../contact">Contact Us</a></li>
-        <li><a href="../../support/pricing">Pricing</a></li>
-        <li><a href="../../support/faq">FAQs</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-menu-item" id="footer-menu-policy">
-      <p>POLICY</p>
-      <ul>
-        <li><a href="../../legal/tos">Terms of Service</a></li>
-        <li><a href="../../legal/privacy-policy">Privacy Policy</a></li>
-        <li><a href="../../legal/copyright">Copyright</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-menu-item" id="footer-menu-browse">
-      <p>BROWSE</p>
-      <ul>
-        <li id="footer-menu-browse-product"><a href="../../browse/by-product">Products</a>
-          <ul>
-            <li><a href="../../browse/by-product/by-category.html">Browse by Category</a></li>
-            <li><a href="../../browse/by-product/by-date.html">Browse by Date</a></li>
-          </ul>
-        </li>
-        <li id="footer-menu-browse-store"><a href="../../browse/by-store">Stores</a>
-          <ul>
-            <li><a href="../../browse/by-store/by-category.html">Browse by Category</a></li>
-            <li><a href="../../browse/by-store/by-name.html">Browse by Name</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div id="footer-copyright">
-    <p>&copy;2021 YABE</p>
-  </div>
-</footer>
-
-<div class="cookie-consent">
-  <div class="cookie-consent-container">
-    <p class="text-align-justify">We use cookies to find out the way to provide the best experience for you. By clicking "Accept" ,
-      you agree to the use of cookies and other technologies on our website.</p>
-    <div class="cookie-consent-button">
-      <a href="https://gdpr-info.eu/" target="_blank"><button class="cookie-consent-learn-more">Learn more</button></a>
-      <button class="cookie-consent-accept">Accept</button>
-    </div>
-  </div>
-</div>
-
-<script src="../../../js/common.js"></script>
-</body>
-</html>
+<?php include(SHARED_PATH . "/bottom.php"); ?>
