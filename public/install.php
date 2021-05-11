@@ -26,15 +26,15 @@
     <p class="text-align-center"><strong>IMPORTANT:</strong> Delete this file (/install.php) after submitting this form for the application to start working with your provided administrator credentials.</p>
   </section>
   <section class="install-form-wrapper">
-    <form action="install.php" method="post" target="_self" autocomplete="off">
-      <div class="input-field-validation form-field flex-container flex-align-items-center flex-justify-content-center">
+    <form class="form" action="install.php" method="post" target="_self" autocomplete="off">
+      <div class="form-field flex-container flex-align-items-center flex-justify-content-center">
         <div class="form-item flex-container animated">
           <label class="label required" for="username">Username</label>
           <input id="username" name="username" type="text" placeholder="admin" required>
         </div>
       </div>
 
-      <div class="input-field-validation form-field flex-container flex-align-items-center flex-justify-content-center">
+      <div class="form-field flex-container flex-align-items-center flex-justify-content-center">
         <div class="form-item flex-container animated">
           <label class="label required" for="pwd">Password</label>
           <input class="password-field" id="pwd" name="pwd" type="password" required>
@@ -42,7 +42,7 @@
         </div>
       </div>
 
-      <div class="input-field-validation form-field flex-container flex-align-items-center flex-justify-content-center">
+      <div class="form-field flex-container flex-align-items-center flex-justify-content-center">
         <div class="form-item flex-container animated">
           <label class="label required" for="pwd-verify">Verify Password</label>
           <input class="password-field" id="pwd-verify" name="pwd-verify" type="password" required>

@@ -12,6 +12,11 @@
     margin-right: 20px !important;
 }
 
+.form .required:before {
+    content: "*";
+    color: #eb5e28;
+}
+
 .form-field {
     width: 100%;
 }
@@ -92,7 +97,7 @@
     margin: auto 20px auto 0;
 }
 
-.form-form input[type="radio"] {
+.form input[type="radio"] {
     width: initial;
 }
 
@@ -145,7 +150,7 @@
 
 /* Responsive form */
 @media only screen and (max-width: 950px) {
-    form > .form-field {
+    .form > .form-field {
         flex-direction: column;
     }
 

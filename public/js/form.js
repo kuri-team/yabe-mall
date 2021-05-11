@@ -22,7 +22,7 @@ SUBMIT_BTTN.addEventListener("click", function () {
         // Get the matching input and its label
         const INPUT = FORM_ITEMS[index].querySelector("input") || FORM_ITEMS[index].querySelector("select");
         const LABEL = FORM_ITEMS[index].querySelector("label");
-        if (INPUT.id !== "pwd" && INPUT.id !== "verify_pwd") {  // Excludes the password fields. See line 46.
+        if (INPUT.id !== "pwd" && INPUT.id !== "verify_pwd") {  // Excludes the password fields. See line 13.
             highlightInvalidField(FORM_ITEMS[index], INPUT, LABEL);
         }
     }
