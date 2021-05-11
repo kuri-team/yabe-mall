@@ -2,6 +2,9 @@
     
     ob_start(); // output buffering is turned on
     
+    // Development mode
+    $dev = true;
+    
     // Assign file paths to PHP constants
     // __FILE__ returns the current path to this file
     // dirname() returns the path to the parent directory
@@ -15,6 +18,11 @@
     // * Use same document root as webserver
     define("WWW_ROOT", "");
     
-    require_once('functions.php');
+    require_once("functions.php");
     
     $errors = [];
+    
+    // install.php logic
+    if (file_exists(PUBLIC_PATH . "/install.php") && !$dev) {
+        redirect_to(url_for("/install.php"));
+    }
