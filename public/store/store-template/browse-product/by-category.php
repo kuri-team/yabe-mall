@@ -22,7 +22,7 @@
   <main>
     <ul class="breadcrumb">
       <li><a href="../../../mall">Home</a>/</li>
-      <li><a href="../../../mall/browse/by-store/by-category.html">Bookstore</a>/</li>
+      <li><a href="../../../mall/browse/by-store/by-category.php">Bookstore</a>/</li>
       <li><a href="../">HSY Shop</a>/</li>
       <li><a href="#">Browse by Category</a></li>
     </ul>

@@ -21,7 +21,7 @@
   <main>
     <ul class="breadcrumb">
       <li><a href="../../mall/">Home</a>/</li>
-      <li><a href="../../mall/browse/by-store/by-category.html">Bookstore</a>/</li>
+      <li><a href="../../mall/browse/by-store/by-category.php">Bookstore</a>/</li>
       <li><a href="./">HSY Shop</a></li>
     </ul>
 
@@ -50,8 +50,8 @@
                 <a href="browse-product/by-date.php">DATE</a>
               </div>
             </div>
-          <div class="store-nav-bttn"><a href="pages/contact.php">CONTACT</a></div>
-          <div class="store-nav-bttn"><a href="pages/bio.php">BIO</a></div>
+          <div class="store-nav-bttn"><a href="./pages/contact.php">CONTACT</a></div>
+          <div class="store-nav-bttn"><a href="./pages/bio.php">BIO</a></div>
 
           <div id="responsive-store-navbar">
             <input type="checkbox" id="navbar-icon">

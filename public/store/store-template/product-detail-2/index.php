@@ -21,7 +21,7 @@
 <main id="product-content">
   <ul class="breadcrumb">
     <li><a href="../../../mall/">Home</a>/</li>
-    <li><a href="../../../mall/browse/by-store/by-category.html">Bookstore</a>/</li>
+    <li><a href="../../../mall/browse/by-store/by-category.php">Bookstore</a>/</li>
     <li><a href="../" id="store-name">HSY Shop</a>/</li>
     <li><a href="#">Omniscient Reader's Viewpoint Novel</a></li>
   </ul>
