@@ -18,8 +18,8 @@
 <main id="content">
   <ul class="breadcrumb">
     <li><a href="../../">Home</a>/</li>
-    <li><a href="../">Support</a>/</li>
-    <li><a href="./">FAQs</a></li>
+    <li><a href="./">Support</a>/</li>
+    <li><a href="#">FAQs</a></li>
   </ul>
 
   <h1 class="content-title">FREQUENTLY ASKED QUESTIONS</h1>
