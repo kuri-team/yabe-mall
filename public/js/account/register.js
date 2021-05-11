@@ -16,7 +16,6 @@ AVATAR_AREA.addEventListener("click", function () {
     }
 });
 
-
 // Display store owner only fields when appropriate radio box is checked
 const STORE_OWNER_ONLY_FIELDS = document.getElementById("store-owner-only");
 const RADIO_STORE_OWNER = document.getElementById("store-owner");
