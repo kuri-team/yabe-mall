@@ -1,8 +1,8 @@
-<?php require_once('../../../../private/initialize.php'); ?>
+<?php require_once('../../../private/initialize.php'); ?>
 
 <?php
 
-$page_title = 'About Us';
+$page_title = "Yabe | About Us";
 $style_sheets = [
     "/css/common.css",
     "/css/mall-about-us.css"
@@ -12,7 +12,7 @@ $scripts = [
     "/js/about-us.js"
 ];
 
-include(SHARED_PATH . '/top.php');
+include(SHARED_PATH . "/top.php");
 
 ?>
 
@@ -144,4 +144,4 @@ include(SHARED_PATH . '/top.php');
   </div>
 </main>
 
-<?php include(SHARED_PATH . '/bottom.php'); ?>
+<?php include(SHARED_PATH . "/bottom.php"); ?>
