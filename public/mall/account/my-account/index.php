@@ -2,7 +2,7 @@
 
 <?php
 
-$page_title = "My Account";
+$page_title = "Yabe | My Account";
 $style_sheets = [
     "/css/common.css",
     "/css/account/common.css",

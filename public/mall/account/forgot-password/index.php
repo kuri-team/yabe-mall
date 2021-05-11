@@ -2,7 +2,7 @@
 
 <?php
 
-$page_title = "Forgot Password";
+$page_title = "Yabe | Forgot Password";
 $style_sheets = [
     "/css/common.css",
     "/css/account/common.css",
