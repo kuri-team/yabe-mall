@@ -4,10 +4,10 @@
 
 $page_title = 'Yabe | Home';
 $style_sheets = [
-    "../../css/common.css",
+    "/css/common.css",
 ];
 $scripts = [
-    "../../js/common.js",
+    "/js/common.js",
 ];
 
 include(SHARED_PATH . '/top.php');

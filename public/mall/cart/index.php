@@ -4,78 +4,17 @@
 
 $page_title = 'Yabe | Home';
 $style_sheets = [
-    "../../css/common.css",
-    "../../css/cart.css",
+    "/css/common.css",
+    "/css/cart.css",
 ];
-$scripts = [
-    "../../js/common.js",
-    "../../js/cart/display-cart.js"
-];
+$scripts = array(
+    "/js/common.js",
+    "/js/cart/cart-display.js"
+);
 
 include(SHARED_PATH . '/top.php');
 
 ?>
-
-<body>
-  <header>
-    <nav>
-      <span id="nav-logo"><a href="../../mall/"><img class="nav-logo-sprite" alt="Yabe logo" src="../../media/vector/logo-light.svg"></a></span>
-      <div id="nav-search-filter">Filter<i class="fas fa-caret-down ml-10"></i>
-        <div id="nav-search-filter-level-1">
-          <div class="nav-search-filter-option">All</div>
-          <hr>
-          <div class="nav-search-filter-option">Products
-            <div id="nav-search-filter-level-2-1">
-              <div class="nav-search-filter-option">Category</div>
-              <hr>
-              <div class="nav-search-filter-option">Date</div>
-            </div>
-          </div>
-          <hr>
-          <div class="nav-search-filter-option">Stores
-            <div id="nav-search-filter-level-2-2">
-              <div class="nav-search-filter-option">Category</div>
-              <hr>
-              <div class="nav-search-filter-option">Name</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="nav-search">
-        <form action="../browse" method="get" target="_blank">
-          <label for="q"></label>
-          <input class="nav-seach-bar" id="q" name="q" type="search" placeholder="Search" value="">
-        </form>
-      </div>
-      <div class="nav-search-bttn"><i class="fas fa-search"></i></div>
-      <button class="nav-cart-bttn"><a href="../cart"><i class="fas fa-shopping-cart"></i>Cart</a></button>
-      <span id="nav-account">
-        <span id="nav-login-reg">
-          <a href="../account/login">Login</a>
-          <span class="vl"></span>
-          <a href="../account/register">Register</a>
-        </span>
-        <span id="nav-my-account"><a href="../account/my-account/">My Account</a></span>
-      </span>
-
-      <span class="mobile-only">
-        <button onclick="toggleMobileMenu()" class="mobile-menu-bttn"><i class="fas fa-bars" id="mobile-menu-icon"></i></button>
-      </span>
-    </nav>
-
-    <div class="mobile-menu" id="mobile-menu">
-      <ul>
-        <li class="mobile-menu-cart"><a href="../cart"><i class="fas fa-shopping-cart"></i>Cart</a></li>
-        <li class="mobile-menu-my-account"><a href="../account/my-account">My Account</a></li>
-        <li class="mobile-menu-login"><a href="../account/login">Login</a></li>
-        <li><a href="../">Home</a></li>
-        <li><a href="../browse">Browse</a></li>
-        <li><a href="../about-us">About Us</a></li>
-        <li><a href="../contact">Contact Us</a></li>
-        <li><a href="../support/faq">FAQs</a></li>
-      </ul>
-    </div>
-  </header>
 
   <main>
     <ul class=breadcrumb>
