@@ -1,4 +1,4 @@
-<?php require_once('../../../../private/initialize.php'); ?>
+<?php require_once("../../../../private/initialize.php'); ?>
 
 <?php
 
@@ -388,7 +388,7 @@ include(SHARED_PATH . "/top.php");
           <label class="label required" for="verify_pwd">Verify Password</label>
           <input id="verify_pwd" class="password-field" name="verify_pwd" type="password"
                  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,20}$"
-                 onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '');"
+                 onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Please enter the same Password as above' : '");"
                  placeholder="This field is required" required>
           <div class="toggle-password-visibility"><i class="fas fa-eye"></i></div>
           <span class="message-error"></span>
