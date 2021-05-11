@@ -12,7 +12,7 @@ $scripts = [
     "/js/cart/thank-you.js",
 ];
 
-include(SHARED_PATH . '/top.php');
+include(SHARED_PATH . "/top.php");
 
 ?>
 
@@ -30,4 +30,4 @@ include(SHARED_PATH . '/top.php');
 
 </main>
 
-<?php include(SHARED_PATH . '/bottom.php'); ?>
+<?php include(SHARED_PATH . "/bottom.php"); ?>

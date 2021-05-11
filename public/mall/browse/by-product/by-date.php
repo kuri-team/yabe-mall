@@ -13,7 +13,7 @@ $scripts = [
     "/js/common.js",
 ];
 
-include(SHARED_PATH . '/top.php');
+include(SHARED_PATH . "/top.php");
 
 ?>
 
@@ -181,4 +181,4 @@ include(SHARED_PATH . '/top.php');
   </div>
 </main>
 
-<?php include(SHARED_PATH . '/bottom.php'); ?>
+<?php include(SHARED_PATH . "/bottom.php"); ?>

@@ -11,7 +11,7 @@
         "/js/common.js",
     ];
 
-    include(SHARED_PATH . '/top.php');
+    include(SHARED_PATH . "/top.php");
 
 ?>
 
@@ -21,4 +21,4 @@
   <li><a href="pricing">Pricing</a></li>
 </ul>
 
-<?php include(SHARED_PATH . '/bottom.php'); ?>
+<?php include(SHARED_PATH . "/bottom.php"); ?>
