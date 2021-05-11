@@ -2,7 +2,7 @@
 
 <?php
 
-    $page_title = 'Yabe | Pricing';
+    $page_title = "Yabe | Pricing";
     $style_sheets = [
         "/css/common.css",
         "/css/mall-pricing.css",

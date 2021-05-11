@@ -2,7 +2,7 @@
 
 <?php
 
-$page_title = 'Yabe | Thank You';
+$page_title = "Yabe | Thank You";
 $style_sheets = [
     "/css/common.css",
     "/css/thank-you.css",

@@ -2,7 +2,7 @@
 
 <?php
 
-    $page_title = 'Yabe | Support';
+    $page_title = "Yabe | Support";
     $style_sheets = [
         "/css/common.css",
         "/css/legal/legal.css",

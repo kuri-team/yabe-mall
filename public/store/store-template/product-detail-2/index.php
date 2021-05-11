@@ -2,7 +2,7 @@
 
 <?php
 
-    $page_title = 'Omniscient Reader\'s Viewpoint Novel';
+    $page_title = "Omniscient Reader\'s Viewpoint Novel";
     $style_sheets = [
         "/css/common.css",
         "/css/cards.css",

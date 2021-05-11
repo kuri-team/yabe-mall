@@ -2,7 +2,7 @@
 
 <?php
 
-    $page_title = 'HSY Shop | Contact';
+    $page_title = "HSY Shop | Contact";
     $style_sheets = [
         "/css/common.css",
         "/css/store/store.css",

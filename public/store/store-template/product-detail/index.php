@@ -2,7 +2,7 @@
 
 <?php
 
-    $page_title = 'Purple Hyacinth comic';
+    $page_title = "Purple Hyacinth comic";
     $style_sheets = [
         "/css/common.css",
         "/css/cards.css",
