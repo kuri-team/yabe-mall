@@ -68,7 +68,7 @@ include(SHARED_PATH . '/top.php');
                 </li>
                 <li class="cart-product-summary-button">
                   <span ><a href="../"><button class="cart-product-summary-button-continue">CONTINUE SHOPPING</button></a></span>
-                  <span ><a href="../mall/cart/thank-you.php"><button class="cart-product-summary-button-order">PLACE ORDER</button></a></span>
+                  <span ><a href="./thank-you.php"><button class="cart-product-summary-button-order">PLACE ORDER</button></a></span>
                 </li>
           </ul>
           </div>
