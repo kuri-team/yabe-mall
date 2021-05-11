@@ -1,11 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="icon" href="../../../media/image/favicon.ico" type="image/x-icon">
-  <title>Yabe | Featured Stores</title>
-</head>
-<body>
-  <h1>To be implemented</h1>
-</body>
-</html>
+<?php require_once('../../../../private/initialize.php'); ?>
+
+<?php
+
+$page_title = 'Yabe | Featured Stores';
+$style_sheets = [
+    "/css/common.css",
+];
+$scripts = [
+    "/js/common.js",
+];
+
+include(SHARED_PATH . '/top.php');
+
+?>
+    <body>
+    <h1>To be implemented</h1>
+    </body>
+
+<?php include(SHARED_PATH . '/bottom.php'); ?>
