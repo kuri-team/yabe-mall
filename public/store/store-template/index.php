@@ -45,13 +45,13 @@
             <div class="store-nav-bttn store-nav-dropdown">PRODUCTS
               <i class="fas fa-caret-down"></i>
               <div class="store-nav-dropdown-list">
-                <a href="./browse-product/by-category.html">CATEGORY</a>
+                <a href="browse-product/by-category.php">CATEGORY</a>
                 <hr>
-                <a href="./browse-product/by-date.html">DATE</a>
+                <a href="browse-product/by-date.php">DATE</a>
               </div>
             </div>
-          <div class="store-nav-bttn"><a href="./pages/contact.html">CONTACT</a></div>
-          <div class="store-nav-bttn"><a href="./pages/bio.html">BIO</a></div>
+          <div class="store-nav-bttn"><a href="pages/contact.php">CONTACT</a></div>
+          <div class="store-nav-bttn"><a href="pages/bio.php">BIO</a></div>
 
           <div id="responsive-store-navbar">
             <input type="checkbox" id="navbar-icon">
@@ -66,12 +66,12 @@
                 <label for="nav-product-bttn">Products</label>
                 <i class="fas fa-caret-down"></i>
                 <ul class="responsive-store-navbar-content-dropdown">
-                  <li><a href="./browse-product/by-category.html">Category</a></li>
-                  <li><a href="./browse-product/by-date.html">Date</a></li>
+                  <li><a href="browse-product/by-category.php">Category</a></li>
+                  <li><a href="browse-product/by-date.php">Date</a></li>
                 </ul>
               </li>
-              <li><a href="./pages/contact.html">Contact</a></li>
-              <li><a href="./pages/bio.html">Bio</a></li>
+              <li><a href="pages/contact.php">Contact</a></li>
+              <li><a href="pages/bio.php">Bio</a></li>
             </ul>
           </div>
         </div>
@@ -81,7 +81,7 @@
         <section class="store-home-content-new mb-80">
           <div class="store-home-content-header text-align-center">
             <h1 class="mr-10">NEW PRODUCTS</h1>
-            <a href="browse-product/by-date.html">VIEW MORE</a>
+            <a href="browse-product/by-date.php">VIEW MORE</a>
           </div>
 
           <section class="store-product-cards">
