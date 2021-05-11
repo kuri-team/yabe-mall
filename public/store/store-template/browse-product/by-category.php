@@ -50,7 +50,7 @@
             <div class="store-nav-dropdown-list">
               <a href="#">CATEGORY</a>
               <hr>
-              <a href="./by-date.html">DATE</a>
+              <a href="by-date.php">DATE</a>
             </div>
           </div>
           <div class="store-nav-bttn"><a href="../pages/contact.php">CONTACT</a></div>
@@ -70,7 +70,7 @@
                <i class="fas fa-caret-down"></i>
                <ul class="responsive-store-navbar-content-dropdown">
                  <li><a href="by-category.php">Category</a></li>
-                 <li><a href="./by-date.html">Date</a></li>
+                 <li><a href="by-date.php">Date</a></li>
                </ul>
              </li>
              <li><a href="../pages/contact.php">Contact</a></li>

@@ -47,7 +47,7 @@
             <div class="store-nav-dropdown-list">
               <a href="../browse-product/by-category.php">CATEGORY</a>
               <hr>
-              <a href="../browse-product/by-date.html">DATE</a>
+              <a href="../browse-product/by-date.php">DATE</a>
             </div>
           </div>
           <div class="store-nav-bttn"><a href="contact.php">CONTACT</a></div>
@@ -67,7 +67,7 @@
                 <i class="fas fa-caret-down"></i>
                 <ul class="responsive-store-navbar-content-dropdown">
                   <li><a href="../browse-product/by-category.php">Category</a></li>
-                  <li><a href="../browse-product/by-date.html">Date</a></li>
+                  <li><a href="../browse-product/by-date.php">Date</a></li>
                 </ul>
               </li>
               <li><a href="contact.php">Contact</a></li>
