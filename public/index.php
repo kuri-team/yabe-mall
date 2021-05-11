@@ -4,5 +4,5 @@
 
 <?php
     
-    require_once('../private/initialize.php');
+    require_once("../private/initialize.php");
     redirect_to("mall/");  // Automatically re-route to Mall Home

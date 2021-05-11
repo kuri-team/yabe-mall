@@ -1,8 +1,8 @@
-<?php require_once('../../private/initialize.php'); ?>
+<?php require_once("../../private/initialize.php"); ?>
 
 <?php
     
-    $page_title = 'Yabe | Home';
+    $page_title = "Yabe | Home";
     $style_sheets = [
         "/css/common.css",
         "/css/mall-home.css",
@@ -13,7 +13,7 @@
         "/js/cards.js"
     ];
     
-    include(SHARED_PATH . '/top.php');
+    include(SHARED_PATH . "/top.php");
     
 ?>
 
@@ -97,7 +97,7 @@
     </section>
 
     <section class="mall-home-section" id="featured-products">
-      <h1>FEATURED PRODUCTS<span class="mall-home-section-heading-link"><a href="browse/by-product/featured.html">ALL</a></span></h1>
+      <h1>FEATURED PRODUCTS<span class="mall-home-section-heading-link"><a href="browse/by-product/featured.php">ALL</a></span></h1>
 
       <div class="flex-container flex-justify-content-space-between flex-align-items-center flex-wrap">
         <div class="product-card">
@@ -235,7 +235,7 @@
     </section>
 
     <section class="mall-home-section" id="featured-stores">
-      <h1>FEATURED STORES<span class="mall-home-section-heading-link"><a href="browse/by-store/featured.html">ALL</a></span></h1>
+      <h1>FEATURED STORES<span class="mall-home-section-heading-link"><a href="browse/by-store/featured.php">ALL</a></span></h1>
 
       <div class="flex-container flex-justify-content-space-between flex-align-items-center flex-wrap">
         <div class="store-card">
@@ -341,4 +341,4 @@
     </section>
   </main>
 
-<?php include(SHARED_PATH . '/bottom.php'); ?>
+<?php include(SHARED_PATH . "/bottom.php"); ?>
