@@ -18,8 +18,8 @@ include(SHARED_PATH . "/top.php");
 
 <main>
   <ul class="breadcrumb">
-    <li><a href="../">Home</a>/</li>
-    <li><a href="#">Contact Us</a></li>
+    <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
+    <li><a href="<?=url_for("/mall/contact");?>">Contact Us</a></li>
   </ul>
   <h1 class="content-title">CONTACT US</h1>
 
