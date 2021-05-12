@@ -5,6 +5,7 @@
 $page_title = "Yabe | About Us";
 $style_sheets = [
     "/css/common.css",
+    "/css/flip-card.css",
     "/css/mall-about-us.css"
 ];
 $scripts = [
@@ -15,17 +16,6 @@ $scripts = [
 include(SHARED_PATH . "/top.php");
 
 ?>
-
-<!-- dim rest of page when modal box is opened -->
-<div id="dimmed-page"></div>
-
-<div id="overlay-cart-window">
-    <div id="disabled-cart-msg" class="text-align-center">
-      <button id="cart-closing-bttn" class="float-right"><i class="fas fa-times"></i></button>
-      <p class="clear-both">This feature is only available for registered user. Please
-        <a href="../account/login">login</a> or <a href="../account/register">register</a>.</p>
-    </div>
-</div>
 
 <!-- Modal box container -->
 <div id="overlay-modal-window">
@@ -73,7 +63,7 @@ include(SHARED_PATH . "/top.php");
 <main>
   <ul class="breadcrumb">
     <li><a href="../">Home</a>/</li>
-    <li><a href="./">About Us</a></li>
+    <li><a href="#">About Us</a></li>
   </ul>
 
   <h1 class="content-title">ABOUT US</h1>
