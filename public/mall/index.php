@@ -23,15 +23,15 @@
 
   <main id="mall-main">
     <section class="card-gallery mall-home-section mall-home-section-gallery">
-      <h1 class="card-gallery-title">NEW PRODUCTS<span class="mall-home-section-heading-link"><a href="browse/by-product/by-date.html">MORE</a></span></h1>
+      <h1 class="card-gallery-title">NEW PRODUCTS<span class="mall-home-section-heading-link"><a href="<?=url_for("/mall/browse/by-product/by-date.php");?>">MORE</a></span></h1>
 
       <button class="card-gallery-left-bttn"><i class="fas fa-angle-left"></i></button>
       <div class="card-gallery-content flex-container flex-justify-content-space-between flex-align-items-center overflow-hidden">
         <div class="product-card">
-          <a href="../store/store-template/product-detail/"><img alt="image of a product" src="../media/image/best_buy_shop/camera/4_best_buy.jpg"></a>
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../media/image/best_buy_shop/camera/4_best_buy.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="../store/store-template/product-detail/">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../store/store-template/">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">1/4/2020</div>
@@ -39,10 +39,10 @@
         </div>
 
         <div class="product-card">
-          <a href="../store/store-template/product-detail/"><img alt="image of a product" src="../media/image/sephora_shop/body/1_sephora.jpg"></a>
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../media/image/sephora_shop/body/1_sephora.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="../store/store-template/product-detail/">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../store/store-template/">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">1/4/2020</div>
@@ -50,10 +50,10 @@
         </div>
 
         <div class="product-card">
-          <a href="../store/store-template/product-detail/"><img alt="image of a product" src="../media/image/sephora_shop/sunscreen/13_sephora.jpg"></a>
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../media/image/sephora_shop/sunscreen/13_sephora.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="../store/store-template/product-detail/">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../store/store-template/">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">1/4/2020</div>
@@ -61,10 +61,10 @@
         </div>
 
         <div class="product-card">
-          <a href="../store/store-template/product-detail/"><img alt="image of a product" src="../media/image/zappos_shop/boots/1_zappos.jpg"></a>
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../media/image/zappos_shop/boots/1_zappos.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="../store/store-template/product-detail/">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../store/store-template/">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">1/4/2020</div>
@@ -72,10 +72,10 @@
         </div>
 
         <div class="product-card">
-          <a href="../store/store-template/product-detail/"><img alt="image of a product" src="../media/image/zappos_shop/sandals/9_zappos.jpg"></a>
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../media/image/zappos_shop/sandals/9_zappos.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="../store/store-template/product-detail/">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../store/store-template/">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">1/4/2020</div>
@@ -83,10 +83,10 @@
         </div>
 
         <div class="product-card">
-          <a href="../store/store-template/product-detail/"><img alt="image of a product" src="../media/image/best_buy_shop/others/9_best_buy.jpg"></a>
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../media/image/best_buy_shop/others/9_best_buy.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="../store/store-template/product-detail/">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../store/store-template/">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">1/4/2020</div>
@@ -97,34 +97,34 @@
     </section>
 
     <section class="mall-home-section" id="featured-products">
-      <h1>FEATURED PRODUCTS<span class="mall-home-section-heading-link"><a href="browse/by-product/featured.php">ALL</a></span></h1>
+      <h1>FEATURED PRODUCTS<span class="mall-home-section-heading-link"><a href="<?=url_for("/mall/browse/by-product/featured.php");?>">ALL</a></span></h1>
 
       <div class="flex-container flex-justify-content-space-between flex-align-items-center flex-wrap">
         <div class="product-card">
-          <a href="../store/store-template/product-detail/"><img alt="image of a product" src="../media/image/hsy_shop/HSY_main_cover_square.jpg"></a>
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../media/image/hsy_shop/HSY_main_cover_square.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="../store/store-template/product-detail/">Purple Hyacinth Comic</a>
-            <a class="product-card-shop" href="../store/store-template/">HSY Shop</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Purple Hyacinth Comic</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">HSY Shop</a>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">18/6/2018</div>
           </div>
         </div>
 
         <div class="product-card">
-          <a href="../store/store-template/product-detail-2/"><img alt="image of a product" src="../media/image/product-detail-2/yoohankim-trio_square.png"></a>
+          <a href="<?=url_for("/store/store-template/product-detail-2");?>"><img alt="image of a product" src="../media/image/product-detail-2/yoohankim-trio_square.png"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="../store/store-template/product-detail-2/">Omniscient Reader's Viewpoint Novel</a>
-            <a class="product-card-shop" href="../store/store-template/">HSY Shop</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail-2");?>">Omniscient Reader's Viewpoint Novel</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">HSY Shop</a>
             <p class="product-card-price">$13.50</p>
             <div class="product-card-sale-card">6/1/2018</div>
           </div>
         </div>
 
         <div class="product-card">
-          <a href="../store/store-template/product-detail/"><img alt="image of a product" src="../media/image/best_buy_shop/phone/2_best_buy.jpg"></a>
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../media/image/best_buy_shop/phone/2_best_buy.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="../store/store-template/product-detail/">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../store/store-template/">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">1/4/2020</div>
@@ -132,10 +132,10 @@
         </div>
 
         <div class="product-card">
-          <a href="../store/store-template/product-detail/"><img alt="image of a product" src="../media/image/best_buy_shop/camera/4_best_buy.jpg"></a>
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../media/image/best_buy_shop/camera/4_best_buy.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="../store/store-template/product-detail/">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../store/store-template/">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">1/4/2020</div>
@@ -143,10 +143,10 @@
         </div>
 
         <div class="product-card">
-          <a href="../store/store-template/product-detail/"><img alt="image of a product" src="../media/image/zappos_shop/slippers/15_zappos.jpg"></a>
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../media/image/zappos_shop/slippers/15_zappos.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="../store/store-template/product-detail/">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../store/store-template/">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">1/4/2020</div>
@@ -154,10 +154,10 @@
         </div>
 
         <div class="product-card">
-          <a href="../store/store-template/product-detail/"><img alt="image of a product" src="../media/image/zappos_shop/slippers/16_zappos.jpg"></a>
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../media/image/zappos_shop/slippers/16_zappos.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="../store/store-template/product-detail/">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../store/store-template/">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">1/4/2020</div>
@@ -165,10 +165,10 @@
         </div>
 
         <div class="product-card">
-          <a href="../store/store-template/product-detail/"><img alt="image of a product" src="../media/image/sephora_shop/accessories/18_sephora.jpg"></a>
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../media/image/sephora_shop/accessories/18_sephora.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="../store/store-template/product-detail/">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../store/store-template/">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">1/4/2020</div>
@@ -176,10 +176,10 @@
         </div>
 
         <div class="product-card">
-          <a href="../store/store-template/product-detail/"><img alt="image of a product" src="../media/image/best_buy_shop/watches/12_best_buy.jpg"></a>
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../media/image/best_buy_shop/watches/12_best_buy.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="../store/store-template/product-detail/">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../store/store-template/">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">1/4/2020</div>
@@ -187,10 +187,10 @@
         </div>
 
         <div class="product-card">
-          <a href="../store/store-template/product-detail/"><img alt="image of a product" src="../media/image/best_buy_shop/phone/8_best_buy.jpg"></a>
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../media/image/best_buy_shop/phone/8_best_buy.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="../store/store-template/product-detail/">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../store/store-template/">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">1/4/2020</div>
@@ -198,10 +198,10 @@
         </div>
 
         <div class="product-card">
-          <a href="../store/store-template/product-detail/"><img alt="image of a product" src="../media/image/sephora_shop/skincare/11_sephora.jpg"></a>
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../media/image/sephora_shop/skincare/11_sephora.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="../store/store-template/product-detail/">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../store/store-template/">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">1/4/2020</div>
@@ -209,10 +209,10 @@
         </div>
 
         <div class="product-card">
-          <a href="../store/store-template/product-detail/"><img alt="image of a product" src="../media/image/zappos_shop/heels/8_zappos.jpg"></a>
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../media/image/zappos_shop/heels/8_zappos.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="../store/store-template/product-detail/">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../store/store-template/">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">1/4/2020</div>
@@ -220,10 +220,10 @@
         </div>
 
         <div class="product-card">
-          <a href="../store/store-template/product-detail/"><img alt="image of a product" src="../media/image/zappos_shop/boots/2_zappos.jpg"></a>
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../media/image/zappos_shop/boots/2_zappos.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="../store/store-template/product-detail/">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../store/store-template/">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">1/4/2020</div>
