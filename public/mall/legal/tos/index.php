@@ -17,9 +17,9 @@
 
 <main id="content-body">
   <ul class="breadcrumb">
-    <li><a href="../../">Home</a>/</li>
-    <li><a href="../">Legal</a>/</li>
-    <li><a href="./">Terms of Service</a></li>
+    <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
+    <li><a href="<?=url_for("/mall/legal");?>">Legal</a>/</li>
+    <li><a href="<?=url_for("/mall/legal/tos");?>">Terms of Service</a></li>
   </ul>
 
   <h1 class="content-title">TERMS OF SERVICE</h1>
