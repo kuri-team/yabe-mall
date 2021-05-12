@@ -31,12 +31,12 @@ include(SHARED_PATH . "/top.php");
   <section class="level">
     <div id="forgot-pw">
       <div>
-        <a href="../forgot-password/index.php">Forgot Password?</a>
+        <a href="<?=url_for("mall/account/forgot-password");?>">Forgot Password?</a>
       </div>
     </div>
     <div id="create-account">
       <div>
-        <a href="../register/index.php">Create an Account</a>
+        <a href="<?=url_for("mall/account/register");?>">Create an Account</a>
       </div>
     </div>
   </section>
