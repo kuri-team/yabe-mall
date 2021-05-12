@@ -55,7 +55,7 @@ include(SHARED_PATH . "/top.php");
           <a href="">My Orders</a>
           <a href="">Payment Information</a>
           <a href="">Password & Security</a>
-          <a href="../login" onclick="logOut()">Log Out</a>
+          <a href="<?=url_for("mall/account/login");?>" onclick="logOut()">Log Out</a>
         </div>
       </article>
     </section>
