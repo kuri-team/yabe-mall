@@ -62,8 +62,8 @@ include(SHARED_PATH . "/top.php");
 
 <main>
   <ul class="breadcrumb">
-    <li><a href="../">Home</a>/</li>
-    <li><a href="#">About Us</a></li>
+    <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
+    <li><a href="<?=url_for("/mall/about-us");?>">About Us</a></li>
   </ul>
 
   <h1 class="content-title">ABOUT US</h1>
