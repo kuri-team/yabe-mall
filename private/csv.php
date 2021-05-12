@@ -1,5 +1,13 @@
 <?php
     
+    /*
+     *
+     * Yabe Comma-separated values database interface library.
+     * MIT License. Copyright (c) 2021 栗 KURI 栗
+     *
+     */
+    
+    
     /**
      * Check if a given **path** points to a .csv (Comma-separated values) file.
      * @param string $path
