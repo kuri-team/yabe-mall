@@ -14,7 +14,7 @@
      * @return bool true if path is a csv file, false otherwise.
      */
     function is_csv(string $path): bool {
-        $regex_pattern = "/\.csv$/g";
+        $regex_pattern = "/\.csv$/";
         return boolval(preg_match($regex_pattern, $path));
     }
     
