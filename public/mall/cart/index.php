@@ -18,8 +18,8 @@ include(SHARED_PATH . "/top.php");
 
   <main>
     <ul class=breadcrumb>
-      <li><a href="../">Home</a>/</li>
-      <li><a href="./">Cart</a></li>
+      <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
+      <li><a href="<?=url_for("/mall/cart");?>">Cart</a></li>
     </ul>
 
     <h1 class="content-title">CART</h1>
@@ -31,7 +31,7 @@ include(SHARED_PATH . "/top.php");
             <p class="empty-note">The cart is currently empty</p>
           </div>
           <div class="href-button">
-            <a href="../"><button class="href-button-home">HOME</button></a>
+            <a href="<?=url_for("/mall");?>"><button class="href-button-home">HOME</button></a>
           </div>
         </div>
 
@@ -67,8 +67,8 @@ include(SHARED_PATH . "/top.php");
                   <span class="cart-product-total-fee"></span>
                 </li>
                 <li class="cart-product-summary-button">
-                  <span ><a href="../"><button class="cart-product-summary-button-continue">CONTINUE SHOPPING</button></a></span>
-                  <span ><a href="./thank-you.php"><button class="cart-product-summary-button-order">PLACE ORDER</button></a></span>
+                  <span ><a href="<?=url_for("/mall");?>"><button class="cart-product-summary-button-continue">CONTINUE SHOPPING</button></a></span>
+                  <span ><a href="<?=url_for("/mall/cart/thank-you.php");?>"><button class="cart-product-summary-button-order">PLACE ORDER</button></a></span>
                 </li>
           </ul>
           </div>
