@@ -41,10 +41,10 @@ include(SHARED_PATH . "/top.php");
 
     <section class="level">
       <div>
-        <a href="../login">Sign in?</a>
+        <a href="<?=url_for("mall/account/login");?>">Sign in?</a>
       </div>
       <div>
-        <a href="../register">Create an account</a>
+        <a href="<?=url_for("mall/account/register");?>">Create an account</a>
       </div>
     </section>
   </form>
