@@ -17,9 +17,9 @@
 
   <main id="pricing-content">
     <ul class="breadcrumb">
-      <li><a href="../../">Home</a>/</li>
-      <li><a href="./">Support</a>/</li>
-      <li><a href="#">Pricing</a></li>
+      <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
+      <li><a href="<?=url_for("/mall/support");?>">Support</a>/</li>
+      <li><a href="<?=url_for("/mall/support/pricing");?>">Pricing</a></li>
     </ul>
 
     <h2 class="mb-20">SHOPPER</h2>
