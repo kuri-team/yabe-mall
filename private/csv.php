@@ -26,6 +26,8 @@
      * <em>false:</em> Default. Consider the first line as data to be read. All data will be numerically indexed.<br>
      * <em>true:</em> Consider the first line as header. Data will be associatively indexed with first line header.
      * @return array
+     * <em>Nested array:</em>Read succeed.<br>
+     * <em>Empty array:</em>Read failed.
      */
     function read_csv(string $path, bool $first_line_header=false): array {
         $data = [];  // Initialization
@@ -75,6 +77,8 @@
      * <em>false:</em> Default. <strong>$data</strong> is numerically indexed. No header will be written on the first line.<br>
      * <em>true:</em> <strong>$data</strong> is associatively indexed with first line header. Write header on the first line.
      * @return bool
+     * <em>true:</em>Write succeed.<br>
+     * <em>false:</em>Write failed.
      */
     function write_csv(string $path, array $data, bool $first_line_header=false): bool {
         if (is_csv($path)) {
