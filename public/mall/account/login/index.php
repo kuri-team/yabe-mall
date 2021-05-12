@@ -19,7 +19,7 @@ include(SHARED_PATH . "/top.php");
 ?>
 
 <main class="dialog-container">
-  <form id="login-form" action="../my-account" autocomplete="on">
+  <form id="login-form" action="<?=url_for("mall/account/my-account");?>" autocomplete="on">
     <h1>READY? GO</h1>
     <label><input type="text" name="username" placeholder="Phone / Email" required></label>
     <label><input class="password-field" type="password" name="password" placeholder="Password" required></label>
