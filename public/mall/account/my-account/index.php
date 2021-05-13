@@ -39,13 +39,13 @@
           <li><label>First Name</label><?=$_SESSION["user_data"]["fname"];?></li>
           <li><label>Last Name</label><?=$_SESSION["user_data"]["lname"];?></li>
           <li><label>Gender</label><?=$_SESSION["user_data"]["gender"];?></li>
-          <li><label>Birthdate</label>10/20/2002</li>
-          <li><label>Email</label><span id="login-email">s3879312@rmit.edu.vn</span></li>
-          <li><label>Phone Number</label>0123-456-789</li>
-          <li><label>Address</label>702 Nguyen Van Linh Blvd., District 7</li>
-          <li><label>City - Zipcode</label>Ho Chi Minh City 700000</li>
-          <li><label>Country</label>Vietnam</li>
-          <li><label>Account Type</label>Shopper</li>
+          <li><label>Birthdate</label><?=date("F j, Y", $_SESSION["user_data"]["bdate"]);?></li>
+          <li><label>Email</label><?=$_SESSION["user_data"]["email"];?></li>
+          <li><label>Phone Number</label><?=$_SESSION["user_data"]["tel"];?></li>
+          <li><label>Address</label><?=$_SESSION["user_data"]["address"];?></li>
+          <li><label>City - Zipcode</label><?=$_SESSION["user_data"]["city"];?> - <?=$_SESSION["user_data"]["zipcode"];?></li>
+          <li><label>Country</label><?=$_SESSION["user_data"]["country"];?></li>
+          <li><label>Account Type</label><?=$_SESSION["user_data"]["acc_type"];?></li>
         </ul>
         <button class="my-account-info-edit-bttn">Edit</button>
       </article>

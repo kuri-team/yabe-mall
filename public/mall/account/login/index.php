@@ -26,7 +26,7 @@
         $user_data = null;
         
         for ($index = 0; $index < count($data); $index++) {
-            if (((isset($_POST["password"])) && $_POST["username"] === $data[$index]["email"] || $_POST["username"] === $data[$index]["tel"]) && $_POST["password"] === $data[$index]["credential"]) {
+            if (($_POST["username"] === $data[$index]["email"] || $_POST["username"] === $data[$index]["tel"]) && $_POST["password"] === $data[$index]["credential"]) {
                 $invalid = false;
                 
                 // Save user data from database to $user_data variable
@@ -64,6 +64,7 @@
     // Log out logic
     if (isset($_GET["q"]) && $_GET["q"] === "logout") {
         $_SESSION["logged_in"] = false;
+        unset($_SESSION["user_data"]);
     }
     // End of log out logic
     
@@ -89,7 +90,7 @@
             }
     
         ?>
-        <label><input type="text" name="username" placeholder="Phone / Email" required></label>
+        <label><input type="text" name="username" placeholder="Username / Phone / Email" required></label>
         <label><input class="password-field" type="password" name="password" placeholder="Password" required></label>
         <div class="toggle-password-visibility"><i class="fas fa-eye"></i></div>
         <input type="submit" name="act" value="LOGIN">
