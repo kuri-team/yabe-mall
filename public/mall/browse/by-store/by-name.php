@@ -19,9 +19,9 @@ include(SHARED_PATH . "/top.php");
   <main id="content">
 
     <ul class=breadcrumb>
-      <li><a href="../../">Home</a>/</li>
-      <li><a href="./">Browse Stores</a>/</li>
-      <li><a href="#">By Name</a></li>
+      <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
+      <li><a href="<?=url_for("/mall/browse/by-store");?>">Browse Stores</a>/</li>
+      <li><a href="<?=url_for("/mall/browse/by-store/by-name.php");?>">By Name</a></li>
     </ul>
 
   <div class="content-body">
@@ -61,63 +61,63 @@ include(SHARED_PATH . "/top.php");
       <div class="flex-container flex-justify-content-space-evenly flex-wrap">
 
         <div class="store-card">
-          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/apple_logo.png"></a>
-          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/apple_logo.png"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Shop Name</a>
         </div>
 
         <div class="store-card">
-          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/birkenstock_logo.png"></a>
-          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/birkenstock_logo.png"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Shop Name</a>
         </div>
 
         <div class="store-card">
-          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/canon_logo.jpg"></a>
-          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/canon_logo.jpg"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Shop Name</a>
         </div>
 
         <div class="store-card">
-          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/dermalogica_logo.png"></a>
-          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/dermalogica_logo.png"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Shop Name</a>
         </div>
 
         <div class="store-card">
-          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/floralpunk_logo.png"></a>
-          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/floralpunk_logo.png"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Shop Name</a>
         </div>
 
         <div class="store-card">
-          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/hp_logo.png"></a>
-          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/hp_logo.png"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Shop Name</a>
         </div>
 
         <div class="store-card">
-          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/jabra_logo.png"></a>
-          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/jabra_logo.png"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Shop Name</a>
         </div>
 
         <div class="store-card">
-          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/jordan_logo.png"></a>
-          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/jordan_logo.png"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Shop Name</a>
         </div>
 
         <div class="store-card">
-          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/paula_choice_logo.jpg"></a>
-          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/paula_choice_logo.jpg"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Shop Name</a>
         </div>
 
         <div class="store-card">
-          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/samsung_logo.png"></a>
-          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/samsung_logo.png"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Shop Name</a>
         </div>
 
         <div class="store-card">
-          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/nike_logo.jpg"></a>
-          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/nike_logo.jpg"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Shop Name</a>
         </div>
 
         <div class="store-card">
-          <a href="../../../store/store-template/"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/webtoon_logo.jpg"></a>
-          <a class="store-card-name" href="../../../store/store-template/">Shop Name</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../../../media/image/store_logos/webtoon_logo.jpg"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Shop Name</a>
         </div>
 
       </div>
