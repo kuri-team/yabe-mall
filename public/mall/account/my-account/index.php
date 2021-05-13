@@ -14,6 +14,11 @@ $scripts = [
     "/js/account/my-account.js",
 ];
 
+// Automatic redirect to login page if user hasn't logged in
+if (isset($_SESSION["logged_in"]) && !$_SESSION["logged_in"]) {
+    redirect_to(url_for("/mall/account/login/"));
+}
+
 include(SHARED_PATH . "/top.php");
 
 ?>
