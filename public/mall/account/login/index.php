@@ -1,20 +1,44 @@
-<?php require_once("../../../../private/initialize.php"); ?>
+<?php
+    
+    require_once("../../../../private/initialize.php");
+    require_once("../../../../private/csv.php");
+    
+?>
 
 <?php
+    
+    $page_title = "Yabe | Login";
+    $style_sheets = [
+        "/css/common.css",
+        "/css/account/common.css",
+        "/css/account/login.css",
+    ];
+    $scripts = [
+        "/js/common.js",
+        "/js/account/common.js",
+        // "/js/account/login.js",
+    ];
+    
+    
+    // Login logic
+    $invalid = true;
+    $data = read_csv("../../../../private/database/registration.csv", true);
+    
+    if (isset($_POST["act"])) {
+        for ($i = 0; $i < count($data); $i++) {
+            if (((isset($_POST["password"])) && $_POST["username"] === $data[$i]["email"] || $_POST["username"] === $data[$i]["tel"]) && $_POST["password"] === $data[$i]["pass"]) {
+                $invalid = false;
+                break;
+            }
+        }
+        
+        if (!$invalid) {
+            header("Location: \mall\ ");
+        }
+    }
 
-$page_title = "Yabe | Login";
-$style_sheets = [
-    "/css/common.css",
-    "/css/account/common.css",
-    "/css/account/login.css",
-];
-$scripts = [
-    "/js/common.js",
-    "/js/account/common.js",
-   // "/js/account/login.js",
-];
-
-include(SHARED_PATH . "/top.php");
+    
+    include(SHARED_PATH . "/top.php");
 
 ?>
 
@@ -29,26 +53,12 @@ include(SHARED_PATH . "/top.php");
     </form>
 
     <?php
-
-    include("../../../../private/csv.php");
-    $invalid = true;
-    $data = read_csv("../../../../private/database/registration.csv", true);
-
-    if (isset($_POST["act"])) {
-        for ($i = 0; $i < count($data); $i++) {
-            if (((isset($_POST["password"])) and $_POST["username"] == $data[$i]["email"] or $_POST["username"] == $data[$i]["tel"]) and $_POST["password"] == $data[$i]["pass"]) {
-                $invalid = false;
-                break;
-            }
-        }
-
+    
+        // If login failed, the system will display an error div
         if ($invalid == true) {
-          echo("<p class='wrong-password'>Invalid username/password</p>");
-      } else {
-          header("Location: \mall\ ");
-      }
-    }
-
+            echo("<div class='wrong-password'>Invalid username/password</div>");
+        }
+        
     ?>
 
     <section class="level">
