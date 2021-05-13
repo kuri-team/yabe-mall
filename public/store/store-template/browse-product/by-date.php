@@ -42,7 +42,7 @@
           aliquam perferendis debitis ipsa necessitatibus nisi quisquam velit ex dolorem, facilis
           et rerum quod blanditiis ducimus voluptatem adipisci!</p>
 
-          <div class="store-nav">
+        <div class="store-nav">
               <div class="store-nav-bttn"><a href="<?=url_for("/store/store-template");?>">HOME</a></div>
               <div class="store-nav-bttn store-nav-dropdown">PRODUCTS
                   <i class="fas fa-caret-down store-nav-dropdown-icon"></i>
@@ -76,7 +76,7 @@
                       <li><a href="<?=url_for("/store/store-template/pages/bio.php");?>">Bio</a></li>
                   </ul>
               </div>
-          </div>
+        </div>
       </section>
 
       <label><select name="store-category">
@@ -229,7 +229,7 @@
         <a href=""><i class="fas fa-chevron-right"></i><i class="fas fa-chevron-right"></i></a>
       </div>
 
-        <section class="store-footer flex-container flex-justify-content-center
+      <section class="store-footer flex-container flex-justify-content-center
         flex-align-items-center flex-wrap">
             <div class="store-logo"><a href="<?=url_for("/store/store-template");?>">
                     <img class="circle-img" src="../../../media/image/hsy_shop/HSY_avatar.jpg" alt="Store logo"></a>
@@ -248,7 +248,7 @@
                     <li><a href="<?=url_for("/mall/legal/privacy-policy");?>">Privacy Policy</a></li>
                 </ul>
             </div>
-        </section>
+      </section>
     </div> 
   </main>
 
