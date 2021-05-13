@@ -4,9 +4,13 @@
     
     if (isset($_POST["submit"])) {
         $admin_credentials = [
-                "username" => $_POST["username"],
-                "password" => $_POST["pwd"]
+                [
+                    "username" => $_POST["username"],
+                    "phash" => password_hash($_POST["pwd"], PASSWORD_DEFAULT)
+                ]
         ];
+        
+        write_csv("../private/database/admin.csv", $admin_credentials, true);
     }
     
 ?>
