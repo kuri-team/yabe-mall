@@ -51,7 +51,7 @@
       </article>
 
       <article class="my-account-box my-account-avatar-wrapper flex-container flex-justify-content-center flex-align-items-center">
-        <img class="my-account-avatar circle-img" alt="profile picture" src="../../../media/image/thu.jpg">
+        <img class="my-account-avatar circle-img" alt="profile picture" src="<?=$_SESSION["user_data"]["avatar_src"];?>">
       </article>
 
       <article class="my-account-box my-account-links-wrapper">

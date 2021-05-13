@@ -34,7 +34,14 @@
         $user_data = null;
         
         for ($index = 0; $index < count($data); $index++) {
-            if (($_POST["username"] === $data[$index]["email"] || $_POST["username"] === $data[$index]["tel"]) && $_POST["password"] === $data[$index]["credential"]) {
+            if (
+                    (
+                            $_POST["username"] === $data[$index]["email"] ||
+                            $_POST["username"] === $data[$index]["tel"] ||
+                            $_POST["username"] === $data[$index]["username"]
+                    )
+                    && $_POST["password"] === $data[$index]["credential"]
+            ) {
                 $invalid = false;
                 
                 // Save user data from database to $user_data variable
@@ -53,7 +60,8 @@
                     "acc_type" => $data[$index]["acc_type"],
                     "bus_name" => $data[$index]["bus_name"],
                     "store_name" => $data[$index]["store_name"],
-                    "store_category" => $data[$index]["store_category"]
+                    "store_category" => $data[$index]["store_category"],
+                    "avatar_src" => $data[$index]["avatar_src"]
                 ];
                 
                 break;
