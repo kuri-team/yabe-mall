@@ -44,6 +44,12 @@
         $_SESSION["logged_in"] = false;
     }
     // End of log out logic
+    
+    
+    // Automatic redirect to my-account page if user already logged in
+    if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
+        redirect_to(url_for("/mall/account/my-account/"));
+    }
 
     
     include(SHARED_PATH . "/top.php");

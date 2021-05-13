@@ -1,25 +1,25 @@
 <?php require_once("../../../../private/initialize.php"); ?>
 
 <?php
-
-$page_title = "Yabe | My Account";
-$style_sheets = [
-    "/css/common.css",
-    "/css/account/common.css",
-    "/css/account/my-account.css",
-];
-$scripts = [
-    "/js/common.js",
-    "/js/account/common.js",
-    "/js/account/my-account.js",
-];
-
-// Automatic redirect to login page if user hasn't logged in
-if (isset($_SESSION["logged_in"]) && !$_SESSION["logged_in"]) {
-    redirect_to(url_for("/mall/account/login/"));
-}
-
-include(SHARED_PATH . "/top.php");
+    
+    $page_title = "Yabe | My Account";
+    $style_sheets = [
+        "/css/common.css",
+        "/css/account/common.css",
+        "/css/account/my-account.css",
+    ];
+    $scripts = [
+        "/js/common.js",
+        "/js/account/common.js",
+        "/js/account/my-account.js",
+    ];
+    
+    // Automatic redirect to login page if user hasn't logged in
+    if (isset($_SESSION["logged_in"]) && !$_SESSION["logged_in"]) {
+        redirect_to(url_for("/mall/account/login/"));
+    }
+    
+    include(SHARED_PATH . "/top.php");
 
 ?>
 
