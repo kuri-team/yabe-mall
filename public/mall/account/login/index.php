@@ -50,7 +50,7 @@
         
             // If login failed, the system will display an error div
             if ($invalid) {
-                echo("<div class='wrong-password'>Invalid username/password</div>");
+                echo("<div class='login-invalid-credentials'>Invalid username/password</div>");
             }
     
         ?>
