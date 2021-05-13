@@ -1,4 +1,10 @@
 <?php
+    
+    function validate_form($input) {
+        $input = trim($input);
+        $input = htmlspecialchars($input);
+        return $input;
+    }
 
     function validate_email($email): bool {
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
@@ -50,12 +56,4 @@
             $store_name = $_POST["store_name"];
             $store_category = $_POST["store_cat"];
         }
-        
-        function validate_form($input) {
-            $input = trim($input);
-            $input = htmlspecialchars($input);
-            return $input;
-        }
-        
-
     }
