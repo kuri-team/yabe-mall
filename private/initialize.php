@@ -5,6 +5,11 @@
         session_start();
     }
     
+    // Initialize login status to false
+    if (!isset($_SESSION["logged_in"])) {
+        $_SESSION["logged_in"] = false;
+    }
+    
     ob_start(); // output buffering is turned on
     
     // Assign file paths to PHP constants
