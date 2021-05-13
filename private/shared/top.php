@@ -69,7 +69,9 @@
       </form>
     </div>
     <div class="nav-search-bttn"><i class="fas fa-search"></i></div>
-    <button class="nav-cart-bttn"><a href="<?=url_for("/mall/cart");?>"><i class="fas fa-shopping-cart"></i>Cart</a></button>
+    <div>
+      <a href="<?=url_for("/mall/cart");?>"><button class="nav-cart-bttn"><i class="fas fa-shopping-cart"></i>Cart</button></a>
+    </div>
     <span id="nav-account">
       <?php
     
