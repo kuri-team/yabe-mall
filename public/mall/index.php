@@ -235,67 +235,67 @@
     </section>
 
     <section class="mall-home-section" id="featured-stores">
-      <h1>FEATURED STORES<span class="mall-home-section-heading-link"><a href="browse/by-store/featured.php">ALL</a></span></h1>
+      <h1>FEATURED STORES<span class="mall-home-section-heading-link"><a href="<?=url_for("/mall/browse/by-store/featured.php");?>">ALL</a></span></h1>
 
       <div class="flex-container flex-justify-content-space-between flex-align-items-center flex-wrap">
         <div class="store-card">
-          <a href="../store/store-template"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/best_buy_shop/Best_Buy_logo.jpg"></a>
-          <a class="store-card-name" href="../store/store-template">Best Buy</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/best_buy_shop/Best_Buy_logo.jpg"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Best Buy</a>
         </div>
 
         <div class="store-card">
-          <a href="../store/store-template"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/sephora_shop/sephora_logo.jpg"></a>
-          <a class="store-card-name" href="../store/store-template">Sephora</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/sephora_shop/sephora_logo.jpg"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Sephora</a>
         </div>
 
         <div class="store-card">
-          <a href="../store/store-template"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/zappos_shop/zappos_logo.jpg"></a>
-          <a class="store-card-name" href="../store/store-template">Zappos</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/zappos_shop/zappos_logo.jpg"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Zappos</a>
         </div>
 
         <div class="store-card">
-          <a href="../store/store-template"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/Xiaomi_logo.png"></a>
-          <a class="store-card-name" href="../store/store-template">Xiaomi</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/Xiaomi_logo.png"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Xiaomi</a>
         </div>
 
         <div class="store-card">
-          <a href="../store/store-template"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/webtoon_logo.jpg"></a>
-          <a class="store-card-name" href="../store/store-template">Webtoon</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/webtoon_logo.jpg"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Webtoon</a>
         </div>
 
         <div class="store-card">
-          <a href="../store/store-template"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/viettel_logo.jpg"></a>
-          <a class="store-card-name" href="../store/store-template">Viettel</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/viettel_logo.jpg"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Viettel</a>
         </div>
 
         <div class="store-card">
-          <a href="../store/store-template"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/samsung_logo.png"></a>
-          <a class="store-card-name" href="../store/store-template">SamSung</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/samsung_logo.png"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">SamSung</a>
         </div>
 
         <div class="store-card">
-          <a href="../store/store-template"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/jabra_logo.png"></a>
-          <a class="store-card-name" href="../store/store-template">Jabra</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/jabra_logo.png"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Jabra</a>
         </div>
 
         <div class="store-card">
-          <a href="../store/store-template"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/paula_choice_logo.jpg"></a>
-          <a class="store-card-name" href="../store/store-template">Paula Choice</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/paula_choice_logo.jpg"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Paula Choice</a>
         </div>
 
         <div class="store-card">
-          <a href="../store/store-template"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/nike_logo.jpg"></a>
-          <a class="store-card-name" href="../store/store-template">Nike</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/nike_logo.jpg"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Nike</a>
         </div>
 
         <div class="store-card">
-          <a href="../store/store-template"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/lenovo_logo.png"></a>
-          <a class="store-card-name" href="../store/store-template">Lenovo</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/lenovo_logo.png"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Lenovo</a>
         </div>
 
         <div class="store-card">
-          <a href="../store/store-template"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/larocheposay_logo.png"></a>
-          <a class="store-card-name" href="../store/store-template">Laroche Posay</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/larocheposay_logo.png"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Laroche Posay</a>
         </div>
       </div>
 
@@ -303,38 +303,38 @@
     </section>
 
     <section class="mall-home-section card-gallery">
-      <h1 class="card-gallery-title">NEW STORES<span class="mall-home-section-heading-link"><a href="browse/by-store/by-date.html">MORE</a></span></h1>
+      <h1 class="card-gallery-title">NEW STORES<span class="mall-home-section-heading-link"><a href="<?=url_for("/mall/browse/by-store/by-date.php");?>">MORE</a></span></h1>
 
       <button class="card-gallery-left-bttn"><i class="fas fa-angle-left"></i></button>
       <div class="card-gallery-content flex-container flex-justify-content-space-between flex-align-items-center overflow-hidden clear-both">
         <div class="store-card">
-          <a href="../store/store-template"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/apple_logo.png"></a>
-          <a class="store-card-name" href="../store/store-template">Apple</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/apple_logo.png"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Apple</a>
         </div>
 
         <div class="store-card">
-          <a href="../store/store-template"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/birkenstock_logo.png"></a>
-          <a class="store-card-name" href="../store/store-template">Birkenstock</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/birkenstock_logo.png"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Birkenstock</a>
         </div>
 
         <div class="store-card">
-          <a href="../store/store-template"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/canon_logo.jpg"></a>
-          <a class="store-card-name" href="../store/store-template">Canon</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/canon_logo.jpg"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Canon</a>
         </div>
 
         <div class="store-card">
-          <a href="../store/store-template"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/dermalogica_logo.png"></a>
-          <a class="store-card-name" href="../store/store-template">Dermalogica</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/dermalogica_logo.png"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Dermalogica</a>
         </div>
 
         <div class="store-card">
-          <a href="../store/store-template"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/floralpunk_logo.png"></a>
-          <a class="store-card-name" href="../store/store-template">Floralpunk</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/floralpunk_logo.png"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">Floralpunk</a>
         </div>
 
         <div class="store-card">
-          <a href="../store/store-template"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/hp_logo.png"></a>
-          <a class="store-card-name" href="../store/store-template">HP</a>
+          <a href="<?=url_for("/store/store-template");?>"><img class="store-card-thumbnail" alt="image representation of a shop" src="../media/image/store_logos/hp_logo.png"></a>
+          <a class="store-card-name" href="<?=url_for("/store/store-template");?>">HP</a>
         </div>
       </div>
       <button class="card-gallery-right-bttn"><i class="fas fa-angle-right"></i></button>
