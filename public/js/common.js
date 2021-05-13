@@ -100,14 +100,6 @@ if (localStorage["isLoggedIn"] === "true") {
 
 
 /**
- * Logout mechanism
- */
-function logOut() {
-    localStorage["isLoggedIn"] = "false";
-}
-
-
-/**
  * Disable cart features when user is not logged in
  */
 // Display disabled cart message
