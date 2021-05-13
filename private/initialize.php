@@ -1,5 +1,10 @@
 <?php
     
+    // Start a session when user access the site and a session for that user has not been started already
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    
     ob_start(); // output buffering is turned on
     
     // Assign file paths to PHP constants

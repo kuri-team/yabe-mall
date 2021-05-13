@@ -16,7 +16,6 @@
     $scripts = [
         "/js/common.js",
         "/js/account/common.js",
-        // "/js/account/login.js",
     ];
     
     
@@ -25,15 +24,16 @@
     $data = read_csv("../../../../private/database/registration.csv", true);
     
     if (isset($_POST["act"])) {
-        for ($i = 0; $i < count($data); $i++) {
-            if (((isset($_POST["password"])) && $_POST["username"] === $data[$i]["email"] || $_POST["username"] === $data[$i]["tel"]) && $_POST["password"] === $data[$i]["pass"]) {
+        for ($index = 0; $index < count($data); $index++) {
+            if (((isset($_POST["password"])) && $_POST["username"] === $data[$index]["email"] || $_POST["username"] === $data[$index]["tel"]) && $_POST["password"] === $data[$index]["credential"]) {
                 $invalid = false;
                 break;
             }
         }
         
         if (!$invalid) {
-            header("Location: \mall\ ");
+            $_SESSION["logged_in"] = true;
+            header("Location: /mall/account/my-account/");
         }
     }
     // End of login logic
@@ -50,14 +50,13 @@
         
             // If login failed, the system will display an error div
             if ($invalid) {
-                echo("<div class='login-invalid-credentials'>Invalid username/password</div>");
+                echo("<div class='login-invalid-credentials'>Invalid phone/email and password combination</div>");
             }
     
         ?>
         <label><input type="text" name="username" placeholder="Phone / Email" required></label>
         <label><input class="password-field" type="password" name="password" placeholder="Password" required></label>
         <div class="toggle-password-visibility"><i class="fas fa-eye"></i></div>
-        <div id="wrong-pwd">The password is incorrect. Please try again or reset your password.</div>
         <input type="submit" name="act" value="LOGIN">
     </form>
 
