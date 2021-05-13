@@ -35,10 +35,10 @@
     <section class="content-text grid-container my-account-content">
       <article class="my-account-box my-account-info-wrapper">
         <ul class="my-account-info">
-          <li><label>Username</label>tnathu-ai</li>
-          <li><label>First Name</label>Anh Thu</li>
-          <li><label>Last Name</label>Tran Ngoc</li>
-          <li><label>Gender</label>Female</li>
+          <li><label>Username</label><?=$_SESSION["user_data"]["username"];?></li>
+          <li><label>First Name</label><?=$_SESSION["user_data"]["fname"];?></li>
+          <li><label>Last Name</label><?=$_SESSION["user_data"]["lname"];?></li>
+          <li><label>Gender</label><?=$_SESSION["user_data"]["gender"];?></li>
           <li><label>Birthdate</label>10/20/2002</li>
           <li><label>Email</label><span id="login-email">s3879312@rmit.edu.vn</span></li>
           <li><label>Phone Number</label>0123-456-789</li>

@@ -29,7 +29,7 @@
             if (((isset($_POST["password"])) && $_POST["username"] === $data[$index]["email"] || $_POST["username"] === $data[$index]["tel"]) && $_POST["password"] === $data[$index]["credential"]) {
                 $invalid = false;
                 
-                // Save user data to $_SESSION
+                // Save user data from database to $user_data variable
                 $user_data = [
                     "username" => $data[$index]["username"],
                     "fname" => $data[$index]["fname"],
@@ -54,6 +54,7 @@
         
         if (!$invalid) {
             $_SESSION["logged_in"] = true;
+            $_SESSION["user_data"] = $user_data;
             header("Location: /mall/account/my-account/");
         }
     }
