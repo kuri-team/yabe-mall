@@ -74,15 +74,15 @@
       <?php
     
           if (isset($_SESSION["logged_in"])) {
-              if (!$_SESSION["logged_in"]) {
+              if ($_SESSION["logged_in"]) {
+                  echo "<span>
+                          <a href='" . url_for("/mall/account/my-account") . "'>My Account</a>
+                        </span>";
+              } else {
                   echo "<span>
                           <a href='" . url_for("/mall/account/login") . "'>Login</a>
                           <span class='vl'></span>
                           <a href='" . url_for("/mall/account/register") . "'>Register</a>
-                        </span>";
-              } else {
-                  echo "<span>
-                          <a href='" . url_for("/mall/account/my-account") . "'>My Account</a>
                         </span>";
               }
           }
