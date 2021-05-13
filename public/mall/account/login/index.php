@@ -36,6 +36,7 @@
             header("Location: \mall\ ");
         }
     }
+    // End of login logic
 
     
     include(SHARED_PATH . "/top.php");
