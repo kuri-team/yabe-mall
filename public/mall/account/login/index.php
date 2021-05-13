@@ -23,10 +23,31 @@
     if (isset($_POST["act"])) {
         $invalid = true;
         $data = read_csv("../../../../private/database/registration.csv", true);
+        $user_data = null;
         
         for ($index = 0; $index < count($data); $index++) {
             if (((isset($_POST["password"])) && $_POST["username"] === $data[$index]["email"] || $_POST["username"] === $data[$index]["tel"]) && $_POST["password"] === $data[$index]["credential"]) {
                 $invalid = false;
+                
+                // Save user data to $_SESSION
+                $user_data = [
+                    "username" => $data[$index]["username"],
+                    "fname" => $data[$index]["fname"],
+                    "lname" => $data[$index]["lname"],
+                    "gender" => $data[$index]["gender"],
+                    "bdate" => strtotime($data[$index]["bdate"]),
+                    "email" => $data[$index]["email"],
+                    "tel" => $data[$index]["tel"],
+                    "address" => $data[$index]["address"],
+                    "city" => $data[$index]["city"],
+                    "zipcode" => $data[$index]["zipcode"],
+                    "country" => $data[$index]["country"],
+                    "acc_type" => $data[$index]["acc_type"],
+                    "bus_name" => $data[$index]["bus_name"],
+                    "store_name" => $data[$index]["store_name"],
+                    "store_category" => $data[$index]["store_category"]
+                ];
+                
                 break;
             }
         }

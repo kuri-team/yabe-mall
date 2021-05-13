@@ -1,4 +1,5 @@
-id,fname,lname,email,tel,address,city,zipcode,country,credential,acc_type,bus_name,store_name,store_category
-1,Anh Thu,Tran Ngoc,s3879312@rmit.edu.vn,0-1-2-3.4.5 6.7-8-9,"702 Nguyen Van Linh, Tan Phong, District 7",HCMC,10000,VN,Password123!,shopper,null,null,null
-2,Duc Manh,Nguyen,s3878480@rmit.edu.vn,0123456789,"56 Nguyen Trai, District 9",HCMC,700000,VN,Duducmanh456@,shopper,null,null,null
-3,Mike,Nguyen,s3877562@rmit.edu.vn,012.345-6789,"20 Nguyen Hue, District 1",HCMC,700000,VN,Mike%7nguyen89,store_owner,kuri,kuri,bookstore
+id,fname,lname,gender,bdate,email,tel,address,city,zipcode,country,username,credential,acc_type,bus_name,store_name,store_category
+1,Anh Thu,Tran Ngoc,female,2002-01-01,s3879312@rmit.edu.vn,01-387-9312,1600 Pennsylvania Avenue NW,"Washington, D.C.",20500,US,tnathu-ai,Password123!,shopper,null,null,null
+2,Duc Manh,Nguyen,male,2002-02-01,s3878480@rmit.edu.vn,084-387-8480,"4 Le Duan St., Ben Nghe Ward, Dstr. 1",HCMC,700000,VN,rider3458,Duducmanh456@,shopper,null,null,null
+3,Mike,Nguyen,male,1999-05-01,s3877562@rmit.edu.vn,031-387-7562,Rosa Manuslaan 31,Pijnacker,2642,NL,miketvo,Mike%7nguyen89,store_owner,kuri,kuri,bookstore
+4,Nhi,Doan,female,2002-03-01,s3880599@rmit.edu.vn,01-388-0599,111 Wellington St.,Ottawa,10900,CA,doanyennhi,H4n&S00young,shopper,null,null,null
