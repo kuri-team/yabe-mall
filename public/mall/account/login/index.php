@@ -20,10 +20,10 @@
     
     
     // Login logic
-    $invalid = true;
-    $data = read_csv("../../../../private/database/registration.csv", true);
-    
     if (isset($_POST["act"])) {
+        $invalid = true;
+        $data = read_csv("../../../../private/database/registration.csv", true);
+        
         for ($index = 0; $index < count($data); $index++) {
             if (((isset($_POST["password"])) && $_POST["username"] === $data[$index]["email"] || $_POST["username"] === $data[$index]["tel"]) && $_POST["password"] === $data[$index]["credential"]) {
                 $invalid = false;
@@ -37,6 +37,13 @@
         }
     }
     // End of login logic
+    
+    
+    // Log out logic
+    if (isset($_GET["q"]) && $_GET["q"] === "logout") {
+        $_SESSION["logged_in"] = false;
+    }
+    // End of log out logic
 
     
     include(SHARED_PATH . "/top.php");
@@ -49,7 +56,7 @@
         <?php
         
             // If login failed, the system will display an error div
-            if ($invalid) {
+            if (isset($invalid)) {
                 echo("<div class='login-invalid-credentials'>Invalid phone/email and password combination</div>");
             }
     

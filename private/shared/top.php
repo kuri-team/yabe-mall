@@ -72,17 +72,19 @@
     <button class="nav-cart-bttn"><a href="<?=url_for("/mall/cart");?>"><i class="fas fa-shopping-cart"></i>Cart</a></button>
     <span id="nav-account">
       <?php
-          
-          if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"] === true) {
-              echo "<span>
-                      <a href='" . url_for("/mall/account/login") . "'>Login</a>
-                      <span class='vl'></span>
-                      <a href='" . url_for("/mall/account/register") . "'>Register</a>
-                      </span>";
-          } else {
-              echo "<span>
-                      <a href='" . url_for("/mall/account/my-account") . "'>My Account</a>
-                    </span>";
+    
+          if (isset($_SESSION["logged_in"])) {
+              if (!$_SESSION["logged_in"]) {
+                  echo "<span>
+                          <a href='" . url_for("/mall/account/login") . "'>Login</a>
+                          <span class='vl'></span>
+                          <a href='" . url_for("/mall/account/register") . "'>Register</a>
+                        </span>";
+              } else {
+                  echo "<span>
+                          <a href='" . url_for("/mall/account/my-account") . "'>My Account</a>
+                        </span>";
+              }
           }
           
       ?>
