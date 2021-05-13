@@ -1,0 +1,4 @@
+id,fname,lname,email,num,address,city,zipcode,country,pass,acc_type,bus_name,store_name,store_category
+1,Anh Thu,Tran Ngoc,s3879312@rmit.edu.vn,0-1-2-3.4.5 6.7-8-9,"702 Nguyen Van Linh, Tan Phong, District 7",HCMC,10000,VN,Password123!,shopper,null,null,null
+2,Duc Manh,Nguyen,s3878480@rmit.edu.vn,0123456789,"56 Nguyen Trai, District 9",HCMC,700000,VN,Duducmanh456@,shopper,null,null,null
+3,Mike,Nguyen,s3877562@rmit.edu.vn,012.345-6789,"20 Nguyen Hue, District 1",HCMC,700000,VN,Mike%7nguyen89,store_owner,kuri,kuri,bookstore
