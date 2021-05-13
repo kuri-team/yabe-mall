@@ -12,25 +12,28 @@
     $scripts = [
         "/js/common.js",
         "/js/account/common.js",
-        "/js/account/register.js",
+        /*"/js/account/register.js", */
     ];
     
     if (isset($_POST["register"])) {
         $fname = validate_form($_POST["fname"]);
         $lname = validate_form($_POST["lname"]);
+        $gender = $_POST["gender"];
+        $birthdate = $_POST["birthdate"];
         $email = validate_form($_POST["email"]);
         $tel = validate_form($_POST["tel"]);
         $address = validate_form($_POST["address"]);
         $city = validate_form($_POST["city"]);
         $zipcode = validate_form($_POST["zipcode"]);
-        $country = validate_form($_POST["country"]);
+        $country = $_POST["country"];
+        $username = validate_form($_POST["usrname"]);
         $pwd = validate_form($_POST["pwd"]);
         $verify_pwd = validate_form($_POST["verify_pwd"]);
-        $acc_type = $_POST["account_type"];
+        $acc_type = validate_form($_POST["account_type"]);
         if ($acc_type === "store_owner") {
-            $bus_name = $_POST["business_name"];
-            $store_name = $_POST["store_name"];
-            $store_category = $_POST["store_cat"];
+            $bus_name = validate_form($_POST["business_name"]);
+            $store_name = validate_form($_POST["store_name"]);
+            $store_category = validate_form($_POST["store_cat"]);
         }
     }
 
