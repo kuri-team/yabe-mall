@@ -452,7 +452,7 @@ include(SHARED_PATH . "/top.php");
 
       <div class="register-field register-bttn-field flex-container flex-direction-column flex-align-items-center">
         <label><input type="reset" value="CLEAR"></label>
-        <label><input type="submit" value="REGISTER"></label>
+        <label><input type="submit" name="register" value="REGISTER"></label>
       </div>
     </form>
   </div>
