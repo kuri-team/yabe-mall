@@ -80,15 +80,6 @@ for (let i = 0; i < NAV_SEARCH_FILTER_OPTIONS.length; i++) {
 }
 
 
-// Redirect to Cart page on user click of .nav-cart-bttn (need to be logged in first)
-if (localStorage.isLoggedIn === "true") {
-    const NAV_CART_BTTN = document.querySelector(".nav-cart-bttn");
-    NAV_CART_BTTN.addEventListener("click", function () {
-        window.location.href = NAV_CART_BTTN.querySelector("a").href;
-    });
-}
-
-
 /**
  * Persistent log in features
  */
@@ -104,22 +95,6 @@ if (localStorage["isLoggedIn"] === "true") {
     if (NAV_LOGIN_REG && NAV_MY_ACCOUNT) {
         NAV_LOGIN_REG.setAttribute("style", "display: none");
         NAV_MY_ACCOUNT.setAttribute("style", "display: block");
-    }
-
-    // Redirect to My Account if the user is already logged in and tries to open either Login, Register, or Forgot Password
-    let currentURL = window.location.href;
-    if (
-        currentURL.indexOf("login") !== -1 ||
-        currentURL.indexOf("register") !== -1 ||
-        currentURL.indexOf("forgot-password") !== -1
-    ) {
-        // Auto redirect to "My Account" if already logged in
-        let myAccountURL = currentURL;
-        myAccountURL = myAccountURL.replace("login", "");
-        myAccountURL = myAccountURL.replace("register", "");
-        myAccountURL = myAccountURL.replace("forgot-password", "");
-        myAccountURL += "my-account";
-        window.location.replace(myAccountURL);
     }
 }
 
