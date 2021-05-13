@@ -72,7 +72,6 @@ function buyNowEvents() {
     window.location.href = BUY_NOW_BUTTON.querySelector("a").href;
 }
 
-if (localStorage["isLoggedIn"] !== "true") {
-    ADD_BUTTON.removeEventListener("click", addToCartEvents);
-    BUY_NOW_BUTTON.removeEventListener("click", buyNowEvents)
-}
+
+ADD_BUTTON.removeEventListener("click", addToCartEvents);
+BUY_NOW_BUTTON.removeEventListener("click", buyNowEvents);
