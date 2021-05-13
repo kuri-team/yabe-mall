@@ -19,6 +19,14 @@
     ];
     
     
+    // Log out logic
+    if (isset($_GET["q"]) && $_GET["q"] === "logout") {
+        $_SESSION["logged_in"] = false;
+        unset($_SESSION["user_data"]);
+    }
+    // End of log out logic
+    
+    
     // Login logic
     if (isset($_POST["act"])) {
         $invalid = true;
@@ -59,14 +67,6 @@
         }
     }
     // End of login logic
-    
-    
-    // Log out logic
-    if (isset($_GET["q"]) && $_GET["q"] === "logout") {
-        $_SESSION["logged_in"] = false;
-        unset($_SESSION["user_data"]);
-    }
-    // End of log out logic
     
     
     // Automatic redirect to my-account page if user already logged in
