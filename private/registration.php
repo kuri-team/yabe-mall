@@ -34,21 +34,28 @@
     }
 
     if (isset($_POST["register"])) {
-        $fname = $_POST["fname"];
-        $lname = $_POST["lname"];
-        $email = $_POST["email"];
-        $tel = $_POST["tel"];
-        $address = $_POST["address"];
-        $city = $_POST["city"];
-        $zipcode = $_POST["zipcode"];
-        $country = $_POST["country"];
-        $pwd = $_POST["pwd"];
-        $verify_pwd = $_POST["verify_pwd"];
+        $fname = validate_form($_POST["fname"]);
+        $lname = validate_form($_POST["lname"]);
+        $email = validate_form($_POST["email"]);
+        $tel = validate_form($_POST["tel"]);
+        $address = validate_form($_POST["address"]);
+        $city = validate_form($_POST["city"]);
+        $zipcode = validate_form($_POST["zipcode"]);
+        $country = validate_form($_POST["country"]);
+        $pwd = validate_form($_POST["pwd"]);
+        $verify_pwd = validate_form($_POST["verify_pwd"]);
         $acc_type = $_POST["account_type"];
         if ($acc_type == "store_owner") {
             $bus_name = $_POST["business_name"];
             $store_name = $_POST["store_name"];
             $store_category = $_POST["store_cat"];
         }
+        
+        function validate_form($input) {
+            $input = trim($input);
+            $input = htmlspecialchars($input);
+            return $input;
+        }
+        
 
     }
