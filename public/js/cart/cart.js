@@ -71,7 +71,3 @@ function buyNowEvents() {
     addItemToCart();
     window.location.href = BUY_NOW_BUTTON.querySelector("a").href;
 }
-
-
-ADD_BUTTON.removeEventListener("click", addToCartEvents);
-BUY_NOW_BUTTON.removeEventListener("click", buyNowEvents);
