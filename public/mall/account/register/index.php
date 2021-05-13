@@ -1,18 +1,38 @@
 <?php require_once("../../../../private/initialize.php"); ?>
+<?php require_once("../../../../private/reg-validation.php"); ?>
 
 <?php
 
-$page_title = "Yabe | Register";
-$style_sheets = [
-    "/css/common.css",
-    "/css/account/common.css",
-    "/css/account/register.css",
-];
-$scripts = [
-    "/js/common.js",
-    "/js/account/common.js",
-    "/js/account/register.js",
-];
+    $page_title = "Yabe | Register";
+    $style_sheets = [
+        "/css/common.css",
+        "/css/account/common.css",
+        "/css/account/register.css",
+    ];
+    $scripts = [
+        "/js/common.js",
+        "/js/account/common.js",
+        "/js/account/register.js",
+    ];
+    
+    if (isset($_POST["register"])) {
+        $fname = validate_form($_POST["fname"]);
+        $lname = validate_form($_POST["lname"]);
+        $email = validate_form($_POST["email"]);
+        $tel = validate_form($_POST["tel"]);
+        $address = validate_form($_POST["address"]);
+        $city = validate_form($_POST["city"]);
+        $zipcode = validate_form($_POST["zipcode"]);
+        $country = validate_form($_POST["country"]);
+        $pwd = validate_form($_POST["pwd"]);
+        $verify_pwd = validate_form($_POST["verify_pwd"]);
+        $acc_type = $_POST["account_type"];
+        if ($acc_type === "store_owner") {
+            $bus_name = $_POST["business_name"];
+            $store_name = $_POST["store_name"];
+            $store_category = $_POST["store_cat"];
+        }
+    }
 
 include(SHARED_PATH . "/top.php");
 
@@ -29,7 +49,7 @@ include(SHARED_PATH . "/top.php");
       </div>
     </div>
 
-    <form id="register-form" class="register-form" action="../../../../private/registration.php" method="post" target="_self" enctype="multipart/form-data">
+    <form id="register-form" class="register-form" action="<?=url_for("mall/account/register");?>" method="post" target="_self" enctype="multipart/form-data">
       <div id="register-avatar-upload-field" class="register-field flex-container flex-align-items-center flex-justify-content-center">
         <div class="register-item no-border register-item-photo-upload flex-container animated">
           <label><input id="avatar" name="avatar" type="file" accept=".png,.jpg,.jpeg,image/bmp,image/jpeg,image/png"></label>
@@ -55,10 +75,11 @@ include(SHARED_PATH . "/top.php");
         <div class="register-item flex-container animated">
           <label class="label" for="gender">Gender</label>
           <select id="gender" name="gender">
-            <option value="gender" name=""></option>
-            <option value="male" name="gender">Male</option>
-            <option value="female" name="gender">Female</option>
-            <option value="pnts" name="gender">Prefer not to say</option>
+              <option value="null" name="gender"></option>
+              <option value="male" name="gender">Male</option>
+              <option value="female" name="gender">Female</option>
+              <option value="non_binary" name="gender">Non-binary</option>
+              <option value="pnts" name="gender">Prefer not to say</option>
           </select>
           <i class="fas fa-caret-down"></i>
           <span class="message-error"></span>
