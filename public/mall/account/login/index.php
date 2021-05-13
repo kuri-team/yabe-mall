@@ -46,21 +46,20 @@
 <main class="dialog-container">
     <form id="login-form" method="post" autocomplete="on">
         <h1>READY? GO</h1>
+        <?php
+        
+            // If login failed, the system will display an error div
+            if ($invalid) {
+                echo("<div class='wrong-password'>Invalid username/password</div>");
+            }
+    
+        ?>
         <label><input type="text" name="username" placeholder="Phone / Email" required></label>
         <label><input class="password-field" type="password" name="password" placeholder="Password" required></label>
         <div class="toggle-password-visibility"><i class="fas fa-eye"></i></div>
         <div id="wrong-pwd">The password is incorrect. Please try again or reset your password.</div>
         <input type="submit" name="act" value="LOGIN">
     </form>
-
-    <?php
-    
-        // If login failed, the system will display an error div
-        if ($invalid) {
-            echo("<div class='wrong-password'>Invalid username/password</div>");
-        }
-        
-    ?>
 
     <section class="level">
         <div id="forgot-pw">
