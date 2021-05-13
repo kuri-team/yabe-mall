@@ -16,3 +16,23 @@
         $pwd_regex = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,20}$/";
         return boolval(preg_match($pwd_regex, $pwd));
     }
+    
+    if (isset($_POST["register"])) {
+        $fname = $_POST["fname"];
+        $lname = $_POST["lname"];
+        $email = $_POST["email"];
+        $tel = $_POST["tel"];
+        $address = $_POST["address"];
+        $city = $_POST["city"];
+        $zipcode = $_POST["zipcode"];
+        $country = $_POST["country"];
+        $pwd = $_POST["pwd"];
+        $verify_pwd = $_POST["verify_pwd"];
+        $acc_type = $_POST["account_type"];
+        if ($acc_type == "store_owner") {
+            $bus_name = $_POST["business_name"];
+            $store_name = $_POST["store_name"];
+            $store_category = $_POST["store_cat"];
+        }
+        
+    }
