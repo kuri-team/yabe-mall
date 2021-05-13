@@ -1,3 +1,16 @@
+<?php
+    
+    require_once "../private/csv.php";
+    
+    if (isset($_POST["submit"])) {
+        $admin_credentials = [
+                "username" => $_POST["username"],
+                "password" => $_POST["pwd"]
+        ];
+    }
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +65,7 @@
 
       <div class="form-field form-bttn-field flex-container flex-direction-column flex-align-items-center">
         <label><input type="reset" value="CLEAR"></label>
-        <label><input type="submit" value="SUBMIT"></label>
+        <label><input type="submit" name="submit" value="SUBMIT"></label>
       </div>
     </form>
   </section>

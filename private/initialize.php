@@ -3,7 +3,7 @@
     ob_start(); // output buffering is turned on
     
     // Development mode
-    $dev = true;
+    $dev = false;
     
     // Assign file paths to PHP constants
     // __FILE__ returns the current path to this file
