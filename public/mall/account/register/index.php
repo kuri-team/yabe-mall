@@ -63,7 +63,7 @@
             $data[] = [$fname, $lname, $gender, $bdate, $email, $tel, $address, $city, $zipcode, $country,
                         $username, $hashed_pwd, $acc_type, $bus_name, $store_name, $store_category, $avatar_src];
             
-            
+            write_csv("../../../../private/database/registration.csv",$data, true);
         }
         
         
