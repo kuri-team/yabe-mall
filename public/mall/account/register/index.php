@@ -2,7 +2,7 @@
     
     require_once("../../../../private/initialize.php");
     require_once("../../../../private/reg-validation.php");
-    
+    require_once("../../../../private/csv.php");
 ?>
 
 <?php
@@ -46,7 +46,7 @@
             $bus_name = $store_name = $store_category = "null";
         }
     
-        $avatar_src = $_POST["avatar"];
+//        $avatar_src = $_POST["avatar"];
         
         if (
                 validate_min_length($fname, 3) &&
@@ -61,7 +61,7 @@
         ) {
             $hashed_pwd = password_hash($credential, PASSWORD_BCRYPT);
             $data[] = [$fname, $lname, $gender, $bdate, $email, $tel, $address, $city, $zipcode, $country,
-                        $username, $hashed_pwd, $acc_type, $bus_name, $store_name, $store_category, $avatar_src];
+                        $username, $hashed_pwd, $acc_type, $bus_name, $store_name, $store_category];   //$avatar_src
             
             write_csv("../../../../private/database/registration.csv",$data, true);
         }
