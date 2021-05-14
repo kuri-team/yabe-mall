@@ -1,0 +1,46 @@
+body {
+    background: #ececec;
+}
+
+main {
+    background: #fff;
+    padding: 80px 100px;
+    width: 560px;
+    margin: 100px auto;
+    box-shadow: 0 0 100px 10px #cdcdcd;
+}
+
+main h1 {
+    padding: 0 0 20px 0;
+    margin: 20px 0 0 0;
+}
+
+.install-instructions {
+    padding: 0 50px;
+    margin-bottom: 100px;
+}
+
+.install-form-wrapper {
+    padding-bottom: 20px;
+}
+
+.form-bttn-field {
+    margin-top: 50px;
+}
+
+footer {
+    padding: 0;
+}
+
+@media only screen and (max-width: 950px) {
+    nav {
+        -webkit-justify-content: center;
+        justify-content: center;
+    }
+
+    main {
+        width: initial;
+        margin: 0;
+        padding: 50px 0 0 0;
+    }
+}
