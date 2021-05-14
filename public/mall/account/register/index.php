@@ -48,7 +48,22 @@
             $bus_name = $store_name = $store_category = "null";
         }
     
-        $avatar_src = "/media/image/usr-content/" . $_FILES["avatar"]["name"];
+        
+        // Avatar upload logic
+        $avatar_provided = $_FILES["avatar"]["error"] === UPLOAD_ERR_OK;
+        if ($avatar_provided) {
+            // Security feature: Get either the SHA1 or MD5 (if SHA1 is unavailable) hash from the content of the uploaded avatar image file for use as new filename
+            $avatar_filename_hash = boolval(sha1_file($_FILES["avatar"]["tmp_name"])) ? sha1_file($_FILES["avatar"]["tmp_name"]) : md5_file($_FILES["avatar"]["tmp_name"]);
+    
+            // Get the file extension of the uploaded avatar image file
+            preg_match("/\.[\w]+$/", $_FILES["avatar"]["name"], $matches);
+            $avatar_filename_ext = $matches[0];
+    
+            // Generate new file source for avatar image
+            $avatar_src = "/media/image/usr-content/" . $avatar_filename_hash . $avatar_filename_ext;
+        } else {
+            $avatar_src = "/media/image/usr-content/profile-placeholder_143x143.png";
+        }
         
         
         // check if user input meet certain requirements
@@ -91,7 +106,9 @@
             $data[] = $line;
             
             write_csv("../../../../private/database/registration.csv", $data, true);
-            move_uploaded_file($_FILES["avatar"]["tmp_name"], PUBLIC_PATH . $avatar_src);
+            if ($avatar_provided) {
+                move_uploaded_file($_FILES["avatar"]["tmp_name"], PUBLIC_PATH . $avatar_src);
+            }
             
             redirect_to(url_for("/mall/account/login/"));
         }
