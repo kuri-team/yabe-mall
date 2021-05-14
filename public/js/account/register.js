@@ -24,8 +24,14 @@ const CAPTURE_AREA = document.getElementById("register-account-type-capture-area
 CAPTURE_AREA.addEventListener("click", function () {
     if (RADIO_STORE_OWNER.checked) {
         STORE_OWNER_ONLY_FIELDS.setAttribute("style", "display: block; animation: expand-top 0.45s; transform-origin: top;");
+        STORE_OWNER_ONLY_FIELDS.querySelectorAll("input").forEach(function (item) {
+            item.required = true;
+        });
     } else {
         STORE_OWNER_ONLY_FIELDS.setAttribute("style", "display: none;");
+        STORE_OWNER_ONLY_FIELDS.querySelectorAll("input").forEach(function (item) {
+            item.required = false;
+        });
     }
 });
 
@@ -214,7 +220,7 @@ Validator.required = function (selector, message) {
     return {
         selector: selector,
         test: function (value) {
-            return value ? undefined :  message || "Please enter this field"
+            return value ? undefined : message || "Please enter this field.";
         }
     };
 }
@@ -224,8 +230,7 @@ Validator.email = function (selector, message) {
         selector: selector,
         test: function (value) {
             let regex = /^(([a-zA-Z0-9][.]?){2,}|([a-zA-Z0-9]\.)+)([a-zA-Z0-9]|(?!\.))+?[a-zA-Z0-9][@](?=[^.])[a-zA-Z0-9.]+[.][a-zA-Z]{2,5}$/;
-            EMAIL.style.borderColor = "red";
-            return regex.test(value) ? undefined :  message || "Valid email has the form [name]@[domain]";
+            return regex.test(value) ? undefined : message || "Valid email has the form [name]@[domain].";
         }
     };
 }
@@ -235,7 +240,7 @@ Validator.phone = function (selector, message) {
         selector: selector,
         test: function (value) {
             let regex = /^([0-9][-. ]?){8,10}[0-9]$/;
-            return regex.test(value) ? undefined :  message || "Valid phone contains 9 to 11 digits which space, dot, and dash cannot be positioned at the beginning or at the end";
+            return regex.test(value) ? undefined : message || "Valid phone contains 9 to 11 digits which space, dot, and dash cannot be positioned at the beginning or at the end.";
         }
     };
 }
@@ -245,7 +250,7 @@ Validator.pwd = function (selector, message) {
         selector: selector,
         test: function (value) {
             let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,20}$/;
-            return regex.test(value) ? undefined : message || "Please enter a valid password";
+            return regex.test(value) ? undefined : message || "Please enter a valid password.";
         }
     };
 }
@@ -255,7 +260,7 @@ Validator.zipcode = function (selector, message) {
         selector: selector,
         test: function (value) {
             let regex = /^[0-9]{4,6}$/;
-            return regex.test(value) ? undefined :  message || "Valid Zipcode contains 4 to 6 digits.";
+            return regex.test(value) ? undefined : message || "Valid Zipcode contains 4 to 6 digits.";
         }
     };
 }
@@ -264,7 +269,7 @@ Validator.minLength = function (selector, min, message) {
     return {
         selector: selector,
         test: function (value) {
-            return value.length >= min ? undefined :  message || `PLease enter at least ${min} characters`;
+            return value.length >= min ? undefined : message || `Please enter at least ${min} characters.`;
         }
     };
 }
@@ -285,8 +290,8 @@ document.addEventListener("input", function () {
         formGroupSelector: ".input-field-validation",
         errorSelector: ".message-error",
         rules: [
-            Validator.required("#fname", "Please enter your first name"),
-            Validator.required("#lname", "Please enter your last name"),
+            Validator.required("#fname", "Please enter your first name."),
+            Validator.required("#lname", "Please enter your last name."),
             Validator.email("#email"),
             Validator.minLength("#fname", 3),
             Validator.minLength("#lname", 3),
