@@ -64,8 +64,20 @@
         ) {
             $id_num = count($data) + 1;
             $hashed_pwd = password_hash($credential, PASSWORD_BCRYPT);  // hash pwd for security
-            $data[] = [$id_num, $fname, $lname, $gender, $bdate, $email, $tel, $address, $city, $zipcode, $country,
-                        $username, $hashed_pwd, $acc_type, $bus_name, $store_name, $store_category];   //$avatar_src
+            
+            $headers = [];
+            foreach ($data[0] as $header => $field) {
+                $headers[] = $header;
+            }
+            
+            $line = [];
+            foreach ($headers as $header) {
+                $line[] = [
+                        // $header => $value
+                ];
+            }
+            
+            $data[] = $line;
             
             write_csv("../../../../private/database/registration.csv",$data, true);
         }
@@ -118,10 +130,10 @@
           <label class="label" for="gender">Gender</label>
           <select id="gender" name="gender">
               <option value="null" name="gender"></option>
-              <option value="male" name="gender">Male</option>
-              <option value="female" name="gender">Female</option>
-              <option value="non_binary" name="gender">Non-binary</option>
-              <option value="pnts" name="gender">Prefer not to say</option>
+              <option value="Male" name="gender">Male</option>
+              <option value="Female" name="gender">Female</option>
+              <option value="Non-binary" name="gender">Non-binary</option>
+              <option value="Prefer not to say" name="gender">Prefer not to say</option>
           </select>
           <i class="fas fa-caret-down"></i>
           <span class="message-error"></span>
