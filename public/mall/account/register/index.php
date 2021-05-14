@@ -24,6 +24,7 @@
     if (isset($_POST["register"])) {
         $data = read_csv("../../../../private/database/registration.csv", true);
         
+        // get all user input
         $fname = validate_form($_POST["fname"]);
         $lname = validate_form($_POST["lname"]);
         $gender = $_POST["gender"];
@@ -49,6 +50,7 @@
     
 //        $avatar_src = $_POST["avatar"];
         
+        // check if user input meet certain requirements
         if (
                 validate_min_length($fname, 3) &&
                 validate_min_length($lname, 3) &&
@@ -60,14 +62,13 @@
                 validate_pwd($credential) &&
                 verify_password($credential, $verify_pwd)
         ) {
-            $hashed_pwd = password_hash($credential, PASSWORD_BCRYPT);
-            $data[] = [$fname, $lname, $gender, $bdate, $email, $tel, $address, $city, $zipcode, $country,
+            $id_num = count($data) + 1;
+            $hashed_pwd = password_hash($credential, PASSWORD_BCRYPT);  // hash pwd for security
+            $data[] = [$id_num, $fname, $lname, $gender, $bdate, $email, $tel, $address, $city, $zipcode, $country,
                         $username, $hashed_pwd, $acc_type, $bus_name, $store_name, $store_category];   //$avatar_src
             
             write_csv("../../../../private/database/registration.csv",$data, true);
         }
-        
-        
     }
     
     // Automatic redirect to my-account page if user already logged in

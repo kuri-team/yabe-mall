@@ -3,6 +3,3 @@ id,fname,lname,gender,bdate,email,tel,address,city,zipcode,country,username,cred
 2,"Duc Manh",Nguyen,Male,2002-02-01,s3878480@rmit.edu.vn,084-387-8480,"4 Le Duan St., Ben Nghe Ward, Dstr. 1",HCMC,700000,VN,rider3458,Duducmanh456@,shopper,null,null,null,/media/image/usr-content/manh.jpg
 3,Mike,Nguyen,Male,1999-05-01,s3877562@rmit.edu.vn,031-387-7562,"Rosa Manuslaan 31",Pijnacker,2642,NL,miketvo,Mike%7nguyen89,store_owner,"Kuri Corporation","Kuri Literatures",Bookstore,/media/image/usr-content/mike.png
 4,"Yen Nhi",Doan,Female,2002-03-01,s3880599@rmit.edu.vn,01-388-0599,"111 Wellington St.,",Ottawa,10900,CA,doanyennhi,H4n&S00young,shopper,null,null,null,/media/image/usr-content/nhi.jpg
-"Tran Ngoc",Thu,female,2021-05-03,ngocanhthu20102002@gmail.com,0976284284,"702 Nguyen Van Linh street, HCMC,",HCM,700000,VN,cdc,$2y$10$PMH5RIOs3giYSYdaK03RxuUenV05dsg6CgaTtL8pvuwcNxvrmNWZ6,shopper,null,null,null,,
-ccdc,TRAN,female,2021-05-06,ngocanhthu20102002@gmail.com,0976284284,"702 Nguyen Van Linh street, HCMC,",HCM,700000,VN,cdc,$2y$10$wks/22l1DPyxJOL.HB9nSO2xfxF5bXUZJ5aGe2lJU.6r9BU8ke9O6,shopper,null,null,null,,
-Thu,Tran,female,2021-05-10,s3879312@rmit.edu.vn,0976284284,"702 Nguyen Van Linh street, HCMC,",HCM,700000,VN,cdc,$2y$10$oGwHJ/fVKnxjjfHCAgM5rOsGC13S2VGGuqFxYsJBm2EaK4CIFaY2q,shopper,null,null,null
