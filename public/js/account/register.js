@@ -125,9 +125,8 @@ function Validator(object) {
     let formInput = document.querySelector(object.form);
     if (formInput) {
         // Register form
-        formInput.onsubmit = function (e) {
+        formInput.onsubmit = function () {
             alert("Your register form is successfully submitted");
-            e.preventDefault();
 
             let isFormValid = true;
 
