@@ -23,8 +23,6 @@
     
     // check if user has submitted register form
     if (isset($_POST["register"])) {
-        $data = read_csv("../../../../private/database/registration.csv", true);
-        
         // get all user input
         $fname = validate_form($_POST["fname"]);
         $lname = validate_form($_POST["lname"]);
@@ -50,6 +48,8 @@
         }
     
 //        $avatar_src = $_POST["avatar"];
+        /*************************************************************/
+        
         
         // check if user input meet certain requirements
         if (
@@ -63,6 +63,8 @@
                 validate_pwd($credential) &&
                 verify_password($credential, $verify_pwd)
         ) {
+            $data = read_csv("../../../../private/database/registration.csv", true);
+            
             $id_num = count($data) + 1;    // automatically create id number
             $hashed_pwd = password_hash($credential, PASSWORD_BCRYPT);  // hash pwd for security
             
@@ -72,8 +74,12 @@
             
             // array storing header
             $headers = [];
-            foreach ($data[0] as $header => $field) {
-                $headers[] = $header;
+            if (count($data) !== 0) {
+                foreach ($data[0] as $header => $field) {
+                    $headers[] = $header;
+                }
+            } else {
+                $headers = read_csv("../../../../private/database/registration.csv")[0];
             }
             
             // create an associative array associating header and user input
