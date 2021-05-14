@@ -39,6 +39,15 @@
             $store_name = validate_form($_POST["store_name"]);
             $store_category = validate_form($_POST["store_cat"]);
         }
+        validate_min_length($fname, 3);
+        validate_min_length($lname, 3);
+        validate_min_length($address, 3);
+        validate_min_length($city, 3);
+        validate_email($email);
+        validate_tel($tel);
+        validate_zipcode($zipcode);
+        validate_pwd($pwd);
+        verify_password($verify_pwd);
     }
     
     // Automatic redirect to my-account page if user already logged in
