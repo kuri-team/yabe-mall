@@ -81,9 +81,9 @@
             $_SESSION["user_data"] = $user_data;
             
             if ($place_order) {
-                header("Location: /mall/cart/");
+                redirect_to(url_for("/mall/cart/"));
             } else {
-                header("Location: /mall/account/my-account/");
+                redirect_to(url_for("/mall/account/my-account/"));
             }
         }
     }
