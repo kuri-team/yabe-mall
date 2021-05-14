@@ -2,7 +2,7 @@
 
 <?php
 
-$page_title = "Terms of service";
+$page_title = "Yabe | Legal";
 $style_sheets = [
     "/css/common.css",
     "/css/legal/legal.css",
@@ -17,9 +17,9 @@ include(SHARED_PATH . "/top.php");
 
   <h1>To be further implemented</h1>
   <ul>
-    <li><a href="tos">Terms of Service</a></li>
-    <li><a href="privacy-policy">Privacy Policy</a></li>
-    <li><a href="copyright">Copyright</a></li>
+    <li><a href="<?=url_for("/mall/legal/tos");?>">Terms of Service</a></li>
+    <li><a href="<?=url_for("/mall/legal/privacy-policy");?>">Privacy Policy</a></li>
+    <li><a href="<?=url_for("/mall/legal/copyright");?>">Copyright</a></li>
   </ul>
 
 <?php include(SHARED_PATH . "/bottom.php"); ?>

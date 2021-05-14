@@ -25,8 +25,8 @@
 
 <main>
   <ul class=breadcrumb>
-    <li><a href="../../">Home</a>/</li>
-    <li><a href="#">My Account</a></li>
+    <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
+    <li><a href="<?=url_for("mall/account/my-account");?>">My Account</a></li>
   </ul>
 
   <h1 class="content-title">My Account</h1>
