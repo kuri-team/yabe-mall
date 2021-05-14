@@ -92,7 +92,7 @@
     
     
     /**
-     * Check if user verified password match
+     * Check if user retyped password matches password
      * @param $credential
      * user password
      * @param $verify_pwd
