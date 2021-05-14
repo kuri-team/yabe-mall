@@ -19,7 +19,10 @@
         /*"/js/account/register.js", */
     ];
     
+    // check if user has submitted register form
     if (isset($_POST["register"])) {
+        $data = read_csv("../../../../private/database/registration.csv", true);
+        
         $fname = validate_form($_POST["fname"]);
         $lname = validate_form($_POST["lname"]);
         $gender = $_POST["gender"];
@@ -42,19 +45,27 @@
         } else {
             $bus_name = $store_name = $store_category = "null";
         }
-        validate_min_length($fname, 3);
-        validate_min_length($lname, 3);
-        validate_min_length($address, 3);
-        validate_min_length($city, 3);
-        validate_email($email);
-        validate_tel($tel);
-        validate_zipcode($zipcode);
-        validate_pwd($credential);
-        verify_password($verify_pwd);
+    
+        $avatar_src = $_POST["avatar"];
         
-        if ($credential === $verify_pwd) {
+        if (
+                validate_min_length($fname, 3) &&
+                validate_min_length($lname, 3) &&
+                validate_email($email) &&
+                validate_tel($tel) &&
+                validate_min_length($address, 3) &&
+                validate_min_length($city, 3) &&
+                validate_zipcode($zipcode) &&
+                validate_pwd($credential) &&
+                verify_password($credential, $verify_pwd)
+        ) {
             $hashed_pwd = password_hash($credential, PASSWORD_BCRYPT);
+            $data[] = [$fname, $lname, $gender, $bdate, $email, $tel, $address, $city, $zipcode, $country,
+                        $username, $hashed_pwd, $acc_type, $bus_name, $store_name, $store_category, $avatar_src];
+            
+            
         }
+        
         
     }
     

@@ -18,13 +18,13 @@
      * Check if user input meets the minimum length requirement(s)
      * @param $value
      * user input
-     * @param $min_length
+     * @param int $min_length
      * minimum length required for the input
      * @return bool
      * <strong><em>true</em></strong> if user input passes the minimum length requirements,
      * <strong><em>false</em></strong> otherwise.
      */
-    function validate_min_length($value, $min_length): bool {
+    function validate_min_length($value, int $min_length): bool {
         $value_string_length = strlen($value);
         
         if ($value_string_length < $min_length) {
