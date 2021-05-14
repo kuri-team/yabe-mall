@@ -1,5 +1,7 @@
 <?php
     
+    require_once "string.php";
+    
     
     /**
      * Trim whitespace of user input and convert special characters to HTML entities
@@ -9,10 +11,10 @@
      */
     function validate_form($input): string {
         $input = trim($input);
-        $input = htmlspecialchars($input);
+        $input = beautify_string($input);
+        $input = htmlspecialchars($input, ENT_SUBSTITUTE);
         return $input;
     }
-    
     
     /**
      * Check if user input meets the minimum length requirement(s)
