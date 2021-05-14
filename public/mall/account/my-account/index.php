@@ -68,16 +68,16 @@
       <article class="my-account-box my-account-links-wrapper">
         <div class="my-account-links flex-container flex-direction-column flex-justify-content-space-evenly">
           <a class="active" href="">Info</a>
-          <a href="">My Orders</a>
-          <a href="">Payment Information</a>
-          <a href="">Password & Security</a>
           <?php
-    
+      
               if ($_SESSION["user_data"]["acc_type"] === "store_owner") {
                   echo "<a href=''>Business Dashboard</a>";
               }
-          
+  
           ?>
+          <a href="">My Orders</a>
+          <a href="">Payment Information</a>
+          <a href="">Password & Security</a>
           <a href="<?=url_for('/mall/account/login/') . '?q=logout';?>">Log Out</a>
         </div>
       </article>
