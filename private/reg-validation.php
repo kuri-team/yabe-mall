@@ -71,8 +71,6 @@
      * <strong><em>false</em></strong> otherwise.
      */
     function validate_zipcode($zipcode): bool {
-        // sanitize user input in zipcode
-        $zipcode = filter_var($zipcode, FILTER_SANITIZE_NUMBER_INT);
         $zipcode_regex = "/^[0-9]{4,6}$/";
         return boolval(preg_match($zipcode_regex, $zipcode));
     }

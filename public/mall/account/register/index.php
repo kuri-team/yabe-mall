@@ -68,7 +68,7 @@
             
             // array storing user input
             $fields = [$id_num, $fname, $lname, $gender, $bdate, $email, $tel, $address, $city, $zipcode, $country,
-                        $username, $hashed_pwd, $acc_type, $bus_name, $store_name, $store_category];
+                        $username, $hashed_pwd, $acc_type, $bus_name, $store_name, $store_category, ""];
             
             // array storing header
             $headers = [];
@@ -78,15 +78,15 @@
             
             // create an associative array associating header and user input
             $line = [];
-            for ($idx = 0; $idx < count($headers); $idx++) {
-                $line[$headers[$idx]] = $fields[$idx];
+            for ($index = 0; $index < count($headers); $index++) {
+                $line[$headers[$index]] = $fields[$index];
             }
             
             $data[] = $line;
             
             write_csv("../../../../private/database/registration.csv", $data, true);
             
-            // redirect_to(url_for("/mall/account/login/"));
+            redirect_to(url_for("/mall/account/login/"));
         }
     }
     
