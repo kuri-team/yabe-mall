@@ -325,6 +325,8 @@ i {
 }
 
 #overlay-cart-window, #overlay-modal-window {
+    position: absolute;
+    top: 0;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -808,7 +810,7 @@ nav a {
     text-decoration: underline;
 }
 
-#nav-my-account, .mobile-only {
+.mobile-only {
     display: none;
 }
 

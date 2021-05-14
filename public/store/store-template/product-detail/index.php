@@ -20,10 +20,10 @@
 
   <main id="product-content">
     <ul class="breadcrumb">
-      <li><a href="../../../mall/">Home</a>/</li>
-      <li><a href="../../../mall/browse/by-store/by-category.php">Bookstore</a>/</li>
-      <li><a href="../" id="store-name">HSY Shop</a>/</li>
-      <li><a href="#">Purple Hyacinth comic</a></li>
+      <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
+      <li><a href="<?=url_for("/mall/browse/by-store/by-category.php");?>">Bookstore</a>/</li>
+      <li><a href="<?=url_for("/store/store-template");?>" id="store-name">HSY Shop</a>/</li>
+      <li><a href="<?=url_for("/store/store-template/product-detail");?>">Purple Hyacinth comic</a></li>
     </ul>
 
     <section id="product-info" class="content-body flex-container">
@@ -53,7 +53,7 @@
         </div>
         <div class="shop-bttn clear-both">
           <button class="add-to-cart">ADD TO CART</button>
-          <button class="buy-now"><a href="../../../mall/cart">BUY NOW</a></button>
+          <button class="buy-now"><a href="<?=url_for("/mall/cart");?>">BUY NOW</a></button>
         </div>
       </div>
     </section>
@@ -99,66 +99,66 @@
       <button class="card-gallery-left-bttn"><i class="fas fa-angle-left"></i></button>
       <div class="card-gallery-content flex-container flex-justify-content-space-between flex-align-items-center overflow-hidden clear-both">
         <div class="product-card">
-          <a href="./"><img alt="image of a product"
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
              src="../../../media/image/book_cover/the-blind_prince_cover.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="./">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$12.99</p>
             <div class="product-card-sale-card">13/10/2015</div>
           </div>
         </div>
 
         <div class="product-card">
-          <a href="./"><img alt="image of a product"
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
             src="../../../media/image/book_cover/true_beauty_cover.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="./">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$6.50</p>
             <div class="product-card-sale-card">20/12/2012</div>
           </div>
         </div>
 
         <div class="product-card">
-          <a href="./"><img alt="image of a product"
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
             src="../../../media/image/book_cover/rebirth_cover.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="./">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$7.30</p>
             <div class="product-card-sale-card">21/5/2019</div>
           </div>
         </div>
 
         <div class="product-card">
-          <a href="./"><img alt="image of a product"
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
             src="../../../media/image/book_cover/humor_me_cover.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="./">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$12.99</p>
             <div class="product-card-sale-card">14/2/2013</div>
           </div>
         </div>
 
         <div class="product-card">
-          <a href="./"><img alt="image of a product"
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
             src="../../../media/image/book_cover/heartstopper_cover.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="./">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$12.99</p>
             <div class="product-card-sale-card">14/2/2013</div>
           </div>
         </div>
 
         <div class="product-card">
-          <a href="./"><img alt="image of a product"
+          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
             src="../../../media/image/book_cover/gyaga_cover.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="./">Product Title Goes Here</a>
-            <a class="product-card-shop" href="../">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$12.99</p>
             <div class="product-card-sale-card">14/2/2013</div>
           </div>

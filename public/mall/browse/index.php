@@ -15,8 +15,8 @@ include(SHARED_PATH . "/top.php");
 ?>
   <main>
     <ul class="breadcrumb">
-      <li><a href="../">Home</a>/</li>
-      <li><a href="#">Browse</a></li>
+      <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
+      <li><a href="<?=url_for("/mall/browse");?>">Browse</a></li>
     </ul>
     <h1 class="content-title">BROWSE</h1>
 
@@ -25,14 +25,14 @@ include(SHARED_PATH . "/top.php");
 
       <h2>Browse Products</h2>
       <ul>
-        <li><a href="by-product/by-category.php">By Category</a></li>
-        <li><a href="by-product/by-date.php">By Date</a></li>
+        <li><a href="<?=url_for("/mall/browse/by-product/by-category.php");?>">By Category</a></li>
+        <li><a href="<?=url_for("/mall/browse/by-product/by-date.php");?>">By Date</a></li>
       </ul>
 
       <h2>Browse Stores</h2>
       <ul>
-        <li><a href="by-store/by-category.php">By Category</a></li>
-        <li><a href="by-store/by-name.php">By Name</a></li>
+        <li><a href="<?=url_for("/mall/browse/by-store/by-category.php");?>">By Category</a></li>
+        <li><a href="<?=url_for("/mall/browse/by-store/by-name.php");?>">By Name</a></li>
       </ul>
     </div>
   </main>

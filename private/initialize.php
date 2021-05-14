@@ -1,6 +1,19 @@
 <?php
     
+    // Start a session when user access the site and a session for that user has not been started already
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    
+    // Initialize login status to false
+    if (!isset($_SESSION["logged_in"])) {
+        $_SESSION["logged_in"] = false;
+    }
+    
     ob_start(); // output buffering is turned on
+    
+    // Development mode
+    $dev = false;
     
     // Assign file paths to PHP constants
     // __FILE__ returns the current path to this file
@@ -15,6 +28,11 @@
     // * Use same document root as webserver
     define("WWW_ROOT", "");
     
-    require_once('functions.php');
+    require_once("functions.php");
     
     $errors = [];
+    
+    // install.php logic
+    if (file_exists(PUBLIC_PATH . "/install.php") && !$dev) {
+        redirect_to(url_for("/install.php"));
+    }

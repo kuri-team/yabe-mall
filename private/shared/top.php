@@ -28,15 +28,8 @@
   <title><?=$page_title;?></title>
 </head>
 <body>
-<div id="dimmed-page"></div>
 
-<div id="overlay-cart-window">
-  <div id="disabled-cart-msg" class="text-align-center">
-    <button id="cart-closing-bttn" class="float-right"><i class="fas fa-times"></i></button>
-    <p class="clear-both">This feature is only available for registered user. Please
-      <a href="<?=url_for("mall/account/login");?>">login</a> or <a href="<?=url_for("mall/account/register");?>">register</a>.</p>
-  </div>
-</div>
+<div id="dimmed-page"></div>
 
 <header>
   <nav>
@@ -69,15 +62,28 @@
       </form>
     </div>
     <div class="nav-search-bttn"><i class="fas fa-search"></i></div>
-    <button class="nav-cart-bttn"><a href="<?=url_for("/mall/cart");?>"><i class="fas fa-shopping-cart"></i>Cart</a></button>
+    <div>
+      <a href="<?=url_for("/mall/cart");?>"><button class="nav-cart-bttn"><i class="fas fa-shopping-cart"></i>Cart</button></a>
+    </div>
     <span id="nav-account">
-        <span id="nav-login-reg">
-          <a href="<?=url_for("/mall/account/login");?>">Login</a>
-          <span class="vl"></span>
-          <a href="<?=url_for("/mall/account/register");?>">Register</a>
-        </span>
-        <span id="nav-my-account"><a href="<?=url_for("/mall/account/my-account");?>">My Account</a></span>
-      </span>
+      <?php
+    
+          if (isset($_SESSION["logged_in"])) {
+              if ($_SESSION["logged_in"]) {
+                  echo "<span>
+                          <a href='" . url_for("/mall/account/my-account") . "'>My Account</a>
+                        </span>";
+              } else {
+                  echo "<span>
+                          <a href='" . url_for("/mall/account/login") . "'>Login</a>
+                          <span class='vl'></span>
+                          <a href='" . url_for("/mall/account/register") . "'>Register</a>
+                        </span>";
+              }
+          }
+          
+      ?>
+    </span>
 
     <span class="mobile-only">
         <button onclick="toggleMobileMenu()" class="mobile-menu-bttn"><i class="fas fa-bars" id="mobile-menu-icon"></i></button>
@@ -87,8 +93,17 @@
   <div class="mobile-menu" id="mobile-menu">
     <ul>
       <li class="mobile-menu-cart"><a href="<?=url_for("/mall/cart");?>"><i class="fas fa-shopping-cart"></i>Cart</a></li>
-      <li class="mobile-menu-my-account"><a href="<?=url_for("/mall/account/my-account");?>">My Account</a></li>
-      <li class="mobile-menu-login"><a href="<?=url_for("/mall/account/login");?>">Login</a></li>
+      <?php
+    
+          if (isset($_SESSION["logged_in"])) {
+              if ($_SESSION["logged_in"]) {
+                  echo "<li><a href='" . url_for("/mall/account/my-account") . "'>My Account</a></li>";
+              } else {
+                  echo "<li><a href='" . url_for("/mall/account/login") . "'>Login</a></li>";
+              }
+          }
+      
+      ?>
       <li><a href="<?=url_for("/mall/");?>">Home</a></li>
       <li><a href="<?=url_for("/mall/browse");?>">Browse</a></li>
       <li><a href="<?=url_for("/mall/about-us");?>">About Us</a></li>

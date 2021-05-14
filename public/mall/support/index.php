@@ -17,8 +17,8 @@
 
 <h1>To be further implemented</h1>
 <ul>
-  <li><a href="faq">Frequently Asked Questions</a></li>
-  <li><a href="pricing">Pricing</a></li>
+  <li><a href="<?=url_for("/mall/support/faq");?>">Frequently Asked Questions</a></li>
+  <li><a href="<?=url_for("/mall/support/pricing");?>">Pricing</a></li>
 </ul>
 
 <?php include(SHARED_PATH . "/bottom.php"); ?>
