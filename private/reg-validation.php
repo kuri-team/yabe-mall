@@ -90,6 +90,17 @@
         return boolval(preg_match($pwd_regex, $pwd));
     }
     
+    
+    /**
+     * Check if user verified password match
+     * @param $credential
+     * user password
+     * @param $verify_pwd
+     * user retyped password
+     * @return bool
+     * <strong><em>true</em></strong> if user retyped password matches password,
+     * <strong><em>false</em></strong> otherwise.
+     */
     function verify_password($credential, $verify_pwd): bool {
         if ($credential === $verify_pwd) {
             return true;
