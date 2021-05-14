@@ -21,6 +21,7 @@
         "/js/account/register.js",
     ];
     
+    
     // check if user has submitted register form
     if (isset($_POST["register"])) {
         // get all user input
@@ -47,8 +48,7 @@
             $bus_name = $store_name = $store_category = "null";
         }
     
-//        $avatar_src = $_POST["avatar"];
-        /*************************************************************/
+        $avatar_src = "/media/image/usr-content/" . $_FILES["avatar"]["name"];
         
         
         // check if user input meet certain requirements
@@ -70,7 +70,7 @@
             
             // array storing user input
             $fields = [$id_num, $fname, $lname, $gender, $bdate, $email, $tel, $address, $city, $zipcode, $country,
-                        $username, $hashed_pwd, $acc_type, $bus_name, $store_name, $store_category, ""];
+                        $username, $hashed_pwd, $acc_type, $bus_name, $store_name, $store_category, $avatar_src];
             
             // array storing header
             $headers = [];
@@ -91,6 +91,7 @@
             $data[] = $line;
             
             write_csv("../../../../private/database/registration.csv", $data, true);
+            move_uploaded_file($_FILES["avatar"]["tmp_name"], PUBLIC_PATH . $avatar_src);
             
             redirect_to(url_for("/mall/account/login/"));
         }
@@ -503,21 +504,21 @@
         <div class="register-field flex-container flex-align-items-center flex-justify-content-center">
           <div class="register-item flex-container animated">
             <label class="label" for="business-name">Business Name</label>
-            <input type="text" name="business_name" id="business-name" value="" required>
+            <input type="text" name="business_name" id="business-name" value="">
           </div>
         </div>
 
         <div class="register-field flex-container flex-align-items-center flex-justify-content-center">
           <div class="register-item flex-container animated">
             <label class="label" for="store-name">Store Name</label>
-            <input type="text" name="store_name" id="store-name" value="" required>
+            <input type="text" name="store_name" id="store-name" value="">
           </div>
         </div>
 
         <div class="register-field flex-container flex-align-items-center flex-justify-content-center">
           <div class="register-item flex-container animated">
             <label class="label" for="store-category">Store Category</label>
-            <select name="store_cat" id="store-category" required>
+            <select name="store_cat" id="store-category">
               <option name="store_cat" value=""></option>
               <option name="store_cat" value="Department">Department Store</option>
               <option name="store_cat" value="Grocery">Grocery Store</option>
