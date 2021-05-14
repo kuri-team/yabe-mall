@@ -81,7 +81,7 @@
             
             $data[] = $line;
             
-            write_csv("../../../../private/database/registration.csv",$data, true);
+            write_csv("../../../../private/database/registration.csv", $data, true);
         }
     }
     
