@@ -44,7 +44,6 @@
      * <strong><em>false</em></strong> otherwise.
      */
     function validate_email($email): bool {
-        $email = filter_var($email, FILTER_SANITIZE_EMAIL);
         $email_regex = "/^(([a-zA-Z0-9][.]?){2,}|([a-zA-Z0-9]\.)+)([a-zA-Z0-9]|(?!\.))+?[a-zA-Z0-9][@](?=[^.])[a-zA-Z0-9.]+[.][a-zA-Z]{2,5}$/";
         return boolval(preg_match($email_regex,$email));
     }

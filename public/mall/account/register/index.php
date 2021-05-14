@@ -3,6 +3,7 @@
     require_once("../../../../private/initialize.php");
     require_once("../../../../private/reg-validation.php");
     require_once("../../../../private/csv.php");
+    require_once("../../../../private/functions.php");
     
 ?>
 
@@ -84,6 +85,8 @@
             $data[] = $line;
             
             write_csv("../../../../private/database/registration.csv", $data, true);
+            
+            // redirect_to(url_for("/mall/account/login/"));
         }
     }
     
