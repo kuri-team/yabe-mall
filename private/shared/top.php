@@ -93,8 +93,17 @@
   <div class="mobile-menu" id="mobile-menu">
     <ul>
       <li class="mobile-menu-cart"><a href="<?=url_for("/mall/cart");?>"><i class="fas fa-shopping-cart"></i>Cart</a></li>
-      <li class="mobile-menu-my-account"><a href="<?=url_for("/mall/account/my-account");?>">My Account</a></li>
-      <li class="mobile-menu-login"><a href="<?=url_for("/mall/account/login");?>">Login</a></li>
+      <?php
+    
+          if (isset($_SESSION["logged_in"])) {
+              if ($_SESSION["logged_in"]) {
+                  echo "<li><a href='" . url_for("/mall/account/my-account") . "'>My Account</a></li>";
+              } else {
+                  echo "<li><a href='" . url_for("/mall/account/login") . "'>Login</a></li>";
+              }
+          }
+      
+      ?>
       <li><a href="<?=url_for("/mall/");?>">Home</a></li>
       <li><a href="<?=url_for("/mall/browse");?>">Browse</a></li>
       <li><a href="<?=url_for("/mall/about-us");?>">About Us</a></li>
