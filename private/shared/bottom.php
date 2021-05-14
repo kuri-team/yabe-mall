@@ -52,7 +52,7 @@
 
 <div class="cookie-consent">
     <div class="cookie-consent-container">
-        <p class="text-align-justify">We use cookies to find out the way to provide the best experience for you. By clicking "Accept" ,
+        <p class="text-align-justify">We use cookies to find out the way to provide the best experience for you. By clicking "Accept",
             you agree to the use of cookies and other technologies on our website.</p>
         <div class="cookie-consent-button">
             <a href="https://gdpr-info.eu/" target="_blank"><button class="cookie-consent-learn-more">Learn more</button></a>
