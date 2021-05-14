@@ -48,7 +48,7 @@
                             $_POST["username"] === $data[$index]["tel"] ||
                             $_POST["username"] === $data[$index]["username"]
                     )
-                    && $_POST["password"] === $data[$index]["credential"]
+                    && password_verify($_POST["password"], $data[$index]["credential"])
             ) {
                 $invalid = false;
                 
