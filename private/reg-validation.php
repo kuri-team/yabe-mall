@@ -90,7 +90,10 @@
         return boolval(preg_match($pwd_regex, $pwd));
     }
     
-    function validate_verify_password($verify_pwd): bool {
-        if ($_POST['pwd']!= $_POST['verify_pwd']) {
-            return boolval(preg_match($verify_pwd));
-        }}
+    function verify_password($credential, $verify_pwd): bool {
+        if ($credential === $verify_pwd) {
+            return true;
+        } else {
+            return false;
+        }
+    }
