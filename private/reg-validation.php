@@ -92,14 +92,19 @@
     
     
     /**
-     * Check if user verified password match
+     * Check if user retyped password matches password
+     * @param $credential
+     * user password
      * @param $verify_pwd
-     * user verified password
+     * user retyped password
      * @return bool
-     * <strong><em>true</em></strong> if user verified password matches password ,
+     * <strong><em>true</em></strong> if user retyped password matches password,
      * <strong><em>false</em></strong> otherwise.
      */
-    function verify_password($verify_pwd): bool {
-        if ($_POST['pwd']!= $_POST['verify_pwd']) {
-            return boolval($verify_pwd);
-        }}
+    function verify_password($credential, $verify_pwd): bool {
+        if ($credential === $verify_pwd) {
+            return true;
+        } else {
+            return false;
+        }
+    }
