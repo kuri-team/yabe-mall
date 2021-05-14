@@ -44,7 +44,7 @@
           <li><label>Phone Number</label><?=$_SESSION["user_data"]["tel"];?></li>
           <li><label>Address</label><?=$_SESSION["user_data"]["address"];?></li>
           <li><label>City - Zipcode</label><?=$_SESSION["user_data"]["city"];?> - <?=$_SESSION["user_data"]["zipcode"];?></li>
-          <li><label>Country</label><?=$_SESSION["user_data"]["country"];?></li>
+          <li><label>Country</label><?=get_country_name($_SESSION["user_data"]["country"]);?></li>
           <?php
           
               if ($_SESSION["user_data"]["acc_type"] === "shopper") {
