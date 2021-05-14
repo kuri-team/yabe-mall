@@ -62,21 +62,23 @@
                 validate_pwd($credential) &&
                 verify_password($credential, $verify_pwd)
         ) {
-            $id_num = count($data) + 1;
+            $id_num = count($data) + 1;    // automatically create id number
             $hashed_pwd = password_hash($credential, PASSWORD_BCRYPT);  // hash pwd for security
             
-            $fields = [];
+            // array storing user input
+            $fields = [$id_num, $fname, $lname, $gender, $bdate, $email, $tel, $address, $city, $zipcode, $country,
+                        $username, $hashed_pwd, $acc_type, $bus_name, $store_name, $store_category];
             
+            // array storing header
             $headers = [];
             foreach ($data[0] as $header => $field) {
                 $headers[] = $header;
             }
             
+            // create an associative array associating header and user input
             $line = [];
-            foreach ($headers as $header) {
-                $line[] = [
-                        // $header => $value
-                ];
+            for ($idx = 0; $idx < count($headers); $idx++) {
+                $line[$headers[$idx]] = $fields[$idx];
             }
             
             $data[] = $line;
