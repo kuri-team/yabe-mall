@@ -45,7 +45,18 @@
           <li><label>Address</label><?=$_SESSION["user_data"]["address"];?></li>
           <li><label>City - Zipcode</label><?=$_SESSION["user_data"]["city"];?> - <?=$_SESSION["user_data"]["zipcode"];?></li>
           <li><label>Country</label><?=$_SESSION["user_data"]["country"];?></li>
-          <li><label>Account Type</label><?=$_SESSION["user_data"]["acc_type"];?></li>
+          <?php
+          
+              if ($_SESSION["user_data"]["acc_type"] === "shopper") {
+                  echo "<li><label>Account Type</label>Shopper</li>";
+              } else {
+                  echo "<li><label>Account Type</label>Store Owner</li>";
+                  echo "<li><label>Business Name</label>" . $_SESSION["user_data"]["bus_name"] . "</li>";
+                  echo "<li><label>Store Name</label>" . $_SESSION["user_data"]["store_name"] . "</li>";
+                  echo "<li><label>Store Category</label>" . $_SESSION["user_data"]["store_category"] . "</li>";
+              }
+          
+          ?>
         </ul>
         <button class="my-account-info-edit-bttn">Edit</button>
       </article>
@@ -60,6 +71,13 @@
           <a href="">My Orders</a>
           <a href="">Payment Information</a>
           <a href="">Password & Security</a>
+          <?php
+    
+              if ($_SESSION["user_data"]["acc_type"] === "store_owner") {
+                  echo "<a href=''>Business Dashboard</a>";
+              }
+          
+          ?>
           <a href="<?=url_for('/mall/account/login/') . '?q=logout';?>">Log Out</a>
         </div>
       </article>

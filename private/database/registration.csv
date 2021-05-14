@@ -1,5 +1,5 @@
 id,fname,lname,gender,bdate,email,tel,address,city,zipcode,country,username,credential,acc_type,bus_name,store_name,store_category,avatar_src
 1,Anh Thu,Tran Ngoc,Female,2002-01-01,s3879312@rmit.edu.vn,01-387-9312,"1600 Pennsylvania Avenue NW","Washington D.C.",20500,US,tnathu-ai,Password123!,shopper,null,null,null,"/media/image/usr-content/thu.jpg"
 2,Duc Manh,Nguyen,Male,2002-02-01,s3878480@rmit.edu.vn,084-387-8480,"4 Le Duan St., Ben Nghe Ward, Dstr. 1","HCMC",700000,VN,rider3458,Duducmanh456@,shopper,null,null,null,"/media/image/usr-content/manh.jpg"
-3,Mike,Nguyen,Male,1999-05-01,s3877562@rmit.edu.vn,031-387-7562,"Rosa Manuslaan 31","Pijnacker",2642,NL,miketvo,Mike%7nguyen89,store_owner,kuri,kuri,bookstore,"/media/image/usr-content/mike.png"
+3,Mike,Nguyen,Male,1999-05-01,s3877562@rmit.edu.vn,031-387-7562,"Rosa Manuslaan 31","Pijnacker",2642,NL,miketvo,Mike%7nguyen89,store_owner,Kuri Corporation,Kuri Literatures,Bookstore,"/media/image/usr-content/mike.png"
 4,Yen Nhi,Doan,Female,2002-03-01,s3880599@rmit.edu.vn,01-388-0599,"111 Wellington St.,","Ottawa",10900,CA,doanyennhi,H4n&S00young,shopper,null,null,null,"/media/image/usr-content/nhi.jpg"
