@@ -49,7 +49,7 @@
         validate_email($email);
         validate_tel($tel);
         validate_zipcode($zipcode);
-        validate_pwd($pwd);
+        validate_pwd($credential);
         verify_password($verify_pwd);
         
         if ($credential === $verify_pwd) {
