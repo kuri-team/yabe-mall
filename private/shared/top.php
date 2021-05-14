@@ -28,15 +28,8 @@
   <title><?=$page_title;?></title>
 </head>
 <body>
-<div id="dimmed-page"></div>
 
-<div id="overlay-cart-window">
-  <div id="disabled-cart-msg" class="text-align-center">
-    <button id="cart-closing-bttn" class="float-right"><i class="fas fa-times"></i></button>
-    <p class="clear-both">This feature is only available for registered user. Please
-      <a href="<?=url_for("/mall/account/login");?>">login</a> or <a href="<?=url_for("/mall/account/register");?>">register</a>.</p>
-  </div>
-</div>
+<div id="dimmed-page"></div>
 
 <header>
   <nav>

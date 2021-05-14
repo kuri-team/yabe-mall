@@ -1,18 +1,24 @@
 <?php require_once("../../../private/initialize.php"); ?>
 
 <?php
-
-$page_title = "Yabe | Cart";
-$style_sheets = [
-    "/css/common.css",
-    "/css/cart.css",
-];
-$scripts = array(
-    "/js/common.js",
-    "/js/cart/cart-display.js"
-);
-
-include(SHARED_PATH . "/top.php");
+    
+    $page_title = "Yabe | Cart";
+    $style_sheets = [
+        "/css/common.css",
+        "/css/cart.css",
+    ];
+    $scripts = array(
+        "/js/common.js",
+        "/js/cart/cart-display.js"
+    );
+    
+    if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
+        $place_order_href = "/mall/cart/thank-you.php";
+    } else {
+        $place_order_href = "/mall/account/login/?q=place_order";
+    }
+    
+    include(SHARED_PATH . "/top.php");
 
 ?>
 
@@ -67,8 +73,8 @@ include(SHARED_PATH . "/top.php");
                   <span class="cart-product-total-fee"></span>
                 </li>
                 <li class="cart-product-summary-button">
-                  <span ><a href="../"><button class="cart-product-summary-button-continue">CONTINUE SHOPPING</button></a></span>
-                  <span ><a href="./thank-you.php"><button class="cart-product-summary-button-order">PLACE ORDER</button></a></span>
+                  <span ><a href="<?=url_for("/mall/");?>"><button class="cart-product-summary-button-continue">CONTINUE SHOPPING</button></a></span>
+                  <span ><a href="<?=url_for($place_order_href);?>"><button class="cart-product-summary-button-order">PLACE ORDER</button></a></span>
                 </li>
           </ul>
           </div>

@@ -19,12 +19,20 @@
     ];
     
     
-    // Log out logic
-    if (isset($_GET["q"]) && $_GET["q"] === "logout") {
-        $_SESSION["logged_in"] = false;
-        unset($_SESSION["user_data"]);
+    // GET query logic
+    $place_order = false;
+    if (isset($_GET["q"])) {
+        // Place order logic
+        if (isset($_GET["q"]) && $_GET["q"] === "place_order") {
+            $place_order = true;
+        }
+    
+        // Log out logic
+        if (isset($_GET["q"]) && $_GET["q"] === "logout") {
+            $_SESSION["logged_in"] = false;
+            unset($_SESSION["user_data"]);
+        }
     }
-    // End of log out logic
     
     
     // Login logic
@@ -71,7 +79,12 @@
         if (!$invalid) {
             $_SESSION["logged_in"] = true;
             $_SESSION["user_data"] = $user_data;
-            header("Location: /mall/account/my-account/");
+            
+            if ($place_order) {
+                header("Location: /mall/cart/");
+            } else {
+                header("Location: /mall/account/my-account/");
+            }
         }
     }
     // End of login logic
