@@ -65,6 +65,8 @@
             $id_num = count($data) + 1;
             $hashed_pwd = password_hash($credential, PASSWORD_BCRYPT);  // hash pwd for security
             
+            $fields = [];
+            
             $headers = [];
             foreach ($data[0] as $header => $field) {
                 $headers[] = $header;
