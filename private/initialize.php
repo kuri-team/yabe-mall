@@ -1,5 +1,15 @@
 <?php
     
+    // Start a session when user access the site and a session for that user has not been started already
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    
+    // Initialize login status to false
+    if (!isset($_SESSION["logged_in"])) {
+        $_SESSION["logged_in"] = false;
+    }
+    
     ob_start(); // output buffering is turned on
     
     // Development mode
