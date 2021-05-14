@@ -17,9 +17,9 @@ include(SHARED_PATH . "/top.php");
 
   <main id="content">
     <ul class="breadcrumb">
-      <li><a href="../../">Home</a>/</li>
-      <li><a href="../">Legal</a>/</li>
-      <li><a href="./">Copyright</a></li>
+      <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
+      <li><a href="<?=url_for("/mall/legal");?>">Legal</a>/</li>
+      <li><a href="<?=url_for("/mall/legal/copyright");?>">Copyright</a></li>
     </ul>
 
     <h1 class="content-title">COPYRIGHT</h1>

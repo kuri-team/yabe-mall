@@ -1,5 +1,9 @@
-<?php require_once("../../../../private/initialize.php"); ?>
-<?php require_once("../../../../private/reg-validation.php"); ?>
+<?php
+    
+    require_once("../../../../private/initialize.php");
+    require_once("../../../../private/reg-validation.php");
+    
+?>
 
 <?php
 
@@ -36,8 +40,13 @@
             $store_category = validate_form($_POST["store_cat"]);
         }
     }
-
-include(SHARED_PATH . "/top.php");
+    
+    // Automatic redirect to my-account page if user already logged in
+    if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
+        redirect_to(url_for("/mall/account/my-account/"));
+    }
+    
+    include(SHARED_PATH . "/top.php");
 
 ?>
 

@@ -1,19 +1,24 @@
 <?php require_once("../../../../private/initialize.php"); ?>
 
 <?php
+    
+    $page_title = "Yabe | Forgot Password";
+    $style_sheets = [
+        "/css/common.css",
+        "/css/account/common.css",
+        "/css/account/forgot-password.css",
+    ];
+    $scripts = [
+        "/js/common.js",
+        "/js/account/common.js",
+    ];
 
-$page_title = "Yabe | Forgot Password";
-$style_sheets = [
-    "/css/common.css",
-    "/css/account/common.css",
-    "/css/account/forgot-password.css",
-];
-$scripts = [
-    "/js/common.js",
-    "/js/account/common.js",
-];
-
-include(SHARED_PATH . "/top.php");
+    // Automatic redirect to my-account page if user already logged in
+    if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
+        redirect_to(url_for("/mall/account/my-account/"));
+    }
+    
+    include(SHARED_PATH . "/top.php");
 
 ?>
 
@@ -41,10 +46,10 @@ include(SHARED_PATH . "/top.php");
 
     <section class="level">
       <div>
-        <a href="../login">Sign in?</a>
+        <a href="<?=url_for("mall/account/login");?>">Sign in?</a>
       </div>
       <div>
-        <a href="../register">Create an account</a>
+        <a href="<?=url_for("mall/account/register");?>">Create an account</a>
       </div>
     </section>
   </form>
