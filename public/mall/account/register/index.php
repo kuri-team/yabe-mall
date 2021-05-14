@@ -503,35 +503,35 @@
         <div class="register-field flex-container flex-align-items-center flex-justify-content-center">
           <div class="register-item flex-container animated">
             <label class="label" for="business-name">Business Name</label>
-            <input type="text" name="business_name" id="business-name" value="">
+            <input type="text" name="business_name" id="business-name" value="" required>
           </div>
         </div>
 
         <div class="register-field flex-container flex-align-items-center flex-justify-content-center">
           <div class="register-item flex-container animated">
             <label class="label" for="store-name">Store Name</label>
-            <input type="text" name="store_name" id="store-name" value="">
+            <input type="text" name="store_name" id="store-name" value="" required>
           </div>
         </div>
 
         <div class="register-field flex-container flex-align-items-center flex-justify-content-center">
           <div class="register-item flex-container animated">
             <label class="label" for="store-category">Store Category</label>
-            <select name="store_cat" id="store-category">
+            <select name="store_cat" id="store-category" required>
               <option name="store_cat" value=""></option>
-              <option name="store_cat" value="department">Department Store</option>
-              <option name="store_cat" value="grocery">Grocery Store</option>
-              <option name="store_cat" value="restaurant">Restaurant</option>
-              <option name="store_cat" value="clothing">Clothing Store</option>
-              <option name="store_cat" value="accessory">Accessory Store</option>
-              <option name="store_cat" value="pharmacy">Pharmacy</option>
-              <option name="store_cat" value="technology">Technology Store</option>
-              <option name="store_cat" value="pet">Pet Store</option>
-              <option name="store_cat" value="toy">Toy Store</option>
-              <option name="store_cat" value="specialty">Specialty Store</option>
-              <option name="store_cat" value="thrift">Thrift Store</option>
-              <option name="store_cat" value="service">Service</option>
-              <option name="store_cat" value="kiosk">Kiosk</option>
+              <option name="store_cat" value="Department">Department Store</option>
+              <option name="store_cat" value="Grocery">Grocery Store</option>
+              <option name="store_cat" value="Restaurant">Restaurant</option>
+              <option name="store_cat" value="Clothing">Clothing Store</option>
+              <option name="store_cat" value="Accessory">Accessory Store</option>
+              <option name="store_cat" value="Pharmacy">Pharmacy</option>
+              <option name="store_cat" value="Technology">Technology Store</option>
+              <option name="store_cat" value="Pet">Pet Store</option>
+              <option name="store_cat" value="Toy">Toy Store</option>
+              <option name="store_cat" value="Specialty">Specialty Store</option>
+              <option name="store_cat" value="Thrift">Thrift Store</option>
+              <option name="store_cat" value="Service">Service</option>
+              <option name="store_cat" value="Kiosk">Kiosk</option>
             </select>
             <i class="fas fa-caret-down"></i>
           </div>
