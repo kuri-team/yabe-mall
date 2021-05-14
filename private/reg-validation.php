@@ -108,3 +108,11 @@
             return false;
         }
     }
+    
+    /*
+    function unique_email_tel($data, $email, $tel): bool {
+            foreach ($data as $data_field) {
+                for ($idx = 0; $idx < count($data_field); $idx++) {
+                }
+            }
+    } */
