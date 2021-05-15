@@ -21,5 +21,9 @@ include(SHARED_PATH . "/top.php");
     <li><a href="<?=url_for("/mall/legal/privacy-policy");?>">Privacy Policy</a></li>
     <li><a href="<?=url_for("/mall/legal/copyright");?>">Copyright</a></li>
   </ul>
+  
+  <main>
+  
+  </main>
 
 <?php include(SHARED_PATH . "/bottom.php"); ?>
