@@ -13,6 +13,13 @@ main h1 {
     background: #f7f7f7;
 }
 
+#unique-error-message {
+    color: #ff0000;
+    text-align: -webkit-center;
+    text-align: center;
+    margin: -40px 0 55px;
+}
+
 .no-border {
     border: none !important;
 }

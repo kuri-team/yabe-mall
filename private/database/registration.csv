@@ -1,4 +1,1 @@
 id,fname,lname,gender,bdate,email,tel,address,city,zipcode,country,username,credential,acc_type,bus_name,store_name,store_category,avatar_src
-1,123,Doa,Female,,s388@gmail.com,123456780,dagge,sba,100000,AU,kw123,$2y$10$lgdTBRxWVU6VnMBtGWJVI.eXHMGh6FybIP.J9O6ujwMOCxeKIBdUa,shopper,null,null,null,/media/image/usr-content/86f64a4ac90c5e59ccb6d7e91b79037fee259520.jpg
-2,"Do a nn",Doa,Non-binary,,s3880599@gmail.com,0912345678,"702 Nguyen Van Linh",Seoul,100000,AR,laurendetective,$2y$10$ZpX2yTm9yvLULvC.Rt1ptusfWgUTrn.1zXegw7wPPNjUhpW6/LNVm,shopper,null,null,null,/media/image/usr-content/profile-placeholder_143x143.png
-3,"Han",Doa,null,,123@gmail.com,365775866,"702 Nguyen Van Linh",HCMC,100000,AW,haha,$2y$10$aJLdOuF4AQOmPvvsds4DQOl8yT7xpUKqAS.xxETc./Gxsqaf/ZSim,shopper,null,null,null,/media/image/usr-content/profile-placeholder_143x143.png

@@ -20,6 +20,8 @@
         "/js/account/register.js",
     ];
     
+    $unique_error_message = "";
+    
     
     // check if user has submitted register form
     if (isset($_POST["register"])) {
@@ -78,8 +80,8 @@
                 verify_password($credential, $verify_pwd)
         ) {
             $data = read_csv("../../../../private/database/registration.csv", true);
-            
             if (!unique_email_tel_usrname($data, $email, $tel, $username)) {
+                $unique_error_message = "Your email/ phone number/ username has already existed. Please enter a different value.";
             
             } else {
                 $id_num = count($data) + 1;    // automatically create id number
@@ -129,8 +131,9 @@
 <main class="content-body register-body">
   <div class="content-text mt-100">
     <h1 class="text-align-center">REGISTER</h1>
+    <div id="unique-error-message"><?php echo $unique_error_message;?></div>
 
-    <div id="register-avatar" class="flex-container flex-justify-content-center">
+      <div id="register-avatar" class="flex-container flex-justify-content-center">
       <div class="avatar-img flex-container flex-align-items-center flex-direction-column">
         <img alt="avatar" src="../../../media/image/profile-placeholder_143x143.png">
         <div class="edit-icon text-align-center"><i class="fas fa-edit"></i> Edit</div>
@@ -317,7 +320,7 @@
           </div>
         </div>
       </div>
-
+      
       <div class="register-field register-bttn-field flex-container flex-direction-column flex-align-items-center">
         <label><input type="reset" value="CLEAR"></label>
         <label><input type="submit" name="register" value="REGISTER"></label>
