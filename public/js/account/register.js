@@ -132,8 +132,6 @@ function Validator(object) {
     if (formInput) {
         // Register form
         formInput.onsubmit = function () {
-            alert("Your register form is ONLY successfully sent when you are redirected to the registration page.");
-
             let isFormValid = true;
 
             // Loop through rules and validate

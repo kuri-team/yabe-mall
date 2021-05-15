@@ -13,11 +13,12 @@ main h1 {
     background: #f7f7f7;
 }
 
-#unique-error-message {
-    color: #ff0000;
-    text-align: -webkit-center;
-    text-align: center;
-    margin: -40px 0 55px;
+.submit-feedback-wrapper {
+    /* TODO: Style this */
+}
+
+.submit-feedback {
+    /* TODO: Style this */
 }
 
 .no-border {

@@ -109,23 +109,25 @@
     }
     
     
-    function unique_email_tel_usrname(array $data, string $email, string $tel, string $username): bool {
-        $is_unique = false;
+    /**
+     * TODO: Add docstring here
+     * @param array $data
+     * @param string $email
+     * @param string $tel
+     * @param string $username
+     * @return bool
+     */
+    function unique_registration(array $data, string $email, string $tel, string $username): bool {
         if (count($data) !== 0) {
             foreach ($data as $data_fields) {
                 if (
-                    $email !== $data_fields["email"] &&
-                    $tel !== $data_fields["tel"] &&
-                    $username !== $data_fields["username"]
+                    $email === $data_fields["email"] ||
+                    $tel === $data_fields["tel"] ||
+                    $username === $data_fields["username"]
                 ) {
-                    $is_unique = true;
-                } else {
-                    $is_unique = false;
-                    break;
+                   return false;
                 }
             }
-        } else {
-            $is_unique = true;
         }
-        return $is_unique;
+        return true;
     }

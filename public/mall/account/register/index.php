@@ -20,8 +20,7 @@
         "/js/account/register.js",
     ];
     
-    $unique_error_message = "";
-    
+    $submit_feedback = "";
     
     // check if user has submitted register form
     if (isset($_POST["register"])) {
@@ -80,10 +79,11 @@
                 verify_password($credential, $verify_pwd)
         ) {
             $data = read_csv("../../../../private/database/registration.csv", true);
-            if (!unique_email_tel_usrname($data, $email, $tel, $username)) {
-                $unique_error_message = "Your email/ phone number/ username has already existed. Please enter a different value.";
-            
+            if (!unique_registration($data, $email, $tel, $username)) {
+                $submit_feedback = "Your email / phone number / username has already existed. Please use a different one.";
             } else {
+                $submit_feedback = "Successful registration. You will be redirected to Login page.";
+              
                 $id_num = count($data) + 1;    // automatically create id number
                 $hashed_pwd = password_hash($credential, PASSWORD_BCRYPT);  // hash pwd for security
     
@@ -114,7 +114,7 @@
                     move_uploaded_file($_FILES["avatar"]["tmp_name"], PUBLIC_PATH . $avatar_src);
                 }
     
-                redirect_to(url_for("/mall/account/login/"));
+//                redirect_to(url_for("/mall/account/login/"));
             }
         }
     }
@@ -129,9 +129,18 @@
 ?>
 
 <main class="content-body register-body">
+  <div class="submit-feedback-wrapper flex-container flex-justify-content-center">
+    <?php
+    
+        if ($submit_feedback !== "") {
+            echo "<div class='submit-feedback'>" . $submit_feedback . "</div>";
+        }
+        
+    ?>
+  </div>
+  
   <div class="content-text mt-100">
     <h1 class="text-align-center">REGISTER</h1>
-    <div id="unique-error-message"><?php echo $unique_error_message;?></div>
 
       <div id="register-avatar" class="flex-container flex-justify-content-center">
       <div class="avatar-img flex-container flex-align-items-center flex-direction-column">
