@@ -67,7 +67,9 @@
       </article>
 
       <article class="my-account-box my-account-avatar-wrapper flex-container flex-justify-content-center flex-align-items-center">
-        <img class="my-account-avatar circle-img" alt="profile picture" src="<?=$_SESSION["user_data"]["avatar_src"];?>">
+        <div class="my-account-avatar flex-container flex-align-items-center flex-justify-content-center circle-img">
+          <img alt="profile picture" src="<?=$_SESSION["user_data"]["avatar_src"];?>">
+        </div>
       </article>
 
       <article class="my-account-box my-account-links-wrapper">
