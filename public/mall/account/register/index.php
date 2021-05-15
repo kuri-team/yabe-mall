@@ -20,9 +20,9 @@
         "/js/account/register.js",
     ];
     
-    $submit_feedback = "";
     
     // check if user has submitted register form
+    $submit_feedback = "";  // User submission validity flag + feedback message
     if (isset($_POST["register"])) {
         // get all user input
         $fname = validate_form($_POST["fname"]);
