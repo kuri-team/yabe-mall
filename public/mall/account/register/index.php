@@ -104,6 +104,15 @@
             
             $data[] = $line;
             
+            // only remove extra spaces but not space between two words
+            beautify_string($fname);
+            beautify_string($lname);
+            beautify_string($email);
+            beautify_string($tel);
+            beautify_string($address);
+            beautify_string($bus_name);
+            beautify_string($store_name);
+            
             write_csv("../../../../private/database/registration.csv", $data, true);
             if ($avatar_provided) {
                 move_uploaded_file($_FILES["avatar"]["tmp_name"], PUBLIC_PATH . $avatar_src);
