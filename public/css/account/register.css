@@ -18,10 +18,11 @@ main h1 {
     position: fixed;
     top: 90px;
     background-color: #ffe6e6;
+    opacity: 0.95;
     display: block;
-    width: 100%;
+    width: 80%;
     margin: auto;
-    padding: 30px;
+    padding: 30px 20%;
     text-align: center;
     border: 1px solid #cd4813;
     transform-origin: top;
@@ -250,6 +251,10 @@ main h1 {
 }
 
 @media only screen and (max-width: 767px) {
+    .submit-feedback {
+        top: 60px;
+    }
+
     .content-text {
         padding-left: 0;
         padding-right: 0;
