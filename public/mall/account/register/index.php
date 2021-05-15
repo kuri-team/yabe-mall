@@ -84,6 +84,11 @@
             } else {
                 $id_num = count($data) + 1;    // automatically create id number
                 $hashed_pwd = password_hash($credential, PASSWORD_BCRYPT);  // hash pwd for security
+                
+                // Default value for birthdate if user does not set it
+                if ($bdate === "") {
+                    $bdate = "null";
+                }
     
                 // array storing user input
                 $fields = [$id_num, $fname, $lname, $gender, $bdate, $email, $tel, $address, $city, $zipcode, $country,
