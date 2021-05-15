@@ -5,7 +5,6 @@
 $page_title = "Yabe | Legal";
 $style_sheets = [
     "/css/common.css",
-    "/css/legal/legal.css",
 ];
 $scripts = [
     "/js/common.js",
