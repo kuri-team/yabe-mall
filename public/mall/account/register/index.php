@@ -80,7 +80,7 @@
         ) {
             $data = read_csv("../../../../private/database/registration.csv", true);
             if (!unique_registration($data, $email, $tel, $username)) {
-                $submit_feedback = "Your email / phone number / username has already existed. Please use a different one.";
+                $submit_feedback = "Email / phone number / username already associated with an account. Please use a different one.";
             } else {
                 $submit_feedback = "Successful registration. You will be redirected to Login page.";
               
@@ -128,21 +128,22 @@
 
 ?>
 
+<?php
+    
+    if ($submit_feedback !== "") {
+        echo "<div class='flex-container flex-justify-content-center'>";
+        echo "<div class='submit-feedback'>" . $submit_feedback . "</div>";
+        echo "</div>";
+    }
+
+?>
+
 <main class="content-body register-body">
   <div class="content-text mt-100">
-      <div class="submit-feedback-wrapper flex-container flex-justify-content-center">
-          <?php
-            
-              if ($submit_feedback !== "") {
-                  echo "<div class='submit-feedback'>" . $submit_feedback . "</div>";
-              }
-        
-          ?>
-      </div>
 
-      <h1 class="text-align-center">REGISTER</h1>
+    <h1 class="text-align-center">REGISTER</h1>
 
-      <div id="register-avatar" class="flex-container flex-justify-content-center">
+    <div id="register-avatar" class="flex-container flex-justify-content-center">
       <div class="avatar-img flex-container flex-align-items-center flex-direction-column">
         <img alt="avatar" src="../../../media/image/profile-placeholder_143x143.png">
         <div class="edit-icon text-align-center"><i class="fas fa-edit"></i> Edit</div>

@@ -13,21 +13,21 @@ main h1 {
     background: #f7f7f7;
 }
 
-.submit-feedback-wrapper {
+.submit-feedback {
+    position: -ms-device-fixed;
+    position: fixed;
+    top: 90px;
     background-color: #ffe6e6;
     display: block;
-    padding: 14px 10px;
-    width: 400px;
-    margin: 20px auto 100px;
-    text-align: center;
-    border-radius: 28px;
-    border: 2px solid #cd4813;
-    animation: fadeIn 0.5s;
-}
-
-.submit-feedback {
-    color: #cd4813;
+    width: 100%;
+    margin: auto;
     padding: 20px;
+    text-align: center;
+    border: 1px solid #cd4813;
+    transform-origin: top;
+    animation: fadeInExpand 0.5s;
+    color: #cd4813;
+    z-index: 10;
 }
 
 .no-border {
