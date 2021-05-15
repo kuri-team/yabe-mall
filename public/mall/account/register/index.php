@@ -129,18 +129,18 @@
 ?>
 
 <main class="content-body register-body">
-  <div class="submit-feedback-wrapper flex-container flex-justify-content-center">
-    <?php
-    
-        if ($submit_feedback !== "") {
-            echo "<div class='submit-feedback'>" . $submit_feedback . "</div>";
-        }
-        
-    ?>
-  </div>
-  
   <div class="content-text mt-100">
-    <h1 class="text-align-center">REGISTER</h1>
+      <div class="submit-feedback-wrapper flex-container flex-justify-content-center">
+          <?php
+            
+              if ($submit_feedback !== "") {
+                  echo "<div class='submit-feedback'>" . $submit_feedback . "</div>";
+              }
+        
+          ?>
+      </div>
+
+      <h1 class="text-align-center">REGISTER</h1>
 
       <div id="register-avatar" class="flex-container flex-justify-content-center">
       <div class="avatar-img flex-container flex-align-items-center flex-direction-column">

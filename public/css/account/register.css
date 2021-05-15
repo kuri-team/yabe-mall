@@ -14,11 +14,20 @@ main h1 {
 }
 
 .submit-feedback-wrapper {
-    /* TODO: Style this */
+    background-color: #ffe6e6;
+    display: block;
+    padding: 14px 10px;
+    width: 400px;
+    margin: 20px auto 100px;
+    text-align: center;
+    border-radius: 28px;
+    border: 2px solid #cd4813;
+    animation: fadeIn 0.5s;
 }
 
 .submit-feedback {
-    /* TODO: Style this */
+    color: #cd4813;
+    padding: 20px;
 }
 
 .no-border {
