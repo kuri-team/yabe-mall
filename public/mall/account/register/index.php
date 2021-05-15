@@ -129,8 +129,11 @@
     if (isset($_POST["register"])) {
         if ($unique_registration_info) {
             echo "<div class='flex-container flex-justify-content-center'>";
-            echo "<div class='submit-feedback-valid'>Successful registration. You will be redirected to the Login page in <span id='redirect-countdown'>NULL - Javascript is not enabled</span> seconds. Click <a href='" . url_for("/mall/account/login/") . "'>here</a> if it does not automatically redirect.</div>";
+            echo "<div class='submit-feedback-valid'>Successful registration. You will be redirected to the Login page in
+                    <span id='redirect-countdown'><noscript>NULL - Javascript is not enabled</noscript></span> seconds.
+                    Click <a href='" . url_for("/mall/account/login/") . "'>here</a> if it does not automatically redirect.</div>";
             echo "</div>";
+            echo "<script src='" . url_for("js/account/register-redirection-countdown.js") . "'></script>";
         } else {
             echo "<div class='flex-container flex-justify-content-center'>";
             echo "<div class='submit-feedback-not-unique'>Email / phone number / username already existed. Please use a different one.</div>";
