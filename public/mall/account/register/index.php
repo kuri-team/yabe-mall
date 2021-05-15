@@ -22,7 +22,7 @@
     
     
     // check if user has submitted register form
-    $submit_feedback = "";  // User submission validity flag + feedback message
+    $unique_registration_info = true;  // User submission unique validity flag
     if (isset($_POST["register"])) {
         // get all user input
         $fname = validate_form($_POST["fname"]);
@@ -80,10 +80,8 @@
         ) {
             $data = read_csv("../../../../private/database/registration.csv", true);
             if (!unique_registration($data, $email, $tel, $username)) {
-                $submit_feedback = "Email / phone number / username already associated with an account. Please use a different one.";
+                $unique_registration_info = false;
             } else {
-                $submit_feedback = "Successful registration. You will be redirected to Login page.";
-              
                 $id_num = count($data) + 1;    // automatically create id number
                 $hashed_pwd = password_hash($credential, PASSWORD_BCRYPT);  // hash pwd for security
     
@@ -113,8 +111,6 @@
                 if ($avatar_provided) {
                     move_uploaded_file($_FILES["avatar"]["tmp_name"], PUBLIC_PATH . $avatar_src);
                 }
-    
-//                redirect_to(url_for("/mall/account/login/"));
             }
         }
     }
@@ -130,10 +126,16 @@
 
 <?php
     
-    if ($submit_feedback !== "") {
-        echo "<div class='flex-container flex-justify-content-center'>";
-        echo "<div class='submit-feedback'>" . $submit_feedback . "</div>";
-        echo "</div>";
+    if (isset($_POST["register"])) {
+        if ($unique_registration_info) {
+            echo "<div class='flex-container flex-justify-content-center'>";
+            echo "<div class='submit-feedback-valid'>Successful registration. You will be redirected to the Login page in <span id='redirect-countdown'>10</span> seconds. Click <a href='" . url_for("/mall/account/login/") . "'>here</a> if it does not automatically redirect.</div>";
+            echo "</div>";
+        } else {
+            echo "<div class='flex-container flex-justify-content-center'>";
+            echo "<div class='submit-feedback-not-unique'>Email / phone number / username already existed. Please use a different one.</div>";
+            echo "</div>";
+        }
     }
 
 ?>
