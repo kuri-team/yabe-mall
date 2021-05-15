@@ -4,14 +4,16 @@
     
     
     /**
-     * Trim whitespace of user input and convert special characters to HTML entities
-     * @param $input
+     * Reformat and sanitize user input
+     * @param string $input
      * user input
-     * @return string <strong><em>user input</em></strong> that has been trimmed and special characters have been converted
+     * @return string user input that has been <strong><em>trimmed</em></strong>,
+     * extra whitespaces replaced with only <em><strong>one</em></strong> whitespace between words,
+     * and <em><strong>special characters</em></strong> have been <em><strong>converted</em></strong>
      */
-    function validate_form($input): string {
+    function validate_form(string $input): string {
         $input = trim($input);
-        $input = beautify_string($input);
+        $input = remove_extra_spaces($input);
         $input = htmlspecialchars($input, ENT_SUBSTITUTE);
         return $input;
     }
@@ -110,12 +112,14 @@
     
     
     /**
-     * TODO: Add docstring here
+     * Check if user email, phone number, and username are unique in the data
      * @param array $data
      * @param string $email
      * @param string $tel
      * @param string $username
      * @return bool
+     * <strong><em>true</em></strong> if email, phone number, and username are unique.
+     * <strong><em>false</em></strong> otherwise.
      */
     function unique_registration(array $data, string $email, string $tel, string $username): bool {
         if (count($data) !== 0) {

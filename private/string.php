@@ -9,11 +9,10 @@
     
     
     /**
-     * TODO: Docstring Documentation Here!
+     * Replace extra whitespaces with only one whitespace between words in a string
      * @param string $input
      * @return string
      */
-    function beautify_string(string $input): string {
-        // Remove extra spaces after a word
-        return preg_replace ( "/^\s+|\s+$|\s+(?=\s)/", "", $input );
+    function remove_extra_spaces(string $input): string {
+        return preg_replace("/^\s+|\s+$|\s+(?=\s)/", "", $input );
     }
