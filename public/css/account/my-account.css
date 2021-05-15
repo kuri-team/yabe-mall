@@ -63,9 +63,15 @@
 
 .my-account-avatar {
     width: 80%;
-    height: auto;
     max-width: 250px;
+    max-height: 250px;
     flex-grow: 0;
+    overflow: hidden;
+}
+
+.my-account-avatar img {
+    width: 100%;
+    max-width: 250px;
 }
 
 .my-account-links-wrapper {
