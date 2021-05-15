@@ -79,46 +79,41 @@
         ) {
             $data = read_csv("../../../../private/database/registration.csv", true);
             
-            $id_num = count($data) + 1;    // automatically create id number
-            $hashed_pwd = password_hash($credential, PASSWORD_BCRYPT);  // hash pwd for security
+            if (!unique_email_tel_usrname($data, $email, $tel, $username)) {
             
-            // array storing user input
-            $fields = [$id_num, $fname, $lname, $gender, $bdate, $email, $tel, $address, $city, $zipcode, $country,
-                        $username, $hashed_pwd, $acc_type, $bus_name, $store_name, $store_category, $avatar_src];
-            
-            // array storing header
-            $headers = [];
-            if (count($data) !== 0) {
-                foreach ($data[0] as $header => $field) {
-                    $headers[] = $header;
-                }
             } else {
-                $headers = read_csv("../../../../private/database/registration.csv")[0];
+                $id_num = count($data) + 1;    // automatically create id number
+                $hashed_pwd = password_hash($credential, PASSWORD_BCRYPT);  // hash pwd for security
+    
+                // array storing user input
+                $fields = [$id_num, $fname, $lname, $gender, $bdate, $email, $tel, $address, $city, $zipcode, $country,
+                    $username, $hashed_pwd, $acc_type, $bus_name, $store_name, $store_category, $avatar_src];
+    
+                // array storing header
+                $headers = [];
+                if (count($data) !== 0) {
+                    foreach ($data[0] as $header => $field) {
+                        $headers[] = $header;
+                    }
+                } else {
+                    $headers = read_csv("../../../../private/database/registration.csv")[0];
+                }
+    
+                // create an associative array associating header and user input
+                $line = [];
+                for ($index = 0; $index < count($headers); $index++) {
+                    $line[$headers[$index]] = $fields[$index];
+                }
+    
+                $data[] = $line;
+    
+                write_csv("../../../../private/database/registration.csv", $data, true);
+                if ($avatar_provided) {
+                    move_uploaded_file($_FILES["avatar"]["tmp_name"], PUBLIC_PATH . $avatar_src);
+                }
+    
+                redirect_to(url_for("/mall/account/login/"));
             }
-            
-            // create an associative array associating header and user input
-            $line = [];
-            for ($index = 0; $index < count($headers); $index++) {
-                $line[$headers[$index]] = $fields[$index];
-            }
-            
-            $data[] = $line;
-            
-            // only remove extra spaces but not space between two words
-            beautify_string($fname);
-            beautify_string($lname);
-            beautify_string($email);
-            beautify_string($tel);
-            beautify_string($address);
-            beautify_string($bus_name);
-            beautify_string($store_name);
-            
-            write_csv("../../../../private/database/registration.csv", $data, true);
-            if ($avatar_provided) {
-                move_uploaded_file($_FILES["avatar"]["tmp_name"], PUBLIC_PATH . $avatar_src);
-            }
-            
-            redirect_to(url_for("/mall/account/login/"));
         }
     }
     
