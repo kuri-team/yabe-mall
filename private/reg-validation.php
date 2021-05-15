@@ -108,10 +108,24 @@
         }
     }
     
-    /*
-    function unique_email_tel($data, $email, $tel): bool {
-            foreach ($data as $data_field) {
-                for ($idx = 0; $idx < count($data_field); $idx++) {
+    
+    function unique_email_tel_usrname(array $data, string $email, string $tel, string $username): bool {
+        $is_unique = false;
+        if (count($data) !== 0) {
+            foreach ($data as $data_fields) {
+                if (
+                    $email !== $data_fields["email"] &&
+                    $tel !== $data_fields["tel"] &&
+                    $username !== $data_fields["username"]
+                ) {
+                    $is_unique = true;
+                } else {
+                    $is_unique = false;
+                    break;
                 }
             }
-    } */
+        } else {
+            $is_unique = true;
+        }
+        return $is_unique;
+    }
