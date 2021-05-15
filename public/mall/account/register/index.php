@@ -254,8 +254,8 @@
 
       <div class="input-field-validation register-field flex-container flex-align-items-center flex-justify-content-center">
         <div class="register-item flex-container animated">
-          <label class="label" for="usrname">Username</label>
-          <input id="usrname" name="usrname" type="text">
+          <label class="label required" for="usrname">Username</label>
+          <input id="usrname" name="usrname" type="text" required>
           <span class="message-error"></span>
         </div>
       </div>
