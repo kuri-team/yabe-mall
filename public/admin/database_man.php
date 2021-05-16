@@ -22,6 +22,8 @@
         redirect_to(url_for("/admin/auth"));
     }
     
+    $database_names = list_databases();
+    
     include(SHARED_PATH . "/top.php");
 
 ?>
@@ -48,7 +50,33 @@
     </aside>
 
     <section class="content-child admin-content">
-      To be implemented
+      <article>
+        <h2>Table of Contents</h2>
+        <ul>
+          <?php
+    
+              foreach ($database_names as $database_name) {
+                  echo "<li><a href='#" . $database_name . "'>" . $database_name . "</a></li>";
+              }
+          
+          ?>
+        </ul>
+      </article>
+      
+      <?php
+      
+          foreach ($database_names as $database_name) {
+              echo "<h2 id='" . $database_name . "'>" . $database_name . "<a href='#'><i class='fas fa-angle-up ml-10'></i></a></h2>";
+              $database = read_csv("../../private/database/" . $database_name, true);
+              if (count($database) === 0) {
+                  $database = read_csv("../../private/database/" . $database_name);
+                  print_table($database, true);
+              } else {
+                  print_table($database);
+              }
+          }
+      
+      ?>
     </section>
   </div>
 </main>
