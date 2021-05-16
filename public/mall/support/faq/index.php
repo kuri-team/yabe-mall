@@ -5,7 +5,7 @@
     $page_title = "Yabe | FAQs";
     $style_sheets = [
         "/css/common.css",
-        "/css/support/support.css",
+        "/css/support/faq.css",
     ];
     $scripts = [
         "/js/common.js",
