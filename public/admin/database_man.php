@@ -72,9 +72,9 @@
                 $database = read_csv("../../private/database/" . $database_name, true);
                 if (count($database) === 0) {
                     $database = read_csv("../../private/database/" . $database_name);
-                    print_table($database_name, $database, true);
+                    print_table($database_name, $database, url_for("/admin/auth/action.php?q=/admin/database_man"),true);
                 } else {
-                    print_table($database_name, $database);
+                    print_table($database_name, $database, url_for("/admin/auth/action.php?q=/admin/database_man"));
                 }
             }
         

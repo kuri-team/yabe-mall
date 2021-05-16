@@ -30,16 +30,16 @@
                 password_verify($_POST["password"], $data[0]["phash"])
             ) {
                 if (count($_SESSION["action_incoming_post_query"]) > 0) {
-                    new_logs_entry("../../../private/logs.txt", $_SERVER["SCRIPT_FILENAME"] . "| Admin credential accepted, piping POST query and redirecting to " . $_GET["q"]);
+                    new_logs_entry("../../../private/logs.txt", $_SERVER["SCRIPT_FILENAME"] . " | Admin credential accepted, piping POST query and redirecting to " . $_GET["q"]);
                     $piped_post_query = $_SESSION["action_incoming_post_query"];  // Transfer query saved in $_SESSION to memory
                     unset($_SESSION["action_incoming_post_query"]);  // Delete the query saved in $_SESSION for security
-                    http_post(url_for($_GET["q"]), $piped_post_query);
+                    post_redirect_to(url_for($_GET["q"]), $piped_post_query);
                 } else {
-                    new_logs_entry("../../../private/logs.txt", $_SERVER["SCRIPT_FILENAME"] . "| Admin credential accepted, redirecting to " . $_GET["q"]);
+                    new_logs_entry("../../../private/logs.txt", $_SERVER["SCRIPT_FILENAME"] . " | Admin credential accepted, redirecting to " . $_GET["q"]);
                     redirect_to(url_for($_GET["q"]));
                 }
             } else {
-                new_logs_entry("../../../private/logs.txt", $_SERVER["SCRIPT_FILENAME"] . "| Admin credentials rejected");
+                new_logs_entry("../../../private/logs.txt", $_SERVER["SCRIPT_FILENAME"] . " | Admin credentials rejected");
                 $invalid = true;
             }
         } else {

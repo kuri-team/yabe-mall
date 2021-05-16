@@ -42,13 +42,14 @@
     
     
     /**
-     * Convert and echo a given database as an editable HTML table
+     * Convert and echo a given database as an editable HTML table. Uses method=POST to communicate with database processor
      * @param string $name the name of the given database. For use with form submission.
      * @param array $database MUST be a database with header. Won't work on header-less database. For empty databases, set <strong>$empty</strong> to <strong><em>true</em></strong>.
+     * @param string $action url to database processor
      * @param bool $empty set to <strong><em>true</em></strong> to just print out a header row (only works on empty databases). Default to <strong><em>false</em></strong>.
      */
-    function print_table(string $name, array $database, $empty=false): void {
-        echo "<form class='form dtbm-form' action='database.php' method='post' target='_self'>";
+    function print_table(string $name, array $database, string $action, $empty=false): void {
+        echo "<form class='form dtbm-form' action='" . $action . "' method='post' target='_self'>";
         echo "<table class='dtbm-table'>";
         if ($empty) {
             // Header row

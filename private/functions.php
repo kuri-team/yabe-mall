@@ -13,16 +13,18 @@
         exit;
     }
     
-    function http_post(string $url, array $data): bool {
-        $options = [
-            "http" => [
-                "header" => "Content-type: application/x-www-form-urlencoded\r\n",
-                "method" => "POST",
-                "content" => http_build_query($data)
-            ]
-        ];
-        $context = stream_context_create($options);
-        return file_get_contents(PUBLIC_PATH . $url, false, $context);
+    function post_redirect_to(string $location, array $data): void {
+        echo "<form id='post-redirect-to-action' action='" . $location . "' method='post'>";
+        foreach ($data as $key => $value) {
+            echo "<input type='hidden' name='" . htmlentities($key) . "' value='" . htmlentities($value) . "'>";
+        }
+        echo "</form>";
+        
+        echo "<script>";
+        echo "document.getElementById('post-redirect-to-action').submit();";
+        echo "</script>";
+        
+        echo "<noscript>Please enable Javascript for this feature to work</noscript>";
     }
     
     function display_errors($errors=array()): string {
