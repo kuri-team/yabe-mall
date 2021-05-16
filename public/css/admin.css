@@ -59,6 +59,9 @@ form input[type="submit"]:active {
 
 .dtbm-form {
     display: none;
+    min-width: 200px;
+    max-height: 420px;
+    overflow: scroll;
 }
 
 .dtbm-table, .dtbm-table td, .dtbm-table th {
@@ -86,6 +89,10 @@ form input[type="submit"]:active {
 
 /* Responsive admin pages */
 @media screen and (max-width: 950px) {
+    .dtbm-form {
+        width: initial;
+    }
+
     .admin-content {
         width: initial;
     }

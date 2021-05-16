@@ -20,4 +20,4 @@ TOGGLE_VIS_BTTNS.forEach(function (element, index) {
             FORMS[index].setAttribute("style", "");
         }
     });
-})
+});
