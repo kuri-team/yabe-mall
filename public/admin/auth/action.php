@@ -29,16 +29,16 @@
                 password_verify($_POST["password"], $data[0]["phash"])
             ) {
                 new_logs_entry("../../../private/logs.txt", "Admin credential accepted, piping POST query and redirecting to " . $_GET["q"]);
-                $post_query = $_SESSION["action_post_query"];  // Transfer query saved in $_SESSION to memory
-                unset($_SESSION["action_post_query"]);  // Delete the query saved in $_SESSION for security
-                http_post(url_for($_GET["q"]), $post_query);
+                $piped_post_query = $_SESSION["action_incoming_post_query"];  // Transfer query saved in $_SESSION to memory
+                unset($_SESSION["action_incoming_post_query"]);  // Delete the query saved in $_SESSION for security
+                http_post(url_for($_GET["q"]), $piped_post_query);
             } else {
                 new_logs_entry("../../../private/logs.txt", "Admin credentials rejected");
                 $invalid = true;
             }
         } else {
             // Save the incoming POST query to $_SESSION to be piped later when the admin can be authenticated
-            $_SESSION["action_post_query"] = $_POST;
+            $_SESSION["action_incoming_post_query"] = $_POST;
         }
     } else {
         redirect_to(url_for("/admin"));
