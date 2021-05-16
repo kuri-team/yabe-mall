@@ -30,11 +30,15 @@
             ) {
                 $_SESSION["admin_logged_in"] = true;
                 new_logs_entry("../../../private/logs.txt", "Admin credential accepted, redirecting to " . $_GET["q"]);
-                redirect_to(url_for($_GET["q"]));
+                http_post(url_for($_GET["q"]), $_SESSION["action_post_query"]);
+                unset($_SESSION["action_post_query"]);
             } else {
                 new_logs_entry("../../../private/logs.txt", "Admin credentials rejected");
                 $invalid = true;
             }
+        } else {
+            // Save POST query to $_SESSION to be piped later
+            $_SESSION["action_post_query"] = $_POST;
         }
     } else {
         redirect_to(url_for("/admin"));
@@ -52,7 +56,7 @@
     <h1>ACTION REQUIRED</h1>
     <?php
    
-        // If login failed, the system will display an error div
+        // If authentication failed, the system will display an error div
         if (isset($invalid) && $invalid) {
             echo("<div class='login-invalid-credentials'>Invalid credentials</div>");
         }
