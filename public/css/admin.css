@@ -13,6 +13,19 @@ textarea {
     border: none;
 }
 
+form input {
+    display: block;
+    padding: 5px 20px;
+    margin-bottom: 12px;
+}
+
+form input[type="reset"],
+form input[type="submit"] {
+    display: inline;
+    width: min-content;
+    margin-top: 15px;
+}
+
 
 /* Responsive admin pages */
 @media screen and (max-width: 950px) {

@@ -1,6 +1,7 @@
 <?php
     
     require_once("../../private/initialize.php");
+    require_once("../../private/csv.php");
     require_once("../../private/logsman.php");
 
 ?>
@@ -16,18 +17,14 @@
         "/js/common.js",
     ];
     
-    // GET query logic
-    if (isset($_GET["q"])) {
-        // Log out logic
-        if (isset($_GET["q"]) && $_GET["q"] === "clear_entries") {
-            clear_logs_entry("../../private/logs.txt", ALL_ENTRIES);
-        }
-    }
-    
     // Automatic redirect to Administrator Authentication page if user hasn't logged in
     if (isset($_SESSION["admin_logged_in"]) && !$_SESSION["admin_logged_in"]) {
         redirect_to(url_for("/admin/auth"));
     }
+    
+    
+    $admin_data = read_csv("../../private/database/admin.csv", true);
+    
     
     include(SHARED_PATH . "/top.php");
 
@@ -44,31 +41,38 @@
       <ul>
         <li><a href="<?=url_for("/admin");?>">Welcome</a></li>
         <li><a href="<?=url_for("/admin/phpinfo.php");?>">PHPInfo</a></li>
-        <li><a class="content-aside-nav-active" href="<?=url_for("/admin/logs.php");?>">Logs</a></li>
+        <li><a href="<?=url_for("/admin/logs.php");?>">Logs</a></li>
         <li><a href="<?=url_for("/admin/databse_man.php");?>">Database Management</a></li>
         <li><a href="<?=url_for("/admin/file_man.php");?>">File Management</a></li>
         <li><a href="<?=url_for("/admin/page_editor.php");?>">Page Editor</a></li>
         <li><a href="<?=url_for("/admin/about_us.php");?>">Edit About Us</a></li>
         <li><a href="<?=url_for("/admin/development_mode.php");?>">Development Mode</a></li>
         <li><a href="<?=url_for("/admin/manual.php");?>">Administrator's Manual</a></li>
-        <li><a href="<?=url_for("/admin/password.php");?>">Change password</a></li>
+        <li><a class="content-aside-nav-active" href="<?=url_for("/admin/password.php");?>">Change password</a></li>
         <li><a href="<?=url_for("/admin/auth?q=logout");?>">Log out<i class="fas fa-sign-out-alt ml-10"></i></a></li>
       </ul>
     </aside>
         
     <section class="content-child admin-content">
-      <article>
-        <label for="phpinfo">Content of <strong>logs.txt</strong></label>
-        <textarea id="phpinfo" rows="35" disabled>
-          <?php
-              
-              echo "\n";
-              readfile("../../private/logs.txt");
-              
-          ?>
-        </textarea>
-        <a href="<?=url_for("/admin/logs.php?q=clear_entries");?>">Clear all log entries</a>
-      </article>
+      <p>Current Admin username: <strong><?=$admin_data[0]["username"];?></strong></p>
+      
+      <form action="password.php" method="post" target="_self" autocomplete="off">
+        <div class="flex-container flex-direction-column mt-50">
+          <label for="username">New Username (Leave empty to keep current)</label>
+          <input id="username" name="username" type="text" value="">
+  
+          <label for="current-pwd">Current Password</label>
+          <input id="current-pwd" name="current_pwd" type="password" required>
+  
+          <label for="new-pwd">New Password</label>
+          <input id="new-pwd" name="new_pwd" type="password" required>
+        </div>
+        
+        <div class="flex-container flex-justify-content-space-between">
+          <input name="reset" type="reset" value="RESET">
+          <input name="change_password" type="submit" value="SUBMIT">
+        </div>
+      </form>
     </section>
   </div>
 </main>

@@ -1,7 +1,6 @@
 <?php
     
     require_once("../../private/initialize.php");
-    require_once("../../private/database.php");
     
     
     // Automatic redirect to Administrator Authentication page if user hasn't logged in
