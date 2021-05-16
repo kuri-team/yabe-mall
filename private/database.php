@@ -42,11 +42,13 @@
     
     
     /**
-     * Convert and echo a given database as HTML table
+     * Convert and echo a given database as an editable HTML table
+     * @param string $name the name of the given database. For use with form submission.
      * @param array $database MUST be a database with header. Won't work on header-less database. For empty databases, set <strong>$empty</strong> to <strong><em>true</em></strong>.
      * @param bool $empty set to <strong><em>true</em></strong> to just print out a header row (only works on empty databases). Default to <strong><em>false</em></strong>.
      */
-    function print_table(array $database, $empty=false): void {
+    function print_table(string $name, array $database, $empty=false): void {
+        echo "<form class='form' action='database.php' method='post' target='_self'>";
         echo "<table class='dtbm-table'>";
         if ($empty) {
             // Header row
@@ -64,13 +66,17 @@
             echo "</rh>";
             
             // Data rows
-            foreach ($database as $entry) {
+            for ($index = 0; $index < count($database); $index++) {
                 echo "<tr>";
-                foreach ($entry as $field) {
-                    echo "<td>" . $field . "</td>";
+                foreach ($database[$index] as $header => $field) {
+                    echo "<td><input type='text' name='" . $name . "_" . $index . "_" . $header . "' value='" . $field . "'></td>";
                 }
                 echo "</tr>";
             }
         }
         echo "</table>";
+        echo "<div class='mt-10'>";
+        echo "<input name='modify_database_" . $name . "' type='submit' value='MODIFY'>";
+        echo "</div>";
+        echo "</form>";
     }

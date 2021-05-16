@@ -47,6 +47,16 @@ form input[type="submit"]:active {
     scroll-margin-top: 180px;
 }
 
+.dtbm-table-title .toggle-visibility {
+    color: #eb5e28;
+    padding-left: 10px;
+    font-size: 0.8em;
+}
+
+.dtbm-table-title .toggle-visibility:hover {
+    cursor: pointer;
+}
+
 .dtbm-table, .dtbm-table td, .dtbm-table th {
     background: #f7f7f7;
     border: 2px solid #fff;
@@ -58,6 +68,15 @@ form input[type="submit"]:active {
 .dtbm-table th {
     color: #fff;
     background: #403d39;
+}
+
+.dtbm-table td {
+    padding: 10px 0 0;
+}
+
+.dtbm-table td input {
+    border: none;
+    background: transparent;
 }
 
 
