@@ -16,6 +16,15 @@
         "/js/common.js",
     ];
     
+    // GET query logic
+    if (isset($_GET["q"])) {
+        // Log out logic
+        if (isset($_GET["q"]) && $_GET["q"] === "clear_entries") {
+            $logs_file = fopen("../../private/logs.txt", "w");
+            fclose($logs_file);
+        }
+    }
+    
     // Automatic redirect to Administrator Authentication page if user hasn't logged in
     if (isset($_SESSION["admin_logged_in"]) && !$_SESSION["admin_logged_in"]) {
         redirect_to(url_for("/admin/auth"));
@@ -35,8 +44,8 @@
     <aside class="content-aside-nav content-child">
       <ul>
         <li><a href="<?=url_for("/admin");?>">Welcome</a></li>
-        <li><a class="content-aside-nav-active" href="<?=url_for("/admin/phpinfo.php");?>">PHPInfo</a></li>
-        <li><a href="<?=url_for("/admin/logs.php");?>">Logs</a></li>
+        <li><a href="<?=url_for("/admin/phpinfo.php");?>">PHPInfo</a></li>
+        <li><a class="content-aside-nav-active" href="<?=url_for("/admin/logs.php");?>">Logs</a></li>
         <li><a href="<?=url_for("/admin/databse_man.php");?>">Database Management</a></li>
         <li><a href="<?=url_for("/admin/file_man.php");?>">File Management</a></li>
         <li><a href="<?=url_for("/admin/page_editor.php");?>">Page Editor</a></li>
@@ -50,16 +59,16 @@
         
     <section class="content-child admin-content">
       <article>
-        <label for="phpinfo">Output for <strong>php -i</strong></label>
+        <label for="phpinfo">Content of <strong>logs.txt</strong></label>
         <textarea id="phpinfo" rows="35" disabled>
           <?php
               
               echo "\n";
-              print_r(shell_exec("php -i"));
+              readfile("../../private/logs.txt");
               
           ?>
         </textarea>
-        <a href="<?=url_for("/admin/phpinfo_formatted.php");?>">Formatted version</a>
+        <a href="<?=url_for("/admin/logs.php?q=clear_entries");?>">Clear all log entries</a>
       </article>
     </section>
   </div>

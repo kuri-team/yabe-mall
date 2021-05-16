@@ -6,3 +6,11 @@ textarea {
 .admin-content {
     width: 100%;
 }
+
+
+/* Responsive admin pages */
+@media screen and (max-width: 950px) {
+    .admin-content {
+        width: initial;
+    }
+}
