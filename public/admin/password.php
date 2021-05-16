@@ -12,6 +12,7 @@
     $style_sheets = [
         "/css/common.css",
         "/css/admin.css",
+        "/css/form.css",
     ];
     $scripts = [
         "/js/common.js",
@@ -80,7 +81,7 @@
     <section class="content-child admin-content">
       <p>Current Admin username: <strong><?=$admin_data[0]["username"];?></strong></p>
       
-      <form action="password.php" method="post" target="_self" autocomplete="off">
+      <form class="form" action="password.php" method="post" target="_self" autocomplete="off">
         <div class="flex-container flex-direction-column mt-50">
           <?php
           
@@ -101,13 +102,13 @@
           <label for="username">New Username (Leave empty to keep current)</label>
           <input id="username" name="username" type="text" value="">
   
-          <label for="current-pwd">Current Password</label>
+          <label for="current-pwd" class="required">Current Password</label>
           <input id="current-pwd" name="current_pwd" type="password" required>
   
-          <label for="new-pwd">New Password</label>
+          <label for="new-pwd" class="required">New Password</label>
           <input id="new-pwd" name="new_pwd" type="password" required>
 
-          <label for="verify-new-pwd">Verify New Password</label>
+          <label for="verify-new-pwd" class="required">Verify New Password</label>
           <input id="verify-new-pwd" name="verify_new_pwd" type="password" required>
         </div>
         

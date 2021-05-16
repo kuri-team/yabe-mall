@@ -26,6 +26,20 @@ form input[type="submit"] {
     margin-top: 15px;
 }
 
+form input[type="submit"] {
+    color: #fff;
+    background: #252422;
+    border: 1px solid #403d39;
+}
+
+form input[type="submit"]:hover {
+    background: #403d39;
+}
+
+form input[type="submit"]:active {
+    background: #eb5e28;
+}
+
 
 /* Responsive admin pages */
 @media screen and (max-width: 950px) {
