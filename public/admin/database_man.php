@@ -63,20 +63,22 @@
         </ul>
       </article>
       
-      <?php
-      
-          foreach ($database_names as $database_name) {
-              echo "<h2 id='" . $database_name . "'>" . $database_name . "<a href='#'><i class='fas fa-angle-up ml-10'></i></a></h2>";
-              $database = read_csv("../../private/database/" . $database_name, true);
-              if (count($database) === 0) {
-                  $database = read_csv("../../private/database/" . $database_name);
-                  print_table($database, true);
-              } else {
-                  print_table($database);
-              }
-          }
-      
-      ?>
+      <article>
+        <?php
+        
+            foreach ($database_names as $database_name) {
+                echo "<h2 id='" . $database_name . "' class='dtbm-table-title'>" . $database_name . "<a href='#'><i class='fas fa-angle-up ml-10'></i></a></h2>";
+                $database = read_csv("../../private/database/" . $database_name, true);
+                if (count($database) === 0) {
+                    $database = read_csv("../../private/database/" . $database_name);
+                    print_table($database, true);
+                } else {
+                    print_table($database);
+                }
+            }
+        
+        ?>
+      </article>
     </section>
   </div>
 </main>

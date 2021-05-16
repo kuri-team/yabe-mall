@@ -41,6 +41,26 @@ form input[type="submit"]:active {
 }
 
 
+/* Database manager styles */
+.dtbm-table-title {
+    margin-top: 100px;
+    scroll-margin-top: 180px;
+}
+
+.dtbm-table, .dtbm-table td, .dtbm-table th {
+    background: #f7f7f7;
+    border: 2px solid #fff;
+    border-collapse: collapse;
+    text-align: left;
+    padding: 10px 20px;
+}
+
+.dtbm-table th {
+    color: #fff;
+    background: #403d39;
+}
+
+
 /* Responsive admin pages */
 @media screen and (max-width: 950px) {
     .admin-content {
