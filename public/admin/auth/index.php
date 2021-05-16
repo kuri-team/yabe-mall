@@ -2,6 +2,7 @@
     
     require_once("../../../private/initialize.php");
     require_once("../../../private/csv.php");
+    require_once("../../../private/logsman.php");
     
 ?>
 
@@ -24,6 +25,7 @@
         // Log out logic
         if (isset($_GET["q"]) && $_GET["q"] === "logout") {
             $_SESSION["admin_logged_in"] = false;
+            new_logs_entry("../../private/logs.txt", "Admin logged out");
         }
     }
     
@@ -37,8 +39,10 @@
             password_verify($_POST["password"], $data[0]["phash"])
         ) {
             $_SESSION["admin_logged_in"] = true;
+            new_logs_entry("../../private/logs.txt", "Admin logged in");
             redirect_to(url_for("/admin/"));
         } else {
+            new_logs_entry("../../private/logs.txt", "Admin credentials rejected");
             $invalid = true;
         }
     }

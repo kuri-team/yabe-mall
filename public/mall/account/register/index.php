@@ -3,6 +3,7 @@
     require_once("../../../../private/initialize.php");
     require_once("../../../../private/reg-validation.php");
     require_once("../../../../private/csv.php");
+    require_once("../../../../private/logsman.php");
     
 ?>
 
@@ -113,8 +114,10 @@
                 $data[] = $line;
     
                 write_csv("../../../../private/database/registration.csv", $data, true);
+                new_logs_entry("../../private/logs.txt", "User " . $data["username"] . " (" . $data["id"] . ") registered");
                 if ($avatar_provided) {
                     move_uploaded_file($_FILES["avatar"]["tmp_name"], PUBLIC_PATH . $avatar_src);
+                    new_logs_entry("../../private/logs.txt", $_FILES["avatar"]["tmp_name"] . " moved to " . PUBLIC_PATH . $avatar_src);
                 }
             }
         }

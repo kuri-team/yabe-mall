@@ -2,6 +2,7 @@
     
     require_once("../../../../private/initialize.php");
     require_once("../../../../private/csv.php");
+    require_once("../../../../private/logsman.php");
     
 ?>
 
@@ -30,6 +31,7 @@
         // Log out logic
         if (isset($_GET["q"]) && $_GET["q"] === "logout") {
             $_SESSION["logged_in"] = false;
+            new_logs_entry("../../private/logs.txt", "User " . $_SESSION["user_data"]["id"] . " logged out");
             unset($_SESSION["user_data"]);
         }
     }
@@ -54,6 +56,7 @@
                 
                 // Save user data from database to $user_data variable
                 $user_data = [
+                    "id" => $data[$index]["id"],
                     "username" => $data[$index]["username"],
                     "fname" => $data[$index]["fname"],
                     "lname" => $data[$index]["lname"],
@@ -79,7 +82,8 @@
         if (!$invalid) {
             $_SESSION["logged_in"] = true;
             $_SESSION["user_data"] = $user_data;
-            
+            new_logs_entry("../../private/logs.txt", "User " . $_SESSION["user_data"]["id"] . " logged in");
+    
             if ($place_order) {
                 redirect_to(url_for("/mall/cart/"));
             } else {

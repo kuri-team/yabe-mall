@@ -2,6 +2,7 @@
     
     require_once("../../private/initialize.php");
     require_once("../../private/database.php");
+    require_once("../../private/logsman.php");
 
 ?>
 
@@ -20,8 +21,7 @@
     if (isset($_GET["q"])) {
         // Log out logic
         if (isset($_GET["q"]) && $_GET["q"] === "clear_entries") {
-            $logs_file = fopen("../../private/logs.txt", "w");
-            fclose($logs_file);
+            clear_logs_entry("../../private/logs.txt", ALL_ENTRIES);
         }
     }
     
