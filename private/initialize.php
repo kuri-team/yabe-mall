@@ -5,6 +5,11 @@
         session_start();
     }
     
+    // Initialize administrator's login status to false
+    if (!isset($_SESSION["admin_logged_in"])) {
+        $_SESSION["admin_logged_in"] = false;
+    }
+    
     // Initialize login status to false
     if (!isset($_SESSION["logged_in"])) {
         $_SESSION["logged_in"] = false;
