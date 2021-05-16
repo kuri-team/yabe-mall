@@ -29,6 +29,7 @@
     
     
     // Authentication logic
+    $invalid = false;
     if (isset($_POST["act"])) {
         $data = read_csv("../../../private/database/admin.csv", true);
         if (
@@ -37,6 +38,8 @@
         ) {
             $_SESSION["admin_logged_in"] = true;
             redirect_to(url_for("/admin/"));
+        } else {
+            $invalid = true;
         }
     }
     // End of authentication logic
@@ -59,7 +62,7 @@
     <?php
    
         // If login failed, the system will display an error div
-        if (isset($invalid)) {
+        if (isset($invalid) && $invalid) {
             echo("<div class='login-invalid-credentials'>Invalid credentials</div>");
         }
     ?>
