@@ -15,6 +15,7 @@
     ];
     $scripts = [
         "/js/common.js",
+        "/js/admin.js",
     ];
     
     // Automatic redirect to Administrator Authentication page if user hasn't logged in

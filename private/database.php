@@ -48,7 +48,7 @@
      * @param bool $empty set to <strong><em>true</em></strong> to just print out a header row (only works on empty databases). Default to <strong><em>false</em></strong>.
      */
     function print_table(string $name, array $database, $empty=false): void {
-        echo "<form class='form' action='database.php' method='post' target='_self'>";
+        echo "<form class='form dtbm-form' action='database.php' method='post' target='_self'>";
         echo "<table class='dtbm-table'>";
         if ($empty) {
             // Header row
