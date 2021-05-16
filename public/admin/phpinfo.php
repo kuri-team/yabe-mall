@@ -10,6 +10,7 @@
     $page_title = "Yabe CMS Administrator's Dashboard";
     $style_sheets = [
         "/css/common.css",
+        "/css/admin.css",
     ];
     $scripts = [
         "/js/common.js",
@@ -47,9 +48,17 @@
       </ul>
     </aside>
         
-    <section class="content-child">
+    <section class="content-child admin-content">
       <article>
-      
+        <label for="phpinfo">Output for <strong>php -i</strong></label>
+        <textarea id="phpinfo" rows="35" disabled>
+          <?php
+              
+              print_r(shell_exec("php -i"));
+              
+          ?>
+        </textarea>
+        <a href="<?=url_for("/admin/phpinfo_formatted.php");?>">Formatted version</a>
       </article>
     </section>
   </div>
