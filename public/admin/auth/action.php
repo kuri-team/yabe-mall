@@ -21,6 +21,7 @@
     
     
     // Authentication logic
+    $invalid = false;
     if (isset($_GET["q"])) {
         if (isset($_POST["act"])) {
             $data = read_csv("../../../private/database/admin.csv", true);
@@ -28,12 +29,17 @@
                 $_POST["username"] === $data[0]["username"] &&
                 password_verify($_POST["password"], $data[0]["phash"])
             ) {
-                new_logs_entry("../../../private/logs.txt", "Admin credential accepted, piping POST query and redirecting to " . $_GET["q"]);
-                $piped_post_query = $_SESSION["action_incoming_post_query"];  // Transfer query saved in $_SESSION to memory
-                unset($_SESSION["action_incoming_post_query"]);  // Delete the query saved in $_SESSION for security
-                http_post(url_for($_GET["q"]), $piped_post_query);
+                if (count($_SESSION["action_incoming_post_query"]) > 0) {
+                    new_logs_entry("../../../private/logs.txt", $_SERVER["SCRIPT_FILENAME"] . "| Admin credential accepted, piping POST query and redirecting to " . $_GET["q"]);
+                    $piped_post_query = $_SESSION["action_incoming_post_query"];  // Transfer query saved in $_SESSION to memory
+                    unset($_SESSION["action_incoming_post_query"]);  // Delete the query saved in $_SESSION for security
+                    http_post(url_for($_GET["q"]), $piped_post_query);
+                } else {
+                    new_logs_entry("../../../private/logs.txt", $_SERVER["SCRIPT_FILENAME"] . "| Admin credential accepted, redirecting to " . $_GET["q"]);
+                    redirect_to(url_for($_GET["q"]));
+                }
             } else {
-                new_logs_entry("../../../private/logs.txt", "Admin credentials rejected");
+                new_logs_entry("../../../private/logs.txt", $_SERVER["SCRIPT_FILENAME"] . "| Admin credentials rejected");
                 $invalid = true;
             }
         } else {
@@ -43,7 +49,6 @@
     } else {
         redirect_to(url_for("/admin"));
     }
-    $invalid = false;
     // End of authentication logic
     
     
@@ -60,6 +65,7 @@
         if (isset($invalid) && $invalid) {
             echo("<div class='login-invalid-credentials'>Invalid credentials</div>");
         }
+        
     ?>
     <p class="mb-20">Please enter your administrator's credentials</p>
     <label><input type="text" name="username" placeholder="Username / Phone / Email" required></label>

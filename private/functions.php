@@ -22,7 +22,7 @@
             ]
         ];
         $context = stream_context_create($options);
-        return file_get_contents($url, false, $context);
+        return file_get_contents(PUBLIC_PATH . $url, false, $context);
     }
     
     function display_errors($errors=array()): string {

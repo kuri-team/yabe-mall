@@ -69,6 +69,7 @@
         if (isset($invalid) && $invalid) {
             echo("<div class='login-invalid-credentials'>Invalid credentials</div>");
         }
+        
     ?>
     <p class="mb-20">Please enter your administrator's credentials</p>
     <label><input type="text" name="username" placeholder="Username / Phone / Email" required></label>
