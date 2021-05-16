@@ -2,7 +2,7 @@
     
     require_once("../../private/initialize.php");
     require_once("../../private/database.php");
-    
+
 ?>
 
 <?php
@@ -28,13 +28,13 @@
   <ul class=breadcrumb>
     <li><a href="<?=url_for("/mall");?>"><i class="fas fa-long-arrow-alt-left mr-10"></i>Back to Yabe Mall</a></li>
   </ul>
-
+    
   <h1 class="content-title">Yabe CMS Administrator's Dashboard</h1>
   <div class="content-body flex-container">
     <aside class="content-aside-nav content-child">
       <ul>
-        <li><a class="content-aside-nav-active" href="<?=url_for("/admin");?>">Welcome</a></li>
-        <li><a href="<?=url_for("/admin/phpinfo.php");?>">PHPInfo</a></li>
+        <li><a href="<?=url_for("/admin");?>">Welcome</a></li>
+        <li><a class="content-aside-nav-active" href="<?=url_for("/admin/phpinfo.php");?>">PHPInfo</a></li>
         <li><a href="<?=url_for("/admin/logs.php");?>">Logs</a></li>
         <li><a href="<?=url_for("/admin/databse_man.php");?>">Database Management</a></li>
         <li><a href="<?=url_for("/admin/file_man.php");?>">File Management</a></li>
@@ -46,15 +46,13 @@
         <li><a href="<?=url_for("/admin/auth?q=logout");?>">Log out<i class="fas fa-sign-out-alt ml-10"></i></a></li>
       </ul>
     </aside>
-
+        
     <section class="content-child">
       <article>
-        <p>Welcome to Yabe CMS Administrator's Dashboard.</p>
-        <p class="text-align-justify">CMS stands for Content Management System. You can use the administrative tools provided here to modify website database, configure website settings, add/remove account manually, and more advanced operations... If you're new to CMS systems, please refer to the <a href="<?=url_for("");?>">Administrator's Manual</a> to learn how to operate Yabe CMS.</p>
+      
       </article>
     </section>
   </div>
 </main>
 
 <?php include(SHARED_PATH . "/bottom.php"); ?>
-
