@@ -33,7 +33,16 @@
   <div class="content-body">
     <aside class="content-aside-nav content-child">
       <ul>
-        <li><a href="<?=url_for("/admin/auth?q=logout");?>">Log out</a></li>
+        <li><a class="content-aside-nav-active" href="<?=url_for("/admin");?>">Welcome</a></li>
+        <li><a href="<?=url_for("");?>">PHPInfo</a></li>
+        <li><a href="<?=url_for("");?>">Logs</a></li>
+        <li><a href="<?=url_for("");?>">Database Management</a></li>
+        <li><a href="<?=url_for("");?>">File Management</a></li>
+        <li><a href="<?=url_for("");?>">Page Editor</a></li>
+        <li><a href="<?=url_for("");?>">Edit About Us</a></li>
+        <li><a href="<?=url_for("");?>">Development Mode</a></li>
+        <li><a href="<?=url_for("");?>">Change password</a></li>
+        <li><a href="<?=url_for("/admin/auth?q=logout");?>">Log out<i class="fas fa-sign-out-alt ml-10"></i></a></li>
       </ul>
     </aside>
   </div>
