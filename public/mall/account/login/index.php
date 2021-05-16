@@ -31,7 +31,7 @@
         // Log out logic
         if (isset($_GET["q"]) && $_GET["q"] === "logout") {
             $_SESSION["logged_in"] = false;
-            new_logs_entry("../../private/logs.txt", "User " . $_SESSION["user_data"]["id"] . " logged out");
+            new_logs_entry("../../../../private/logs.txt", "User " . $_SESSION["user_data"]["id"] . " logged out");
             unset($_SESSION["user_data"]);
         }
     }
@@ -82,13 +82,15 @@
         if (!$invalid) {
             $_SESSION["logged_in"] = true;
             $_SESSION["user_data"] = $user_data;
-            new_logs_entry("../../private/logs.txt", "User " . $_SESSION["user_data"]["id"] . " logged in");
+            new_logs_entry("../../../../private/logs.txt", "User " . $_SESSION["user_data"]["id"] . " logged in");
     
             if ($place_order) {
                 redirect_to(url_for("/mall/cart/"));
             } else {
                 redirect_to(url_for("/mall/account/my-account/"));
             }
+        } else {
+            new_logs_entry("../../../../private/logs.txt", "User session " . session_id() . " login credentials rejected");
         }
     }
     // End of login logic

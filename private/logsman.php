@@ -19,7 +19,7 @@
     function new_logs_entry(string $logs_filepath, string $content): void {
         $file = fopen($logs_filepath, "a");
         $date = date("c");
-        fwrite($file, $date . ": " . $content);
+        fwrite($file, $date . ": " . $content . "\n");
         fclose($file);
     }
     
@@ -29,7 +29,7 @@
      * @param int $index
      */
     function clear_logs_entry(string $logs_filepath, int $index): void {
-        $logs_file = fopen($logs_filepath, "w");
+        $file = fopen($logs_filepath, "w");
         switch ($index) {
             case ALL_ENTRIES:
                 break;
@@ -38,5 +38,5 @@
             default:
                 break;
         }
-        fclose($logs_file);
+        fclose($file);
     };
