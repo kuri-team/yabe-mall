@@ -1,4 +1,10 @@
-<?php require_once("../../private/initialize.php"); ?>
+<?php
+    
+    require_once("../../private/initialize.php");
+    require_once("../../private/csv.php");
+    require_once("../../private/database.php");
+
+?>
 
 <?php
     
