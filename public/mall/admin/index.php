@@ -31,9 +31,12 @@
   </ul>
 
   <h1 class="content-title">Yabe CMS Administrator's Dashboard</h1>
-
   <div class="content-body">
-    <a href="<?=url_for("/mall/admin/auth?q=logout");?>">Log out</a>
+    <aside class="content-aside-nav content-child">
+      <ul>
+        <li><a href="<?=url_for("/mall/admin/auth?q=logout");?>">Log out</a></li>
+      </ul>
+    </aside>
   </div>
 </main>
 
