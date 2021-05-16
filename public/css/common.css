@@ -443,7 +443,44 @@ hr {
     background-color: #fff;
 }
 
-.content-text {
+.content-aside-nav {
+    width: max-content;
+    background: #403d39;
+    flex-shrink: 0;
+    padding: 0 !important;
+}
+
+.content-aside-nav ul {
+    display: -o-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    padding: 0;
+    margin: 0;
+}
+
+.content-aside-nav ul li {
+    list-style: none;
+    box-shadow: 0 23px 3px -24px #bab1a0;
+}
+
+.content-aside-nav ul li a {
+    display: block;
+    color: #fff;
+    padding: 20px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.content-aside-nav ul li a:hover {
+    color: #000;
+    background: #bab1a0;
+}
+
+.content-text, .content-child {
     padding: 30px 70px;
 }
 
@@ -1008,8 +1045,21 @@ footer > .flex-container {
 
 
 /******************************
-    Mobile responsive nav & footer
+    Mobile responsive nav & footer & content-body
 *******************************/
+@media only screen and (max-width: 950px) {
+    .content-body {
+        flex-direction: column;
+    }
+
+    .content-aside-nav {
+        width: 100%;
+        text-align: -moz-center;
+        text-align: -webkit-center;
+        text-align: center;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     nav {
         height: 30px;
