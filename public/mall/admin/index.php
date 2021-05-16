@@ -33,7 +33,7 @@
   <h1 class="content-title">Yabe CMS Administrator's Dashboard</h1>
 
   <div class="content-body">
-    To be implemented
+    <a href="<?=url_for("/mall/admin/auth?q=logout");?>">Log out</a>
   </div>
 </main>
 

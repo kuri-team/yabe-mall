@@ -19,7 +19,16 @@
     ];
     
     
-    // Login logic
+    // GET query logic
+    if (isset($_GET["q"])) {
+        // Log out logic
+        if (isset($_GET["q"]) && $_GET["q"] === "logout") {
+            $_SESSION["admin_logged_in"] = false;
+        }
+    }
+    
+    
+    // Authentication logic
     if (isset($_POST["act"])) {
         $invalid = true;
         $data = read_csv("../../../../private/database/admin.csv", true);
@@ -39,7 +48,7 @@
             redirect_to(url_for("/mall/admin/"));
         }
     }
-    // End of login logic
+    // End of authentication logic
     
     
     // Automatic redirect to Administrator's Dashboard page if user already logged in
@@ -53,21 +62,22 @@
 ?>
 
 <main class="dialog-container">
-    <form id="login-form" method="post" autocomplete="on">
-        <h1>ADMINISTRATOR AUTHENTICATION</h1>
-        <?php
-        
-            // If login failed, the system will display an error div
-            if (isset($invalid)) {
-                echo("<div class='login-invalid-credentials'>Invalid credentials</div>");
-            }
-    
-        ?>
-        <label><input type="text" name="username" placeholder="Username / Phone / Email" required></label>
-        <label><input class="password-field" type="password" name="password" placeholder="Password" required></label>
-        <div class="toggle-password-visibility"><i class="fas fa-eye"></i></div>
-        <input type="submit" name="act" value="LOGIN">
-    </form>
+  <form id="login-form" method="post" autocomplete="on">
+    <h1>YABE CMS</h1>
+    <h2 class="mb-60">Administrator's Dashboard</h2>
+    <?php
+   
+        // If login failed, the system will display an error div
+        if (isset($invalid)) {
+            echo("<div class='login-invalid-credentials'>Invalid credentials</div>");
+        }
+    ?>
+    <p class="mb-20">Please enter your administrator's credentials</p>
+    <label><input type="text" name="username" placeholder="Username / Phone / Email" required></label>
+    <label><input class="password-field" type="password" name="password" placeholder="Password" required></label>
+    <div class="toggle-password-visibility"><i class="fas fa-eye"></i></div>
+    <input type="submit" name="act" value="LOGIN">
+  </form>
 </main>
 
 <?php include(SHARED_PATH . "/bottom.php"); ?>
