@@ -19,7 +19,7 @@
     function new_logs_entry(string $logs_filepath, string $content): void {
         $file = fopen($logs_filepath, "a");
         $date = date("c");
-        fwrite($file, $date . ": " . $content . "\n");
+        fwrite($file, "[" . $date . "sess_" . session_id() . "] " . $content . "\n");
         fclose($file);
     }
     

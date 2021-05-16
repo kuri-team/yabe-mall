@@ -25,6 +25,32 @@
     
     $admin_data = read_csv("../../private/database/admin.csv", true);
     
+    // POST submission logic
+    define("PASSWORD_CHANGED", 1);
+    define("AUTH_FAILED", -1);
+    define("VERIFY_NEW_PWD_FAILED", -2);
+    define("NO_SUBMISSION", 0);
+    
+    $status = NO_SUBMISSION;
+    if (isset($_POST["change_password"]) && $_POST["change_password"] === "SUBMIT") {
+        if (password_verify($_POST["current_pwd"], $admin_data[0]["phash"])) {
+            if ($_POST["new_pwd"] === $_POST["verify_new_pwd"]) {
+                $admin_data[0]["username"] = $_POST["username"] === "" ? $admin_data["username"] : $_POST["username"];
+                $admin_data[0]["phash"] = password_hash($_POST["new_pwd"], PASSWORD_DEFAULT);
+                $data = [$admin_data];
+                write_csv("../../private/database/admin.csv", $admin_data, true);
+                new_logs_entry("../../private/logs.txt",
+                    "Admin credentials updated. Admin username: " . $_POST["username"]);
+                $status = PASSWORD_CHANGED;
+            } else {
+                $status = VERIFY_NEW_PWD_FAILED;
+            }
+        } else {
+            $status = AUTH_FAILED;
+            new_logs_entry("../../private/logs.txt", "Admin credentials failed to update - password verification failed");
+        }
+    }
+    
     
     include(SHARED_PATH . "/top.php");
 
@@ -66,6 +92,9 @@
   
           <label for="new-pwd">New Password</label>
           <input id="new-pwd" name="new_pwd" type="password" required>
+
+          <label for="verify-new-pwd">Verify New Password</label>
+          <input id="verify-new-pwd" name="verify_new_pwd" type="password" required>
         </div>
         
         <div class="flex-container flex-justify-content-space-between">

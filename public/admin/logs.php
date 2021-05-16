@@ -59,7 +59,7 @@
     <section class="content-child admin-content">
       <article>
         <label for="phpinfo">Content of <strong>logs.txt</strong></label>
-        <textarea id="phpinfo" rows="35" disabled>
+        <textarea id="phpinfo" class="textarea-nowrap" rows="35" disabled>
           <?php
               
               echo "\n";

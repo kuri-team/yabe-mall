@@ -90,7 +90,7 @@
                 redirect_to(url_for("/mall/account/my-account/"));
             }
         } else {
-            new_logs_entry("../../../../private/logs.txt", "User session " . session_id() . " login credentials rejected");
+            new_logs_entry("../../../../private/logs.txt", "User login credentials rejected");
         }
     }
     // End of login logic
