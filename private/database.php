@@ -70,14 +70,14 @@
             for ($index = 0; $index < count($database); $index++) {
                 echo "<tr>";
                 foreach ($database[$index] as $header => $field) {
-                    echo "<td><input type='text' name='" . $name . "_" . $index . "_" . $header . "' value='" . $field . "'></td>";
+                    echo "<td><input type='text' name='" . $index . "-" . $header . "' value='" . $field . "'></td>";
                 }
                 echo "</tr>";
             }
         }
         echo "</table>";
         echo "<div class='mt-10'>";
-        echo "<input name='modify_database_" . $name . "' type='submit' value='MODIFY'>";
+        echo "<input name='database-" . $name . "' type='submit' value='MODIFY'>";
         echo "</div>";
         echo "</form>";
     }
