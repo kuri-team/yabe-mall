@@ -7,6 +7,12 @@ textarea {
     width: 100%;
 }
 
+textarea {
+    color: #fff;
+    background: #252422;
+    border: none;
+}
+
 
 /* Responsive admin pages */
 @media screen and (max-width: 950px) {
