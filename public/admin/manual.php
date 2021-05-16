@@ -33,7 +33,6 @@
         <li><a href="<?=url_for("/admin/phpinfo.php");?>">PHPInfo</a></li>
         <li><a href="<?=url_for("/admin/logs.php");?>">Logs</a></li>
         <li><a href="<?=url_for("/admin/database_man.php");?>">Database Management</a></li>
-        <li><a href="<?=url_for("/admin/file_man.php");?>">File Management</a></li>
         <li><a href="<?=url_for("/admin/page_editor.php");?>">Page Editor</a></li>
         <li><a href="<?=url_for("/admin/about_us.php");?>">Edit About Us</a></li>
         <li><a class="content-aside-nav-active" href="<?=url_for("/admin/manual.php");?>">Administrator's Manual</a></li>
