@@ -42,6 +42,12 @@ i {
     color: inherit;
 }
 
+.textarea-nowrap {
+    white-space: pre;
+    overflow-wrap: normal;
+    overflow-x: scroll;
+}
+
 .hidden {
     display: none;
 }

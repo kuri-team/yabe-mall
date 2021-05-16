@@ -10,6 +10,7 @@
     $page_title = "Yabe CMS Administrator's Dashboard";
     $style_sheets = [
         "/css/common.css",
+        "/css/admin.css"
     ];
     $scripts = [
         "/js/common.js",
@@ -51,6 +52,27 @@
       <article>
         <p>Welcome to Yabe CMS Administrator's Dashboard.</p>
         <p class="text-align-justify">CMS stands for Content Management System. You can use the administrative tools provided here to modify website database, configure website settings, add/remove account manually, and more advanced operations... If you're new to CMS systems, please refer to the <a href="<?=url_for("");?>">Administrator's Manual</a> to learn how to operate Yabe CMS.</p>
+      </article>
+      
+      <article>
+        <label for="sysinfo">System Info:</label>
+        <textarea id="sysinfo" class="textarea-nowrap" rows="40" disabled>
+          <?php
+              
+              echo "\nSession ID: ";
+              print_r(session_id());
+              echo "\n";
+    
+              echo "\$_SESSION = ";
+              print_r($_SESSION);
+              echo "\n";
+    
+              echo "\$_SERVER = ";
+              print_r($_SERVER);
+              echo "\n";
+          
+          ?>
+        </textarea>
       </article>
     </section>
   </div>
