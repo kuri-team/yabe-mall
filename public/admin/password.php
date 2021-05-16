@@ -35,12 +35,12 @@
     if (isset($_POST["change_password"]) && $_POST["change_password"] === "SUBMIT") {
         if (password_verify($_POST["current_pwd"], $admin_data[0]["phash"])) {
             if ($_POST["new_pwd"] === $_POST["verify_new_pwd"]) {
-                $admin_data[0]["username"] = $_POST["username"] === "" ? $admin_data["username"] : $_POST["username"];
+                $admin_data[0]["username"] = $_POST["username"] === "" ? $admin_data[0]["username"] : $_POST["username"];
                 $admin_data[0]["phash"] = password_hash($_POST["new_pwd"], PASSWORD_DEFAULT);
                 $data = [$admin_data];
                 write_csv("../../private/database/admin.csv", $admin_data, true);
                 new_logs_entry("../../private/logs.txt",
-                    "Admin credentials updated. Admin username: " . $_POST["username"]);
+                    "Admin credentials updated. Admin username: " . $admin_data[0]["username"]);
                 $status = PASSWORD_CHANGED;
             } else {
                 $status = VERIFY_NEW_PWD_FAILED;
@@ -72,7 +72,6 @@
         <li><a href="<?=url_for("/admin/file_man.php");?>">File Management</a></li>
         <li><a href="<?=url_for("/admin/page_editor.php");?>">Page Editor</a></li>
         <li><a href="<?=url_for("/admin/about_us.php");?>">Edit About Us</a></li>
-        <li><a href="<?=url_for("/admin/development_mode.php");?>">Development Mode</a></li>
         <li><a href="<?=url_for("/admin/manual.php");?>">Administrator's Manual</a></li>
         <li><a class="content-aside-nav-active" href="<?=url_for("/admin/password.php");?>">Change password</a></li>
         <li><a href="<?=url_for("/admin/auth?q=logout");?>">Log out<i class="fas fa-sign-out-alt ml-10"></i></a></li>
@@ -84,6 +83,22 @@
       
       <form action="password.php" method="post" target="_self" autocomplete="off">
         <div class="flex-container flex-direction-column mt-50">
+          <?php
+          
+              switch ($status) {
+                  case PASSWORD_CHANGED:
+                      echo "<p class='message-success'>Credentials updated.</p>";
+                      break;
+                  case AUTH_FAILED:
+                      echo "<p class='message-error'>Cannot verify your current password.</p>";
+                      break;
+                  case VERIFY_NEW_PWD_FAILED:
+                      echo "<p class='message-warning'>New password verification did not match.</p>";
+                      break;
+              }
+          
+          ?>
+          
           <label for="username">New Username (Leave empty to keep current)</label>
           <input id="username" name="username" type="text" value="">
   

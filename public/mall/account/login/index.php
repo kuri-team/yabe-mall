@@ -30,8 +30,8 @@
     
         // Log out logic
         if (isset($_GET["q"]) && $_GET["q"] === "logout") {
-            $_SESSION["logged_in"] = false;
             new_logs_entry("../../../../private/logs.txt", "User " . $_SESSION["user_data"]["id"] . " logged out");
+            $_SESSION["logged_in"] = false;
             unset($_SESSION["user_data"]);
         }
     }

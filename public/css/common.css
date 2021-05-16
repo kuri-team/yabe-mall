@@ -411,6 +411,21 @@ hr {
     margin-right: 11px;
 }
 
+.message-success {
+    font-weight: bolder;
+    color: #004e00 !important;
+}
+
+.message-warning {
+    font-weight: bolder;
+    color: #eb9d28 !important;
+}
+
+.message-error {
+    font-weight: bolder;
+    color: #f40823 !important;
+}
+
 .breadcrumb {
     margin: 30px auto 50px;
     padding: 0;

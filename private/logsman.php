@@ -29,13 +29,27 @@
      * @param int $index
      */
     function clear_logs_entry(string $logs_filepath, int $index): void {
-        $file = fopen($logs_filepath, "w");
+        $file = null;
         switch ($index) {
             case ALL_ENTRIES:
+                $file = fopen($logs_filepath, "w");
                 break;
             case LATEST_ENTRY:
+                $lines = file($logs_filepath);
+                unset($lines[count($lines) - 1]);
+                $file = fopen($logs_filepath, "w");
+                foreach ($lines as $line) {
+                    fwrite($file, $line);
+                }
                 break;
             default:
+                $lines = file($logs_filepath);
+                unset($lines[$index - 1]);
+                $lines = array_values($lines);
+                $file = fopen($logs_filepath, "w");
+                foreach ($lines as $line) {
+                    fwrite($file, $line);
+                }
                 break;
         }
         fclose($file);

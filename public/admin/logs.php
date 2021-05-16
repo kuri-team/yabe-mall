@@ -49,7 +49,6 @@
         <li><a href="<?=url_for("/admin/file_man.php");?>">File Management</a></li>
         <li><a href="<?=url_for("/admin/page_editor.php");?>">Page Editor</a></li>
         <li><a href="<?=url_for("/admin/about_us.php");?>">Edit About Us</a></li>
-        <li><a href="<?=url_for("/admin/development_mode.php");?>">Development Mode</a></li>
         <li><a href="<?=url_for("/admin/manual.php");?>">Administrator's Manual</a></li>
         <li><a href="<?=url_for("/admin/password.php");?>">Change password</a></li>
         <li><a href="<?=url_for("/admin/auth?q=logout");?>">Log out<i class="fas fa-sign-out-alt ml-10"></i></a></li>
