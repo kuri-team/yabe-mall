@@ -1,7 +1,7 @@
 <?php
     
-    require_once("../../../private/initialize.php");
-    require_once("../../../private/database.php");
+    require_once("../../private/initialize.php");
+    require_once("../../private/database.php");
     
 ?>
 
@@ -17,7 +17,7 @@
     
     // Automatic redirect to Administrator Authentication page if user hasn't logged in
     if (isset($_SESSION["admin_logged_in"]) && !$_SESSION["admin_logged_in"]) {
-        redirect_to(url_for("/mall/admin/auth"));
+        redirect_to(url_for("/admin/auth"));
     }
     
     include(SHARED_PATH . "/top.php");
@@ -26,15 +26,14 @@
 
 <main>
   <ul class=breadcrumb>
-    <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
-    <li><a href="<?=url_for("/mall/admin");?>">Yabe CMS Administrator's Dashboard</a></li>
+    <li><a href="<?=url_for("/mall");?>"><i class="fas fa-long-arrow-alt-left mr-10"></i>Back to Yabe Mall</a></li>
   </ul>
 
   <h1 class="content-title">Yabe CMS Administrator's Dashboard</h1>
   <div class="content-body">
     <aside class="content-aside-nav content-child">
       <ul>
-        <li><a href="<?=url_for("/mall/admin/auth?q=logout");?>">Log out</a></li>
+        <li><a href="<?=url_for("/admin/auth?q=logout");?>">Log out</a></li>
       </ul>
     </aside>
   </div>

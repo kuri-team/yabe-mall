@@ -1,13 +1,13 @@
 <?php
     
-    require_once("../../../../private/initialize.php");
-    require_once("../../../../private/csv.php");
+    require_once("../../../private/initialize.php");
+    require_once("../../../private/csv.php");
     
 ?>
 
 <?php
     
-    $page_title = "Yabe | Administrator Authentication";
+    $page_title = "Yabe CMS Administrator Authentication";
     $style_sheets = [
         "/css/common.css",
         "/css/account/common.css",
@@ -31,7 +31,7 @@
     // Authentication logic
     if (isset($_POST["act"])) {
         $invalid = true;
-        $data = read_csv("../../../../private/database/admin.csv", true);
+        $data = read_csv("../../../private/database/admin.csv", true);
         
         for ($index = 0; $index < count($data); $index++) {
             if (
@@ -45,7 +45,7 @@
         
         if (!$invalid) {
             $_SESSION["admin_logged_in"] = true;
-            redirect_to(url_for("/mall/admin/"));
+            redirect_to(url_for("/admin/"));
         }
     }
     // End of authentication logic
@@ -53,7 +53,7 @@
     
     // Automatic redirect to Administrator's Dashboard page if user already logged in
     if (isset($_SESSION["admin_logged_in"]) && $_SESSION["logged_in"]) {
-        redirect_to(url_for("/mall/admin/"));
+        redirect_to(url_for("/admin/"));
     }
 
     
