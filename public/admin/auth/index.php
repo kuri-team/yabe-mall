@@ -30,20 +30,11 @@
     
     // Authentication logic
     if (isset($_POST["act"])) {
-        $invalid = true;
         $data = read_csv("../../../private/database/admin.csv", true);
-        
-        for ($index = 0; $index < count($data); $index++) {
-            if (
-                $_POST["username"] === $data[$index]["username"] &&
-                password_verify($_POST["password"], $data[$index]["phash"])
-            ) {
-                $invalid = false;
-                break;
-            }
-        }
-        
-        if (!$invalid) {
+        if (
+            $_POST["username"] === $data[0]["username"] &&
+            password_verify($_POST["password"], $data[0]["phash"])
+        ) {
             $_SESSION["admin_logged_in"] = true;
             redirect_to(url_for("/admin/"));
         }
