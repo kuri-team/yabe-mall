@@ -3,6 +3,7 @@
     require_once("../../../../private/initialize.php");
     require_once("../../../../private/reg-validation.php");
     require_once("../../../../private/csv.php");
+    require_once("../../../../private/logsman.php");
     
 ?>
 
@@ -19,6 +20,12 @@
         "/js/account/common.js",
         "/js/account/register.js",
     ];
+    
+    
+    // Automatic redirect to my-account page if user already logged in
+    if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
+        redirect_to(url_for("/mall/account/my-account/"));
+    }
     
     
     // check if user has submitted register form
@@ -113,16 +120,13 @@
                 $data[] = $line;
     
                 write_csv("../../../../private/database/registration.csv", $data, true);
+                new_logs_entry("../../../../private/logs.txt", "User " . $line["username"] . " (" . $line["id"] . ") registered");
                 if ($avatar_provided) {
                     move_uploaded_file($_FILES["avatar"]["tmp_name"], PUBLIC_PATH . $avatar_src);
+                    new_logs_entry("../../../../private/logs.txt", $_FILES["avatar"]["tmp_name"] . " moved to " . PUBLIC_PATH . $avatar_src);
                 }
             }
         }
-    }
-    
-    // Automatic redirect to my-account page if user already logged in
-    if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
-        redirect_to(url_for("/mall/account/my-account/"));
     }
     
     include(SHARED_PATH . "/top.php");

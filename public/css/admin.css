@@ -1,0 +1,99 @@
+textarea {
+    display: block;
+    width: 100%;
+}
+
+.admin-content {
+    width: 100%;
+}
+
+textarea {
+    color: #fff;
+    background: #252422;
+    border: none;
+}
+
+form input {
+    display: block;
+    padding: 5px 20px;
+    margin-bottom: 12px;
+}
+
+form input[type="reset"],
+form input[type="submit"] {
+    display: inline;
+    width: min-content;
+    margin-top: 15px;
+}
+
+form input[type="submit"] {
+    color: #fff;
+    background: #252422;
+    border: 1px solid #403d39;
+}
+
+form input[type="submit"]:hover {
+    background: #403d39;
+}
+
+form input[type="submit"]:active {
+    background: #eb5e28;
+}
+
+
+/* Database manager styles */
+.dtbm-table-title {
+    margin: 50px 0 0 0;
+    scroll-margin-top: 120px;
+}
+
+.dtbm-table-title .toggle-visibility {
+    color: #eb5e28;
+    padding-left: 10px;
+    font-size: 0.8em;
+}
+
+.dtbm-table-title .toggle-visibility:hover {
+    cursor: pointer;
+}
+
+.dtbm-form {
+    display: none;
+    min-width: 200px;
+    max-height: 420px;
+    overflow: scroll;
+}
+
+.dtbm-table, .dtbm-table td, .dtbm-table th {
+    background: #f7f7f7;
+    border: 2px solid #fff;
+    border-collapse: collapse;
+    text-align: left;
+    padding: 10px 20px;
+}
+
+.dtbm-table th {
+    color: #fff;
+    background: #403d39;
+}
+
+.dtbm-table td {
+    padding: 10px 0 0;
+}
+
+.dtbm-table td input {
+    border: none;
+    background: transparent;
+}
+
+
+/* Responsive admin pages */
+@media screen and (max-width: 950px) {
+    .dtbm-form {
+        width: initial;
+    }
+
+    .admin-content {
+        width: initial;
+    }
+}
