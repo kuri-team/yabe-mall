@@ -24,12 +24,12 @@
     $place_order = false;
     if (isset($_GET["q"])) {
         // Place order logic
-        if (isset($_GET["q"]) && $_GET["q"] === "place_order") {
+        if ($_GET["q"] === "place_order") {
             $place_order = true;
         }
     
         // Log out logic
-        if (isset($_GET["q"]) && $_GET["q"] === "logout") {
+        if ($_GET["q"] === "logout") {
             new_logs_entry("../../../../private/logs.txt", "User " . $_SESSION["user_data"]["id"] . " logged out");
             $_SESSION["logged_in"] = false;
             unset($_SESSION["user_data"]);

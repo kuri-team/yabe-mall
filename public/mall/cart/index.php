@@ -15,7 +15,7 @@
     if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
         $place_order_href = "/mall/cart/thank-you.php";
     } else {
-        $place_order_href = "/mall/account/login/?q=place_order";
+        $place_order_href = "/mall/account/register?q=place_order";
     }
     
     include(SHARED_PATH . "/top.php");
