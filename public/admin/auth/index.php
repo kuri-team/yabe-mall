@@ -20,6 +20,16 @@
     ];
     
     
+    // GET query logic
+    if (isset($_GET["q"])) {
+        // Log out logic
+        if (isset($_GET["q"]) && $_GET["q"] === "logout") {
+            $_SESSION["admin_logged_in"] = false;
+            new_logs_entry("../../../private/logs.txt", "Admin logged out");
+        }
+    }
+    
+    
     // Automatic redirect to Administrator's Dashboard page if user already logged in
     if (isset($_SESSION["admin_logged_in"]) && $_SESSION["admin_logged_in"]) {
         redirect_to(url_for("/admin/"));
@@ -43,16 +53,6 @@
         }
     }
     // End of authentication logic
-    
-    
-    // GET query logic
-    if (isset($_GET["q"])) {
-        // Log out logic
-        if (isset($_GET["q"]) && $_GET["q"] === "logout") {
-            $_SESSION["admin_logged_in"] = false;
-            new_logs_entry("../../../private/logs.txt", "Admin logged out");
-        }
-    }
 
     
     include(SHARED_PATH . "/top.php");
