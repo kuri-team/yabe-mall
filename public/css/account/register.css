@@ -13,6 +13,38 @@ main h1 {
     background: #f7f7f7;
 }
 
+.submit-feedback-not-unique, .submit-feedback-valid {
+    position: -ms-device-fixed;
+    position: fixed;
+    top: 90px;
+    opacity: 0.95;
+    display: block;
+    width: 80%;
+    margin: auto;
+    padding: 30px 20%;
+    text-align: center;
+    transform-origin: top;
+    animation: fadeInExpand 0.5s;
+    z-index: 10;
+}
+
+.submit-feedback-not-unique {
+    background-color: #ffe6e6;
+    color: #cd4813;
+    border: 1px solid #cd4813;
+}
+
+.submit-feedback-valid {
+    background-color: #c4e0c4;
+    color: #004e00;
+    border: 1px solid #118811;
+}
+
+.submit-feedback-not-unique a,
+.submit-feedback-valid a {
+    color: inherit;
+}
+
 .no-border {
     border: none !important;
 }
@@ -233,6 +265,10 @@ main h1 {
 }
 
 @media only screen and (max-width: 767px) {
+    .submit-feedback-unique, .submit-feedback-valid {
+        top: 60px;
+    }
+
     .content-text {
         padding-left: 0;
         padding-right: 0;

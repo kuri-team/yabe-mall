@@ -42,6 +42,12 @@ i {
     color: inherit;
 }
 
+.textarea-nowrap {
+    white-space: pre;
+    overflow-wrap: normal;
+    overflow-x: scroll;
+}
+
 .hidden {
     display: none;
 }
@@ -325,6 +331,8 @@ i {
 }
 
 #overlay-cart-window, #overlay-modal-window {
+    position: absolute;
+    top: 0;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -403,6 +411,21 @@ hr {
     margin-right: 11px;
 }
 
+.message-success {
+    font-weight: bolder;
+    color: #004e00 !important;
+}
+
+.message-warning {
+    font-weight: bolder;
+    color: #eb9d28 !important;
+}
+
+.message-error {
+    font-weight: bolder;
+    color: #f40823 !important;
+}
+
 .breadcrumb {
     margin: 30px auto 50px;
     padding: 0;
@@ -441,7 +464,63 @@ hr {
     background-color: #fff;
 }
 
-.content-text {
+.content-aside-nav {
+    width: max-content;
+    background: #403d39;
+    flex-shrink: 0;
+    padding: 0 !important;
+}
+
+.content-aside-nav-active {
+    color: #000 !important;
+    background: #fff;
+    transform-origin: right;
+    animation: fadeInExpandX 0.5s;
+}
+
+.content-aside-nav-active:before {
+    content: "";
+    border-left: 10px solid #000;
+    margin-right: 5px;
+    transition: 0.2s;
+}
+
+.content-aside-nav-active:hover:before {
+    border-color: #000;
+    border-left: 0 solid #000;
+}
+
+.content-aside-nav ul {
+    display: -o-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+    padding: 0;
+    margin: 0;
+}
+
+.content-aside-nav ul li {
+    list-style: none;
+    box-shadow: 0 23px 3px -24px #bab1a0;
+}
+
+.content-aside-nav ul li a {
+    display: block;
+    color: #fff;
+    padding: 20px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.content-aside-nav ul li a:hover {
+    color: #000;
+    background: #ccc5b9;
+}
+
+.content-text, .content-child {
     padding: 30px 70px;
 }
 
@@ -808,7 +887,7 @@ nav a {
     text-decoration: underline;
 }
 
-#nav-my-account, .mobile-only {
+.mobile-only {
     display: none;
 }
 
@@ -1006,8 +1085,31 @@ footer > .flex-container {
 
 
 /******************************
-    Mobile responsive nav & footer
+    Mobile responsive nav & footer & content-body
 *******************************/
+@media only screen and (max-width: 950px) {
+    .content-body {
+        flex-direction: column;
+    }
+
+    .content-aside-nav {
+        width: 100%;
+        text-align: -moz-center;
+        text-align: -webkit-center;
+        text-align: center;
+    }
+
+    .content-aside-nav-active {
+        transform-origin: center;
+        background: #aba18c;
+        text-decoration: underline !important;
+    }
+
+    .content-aside-nav-active:before {
+        display: none;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     nav {
         height: 30px;
@@ -1121,6 +1223,18 @@ footer > .flex-container {
 
     to {
         transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInExpandX  {
+    from {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scaleX(1);
         opacity: 1;
     }
 }

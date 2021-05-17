@@ -250,9 +250,9 @@ function removeCoupon () {
     })
 }
 
-// Redirect the user to Login page if the user hasn't logged in
-if (localStorage.isLoggedIn === null || localStorage.isLoggedIn === "false") {
-    let url = window.location.href;
-    url = url.replace("cart", "account/login");
-    window.location.replace(url);
+function clearCart () {
+    localStorage.removeItem("cartProducts");
 }
+
+clearCartAfterOrder = document.querySelector(".cart-product-summary-button-order");
+clearCartAfterOrder.addEventListener("click", clearCart);
