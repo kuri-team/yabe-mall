@@ -249,3 +249,10 @@ function removeCoupon () {
         location.reload();
     })
 }
+
+function clearCart () {
+    localStorage.removeItem("cartProducts");
+}
+
+clearCartAfterOrder = document.querySelector(".cart-product-summary-button-order");
+clearCartAfterOrder.addEventListener("click", clearCart);
