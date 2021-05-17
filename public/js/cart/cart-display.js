@@ -250,11 +250,7 @@ function removeCoupon () {
     })
 }
 
-
-// Place order logic
+// Clearing the cart
 function clearCart () {
     localStorage.removeItem("cartProducts");
 }
-
-const PLACE_ORDER_BTTN = document.querySelector(".cart-product-summary-button-order");
-PLACE_ORDER_BTTN.addEventListener("click", clearCart);
