@@ -97,6 +97,11 @@
                     $bdate = "null";
                 }
     
+                // Default value for country if user does not set it
+                if ($country === "") {
+                    $country = "null";
+                }
+    
                 // array storing user input
                 $fields = [$id_num, $fname, $lname, $gender, $bdate, $email, $tel, $address, $city, $zipcode, $country,
                     $username, $hashed_pwd, $acc_type, $bus_name, $store_name, $store_category, $avatar_src];
