@@ -2,6 +2,7 @@
     
     require_once "../private/csv.php";
     
+    $updated = false;
     if (isset($_POST["submit"])) {
         $admin_credentials = [
                 [
@@ -11,6 +12,7 @@
         ];
         
         write_csv("../private/database/admin.csv", $admin_credentials, true);
+        $updated = true;
     }
     
 ?>
@@ -35,6 +37,14 @@
     <span id="nav-logo"><a href="mall/"><img class="nav-logo-sprite" alt="Yabe logo" src="media/vector/logo-light.svg"></a></span>
   </nav>
 </header>
+
+<?php
+
+    if ($updated) {
+        echo "<div class='install-success-msg'>Administrative credentials updated. Please delete this file (/install.php) for the application to start working with the updated credentials.</div>";
+    }
+
+?>
 
 <main>
   <h1 class="text-align-center">INSTALL</h1>

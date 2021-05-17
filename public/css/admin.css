@@ -49,7 +49,8 @@ form input[type="submit"]:active {
 
 .dtbm-table-title .toggle-visibility {
     color: #eb5e28;
-    padding-left: 10px;
+    margin-left: 25px;
+    margin-right: 20px;
     font-size: 0.8em;
 }
 

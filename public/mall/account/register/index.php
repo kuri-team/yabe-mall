@@ -97,6 +97,11 @@
                     $bdate = "null";
                 }
     
+                // Default value for country if user does not set it
+                if ($country === "") {
+                    $country = "null";
+                }
+    
                 // array storing user input
                 $fields = [$id_num, $fname, $lname, $gender, $bdate, $email, $tel, $address, $city, $zipcode, $country,
                     $username, $hashed_pwd, $acc_type, $bus_name, $store_name, $store_category, $avatar_src];
@@ -167,7 +172,7 @@
     <form id="register-form" class="register-form" action="<?=url_for("mall/account/register");?>" method="post" target="_self" enctype="multipart/form-data">
       <div id="register-avatar-upload-field" class="register-field flex-container flex-align-items-center flex-justify-content-center">
         <div class="register-item no-border register-item-photo-upload flex-container animated">
-          <label><input id="avatar" name="avatar" type="file" accept=".png,.jpg,.jpeg,image/bmp,image/jpeg,image/png"></label>
+          <label><input id="avatar" name="avatar" type="file" accept=".png,.jpg,.jpeg,image/bmp,image/jpeg,image/png"></label> <span>Please upload an 1:1 image</span>
         </div>
       </div>
 
