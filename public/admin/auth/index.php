@@ -20,6 +20,12 @@
     ];
     
     
+    // Automatic redirect to Administrator's Dashboard page if user already logged in
+    if (isset($_SESSION["admin_logged_in"]) && $_SESSION["admin_logged_in"]) {
+        redirect_to(url_for("/admin/"));
+    }
+    
+    
     // Authentication logic
     $invalid = false;
     if (isset($_POST["act"])) {
@@ -37,12 +43,6 @@
         }
     }
     // End of authentication logic
-    
-    
-    // Automatic redirect to Administrator's Dashboard page if user already logged in
-    if (isset($_SESSION["admin_logged_in"]) && $_SESSION["logged_in"]) {
-        redirect_to(url_for("/admin/"));
-    }
     
     
     // GET query logic
