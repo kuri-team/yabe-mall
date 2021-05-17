@@ -111,6 +111,13 @@
     }
     
     
+    /**
+     * Remove all non-digit characters in phone number
+     * @param string $tel
+     * phone number
+     * @return string
+     * phone number with only digits
+     */
     function remove_chars_tel(string $tel): string {
         return preg_replace("/-|[.]| /", "", $tel);
     }
@@ -129,6 +136,7 @@
     function unique_registration(array $data, string $email, string $tel, string $username): bool {
         if (count($data) !== 0) {
             foreach ($data as $data_fields) {
+                // remove all non-digit characters to check if phone numbers are identical
                 $user_tel = remove_chars_tel($tel);
                 $all_digit_tel = remove_chars_tel($data_fields["tel"]);
                 
