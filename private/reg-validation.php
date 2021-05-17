@@ -111,6 +111,11 @@
     }
     
     
+    function remove_chars_tel(string $tel): string {
+        return preg_replace("/-|[.]| /", "", $tel);
+    }
+    
+    
     /**
      * Check if user email, phone number, and username are unique in the data
      * @param array $data
@@ -124,9 +129,12 @@
     function unique_registration(array $data, string $email, string $tel, string $username): bool {
         if (count($data) !== 0) {
             foreach ($data as $data_fields) {
+                $user_tel = remove_chars_tel($tel);
+                $all_digit_tel = remove_chars_tel($data_fields["tel"]);
+                
                 if (
                     $email === $data_fields["email"] ||
-                    $tel === $data_fields["tel"] ||
+                    $user_tel === $all_digit_tel ||
                     $username === $data_fields["username"]
                 ) {
                    return false;
