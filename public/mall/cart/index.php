@@ -12,11 +12,17 @@
         "/js/cart/cart-display.js"
     );
     
+    
+    $place_order_href = null;
+    $place_order_onclick = null;
     if (isset($_SESSION["logged_in"]) && $_SESSION["logged_in"]) {
         $place_order_href = "/mall/cart/thank-you.php";
+        $place_order_onclick = "onclick='clearCart();'";
     } else {
-        $place_order_href = "/mall/account/login/?q=place_order";
+        $place_order_href = "/mall/account/register?q=place_order";
+        $place_order_onclick = "";
     }
+    
     
     include(SHARED_PATH . "/top.php");
 
@@ -74,7 +80,7 @@
                 </li>
                 <li class="cart-product-summary-button">
                   <span ><a href="<?=url_for("/mall/");?>"><button class="cart-product-summary-button-continue">CONTINUE SHOPPING</button></a></span>
-                  <span ><a href="<?=url_for($place_order_href);?>"><button class="cart-product-summary-button-order">PLACE ORDER</button></a></span>
+                  <span ><a href="<?=url_for($place_order_href);?>"><button class="cart-product-summary-button-order" <?=$place_order_onclick;?>>PLACE ORDER</button></a></span>
                 </li>
           </ul>
           </div>

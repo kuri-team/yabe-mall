@@ -28,6 +28,15 @@
     }
     
     
+    $place_order = false;
+    if (isset($_GET["q"])) {
+        // Place order logic
+        if (isset($_GET["q"]) && $_GET["q"] === "place_order") {
+            $place_order = true;
+        }
+    }
+    
+    
     // check if user has submitted register form
     $unique_registration_info = true;  // User submission unique validity flag
     if (isset($_POST["register"])) {
@@ -140,12 +149,16 @@
 
 <?php
     
+    $piped_query = "";
+    if ($place_order) {
+        $piped_query = "?q=place_order";
+    }
     if (isset($_POST["register"])) {
         if ($unique_registration_info) {
             echo "<div class='flex-container flex-justify-content-center'>";
             echo "<div class='submit-feedback-valid'>Successful registration. You will be redirected to the Login page in
                     <span id='redirect-countdown'><noscript>NULL - Javascript is not enabled</noscript></span> seconds.
-                    Click <a href='" . url_for("/mall/account/login/") . "'>here</a> if it does not automatically redirect.</div>";
+                    Click <a href='" . url_for("/mall/account/login" . $piped_query) . "'> here</a> if it does not automatically redirect.</div>";
             echo "</div>";
             echo "<script src='" . url_for("js/account/register-redirection-countdown.js") . "'></script>";
         } else {
@@ -169,7 +182,7 @@
       </div>
     </div>
 
-    <form id="register-form" class="register-form" action="<?=url_for("mall/account/register");?>" method="post" target="_self" enctype="multipart/form-data">
+    <form id="register-form" class="register-form" action="<?=url_for("mall/account/register" . $piped_query);?>" method="post" target="_self" enctype="multipart/form-data">
       <div id="register-avatar-upload-field" class="register-field flex-container flex-align-items-center flex-justify-content-center">
         <div class="register-item no-border register-item-photo-upload flex-container animated">
           <label><input id="avatar" name="avatar" type="file" accept=".png,.jpg,.jpeg,image/bmp,image/jpeg,image/png"></label> <span>Please upload an 1:1 image</span>
