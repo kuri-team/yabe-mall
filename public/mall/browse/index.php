@@ -53,7 +53,12 @@ include("../../../private/csv.php");
                             echo "<option value='$letter' name='$letter' id='dropdown-value' selected='selected'>$letter</option>";
                         }
                     }
-                    echo "<option value='Z' name='Z'>Z</option>";
+                }
+                    $letter = 'Z';
+                    if ($_GET['browse-option'] != 'Z') {
+                        echo "<option value='$letter' name='$letter' id='dropdown-value'>$letter</option>";
+                    } else { //set selected value as default displayed value
+                        echo "<option value='$letter' name='$letter' id='dropdown-value' selected='selected'>$letter</option>";
                 }
 
                 ?>
@@ -85,7 +90,7 @@ include("../../../private/csv.php");
                                 }
                             }
                         }
-                        } else {
+                        } else if (!isset($_GET["browse-option"]) || $_GET["browse-option"] == "all-categories" ) {
                             for ($i = 0; $i < count($category_list); $i++) {
                                 for ($k = 0; $k< count($stores_list); $k++) {
                                     $store_name = $stores_list[$k]["name"];
