@@ -48,11 +48,12 @@
             new_logs_entry("../../private/logs.txt", "CMS About Us Editor | added $new_photo_src");
             
             $team_members[$member_index]["img"] = $new_photo_src;
+            write_csv($team_database_path, $team_members, true);
             new_logs_entry("../../private/logs.txt", "CMS About Us Editor | linked $new_photo_src to database");
             
             unlink(PUBLIC_PATH . $old_photo_src);
             new_logs_entry("../../private/logs.txt", "CMS About Us Editor | deleted $old_photo_src");
-            new_logs_entry("../../private/logs.txt", "CMS About Us Editor | Changing photo for team member ID " . $_POST["id"]) . " complete";
+            new_logs_entry("../../private/logs.txt", "CMS About Us Editor | Changed photo for team member ID " . $_POST["id"]);
         }
         
     }
