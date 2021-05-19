@@ -20,7 +20,7 @@ include("../../../private/csv.php");
 
 <main>
     <div class="content-body">
-        <form id="dropdown_form" action="" method="get">
+        <form id="dropdown_form" action="" method="post">
         <label>
             <select class="select-list" id="browse-option" name="browse-option" onchange="dropdown_form.submit()">
 
