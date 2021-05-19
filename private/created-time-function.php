@@ -1,6 +1,6 @@
 <?php
-    function cmp_created_time($product1, $product2) {
-        return strtotime($product1["created_time"]) - strtotime($product2["created_time"]);
+    function sort_by_time($item1, $item2): int {
+        return -(strtotime($item1["created_time"]) - strtotime($item2["created_time"]));
     }
     
     
