@@ -19,8 +19,35 @@ include("../../../private/csv.php");
 
 if ($_GET["by-store"] === "by-category" && !isset($_GET["browse-option"])) {
     $_GET["browse-option"] = "all-categories";
+    $_GET["page"] = "1";
 } else if ($_GET["by-store"] === "by-name" && !isset($_GET["browse-option"])) {
     $_GET["browse-option"] = "A";
+    $_GET["page"] = "1";
+}
+
+function display_store($s) {
+    echo "
+        <div class='store-card'>
+            <a href='\"/store/store-template\");?>'><img class='store-card-thumbnail' alt='image representation of a shop' src='../../media/image/placeholder_262x250.png'></a>
+            <a class='store-card-name' href='<?=url_for(\"/store/store-template\");?>'>$s</a>
+        </div>
+    ";
+}
+
+function each_page($store, $list_length) {
+    $min = 0;
+    $length = 10; // maximum number of products displayed on the page
+    $max = $length - $min - 1;
+    $page = $_GET["page"];
+    $min += $length * ($page-1);
+    $max += $length * ($page-1);
+    if ($max > $list_length) {
+        $max = $list_length - 1;
+    }
+    for ($i = $min; $i <= $max; $i++) {
+        display_store($store[$i]);
+    }
+
 }
 
 ?>
@@ -32,6 +59,7 @@ if ($_GET["by-store"] === "by-category" && !isset($_GET["browse-option"])) {
             // keep existed $_GET['by-store'] in the URL
             echo "
             <input type='hidden' name='by-store' value='{$_GET["by-store"]}'>
+            <input type='hidden' name='page' value='1'>
             "
 
             ?>
@@ -39,15 +67,6 @@ if ($_GET["by-store"] === "by-category" && !isset($_GET["browse-option"])) {
             <select class="select-list" id="browse-option" name="browse-option" onchange="this.form.submit()">
 
                 <?php
-
-                function display_store($store) {
-                    echo "
-                        <div class='store-card'>
-                            <a href='\"/store/store-template\");?>'><img class='store-card-thumbnail' alt='image representation of a shop' src='../../media/image/placeholder_262x250.png'></a>
-                            <a class='store-card-name' href='<?=url_for(\"/store/store-template\");?>'>$store</a>
-                        </div>
-                        ";
-                }
 
                 $category_list = read_csv("../../../private/database/categories.csv", true);
                 if ($_GET["by-store"] == "by-category") {
@@ -87,6 +106,7 @@ if ($_GET["by-store"] === "by-category" && !isset($_GET["browse-option"])) {
                 <?php
 
                 $stores_list = read_csv("../../../private/database/stores.csv", true);
+                $expected_stores = [];
                 if (isset($_GET["browse-option"])) {
                     if ($_GET["by-store"] == "by-category") {
                         if ($_GET["browse-option"] != "all-categories") {
@@ -104,10 +124,10 @@ if ($_GET["by-store"] === "by-category" && !isset($_GET["browse-option"])) {
                             for ($i = 0; $i < count($category_list); $i++) {
                                 for ($k = 0; $k< count($stores_list); $k++) {
                                     $store_name = $stores_list[$k]["name"];
-                                    display_store($store_name);
+                                    array_push($expected_stores, $store_name);
                                 }
                             }
-
+                            each_page($expected_stores, count($expected_stores));
                         }
                     }
                 }
