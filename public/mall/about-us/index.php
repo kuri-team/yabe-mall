@@ -1,63 +1,47 @@
-<?php require_once("../../../private/initialize.php"); ?>
+<?php
+    
+    require_once("../../../private/initialize.php");
+    require_once("../../../private/csv.php");
+    
+?>
 
 <?php
-
-$page_title = "Yabe | About Us";
-$style_sheets = [
-    "/css/common.css",
-    "/css/flip-card.css",
-    "/css/mall-about-us.css"
-];
-$scripts = [
-    "/js/common.js",
-    "/js/about-us.js"
-];
-
-include(SHARED_PATH . "/top.php");
+    
+    $page_title = "Yabe | About Us";
+    $style_sheets = [
+        "/css/common.css",
+        "/css/flip-card.css",
+        "/css/mall-about-us.css"
+    ];
+    $scripts = [
+        "/js/common.js",
+        "/js/about-us.js"
+    ];
+    
+    
+    // Load team data
+    $members = read_csv("../../../private/database/team.csv", true);
+    
+    
+    include(SHARED_PATH . "/top.php");
 
 ?>
 
 <!-- Modal box container -->
 <div id="overlay-modal-window">
-  <div id="nhi-modal-box" class="modal-box text-align-center">
-    <button class="float-right" onclick="toggleModalBox('nhi-modal-box')">
-      <i class="fas fa-times"></i>
-    </button>
-    <h2 class="clear-both">Doan Yen Nhi</h2>
-    <h3>S-3880599</h3>
-    <p>Developer<br>Chief Secretary</p>
-    <p>Visit my GitHub page <a href="https://github.com/doanyennhi" target="_blank">here</a></p>
-  </div>
-
-  <div id="mike-modal-box" class="modal-box text-align-center">
-    <button class="float-right" onclick="toggleModalBox('mike-modal-box')">
-      <i class="fas fa-times"></i>
-    </button>
-    <h2 class="clear-both">Tuong-Minh "Mike" Vo</h2>
-    <h3>S-3877562</h3>
-    <p>Designer<br>Project Coordinator<br>Technical Officer</p>
-    <p>Visit my GitHub page <a href="https://github.com/miketvo" target="_blank">here</a></p>
-  </div>
-
-  <div id="manh-modal-box" class="modal-box text-align-center">
-    <button class="float-right" onclick="toggleModalBox('manh-modal-box')">
-      <i class="fas fa-times"></i>
-    </button>
-    <h2 class="clear-both">Du Duc Manh</h2>
-    <h3 >S-3878480</h3>
-    <p>Developer<br>Operation Officer</p>
-    <p>Visit my GitHub page <a href="https://github.com/rider3458" target="_blank">here</a></p>
-  </div>
-
-  <div id="thu-modal-box" class="modal-box text-align-center">
-    <button class="float-right" onclick="toggleModalBox('thu-modal-box')">
-      <i class="fas fa-times"></i>
-    </button>
-    <h2 class="clear-both">Tran Ngoc Anh Thu</h2>
-    <h3>S-3879312</h3>
-    <p>Developer<br>Designer<br>Content Officer</p>
-    <p>Visit my GitHub page <a href="https://github.com/tnathu-ai" target="_blank">here</a></p>
-  </div>
+  <?php
+  
+      foreach ($members as $member) {
+          echo "<div id='" . $member["id"] . "-modal-box' class='modal-box text-align-center'>
+                  <button class='float-right' onclick='toggleModalBox(\"" . $member["id"] . "-modal-box\")'>
+                    <i class='fas fa-times'></i>
+                  </button>
+                  <h2 class='clear-both'>" . $member["name"] . "</h2><h3>" . $member["id"] ."</h3>";
+          echo $member["desc"];
+          echo "</div>";
+      }
+  
+  ?>
 </div>
 
 <main>
@@ -86,51 +70,22 @@ include(SHARED_PATH . "/top.php");
 
     <div id="about-us-members" class="flex-container flex-direction-column flex-wrap flex-justify-content-center flex-align-items-center">
       <div class="flex-container flex-wrap">
-        <div class="flip-card about-us-member">
-          <div class="flip-card-inner" onclick="toggleModalBox('nhi-modal-box')">
-            <div class="flip-card-front">
-              <img alt="Portrait of Nhi" src="../../media/image/nhi.jpg">
-            </div>
-            <div class="flip-card-back">
-              <h2>Doan Yen Nhi</h2>
-            </div>
-          </div>
-        </div>
-
-        <div class="flip-card about-us-member">
-          <div class="flip-card-inner" onclick="toggleModalBox('mike-modal-box')">
-            <div class="flip-card-front">
-              <img alt="Portrait of Mike" src="../../media/image/mike.png">
-            </div>
-            <div class="flip-card-back">
-              <h2>Tuong-Minh "Mike" Vo</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex-container flex-wrap">
-        <div class="flip-card about-us-member">
-          <div class="flip-card-inner" onclick="toggleModalBox('manh-modal-box')">
-            <div class="flip-card-front">
-              <img alt="Portrait of Manh" src="../../media/image/manh.jpg">
-            </div>
-            <div class="flip-card-back">
-              <h2>Du Duc Manh</h2>
-            </div>
-          </div>
-        </div>
-
-        <div class="flip-card about-us-member">
-          <div class="flip-card-inner" onclick="toggleModalBox('thu-modal-box')">
-            <div class="flip-card-front">
-              <img alt="Portrait of Thu" src="../../media/image/thu.jpg">
-            </div>
-            <div class="flip-card-back">
-              <h2>Tran Ngoc Anh Thu</h2>
-            </div>
-          </div>
-        </div>
+        <?php
+        
+            foreach ($members as $member) {
+                echo "<div class='flip-card about-us-member'>
+                        <div class='flip-card-inner' onclick='toggleModalBox(\"" . $member["id"] . "-modal-box\")'>
+                          <div class='flip-card-front'>
+                            <img alt='Portrait of a person' src='" . url_for($member["img"]) . "'>
+                          </div>
+                          <div class='flip-card-back'>
+                            <h2>" . $member["name"] . "</h2>
+                          </div>
+                        </div>
+                      </div>";
+            }
+        
+        ?>
       </div>
     </div>
   </div>
