@@ -64,7 +64,7 @@
               
           ?></textarea>
         <a href="about_us.php" class="cms-editor-reset">Reset</a>
-        <input type="submit" name="edit" value="EDIT">
+        <input type="submit" name="edit" value="MODIFY">
       </form>
     </section>
   </div>
