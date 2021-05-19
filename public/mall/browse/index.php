@@ -35,15 +35,23 @@ include("../../../private/csv.php");
 
                 $category_list = read_csv("../../../private/database/categories.csv", true);
                 if ($_GET["by-store"] == "by-category") {
-                    echo "<option value='all-categories' name='all-categories' id='dropdown-value'>ALL CATEGORIES</option>";
+                    echo "<option value='all-categories' name='all-categories' id='dropdown-value' >ALL CATEGORIES</option>";
 
                     for ($i = 0; $i < count($category_list); $i++) {
                         $category = $category_list[$i]["name"];
-                        echo "<option value='$category' name='$category' id='dropdown-value'>$category</option>";
+                        if ($_GET['browse-option'] != $category) {
+                            echo "<option value='$category' name='$category' id='dropdown-value'>$category</option>";
+                        } else { //set selected value as default displayed value
+                            echo "<option value='$category' name='$category' id='dropdown-value' selected='selected'>$category</option>";
+                        }
                     }
                 } else if ($_GET["by-store"] == "by-name") {
                     for ($letter = "A"; $letter < "Z"; $letter++) {
-                        echo "<option value='$letter' name='$letter' id='dropdown-value'>$letter</option>";
+                        if ($_GET['browse-option'] != $letter) {
+                            echo "<option value='$letter' name='$letter' id='dropdown-value'>$letter</option>";
+                        } else { //set selected value as default displayed value
+                            echo "<option value='$letter' name='$letter' id='dropdown-value' selected='selected'>$letter</option>";
+                        }
                     }
                     echo "<option value='Z' name='Z'>Z</option>";
                 }
@@ -77,6 +85,19 @@ include("../../../private/csv.php");
                                 }
                             }
                         }
+                        } else {
+                            for ($i = 0; $i < count($category_list); $i++) {
+                                for ($k = 0; $k< count($stores_list); $k++) {
+                                    $store_name = $stores_list[$k]["name"];
+                                    echo "
+                                       <div class='store-card'>
+                                           <a href='\"/store/store-template\");?>'><img class='store-card-thumbnail' alt='image representation of a shop' src='../../media/image/placeholder_262x250.png'></a>
+                                           <a class='store-card-name' href='<?=url_for(\"/store/store-template\");?>'>$store_name</a>
+                                        </div>
+                                        ";
+                                    }
+                                }
+
                         }
                     }
                 }
