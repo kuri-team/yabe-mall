@@ -19,6 +19,12 @@ form input {
     margin-bottom: 12px;
 }
 
+.cms-editor-reset {
+    display: inline;
+    width: min-content;
+    margin: 15px;
+}
+
 form input[type="reset"],
 form input[type="submit"] {
     display: inline;
@@ -85,6 +91,28 @@ form input[type="submit"]:active {
 .dtbm-table td input {
     border: none;
     background: transparent;
+}
+
+
+/* Page editor styles */
+.page-editor-label {
+    display: block;
+    margin: 20px 0 10px 0;
+    font-size: larger;
+}
+
+.page-editor-textarea {
+    outline: none;
+    color: #000;
+    background: transparent;
+    padding: 10px;
+    border: 1px solid #cdcdcd;
+    transition: 0.5s;
+}
+
+.page-editor-textarea:focus {
+    border-color: #555555;
+    border-radius: 10px 10px 0 10px;
 }
 
 

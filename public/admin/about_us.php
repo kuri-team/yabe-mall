@@ -1,4 +1,9 @@
-<?php require_once("../../private/initialize.php"); ?>
+<?php
+    
+    require_once("../../private/initialize.php");
+    require_once("../../private/logsman.php");
+    
+?>
 
 <?php
     
@@ -15,6 +20,15 @@
     if (isset($_SESSION["admin_logged_in"]) && !$_SESSION["admin_logged_in"]) {
         redirect_to(url_for("/admin/auth"));
     }
+    
+    
+    // About Us Editor logic
+    $filepath = SHARED_PATH . "/about-us-bio.php";
+    if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["edit"])) {
+        file_put_contents($filepath, $_POST["bio-edit"],LOCK_EX);
+        new_logs_entry("../../private/logs.txt","CMS About Us Editor | modified $filepath");
+    }
+    
     
     include(SHARED_PATH . "/top.php");
 
@@ -43,16 +57,14 @@
 
     <section class="content-child admin-content">
       <form action="about_us.php" method="post" target="_self">
-        <label for="bio-edit">Bio</label>
-        <textarea id="bio-edit" name="bio-edit">
-          <?php
-          
-              $bio_file = fopen(SHARED_PATH . "/about-us-bio.php", "r");
-              echo file_get_contents($bio_file);
-              fclose($bio_file);
+        <label class="page-editor-label" for="bio-edit">About Us Bio</label>
+        <textarea id="bio-edit" class="page-editor-textarea" rows="10" name="bio-edit"><?php
               
-          ?>
-        </textarea>
+              echo file_get_contents($filepath);
+              
+          ?></textarea>
+        <a href="about_us.php" class="cms-editor-reset">Reset</a>
+        <input type="submit" name="edit" value="EDIT">
       </form>
     </section>
   </div>
