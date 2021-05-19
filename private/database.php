@@ -42,14 +42,13 @@
     
     
     /**
-     * Get the index of a database entry given its id. Only works on non-empty with first line header .csv databases
-     * @param string $database_path
+     * Get the index of a database entry given its id. Only works on databases with header
+     * @param array $database MUST be a database with header. Won't work on header-less database
      * @param string $id
-     * @return int
+     * @return int Return <strong><em>null</em></strong> if database is empty
      */
-    function get_entry_index_by_id(string $database_path, string $id): int {
+    function get_entry_index_by_id(array $database, string $id): int {
         $index = null;
-        $database = read_csv($database_path, true);
         if (count($database) > 0) {
             $index = 0;
             foreach ($database as $entry) {
@@ -66,7 +65,7 @@
     /**
      * Convert and echo a given database as an editable HTML table. Uses method=POST to communicate with database processor
      * @param string $name the name of the given database. For use with form submission.
-     * @param array $database MUST be a .csv database with header. Won't work on header-less database. For empty databases, set <strong>$empty</strong> to <strong><em>true</em></strong>.
+     * @param array $database MUST be a database with header. Won't work on header-less database. For empty databases, set <strong>$empty</strong> to <strong><em>true</em></strong>.
      * @param string $action url to database processor
      * @param bool $empty set to <strong><em>true</em></strong> to just print out a header row (only works on empty databases). Default to <strong><em>false</em></strong>.
      */
