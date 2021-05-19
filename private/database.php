@@ -64,7 +64,7 @@
             foreach ($database[0] as $header => $field) {
                 echo "<th>" . $header . "</th>";
             }
-            echo "</rh>";
+            echo "</th>";
             
             // Data rows
             for ($index = 0; $index < count($database); $index++) {
