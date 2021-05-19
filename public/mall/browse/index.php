@@ -69,7 +69,7 @@ function each_page($store, $list_length) {
                 <?php
 
                 $category_list = read_csv("../../../private/database/categories.csv", true);
-                if ($_GET["by-store"] == "by-category") {
+                if ($_GET["by-store"] === "by-category") {
                     echo "<option value='all-categories' name='all-categories' id='dropdown-value' >ALL CATEGORIES</option>";
 
                     for ($i = 0; $i < count($category_list); $i++) {
@@ -80,7 +80,7 @@ function each_page($store, $list_length) {
                             echo "<option value='$category' name='$category' id='dropdown-value' selected='selected'>$category</option>";
                         }
                     }
-                } else if ($_GET["by-store"] == "by-name") {
+                } else if ($_GET["by-store"] === "by-name") {
                     for ($letter = "A"; $letter < "Z"; $letter++) {
                         if ($_GET['browse-option'] != $letter) {
                             echo "<option value='$letter' name='$letter' id='dropdown-value'>$letter</option>";
@@ -108,7 +108,7 @@ function each_page($store, $list_length) {
                 $stores_list = read_csv("../../../private/database/stores.csv", true);
                 $expected_stores = [];
                 if (isset($_GET["browse-option"])) {
-                    if ($_GET["by-store"] == "by-category") {
+                    if ($_GET["by-store"] === "by-category") {
                         if ($_GET["browse-option"] != "all-categories") {
                         for ($i = 0; $i < count($category_list); $i++) {
                             if ($category_list[$i]["name"] == $_GET["browse-option"]) {
@@ -130,6 +130,15 @@ function each_page($store, $list_length) {
                             }
                             each_page($expected_stores, count($expected_stores));
                         }
+                    } else if ($_GET["by-store"] === "by-name") {
+                        for ($i = 0; $i < count($stores_list); $i++) {
+                            $first_letter = substr($stores_list[$i]["name"], 0, 1);
+                            if ($_GET["browse-option"] === strtolower($first_letter) || $_GET["browse-option"] === strtoupper($first_letter) ) {
+                                $store_name = $stores_list[$i]["name"];
+                                array_push($expected_stores, $store_name);
+                            }
+                        }
+                        each_page($expected_stores, count($expected_stores));
                     }
                 }
 
