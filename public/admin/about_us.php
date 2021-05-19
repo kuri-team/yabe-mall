@@ -48,7 +48,7 @@
             new_logs_entry("../../private/logs.txt", "CMS About Us Editor | added $new_photo_src");
             
             $team_members[$member_index]["img"] = $new_photo_src;
-            new_logs_entry("../../private/logs.txt", "CMS About Us Editor | linked database to $new_photo_src");
+            new_logs_entry("../../private/logs.txt", "CMS About Us Editor | linked $new_photo_src to database");
             
             unlink(PUBLIC_PATH . $old_photo_src);
             new_logs_entry("../../private/logs.txt", "CMS About Us Editor | deleted $old_photo_src");
