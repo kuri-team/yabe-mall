@@ -10,7 +10,7 @@
      * <strong><em>true</em></strong> if user input has TRUE value,
      * <strong><em>false</em></strong> otherwise.
      */
-    function check_featured_products($mall_product_id) {
+    function check_featured_mall_products($mall_product_id) {
         $mall_products = read_csv("../../../../private/database/products.csv", true);
         foreach ($mall_products as $p_mall) {
             if (($p_mall['featured_in_mall'] == TRUE) && ($p_mall['id'] == $mall_product_id)) {
@@ -28,7 +28,7 @@
      * <strong><em>true</em></strong> if user input has TRUE value,
      * <strong><em>false</em></strong> otherwise.
      */
-    function check_featured_stores(int $store_product_id) {
+    function check_featured_store_products(int $store_product_id) {
         $store_products = read_csv("../../../../private/database/products.csv", true);
         foreach ($store_products as $p_store) {
             if (($p_store['featured_in_store'] == TRUE) && ($p_store['id'] == $store_product_id)) {
@@ -37,6 +37,9 @@
         }
         return false;
     }
+    
+    
+    
     
     
     
