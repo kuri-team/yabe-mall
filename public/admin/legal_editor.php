@@ -5,10 +5,12 @@
     $page_title = "Yabe CMS Administrator's Dashboard";
     $style_sheets = [
         "/css/common.css",
-        "/css/admin.css"
+        "/css/admin.css",
+        "/css/page-editor.css"
     ];
     $scripts = [
         "/js/common.js",
+        "/js/page-editor.js",
     ];
     
     // Automatic redirect to Administrator Authentication page if user hasn't logged in
@@ -17,20 +19,27 @@
     }
     
     
-    // Legal page editor logic
+    // Legal page editor page selection logic
     $a_page_selected = $_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["page"]);
+    $filepath = null;
     if ($a_page_selected) {
         switch ($_GET["page"]) {
             case "copyright":
-                echo "copyright";
+                $filepath = SHARED_PATH . "/legal/copyright.php";
                 break;
             case "tos":
-                echo "tos";
+                $filepath = SHARED_PATH . "/legal/tos.php";
                 break;
             case "privacy_policy":
-                echo "privacy policy";
+                $filepath = SHARED_PATH . "/legal/privacy-policy.php";
                 break;
         }
+    }
+    
+    
+    if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["page_editor"])) {
+        file_put_contents(SHARED_PATH . $filepath, $_POST["edit"], LOCK_EX);
+        new_logs_entry("../../private/logs.txt", "CMS Page Editor | modified " . SHARED_PATH . $filepath);
     }
     
     
@@ -69,6 +78,14 @@
           <option name="page" value="privacy_policy" <?php if ($a_page_selected && $_GET["page"] === "privacy_policy") { echo "selected"; } ?>>Privacy Policy</option>
         </select>
       </form>
+
+      <?php
+          
+          if ($a_page_selected) {
+              include(SHARED_PATH . "/page-editor.php");
+          }
+          
+      ?>
     </section>
   </div>
 </main>
