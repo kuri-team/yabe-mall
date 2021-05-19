@@ -38,8 +38,21 @@
         }
         
         // Edit member photo logic
-        if (isset($_POST["edit_photo"])) {
-            $id = $_POST["id"];
+        if (isset($_POST["edit_photo"]) && $_FILES["photo"]["error"] === UPLOAD_ERR_OK) {
+            $member_index = get_entry_index_by_id($team_members, $_POST["id"]);
+            new_logs_entry("../../private/logs.txt", "CMS About Us Editor | Changing photo for team member ID " . $_POST["id"]);
+            
+            $old_photo_src = $team_members[$member_index]["img"];
+            $new_photo_src = "/media/image/team/" . $_FILES["photo"]["name"];
+            move_uploaded_file($_FILES["photo"]["tmp_name"], PUBLIC_PATH . $new_photo_src);
+            new_logs_entry("../../private/logs.txt", "CMS About Us Editor | added $new_photo_src");
+            
+            $team_members[$member_index]["img"] = $new_photo_src;
+            new_logs_entry("../../private/logs.txt", "CMS About Us Editor | linked database to $new_photo_src");
+            
+            unlink(PUBLIC_PATH . $old_photo_src);
+            new_logs_entry("../../private/logs.txt", "CMS About Us Editor | deleted $old_photo_src");
+            new_logs_entry("../../private/logs.txt", "CMS About Us Editor | Changing photo for team member ID " . $_POST["id"]) . " complete";
         }
         
     }
@@ -96,7 +109,7 @@
                               <h2>" . $team_member["name"] . "</h2>
                               <form action='about_us.php' method='post' target='_self' enctype='multipart/form-data'>
                                 <label for='change-photo'>Upload a new photo</label>
-                                <input id='change-photo' class='text-align-right mt-10' type='file' name='photo'>
+                                <input id='change-photo' class='text-align-right mt-10' type='file' name='photo' required>
                                 <label><input type='hidden' name='id' value='" . $team_member["id"] . "'></label>
                                 <input type='submit' name='edit_photo' value='CHANGE'>
                               </form>
