@@ -16,6 +16,24 @@
         redirect_to(url_for("/admin/auth"));
     }
     
+    
+    // Legal page editor logic
+    $a_page_selected = $_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["page"]);
+    if ($a_page_selected) {
+        switch ($_GET["page"]) {
+            case "copyright":
+                echo "copyright";
+                break;
+            case "tos":
+                echo "tos";
+                break;
+            case "privacy_policy":
+                echo "privacy policy";
+                break;
+        }
+    }
+    
+    
     include(SHARED_PATH . "/top.php");
 
 ?>
@@ -42,12 +60,13 @@
     </aside>
 
     <section class="content-child admin-content">
-      <form id="page-select-form" action="legal_editor.php" method="get" target="_self">
-        <label for="page-select"></label>
-        <select id="page-select" name="page_select">
-          <option name="page_select" value="copyright">Copyright</option>
-          <option name="page_select" value="tos">Terms of Service</option>
-          <option name="page_select" value="privacy_policy">Privacy Policy</option>
+      <form id="page-select-form" class="flex-container flex-justify-content-center" action="legal_editor.php" method="get" target="_self">
+        <label for="page-select" class="mr-20">Select a page to edit:</label>
+        <select id="page-select" name="page" required onchange="document.getElementById('page-select-form').submit();">
+          <option name="page" value="not_selected" hidden <?php if ($_SERVER["REQUEST_METHOD"] !== "GET") { echo "selected"; } ?>></option>
+          <option name="page" value="copyright" <?php if ($a_page_selected && $_GET["page"] === "copyright") { echo "selected"; } ?>>Copyright</option>
+          <option name="page" value="tos" <?php if ($a_page_selected && $_GET["page"] === "tos") { echo "selected"; } ?>>Terms of Service</option>
+          <option name="page" value="privacy_policy" <?php if ($a_page_selected && $_GET["page"] === "privacy_policy") { echo "selected"; } ?>>Privacy Policy</option>
         </select>
       </form>
     </section>
