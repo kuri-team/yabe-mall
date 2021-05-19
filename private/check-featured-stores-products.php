@@ -39,6 +39,25 @@
     }
     
     
+    /**
+     * Check if Check if featured stores on the Store Home page(s)
+     * user input
+     * @param int $store_stores_id
+     * id required for the input
+     * <strong><em>true</em></strong> if user input has TRUE value,
+     * <strong><em>false</em></strong> otherwise.
+     */
+    function check_featured_store_stores(int $store_stores_id) {
+        $store_stores = read_csv("../../../../private/database/stores.csv", true);
+        foreach ($store_stores as $s_store) {
+            if (($s_store['featured_in_store'] == TRUE) && ($s_store['id'] == $store_stores_id)) {
+                return $s_store;
+            }
+        }
+        return false;
+    }
+    
+    
     
     
     
