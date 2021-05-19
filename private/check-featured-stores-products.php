@@ -10,11 +10,11 @@
      * <strong><em>true</em></strong> if user input has TRUE value,
      * <strong><em>false</em></strong> otherwise.
      */
-    function check_featured_products($product_id) {
-        $products = read_csv("../../../../private/database/products.csv", true);
-        foreach ($products as $p) {
-            if (($p['featured_in_mall'] == TRUE) && ($p['id'] == $product_id)) {
-                return $p;
+    function check_featured_products($mall_product_id) {
+        $mall_products = read_csv("../../../../private/database/products.csv", true);
+        foreach ($mall_products as $p_mall) {
+            if (($p_mall['featured_in_mall'] == TRUE) && ($p_mall['id'] == $mall_product_id)) {
+                return $p_mall;
             }
         }
         return false;
@@ -23,19 +23,22 @@
     /**
      * Check if Check if featured products on the Store Home page(s)
      * user input
-     * @param int $store_id
+     * @param int $store_product_id
      * id required for the input
      * <strong><em>true</em></strong> if user input has TRUE value,
      * <strong><em>false</em></strong> otherwise.
      */
-    function check_featured_stores($store_id) {
-        $stores = read_csv("../../../../private/database/products.csv", true);
-        foreach ($stores as $s) {
-            if (($s['featured_in_store'] == TRUE) && ($s['id'] == $store_id)) {
-                return $s;
+    function check_featured_stores(int $store_product_id) {
+        $store_products = read_csv("../../../../private/database/products.csv", true);
+        foreach ($store_products as $p_store) {
+            if (($p_store['featured_in_store'] == TRUE) && ($p_store['id'] == $store_product_id)) {
+                return $p_store;
             }
         }
         return false;
     }
+    
+    
+    
     
     
