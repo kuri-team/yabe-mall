@@ -115,11 +115,12 @@ function each_page($store, $list_length) {
                                 for ($k = 0; $k< count($stores_list); $k++) {
                                     if ($category_list[$i]["id"] == $stores_list[$k]["category_id"]) {
                                         $store_name = $stores_list[$k]["name"];
-                                        display_store($store_name);
+                                        array_push($expected_stores, $store_name);
                                     }
                                 }
                             }
                         }
+                            each_page($expected_stores, count($expected_stores));
                         } else {
                             for ($i = 0; $i < count($category_list); $i++) {
                                 for ($k = 0; $k< count($stores_list); $k++) {
