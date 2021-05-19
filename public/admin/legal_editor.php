@@ -34,7 +34,7 @@
         <li><a href="<?=url_for("/admin/phpinfo.php");?>">PHPInfo</a></li>
         <li><a href="<?=url_for("/admin/logs.php");?>">Logs</a></li>
         <li><a href="<?=url_for("/admin/database_man.php");?>">Database Manager</a></li>
-        <li><a class="content-aside-nav-active" href="<?=url_for("/admin/page_editor.php");?>">Page Editor</a></li>
+        <li><a class="content-aside-nav-active" href="<?=url_for("/admin/legal_editor.php");?>">Edit Legal Information</a></li>
         <li><a href="<?=url_for("/admin/about_us.php");?>">Edit About Us</a></li>
         <li><a href="<?=url_for("/admin/password.php");?>">Change password</a></li>
         <li><a href="<?=url_for("/admin/auth?q=logout");?>">Log out<i class="fas fa-sign-out-alt ml-10"></i></a></li>
@@ -42,7 +42,14 @@
     </aside>
 
     <section class="content-child admin-content">
-      To be implemented
+      <form id="page-select-form" action="legal_editor.php" method="get" target="_self">
+        <label for="page-select"></label>
+        <select id="page-select" name="page_select">
+          <option name="page_select" value="copyright">Copyright</option>
+          <option name="page_select" value="tos">Terms of Service</option>
+          <option name="page_select" value="privacy_policy">Privacy Policy</option>
+        </select>
+      </form>
     </section>
   </div>
 </main>

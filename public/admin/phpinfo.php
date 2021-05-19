@@ -34,7 +34,7 @@
         <li><a class="content-aside-nav-active" href="<?=url_for("/admin/phpinfo.php");?>">PHPInfo</a></li>
         <li><a href="<?=url_for("/admin/logs.php");?>">Logs</a></li>
         <li><a href="<?=url_for("/admin/database_man.php");?>">Database Manager</a></li>
-        <li><a href="<?=url_for("/admin/page_editor.php");?>">Page Editor</a></li>
+        <li><a href="<?=url_for("/admin/legal_editor.php");?>">Edit Legal Information</a></li>
         <li><a href="<?=url_for("/admin/about_us.php");?>">Edit About Us</a></li>
         <li><a href="<?=url_for("/admin/manual.php");?>">Administrator's Manual</a></li>
         <li><a href="<?=url_for("/admin/password.php");?>">Change password</a></li>
