@@ -30,6 +30,8 @@
     </div>
     
     <div id="page-editor-preview"></div>
+    
+    <input type="hidden" name="target" value="<?=$filepath;?>">
 
     <a href="<?=$_SERVER["SCRIPT_NAME"]?>" class="cms-editor-reset">Reset</a>
     <input type="submit" name="page_editor" value="MODIFY">

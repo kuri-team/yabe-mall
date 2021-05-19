@@ -1,4 +1,9 @@
-<?php require_once("../../private/initialize.php"); ?>
+<?php
+    
+    require_once("../../private/initialize.php");
+    require_once("../../private/logsman.php");
+
+?>
 
 <?php
     
@@ -37,8 +42,13 @@
     }
     
     
+    // Legal page editor page editing logic
+    $edited = false;
+    $target_file = null;
     if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["page_editor"])) {
-        file_put_contents(SHARED_PATH . $filepath, $_POST["edit"], LOCK_EX);
+        $target_file = $_POST["target"];
+        file_put_contents($target_file, $_POST["edit"], LOCK_EX);
+        $edited = true;
         new_logs_entry("../../private/logs.txt", "CMS Page Editor | modified " . SHARED_PATH . $filepath);
     }
     
@@ -69,6 +79,16 @@
     </aside>
 
     <section class="content-child admin-content">
+      <?php
+      
+          if ($edited && $target_file !== null) {
+              echo "<div class='message-success'>";
+              echo "Content of " . $target_file . " updated.";
+              echo "</div>";
+          }
+      
+      ?>
+      
       <form id="page-select-form" class="flex-container flex-justify-content-center" action="legal_editor.php" method="get" target="_self">
         <label for="page-select" class="mr-20">Select a page to edit:</label>
         <select id="page-select" name="page" required onchange="document.getElementById('page-select-form').submit();">
