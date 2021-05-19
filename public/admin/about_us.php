@@ -1,6 +1,8 @@
 <?php
     
     require_once("../../private/initialize.php");
+    require_once("../../private/csv.php");
+    require_once("../../private/database.php");
     require_once("../../private/logsman.php");
     
 ?>
@@ -10,7 +12,8 @@
     $page_title = "Yabe CMS Administrator's Dashboard";
     $style_sheets = [
         "/css/common.css",
-        "/css/admin.css"
+        "/css/flip-card.css",
+        "/css/admin.css",
     ];
     $scripts = [
         "/js/common.js",
@@ -24,12 +27,24 @@
     
     // About Us Editor logic
     $filepath = SHARED_PATH . "/about-us-bio.php";
-    if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["edit"])) {
-        file_put_contents($filepath, $_POST["bio-edit"],LOCK_EX);
-        new_logs_entry("../../private/logs.txt","CMS About Us Editor | modified $filepath");
+    $team_database_path = "../../private/database/team.csv";
+    $team_members = read_csv($team_database_path, true);
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+        
+        // Edit Bio logic
+        if (isset($_POST["edit_bio"])) {
+            file_put_contents($filepath, $_POST["bio-edit"], LOCK_EX);
+            new_logs_entry("../../private/logs.txt", "CMS About Us Editor | modified $filepath");
+        }
+        
+        // Edit member photo logic
+        if (isset($_POST["edit_photo"])) {
+            $id = $_POST["id"];
+        }
+        
     }
-    
-    
+        
+        
     include(SHARED_PATH . "/top.php");
 
 ?>
@@ -64,8 +79,34 @@
               
           ?></textarea>
         <a href="about_us.php" class="cms-editor-reset">Reset</a>
-        <input type="submit" name="edit" value="MODIFY">
+        <input type="submit" name="edit_bio" value="MODIFY">
       </form>
+
+      <h1 class="page-editor-title text-align-center">Team Members</h1>
+      <div class="flex-container flex-wrap flex-justify-content-space-between">
+        <?php
+      
+            foreach ($team_members as $team_member) {
+                echo "<div class='flip-card about-us-member'>
+                          <div class='flip-card-inner'>
+                            <div class='flip-card-front'>
+                              <img alt='Portrait of a person' src='" . url_for($team_member["img"]) . "'>
+                            </div>
+                            <div class='flip-card-back flex-container flex-direction-column flex-align-items-center'>
+                              <h2>" . $team_member["name"] . "</h2>
+                              <form action='about_us.php' method='post' target='_self' enctype='multipart/form-data'>
+                                <label for='change-photo'>Upload a new photo</label>
+                                <input id='change-photo' class='text-align-right mt-10' type='file' name='photo'>
+                                <label><input type='hidden' name='id' value='" . $team_member["id"] . "'></label>
+                                <input type='submit' name='edit_photo' value='CHANGE'>
+                              </form>
+                            </div>
+                          </div>
+                        </div>";
+            }
+      
+        ?>
+      </div>
     </section>
   </div>
 </main>
