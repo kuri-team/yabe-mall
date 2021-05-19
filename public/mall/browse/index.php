@@ -53,14 +53,13 @@ include("../../../private/csv.php");
                             echo "<option value='$letter' name='$letter' id='dropdown-value' selected='selected'>$letter</option>";
                         }
                     }
-                }
                     $letter = 'Z';
                     if ($_GET['browse-option'] != 'Z') {
                         echo "<option value='$letter' name='$letter' id='dropdown-value'>$letter</option>";
                     } else { //set selected value as default displayed value
                         echo "<option value='$letter' name='$letter' id='dropdown-value' selected='selected'>$letter</option>";
+                    }
                 }
-
                 ?>
 
             </select>
