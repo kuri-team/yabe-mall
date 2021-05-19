@@ -65,7 +65,7 @@ More requirements are listed below:
 
 ### 1. Deployment
 #### Yabe online mall e-commerce website, deployed with Heroku: https://yabe-mall.herokuapp.com/ (`main` branch)
-Backup: https://kuri-team.github.io/yabe-mall/ (`main` branch) - static website
+Backup: https://kuri-team.github.io/yabe-mall/ (`release-2.4-05-08-21` branch) - static website
 
 ### 2. Coding styles & conventions
 #### Front-end
