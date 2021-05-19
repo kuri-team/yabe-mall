@@ -25,18 +25,19 @@ if ($_GET["by-store"] === "by-category" && !isset($_GET["browse-option"])) {
     $_GET["page"] = "1";
 }
 
-function display_store($s) {
+function display_store($s, $sid) {
+    $store_href = url_for("/store/store-template/?={$sid}");
     echo "
         <div class='store-card'>
-            <a href='\"/store/store-template\");?>'><img class='store-card-thumbnail' alt='image representation of a shop' src='../../media/image/placeholder_262x250.png'></a>
-            <a class='store-card-name' href='<?=url_for(\"/store/store-template\");?>'>$s</a>
+            <a href='$store_href'><img class='store-card-thumbnail' alt='image representation of a shop' src='../../media/image/placeholder_262x250.png'></a>
+            <a class='store-card-name' href=$store_href>$s</a>
         </div>
     ";
 }
 
 $max_products = 10; // maximum number of products displayed on the page
 
-function each_page($store, $list_length) {
+function each_page($stores, $list_length) {
     global $max_products;
     $min = 0;
     $max = $max_products - $min - 1;
@@ -47,7 +48,7 @@ function each_page($store, $list_length) {
         $max = $list_length - 1;
     }
     for ($i = $min; $i <= $max; $i++) {
-        display_store($store[$i]);
+        display_store($stores[$i]["store_name"],$stores[$i]["store_id"]);
     }
 
 }
@@ -63,7 +64,13 @@ function prev_page() {
 function next_page($list_length) {
     global $max_products;
     $next = $_GET["page"] + 1;
-    $max_page = floor($list_length / $max_products) + 1;
+    if ($list_length % $max_products != 0) {
+        $max_page = floor($list_length / $max_products) + 1;
+    } else {
+        $max_page = $list_length / $max_products;
+    }
+    echo $list_length;
+    echo $max_page;
     if ($next > $max_page) {
         $next = $max_page;
     }
@@ -126,7 +133,8 @@ function next_page($list_length) {
                 <?php
 
                 $stores_list = read_csv("../../../private/database/stores.csv", true);
-                $expected_stores = [];
+                $expected_stores = []; // a table of matched stores
+                $row = 0; // represent each row of $expected_store
                 if (isset($_GET["browse-option"])) {
                     if ($_GET["by-store"] === "by-category") {
                         if ($_GET["browse-option"] != "all-categories") {
@@ -135,33 +143,53 @@ function next_page($list_length) {
                                 for ($k = 0; $k< count($stores_list); $k++) {
                                     if ($category_list[$i]["id"] == $stores_list[$k]["category_id"]) {
                                         $store_name = $stores_list[$k]["name"];
-                                        array_push($expected_stores, $store_name);
+                                        $store_id = $stores_list[$k]["id"];
+                                        if (!in_array($store_id,$expected_stores)) {
+                                            array_push($expected_stores, [
+                                                "store_id" => "",
+                                                "store_name" => "",
+                                            ]);
+                                            $expected_stores[$row]["store_name"] = $store_name;
+                                            $expected_stores[$row]["store_id"] = $store_id;
+                                            $row++;
+                                        }
                                     }
                                 }
                             }
                         }
-                            each_page($expected_stores, count($expected_stores));
                         } else {
-                            for ($i = 0; $i < count($category_list); $i++) {
-                                for ($k = 0; $k< count($stores_list); $k++) {
-                                    $store_name = $stores_list[$k]["name"];
-                                    array_push($expected_stores, $store_name);
-                                }
+                            for ($k = 0; $k< count($stores_list); $k++) {
+                                $store_name = $stores_list[$k]["name"];
+                                $store_id = $stores_list[$k]["id"];
+                                array_push($expected_stores, [
+                                        "store_id" => "",
+                                        "store_name" => "",
+                                ]);
+                                $expected_stores[$row]["store_name"] = $store_name;
+                                $expected_stores[$row]["store_id"] = $store_id;
+                                $row++;
                             }
-                            each_page($expected_stores, count($expected_stores));
+                            }
                         }
                     } else if ($_GET["by-store"] === "by-name") {
                         for ($i = 0; $i < count($stores_list); $i++) {
                             $first_letter = substr($stores_list[$i]["name"], 0, 1);
                             if ($_GET["browse-option"] === strtolower($first_letter) || $_GET["browse-option"] === strtoupper($first_letter) ) {
                                 $store_name = $stores_list[$i]["name"];
-                                array_push($expected_stores, $store_name);
+                                $store_id = $stores_list[$i]["id"];
+                                if (!in_array($store_id,$expected_stores)) {
+                                    array_push($expected_stores, [
+                                        "store_id" => "",
+                                        "store_name" => "",
+                                    ]);
+                                    $expected_stores[$row]["store_name"] = $store_name;
+                                    $expected_stores[$row]["store_id"] = $store_id;
+                                    $row++;
+                                }
                             }
                         }
-                        each_page($expected_stores, count($expected_stores));
-                    }
                 }
-
+                each_page($expected_stores, count($expected_stores));
                 ?>
 
             </div>
