@@ -49,7 +49,7 @@
         $target_file = $_POST["target"];
         file_put_contents($target_file, $_POST["edit"], LOCK_EX);
         $edited = true;
-        new_logs_entry("../../private/logs.txt", "CMS Page Editor | modified " . SHARED_PATH . $filepath);
+        new_logs_entry("../../private/logs.txt", "CMS Page Editor | modified " . $target_file);
     }
     
     
