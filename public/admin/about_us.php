@@ -42,7 +42,18 @@
     </aside>
 
     <section class="content-child admin-content">
-      To be implemented
+      <form action="about_us.php" method="post" target="_self">
+        <label for="bio-edit">Bio</label>
+        <textarea id="bio-edit" name="bio-edit">
+          <?php
+          
+              $bio_file = fopen(SHARED_PATH . "/about-us-bio.php", "r");
+              echo file_get_contents($bio_file);
+              fclose($bio_file);
+              
+          ?>
+        </textarea>
+      </form>
     </section>
   </div>
 </main>
