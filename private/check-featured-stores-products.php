@@ -1,6 +1,7 @@
 <?php
     require_once "csv.php";
     require_once "../private/database/products.csv";
+    require_once "../private/database/stores.csv";
     
     /**
      * Check if products are featured on the Mall Home page
