@@ -110,6 +110,7 @@
                               <form action='about_us.php' method='post' target='_self' enctype='multipart/form-data'>
                                 <label for='change-photo'>Upload a new photo</label>
                                 <input id='change-photo' class='text-align-right mt-10' type='file' name='photo' required>
+                                <p>Please upload an 1:1 image for best result</p>
                                 <label><input type='hidden' name='id' value='" . $team_member["id"] . "'></label>
                                 <input type='submit' name='edit_photo' value='CHANGE'>
                               </form>
