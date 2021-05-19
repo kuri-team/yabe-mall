@@ -34,13 +34,15 @@ function display_store($s) {
     ";
 }
 
+$max_products = 10; // maximum number of products displayed on the page
+
 function each_page($store, $list_length) {
+    global $max_products;
     $min = 0;
-    $length = 10; // maximum number of products displayed on the page
-    $max = $length - $min - 1;
+    $max = $max_products - $min - 1;
     $page = $_GET["page"];
-    $min += $length * ($page-1);
-    $max += $length * ($page-1);
+    $min += $max_products * ($page-1);
+    $max += $max_products * ($page-1);
     if ($max > $list_length) {
         $max = $list_length - 1;
     }
@@ -48,6 +50,24 @@ function each_page($store, $list_length) {
         display_store($store[$i]);
     }
 
+}
+
+function prev_page() {
+    $prev = $_GET["page"] - 1;
+    if ($prev < 1) {
+        $prev = 1;
+    }
+    return $prev;
+}
+
+function next_page($list_length) {
+    global $max_products;
+    $next = $_GET["page"] + 1;
+    $max_page = floor($list_length / $max_products) + 1;
+    if ($next > $max_page) {
+        $next = $max_page;
+    }
+    return $next;
 }
 
 ?>
@@ -146,6 +166,24 @@ function each_page($store, $list_length) {
 
             </div>
     </div>
+
+        <?php
+            $prev = prev_page();
+            $next = next_page(count($expected_stores));
+            echo "
+            <form action='' method='get'>
+                <input type='hidden' name='by-store' value='{$_GET["by-store"]}'>
+                <input type='hidden' name='browse-option' value='{$_GET["browse-option"]}'>
+                <button type='submit' formmethod='get' name='page' value='$prev'>
+                    <i class='fas fa-angle-left'></i>
+                </button>
+                <button type='submit' formmethod='get' name='page' value='$next'>
+                    <i class='fas fa-angle-right'></i>
+                </button>
+            </form>
+            ";
+        ?>
+
     </div>
 </main>
 
