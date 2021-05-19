@@ -20,20 +20,19 @@ include("../../../private/csv.php");
 
 <main>
     <div class="content-body">
-        <form id="dropdown_form" action="" method="post">
+        <form id="dropdown_form" method="get" action="">
+            <?php
+            // keep existed $_GET['by-store'] in the URL
+            echo "
+            <input type='hidden' name='by-store' value='{$_GET["by-store"]}'>
+            "
+
+            ?>
         <label>
-            <select class="select-list" id="browse-option" name="browse-option" onchange="dropdown_form.submit()">
+            <select class="select-list" id="browse-option" name="browse-option" onchange="this.form.submit()">
 
                 <?php
-                if (isset($_POST["browse-option"])) {
-                    $selected_value = $_POST['browse-option'];
-                    echo "
-                    <script>
-                    document.getElementById('browse-option').value = $selected_value;
-                    </script>
-                ";
-                }
-                
+
                 $category_list = read_csv("../../../private/database/categories.csv", true);
                 if ($_GET["by-store"] == "by-category") {
                     echo "<option value='all-categories' name='all-categories' id='dropdown-value'>ALL CATEGORIES</option>";
@@ -49,8 +48,6 @@ include("../../../private/csv.php");
                     echo "<option value='Z' name='Z'>Z</option>";
                 }
 
-
-
                 ?>
 
             </select>
@@ -62,11 +59,11 @@ include("../../../private/csv.php");
                 <?php
 
                 $stores_list = read_csv("../../../private/database/stores.csv", true);
-                if (isset($_POST["browse-option"])) {
+                if (isset($_GET["browse-option"])) {
                     if ($_GET["by-store"] == "by-category") {
-                        if ($_POST["browse-option"] != "all-categories") {
+                        if ($_GET["browse-option"] != "all-categories") {
                         for ($i = 0; $i < count($category_list); $i++) {
-                            if ($category_list[$i]["name"] == $_POST["browse-option"]) {
+                            if ($category_list[$i]["name"] == $_GET["browse-option"]) {
                                 for ($k = 0; $k< count($stores_list); $k++) {
                                     if ($category_list[$i]["id"] == $stores_list[$k]["category_id"]) {
                                         $store_name = $stores_list[$k]["name"];
@@ -87,6 +84,7 @@ include("../../../private/csv.php");
                 ?>
 
             </div>
+    </div>
     </div>
 </main>
 
