@@ -24,7 +24,6 @@
     }
     
     $store = get_store_data($stores);
-    $store_cat_id = $store["category_id"];
     
     function get_store_cat(string $store_category_id, array $categories_data) {
         foreach ($categories_data as $category) {
@@ -35,11 +34,13 @@
         return false;
     }
     
+    $store_cat_name = get_store_cat($store["category_id"], $categories);
+    
 ?>
 
 <ul class="breadcrumb">
     <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
-    <li><a href="<?=url_for("/mall/browse/by-store/by-category.php");?>">Bookstore</a>/</li>
+    <li><a href="<?=url_for("/mall/browse/by-store/by-category.php");?>"><?=$store_cat_name;?></a>/</li>
     <li><a href="<?=url_for("/store/store-template");?>"><?=$store["name"];?></a></li>
 </ul>
 
@@ -51,7 +52,7 @@
              src="<?=url_for("/media/image/profile-placeholder_143x143.png");?>">
         
         <h2><?=$store["name"];?></h2>
-        <h3>BookStore</h3>
+        <h3><?=$store_cat_name;?></h3>
         <a href=""><i class="fab fa-facebook-square"></i></a>
         <a href=""><i class="fab fa-twitter-square"></i></a>
         <a href=""><i class="fab fa-youtube"></i></a>
