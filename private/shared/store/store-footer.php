@@ -1,0 +1,20 @@
+<section class="store-footer flex-container flex-justify-content-center flex-align-items-center flex-wrap">
+    <div class="store-logo"><a href="<?=url_for("/store/store-template");?>">
+            <img class="circle-img" src="../../../media/image/hsy_shop/HSY_avatar.jpg" alt="Store logo"></a>
+    </div>
+    <div class="store-footer-bttn"><a href="<?=url_for("/mall/legal/copyright");?>">Copyright</a></div>
+    <div class="store-footer-bttn"><a href="<?=url_for("/mall/legal/tos");?>">Term of Service</a></div>
+    <div class="store-footer-bttn"><a href="<?=url_for("/mall/legal/privacy-policy");?>">
+            Privacy Policy</a></div>
+    
+    <div id="responsive-store-footer">
+        <input type="checkbox" id="store-footer-icon">
+        <label for="store-footer-icon" class="responsive-store-footer-title" onclick="displayDropdown()">Legal</label>
+        <ul id="responsive-store-footer-dropdown">
+            <li><a href="<?=url_for("/mall/legal/copyright");?>">Copyright</a></li>
+            <li><a href="<?=url_for("/mall/legal/tos");?>">Term of Service</a></li>
+            <li><a href="<?=url_for("/mall/legal/privacy-policy");?>">Privacy Policy</a></li>
+        </ul>
+    </div>
+</section>
+</div>
