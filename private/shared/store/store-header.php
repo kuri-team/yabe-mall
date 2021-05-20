@@ -25,6 +25,14 @@
     
     $store = get_store_data($stores);
     
+    /**
+     * Get the category name from the category id of a store
+     * @param string $store_category_id
+     * @param array $categories_data containing data of all categories
+     * @return false|mixed
+     * <strong><em>category name</em></strong> of the selected store,
+     * <strong><em>false</em></strong> otherwise.
+     */
     function get_store_cat(string $store_category_id, array $categories_data) {
         foreach ($categories_data as $category) {
             if ($category["id"] === $store_category_id) {
