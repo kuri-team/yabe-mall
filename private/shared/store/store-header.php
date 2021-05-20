@@ -1,3 +1,20 @@
+<?php
+    require_once(PRIVATE_PATH . "\csv.php");
+    
+    $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
+    
+    function display_dynamic_store(array $stores_data) {
+        if (isset($_GET["id"])) {
+            foreach ($stores_data as $store_data) {
+                if ($_GET["id"] === $store_data["id"]) {
+                    return $store_data;
+                }
+            }
+        }
+        return false;
+    }
+?>
+
 <ul class="breadcrumb">
     <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
     <li><a href="<?=url_for("/mall/browse/by-store/by-category.php");?>">Bookstore</a>/</li>
