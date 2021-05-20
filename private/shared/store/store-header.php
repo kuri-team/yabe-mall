@@ -7,9 +7,9 @@
 <div class="content-body">
     <section class="store-header">
         <img class="store-img" alt="image of a shop"
-             src="../../media/image/hsy_shop/HSY_banner.jpg">
+             src="../../../public/media/image/placeholder_1920x1080.jpg">
         <img class="store-card-thumbnail circle-img" alt="image representation of a shop"
-             src="../../media/image/hsy_shop/HSY_avatar.jpg">
+             src="../../../public/media/image/profile-placeholder_143x143.png">
         
         <h2>HSY Shop</h2>
         <a href="./"><i class="fab fa-facebook-square"></i></a>
