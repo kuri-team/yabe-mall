@@ -32,3 +32,25 @@
 .pagination .current-page:hover {
     background-color: #cd4813;
 }
+
+.pagination-wrapper {
+    padding: 20px 0;
+    text-align: right;
+    margin: 0 20px 20px 0;
+}
+
+.prev-button, .next-button {
+    font-size: 14px;
+    text-align: right;
+    text-decoration: none;
+    color: black;
+    border: 1px black solid;
+    box-sizing: border-box;
+    padding: 3px 11px;
+    margin: 5px;
+    background-color: #dddddd;
+}
+
+.prev-button:hover, .next-button:hover {
+    background-color: #ececec;
+}

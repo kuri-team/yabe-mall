@@ -204,16 +204,18 @@ function next_page($list_length) {
             $prev = prev_page();
             $next = next_page(count($expected_stores));
             echo "
+            <div class='pagination-wrapper'>
             <form action='' method='get'>
                 <input type='hidden' name='by-store' value='{$_GET["by-store"]}'>
                 <input type='hidden' name='browse-option' value='{$_GET["browse-option"]}'>
-                <button type='submit' formmethod='get' name='page' value='$prev'>
+                <button class='prev-button' type='submit' formmethod='get' name='page' value='$prev'>
                     <i class='fas fa-angle-left'></i>
                 </button>
-                <button type='submit' formmethod='get' name='page' value='$next'>
+                <button class='next-button' type='submit' formmethod='get' name='page' value='$next'>
                     <i class='fas fa-angle-right'></i>
                 </button>
             </form>
+            </div>
             ";
         ?>
 
