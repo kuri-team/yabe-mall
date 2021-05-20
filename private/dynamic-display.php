@@ -10,13 +10,14 @@
      * <strong><em>false</em></strong> otherwise.
      */
     function check_featured_mall_products(array $products) {
-        foreach ($products as $p_mall) {
-            if ($p_mall['featured_in_mall'] === "TRUE") {
-                return $p_mall;
+        foreach ($products as $product) {
+            if ($product['featured_in_mall'] === "TRUE") {
+                return $product;
             }
         }
         return false;
     }
+    
     
     /**
      * Check if stores are featured on the Mall Home page
@@ -27,9 +28,9 @@
      * <strong><em>false</em></strong> otherwise.
      */
     function check_featured_mall_stores(array $stores) {
-        foreach ($stores as $s_mall) {
-            if ($s_mall['featured'] === "TRUE") {
-                return $s_mall;
+        foreach ($stores as $store) {
+            if ($store['featured'] === "TRUE") {
+                return $store;
             }
         }
         return false;
@@ -45,9 +46,9 @@
      * <strong><em>false</em></strong> otherwise.
      */
     function check_featured_store_products(array $products) {
-        foreach ($products as $p_store) {
-            if ($p_store['featured_in_store'] === "TRUE") {
-                return $p_store;
+        foreach ($products as $product) {
+            if ($product['featured_in_store'] === "TRUE") {
+                return $product;
             }
         }
         return false;
@@ -55,12 +56,12 @@
     
     
     /**
-     * Compare and sort the dates created of two items (stores, products, etc.) from newest to oldest
+     * Compare the dates created of two items (stores, products, etc.). To be used as the handler function for usort() to sort a given group of database items from newest to oldest.
      * @param array $item1 first item for comparison
      * @param array $item2 second item for comparison
      * @return int
      */
-    function sort_by_time(array $item1, array $item2): int {
+    function compare_by_time(array $item1, array $item2): int {
         return -(strtotime($item1["created_time"]) - strtotime($item2["created_time"]));
     }
     
