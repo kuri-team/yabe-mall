@@ -13,9 +13,17 @@
     margin: 50px auto 20px;
 }
 
-.store-header h2 {
+.store-header h2, .store-header h3 {
     font-weight: normal;
-    margin: 5px auto;
+    margin: 15px auto;
+}
+
+.store-header h2 {
+    font-size: 30px;
+}
+
+.store-header h3 {
+    font-size: 16px;
 }
 
 .store-header a, .store-footer a {
