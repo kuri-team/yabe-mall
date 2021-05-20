@@ -18,6 +18,23 @@
         return false;
     }
     
+    /**
+     * Check if stores are featured on the Mall Home page
+     * @param array $stores containing information of all products
+     * @return mixed
+     * <strong><em>array</em></strong> containing information of a store if it is
+     * featured on mall,
+     * <strong><em>false</em></strong> otherwise.
+     */
+    function check_featured_mall_stores(array $stores) {
+        foreach ($stores as $s_mall) {
+            if ($s_mall['featured'] === "TRUE") {
+                return $s_mall;
+            }
+        }
+        return false;
+    }
+    
     
     /**
      * Check if products are featured on Store Home page(s)
