@@ -19,6 +19,8 @@
 ?>
 
   <main>
+      <?php require_once(SHARED_PATH . "/store/store-header.php"); ?>
+      
       <section class="store-home-content">
         <section class="store-home-content-new mb-80">
           <div class="store-home-content-header text-align-center">
@@ -174,6 +176,8 @@
           </section>
         </section>
       </section>
+    
+      <?php require_once(SHARED_PATH . "/store/store-footer.php"); ?>
   </main>
 
 <?php include(SHARED_PATH . "/bottom.php"); ?>

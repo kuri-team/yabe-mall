@@ -18,6 +18,8 @@
 ?>
 
   <main>
+      <?php require_once(SHARED_PATH . "/store/store-header.php"); ?>
+      
       <section id="store-page-content">
         <h2 class="store-content-heading text-align-center">BIO</h2>
         <h3>Our Goal</h3>
@@ -47,7 +49,7 @@
         <h3>Our Leaders</h3>
         <div class="flex-container flex-wrap">
           <div class="shop-founder-ceo text-align-center">
-            <img src="../../../media/image/hsy_shop/hansooyoung.jpg"
+            <img src="<?=url_for("/media/image/profile-placeholder_143x143.png");?>"
                  alt="HSY Shop's Founder and CEO" class="circle-img">
             <h4 class="shop-leader-name">Han Sooyoung</h4>
             <p class="shop-leader-position">Founder &amp; CEO</p>
@@ -58,7 +60,7 @@
           </div>
 
           <div class="shop-cfo text-align-center">
-            <img src="../../../media/image/hsy_shop/neyra.jpg"
+            <img src="<?=url_for("/media/image/profile-placeholder_143x143.png");?>"
                  alt="HSY Shop's CFO" class="circle-img">
             <h4 class="shop-leader-name">Neyra Elena Darcy</h4>
             <p class="shop-leader-position">CFO</p>
@@ -69,6 +71,8 @@
           </div>
         </div>
       </section>
+    
+      <?php require_once(SHARED_PATH . "/store/store-footer.php"); ?>
   </main>
 
 <?php include(SHARED_PATH . "/bottom.php"); ?>

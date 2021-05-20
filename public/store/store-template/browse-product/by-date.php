@@ -20,6 +20,8 @@
 ?>
 
   <main>
+      <?php require_once(SHARED_PATH . "/store/store-header.php"); ?>
+      
       <label><select name="store-category">
         <option value="newest">Newest First</option>
         <option value="oldest">Oldest First</option>
@@ -169,6 +171,8 @@
         <a href=""><i class="fas fa-chevron-right"></i></a>
         <a href=""><i class="fas fa-chevron-right"></i><i class="fas fa-chevron-right"></i></a>
       </div>
+    
+      <?php require_once(SHARED_PATH . "/store/store-footer.php"); ?>
   </main>
 
 <?php include(SHARED_PATH . "/bottom.php"); ?>

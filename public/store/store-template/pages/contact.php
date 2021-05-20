@@ -18,6 +18,8 @@
 ?>
 
   <main>
+      <?php require_once(SHARED_PATH . "/store/store-header.php"); ?>
+      
       <h2 class="store-content-heading text-align-center">CONTACT</h2>
       <section id="store-page-content" class="flex-container flex-wrap">
         <div id="store-contact-form">
@@ -50,6 +52,8 @@
           <p><a href="tel:1502104308">+1 502 104 308</a></p>
         </div>
       </section>
+    
+      <?php require_once(SHARED_PATH . "/store/store-footer.php"); ?>
   </main>
 
 <?php include(SHARED_PATH . "/bottom.php"); ?>
