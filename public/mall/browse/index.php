@@ -16,6 +16,10 @@ $scripts = [
 include(SHARED_PATH . "/top.php");
 include("../../../private/csv.php");
 
+// default browse option
+if (!isset($_GET["by-store"]) || $_GET["by-store"] === "") {
+    $_GET["by-store"] = "by-category";
+}
 
 if ($_GET["by-store"] === "by-category" && !isset($_GET["browse-option"])) {
     $_GET["browse-option"] = "all-categories";
@@ -69,8 +73,6 @@ function next_page($list_length) {
     } else {
         $max_page = $list_length / $max_products;
     }
-    echo $list_length;
-    echo $max_page;
     if ($next > $max_page) {
         $next = $max_page;
     }
@@ -84,9 +86,11 @@ function next_page($list_length) {
         <form id="dropdown_form" method="get" action="">
             <?php
             // keep existed $_GET['by-store'] in the URL
+
             echo "
             <input type='hidden' name='by-store' value='{$_GET["by-store"]}'>
             <input type='hidden' name='page' value='1'>
+            <input type='hidden' name='browse-option' value='{$_GET["browse-option"]}'>
             "
 
             ?>
@@ -135,6 +139,7 @@ function next_page($list_length) {
                 $stores_list = read_csv("../../../private/database/stores.csv", true);
                 $expected_stores = []; // a table of matched stores
                 $row = 0; // represent each row of $expected_store
+
                 if (isset($_GET["browse-option"])) {
                     if ($_GET["by-store"] === "by-category") {
                         if ($_GET["browse-option"] != "all-categories") {
@@ -170,8 +175,7 @@ function next_page($list_length) {
                                 $row++;
                             }
                             }
-                        }
-                    } else if ($_GET["by-store"] === "by-name") {
+                        } else if ($_GET["by-store"] === "by-name") {
                         for ($i = 0; $i < count($stores_list); $i++) {
                             $first_letter = substr($stores_list[$i]["name"], 0, 1);
                             if ($_GET["browse-option"] === strtolower($first_letter) || $_GET["browse-option"] === strtoupper($first_letter) ) {
@@ -188,7 +192,8 @@ function next_page($list_length) {
                                 }
                             }
                         }
-                }
+                    }
+                    }
                 each_page($expected_stores, count($expected_stores));
                 ?>
 
