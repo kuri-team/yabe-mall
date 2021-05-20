@@ -48,15 +48,13 @@ function previousPage() {
 const NAV_SEARCH_FILTER = document.getElementById("nav-search-filter");
 const NAV_SEARCH_FILTER_OPTIONS = document.querySelectorAll(".nav-search-filter-option");
 const NAV_SEARCH_FILTER_LEVEL_1 = document.getElementById("nav-search-filter-level-1");
-const NAV_SEARCH_FILTER_LEVEL_2_1 = document.getElementById("nav-search-filter-level-2-1");
 const NAV_SEARCH_FILTER_LEVEL_2_2 = document.getElementById("nav-search-filter-level-2-2");
-let separator = " by ";
+let separator = " - ";
 
 // Automatic display, width, and position on mouseover of Navbar Filter
 NAV_SEARCH_FILTER.addEventListener("mouseover", function () {
     let width = NAV_SEARCH_FILTER_LEVEL_1.offsetWidth;
     NAV_SEARCH_FILTER_LEVEL_1.setAttribute("style", "display: block; animation: expand-top 0.1s; transform-origin: top;");
-    NAV_SEARCH_FILTER_LEVEL_2_1.setAttribute("style", `left: ${width}px;`);
     NAV_SEARCH_FILTER_LEVEL_2_2.setAttribute("style", `left: ${width}px;`);
 });
 

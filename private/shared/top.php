@@ -38,19 +38,35 @@
       <div id="nav-search-filter-level-1">
         <div class="nav-search-filter-option">All</div>
         <hr>
-        <div class="nav-search-filter-option">Products
-          <div id="nav-search-filter-level-2-1">
-            <div class="nav-search-filter-option">Category</div>
-            <hr>
-            <div class="nav-search-filter-option">Name</div>
-          </div>
-        </div>
+        <div class="nav-search-filter-option">Products</div>
         <hr>
         <div class="nav-search-filter-option">Stores
           <div id="nav-search-filter-level-2-2">
-            <div class="nav-search-filter-option">Category</div>
+            <div class="nav-search-filter-option">Department</div>
             <hr>
-            <div class="nav-search-filter-option">Name</div>
+            <div class="nav-search-filter-option">Grocery</div>
+            <hr>
+            <div class="nav-search-filter-option">Restaurant</div>
+            <hr>
+            <div class="nav-search-filter-option">Clothing</div>
+            <hr>
+            <div class="nav-search-filter-option">Accessories</div>
+            <hr>
+            <div class="nav-search-filter-option">Pharmacy</div>
+            <hr>
+            <div class="nav-search-filter-option">Technology</div>
+            <hr>
+            <div class="nav-search-filter-option">Pet</div>
+            <hr>
+            <div class="nav-search-filter-option">Toy</div>
+            <hr>
+            <div class="nav-search-filter-option">Specialty</div>
+            <hr>
+            <div class="nav-search-filter-option">Thrift</div>
+            <hr>
+            <div class="nav-search-filter-option">Service</div>
+            <hr>
+            <div class="nav-search-filter-option">Kiosk</div>
           </div>
         </div>
       </div>
