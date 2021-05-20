@@ -42,7 +42,7 @@
           <div id="nav-search-filter-level-2-1">
             <div class="nav-search-filter-option">Category</div>
             <hr>
-            <div class="nav-search-filter-option">Date</div>
+            <div class="nav-search-filter-option">Name</div>
           </div>
         </div>
         <hr>
@@ -56,12 +56,12 @@
       </div>
     </div>
     <div id="nav-search">
-      <form action="<?=url_for("/mall/browse");?>" method="get" target="_blank">
-        <label for="q"></label>
-        <input class="nav-seach-bar" id="q" name="q" type="search" placeholder="Search" value="">
+      <form id="nav-search-form" action="<?=url_for("/search");?>" method="get" target="_self">
+        <label><input class="nav-seach-bar" id="q" name="q" type="search" placeholder="Search" value=""></label>
+        <label><input id="nav-search-filter-input" name="filter" type="hidden" value="global"></label>
       </form>
     </div>
-    <div class="nav-search-bttn"><i class="fas fa-search"></i></div>
+    <div id="nav-search-bttn" class="nav-search-bttn"><i class="fas fa-search"></i></div>
     <div>
       <a href="<?=url_for("/mall/cart");?>"><button class="nav-cart-bttn"><i class="fas fa-shopping-cart"></i>Cart</button></a>
     </div>

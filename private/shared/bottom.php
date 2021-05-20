@@ -66,5 +66,6 @@
         echo "<script src='" . url_for($script) . "'></script>";
     }
 ?>
+<script src="<?=url_for("/js/search/common.js");?>"></script>
 </body>
 </html>
