@@ -7,14 +7,14 @@
 <div class="content-body">
     <section class="store-header">
         <img class="store-img" alt="image of a shop"
-             src="../../../public/media/image/placeholder_1920x1080.jpg">
+             src="<?=url_for("/media/image/store-header-placeholder.jpg");?>">
         <img class="store-card-thumbnail circle-img" alt="image representation of a shop"
-             src="../../../public/media/image/profile-placeholder_143x143.png">
+             src="<?=url_for("/media/image/profile-placeholder_143x143.png");?>">
         
         <h2>HSY Shop</h2>
-        <a href="./"><i class="fab fa-facebook-square"></i></a>
-        <a href="./"><i class="fab fa-twitter-square"></i></a>
-        <a href="./"><i class="fab fa-youtube"></i></a>
+        <a href=""><i class="fab fa-facebook-square"></i></a>
+        <a href=""><i class="fab fa-twitter-square"></i></a>
+        <a href=""><i class="fab fa-youtube"></i></a>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem, aspernatur dolores magni,
             aliquam perferendis debitis ipsa necessitatibus nisi quisquam velit ex dolorem, facilis
             et rerum quod blanditiis ducimus voluptatem adipisci!</p>
