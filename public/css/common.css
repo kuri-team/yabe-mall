@@ -190,14 +190,20 @@ i {
 }
 
 .text-align-center {
+    text-align: -moz-center;
+    text-align: -webkit-center;
     text-align: center;
 }
 
 .text-align-left {
+    text-align: -moz-left;
+    text-align: -webkit-left;
     text-align: left;
 }
 
 .text-align-right {
+    text-align: -moz-right;
+    text-align: -webkit-right;
     text-align: right;
 }
 

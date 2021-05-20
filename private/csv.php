@@ -124,6 +124,7 @@
     function write_csv(string $path, array $data, bool $first_line_header=false): bool {
         if (is_csv($path)) {
             $file = fopen($path, "w");
+            flock($file, LOCK_EX);
     
             if (!$first_line_header) {
         
@@ -147,6 +148,7 @@
         
             }
             
+            flock($file, LOCK_UN);
             fclose($file);
             return true;
         }
