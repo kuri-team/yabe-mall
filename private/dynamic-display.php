@@ -20,7 +20,7 @@
     
     /**
      * Check if stores are featured on the Mall Home page
-     * @param array $stores containing information of all products
+     * @param array $stores containing information of all stores
      * @return mixed
      * <strong><em>array</em></strong> containing information of a store if it is
      * featured on mall,
@@ -64,7 +64,3 @@
         return -(strtotime($item1["created_time"]) - strtotime($item2["created_time"]));
     }
     
-//    usort(sort_by_time(['products'], ['products']));
-//    echo '<pre>';
-//    print_r(['products']);
-//    echo '</pre>';
