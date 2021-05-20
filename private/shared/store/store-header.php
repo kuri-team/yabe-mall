@@ -3,7 +3,15 @@
     
     $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
     
-    function display_dynamic_store(array $stores_data) {
+    
+    /**
+     * Get all data of the selected store
+     * @param array $stores_data containing data of all stores
+     * @return false|mixed
+     * <strong><em>array</em></strong> containing data of the selected store,
+     * <strong><em>false</em></strong> otherwise.
+     */
+    function get_store_data(array $stores_data) {
         if (isset($_GET["id"])) {
             foreach ($stores_data as $store_data) {
                 if ($_GET["id"] === $store_data["id"]) {
@@ -13,12 +21,14 @@
         }
         return false;
     }
+    
+    $store = get_store_data($stores);
 ?>
 
 <ul class="breadcrumb">
     <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
     <li><a href="<?=url_for("/mall/browse/by-store/by-category.php");?>">Bookstore</a>/</li>
-    <li><a href="<?=url_for("/store/store-template");?>">HSY Shop</a></li>
+    <li><a href="<?=url_for("/store/store-template");?>"><?=$store["name"];?></a></li>
 </ul>
 
 <div class="content-body">
@@ -28,7 +38,7 @@
         <img class="store-card-thumbnail circle-img" alt="image representation of a shop"
              src="<?=url_for("/media/image/profile-placeholder_143x143.png");?>">
         
-        <h2>HSY Shop</h2>
+        <h2><?=$store["name"];?></h2>
         <a href=""><i class="fab fa-facebook-square"></i></a>
         <a href=""><i class="fab fa-twitter-square"></i></a>
         <a href=""><i class="fab fa-youtube"></i></a>
