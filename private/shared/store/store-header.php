@@ -2,6 +2,7 @@
     require_once(PRIVATE_PATH . "\csv.php");
     
     $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
+    $categories = read_csv(PRIVATE_PATH . "\database/categories.csv", true);
     
     
     /**
@@ -23,6 +24,17 @@
     }
     
     $store = get_store_data($stores);
+    $store_cat_id = $store["category_id"];
+    
+    function get_store_cat(string $store_category_id, array $categories_data) {
+        foreach ($categories_data as $category) {
+            if ($category["id"] === $store_category_id) {
+                return $category["name"];
+            }
+        }
+        return false;
+    }
+    
 ?>
 
 <ul class="breadcrumb">
@@ -39,6 +51,7 @@
              src="<?=url_for("/media/image/profile-placeholder_143x143.png");?>">
         
         <h2><?=$store["name"];?></h2>
+        <h3>BookStore</h3>
         <a href=""><i class="fab fa-facebook-square"></i></a>
         <a href=""><i class="fab fa-twitter-square"></i></a>
         <a href=""><i class="fab fa-youtube"></i></a>
