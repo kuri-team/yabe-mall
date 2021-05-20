@@ -65,3 +65,41 @@
         return -(strtotime($item1["created_time"]) - strtotime($item2["created_time"]));
     }
     
+    
+    /**
+     * Get all data of the selected store
+     * @param array $stores containing data of all stores
+     * @return false|mixed
+     * <strong><em>array</em></strong> containing data of the selected store,
+     * <strong><em>false</em></strong> otherwise.
+     */
+    function get_store_data(array $stores)
+    {
+        if (isset($_GET["id"])) {
+            foreach ($stores as $store) {
+                if ($_GET["id"] === $store["id"]) {
+                    return $store;
+                }
+            }
+        }
+        return false;
+    }
+    
+    
+    /**
+     * Get the category name from the category id of a store
+     * @param string $store_category_id
+     * @param array $categories containing data of all categories
+     * @return false|mixed
+     * <strong><em>category name</em></strong> of the selected store,
+     * <strong><em>false</em></strong> otherwise.
+     */
+    function get_store_cat(string $store_category_id, array $categories) {
+        foreach ($categories as $category) {
+            if ($category["id"] === $store_category_id) {
+                return $category["name"];
+            }
+        }
+        return false;
+    }
+    

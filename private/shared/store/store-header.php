@@ -1,47 +1,11 @@
 <?php
     require_once(PRIVATE_PATH . "\csv.php");
+    require_once(PRIVATE_PATH . "\dynamic-display.php");
     
     $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
     $categories = read_csv(PRIVATE_PATH . "\database/categories.csv", true);
     
-    
-    /**
-     * Get all data of the selected store
-     * @param array $stores_data containing data of all stores
-     * @return false|mixed
-     * <strong><em>array</em></strong> containing data of the selected store,
-     * <strong><em>false</em></strong> otherwise.
-     */
-    function get_store_data(array $stores_data) {
-        if (isset($_GET["id"])) {
-            foreach ($stores_data as $store_data) {
-                if ($_GET["id"] === $store_data["id"]) {
-                    return $store_data;
-                }
-            }
-        }
-        return false;
-    }
-    
     $store = get_store_data($stores);
-    
-    /**
-     * Get the category name from the category id of a store
-     * @param string $store_category_id
-     * @param array $categories_data containing data of all categories
-     * @return false|mixed
-     * <strong><em>category name</em></strong> of the selected store,
-     * <strong><em>false</em></strong> otherwise.
-     */
-    function get_store_cat(string $store_category_id, array $categories_data) {
-        foreach ($categories_data as $category) {
-            if ($category["id"] === $store_category_id) {
-                return $category["name"];
-            }
-        }
-        return false;
-    }
-    
     $store_cat_name = get_store_cat($store["category_id"], $categories);
     
 ?>
