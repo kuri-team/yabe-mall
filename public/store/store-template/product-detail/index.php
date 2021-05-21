@@ -7,8 +7,8 @@
 
 <?php
     
-    $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
-    $categories = read_csv(PRIVATE_PATH . "\database/categories.csv", true);
+    $stores = read_csv("../../../private/database/stores.csv", true);
+    $products = read_csv("../../../private/database/products.csv", true);
     
     $page_title = "Purple Hyacinth comic";
     $style_sheets = [
