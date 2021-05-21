@@ -1,15 +1,14 @@
 <?php
     
     
+    
     /**
      * Check if products are featured on the Mall Home page
      * @param array $products containing information of all products
-     * @return mixed
-     * <strong><em>array</em></strong> containing information of a product if it is
-     * featured on mall,
-     * <strong><em>false</em></strong> otherwise.
+     * @return array <strong><em>array</em></strong> containing information
+     * of all products featured on Mall Home
      */
-    function check_featured_mall_products(array $products) {
+    function check_featured_mall_products(array $products): array {
         $featured_mall_products = [];
         
         foreach ($products as $product) {
@@ -24,12 +23,10 @@
     /**
      * Check if stores are featured on the Mall Home page
      * @param array $stores containing information of all stores
-     * @return mixed
-     * <strong><em>array</em></strong> containing information of a store if it is
-     * featured on mall,
-     * <strong><em>false</em></strong> otherwise.
+     * @return array <strong><em>array</em></strong> containing information
+     * of all stores featured on Mall Home
      */
-    function check_featured_mall_stores(array $stores) {
+    function check_featured_mall_stores(array $stores): array {
         $featured_mall_stores = [];
         
         foreach ($stores as $store) {
@@ -42,14 +39,12 @@
     
     
     /**
-     * Check if products are featured on Store Home page(s)
+     * Check if products are featured on Store Home page
      * @param array $products containing information of all products
-     * @return mixed
-     * <strong><em>array</em></strong> containing information of a product if it is
-     * featured on Store Home,
-     * <strong><em>false</em></strong> otherwise.
+     * @return array <strong><em>array</em></strong> containing information
+     * of all products featured on Store Home
      */
-    function check_featured_store_products(array $products) {
+    function check_featured_store_products(array $products): array {
         $featured_store_products = [];
         
         foreach ($products as $product) {
