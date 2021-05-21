@@ -7,8 +7,8 @@
 
 <?php
     
-    $stores = read_csv("../../../private/database/stores.csv", true);
-    $products = read_csv("../../../private/database/products.csv", true);
+    $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
+    $products = read_csv(PRIVATE_PATH . "\database/products.csv", true);
     
     $page_title = "Purple Hyacinth comic";
     $style_sheets = [
@@ -36,18 +36,18 @@
 
     <section id="product-info" class="content-body flex-container">
       <span class="product-info-other-media flex-container flex-direction-column">
-        <img src="../../../media/image/hsy_shop/HSY.jpg" alt="another image of the
+        <img src="../../../media/image/placeholder_262x250.png" alt="another image of the
             product" class="mb-10">
-        <img src="../../../media/image/hsy_shop/HSY2.jpg" alt="another image of the
+        <img src="../../../media/image/placeholder_262x250.png" alt="another image of the
             product" class="mb-10">
-        <img src="../../../media/image/hsy_shop/HSY3.jpg"  alt="another image of the
+        <img src="../../../media/image/placeholder_262x250.png"  alt="another image of the
             product" class="mb-10">
-        <img src="../../../media/image/hsy_shop/HSY4.jpg"  alt="another image of the
+        <img src="../../../media/image/placeholder_262x250.png"  alt="another image of the
             product">
       </span>
 
       <span class="product-info-main-img">
-        <img src="../../../media/image/hsy_shop/HSY_main_cover.jpg" alt="main image of the product">
+        <img src="../../../media/image/placeholder_1920x1080.jpg" alt="main image of the product">
       </span>
 
       <div class="product-info-main">
@@ -108,7 +108,7 @@
       <div class="card-gallery-content flex-container flex-justify-content-space-between flex-align-items-center overflow-hidden clear-both">
         <div class="product-card">
           <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-             src="../../../media/image/book_cover/the-blind_prince_cover.jpg"></a>
+             src="../../../media/image/placeholder_262x250.png"></a>
           <div class="product-card-details">
             <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
             <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
@@ -119,7 +119,7 @@
 
         <div class="product-card">
           <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-            src="../../../media/image/book_cover/true_beauty_cover.jpg"></a>
+            src="../../../media/image/placeholder_262x250.png"></a>
           <div class="product-card-details">
             <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
             <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
@@ -130,7 +130,7 @@
 
         <div class="product-card">
           <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-            src="../../../media/image/book_cover/rebirth_cover.jpg"></a>
+            src="../../../media/image/placeholder_262x250.png"></a>
           <div class="product-card-details">
             <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
             <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
@@ -141,7 +141,7 @@
 
         <div class="product-card">
           <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-            src="../../../media/image/book_cover/humor_me_cover.jpg"></a>
+            src="../../../media/image/placeholder_262x250.png"></a>
           <div class="product-card-details">
             <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
             <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
@@ -152,7 +152,7 @@
 
         <div class="product-card">
           <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-            src="../../../media/image/book_cover/heartstopper_cover.jpg"></a>
+            src="../../../media/image/placeholder_262x250.png"></a>
           <div class="product-card-details">
             <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
             <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
@@ -163,7 +163,7 @@
 
         <div class="product-card">
           <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-            src="../../../media/image/book_cover/gyaga_cover.jpg"></a>
+            src="../../../media/image/placeholder_262x250.png"></a>
           <div class="product-card-details">
             <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
             <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
