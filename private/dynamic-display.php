@@ -103,3 +103,15 @@
         return false;
     }
     
+    
+    function get_selected_store_ft_products(array $featured, array $store): array {
+        $selected_store_featured = [];
+        
+        foreach ($featured as $ft_product) {
+            if ($ft_product["store_id"] === $store["id"]) {
+                $selected_store_featured[] = $ft_product;
+            }
+        }
+        return $selected_store_featured;
+    }
+    
