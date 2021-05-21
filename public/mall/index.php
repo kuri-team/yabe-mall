@@ -20,7 +20,7 @@
     ];
     
     
-    // Constants for display settings
+    // Constants for display at most 10 items
     define("NEW_PRODUCTS_DISPLAY_NUM", 10);
     define("FEATURED_PRODUCTS_DISPLAY_NUM", 10);
     define("NEW_STORES_DISPLAY_NUM", 10);
@@ -30,13 +30,10 @@
     // Dynamic loading of database
     $products = read_csv("../../private/database/products.csv", true);
     $stores = read_csv("../../private/database/stores.csv", true);
+    
+    // Sort products and stores from latest to oldest created time
     usort($products, "compare_by_time");
     usort($stores, "compare_by_time");
-
-//    echo "<pre>";
-//    print_r($products);
-//    print_r($stores);
-//    echo "</pre>";
     
     
     include(SHARED_PATH . "/top.php");
@@ -79,9 +76,8 @@
 
             <div class="flex-container flex-justify-content-space-between flex-align-items-center flex-wrap">
                 <?php
-                    
                     $display_count = 0;
-                    check_featured_store_products($products);
+                    check_featured_mall_products($products);
                     while ($display_count < FEATURED_PRODUCTS_DISPLAY_NUM) {
                         echo "<div class='product-card'>
                         <a href='" . url_for("/store/store-template/product-detail") . "'><img alt='image of a product' src='../media/image/placeholder_262x250.png'></a>
@@ -107,8 +103,8 @@
             <div class="flex-container flex-justify-content-space-between flex-align-items-center flex-wrap">
                 <?php
                     
+                    check_featured_mall_stores($stores);
                     $display_count = 0;
-                    check_featured_store_products($products);
                     while ($display_count < FEATURED_STORES_DISPLAY_NUM) {
                         echo "<div class='store-card'>
                         <a href='" . url_for("/store/store-template") . "'><img class='store-card-thumbnail' alt='image representation of a shop' src='../media/image/placeholder_262x250.png'></a>
@@ -132,11 +128,11 @@
                 <?php
                     
                     $display_count = 0;
-                    while ($display_count < FEATURED_STORES_DISPLAY_NUM) {
+                    while ($display_count < NEW_STORES_DISPLAY_NUM) {
                         echo "<div class='store-card'>
                         <a href='" . url_for("/store/store-template") . "'><img class='store-card-thumbnail' alt='image representation of a shop' src='../media/image/placeholder_262x250.png'></a>
                         <a class='store-card-name' href='" . url_for("/store/store-template") . "'>" . $stores[$display_count]["name"] . "</a>
-                        <div class='product-card-sale-card'>" . date("Y年m月d日", strtotime($stores[$display_count]["created_time"])) . "</div>
+                        <div class='store-card-sale-card'>" . date("Y年m月d日", strtotime($stores[$display_count]["created_time"])) . "</div>
                       </div>";
                         $display_count++;
                     }
