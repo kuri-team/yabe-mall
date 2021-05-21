@@ -10,12 +10,14 @@
      * <strong><em>false</em></strong> otherwise.
      */
     function check_featured_mall_products(array $products) {
+        $featured_mall_products = [];
+        
         foreach ($products as $product) {
             if ($product['featured_in_mall'] === "TRUE") {
-                return $product;
+                $featured_mall_products[] = $product;
             }
         }
-        return false;
+        return $featured_mall_products;
     }
     
     
@@ -28,12 +30,14 @@
      * <strong><em>false</em></strong> otherwise.
      */
     function check_featured_mall_stores(array $stores) {
+        $featured_mall_stores = [];
+        
         foreach ($stores as $store) {
             if ($store['featured'] === "TRUE") {
-                return $store;
+                $featured_mall_stores[] = $store;
             }
         }
-        return false;
+        return $featured_mall_stores;
     }
     
     
@@ -46,12 +50,14 @@
      * <strong><em>false</em></strong> otherwise.
      */
     function check_featured_store_products(array $products) {
+        $featured_store_products = [];
+        
         foreach ($products as $product) {
             if ($product['featured_in_store'] === "TRUE") {
-                return $product;
+                $featured_store_products[] = $product;
             }
         }
-        return false;
+        return $featured_store_products;
     }
     
     

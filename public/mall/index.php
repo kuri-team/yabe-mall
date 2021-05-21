@@ -104,7 +104,7 @@
           <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../media/image/hsy_shop/HSY_main_cover_square.jpg"></a>
           <div class="product-card-details">
             <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Purple Hyacinth Comic</a>
-            <a class="product-card-shop" href="<?=url_for("/store/store-template?id=14");?>">HSY Shop</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template?id=93");?>">HSY Shop</a>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">18/6/2018</div>
           </div>
