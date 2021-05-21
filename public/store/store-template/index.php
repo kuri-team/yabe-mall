@@ -20,10 +20,13 @@
     include(SHARED_PATH . "/top.php");
     
     
-    function display_product_cards() {
+    /**
+     * Display product card of each product
+     */
+    function display_product_cards($product) {
         echo "<div class='product-card'>";
         echo "<a href='" . url_for("/store/store-template/product-detail") . "'><img alt='image of a product'
-                  src='../../media/image/hsy_shop/HSY_main_cover_square.jpg'></a>";
+                  src='../../media/image/placeholder_262x250.png'></a>";
         echo "<div class='product-card-details'>";
         echo "<a class='product-card-title' href='" . url_for("/store/store-template/product-detail") . "'>Purple Hyacinth Comic</a>";
         echo "<p class='product-card-shop'>Sophism &amp; Ephemerys</p>";
@@ -46,6 +49,7 @@
 
           <section class="store-product-cards">
             <div class="flex-container flex-justify-content-space-between flex-align-items-center flex-wrap">
+                <?php display_product_cards(); ?>
             </div>
           </section>
         </section>
