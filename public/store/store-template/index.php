@@ -25,17 +25,19 @@
     
     
     /**
-     * Display product card of each product
+     * Dynamic display of product cards
+     * @param $product
+     * to be displayed
      */
     function display_product_cards($product) {
         echo "<div class='product-card'>";
-        echo "<a href='" . url_for("/store/store-template/product-detail") . "'><img alt='image of a product'
-                  src='../../media/image/placeholder_262x250.png'></a>";
+        echo "<a href='" . url_for("/store/store-template/product-detail?id=" . $product["id"]) . "'>
+                <img alt='image of a product' src='../../media/image/placeholder_262x250.png'></a>";
         echo "<div class='product-card-details'>";
-        echo "<a class='product-card-title' href='" . url_for("/store/store-template/product-detail") . "'></a>";
-        echo "<p class='product-card-shop'>Sophism &amp; Ephemerys</p>";
-        echo "<p class='product-card-price'>$16.95</p>";
-        echo "<div class='product-card-sale-card'>18/6/2018</div>";
+        echo "<a class='product-card-title' href='" . url_for("/store/store-template/product-detail") . "'>" . $product["name"] . "</a>";
+        echo "<p class='product-card-shop'>Short description</p>";
+        echo "<p class='product-card-price'>" . $product["price"] . "</p>";
+        echo "<div class='product-card-sale-card'>" . $product["created_time"] . "</div>";
         echo "</div>" . "\n" . "</div>";
     }
 
@@ -43,8 +45,10 @@
     $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
     $products = read_csv(PRIVATE_PATH . "\database/products.csv", true);
     
-    $store_data = get_store_data($stores);
+    $specific_store = get_store_data($stores);
     $all_featured_products = check_featured_store_products($products);
+    
+    $specific_featured_products = get_specific_store_ft_products($all_featured_products, $specific_store);
     
 ?>
 

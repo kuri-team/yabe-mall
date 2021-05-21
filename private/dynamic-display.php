@@ -67,7 +67,7 @@
     
     
     /**
-     * Get all data of the selected store
+     * Get all data of a specific store
      * @param array $stores containing data of all stores
      * @return false|mixed
      * <strong><em>array</em></strong> containing data of the selected store,
