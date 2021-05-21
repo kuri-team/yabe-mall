@@ -48,7 +48,12 @@
     $specific_store = get_store_data($stores);
     $all_featured_products = check_featured_store_products($products);
     
-    $specific_featured_products = get_specific_store_ft_products($all_featured_products, $specific_store);
+    // get all products of a specific store and sort them by time created from newest to oldest
+    $specific_products = get_specific_store_products($products, $specific_store);
+    $sorted_products = usort($specific_products, "compare_by_time");
+    
+    // get products that are featured on a specific store
+    $specific_featured_products = get_specific_store_products($all_featured_products, $specific_store);
     
 ?>
 

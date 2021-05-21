@@ -105,11 +105,11 @@
     
     
     /**
-     * Get all products from a specific store
+     * Get products from a specific store
      * @param array $products containing products from database
      * @param array $store containing data of a specific store
      * @return array
-     * <strong><em>array</em></strong> containing data of all products of the selected store
+     * <strong><em>array</em></strong> containing data of products of the selected store
      */
     function get_specific_store_products(array $products, array $store): array {
         $specific_store_products = [];
