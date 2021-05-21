@@ -25,7 +25,7 @@
 /**
  * Retrieve a list of stores and the maximum number of cards that will be display
  * Display store cards with a number of cards that is <= the maximum number of cards
- * The cards will be order ascending based on its position in the list
+ * The cards will be ordered ascending based on its position in the list
  * @param $stores
  * @param $max_cards
  */

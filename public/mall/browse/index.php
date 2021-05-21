@@ -92,51 +92,60 @@ $max_stores = 10; // maximum number of stores displayed on the page
                 <?php
 
                 $stores_list = read_csv("../../../private/database/stores.csv", true);
-                $expected_stores = []; // a table of matched stores
+                $expected_stores = []; // a table of matched stores and its id
                 $row = 0; // represent each row of $expected_store
 
                 if (isset($_GET["browse-option"])) {
-                    if ($_GET["by-store"] === "by-category") {
-                        if ($_GET["browse-option"] != "all-categories") {
-                        for ($i = 0; $i < count($category_list); $i++) {
-                            if ($category_list[$i]["name"] == $_GET["browse-option"]) {
-                                for ($k = 0; $k< count($stores_list); $k++) {
-                                    if ($category_list[$i]["id"] == $stores_list[$k]["category_id"]) {
-                                        $store_name = $stores_list[$k]["name"];
-                                        $store_id = $stores_list[$k]["id"];
-                                        if (!in_array($store_id,$expected_stores)) {
-                                            array_push($expected_stores, [
-                                                "store_id" => "",
-                                                "store_name" => "",
-                                            ]);
-                                            $expected_stores[$row]["store_name"] = $store_name;
-                                            $expected_stores[$row]["store_id"] = $store_id;
-                                            $row++;
-                                        }
+                    switch ($_GET['by-store']) {
+                        case "by-category":
+                            if ($_GET["browse-option"] != "all-categories") {
+                                for ($i = 0; $i < count($category_list); $i++) {
+                                    if ($category_list[$i]["name"] == $_GET["browse-option"]) {
+                                        for ($k = 0; $k < count($stores_list); $k++) {
+                                            if ($category_list[$i]["id"] == $stores_list[$k]["category_id"]) {
+                                                $store_name = $stores_list[$k]["name"];
+                                                $store_id = $stores_list[$k]["id"];
+                                            } else {
+                                                continue; // prevent adding the unmatched to the table
+                                                // adding the unmatched will cause an error as their vars aren't set.
+                                            }
+                                            if (!in_array($store_id, $expected_stores)) {
+                                                array_push($expected_stores, [
+                                                    "store_id" => "",
+                                                    "store_name" => "",
+                                                ]);
+                                                $expected_stores[$row]["store_name"] = $store_name;
+                                                $expected_stores[$row]["store_id"] = $store_id;
+                                                $row++;
+                                            }
+                                            }
                                     }
                                 }
-                            }
-                        }
-                        } else {
-                            for ($k = 0; $k< count($stores_list); $k++) {
-                                $store_name = $stores_list[$k]["name"];
-                                $store_id = $stores_list[$k]["id"];
-                                array_push($expected_stores, [
+                            } else {
+                                for ($k = 0; $k < count($stores_list); $k++) {
+                                    $store_name = $stores_list[$k]["name"];
+                                    $store_id = $stores_list[$k]["id"];
+                                    array_push($expected_stores, [
                                         "store_id" => "",
                                         "store_name" => "",
-                                ]);
-                                $expected_stores[$row]["store_name"] = $store_name;
-                                $expected_stores[$row]["store_id"] = $store_id;
-                                $row++;
-                            }
-                            }
-                        } else if ($_GET["by-store"] === "by-name") {
-                        for ($i = 0; $i < count($stores_list); $i++) {
-                            $first_letter = substr($stores_list[$i]["name"], 0, 1);
-                            if ($_GET["browse-option"] === strtolower($first_letter) || $_GET["browse-option"] === strtoupper($first_letter) ) {
-                                $store_name = $stores_list[$i]["name"];
-                                $store_id = $stores_list[$i]["id"];
-                                if (!in_array($store_id,$expected_stores)) {
+                                    ]);
+                                    $expected_stores[$row]["store_name"] = $store_name;
+                                    $expected_stores[$row]["store_id"] = $store_id;
+                                    $row++;
+                                    }
+                                }
+                                break;
+                        case "by-name":
+                            for ($i = 0; $i < count($stores_list); $i++) {
+                                $first_letter = substr($stores_list[$i]["name"], 0, 1);
+                                if ($_GET["browse-option"] === strtolower($first_letter) || $_GET["browse-option"] === strtoupper($first_letter)) {
+                                    $store_name = $stores_list[$i]["name"];
+                                    $store_id = $stores_list[$i]["id"];
+                                } else {
+                                    continue; // prevent adding the unmatched to the table
+                                    // adding the unmatched will cause an error as their vars aren't set.
+                                }
+                                if (!in_array($store_id, $expected_stores)) {
                                     array_push($expected_stores, [
                                         "store_id" => "",
                                         "store_name" => "",
@@ -146,9 +155,9 @@ $max_stores = 10; // maximum number of stores displayed on the page
                                     $row++;
                                 }
                             }
-                        }
+                            break;
                     }
-                    }
+                }
                 each_page($expected_stores, $max_stores);
                 ?>
 
