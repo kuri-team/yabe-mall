@@ -104,14 +104,21 @@
     }
     
     
-    function get_selected_store_ft_products(array $featured, array $store): array {
-        $selected_store_featured = [];
+    /**
+     * Get the featured products of a specific store
+     * @param array $featured containing data of all featured products of all stores
+     * @param array $store containing data of a specific store
+     * @return array
+     * <strong><em>array</em></strong> containing data of the featured products of the selected store
+     */
+    function get_specific_store_ft_products(array $featured, array $store): array {
+        $specific_store_featured = [];
         
         foreach ($featured as $ft_product) {
             if ($ft_product["store_id"] === $store["id"]) {
-                $selected_store_featured[] = $ft_product;
+                $specific_store_featured[] = $ft_product;
             }
         }
-        return $selected_store_featured;
+        return $specific_store_featured;
     }
     
