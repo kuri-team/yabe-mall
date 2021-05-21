@@ -1,7 +1,6 @@
 <?php
     
     
-    
     /**
      * Check if products are featured on the Mall Home page
      * @param array $products containing information of all products
