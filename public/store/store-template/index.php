@@ -71,6 +71,7 @@
           <section class="store-product-cards">
             <div class="flex-container flex-justify-content-space-between flex-align-items-center flex-wrap">
                 <?php
+                    
                     $count = 0;
                     
                     foreach ($specific_products as $new_product) {
@@ -81,6 +82,7 @@
                             break;
                         }
                     }
+                    
                 ?>
             </div>
           </section>
@@ -94,7 +96,13 @@
 
           <section class="store-product-cards">
             <div class="flex-container flex-justify-content-space-between flex-align-items-center flex-wrap">
-              
+                <?php
+                
+                    foreach ($specific_featured_products as $ft_product) {
+                        display_product_cards($ft_product);
+                    }
+                
+                ?>
             </div>
           </section>
         </section>
