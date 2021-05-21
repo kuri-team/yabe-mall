@@ -1,6 +1,10 @@
 <?php
+    
     require_once("../../../private/initialize.php");
     require_once("../../../private/functions.php");
+    require_once("../../../private/csv.php");
+    require_once("../../../private/dynamic-display.php");
+    
 ?>
 
 <?php
@@ -49,7 +53,7 @@
 
           <section class="store-product-cards">
             <div class="flex-container flex-justify-content-space-between flex-align-items-center flex-wrap">
-                <?php display_product_cards(); ?>
+                <?php ?>
             </div>
           </section>
         </section>

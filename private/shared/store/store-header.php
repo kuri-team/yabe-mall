@@ -1,4 +1,5 @@
 <?php
+    
     require_once(PRIVATE_PATH . "\csv.php");
     require_once(PRIVATE_PATH . "\dynamic-display.php");
     
@@ -7,6 +8,7 @@
     
     $store = get_store_data($stores);
     $store_cat_name = get_store_cat($store["category_id"], $categories);
+    
 ?>
 
 <ul class="breadcrumb">
