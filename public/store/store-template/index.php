@@ -8,8 +8,15 @@
 ?>
 
 <?php
-
-    $page_title = "HSY Shop | Home";
+    
+    // get all stores and products data
+    $stores = read_csv("../../../private/database/stores.csv", true);
+    $products = read_csv("../../../private/database/products.csv", true);
+    
+    $specific_store = get_store_data($stores);
+    
+    
+    $page_title = $specific_store["name"] . " | Home";
     $style_sheets = [
         "/css/common.css",
         "/css/cards.css",
@@ -40,13 +47,8 @@
         echo "<div class='product-card-sale-card'>" . substr($product["created_time"],0,10) . "</div>";
         echo "</div>" . "\n" . "</div>";
     }
-
     
-    // get all stores and products data
-    $stores = read_csv("../../../private/database/stores.csv", true);
-    $products = read_csv("../../../private/database/products.csv", true);
     
-    $specific_store = get_store_data($stores);
     $all_featured_products = check_featured_store_products($products);
     
     // get all products of a specific store and sort them by time created from newest to oldest
