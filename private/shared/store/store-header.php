@@ -1,10 +1,10 @@
 <?php
     
-    require_once(PRIVATE_PATH . "\csv.php");
-    require_once(PRIVATE_PATH . "\dynamic-display.php");
+    require_once("../../../private/csv.php");
+    require_once("../../../private/dynamic-display.php");
     
-    $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
-    $categories = read_csv(PRIVATE_PATH . "\database/categories.csv", true);
+    $stores = read_csv( "../../../private/database/stores.csv", true);
+    $categories = read_csv("../../../private/database/categories.csv", true);
     
     $store = get_store_data($stores);
     $store_cat_name = get_store_cat($store["category_id"], $categories);

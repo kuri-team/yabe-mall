@@ -114,7 +114,7 @@
           <a href="<?=url_for("/store/store-template/product-detail-2");?>"><img alt="image of a product" src="../media/image/product-detail-2/yoohankim-trio_square.png"></a>
           <div class="product-card-details">
             <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail-2");?>">Omniscient Reader's Viewpoint Novel</a>
-            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">HSY Shop</a>
+            <a class="product-card-shop" href="<?=url_for("/store/store-template?id=84");?>">HSY Shop</a>
             <p class="product-card-price">$13.50</p>
             <div class="product-card-sale-card">6/1/2018</div>
           </div>

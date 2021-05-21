@@ -1,7 +1,15 @@
-<?php require_once("../../../../private/initialize.php"); ?>
+<?php
+    require_once("../../../../private/initialize.php");
+    require_once("../../../../private/csv.php");
+    require_once("../../../../private/dynamic-display.php");
+
+?>
 
 <?php
-
+    
+    $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
+    $categories = read_csv(PRIVATE_PATH . "\database/categories.csv", true);
+    
     $page_title = "Purple Hyacinth comic";
     $style_sheets = [
         "/css/common.css",

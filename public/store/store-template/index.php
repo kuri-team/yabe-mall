@@ -43,8 +43,8 @@
 
     
     // get all stores and products data
-    $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
-    $products = read_csv(PRIVATE_PATH . "\database/products.csv", true);
+    $stores = read_csv("../../../private/database/stores.csv", true);
+    $products = read_csv("../../../private/database/products.csv", true);
     
     $specific_store = get_store_data($stores);
     $all_featured_products = check_featured_store_products($products);
