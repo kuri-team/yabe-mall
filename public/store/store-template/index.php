@@ -34,10 +34,10 @@
         echo "<a href='" . url_for("/store/store-template/product-detail?id=" . $product["id"]) . "'>
                 <img alt='image of a product' src='../../media/image/placeholder_262x250.png'></a>";
         echo "<div class='product-card-details'>";
-        echo "<a class='product-card-title' href='" . url_for("/store/store-template/product-detail") . "'>" . $product["name"] . "</a>";
+        echo "<a class='product-card-title' href='" . url_for("/store/store-template/product-detail?id=" . $product["id"]) . "'>" . $product["name"] . "</a>";
         echo "<p class='product-card-shop'>Short description</p>";
-        echo "<p class='product-card-price'>" . $product["price"] . "</p>";
-        echo "<div class='product-card-sale-card'>" . $product["created_time"] . "</div>";
+        echo "<p class='product-card-price'>$" . $product["price"] . "</p>";
+        echo "<div class='product-card-sale-card'>" . substr($product["created_time"],0,10) . "</div>";
         echo "</div>" . "\n" . "</div>";
     }
 
