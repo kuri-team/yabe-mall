@@ -14,7 +14,8 @@ $scripts = [
 ];
 
 include(SHARED_PATH . "/top.php");
-include("../../../private/csv.php");
+require_once("../../../private/csv.php");
+require_once("../../../private/browse.php");
 
 // default browse option
 if (!isset($_GET["by-store"]) || $_GET["by-store"] === "") {
@@ -29,55 +30,9 @@ if ($_GET["by-store"] === "by-category" && !isset($_GET["browse-option"])) {
     $_GET["page"] = "1";
 }
 
-function display_store($s, $sid) {
-    $store_href = url_for("/store/store-template/?={$sid}");
-    echo "
-        <div class='store-card'>
-            <a href='$store_href'><img class='store-card-thumbnail' alt='image representation of a shop' src='../../media/image/placeholder_262x250.png'></a>
-            <a class='store-card-name' href=$store_href>$s</a>
-        </div>
-    ";
-}
 
-$max_products = 10; // maximum number of products displayed on the page
+$max_stores = 10; // maximum number of stores displayed on the page
 
-function each_page($stores, $list_length) {
-    global $max_products;
-    $min = 0;
-    $max = $max_products - $min - 1;
-    $page = $_GET["page"];
-    $min += $max_products * ($page-1);
-    $max += $max_products * ($page-1);
-    if ($max > $list_length) {
-        $max = $list_length - 1;
-    }
-    for ($i = $min; $i <= $max; $i++) {
-        display_store($stores[$i]["store_name"],$stores[$i]["store_id"]);
-    }
-
-}
-
-function prev_page() {
-    $prev = $_GET["page"] - 1;
-    if ($prev < 1) {
-        $prev = 1;
-    }
-    return $prev;
-}
-
-function next_page($list_length) {
-    global $max_products;
-    $next = $_GET["page"] + 1;
-    if ($list_length % $max_products != 0) {
-        $max_page = floor($list_length / $max_products) + 1;
-    } else {
-        $max_page = $list_length / $max_products;
-    }
-    if ($next > $max_page) {
-        $next = $max_page;
-    }
-    return $next;
-}
 
 ?>
 
@@ -194,7 +149,7 @@ function next_page($list_length) {
                         }
                     }
                     }
-                each_page($expected_stores, count($expected_stores));
+                each_page($expected_stores, $max_stores);
                 ?>
 
             </div>
@@ -202,7 +157,7 @@ function next_page($list_length) {
 
         <?php
             $prev = prev_page();
-            $next = next_page(count($expected_stores));
+            $next = next_page(count($expected_stores), $max_stores);
             echo "
             <div class='pagination-wrapper'>
             <form action='' method='get'>
