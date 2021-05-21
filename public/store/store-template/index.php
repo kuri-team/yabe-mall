@@ -41,6 +41,7 @@
         echo "</div>" . "\n" . "</div>";
     }
 
+    
     // get all stores and products data
     $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
     $products = read_csv(PRIVATE_PATH . "\database/products.csv", true);
@@ -50,7 +51,7 @@
     
     // get all products of a specific store and sort them by time created from newest to oldest
     $specific_products = get_specific_store_products($products, $specific_store);
-    $sorted_products = usort($specific_products, "compare_by_time");
+    usort($specific_products, "compare_by_time");
     
     // get products that are featured on a specific store
     $specific_featured_products = get_specific_store_products($all_featured_products, $specific_store);
@@ -69,7 +70,18 @@
 
           <section class="store-product-cards">
             <div class="flex-container flex-justify-content-space-between flex-align-items-center flex-wrap">
-                <?php ?>
+                <?php
+                    $count = 0;
+                    
+                    foreach ($specific_products as $new_product) {
+                        display_product_cards($new_product);
+                        $count++;
+                        
+                        if ($count === 5) {
+                            break;
+                        }
+                    }
+                ?>
             </div>
           </section>
         </section>
