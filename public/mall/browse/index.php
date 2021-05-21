@@ -1,4 +1,10 @@
-<?php require_once("../../../private/initialize.php"); ?>
+<?php
+
+    require_once("../../../private/initialize.php");
+    require_once("../../../private/csv.php");
+    require_once("../../../private/browse.php");
+
+?>
 
 <?php
 
@@ -13,9 +19,6 @@ $scripts = [
     "/js/common.js",
 ];
 
-include(SHARED_PATH . "/top.php");
-require_once("../../../private/csv.php");
-require_once("../../../private/browse.php");
 
 // default browse option
 if (!isset($_GET["by-store"]) || $_GET["by-store"] === "") {
@@ -30,9 +33,9 @@ if ($_GET["by-store"] === "by-category" && !isset($_GET["browse-option"])) {
     $_GET["page"] = "1";
 }
 
-
 $max_stores = 10; // maximum number of stores displayed on the page
 
+include(SHARED_PATH . "/top.php");
 
 ?>
 
@@ -165,6 +168,7 @@ $max_stores = 10; // maximum number of stores displayed on the page
     </div>
 
         <?php
+
             $prev = prev_page();
             $next = next_page(count($expected_stores), $max_stores);
             echo "
