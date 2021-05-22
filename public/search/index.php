@@ -1,4 +1,9 @@
-<?php require_once("../../private/initialize.php"); ?>
+<?php
+    
+    require_once("../../private/initialize.php");
+    use Kuri\Yabe\database\Entry;
+    
+?>
 
 <?php
     
@@ -20,6 +25,8 @@
     <?php
     
         print_r($_GET);
+        $entry = new Entry("0", "Hello");
+        print_r($entry);
     
     ?>
   </pre>

@@ -24,8 +24,8 @@
     // __FILE__ returns the current path to this file
     // dirname() returns the path to the parent directory
     define("PRIVATE_PATH", dirname(__FILE__));
-    define("PROJECT_PATH", dirname(PRIVATE_PATH));
-    define("PUBLIC_PATH", PROJECT_PATH . "/public");
+    define("APPLICATION_PATH", dirname(PRIVATE_PATH));
+    define("PUBLIC_PATH", APPLICATION_PATH . "/public");
     define("SHARED_PATH", PRIVATE_PATH . "/shared");
     
     // Assign the root URL to a PHP constant
@@ -33,6 +33,7 @@
     // * Use same document root as webserver
     define("WWW_ROOT", "");
     
+    require_once(APPLICATION_PATH . "/vendor/autoload.php");
     require_once("functions.php");
     
     $errors = [];
