@@ -86,17 +86,17 @@
     
     
     /**
-     * Get the category name from the category id of a store
-     * @param string $store_category_id
-     * @param array $categories containing data of all categories
+     * Get the item name that corresponds to item id
+     * @param string $item_id
+     * @param array $items containing data of all items
      * @return false|mixed
-     * <strong><em>category name</em></strong> of the selected store,
+     * <strong><em>item name</em></strong> of the selected item,
      * <strong><em>false</em></strong> otherwise.
      */
-    function get_store_cat(string $store_category_id, array $categories) {
-        foreach ($categories as $category) {
-            if ($category["id"] === $store_category_id) {
-                return $category["name"];
+    function get_item_name(string $item_id, array $items) {
+        foreach ($items as $item) {
+            if ($item["id"] === $item_id) {
+                return $item["name"];
             }
         }
         return false;

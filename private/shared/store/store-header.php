@@ -7,7 +7,7 @@
     $categories = read_csv("../../../private/database/categories.csv", true);
     
     $store = get_item_data($stores);
-    $store_cat_name = get_store_cat($store["category_id"], $categories);
+    $store_cat_name = get_item_name($store["category_id"], $categories);
     
 ?>
 
