@@ -112,7 +112,7 @@
                     $featured_mall_stores = check_featured_mall_stores($stores);
                     while ($display_count < FEATURED_STORES_DISPLAY_NUM) {
                         echo "<div class='store-card'>
-                        <a href='" . url_for("/store/store-template?id={$stores[$display_count]['id']}") . "'><img class='store-card-thumbnail' alt='image representation of a shop' src='../media/image/placeholder_262x250.png'></a>
+                        <a href='" . url_for("/store/store-template?id={$stores[$display_count]['id']}") . "'><img class='store-card-thumbnail' alt='image representation of a shop' src='../media/image/profile-placeholder_143x143.png'></a>
                         <a class='store-card-name' href='" . url_for("/store/store-template?id={$stores[$display_count]['id']}") . "'>" . $featured_mall_stores[$display_count]["name"] . "</a>
                       </div>";
                         $display_count++;
