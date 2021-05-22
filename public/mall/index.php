@@ -60,7 +60,7 @@
                           <a class='product-card-title' href='" . url_for("/store/store-template/product-detail?id={$products[$display_count]['id']}") . "'>" . $products[$display_count]["name"] . "</a>
                           <a class='product-card-shop' href='" . url_for("/store/store-template?id={$products[$display_count]['store_id']}") . "'>" . get_store_name((int) $products[$display_count]["store_id"], $stores) . "</a>
                           <p class='product-card-price'>$" . $products[$display_count]["price"] . "</p>
-                          <div class='product-card-sale-card'>" . date("Y年m月d日", strtotime($products[$display_count]["created_time"])) . "</div>
+                          <div class='product-card-sale-card'>" . substr($products[$display_count]["created_time"],0,10) . "</div>;
                         </div>
                       </div>";
                         $display_count++;
@@ -88,7 +88,7 @@
                           <a class='product-card-title' href='" . url_for("/store/store-template/product-detail?id={$products[$display_count]['id']}") . "'>" . $featured_mall_products[$display_count]["name"] . "</a>
                           <a class='product-card-shop' href='" . url_for("/store/store-template?id={$products[$display_count]['store_id']}") . "'>" . get_store_name((int) $featured_mall_products[$display_count]["store_id"], $stores) . "</a>
                           <p class='product-card-price'>$" . $featured_mall_products[$display_count]["price"] . "</p>
-                          <div class='product-card-sale-card'>" . date("Y年m月d日", strtotime($featured_mall_products[$display_count]["created_time"])) . "</div>
+                          <div class='product-card-sale-card'>" . substr($featured_mall_products[$display_count]["created_time"],0,10) . "</div>
                         </div>
                       </div>";
                         $display_count++;
@@ -140,7 +140,7 @@
                         echo "<div class='store-card'>
                         <a href='" . url_for("/store/store-template?id={$stores[$display_count]['id']}") . "'><img class='store-card-thumbnail' alt='image representation of a shop' src='../media/image/placeholder_262x250.png'></a>
                         <a class='store-card-name' href='" . url_for("/store/store-template?id={$stores[$display_count]['id']}") . "'>" . $stores[$display_count]["name"] . "</a>
-                        <div class='store-card-sale-card'>" . date("Y年m月d日", strtotime($stores[$display_count]["created_time"])) . "</div>
+                        <div class='store-card-sale-card'>" . substr($stores[$display_count]["created_time"],0,10) . "</div>
                       </div>";
                         $display_count++;
                     }
