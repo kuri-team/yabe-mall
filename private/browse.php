@@ -2,7 +2,7 @@
 
     /*
     *
-    * Yabe Comma-separated values database interface library.
+    * Yabe database browsing interface library.
     * MIT License. Copyright (c) 2021 栗 KURI 栗
     *
     */
