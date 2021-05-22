@@ -66,13 +66,7 @@
             return null;
         }
         
-        public function getEntriesByName(string $name): array {
-            $entries = [];
-            foreach ($this->data as $entry) {
-                if ($entry->name === $name) {
-                    $entries[] = $entry;
-                }
-            }
-            return $entries;
+        public function getAllEntries(): array {
+            return $this->data;
         }
     }
