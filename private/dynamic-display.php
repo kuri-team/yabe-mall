@@ -1,144 +1,124 @@
 <?php
     
-    require_once("../../private/initialize.php");
-    require_once("../../private/csv.php");
-    require_once("../../private/dynamic-display.php");
-
-?>
-
-<?php
     
-    $page_title = "Yabe | Home";
-    $style_sheets = [
-        "/css/common.css",
-        "/css/mall-home.css",
-        "/css/cards.css",
-    ];
-    $scripts = [
-        "/js/common.js",
-        "/js/cards.js"
-    ];
-    
-    // Constants for display at most 10 items
-    define("NEW_PRODUCTS_DISPLAY_NUM", 10);
-    define("FEATURED_PRODUCTS_DISPLAY_NUM", 10);
-    define("NEW_STORES_DISPLAY_NUM", 10);
-    define("FEATURED_STORES_DISPLAY_NUM", 10);
-    
-    // Dynamic loading of database
-    $products = read_csv("../../private/database/products.csv", true);
-    $stores = read_csv("../../private/database/stores.csv", true);
-    
-    // Sort products and stores from latest to oldest created time
-    usort($products, "compare_by_time");
-    usort($stores, "compare_by_time");
-    
-    include(SHARED_PATH . "/top.php");
-
-?>
-    
-    <div class="header-hero">
-        <img alt="Surprised person pointing at the Yabe logo" src="../media/image/hero.jpg">
-    </div>
-    
-    <main id="mall-main">
-        <section class="card-gallery mall-home-section mall-home-section-gallery">
-            <h1 class="card-gallery-title">NEW PRODUCTS<span class="mall-home-section-heading-link"><a href="<?=url_for("/mall/browse/by-product/by-date.php");?>">MORE</a></span></h1>
-            
-            <button class="card-gallery-left-bttn"><i class="fas fa-angle-left"></i></button>
-            <div class="card-gallery-content flex-container flex-justify-content-space-between flex-align-items-center overflow-hidden">
-                <?php
-                    
-                    $display_count = 0;
-                    while ($display_count < NEW_PRODUCTS_DISPLAY_NUM) {
-                        echo "<div class='product-card'>
-                        <a href='" . url_for("/store/store-template/product-detail") . "'><img alt='image of a product' src='../media/image/placeholder_262x250.png'></a>
-                        <div class='product-card-details'>
-                          <a class='product-card-title' href='" . url_for("/store/store-template/product-detail") . "'>" . $products[$display_count]["name"] . "</a>
-                          <a class='product-card-shop' href='" . url_for("/store/store-template") . "'>" . get_store_name((int) $products[$display_count]["store_id"], $stores) . "</a>
-                          <p class='product-card-price'>$" . $products[$display_count]["price"] . "</p>
-                          <div class='product-card-sale-card'>" . date("Y年m月d日", strtotime($products[$display_count]["created_time"])) . "</div>
-                        </div>
-                      </div>";
-                        $display_count++;
-                    }
-                
-                ?>
-            </div>
-            <button class="card-gallery-right-bttn"><i class="fas fa-angle-right"></i></button>
-        </section>
+    /**
+     * Check if products are featured on the Mall Home page
+     * @param array $products containing information of all products
+     * @return array <strong><em>array</em></strong> containing information
+     * of all products featured on Mall Home
+     */
+    function check_featured_mall_products(array $products): array {
+        $featured_mall_products = [];
         
-        <section class="mall-home-section" id="featured-products">
-            <h1>FEATURED PRODUCTS<span class="mall-home-section-heading-link"><a href="<?=url_for("/mall/browse/by-product/featured.php");?>">ALL</a></span></h1>
-            
-            <div class="flex-container flex-justify-content-space-between flex-align-items-center flex-wrap">
-                <?php
-                    $display_count = 0;
-                    $featured_mall_products = check_featured_mall_products($products);
-                    while ($display_count < FEATURED_PRODUCTS_DISPLAY_NUM) {
-                        echo "<div class='product-card'>
-                        <a href='" . url_for("/store/store-template/product-detail") . "'><img alt='image of a product' src='../media/image/placeholder_262x250.png'></a>
-                        <div class='product-card-details'>
-                          <a class='product-card-title' href='" . url_for("/store/store-template/product-detail") . "'>" . $featured_mall_products[$display_count]["name"] . "</a>
-                          <a class='product-card-shop' href='" . url_for("/store/store-template") . "'>" . get_store_name((int) $featured_mall_products[$display_count]["store_id"], $stores) . "</a>
-                          <p class='product-card-price'>$" . $featured_mall_products[$display_count]["price"] . "</p>
-                          <div class='product-card-sale-card'>" . date("Y年m月d日", strtotime($featured_mall_products[$display_count]["created_time"])) . "</div>
-                        </div>
-                      </div>";
-                        $display_count++;
-                    }
-                
-                ?>
-            </div>
-            
-            <button class="cards-load-more-bttn" id="load-more-featured-products" onclick="">LOAD MORE</button>
-        </section>
+        foreach ($products as $product) {
+            if ($product['featured_in_mall'] === "TRUE") {
+                $featured_mall_products[] = $product;
+            }
+        }
+        return $featured_mall_products;
+    }
+    
+    
+    /**
+     * Check if stores are featured on the Mall Home page
+     * @param array $stores containing information of all stores
+     * @return array <strong><em>array</em></strong> containing information
+     * of all stores featured on Mall Home
+     */
+    function check_featured_mall_stores(array $stores): array {
+        $featured_mall_stores = [];
         
-        <section class="mall-home-section" id="featured-stores">
-            <h1>FEATURED STORES<span class="mall-home-section-heading-link"><a href="<?=url_for("/mall/browse/by-store/featured.php");?>">ALL</a></span></h1>
-            
-            <div class="flex-container flex-justify-content-space-between flex-align-items-center flex-wrap">
-                <?php
-                    
-                    $display_count = 0;
-                    $featured_mall_stores = check_featured_mall_stores($stores);
-                    while ($display_count < FEATURED_STORES_DISPLAY_NUM) {
-                        echo "<div class='store-card'>
-                        <a href='" . url_for("/store/store-template") . "'><img class='store-card-thumbnail' alt='image representation of a shop' src='../media/image/placeholder_262x250.png'></a>
-                        <a class='store-card-name' href='" . url_for("/store/store-template") . "'>" . $featured_mall_stores[$display_count]["name"] . "</a>
-                      </div>";
-                        $display_count++;
-                    }
-                
-                ?>
-            
-            </div>
-            
-            <button class="cards-load-more-bttn" id="load-more-featured-stores" onclick="">LOAD MORE</button>
-        </section>
+        foreach ($stores as $store) {
+            if ($store['featured'] === "TRUE") {
+                $featured_mall_stores[] = $store;
+            }
+        }
+        return $featured_mall_stores;
+    }
+    
+    
+    /**
+     * Check if products are featured on Store Home page
+     * @param array $products containing information of all products
+     * @return array <strong><em>array</em></strong> containing information
+     * of all products featured on Store Home
+     */
+    function check_featured_store_products(array $products): array {
+        $featured_store_products = [];
         
-        <section class="mall-home-section card-gallery">
-            <h1 class="card-gallery-title">NEW STORES<span class="mall-home-section-heading-link"><a href="<?=url_for("/mall/browse/by-store/by-date.php");?>">MORE</a></span></h1>
-            
-            <button class="card-gallery-left-bttn"><i class="fas fa-angle-left"></i></button>
-            <div class="card-gallery-content flex-container flex-justify-content-space-between flex-align-items-center overflow-hidden clear-both">
-                <?php
-                    
-                    $display_count = 0;
-                    while ($display_count < NEW_STORES_DISPLAY_NUM) {
-                        echo "<div class='store-card'>
-                        <a href='" . url_for("/store/store-template") . "'><img class='store-card-thumbnail' alt='image representation of a shop' src='../media/image/placeholder_262x250.png'></a>
-                        <a class='store-card-name' href='" . url_for("/store/store-template") . "'>" . $stores[$display_count]["name"] . "</a>
-                        <div class='store-card-sale-card'>" . date("Y年m月d日", strtotime($stores[$display_count]["created_time"])) . "</div>
-                      </div>";
-                        $display_count++;
-                    }
-                
-                ?>
-            
-            </div>
-            <button class="card-gallery-right-bttn"><i class="fas fa-angle-right"></i></button>
-        </section>
-    </main>
-
-<?php include(SHARED_PATH . "/bottom.php"); ?>
+        foreach ($products as $product) {
+            if ($product['featured_in_store'] === "TRUE") {
+                $featured_store_products[] = $product;
+            }
+        }
+        return $featured_store_products;
+    }
+    
+    
+    /**
+     * Compare the dates created of two items (stores, products, etc.). To be used as the handler function for usort() to sort a given group of database items from newest to oldest.
+     * @param array $item1 first item for comparison
+     * @param array $item2 second item for comparison
+     * @return int
+     */
+    function compare_by_time(array $item1, array $item2): int {
+        return -(strtotime($item1["created_time"]) - strtotime($item2["created_time"]));
+    }
+    
+    
+    /**
+     * Get all data of a specific store
+     * @param array $stores containing data of all stores
+     * @return false|mixed
+     * <strong><em>array</em></strong> containing data of the selected store,
+     * <strong><em>false</em></strong> otherwise.
+     */
+    function get_store_data(array $stores)
+    {
+        if (isset($_GET["id"])) {
+            foreach ($stores as $store) {
+                if ($_GET["id"] === $store["id"]) {
+                    return $store;
+                }
+            }
+        }
+        return false;
+    }
+    
+    
+    /**
+     * Get the category name from the category id of a store
+     * @param string $store_category_id
+     * @param array $categories containing data of all categories
+     * @return false|mixed
+     * <strong><em>category name</em></strong> of the selected store,
+     * <strong><em>false</em></strong> otherwise.
+     */
+    function get_store_cat(string $store_category_id, array $categories) {
+        foreach ($categories as $category) {
+            if ($category["id"] === $store_category_id) {
+                return $category["name"];
+            }
+        }
+        return false;
+    }
+    
+    
+    /**
+     * Get products from a specific store
+     * @param array $products containing products from database
+     * @param array $store containing data of a specific store
+     * @return array
+     * <strong><em>array</em></strong> containing data of products of the selected store
+     */
+    function get_specific_store_products(array $products, array $store): array {
+        $specific_store_products = [];
+        
+        foreach ($products as $product) {
+            if ($product["store_id"] === $store["id"]) {
+                $specific_store_products[] = $product;
+            }
+        }
+        return $specific_store_products;
+    }
+    
