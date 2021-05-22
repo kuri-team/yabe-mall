@@ -77,12 +77,12 @@
                 <?php
                     
                     $count = 0;
-                    
+    
+                    // display product cards until the max number of products is reached
                     foreach ($specific_products as $new_product) {
                         display_product_cards($new_product);
                         $count++;
                         
-                        // stop displaying product cards when the max number of products has been reached
                         if ($count === MAX_NUM_NEW_PRODUCTS) {
                             break;
                         }
@@ -103,6 +103,7 @@
             <div class="flex-container flex-justify-content-space-between flex-align-items-center flex-wrap">
                 <?php
                 
+                    // display all featured products of the store
                     foreach ($specific_featured_products as $ft_product) {
                         display_product_cards($ft_product);
                     }
