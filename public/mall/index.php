@@ -50,7 +50,7 @@
                 <?php
                     
                     // Loop counting the number of products until reaching 10 items
-                    // Convert a textual datetime into a Unix timestamp
+                    // echo to return the year-month-day part of created-time string.
                     // Get a query containing the product's ID and store's ID for dynamic product detail can work properly
                     $display_count = 0;
                     while ($display_count < NEW_PRODUCTS_DISPLAY_NUM) {
@@ -133,7 +133,7 @@
                 <?php
                     
                     // Loop counting the number of stores until reaching 10 items
-                    // Convert a textual datetime into a Unix timestamp
+                    // echo to return the year-month-day part of created-time string.
                     // Get a query containing the store's ID for dynamic store home can work properly
                     $display_count = 0;
                     while ($display_count < NEW_STORES_DISPLAY_NUM) {
