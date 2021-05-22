@@ -13,7 +13,7 @@
 
 <ul class="breadcrumb">
     <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
-    <li><a href="<?=url_for("/mall/browse/by-store/by-category.php");?>"><?=$store_cat["name"];?></a>/</li>
+    <li><a href="<?=url_for("/mall/browse/?by-store=by-category");?>"><?=$store_cat["name"];?></a>/</li>
     <li><a href="<?=url_for("/store/store-template?id=" . $store["id"]);?>"><?=$store["name"];?></a></li>
 </ul>
 

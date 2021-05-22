@@ -17,6 +17,7 @@
     $specific_store = get_item_info($specific_product["store_id"], $stores);
     $store_cat = get_item_info($specific_store["category_id"], $categories);
     
+    
     $page_title = $specific_product["name"];
     $style_sheets = [
         "/css/common.css",
@@ -36,7 +37,7 @@
   <main id="product-content">
     <ul class="breadcrumb">
       <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
-      <li><a href="<?=url_for("/mall/browse/by-store/by-category.php");?>"><?=$store_cat["name"]; ?></a>/</li>
+      <li><a href="<?=url_for("/mall/browse/?by-store=by-category");?>"><?=$store_cat["name"]; ?></a>/</li>
       <li><a href="<?=url_for("/store/store-template?id=" . $specific_product["store_id"]);?>" id="store-name"><?=$specific_store["name"]; ?></a>/</li>
       <li><a href="<?=url_for("/store/store-template/product-detail?id=" . $specific_product["id"]);?>"><?=$specific_product["name"]; ?></a></li>
     </ul>
