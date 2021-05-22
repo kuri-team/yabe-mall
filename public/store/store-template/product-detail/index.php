@@ -7,12 +7,15 @@
 
 <?php
     
+    // get all stores, products, and categories data
     $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
     $products = read_csv(PRIVATE_PATH . "\database/products.csv", true);
-    $categories = read_csv("../../../private/database/categories.csv", true);
+    $categories = read_csv(PRIVATE_PATH . "\database/categories.csv", true);
     
+    // get data of the current product and its store
     $specific_product = get_item_data($products);
-    $specific_store_name = get_item_info($specific_product["store_id"], $stores);
+    $specific_store = get_item_info($specific_product["store_id"], $stores);
+    $store_cat = get_item_info($specific_store["category_id"], $categories);
     
     $page_title = $specific_product["name"];
     $style_sheets = [
@@ -33,8 +36,8 @@
   <main id="product-content">
     <ul class="breadcrumb">
       <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
-      <li><a href="<?=url_for("/mall/browse/by-store/by-category.php");?>">Bookstore</a>/</li>
-      <li><a href="<?=url_for("/store/store-template?id=" . $specific_product["store_id"]);?>" id="store-name"><?=$specific_store_name; ?></a>/</li>
+      <li><a href="<?=url_for("/mall/browse/by-store/by-category.php");?>"><?=$store_cat["name"]; ?></a>/</li>
+      <li><a href="<?=url_for("/store/store-template?id=" . $specific_product["store_id"]);?>" id="store-name"><?=$specific_store["name"]; ?></a>/</li>
       <li><a href="<?=url_for("/store/store-template/product-detail?id=" . $specific_product["id"]);?>"><?=$specific_product["name"]; ?></a></li>
     </ul>
 

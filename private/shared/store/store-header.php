@@ -7,13 +7,13 @@
     $categories = read_csv("../../../private/database/categories.csv", true);
     
     $store = get_item_data($stores);
-    $store_cat_name = get_item_info($store["category_id"], $categories);
+    $store_cat = get_item_info($store["category_id"], $categories);
     
 ?>
 
 <ul class="breadcrumb">
     <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
-    <li><a href="<?=url_for("/mall/browse/by-store/by-category.php");?>"><?=$store_cat_name;?></a>/</li>
+    <li><a href="<?=url_for("/mall/browse/by-store/by-category.php");?>"><?=$store_cat["name"];?></a>/</li>
     <li><a href="<?=url_for("/store/store-template?id=" . $store["id"]);?>"><?=$store["name"];?></a></li>
 </ul>
 
@@ -25,7 +25,7 @@
              src="<?=url_for("/media/image/profile-placeholder_143x143.png");?>">
         
         <h2><?=$store["name"];?></h2>
-        <h3><?=$store_cat_name;?></h3>
+        <h3><?=$store_cat["name"];?></h3>
         <a href=""><i class="fab fa-facebook-square"></i></a>
         <a href=""><i class="fab fa-twitter-square"></i></a>
         <a href=""><i class="fab fa-youtube"></i></a>
