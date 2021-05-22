@@ -25,7 +25,7 @@
     <?php
     
         print_r($_GET);
-        $entry = new Entry("0", "Hello");
+        $entry = new DatabaseEntry("0", "Hello");
         print_r($entry);
     
     ?>
