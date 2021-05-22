@@ -13,10 +13,10 @@
     * @param $store_id
     */
     function display_store($store_name, $store_id) {
-        $store_href = url_for("/store/store-template/?={$store_id}");
+        $store_href = url_for("/store/store-template/?id={$store_id}");
         echo "
             <div class='store-card'>
-                <a href='$store_href'><img class='store-card-thumbnail' alt='image representation of a shop' src='../../media/image/placeholder_262x250.png'></a>
+                <a href='$store_href'><img class='store-card-thumbnail' alt='image representation of a shop' src='../../media/image/profile-placeholder_143x143.png'></a>
                 <a class='store-card-name' href=$store_href>$store_name</a>
             </div>
         ";
