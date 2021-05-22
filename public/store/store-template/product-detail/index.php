@@ -120,7 +120,7 @@
             <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
             <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$12.99</p>
-            <div class="product-card-sale-card">13/10/2015</div>
+            <div class="product-card-sale-card">2016-04-01</div>
           </div>
         </div>
 
@@ -131,7 +131,7 @@
             <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
             <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$6.50</p>
-            <div class="product-card-sale-card">20/12/2012</div>
+            <div class="product-card-sale-card">2012-12-20</div>
           </div>
         </div>
 
@@ -142,7 +142,7 @@
             <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
             <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$7.30</p>
-            <div class="product-card-sale-card">21/5/2019</div>
+            <div class="product-card-sale-card">2019-02-14</div>
           </div>
         </div>
 
@@ -153,7 +153,7 @@
             <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
             <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$12.99</p>
-            <div class="product-card-sale-card">14/2/2013</div>
+            <div class="product-card-sale-card">2016-02-15</div>
           </div>
         </div>
 
@@ -164,7 +164,7 @@
             <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
             <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$12.99</p>
-            <div class="product-card-sale-card">14/2/2013</div>
+            <div class="product-card-sale-card">2018-08-03</div>
           </div>
         </div>
 
@@ -175,7 +175,7 @@
             <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
             <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$12.99</p>
-            <div class="product-card-sale-card">14/2/2013</div>
+            <div class="product-card-sale-card">2020-10-13</div>
           </div>
         </div>
       </div>
