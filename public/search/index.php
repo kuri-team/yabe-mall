@@ -25,8 +25,6 @@
     <?php
     
         print_r($_GET);
-        $entry = new DatabaseEntry("0", "Hello");
-        print_r($entry);
     
     ?>
   </pre>

@@ -1,7 +1,6 @@
 <?php
 
-    class DatabaseEntry
-    {
+    class DatabaseEntry {
         private string $id;
         private string $name;
         
