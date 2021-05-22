@@ -9,8 +9,10 @@
     
     $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
     $products = read_csv(PRIVATE_PATH . "\database/products.csv", true);
+    $categories = read_csv("../../../private/database/categories.csv", true);
     
     $specific_product = get_item_data($products);
+    $specific_store_name = get_item_info($specific_product["store_id"], $stores);
     
     $page_title = $specific_product["name"];
     $style_sheets = [
@@ -32,7 +34,7 @@
     <ul class="breadcrumb">
       <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
       <li><a href="<?=url_for("/mall/browse/by-store/by-category.php");?>">Bookstore</a>/</li>
-      <li><a href="<?=url_for("/store/store-template?id=" . $specific_product["store_id"]);?>" id="store-name">HSY Shop</a>/</li>
+      <li><a href="<?=url_for("/store/store-template?id=" . $specific_product["store_id"]);?>" id="store-name"><?=$specific_store_name; ?></a>/</li>
       <li><a href="<?=url_for("/store/store-template/product-detail?id=" . $specific_product["id"]);?>"><?=$specific_product["name"]; ?></a></li>
     </ul>
 

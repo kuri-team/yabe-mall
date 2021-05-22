@@ -67,7 +67,7 @@
     
     
     /**
-     * Get all data of a specific item
+     * Get all data of a specific item if the id of that item is retrieved through the link
      * @param array $items containing data of all items (stores, products, etc.)
      * @return false|mixed
      * <strong><em>array</em></strong> containing data of the selected item,
@@ -86,17 +86,21 @@
     
     
     /**
-     * Get the item name that corresponds to item id
+     * Get all information of a specific item if the id of that item is
+     * <strong><em>not</em></strong> retrieved through the link.
+     * This function is used when we have an item's id from another item's database
+     * (e.g: store_id from products.csv), to get other data related to that item
+     * (e.g: need to get store name)
      * @param string $item_id
-     * @param array $items containing data of all items
+     * @param array $items containing information of all items (stores, products, etc.)
      * @return false|mixed
-     * <strong><em>item name</em></strong> of the selected item,
+     * <strong><em>array</em></strong> containing information of the selected item,
      * <strong><em>false</em></strong> otherwise.
      */
-    function get_item_name(string $item_id, array $items) {
+    function get_item_info(string $item_id, array $items) {
         foreach ($items as $item) {
             if ($item["id"] === $item_id) {
-                return $item["name"];
+                return $item;
             }
         }
         return false;
