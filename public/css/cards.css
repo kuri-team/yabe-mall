@@ -67,10 +67,10 @@
 
 .store-card-sale-card {
     float: right;
-    background: #fffcf2;
+    background: #ececec;
     border: 1px solid #252422;
     padding: 2px 5px;
-    margin: 20px 50px 0px;
+    margin: 20px 50px 0;
     font-size: 9pt;
 }
 
