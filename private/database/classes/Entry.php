@@ -1,9 +1,5 @@
 <?php
-    
-    
-    namespace Kuri\Yabe\database;
-    
-    
+
     class Entry
     {
         private string $id;

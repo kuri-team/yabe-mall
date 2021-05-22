@@ -24,13 +24,6 @@
     "config": {
         "optimize-autoloader": true
     },
-    "autoload": {
-        "psr-4": {
-            "Kuri\\Yabe\\": "private/",
-            "Kuri\\Yabe\\database\\": "private/database/classes",
-            "Kuri\\Yabe\\search\\": "private/search/classes"
-        }
-    },
     "require": {
         "php": "~7.4.0"
     },

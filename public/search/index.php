@@ -1,7 +1,7 @@
 <?php
     
     require_once("../../private/initialize.php");
-    use Kuri\Yabe\database\Entry;
+    require_once("../../private/database/autoload.php");
     
 ?>
 

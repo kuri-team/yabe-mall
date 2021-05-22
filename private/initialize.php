@@ -33,7 +33,6 @@
     // * Use same document root as webserver
     define("WWW_ROOT", "");
     
-    require_once(APPLICATION_PATH . "/vendor/autoload.php");
     require_once("functions.php");
     
     $errors = [];
