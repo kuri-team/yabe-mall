@@ -65,6 +65,15 @@
     font-size: 9pt;
 }
 
+.store-card-sale-card {
+    float: right;
+    background: #ececec;
+    border: 1px solid #252422;
+    padding: 2px 5px;
+    margin: 20px 50px 0;
+    font-size: 9pt;
+}
+
 .store-card {
     background: #fff;
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
@@ -214,6 +223,10 @@
     }
 
     .product-card-sale-card {
+        display: none;
+    }
+
+    .store-card-sale-card {
         display: none;
     }
 }
