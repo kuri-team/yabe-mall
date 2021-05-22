@@ -58,13 +58,12 @@
       </span>
 
       <div class="product-info-main">
-        <p>SOPHISM &amp; EPHEMERYS</p>
-        <h2>Purple Hyacinth Comic</h2>
-        <p class="add-to-fave"><i class="far fa-heart"></i> Add to Favorites</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+        <p><?= strtoupper($specific_store["name"]); ?></p>
+        <h2><?=$specific_product["name"]; ?></h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         <div class="product-info-details">
-          <p class="product-info-price float-left">&dollar;16.95</p>
-          <p class="product-info-date float-left">18/6/2018</p>
+          <p class="product-info-price float-left">&dollar;<?=$specific_product["price"]; ?></p>
+          <p class="product-info-date float-left"><?= substr($specific_product["created_time"], 0, 10); ?></p>
         </div>
         <div class="shop-bttn clear-both">
           <button class="add-to-cart">ADD TO CART</button>
@@ -87,7 +86,7 @@
         </tr>
         <tr>
           <th>ID number</th>
-          <td>142131014215</td>
+          <td><?=$specific_product["id"]; ?></td>
         </tr>
         <tr>
           <th>Language</th>
