@@ -69,6 +69,12 @@ include(SHARED_PATH . "/top.php");
                         }
                     }
                 } else if ($_GET["by-store"] === "by-name") {
+                    if ($_GET['browse-option'] != "#") {
+                        echo "<option value='#' name='#' id='dropdown-value'>#</option>";
+                    } else { //set selected value as default displayed value
+                        echo "<option value='#' name='#' id='dropdown-value' selected='selected'>#</option>";
+                    }
+
                     for ($letter = "A"; $letter < "Z"; $letter++) {
                         if ($_GET['browse-option'] != $letter) {
                             echo "<option value='$letter' name='$letter' id='dropdown-value'>$letter</option>";
@@ -141,6 +147,9 @@ include(SHARED_PATH . "/top.php");
                             for ($i = 0; $i < count($stores_list); $i++) {
                                 $first_letter = substr($stores_list[$i]["name"], 0, 1);
                                 if ($_GET["browse-option"] === strtolower($first_letter) || $_GET["browse-option"] === strtoupper($first_letter)) {
+                                    $store_name = $stores_list[$i]["name"];
+                                    $store_id = $stores_list[$i]["id"];
+                                }  elseif ($_GET["browse-option"] === "#" and is_numeric($first_letter)) {
                                     $store_name = $stores_list[$i]["name"];
                                     $store_id = $stores_list[$i]["id"];
                                 } else {
