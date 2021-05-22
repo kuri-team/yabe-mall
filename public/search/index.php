@@ -1,9 +1,4 @@
-<?php
-    
-    require_once("../../private/initialize.php");
-    require_once("../../private/database/autoload.php");
-    
-?>
+<?php require_once("../../private/initialize.php"); ?>
 
 <?php
     
@@ -25,6 +20,10 @@
     <?php
     
         print_r($_GET);
+        
+        $search = new Search($_GET["q"], $_GET["filter"]);
+        
+        print_r($search->results);
     
     ?>
   </pre>

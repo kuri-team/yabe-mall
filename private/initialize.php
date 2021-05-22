@@ -33,6 +33,14 @@
     // * Use same document root as webserver
     define("WWW_ROOT", "");
     
+    
+    // Yabe Custom Class auto-loading
+    function yabe_autoload($class) {
+        if (preg_match("/\A\w+\Z/", $class)) {
+            require_once(PRIVATE_PATH . "/classes/{$class}.php");
+        }
+    }
+    spl_autoload_register("yabe_autoload");
     require_once("functions.php");
     
     $errors = [];
