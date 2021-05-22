@@ -41,14 +41,13 @@ include(SHARED_PATH . "/top.php");
 
 <main>
     <div class="content-body">
-        <form id="dropdown_form" method="get" action="">
+        <form id="dropdown_form" method="get" action="" autocomplete="off">
             <?php
             // keep existed $_GET['by-store'] in the URL
 
             echo "
             <input type='hidden' name='by-store' value='{$_GET["by-store"]}'>
             <input type='hidden' name='page' value='1'>
-            <input type='hidden' name='browse-option' value='{$_GET["browse-option"]}'>
             "
 
             ?>
@@ -56,7 +55,7 @@ include(SHARED_PATH . "/top.php");
             <select class="select-list" id="browse-option" name="browse-option" onchange="this.form.submit()">
 
                 <?php
-
+                echo $_GET['browse-option'];
                 $category_list = read_csv("../../../private/database/categories.csv", true);
                 if ($_GET["by-store"] === "by-category") {
                     echo "<option value='all-categories' name='all-categories' id='dropdown-value' >ALL CATEGORIES</option>";
