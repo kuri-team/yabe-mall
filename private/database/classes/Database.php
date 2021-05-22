@@ -57,8 +57,13 @@
         }
         
         
-        public function getEntryById(int $id) {
-            return $this->data[$id];
+        public function getEntryById(string $id) {
+            foreach ($this->data as $entry) {
+                if ($entry->id === $id) {
+                    return $entry;
+                }
+            }
+            return null;
         }
         
         public function getEntriesByName(string $name): array {
