@@ -50,6 +50,7 @@
                 <?php
                     
                     // Loop counting the number of products until reaching 10 items
+                    // Convert a textual datetime into a Unix timestamp
                     $display_count = 0;
                     while ($display_count < NEW_PRODUCTS_DISPLAY_NUM) {
                         echo "<div class='product-card'>
@@ -58,7 +59,6 @@
                           <a class='product-card-title' href='" . url_for("/store/store-template/product-detail") . "'>" . $products[$display_count]["name"] . "</a>
                           <a class='product-card-shop' href='" . url_for("/store/store-template") . "'>" . get_store_name((int) $products[$display_count]["store_id"], $stores) . "</a>
                           <p class='product-card-price'>$" . $products[$display_count]["price"] . "</p>
-                          // Convert a textual datetime into a Unix timestamp
                           <div class='product-card-sale-card'>" . date("Y年m月d日", strtotime($products[$display_count]["created_time"])) . "</div>
                         </div>
                       </div>";
@@ -130,12 +130,12 @@
                 <?php
                     
                     // Loop counting the number of stores until reaching 10 items
+                    // Convert a textual datetime into a Unix timestamp
                     $display_count = 0;
                     while ($display_count < NEW_STORES_DISPLAY_NUM) {
                         echo "<div class='store-card'>
                         <a href='" . url_for("/store/store-template") . "'><img class='store-card-thumbnail' alt='image representation of a shop' src='../media/image/placeholder_262x250.png'></a>
                         <a class='store-card-name' href='" . url_for("/store/store-template") . "'>" . $stores[$display_count]["name"] . "</a>
-                        // Convert a textual datetime into a Unix timestamp
                         <div class='store-card-sale-card'>" . date("Y年m月d日", strtotime($stores[$display_count]["created_time"])) . "</div>
                       </div>";
                         $display_count++;
