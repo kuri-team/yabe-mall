@@ -13,7 +13,7 @@
     $stores = read_csv("../../../private/database/stores.csv", true);
     $products = read_csv("../../../private/database/products.csv", true);
     
-    $specific_store = get_store_data($stores);
+    $specific_store = get_item_data($stores);
     
     
     $page_title = $specific_store["name"] . " | Home";

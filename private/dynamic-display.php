@@ -67,18 +67,17 @@
     
     
     /**
-     * Get all data of a specific store
-     * @param array $stores containing data of all stores
+     * Get all data of a specific item
+     * @param array $items containing data of all items (stores, products, etc.)
      * @return false|mixed
-     * <strong><em>array</em></strong> containing data of the selected store,
+     * <strong><em>array</em></strong> containing data of the selected item,
      * <strong><em>false</em></strong> otherwise.
      */
-    function get_store_data(array $stores)
-    {
+    function get_item_data(array $items) {
         if (isset($_GET["id"])) {
-            foreach ($stores as $store) {
-                if ($_GET["id"] === $store["id"]) {
-                    return $store;
+            foreach ($items as $item) {
+                if ($_GET["id"] === $item["id"]) {
+                    return $item;
                 }
             }
         }
