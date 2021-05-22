@@ -2,25 +2,6 @@
     
     
     /**
-     * Get the store name that correspond to the store id on products.csv
-     * @param int $id
-     * @param array $stores
-     * @return string
-     * <strong><em>array</em></strong> containing name of the store if store_id on products.csv
-     * matches id on stores.csv,
-     * <strong><em>false</em></strong> otherwise.
-     */
-    function get_store_name(int $id, array $stores): string {
-        foreach ($stores as $store) {
-            if ((int) $store["id"] === $id) {
-                return $store["name"];
-            }
-        }
-        return false;
-    }
-    
-    
-    /**
      * Check if products are featured on the Mall Home page
      * @param array $products containing information of all products
      * @return array <strong><em>array</em></strong> containing information
@@ -86,7 +67,7 @@
     
     
     /**
-     * Get all data of the selected store
+     * Get all data of a specific store
      * @param array $stores containing data of all stores
      * @return false|mixed
      * <strong><em>array</em></strong> containing data of the selected store,
@@ -117,6 +98,44 @@
         foreach ($categories as $category) {
             if ($category["id"] === $store_category_id) {
                 return $category["name"];
+            }
+        }
+        return false;
+    }
+    
+    
+    /**
+     * Get products from a specific store
+     * @param array $products containing products from database
+     * @param array $store containing data of a specific store
+     * @return array
+     * <strong><em>array</em></strong> containing data of products of the selected store
+     */
+    function get_specific_store_products(array $products, array $store): array {
+        $specific_store_products = [];
+        
+        foreach ($products as $product) {
+            if ($product["store_id"] === $store["id"]) {
+                $specific_store_products[] = $product;
+            }
+        }
+        return $specific_store_products;
+    }
+    
+    
+    /**
+     * Get the store name that correspond to the store id on products.csv
+     * @param int $id
+     * @param array $stores
+     * @return string
+     * <strong><em>array</em></strong> containing name of the store if store_id on products.csv
+     * matches id on stores.csv,
+     * <strong><em>false</em></strong> otherwise.
+     */
+    function get_store_name(int $id, array $stores): string {
+        foreach ($stores as $store) {
+            if ((int) $store["id"] === $id) {
+                return $store["name"];
             }
         }
         return false;
