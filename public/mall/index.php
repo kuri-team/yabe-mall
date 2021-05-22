@@ -25,6 +25,7 @@
     define("NEW_STORES_DISPLAY_NUM", 10);
     define("FEATURED_STORES_DISPLAY_NUM", 10);
     
+
     // Dynamic loading of database
     $products = read_csv("../../private/database/products.csv", true);
     $stores = read_csv("../../private/database/stores.csv", true);

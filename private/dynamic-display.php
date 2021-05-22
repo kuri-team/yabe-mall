@@ -67,18 +67,17 @@
     
     
     /**
-     * Get all data of a specific store
-     * @param array $stores containing data of all stores
+     * Get all data of a specific item if the id of that item is retrieved through the link
+     * @param array $items containing data of all items (stores, products, etc.)
      * @return false|mixed
-     * <strong><em>array</em></strong> containing data of the selected store,
+     * <strong><em>array</em></strong> containing data of the selected item,
      * <strong><em>false</em></strong> otherwise.
      */
-    function get_store_data(array $stores)
-    {
+    function get_item_data(array $items) {
         if (isset($_GET["id"])) {
-            foreach ($stores as $store) {
-                if ($_GET["id"] === $store["id"]) {
-                    return $store;
+            foreach ($items as $item) {
+                if ($_GET["id"] === $item["id"]) {
+                    return $item;
                 }
             }
         }
@@ -87,17 +86,21 @@
     
     
     /**
-     * Get the category name from the category id of a store
-     * @param string $store_category_id
-     * @param array $categories containing data of all categories
+     * Get all information of a specific item if the id of that item is
+     * <strong><em>not</em></strong> retrieved through the link.
+     * This function is used when we have an item's id from another item's database
+     * (e.g: store_id from products.csv), to get other data related to that item
+     * (e.g: need to get store name)
+     * @param string $item_id
+     * @param array $items containing information of all items (stores, products, etc.)
      * @return false|mixed
-     * <strong><em>category name</em></strong> of the selected store,
+     * <strong><em>array</em></strong> containing information of the selected item,
      * <strong><em>false</em></strong> otherwise.
      */
-    function get_store_cat(string $store_category_id, array $categories) {
-        foreach ($categories as $category) {
-            if ($category["id"] === $store_category_id) {
-                return $category["name"];
+    function get_item_info(string $item_id, array $items) {
+        foreach ($items as $item) {
+            if ($item["id"] === $item_id) {
+                return $item;
             }
         }
         return false;
@@ -121,7 +124,7 @@
         }
         return $specific_store_products;
     }
-    
+
     
     /**
      * Get the store name that correspond to the store id on products.csv

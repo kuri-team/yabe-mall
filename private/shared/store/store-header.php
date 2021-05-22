@@ -1,17 +1,19 @@
 <?php
+    
     require_once(PRIVATE_PATH . "\csv.php");
     require_once(PRIVATE_PATH . "\dynamic-display.php");
     
-    $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
+    $stores = read_csv( PRIVATE_PATH . "\database/stores.csv", true);
     $categories = read_csv(PRIVATE_PATH . "\database/categories.csv", true);
     
-    $store = get_store_data($stores);
-    $store_cat_name = get_store_cat($store["category_id"], $categories);
+    $store = get_item_data($stores);
+    $store_cat = get_item_info($store["category_id"], $categories);
+    
 ?>
 
 <ul class="breadcrumb">
     <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
-    <li><a href="<?=url_for("/mall/browse/by-store/by-category.php");?>"><?=$store_cat_name;?></a>/</li>
+    <li><a href="<?=url_for("/mall/browse/?by-store=by-category");?>"><?=$store_cat["name"];?></a>/</li>
     <li><a href="<?=url_for("/store/store-template?id=" . $store["id"]);?>"><?=$store["name"];?></a></li>
 </ul>
 
@@ -23,7 +25,7 @@
              src="<?=url_for("/media/image/profile-placeholder_143x143.png");?>">
         
         <h2><?=$store["name"];?></h2>
-        <h3><?=$store_cat_name;?></h3>
+        <h3><?=$store_cat["name"];?></h3>
         <a href=""><i class="fab fa-facebook-square"></i></a>
         <a href=""><i class="fab fa-twitter-square"></i></a>
         <a href=""><i class="fab fa-youtube"></i></a>

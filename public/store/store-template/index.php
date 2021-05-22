@@ -1,11 +1,22 @@
 <?php
+    
     require_once("../../../private/initialize.php");
     require_once("../../../private/functions.php");
+    require_once("../../../private/csv.php");
+    require_once("../../../private/dynamic-display.php");
+    
 ?>
 
 <?php
-
-    $page_title = "HSY Shop | Home";
+    
+    // get all stores and products data
+    $stores = read_csv("../../../private/database/stores.csv", true);
+    $products = read_csv("../../../private/database/products.csv", true);
+    
+    $specific_store = get_item_data($stores);
+    
+    
+    $page_title = $specific_store["name"] . " | Home";
     $style_sheets = [
         "/css/common.css",
         "/css/cards.css",
@@ -21,20 +32,34 @@
     
     
     /**
-     * Display product card of each product
+     * Dynamic display of product cards
+     * @param $product
+     * to be displayed
      */
     function display_product_cards($product) {
         echo "<div class='product-card'>";
-        echo "<a href='" . url_for("/store/store-template/product-detail") . "'><img alt='image of a product'
-                  src='../../media/image/placeholder_262x250.png'></a>";
+        echo "<a href='" . url_for("/store/store-template/product-detail?id=" . $product["id"]) . "'>
+                <img alt='image of a product' src='../../media/image/placeholder_262x250.png'></a>";
         echo "<div class='product-card-details'>";
-        echo "<a class='product-card-title' href='" . url_for("/store/store-template/product-detail") . "'>Purple Hyacinth Comic</a>";
-        echo "<p class='product-card-shop'>Sophism &amp; Ephemerys</p>";
-        echo "<p class='product-card-price'>$16.95</p>";
-        echo "<div class='product-card-sale-card'>18/6/2018</div>";
+        echo "<a class='product-card-title' href='" . url_for("/store/store-template/product-detail?id=" . $product["id"]) . "'>" . $product["name"] . "</a>";
+        echo "<p class='product-card-shop'>Short description</p>";
+        echo "<p class='product-card-price'>&dollar;" . $product["price"] . "</p>";
+        echo "<div class='product-card-sale-card'>" . substr($product["created_time"],0,10) . "</div>";
         echo "</div>" . "\n" . "</div>";
     }
-
+    
+    
+    $all_featured_products = check_featured_store_products($products);
+    
+    // get all products of a specific store and sort them by time created from newest to oldest
+    $specific_products = get_specific_store_products($products, $specific_store);
+    usort($specific_products, "compare_by_time");
+    
+    // get products that are featured on a specific store
+    $specific_featured_products = get_specific_store_products($all_featured_products, $specific_store);
+    
+    define("MAX_NUM_NEW_PRODUCTS", 5);
+    
 ?>
 
   <main>
@@ -49,7 +74,21 @@
 
           <section class="store-product-cards">
             <div class="flex-container flex-justify-content-space-between flex-align-items-center flex-wrap">
-                <?php display_product_cards(); ?>
+                <?php
+                    
+                    $count = 0;
+    
+                    // display product cards until the max number of products is reached
+                    foreach ($specific_products as $new_product) {
+                        display_product_cards($new_product);
+                        $count++;
+                        
+                        if ($count === MAX_NUM_NEW_PRODUCTS) {
+                            break;
+                        }
+                    }
+                    
+                ?>
             </div>
           </section>
         </section>
@@ -62,7 +101,14 @@
 
           <section class="store-product-cards">
             <div class="flex-container flex-justify-content-space-between flex-align-items-center flex-wrap">
-              
+                <?php
+                
+                    // display all featured products of the store
+                    foreach ($specific_featured_products as $ft_product) {
+                        display_product_cards($ft_product);
+                    }
+                
+                ?>
             </div>
           </section>
         </section>

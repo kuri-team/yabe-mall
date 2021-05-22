@@ -1,8 +1,24 @@
-<?php require_once("../../../../private/initialize.php"); ?>
+<?php
+    require_once("../../../../private/initialize.php");
+    require_once(PRIVATE_PATH . "\csv.php");
+    require_once(PRIVATE_PATH . "\dynamic-display.php");
+
+?>
 
 <?php
-
-    $page_title = "Purple Hyacinth comic";
+    
+    // get all stores, products, and categories data
+    $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
+    $products = read_csv(PRIVATE_PATH . "\database/products.csv", true);
+    $categories = read_csv(PRIVATE_PATH . "\database/categories.csv", true);
+    
+    // get data of the current product and its store
+    $specific_product = get_item_data($products);
+    $specific_store = get_item_info($specific_product["store_id"], $stores);
+    $store_cat = get_item_info($specific_store["category_id"], $categories);
+    
+    
+    $page_title = $specific_product["name"];
     $style_sheets = [
         "/css/common.css",
         "/css/cards.css",
@@ -21,35 +37,34 @@
   <main id="product-content">
     <ul class="breadcrumb">
       <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
-      <li><a href="<?=url_for("/mall/browse/by-store/by-category.php");?>">Bookstore</a>/</li>
-      <li><a href="<?=url_for("/store/store-template");?>" id="store-name">HSY Shop</a>/</li>
-      <li><a href="<?=url_for("/store/store-template/product-detail");?>">Purple Hyacinth comic</a></li>
+      <li><a href="<?=url_for("/mall/browse/?by-store=by-category");?>"><?=$store_cat["name"]; ?></a>/</li>
+      <li><a href="<?=url_for("/store/store-template?id=" . $specific_product["store_id"]);?>" id="store-name"><?=$specific_store["name"]; ?></a>/</li>
+      <li><a href="<?=url_for("/store/store-template/product-detail?id=" . $specific_product["id"]);?>"><?=$specific_product["name"]; ?></a></li>
     </ul>
 
     <section id="product-info" class="content-body flex-container">
       <span class="product-info-other-media flex-container flex-direction-column">
-        <img src="../../../media/image/hsy_shop/HSY.jpg" alt="another image of the
+        <img src="../../../media/image/placeholder_262x250.png" alt="another image of the
             product" class="mb-10">
-        <img src="../../../media/image/hsy_shop/HSY2.jpg" alt="another image of the
+        <img src="../../../media/image/placeholder_262x250.png" alt="another image of the
             product" class="mb-10">
-        <img src="../../../media/image/hsy_shop/HSY3.jpg"  alt="another image of the
+        <img src="../../../media/image/placeholder_262x250.png"  alt="another image of the
             product" class="mb-10">
-        <img src="../../../media/image/hsy_shop/HSY4.jpg"  alt="another image of the
+        <img src="../../../media/image/placeholder_262x250.png"  alt="another image of the
             product">
       </span>
 
       <span class="product-info-main-img">
-        <img src="../../../media/image/hsy_shop/HSY_main_cover.jpg" alt="main image of the product">
+        <img src="../../../media/image/placeholder_1920x1080.jpg" alt="main image of the product">
       </span>
 
       <div class="product-info-main">
-        <p>SOPHISM &amp; EPHEMERYS</p>
-        <h2>Purple Hyacinth Comic</h2>
-        <p class="add-to-fave"><i class="far fa-heart"></i> Add to Favorites</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+        <p><?= strtoupper($specific_store["name"]); ?></p>
+        <h2><?=$specific_product["name"]; ?></h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         <div class="product-info-details">
-          <p class="product-info-price float-left">&dollar;16.95</p>
-          <p class="product-info-date float-left">18/6/2018</p>
+          <p class="product-info-price float-left">&dollar;<?=$specific_product["price"]; ?></p>
+          <p class="product-info-date float-left"><?= substr($specific_product["created_time"], 0, 10); ?></p>
         </div>
         <div class="shop-bttn clear-both">
           <button class="add-to-cart">ADD TO CART</button>
@@ -72,7 +87,7 @@
         </tr>
         <tr>
           <th>ID number</th>
-          <td>142131014215</td>
+          <td><?=$specific_product["id"]; ?></td>
         </tr>
         <tr>
           <th>Language</th>
@@ -100,67 +115,67 @@
       <div class="card-gallery-content flex-container flex-justify-content-space-between flex-align-items-center overflow-hidden clear-both">
         <div class="product-card">
           <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-             src="../../../media/image/book_cover/the-blind_prince_cover.jpg"></a>
+             src="../../../media/image/placeholder_262x250.png"></a>
           <div class="product-card-details">
             <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
             <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$12.99</p>
-            <div class="product-card-sale-card">13/10/2015</div>
+            <div class="product-card-sale-card">2016-04-01</div>
           </div>
         </div>
 
         <div class="product-card">
           <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-            src="../../../media/image/book_cover/true_beauty_cover.jpg"></a>
+            src="../../../media/image/placeholder_262x250.png"></a>
           <div class="product-card-details">
             <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
             <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$6.50</p>
-            <div class="product-card-sale-card">20/12/2012</div>
+            <div class="product-card-sale-card">2012-12-20</div>
           </div>
         </div>
 
         <div class="product-card">
           <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-            src="../../../media/image/book_cover/rebirth_cover.jpg"></a>
+            src="../../../media/image/placeholder_262x250.png"></a>
           <div class="product-card-details">
             <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
             <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$7.30</p>
-            <div class="product-card-sale-card">21/5/2019</div>
+            <div class="product-card-sale-card">2019-02-14</div>
           </div>
         </div>
 
         <div class="product-card">
           <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-            src="../../../media/image/book_cover/humor_me_cover.jpg"></a>
+            src="../../../media/image/placeholder_262x250.png"></a>
           <div class="product-card-details">
             <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
             <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$12.99</p>
-            <div class="product-card-sale-card">14/2/2013</div>
+            <div class="product-card-sale-card">2016-02-15</div>
           </div>
         </div>
 
         <div class="product-card">
           <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-            src="../../../media/image/book_cover/heartstopper_cover.jpg"></a>
+            src="../../../media/image/placeholder_262x250.png"></a>
           <div class="product-card-details">
             <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
             <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$12.99</p>
-            <div class="product-card-sale-card">14/2/2013</div>
+            <div class="product-card-sale-card">2018-08-03</div>
           </div>
         </div>
 
         <div class="product-card">
           <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-            src="../../../media/image/book_cover/gyaga_cover.jpg"></a>
+            src="../../../media/image/placeholder_262x250.png"></a>
           <div class="product-card-details">
             <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
             <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$12.99</p>
-            <div class="product-card-sale-card">14/2/2013</div>
+            <div class="product-card-sale-card">2020-10-13</div>
           </div>
         </div>
       </div>

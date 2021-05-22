@@ -1,10 +1,12 @@
 <?php
+    
     require_once(PRIVATE_PATH . "\csv.php");
     require_once(PRIVATE_PATH . "\dynamic-display.php");
     
     $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
     
-    $store = get_store_data($stores);
+    $store = get_item_data($stores);
+    
 ?>
 
 <section class="store-footer flex-container flex-justify-content-center flex-align-items-center flex-wrap">
