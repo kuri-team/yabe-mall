@@ -55,10 +55,10 @@
                     $display_count = 0;
                     while ($display_count < NEW_PRODUCTS_DISPLAY_NUM) {
                         echo "<div class='product-card'>
-                        <a href='" . url_for("/store/store-template/product-detail") . "'><img alt='image of a product' src='../media/image/placeholder_262x250.png'></a>
+                        <a href='" . url_for("/store/store-template/product-detail?id={$products[$display_count]['id']}") . "'><img alt='image of a product' src='../media/image/placeholder_262x250.png'></a>
                         <div class='product-card-details'>
-                          <a class='product-card-title' href='" . url_for("/store/store-template/product-detail") . "?id={$products[$display_count]['id']}'>" . $products[$display_count]["name"] . "</a>
-                          <a class='product-card-shop' href='" . url_for("/store/store-template") . "?id={$products[$display_count]['store_id']}'>" . get_store_name((int) $products[$display_count]["store_id"], $stores) . "</a>
+                          <a class='product-card-title' href='" . url_for("/store/store-template/product-detail?id={$products[$display_count]['id']}") . "'>" . $products[$display_count]["name"] . "</a>
+                          <a class='product-card-shop' href='" . url_for("/store/store-template?id={$products[$display_count]['store_id']}") . "'>" . get_store_name((int) $products[$display_count]["store_id"], $stores) . "</a>
                           <p class='product-card-price'>$" . $products[$display_count]["price"] . "</p>
                           <div class='product-card-sale-card'>" . date("Y年m月d日", strtotime($products[$display_count]["created_time"])) . "</div>
                         </div>
