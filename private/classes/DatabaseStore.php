@@ -25,11 +25,11 @@
             $name_elements = preg_split("/[\s,]+/", $this->name);
             foreach ($name_elements as $name_element) {
                 if (levenshtein(strtoupper($name_element), strtoupper($search_term), 1, 10, 100) <= $levenshtein_match_threshold) {
-                    $this->search_relevance -= $this->category->search_relevance;
+                    $this->search_relevance -= $this->category->search_relevance * 2;
                     return true;
                 }
             }
-            $this->search_relevance += $this->category->search_relevance - 1;
+            $this->search_relevance += $this->category->search_relevance;
             return $this->category->isSearchTermMatch($search_term, $levenshtein_match_threshold);
         }
     }
