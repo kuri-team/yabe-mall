@@ -32,4 +32,14 @@
     
             self::$count++;
         }
+    
+        public function isSearchTermMatch(string $search_term, int $levenshtein_match_threshold=0): bool {
+            $name_elements = preg_split("/[\s,]+/", $this->name);
+            foreach ($name_elements as $name_element) {
+                if (levenshtein($name_element, $search_term) <= $levenshtein_match_threshold) {
+                    return true;
+                }
+            }
+            return $this->store->isSearchTermMatch($search_term, $levenshtein_match_threshold);
+        }
     }
