@@ -2,9 +2,10 @@
 
 <?php
     
-    $page_title = "Yabe | Home";
+    $page_title = "Yabe | Search";
     $style_sheets = [
         "/css/common.css",
+        "/css/search.css",
         "/css/cards.css",
     ];
     $scripts = [
@@ -23,6 +24,7 @@
             $filter = "All";
         }
         $search = new Search($query, $_GET["filter"]);
+        $page_title .= " \"{$query}\"";
     }
     
     $no_result = false;
@@ -38,16 +40,27 @@
 <h1 class="content-title">SEARCH RESULTS FOR "<?=strtoupper($query);?>" IN "<?=strtoupper($filter);?>"</h1>
 
 <main class="content-body">
-  <div class="content-text">
   <?php
       
       if ($no_result) {
+          echo "<div class='search-section'>";
           echo "<div class='message-warning'>No result. Please try a different keyword/keywords combination.</div>";
+          echo "</div>";
       }
   
   ?>
-  </div>
-  <section class="content-text">
+  
+  <?php
+    
+      if (
+          !$no_result &&
+          ($filter === Search::FILTER_ALL || $filter === Search::FILTER_PRODUCTS)
+      ) {
+          echo "<h2 class='search-section-title text-align-center'>\"" . strtoupper($query) . "\" PRODUCTS</h2>";
+      }
+      
+  ?>
+  <section class="search-section">
     <div class="flex-container flex-justify-content-space-around flex-align-items-center flex-wrap">
       <?php
       
@@ -69,9 +82,19 @@
       
       ?>
   </section>
-
-  <section class="content-text">
-    <div class="flex-container flex-justify-content-space-around flex-align-items-center flex-wrap">
+    
+    <?php
+        
+        if (
+            !$no_result &&
+            ($filter === Search::FILTER_ALL || preg_match("/" . Search::FILTER_STORES . ".*/", $filter))
+        ) {
+            echo "<h2 class='search-section-title text-align-center'>\"" . strtoupper($query) . "\" STORES</h2>";
+        }
+    
+    ?>
+  <section class="search-section">
+    <div class="flex-container flex-justify-content-space-around flex-align-items-center flex-wrap mb-50">
         <?php
             
             if (!$no_result) {
@@ -80,7 +103,7 @@
                         echo "<div class='store-card'>
                                 <a href='" . url_for("/store/store-template") . "'><img class='store-card-thumbnail' alt='image representation of a shop' src='" . url_for("media/image/profile-placeholder_143x143.png") . "'></a>
                                 <a class='store-card-name' href='" . url_for("/store/store-template?id={$result->id}") . "'>{$result->name}</a>
-                                <p class='text-align-center'>In category: {$result->category->name}</p>
+                                <p class='search-store-category text-align-center'>In category: {$result->category->name}</p>
                               </div>";
                     }
                 }
