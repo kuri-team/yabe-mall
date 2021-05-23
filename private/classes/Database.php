@@ -57,6 +57,12 @@
         }
         
         
+        public static function merge(Database $database_1, Database $database_2) {
+            $result = clone $database_1;
+            $result->setAllEntries(array_merge($result->getAllEntries(), $database_2->getAllEntries()));
+            return $result;
+        }
+        
         public function getEntryById(string $id) {
             foreach ($this->data as $entry) {
                 if ($entry->id === $id) {
@@ -68,5 +74,9 @@
         
         public function getAllEntries(): array {
             return $this->data;
+        }
+        
+        private function setAllEntries($data) {
+            $this->data = $data;
         }
     }

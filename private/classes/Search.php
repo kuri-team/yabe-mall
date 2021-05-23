@@ -24,6 +24,9 @@
             }
             switch ($this->filter) {
                 case self::FILTER_ALL:
+                    $this->data = new Database(Database::STORE_DATABASE);
+                    $this->data = Database::merge($this->data, new Database(Database::PRODUCT_DATABASE));
+                    break;
                 case self::FILTER_PRODUCTS:
                     $this->data = new Database(Database::PRODUCT_DATABASE);
                     break;
