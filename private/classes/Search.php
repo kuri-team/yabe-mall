@@ -62,5 +62,9 @@
                     $this->results[] = $this->data->getEntryById($match_id);
                 }
             }
+            
+            usort($this->results, function (DatabaseEntry $entry_1, DatabaseEntry $entry_2) {
+                return $entry_2->search_relevance - $entry_1->search_relevance;
+            });
         }
     }
