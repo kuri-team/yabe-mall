@@ -6,6 +6,7 @@
         private string $content;
         private array $matches = [];
         
+        
         public function __construct(string $content, Database $search_data=null) {
             $this->content = $content;
             if ($search_data !== null) {
