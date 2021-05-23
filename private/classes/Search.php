@@ -39,7 +39,6 @@
             foreach ($search_terms as $search_term) {
                 $this->search_terms[] = new SearchTerm($search_term, $this->data);
             }
-    
             
             $this->generateResults();
         }
@@ -59,7 +58,11 @@
             
             foreach ($match_results as $match_id => $match_count) {
                 if ($match_count === count($this->search_terms)) {
-                    $this->results[] = $this->data->getEntryById($match_id);
+                    if ($this->filter === self::FILTER_ALL || $this->filter === self::FILTER_STORES || $this->filter === self::FILTER_PRODUCTS) {
+                        $this->results[] = $this->data->getEntryById($match_id);
+                    } elseif (levenshtein(explode(" ", $this->data->getEntryById($match_id)->category->name)[0], explode(" ", $this->filter)[2]) < 5) {  // TODO: This is a temporary workaround. Replace this with an exact match mechanism.
+                        $this->results[] = $this->data->getEntryById($match_id);
+                    }
                 }
             }
             

@@ -25,6 +25,8 @@
         }
         $search = new Search($query, $_GET["filter"]);
         $page_title .= " \"{$query}\"";
+        $nav_search_query = $query;
+        $nav_search_filter = $filter;
     }
     
     $no_result = false;
@@ -37,8 +39,11 @@
     
 ?>
 
-<h1 class="content-title">SEARCH RESULTS FOR "<?=strtoupper($query);?>" IN "<?=strtoupper($filter);?>"</h1>
+<ul class=breadcrumb>
+  <li><a href="<?=url_for("/mall");?>"><i class="fas fa-long-arrow-alt-left mr-10"></i>Back to Mall</a></li>
+</ul>
 
+<h1 class="content-title">SEARCH RESULTS FOR "<?=strtoupper($query);?>" IN "<?=strtoupper($filter);?>"</h1>
 <main class="content-body">
   <?php
       

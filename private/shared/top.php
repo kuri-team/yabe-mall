@@ -8,6 +8,14 @@
         $style_sheets = ["/css/common.css"];
     }
     
+    if (!isset($nav_search_query)) {
+        $nav_search_query = "";
+    }
+    
+    if (!isset($nav_search_filter)) {
+        $nav_search_filter = "Filter";
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +42,7 @@
 <header>
   <nav>
     <span id="nav-logo"><a href="<?=url_for("/mall/");?>"><img class="nav-logo-sprite" alt="Yabe logo" src="<?=url_for("/media/vector/logo-light.svg");?>"></a></span>
-    <div id="nav-search-filter">Filter<i class="fas fa-caret-down ml-10"></i>
+    <div id="nav-search-filter"><?=$nav_search_filter;?><i class="fas fa-caret-down ml-10"></i>
       <div id="nav-search-filter-level-1">
         <div class="nav-search-filter-option">All</div>
         <hr>
@@ -73,7 +81,7 @@
     </div>
     <div id="nav-search">
       <form id="nav-search-form" action="<?=url_for("/search");?>" method="get" target="_self">
-        <label><input class="nav-seach-bar" id="q" name="q" type="search" placeholder="Search" value=""></label>
+        <label><input class="nav-seach-bar" id="q" name="q" type="search" placeholder="Search" value="<?=$nav_search_query;?>"></label>
         <label><input id="nav-search-filter-input" name="filter" type="hidden" value="global"></label>
       </form>
     </div>
