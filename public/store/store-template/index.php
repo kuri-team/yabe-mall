@@ -1,8 +1,22 @@
-<?php require_once("../../../private/initialize.php"); ?>
+<?php
+    
+    require_once("../../../private/initialize.php");
+    require_once("../../../private/functions.php");
+    require_once("../../../private/csv.php");
+    require_once("../../../private/dynamic-display.php");
+    
+?>
 
 <?php
-
-    $page_title = "HSY Shop | Home";
+    
+    // get all stores and products data
+    $stores = read_csv("../../../private/database/stores.csv", true);
+    $products = read_csv("../../../private/database/products.csv", true);
+    
+    $specific_store = get_item_data($stores);
+    
+    
+    $page_title = $specific_store["name"] . " | Home";
     $style_sheets = [
         "/css/common.css",
         "/css/cards.css",
@@ -15,68 +29,42 @@
     ];
 
     include(SHARED_PATH . "/top.php");
-
+    
+    
+    /**
+     * Dynamic display of product cards
+     * @param $product
+     * to be displayed
+     */
+    function display_product_cards($product) {
+        echo "<div class='product-card'>";
+        echo "<a href='" . url_for("/store/store-template/product-detail?id=" . $product["id"]) . "'>
+                <img alt='image of a product' src='../../media/image/placeholder_262x250.png'></a>";
+        echo "<div class='product-card-details'>";
+        echo "<a class='product-card-title' href='" . url_for("/store/store-template/product-detail?id=" . $product["id"]) . "'>" . $product["name"] . "</a>";
+        echo "<p class='product-card-shop'>Short description</p>";
+        echo "<p class='product-card-price'>&dollar;" . $product["price"] . "</p>";
+        echo "<div class='product-card-sale-card'>" . substr($product["created_time"],0,10) . "</div>";
+        echo "</div>" . "\n" . "</div>";
+    }
+    
+    
+    $all_featured_products = check_featured_store_products($products);
+    
+    // get all products of a specific store and sort them by time created from newest to oldest
+    $specific_products = get_specific_store_products($products, $specific_store);
+    usort($specific_products, "compare_by_time");
+    
+    // get products that are featured on a specific store
+    $specific_featured_products = get_specific_store_products($all_featured_products, $specific_store);
+    
+    define("MAX_NUM_NEW_PRODUCTS", 5);
+    
 ?>
 
   <main>
-    <ul class="breadcrumb">
-      <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
-      <li><a href="<?=url_for("/mall/browse/by-store/by-category.php");?>">Bookstore</a>/</li>
-      <li><a href="<?=url_for("/store/store-template");?>">HSY Shop</a></li>
-    </ul>
-
-    <div class="content-body">
-      <section class="store-header">
-        <img class="store-img" alt="image of a shop"
-          src="../../media/image/hsy_shop/HSY_banner.jpg">
-        <img class="store-card-thumbnail circle-img" alt="image representation of a shop"
-          src="../../media/image/hsy_shop/HSY_avatar.jpg">
-
-        <h2>HSY Shop</h2>
-        <a href="./"><i class="fab fa-facebook-square"></i></a>
-        <a href="./"><i class="fab fa-twitter-square"></i></a>
-        <a href="./"><i class="fab fa-youtube"></i></a>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem, aspernatur dolores magni, 
-          aliquam perferendis debitis ipsa necessitatibus nisi quisquam velit ex dolorem, facilis
-          et rerum quod blanditiis ducimus voluptatem adipisci!</p>
-
-        <div class="store-nav">
-              <div class="store-nav-bttn"><a href="<?=url_for("/store/store-template");?>">HOME</a></div>
-              <div class="store-nav-bttn store-nav-dropdown">PRODUCTS
-                  <i class="fas fa-caret-down store-nav-dropdown-icon"></i>
-                  <div class="store-nav-dropdown-list">
-                      <a href="<?=url_for("/store/store-template/browse-product/by-category.php");?>">CATEGORY</a>
-                      <hr>
-                      <a href="<?=url_for("/store/store-template/browse-product/by-date.php");?>">DATE</a>
-                  </div>
-              </div>
-              <div class="store-nav-bttn"><a href="<?=url_for("/store/store-template/pages/contact.php");?>">CONTACT</a></div>
-              <div class="store-nav-bttn"><a href="<?=url_for("/store/store-template/pages/bio.php");?>">BIO</a></div>
-
-              <div id="responsive-store-navbar">
-                  <input type="checkbox" id="navbar-icon">
-                  <div class="flex-container flex-align-items-center flex-direction-column">
-                      <label for="navbar-icon" class="responsive-store-navbar-title">MENU</label>
-                      <i class="fas fa-caret-down"></i>
-                  </div>
-                  <ul class="responsive-store-navbar-content">
-                      <li><a href="<?=url_for("/store/store-template");?>">Home</a></li>
-                      <li>
-                          <input type="checkbox" id="nav-product-bttn">
-                          <label for="nav-product-bttn">Products</label>
-                          <i class="fas fa-caret-down"></i>
-                          <ul class="responsive-store-navbar-content-dropdown">
-                              <li><a href="<?=url_for("/store/store-template/browse-product/by-category.php");?>">Category</a></li>
-                              <li><a href="<?=url_for("/store/store-template/browse-product/by-date.php");?>">Date</a></li>
-                          </ul>
-                      </li>
-                      <li><a href="<?=url_for("/store/store-template/pages/contact.php");?>">Contact</a></li>
-                      <li><a href="<?=url_for("/store/store-template/pages/bio.php");?>">Bio</a></li>
-                  </ul>
-              </div>
-        </div>
-      </section>
-
+      <?php require_once(SHARED_PATH . "/store/store-header.php"); ?>
+      
       <section class="store-home-content">
         <section class="store-home-content-new mb-80">
           <div class="store-home-content-header text-align-center">
@@ -86,71 +74,21 @@
 
           <section class="store-product-cards">
             <div class="flex-container flex-justify-content-space-between flex-align-items-center flex-wrap">
-              <div class="product-card">
-                <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-                  src="../../media/image/hsy_shop/HSY_main_cover_square.jpg"></a>
-                <div class="product-card-details">
-                  <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Purple Hyacinth Comic</a>
-                  <p class="product-card-shop">Sophism &amp; Ephemerys</p>
-                  <p class="product-card-price">$16.95</p>
-                  <div class="product-card-sale-card">18/6/2018</div>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <a href="<?=url_for("/store/store-template/product-detail-2");?>"><img alt="image of a product"
-                  src="../../media/image/product-detail-2/yoohankim-trio_square.png"></a>
-                <div class="product-card-details">
-                  <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail-2");?>">Omniscient Reader's Viewpoint Novel</a>
-                  <p class="product-card-shop">Sing Shong</p>
-                  <p class="product-card-price">$13.50</p>
-                  <div class="product-card-sale-card">6/1/2018</div>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-                  src="../../media/image/hsy_shop/HSY3.jpg"></a>
-                <div class="product-card-details">
-                  <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-                  <p class="product-card-shop">Short Description Goes Here</p>
-                  <p class="product-card-price">$16.95</p>
-                  <div class="product-card-sale-card">1/4/2020</div>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-                  src="../../media/image/hsy_shop/HSY4.jpg"></a>
-                <div class="product-card-details">
-                  <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-                  <p class="product-card-shop">Short Description Goes Here</p>
-                  <p class="product-card-price">$16.95</p>
-                  <div class="product-card-sale-card">1/4/2020</div>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-                  src="../../media/image/hsy_shop/HSY5.jpg"></a>
-                <div class="product-card-details">
-                  <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-                  <p class="product-card-shop">Short Description Goes Here</p>
-                  <p class="product-card-price">$16.95</p>
-                  <div class="product-card-sale-card">1/4/2020</div>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-                  src="../../media/image/hsy_shop/HSY6.jpg"></a>
-                <div class="product-card-details">
-                  <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-                  <p class="product-card-shop">Short Description Goes Here</p>
-                  <p class="product-card-price">$16.95</p>
-                  <div class="product-card-sale-card">1/4/2020</div>
-                </div>
-              </div>
+                <?php
+                    
+                    $count = 0;
+    
+                    // display product cards until the max number of products is reached
+                    foreach ($specific_products as $new_product) {
+                        display_product_cards($new_product);
+                        $count++;
+                        
+                        if ($count === MAX_NUM_NEW_PRODUCTS) {
+                            break;
+                        }
+                    }
+                    
+                ?>
             </div>
           </section>
         </section>
@@ -163,97 +101,20 @@
 
           <section class="store-product-cards">
             <div class="flex-container flex-justify-content-space-between flex-align-items-center flex-wrap">
-              <div class="product-card">
-                <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-                  src="../../media/image/hsy_shop/HSY7.jpg"></a>
-                <div class="product-card-details">
-                  <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-                  <p class="product-card-shop">Short Description Goes Here</p>
-                  <p class="product-card-price">$16.95</p>
-                  <div class="product-card-sale-card">1/4/2020</div>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-                  src="../../media/image/hsy_shop/HSY8.jpg"></a>
-                <div class="product-card-details">
-                  <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-                  <p class="product-card-shop">Short Description Goes Here</p>
-                  <p class="product-card-price">$16.95</p>
-                  <div class="product-card-sale-card">1/4/2020</div>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-                  src="../../media/image/hsy_shop/HSY9.jpg"></a>
-                <div class="product-card-details">
-                  <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-                  <p class="product-card-shop">Short Description Goes Here</p>
-                  <p class="product-card-price">$16.95</p>
-                  <div class="product-card-sale-card">1/4/2020</div>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-                  src="../../media/image/hsy_shop/dan-gold-zvFrn0Ws7cw-unsplash.jpg"></a>
-                <div class="product-card-details">
-                  <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-                  <p class="product-card-shop">Short Description Goes Here</p>
-                  <p class="product-card-price">$16.95</p>
-                  <div class="product-card-sale-card">1/4/2020</div>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-                  src="../../media/image/hsy_shop/paolo-chiabrando-9dXSoi6VXEA-unsplash.jpg"></a>
-                <div class="product-card-details">
-                  <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-                  <p class="product-card-shop">Short Description Goes Here</p>
-                  <p class="product-card-price">$16.95</p>
-                  <div class="product-card-sale-card">1/4/2020</div>
-                </div>
-              </div>
-
-              <div class="product-card">
-                <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
-                  src="../../media/image/hsy_shop/thought-catalog-V5BGaJ0VaLU-unsplash.jpg"></a>
-                <div class="product-card-details">
-                  <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-                  <p class="product-card-shop">Short Description Goes Here</p>
-                  <p class="product-card-price">$16.95</p>
-                  <div class="product-card-sale-card">1/4/2020</div>
-                </div>
-              </div>
+                <?php
+                
+                    // display all featured products of the store
+                    foreach ($specific_featured_products as $ft_product) {
+                        display_product_cards($ft_product);
+                    }
+                
+                ?>
             </div>
           </section>
         </section>
       </section>
-
-      <section class="store-footer flex-container flex-justify-content-center
-        flex-align-items-center flex-wrap">
-            <div class="store-logo"><a href="<?=url_for("/store/store-template");?>">
-                    <img class="circle-img" src="../../media/image/hsy_shop/HSY_avatar.jpg" alt="Store logo"></a>
-            </div>
-            <div class="store-footer-bttn"><a href="<?=url_for("/mall/legal/copyright");?>">Copyright</a></div>
-            <div class="store-footer-bttn"><a href="<?=url_for("/mall/legal/tos");?>">Term of Service</a></div>
-            <div class="store-footer-bttn"><a href="<?=url_for("/mall/legal/privacy-policy");?>">
-                    Privacy Policy</a></div>
-
-            <div id="responsive-store-footer">
-                <input type="checkbox" id="store-footer-icon">
-                <label for="store-footer-icon" class="responsive-store-footer-title" onclick="displayDropdown()">Legal</label>
-                <ul id="responsive-store-footer-dropdown">
-                    <li><a href="<?=url_for("/mall/legal/copyright");?>">Copyright</a></li>
-                    <li><a href="<?=url_for("/mall/legal/tos");?>">Term of Service</a></li>
-                    <li><a href="<?=url_for("/mall/legal/privacy-policy");?>">Privacy Policy</a></li>
-                </ul>
-            </div>
-      </section>
-    </div>
+    
+      <?php require_once(SHARED_PATH . "/store/store-footer.php"); ?>
   </main>
 
 <?php include(SHARED_PATH . "/bottom.php"); ?>

@@ -4,54 +4,54 @@
     /**
      * Check if products are featured on the Mall Home page
      * @param array $products containing information of all products
-     * @return mixed
-     * <strong><em>array</em></strong> containing information of a product if it is
-     * featured on mall,
-     * <strong><em>false</em></strong> otherwise.
+     * @return array <strong><em>array</em></strong> containing information
+     * of all products featured on Mall Home
      */
-    function check_featured_mall_products(array $products) {
+    function check_featured_mall_products(array $products): array {
+        $featured_mall_products = [];
+        
         foreach ($products as $product) {
             if ($product['featured_in_mall'] === "TRUE") {
-                return $product;
+                $featured_mall_products[] = $product;
             }
         }
-        return false;
+        return $featured_mall_products;
     }
     
     
     /**
      * Check if stores are featured on the Mall Home page
      * @param array $stores containing information of all stores
-     * @return mixed
-     * <strong><em>array</em></strong> containing information of a store if it is
-     * featured on mall,
-     * <strong><em>false</em></strong> otherwise.
+     * @return array <strong><em>array</em></strong> containing information
+     * of all stores featured on Mall Home
      */
-    function check_featured_mall_stores(array $stores) {
+    function check_featured_mall_stores(array $stores): array {
+        $featured_mall_stores = [];
+        
         foreach ($stores as $store) {
             if ($store['featured'] === "TRUE") {
-                return $store;
+                $featured_mall_stores[] = $store;
             }
         }
-        return false;
+        return $featured_mall_stores;
     }
     
     
     /**
-     * Check if products are featured on Store Home page(s)
+     * Check if products are featured on Store Home page
      * @param array $products containing information of all products
-     * @return mixed
-     * <strong><em>array</em></strong> containing information of a product if it is
-     * featured on Store Home,
-     * <strong><em>false</em></strong> otherwise.
+     * @return array <strong><em>array</em></strong> containing information
+     * of all products featured on Store Home
      */
-    function check_featured_store_products(array $products) {
+    function check_featured_store_products(array $products): array {
+        $featured_store_products = [];
+        
         foreach ($products as $product) {
             if ($product['featured_in_store'] === "TRUE") {
-                return $product;
+                $featured_store_products[] = $product;
             }
         }
-        return false;
+        return $featured_store_products;
     }
     
     
@@ -63,5 +63,84 @@
      */
     function compare_by_time(array $item1, array $item2): int {
         return -(strtotime($item1["created_time"]) - strtotime($item2["created_time"]));
+    }
+    
+    
+    /**
+     * Get all data of a specific item if the id of that item is retrieved through the link
+     * @param array $items containing data of all items (stores, products, etc.)
+     * @return false|mixed
+     * <strong><em>array</em></strong> containing data of the selected item,
+     * <strong><em>false</em></strong> otherwise.
+     */
+    function get_item_data(array $items) {
+        if (isset($_GET["id"])) {
+            foreach ($items as $item) {
+                if ($_GET["id"] === $item["id"]) {
+                    return $item;
+                }
+            }
+        }
+        return false;
+    }
+    
+    
+    /**
+     * Get all information of a specific item if the id of that item is
+     * <strong><em>not</em></strong> retrieved through the link.
+     * This function is used when we have an item's id from another item's database
+     * (e.g: store_id from products.csv), to get other data related to that item
+     * (e.g: need to get store name)
+     * @param string $item_id
+     * @param array $items containing information of all items (stores, products, etc.)
+     * @return false|mixed
+     * <strong><em>array</em></strong> containing information of the selected item,
+     * <strong><em>false</em></strong> otherwise.
+     */
+    function get_item_info(string $item_id, array $items) {
+        foreach ($items as $item) {
+            if ($item["id"] === $item_id) {
+                return $item;
+            }
+        }
+        return false;
+    }
+    
+    
+    /**
+     * Get products from a specific store
+     * @param array $products containing products from database
+     * @param array $store containing data of a specific store
+     * @return array
+     * <strong><em>array</em></strong> containing data of products of the selected store
+     */
+    function get_specific_store_products(array $products, array $store): array {
+        $specific_store_products = [];
+        
+        foreach ($products as $product) {
+            if ($product["store_id"] === $store["id"]) {
+                $specific_store_products[] = $product;
+            }
+        }
+        return $specific_store_products;
+    }
+
+    
+    /**
+     * Get the store name that correspond to the store id on products.csv
+     * @param int $id
+     * @param array $stores
+     * @return string
+     * <strong><em>array</em></strong> containing name of the store if store_id on products.csv
+     * matches id on stores.csv,
+     * <strong><em>false</em></strong> otherwise.
+     */
+    function get_store_name(int $id, array $stores): string {
+        foreach ($stores as $store) {
+            if ((int) $store["id"] === $id) {
+                return $store["name"];
+            }
+        }
+        return false;
     }
     
