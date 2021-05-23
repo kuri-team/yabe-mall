@@ -21,6 +21,9 @@
             "email": "ngocanhthu20102002@gmail.com"
         }
     ],
+    "config": {
+        "optimize-autoloader": true
+    },
     "require": {
         "php": "~7.4.0"
     },

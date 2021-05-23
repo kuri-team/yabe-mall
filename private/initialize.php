@@ -24,8 +24,8 @@
     // __FILE__ returns the current path to this file
     // dirname() returns the path to the parent directory
     define("PRIVATE_PATH", dirname(__FILE__));
-    define("PROJECT_PATH", dirname(PRIVATE_PATH));
-    define("PUBLIC_PATH", PROJECT_PATH . "/public");
+    define("APPLICATION_PATH", dirname(PRIVATE_PATH));
+    define("PUBLIC_PATH", APPLICATION_PATH . "/public");
     define("SHARED_PATH", PRIVATE_PATH . "/shared");
     
     // Assign the root URL to a PHP constant
@@ -33,6 +33,14 @@
     // * Use same document root as webserver
     define("WWW_ROOT", "");
     
+    
+    // Yabe Custom Class auto-loading
+    function yabe_autoload($class) {
+        if (preg_match("/\A\w+\Z/", $class)) {
+            require_once(PRIVATE_PATH . "/classes/{$class}.php");
+        }
+    }
+    spl_autoload_register("yabe_autoload");
     require_once("functions.php");
     
     $errors = [];

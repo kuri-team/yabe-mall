@@ -8,6 +8,14 @@
         $style_sheets = ["/css/common.css"];
     }
     
+    if (!isset($nav_search_query)) {
+        $nav_search_query = "";
+    }
+    
+    if (!isset($nav_search_filter)) {
+        $nav_search_filter = "Filter";
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -34,34 +42,50 @@
 <header>
   <nav>
     <span id="nav-logo"><a href="<?=url_for("/mall/");?>"><img class="nav-logo-sprite" alt="Yabe logo" src="<?=url_for("/media/vector/logo-light.svg");?>"></a></span>
-    <div id="nav-search-filter">Filter<i class="fas fa-caret-down ml-10"></i>
+    <div id="nav-search-filter"><?=$nav_search_filter;?><i class="fas fa-caret-down ml-10"></i>
       <div id="nav-search-filter-level-1">
         <div class="nav-search-filter-option">All</div>
         <hr>
-        <div class="nav-search-filter-option">Products
-          <div id="nav-search-filter-level-2-1">
-            <div class="nav-search-filter-option">Category</div>
-            <hr>
-            <div class="nav-search-filter-option">Date</div>
-          </div>
-        </div>
+        <div class="nav-search-filter-option">Products</div>
         <hr>
         <div class="nav-search-filter-option">Stores
           <div id="nav-search-filter-level-2-2">
-            <div class="nav-search-filter-option">Category</div>
+            <div class="nav-search-filter-option">Department</div>
             <hr>
-            <div class="nav-search-filter-option">Name</div>
+            <div class="nav-search-filter-option">Grocery</div>
+            <hr>
+            <div class="nav-search-filter-option">Restaurant</div>
+            <hr>
+            <div class="nav-search-filter-option">Clothing</div>
+            <hr>
+            <div class="nav-search-filter-option">Accessories</div>
+            <hr>
+            <div class="nav-search-filter-option">Pharmacy</div>
+            <hr>
+            <div class="nav-search-filter-option">Technology</div>
+            <hr>
+            <div class="nav-search-filter-option">Pet</div>
+            <hr>
+            <div class="nav-search-filter-option">Toy</div>
+            <hr>
+            <div class="nav-search-filter-option">Specialty</div>
+            <hr>
+            <div class="nav-search-filter-option">Thrift</div>
+            <hr>
+            <div class="nav-search-filter-option">Service</div>
+            <hr>
+            <div class="nav-search-filter-option">Kiosk</div>
           </div>
         </div>
       </div>
     </div>
     <div id="nav-search">
-      <form action="<?=url_for("/mall/browse");?>" method="get" target="_blank">
-        <label for="q"></label>
-        <input class="nav-seach-bar" id="q" name="q" type="search" placeholder="Search" value="">
+      <form id="nav-search-form" action="<?=url_for("/search");?>" method="get" target="_self">
+        <label><input class="nav-seach-bar" id="q" name="q" type="search" placeholder="Search" value="<?=$nav_search_query;?>"></label>
+        <label><input id="nav-search-filter-input" name="filter" type="hidden" value="global"></label>
       </form>
     </div>
-    <div class="nav-search-bttn"><i class="fas fa-search"></i></div>
+    <div id="nav-search-bttn" class="nav-search-bttn"><i class="fas fa-search"></i></div>
     <div>
       <a href="<?=url_for("/mall/cart");?>"><button class="nav-cart-bttn"><i class="fas fa-shopping-cart"></i>Cart</button></a>
     </div>
