@@ -3,11 +3,11 @@
     class DatabaseProduct extends DatabaseEntry {
         private static int $count = 0;
         
-        private int $price;
-        private int $created_time;  // MUST be an Unix timestamp (number of seconds since the Unix Epoch - January 1 1970 00:00:00 GMT)
-        private DatabaseStore $store;
-        private bool $featured_in_mall;
-        private bool $featured_in_store;
+        public int $price;
+        public int $created_time;  // MUST be an Unix timestamp (number of seconds since the Unix Epoch - January 1 1970 00:00:00 GMT)
+        public DatabaseStore $store;
+        public bool $featured_in_mall;
+        public bool $featured_in_store;
         
         
         public function __construct(
