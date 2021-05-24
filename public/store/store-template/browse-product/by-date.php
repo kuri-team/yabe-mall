@@ -29,11 +29,11 @@
     $specific_store = get_item_data($stores);
 
     // default browse option
-    if (!isset($_GET['browse-option'])) {
-        $_GET['browse-option'] = "Newest";
+    if (!isset($_GET["browse-option"])) {
+        $_GET["browse-option"] = "Newest";
     }
-    if (!isset($_GET['page'])) {
-        $_GET['page'] = 1;
+    if (!isset($_GET["page"])) {
+        $_GET["page"] = 1;
     }
 
     // get all products from the store
@@ -90,15 +90,13 @@
       <section class="store-product-cards">
           <div class="flex-container flex-justify-content-space-between flex-align-items-center flex-wrap">
               <?php
-
               function date_sort($product1, $product2) {
-
-                      $date1 = strtotime($product1['created_time']);
-                      $date2 = strtotime($product2['created_time']);
-                      if ($_GET["browse-option"] = "Newest") {
+                  $date1 = strtotime($product1['created_time']);
+                  $date2 = strtotime($product2['created_time']);
+                      if ($_GET["browse-option"] === "Newest") {
                           return $date2 - $date1;
                       }
-                      elseif ($_GET["browse-option"] = "Oldest") {
+                      else if ($_GET["browse-option"] === "Oldest") {
                           return $date1 - $date2;
                       }
                   }
