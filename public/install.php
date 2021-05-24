@@ -1,6 +1,8 @@
 <?php
     
     require_once "../private/csv.php";
+    require_once "../private/logsman.php";
+    
     
     $updated = false;
     if (isset($_POST["submit"])) {
@@ -11,6 +13,7 @@
                 ]
         ];
         
+        new_logs_entry("../private/logs.txt", "install.php | System installation: Admin credentials modified");
         write_csv("../private/database/admin.csv", $admin_credentials, true);
         $updated = true;
     }
