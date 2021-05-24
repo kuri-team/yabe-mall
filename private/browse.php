@@ -39,7 +39,7 @@
         if ($max > $list_length) {
             $max = $list_length - 1;
         }
-        for ($i = $min; $i <= $max; $i++) {
+        for ($i = $min; $i < $max; $i++) {
             display_store($stores[$i]["store_name"],$stores[$i]["store_id"]);
         }
 
