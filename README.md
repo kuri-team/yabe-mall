@@ -97,7 +97,7 @@ Please make sure that you have PHP version 7.4 installed on your system. No othe
 
 * Step 1: Unzip our submission .zip file to a location of your choice. E.g. `/home/documents/yabe-mall/`
 * Step 2: Use the command line to navigate to the aforementioned folder
-* Step 3: Start the PHP built-in web server on `localhost:80`, with the document root set to the `public` folder __!!IMPORTANT!!__. If you have added PHP in your `PATH` variable, you can use this command: `php -S localhost:80 -t public`.
+* Step 3: Start the PHP built-in web server on `localhost:80`, with the document root set to the `public` folder __!!IMPORTANT!!__. If you have added PHP in your `PATH` variable, you can use this command: `php -S localhost:80 -t public`
 
 Please note that you **must** set the document root of your web server to `public`, otherwise our application would not work.
 
