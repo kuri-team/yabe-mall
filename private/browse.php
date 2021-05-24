@@ -62,15 +62,17 @@
 
     /**
     * Use the number of the current page to get the next page
+    * @param $list_length
+    * @param $max_cards
     * @return int
     */
     function next_page($list_length, $max_cards) {
         $next = $_GET["page"] + 1;
         // calculate the required pages for each browse option
-        if ($list_length % $max_cards != 0) {    
+        if (($list_length % $max_cards != 0)) {
             $max_page = floor($list_length / $max_cards) + 1;
         } else {
-            $max_page = $list_length / $max_cards;
+            $max_page = $list_length / ($max_cards);
         }
         // page number cannot exceed the maximum number of pages
         if ($next > $max_page) {
