@@ -88,3 +88,17 @@ Backup: https://kuri-team.github.io/yabe-mall/ (`release-2.4-05-08-21` branch) -
 - Student: Doan Yen Nhi [@doanyennhi](https://github.com/doanyennhi)
 - Student: Du Duc Manh [@rider3458](https://github.com/rider3458)
 - Student: Tran Ngoc Anh Thu [@tnathu-ai](https://github.com/tnathu-ai)
+***
+
+## Grading Instructions: Local Environment Setup
+This part is intended to guide RMIT grading staff to set up their local environment to host our application correctly for grading purpose, as requested by our instructor [@TriDang](https://github.com/TriDang). Ignore this part if it is not applicable to you.
+
+Please make sure that you have PHP version 7.4 installed on your system. No other software or libraries required.
+
+* Step 1: Unzip our submission .zip file to a location of your choice. E.g. `/home/documents/yabe-mall/`
+* Step 2: Use the command line to navigate to the aforementioned folder
+* Step 3: Start the PHP built-in web server on `localhost:80`, with the document root set to the `public` folder __!!IMPORTANT!!__. If you have added PHP in your `PATH` variable, you can use this command: `php -S localhost:80 -t public`.
+
+Please note that you **must** set the document root of your web server to `public`, otherwise our application would not work.
+
+The grading Rubric is available on the [Assignment Page](https://rmit.instructure.com/courses/86190/assignments/571078) (RMIT ID required to login).
