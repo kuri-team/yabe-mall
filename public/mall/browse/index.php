@@ -195,7 +195,11 @@ include(SHARED_PATH . "/top.php");
             ";
 
             $list_length = count($expected_stores);
+            if (($list_length % $max_stores != 0)) {
             $max_pages = floor($list_length / $max_stores) + 1;
+            } else {
+            $max_pages = $list_length / ($max_stores);
+            }
             if ($_GET['page'] < 1 || $_GET['page'] > $max_pages) {
                 header("Location: ?by-store={$_GET["by-store"]}&browse-option={$_GET["browse-option"]}&page=1");
             }
