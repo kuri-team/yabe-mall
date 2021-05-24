@@ -33,7 +33,7 @@ if ($_GET["by-store"] === "by-category" && !isset($_GET["browse-option"])) {
     $_GET["page"] = "1";
 }
 
-$max_stores = 10; // maximum number of stores displayed on the page
+$max_stores = 12; // maximum number of stores displayed on the page
 
 include(SHARED_PATH . "/top.php");
 
@@ -193,6 +193,12 @@ include(SHARED_PATH . "/top.php");
             </form>
             </div>
             ";
+
+            $list_length = count($expected_stores);
+            $max_pages = floor($list_length / $max_stores) + 1;
+            if ($_GET['page'] < 1 || $_GET['page'] > $max_pages) {
+                header("Location: ?by-store={$_GET["by-store"]}&browse-option={$_GET["browse-option"]}&page=1");
+            }
         ?>
 
     </div>
