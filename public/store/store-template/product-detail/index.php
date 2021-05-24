@@ -29,7 +29,7 @@
         "/js/cards.js",
         "/js/cart/cart.js",
     ];
-
+    
     include(SHARED_PATH . "/top.php");
 
 ?>

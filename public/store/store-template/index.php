@@ -27,8 +27,6 @@
         "/js/common.js",
         "/js/store/footer.js"
     ];
-
-    include(SHARED_PATH . "/top.php");
     
     
     /**
@@ -59,6 +57,9 @@
     $specific_featured_products = get_specific_store_products($all_featured_products, $specific_store);
     
     define("MAX_NUM_NEW_PRODUCTS", 5);
+    
+
+    include(SHARED_PATH . "/top.php");
     
 ?>
 
