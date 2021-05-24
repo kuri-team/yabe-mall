@@ -42,6 +42,27 @@
     
     
     /**
+     * Get the index of a database entry given its id. Only works on databases with header
+     * @param array $database MUST be a database with header. Won't work on header-less database
+     * @param string $id
+     * @return int Return <strong><em>null</em></strong> if database is empty
+     */
+    function get_entry_index_by_id(array $database, string $id): int {
+        $index = null;
+        if (count($database) > 0) {
+            $index = 0;
+            foreach ($database as $entry) {
+                if ($entry["id"] === $id) {
+                    break;
+                }
+                $index++;
+            }
+        }
+        return $index;
+    }
+    
+    
+    /**
      * Convert and echo a given database as an editable HTML table. Uses method=POST to communicate with database processor
      * @param string $name the name of the given database. For use with form submission.
      * @param array $database MUST be a database with header. Won't work on header-less database. For empty databases, set <strong>$empty</strong> to <strong><em>true</em></strong>.
@@ -64,7 +85,7 @@
             foreach ($database[0] as $header => $field) {
                 echo "<th>" . $header . "</th>";
             }
-            echo "</rh>";
+            echo "</th>";
             
             // Data rows
             for ($index = 0; $index < count($database); $index++) {

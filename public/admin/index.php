@@ -34,7 +34,7 @@
         <li><a href="<?=url_for("/admin/phpinfo.php");?>">PHPInfo</a></li>
         <li><a href="<?=url_for("/admin/logs.php");?>">Logs</a></li>
         <li><a href="<?=url_for("/admin/database_man.php");?>">Database Manager</a></li>
-        <li><a href="<?=url_for("/admin/page_editor.php");?>">Page Editor</a></li>
+        <li><a href="<?=url_for("/admin/legal_editor.php");?>">Edit Legal Information</a></li>
         <li><a href="<?=url_for("/admin/about_us.php");?>">Edit About Us</a></li>
         <li><a href="<?=url_for("/admin/password.php");?>">Change password</a></li>
         <li><a href="<?=url_for("/admin/auth?q=logout");?>">Log out<i class="fas fa-sign-out-alt ml-10"></i></a></li>
@@ -44,7 +44,8 @@
     <section class="content-child admin-content">
       <article>
         <p>Welcome to Yabe CMS Administrator's Dashboard.</p>
-        <p class="text-align-justify">CMS stands for Content Management System. You can use the administrative tools provided here to modify website database, configure website settings, add/remove account manually, and more advanced operations... If you're new to CMS systems, please refer to the <a href="<?=url_for("");?>">Administrator's Manual</a> to learn how to operate Yabe CMS.</p>
+        <noscript><strong>Please enable Javascript for this system to function properly.</strong></noscript>
+        <p class="text-align-justify">CMS stands for Content Management System. You can use the administrative tools provided here to modify website database, configure website settings, add/remove account manually, and more advanced operations... If you're new to CMS systems, please refer to the <a href="<?=url_for("/admin/manual.php");?>">Administrator's Manual</a> to learn how to operate Yabe CMS.</p>
       </article>
       
       <article>

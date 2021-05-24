@@ -36,10 +36,10 @@
                         <li><a href="<?=url_for("/mall/browse/by-product/by-date.php");?>">Browse by Date</a></li>
                     </ul>
                 </li>
-                <li id="footer-menu-browse-store"><a href="<?=url_for("/mall/browse/by-store");?>">Stores</a>
+                <li id="footer-menu-browse-store"><a href="<?=url_for("/mall/browse/?by-store");?>">Stores</a>
                     <ul>
-                        <li><a href="<?=url_for("/mall/browse/by-store/by-category.php");?>">Browse by Category</a></li>
-                        <li><a href="<?=url_for("/mall/browse/by-store/by-name.php");?>">Browse by Name</a></li>
+                        <li><a href="<?=url_for("/mall/browse/?by-store=by-category");?>">Browse by Category</a></li>
+                        <li><a href="<?=url_for("/mall/browse/?by-store=by-name");?>">Browse by Name</a></li>
                     </ul>
                 </li>
             </ul>
@@ -66,5 +66,6 @@
         echo "<script src='" . url_for($script) . "'></script>";
     }
 ?>
+<script src="<?=url_for("/js/search/common.js");?>"></script>
 </body>
 </html>
