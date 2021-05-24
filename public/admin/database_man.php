@@ -50,7 +50,7 @@
       </ul>
     </aside>
 
-    <section class="content-child admin-content">
+    <section class="content-child admin-content overflow-hidden">
       <noscript>Please enable Javascript for this feature to work properly.</noscript>
       <article>
         <h2>Table of Contents</h2>
