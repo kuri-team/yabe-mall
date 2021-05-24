@@ -1,10 +1,10 @@
-let productID = window.location.pathname.split('/')[5];
+let productID = window.location.search.substr(4,);
 let productName = document.querySelector(".product-info-main h2").innerHTML;
 let productLink = window.location.href;
 let productLinkArray = productLink.split('/');
 productLinkArray.splice(productLinkArray.length - 2);
 let storeName = document.getElementById("store-name").innerHTML;
-let storeLink = productLinkArray.join('/');
+let storeLink = document.getElementById("store-name").href;
 let finalPrice = document.querySelector(".product-info-price").innerHTML.slice(1,);
 let productImg = document.querySelector(".product-info-main-img img").src;
 let cartItem = {
