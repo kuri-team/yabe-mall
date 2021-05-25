@@ -1,8 +1,8 @@
 /*
     Toggle visibility of Database Manager forms
  */
-const TOGGLE_VIS_BTTNS = document.querySelectorAll(".dtbm-table-title .toggle-visibility");
-const TITLES = document.querySelectorAll(".dtbm-table-title");
+const TOGGLE_VIS_BTTNS = document.querySelectorAll(".admin-content-section-title .toggle-visibility");
+const TITLES = document.querySelectorAll(".admin-content-section-title");
 const FORMS = document.querySelectorAll(".dtbm-form");
 
 TOGGLE_VIS_BTTNS.forEach(function (element, index) {

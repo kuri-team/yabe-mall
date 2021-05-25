@@ -19,6 +19,9 @@
     
     // Development mode
     $dev = true;
+    if (!$dev) {
+        error_reporting(E_ERROR & E_CORE_ERROR & E_COMPILE_ERROR);
+    }
     
     // Assign file paths to PHP constants
     // __FILE__ returns the current path to this file
