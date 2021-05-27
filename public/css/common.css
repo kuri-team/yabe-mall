@@ -227,6 +227,14 @@ i {
     overflow: visible;
 }
 
+.overflow-x-scroll {
+    overflow-x: scroll;
+}
+
+.overflow-y-scroll {
+    overflow-y: scroll;
+}
+
 .inline {
     display: inline;
 }

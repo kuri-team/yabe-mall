@@ -34,6 +34,7 @@
         
         if (is_csv($path)) {
             $file = fopen($path, "r");
+            flock($file, LOCK_SH);
             
             if (!$first_line_header) {
                 
@@ -61,7 +62,8 @@
                 }
                 
             }
-            
+    
+            flock($file, LOCK_UN);
             fclose($file);
         }
         

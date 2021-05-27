@@ -1,6 +1,8 @@
 <?php
     
     require_once "../private/csv.php";
+    require_once "../private/logsman.php";
+    
     
     $updated = false;
     if (isset($_POST["submit"])) {
@@ -11,6 +13,7 @@
                 ]
         ];
         
+        new_logs_entry("../private/logs.txt", "install.php | System installation: Admin credentials modified");
         write_csv("../private/database/admin.csv", $admin_credentials, true);
         $updated = true;
     }
@@ -34,7 +37,7 @@
 <body>
 <header>
   <nav>
-    <span id="nav-logo"><a href="mall/"><img class="nav-logo-sprite" alt="Yabe logo" src="media/vector/logo-light.svg"></a></span>
+    <span><a href="mall/"><img class="nav-logo-sprite" alt="Yabe logo" src="media/vector/logo-light.svg"></a></span>
   </nav>
 </header>
 
@@ -50,7 +53,8 @@
   <h1 class="text-align-center">INSTALL</h1>
   <section class="install-instructions">
     <p class="text-align-center">Please provide an administrative username and password for your system.</p>
-    <p class="text-align-center"><strong>IMPORTANT:</strong> Delete this file (/install.php) after submitting this form for the application to start working with your provided administrator credentials.</p>
+    <p class="text-align-center"><strong class="message-error">IMPORTANT:</strong> Delete this file (/install.php) after submitting this form for the application to start working with your provided administrator credentials.</p>
+    <p class="text-align-center"><strong class="message-error">IMPORTANT:</strong> After deleting this file, to access the Administrator's Dashboard, go to <a href="/admin"><?=$_SERVER["SERVER_NAME"] . "/admin";?></a> and enter your provided credentials.</p>
   </section>
   <section class="install-form-wrapper">
     <form class="form" action="install.php" method="post" target="_self" autocomplete="off">
