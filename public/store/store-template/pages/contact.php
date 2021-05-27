@@ -1,6 +1,13 @@
-<?php require_once("../../../../private/initialize.php"); ?>
+<?php
+	
+	require_once("../../../../private/initialize.php");
+	require_once(PRIVATE_PATH . "\dynamic-display.php");
+	
+?>
 
 <?php
+	
+	no_id_redirect();
 
     $page_title = "HSY Shop | Contact";
     $style_sheets = [

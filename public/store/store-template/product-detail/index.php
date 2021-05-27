@@ -1,4 +1,5 @@
 <?php
+	
     require_once("../../../../private/initialize.php");
     require_once(PRIVATE_PATH . "\csv.php");
     require_once(PRIVATE_PATH . "\dynamic-display.php");
@@ -6,6 +7,8 @@
 ?>
 
 <?php
+	
+	no_id_redirect();
     
     // get all stores, products, and categories data
     $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
