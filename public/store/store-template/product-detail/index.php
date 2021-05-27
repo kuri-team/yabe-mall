@@ -21,7 +21,7 @@
     $store_cat = get_item_info($specific_store["category_id"], $categories);
     
     
-    $page_title = $specific_product["name"];
+    $page_title = $specific_store["name"] . " | " . $specific_product["name"];
     $style_sheets = [
         "/css/common.css",
         "/css/cards.css",
