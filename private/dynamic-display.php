@@ -2,7 +2,10 @@
     
     
     /**
-     * Redirect the page to Mall Home if there is no id
+     * Redirect page to Mall Home if there is no GET id, or GET id is bigger
+     * than the number of items or smaller than 1
+     * @param $num_items
+     * the number of items
      */
     function no_id_redirect($num_items) {
         $min_item = 1;
