@@ -10,7 +10,11 @@
     
     no_id_redirect();
     
-    $page_title = "HSY Shop | By Category";
+	$stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
+	
+	$specific_store = get_item_data($stores);
+    
+    $page_title = $specific_store["name"] . " | By Category";
     $style_sheets = [
         "/css/common.css",
         "/css/cards.css",
