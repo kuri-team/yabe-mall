@@ -8,7 +8,7 @@
 
 <?php
 	
-	no_id_redirect();
+	  no_id_redirect();
     
     // get all stores, products, and categories data
     $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);

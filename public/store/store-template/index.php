@@ -9,7 +9,7 @@
 
 <?php
 	
-	no_id_redirect();
+	  no_id_redirect();
     
     // get all stores and products data
     $stores = read_csv("../../../private/database/stores.csv", true);

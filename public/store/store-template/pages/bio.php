@@ -7,7 +7,7 @@
 
 <?php
 	
-	no_id_redirect();
+	  no_id_redirect();
 
     $page_title = "HSY Shop | Bio";
     $style_sheets = [
