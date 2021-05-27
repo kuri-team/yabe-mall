@@ -2,6 +2,16 @@
     
     
     /**
+     * Redirect the page to Mall Home if there is no id
+     */
+    function no_id_redirect() {
+        if (!isset($_GET) || !isset($_GET["id"])) {
+            redirect_to(url_for("/mall"));
+        }
+    }
+    
+    
+    /**
      * Check if products are featured on the Mall Home page
      * @param array $products containing information of all products
      * @return array <strong><em>array</em></strong> containing information
