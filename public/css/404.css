@@ -1,0 +1,42 @@
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    margin: 70px 0 110px 400px;
+    height: 450px;
+    width: 700px;
+    position: relative;
+}
+
+.first-4 {
+    color: #eb5e28;
+    font-size: 11rem;
+    position:absolute;
+    left: 20%;
+    top: 8%;
+}
+
+.far {
+    position: absolute;
+    font-size: 8.5rem;
+    left: 42%;
+    top: 20%;
+    color: #eb5e28;
+}
+
+.second-4 {
+    color: #eb5e28;
+    font-size: 11rem;
+    position:absolute;
+    left: 68%;
+    top: 8%;
+}
+
+.message {
+    text-align: center;
+    font-size: 1.3rem;
+    position:absolute;
+    left: 16%;
+    top: 70%;
+    width: 75%;
+}
+
