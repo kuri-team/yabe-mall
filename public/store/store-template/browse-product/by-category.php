@@ -8,9 +8,9 @@
 
 <?php
     
-    no_id_redirect();
-    
     $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
+	
+	no_id_redirect(count($stores));
     
     $specific_store = get_item_data($stores);
     
