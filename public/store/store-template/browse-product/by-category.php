@@ -10,9 +10,9 @@
     
     no_id_redirect();
     
-	$stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
-	
-	$specific_store = get_item_data($stores);
+    $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
+    
+    $specific_store = get_item_data($stores);
     
     $page_title = $specific_store["name"] . " | By Category";
     $style_sheets = [

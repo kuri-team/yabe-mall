@@ -9,12 +9,12 @@
 <?php
     
     no_id_redirect();
-
-	$stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
-	
-	$specific_store = get_item_data($stores);
-	
-	$page_title = $specific_store["name"] . " | Bio";
+    
+    $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
+    
+    $specific_store = get_item_data($stores);
+    
+    $page_title = $specific_store["name"] . " | Bio";
     $style_sheets = [
         "/css/common.css",
         "/css/store/store.css",
