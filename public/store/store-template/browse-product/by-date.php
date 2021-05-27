@@ -3,17 +3,20 @@
     require_once("../../../../private/initialize.php");
     require_once("../../../../private/browse.php");
     require_once(PRIVATE_PATH . "\csv.php");
-	  require_once(PRIVATE_PATH . "\dynamic-display.php");
+    require_once(PRIVATE_PATH . "\dynamic-display.php");
 
 ?>
 
 <?php
     
-    no_id_redirect();
-    
+    // get all stores and products data
     $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
+    $products = read_csv(PRIVATE_PATH . "\database/products.csv", true);
+    
+	no_id_redirect(count($stores));
     
     $specific_store = get_item_data($stores);
+    
     
     $page_title = $specific_store["name"] . " | By Date";
     $style_sheets = [
@@ -27,12 +30,7 @@
         "/js/common.js",
         "/js/store/footer.js",
     ];
-
-    // get all stores and products data
-    $stores = read_csv("../../../../private/database/stores.csv", true);
-    $products = read_csv("../../../../private/database/products.csv", true);
-
-    $specific_store = get_item_data($stores);
+    
 
     // default browse option
     if (!isset($_GET["browse-option"])) {

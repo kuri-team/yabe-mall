@@ -4,8 +4,10 @@
     /**
      * Redirect the page to Mall Home if there is no id
      */
-    function no_id_redirect() {
-        if (!isset($_GET) || !isset($_GET["id"])) {
+    function no_id_redirect($num_items) {
+        $min_item = 1;
+        
+        if (!isset($_GET) || !isset($_GET["id"]) || $_GET["id"] > $num_items || $_GET["id"] < $min_item) {
             redirect_to(url_for("/mall"));
         }
     }
