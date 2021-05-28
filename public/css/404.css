@@ -8,7 +8,8 @@
 }
 
 .first-4 {
-    color: #eb5e28;
+    color: #000000;
+    font-weight: bolder;
     font-size: 11rem;
     position:absolute;
     left: 20%;
@@ -25,7 +26,8 @@
 }
 
 .second-4 {
-    color: #eb5e28;
+    color: #000000;
+    font-weight: bolder;
     font-size: 11rem;
     position:absolute;
     left: 68%;
@@ -58,6 +60,7 @@ a {
 @media only screen and (min-width: 768px) and (max-width: 1060px){
     .container {
         margin: auto;
+        width: auto;
     }
 }
 
