@@ -14,6 +14,13 @@
         
         private int $type;
         private array $data = [];
+    
+    
+        public static function merge(Database $database_1, Database $database_2): Database {
+            $result = clone $database_1;
+            $result->setAllEntries(array_merge($result->getAllEntries(), $database_2->getAllEntries()));
+            return $result;
+        }
         
         
         public function __construct(int $type) {
@@ -57,12 +64,6 @@
         }
         
         
-        public static function merge(Database $database_1, Database $database_2) {
-            $result = clone $database_1;
-            $result->setAllEntries(array_merge($result->getAllEntries(), $database_2->getAllEntries()));
-            return $result;
-        }
-        
         public function getEntryById(string $id) {
             foreach ($this->data as $entry) {
                 if ($entry->id === $id) {
@@ -76,7 +77,7 @@
             return $this->data;
         }
         
-        private function setAllEntries($data) {
+        public function setAllEntries($data) {
             $this->data = $data;
         }
     }

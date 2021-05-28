@@ -24,8 +24,16 @@
             }
             switch ($this->filter) {
                 case self::FILTER_ALL:
-                    $this->data = new Database(Database::STORE_DATABASE);
-                    $this->data = Database::merge($this->data, new Database(Database::PRODUCT_DATABASE));
+                    $this->data = new Database(Database::PRODUCT_DATABASE);
+                    $store_database = new Database(Database::STORE_DATABASE);
+                    
+                    $product_database_entries = $store_database->getAllEntries();
+                    foreach ($product_database_entries as $product_database_entry) {
+                        $product_database_entry->id = "store" . $product_database_entry->id;
+                    }
+                    $store_database->setAllEntries($product_database_entries);
+                    
+                    $this->data = Database::merge($this->data, $store_database);
                     break;
                 case self::FILTER_PRODUCTS:
                     $this->data = new Database(Database::PRODUCT_DATABASE);
