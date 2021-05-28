@@ -23,7 +23,7 @@ include(SHARED_PATH . "/top.php");
     <p class="thank-you-sentence">THANK YOU FOR SHOPPING AT YABE</p>
    </div>
     <div class="href-button">
-      <a href="<?=url_for("/mall/browse/by-product/featured.php");?>"><button class="href-button-continue">CONTINUE SHOPPING</button></a>
+      <a href="<?=url_for("/404");?>"><button class="href-button-continue">CONTINUE SHOPPING</button></a>
       <a href="<?=url_for("/mall");?>"><button class="href-button-home">HOME</button></a>
     </div>
  </div>

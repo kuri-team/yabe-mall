@@ -20,7 +20,7 @@ include(SHARED_PATH . "/top.php");
 <main id="content">
   <ul class=breadcrumb>
     <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
-    <li><a href="<?=url_for("/mall/browse/by-product");?>">Browse Products</a>/</li>
+    <li><a href="<?=url_for("/404");?>">Browse Products</a>/</li>
     <li><a href="<?=url_for("/mall/browse/by-product/by-date.php");?>">By Date</a></li>
   </ul>
 

@@ -73,7 +73,7 @@
         </section>
 
         <section class="mall-home-section" id="featured-products">
-            <h1>FEATURED PRODUCTS<span class="mall-home-section-heading-link"><a href="<?=url_for("/mall/browse/by-product/featured.php");?>">ALL</a></span></h1>
+            <h1>FEATURED PRODUCTS<span class="mall-home-section-heading-link"><a href="<?=url_for("/404");?>">ALL</a></span></h1>
 
             <div class="flex-container flex-justify-content-space-between flex-align-items-center flex-wrap">
                 <?php
@@ -102,7 +102,7 @@
         </section>
 
         <section class="mall-home-section" id="featured-stores">
-            <h1>FEATURED STORES<span class="mall-home-section-heading-link"><a href="<?=url_for("/mall/browse/by-store/featured.php");?>">ALL</a></span></h1>
+            <h1>FEATURED STORES<span class="mall-home-section-heading-link"><a href="<?=url_for("/404");?>">ALL</a></span></h1>
 
             <div class="flex-container flex-justify-content-space-between flex-align-items-center flex-wrap">
                 <?php
@@ -127,7 +127,7 @@
         </section>
 
         <section class="mall-home-section card-gallery">
-            <h1 class="card-gallery-title">NEW STORES<span class="mall-home-section-heading-link"><a href="<?=url_for("/mall/browse/by-store/by-date.php");?>">MORE</a></span></h1>
+            <h1 class="card-gallery-title">NEW STORES<span class="mall-home-section-heading-link"><a href="<?=url_for("/404");?>">MORE</a></span></h1>
 
             <button class="card-gallery-left-bttn"><i class="fas fa-angle-left"></i></button>
             <div class="card-gallery-content flex-container flex-justify-content-space-between flex-align-items-center overflow-hidden clear-both">
