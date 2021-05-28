@@ -23,7 +23,7 @@
             }
     
             usort($this->matches, function (DatabaseEntry $entry_1, DatabaseEntry $entry_2) {
-                return $entry_2->search_relevance - $entry_1->search_relevance;
+                return 0;
             });
         }
         

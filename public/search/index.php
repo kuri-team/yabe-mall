@@ -27,6 +27,10 @@
         $page_title .= " \"{$query}\"";
         $nav_search_query = $query;
         $nav_search_filter = $filter;
+        
+        echo "<pre>";
+        print_r($search);
+        echo "</pre>";
     }
     
     $no_result = false;
