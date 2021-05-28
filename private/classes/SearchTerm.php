@@ -22,8 +22,8 @@
                 }
             }
     
-            usort($this->matches, function (DatabaseEntry $entry_1, DatabaseEntry $entry_2) {
-                return 0;
+            usort($this->matches, function ($entry_1, $entry_2) {
+                return $entry_2->created_time - $entry_1->created_time;
             });
         }
         
