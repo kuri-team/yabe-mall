@@ -17,10 +17,10 @@
     <body>
     <div class="container">
         <div class="first-4">4</div>
-        <i class="far fas fa-circle-notch fa-spin"></i>
+        <img class="far" src="../media/image/yabe_cursor.gif" alt="YABE crying face">
         <div class="second-4">4</div>
-        <div class="message">Page might be moved or not existed due to Coronavirus Virus.
-            <p>Let's head back to <a href="../mall/index.php">Home</a> !</p>
+        <div class="message">SORRY PAGE NOT FOUND
+            <p>Don't cry. Let's discover more interesting things on <a class="happy-emoji" href="../mall/index.php">Home</a> !</p>
         </div>
     </div>
     </body>
