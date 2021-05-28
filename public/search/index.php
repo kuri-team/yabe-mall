@@ -49,7 +49,7 @@
       
       if ($no_result) {
           echo "<div class='search-section'>";
-          echo "<div class='message-warning'>No result. Please try a different keyword/keywords combination.</div>";
+          echo "<div class='message-warning mt-20'>No result. Please try a different keyword/keywords combination.</div>";
           echo "</div>";
       }
   
@@ -57,11 +57,11 @@
   
   <?php
     
-      if (
-          !$no_result &&
-          ($filter === Search::FILTER_ALL || $filter === Search::FILTER_PRODUCTS)
-      ) {
-          echo "<h2 class='search-section-title text-align-center'>\"" . strtoupper($query) . "\" PRODUCTS</h2>";
+      foreach ($search->results as $result) {
+          if (get_class($result) === "DatabaseProduct") {
+              echo "<h2 class='search-section-title text-align-center'>\"" . strtoupper($query) . "\" PRODUCTS</h2>";
+              break;
+          }
       }
       
   ?>
@@ -89,12 +89,12 @@
   </section>
     
     <?php
-        
-        if (
-            !$no_result &&
-            ($filter === Search::FILTER_ALL || preg_match("/" . Search::FILTER_STORES . ".*/", $filter))
-        ) {
-            echo "<h2 class='search-section-title text-align-center'>\"" . strtoupper($query) . "\" STORES</h2>";
+    
+        foreach ($search->results as $result) {
+            if (get_class($result) === "DatabaseStore") {
+                echo "<h2 class='search-section-title text-align-center'>\"" . strtoupper($query) . "\" STORES</h2>";
+                break;
+            }
         }
     
     ?>
