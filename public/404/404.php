@@ -17,7 +17,7 @@
     <body>
     <div class="container">
         <div class="first-4">4</div>
-        <img class="far" src="../media/image/yabe_cursor.gif" alt="YABE crying face">
+        <img class="yabe-crying-face" src="../media/image/yabe_cursor.gif" alt="YABE crying face">
         <div class="second-4">4</div>
         <div
             <h2 class="message">SORRY, PAGE NOT FOUND.</h2>
