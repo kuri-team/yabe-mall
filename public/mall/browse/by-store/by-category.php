@@ -21,7 +21,7 @@ include(SHARED_PATH . "/top.php");
 
     <ul class=breadcrumb>
       <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
-      <li><a href="<?=url_for("/mall/browse/by-store");?>">Browse Stores</a>/</li>
+      <li><a href="<?=url_for("/404/404.php");?>">Browse Stores</a>/</li>
       <li><a href="<?=url_for("/mall/browse/by-store/by-category.php");?>">By Category</a></li>
     </ul>
     
