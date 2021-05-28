@@ -152,6 +152,9 @@
       } else {
           $max_pages = $list_length / ($max_products);
       }
+      if ($max_pages < 1) {
+          $max_pages = 1;
+      }
       if ($_GET['page'] < 1 || $_GET['page'] > $max_pages) {
           header("Location: ?id={$_GET["id"]}&browse-option={$_GET["browse-option"]}&page=1");
       }
