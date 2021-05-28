@@ -34,11 +34,17 @@
 
 .message {
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     position:absolute;
     left: 16%;
     top: 70%;
     width: 75%;
+    font-weight: bolder;
+}
+
+p {
+    font-weight: initial;
+    font-size: initial;
 }
 
 /*change to smile pointer when hovering over a link*/
