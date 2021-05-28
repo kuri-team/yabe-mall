@@ -49,10 +49,10 @@
 
      function display_product_cards($product) {
          echo "<div class='product-card'>";
-         echo "<a href='" . url_for("/store/store-template/product-detail?id=" . $product["id"]) . "'>
+         echo "<a href='" . url_for("/store/content/product-detail?id=" . $product["id"]) . "'>
                 <img alt='image of a product' src='../../../media/image/placeholder_262x250.png'></a>";
          echo "<div class='product-card-details'>";
-         echo "<a class='product-card-title' href='" . url_for("/store/store-template/product-detail?id=" . $product["id"]) . "'>" . $product["name"] . "</a>";
+         echo "<a class='product-card-title' href='" . url_for("/store/content/product-detail?id=" . $product["id"]) . "'>" . $product["name"] . "</a>";
          echo "<p class='product-card-shop'>Short description</p>";
          echo "<p class='product-card-price'>&dollar;" . $product["price"] . "</p>";
          echo "<div class='product-card-sale-card'>" . substr($product["created_time"],0,10) . "</div>";
@@ -97,13 +97,14 @@
               function date_sort($product1, $product2) {
                   $date1 = strtotime($product1['created_time']);
                   $date2 = strtotime($product2['created_time']);
-                      if ($_GET["browse-option"] === "Newest") {
-                          return $date2 - $date1;
-                      }
-                      else if ($_GET["browse-option"] === "Oldest") {
-                          return $date1 - $date2;
-                      }
+                  if ($_GET["browse-option"] === "Newest") {
+                      return $date2 - $date1;
                   }
+                  else if ($_GET["browse-option"] === "Oldest") {
+                      return $date1 - $date2;
+                  }
+                  return null;
+              }
 
               usort($products_from_store, 'date_sort');
 

@@ -73,10 +73,10 @@
               foreach ($search->results as $result) {
                   if (get_class($result) === "DatabaseProduct") {
                       echo "<div class='product-card'>
-                              <a href='" . url_for("/store/store-template/product-detail?id={$result->id}") . "'><img alt='image of a product' src='" . url_for("media/image/placeholder_262x250.png") . "'></a>
+                              <a href='" . url_for("/store/content/product-detail?id={$result->id}") . "'><img alt='image of a product' src='" . url_for("media/image/placeholder_262x250.png") . "'></a>
                               <div class='product-card-details'>
-                                <a class='product-card-title' href='" . url_for("/store/store-template/product-detail?id={$result->id}") . "'>{$result->name}</a>
-                                <a class='product-card-shop' href='" . url_for("/store/store-template?id={$result->store->id}") . "'>{$result->store->name}</a>
+                                <a class='product-card-title' href='" . url_for("/store/content/product-detail?id={$result->id}") . "'>{$result->name}</a>
+                                <a class='product-card-shop' href='" . url_for("/store/content?id={$result->store->id}") . "'>{$result->store->name}</a>
                                 <p class='product-card-price'>\${$result->price}</p>
                                 <div class='product-card-sale-card'>" . date("Y-m-d", $result->created_time) . "</div>
                               </div>
@@ -106,8 +106,8 @@
                 foreach ($search->results as $result) {
                     if (get_class($result) === "DatabaseStore") {
                         echo "<div class='store-card'>
-                                <a href='" . url_for("/store/store-template") . "'><img class='store-card-thumbnail' alt='image representation of a shop' src='" . url_for("media/image/profile-placeholder_143x143.png") . "'></a>
-                                <a class='store-card-name' href='" . url_for("/store/store-template?id={$result->id}") . "'>{$result->name}</a>
+                                <a href='" . url_for("/store/content") . "'><img class='store-card-thumbnail' alt='image representation of a shop' src='" . url_for("media/image/profile-placeholder_143x143.png") . "'></a>
+                                <a class='store-card-name' href='" . url_for("/store/content?id={$result->id}") . "'>{$result->name}</a>
                                 <p class='search-store-category text-align-center'>In category: {$result->category->name}</p>
                               </div>";
                     }
