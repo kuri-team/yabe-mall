@@ -46,3 +46,34 @@ a {
     cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='50' height='60' viewport='0 0 100 100' style='fill:black;font-size:30px;'><text y='50%'>😊</text></svg>") 16 0,auto;
 }
 
+
+/* Responsive 404 page */
+@media only screen and (min-width: 768px) and (max-width: 1060px){
+    .container {
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .container {
+        width: 75%;
+        margin: auto;
+    }
+
+    .far {
+        margin: -70px -100px;
+    }
+
+    .first-4 {
+        display: none;
+    }
+
+    .second-4 {
+        display: none;
+    }
+
+    .message {
+        font-size: inherit;
+    }
+}
+

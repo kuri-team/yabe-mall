@@ -20,7 +20,7 @@
         <img class="far" src="../media/image/yabe_cursor.gif" alt="YABE crying face">
         <div class="second-4">4</div>
         <div class="message">SORRY PAGE NOT FOUND
-            <p>Don't cry. Let's discover more interesting things on <a class="happy-emoji" href="../mall/index.php">Home</a> !</p>
+            <p>Don't cry. Let's discover more interesting features on <a href="../mall/index.php">Home</a> !</p>
         </div>
     </div>
     </body>
