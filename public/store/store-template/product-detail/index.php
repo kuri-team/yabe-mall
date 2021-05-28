@@ -1,8 +1,8 @@
 <?php
 	
     require_once("../../../../private/initialize.php");
-    require_once(PRIVATE_PATH . "\csv.php");
-    require_once(PRIVATE_PATH . "\dynamic-display.php");
+    require_once("../../../../private/csv.php");
+    require_once("../../../../private/dynamic-display.php");
 
 ?>
 
@@ -12,8 +12,8 @@
     $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
     $products = read_csv(PRIVATE_PATH . "\database/products.csv", true);
     $categories = read_csv(PRIVATE_PATH . "\database/categories.csv", true);
-	
-	no_id_redirect(count($products));
+    
+    no_id_redirect(count($products));
     
     // get data of the current product and its store
     $specific_product = get_item_data($products);

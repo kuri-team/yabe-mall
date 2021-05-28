@@ -1,8 +1,8 @@
 <?php
-	
-	require_once("../../../../private/initialize.php");
-	require_once(PRIVATE_PATH . "\csv.php");
-	require_once(PRIVATE_PATH . "\dynamic-display.php");
+    
+    require_once("../../../../private/initialize.php");
+    require_once("../../../../private/csv.php");
+    require_once("../../../../private/dynamic-display.php");
 	
 ?>
 

@@ -12,8 +12,8 @@
     // get all stores and products data
     $stores = read_csv("../../../private/database/stores.csv", true);
     $products = read_csv("../../../private/database/products.csv", true);
-	
-	no_id_redirect(count($stores));
+    
+    no_id_redirect(count($stores));
 	
     $specific_store = get_item_data($stores);
     
