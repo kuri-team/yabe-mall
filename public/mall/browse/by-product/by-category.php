@@ -47,10 +47,10 @@ include(SHARED_PATH . "/top.php");
       <div class="flex-container flex-justify-content-space-evenly flex-wrap">
 
         <div class="product-card">
-          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../../../media/image/best_buy_shop/others/15_best_buy.jpg"></a>
+          <a href="<?=url_for("/store/content/product-detail");?>"><img alt="image of a product" src="../../../media/image/best_buy_shop/others/15_best_buy.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/content/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/content");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">30% Off</div>
@@ -58,10 +58,10 @@ include(SHARED_PATH . "/top.php");
         </div>
 
         <div class="product-card">
-          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../../../media/image/sephora_shop/makeup/5_sephora.jpg"></a>
+          <a href="<?=url_for("/store/content/product-detail");?>"><img alt="image of a product" src="../../../media/image/sephora_shop/makeup/5_sephora.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/content/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/content");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">30% Off</div>
@@ -69,10 +69,10 @@ include(SHARED_PATH . "/top.php");
         </div>
 
         <div class="product-card">
-          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../../../media/image/best_buy_shop/phone/8_best_buy.jpg"></a>
+          <a href="<?=url_for("/store/content/product-detail");?>"><img alt="image of a product" src="../../../media/image/best_buy_shop/phone/8_best_buy.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/content/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/content");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">30% Off</div>
@@ -80,10 +80,10 @@ include(SHARED_PATH . "/top.php");
         </div>
 
         <div class="product-card">
-          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../../../media/image/zappos_shop/heels/6_zappos.jpg"></a>
+          <a href="<?=url_for("/store/content/product-detail");?>"><img alt="image of a product" src="../../../media/image/zappos_shop/heels/6_zappos.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/content/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/content");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">30% Off</div>
@@ -91,10 +91,10 @@ include(SHARED_PATH . "/top.php");
         </div>
 
         <div class="product-card">
-          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../../../media/image/zappos_shop/sneakers/19_zappos.jpg"></a>
+          <a href="<?=url_for("/store/content/product-detail");?>"><img alt="image of a product" src="../../../media/image/zappos_shop/sneakers/19_zappos.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/content/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/content");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">30% Off</div>
@@ -102,10 +102,10 @@ include(SHARED_PATH . "/top.php");
         </div>
 
         <div class="product-card">
-          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../../../media/image/sephora_shop/sunscreen/14_sephora.jpg"></a>
+          <a href="<?=url_for("/store/content/product-detail");?>"><img alt="image of a product" src="../../../media/image/sephora_shop/sunscreen/14_sephora.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/content/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/content");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">30% Off</div>
@@ -113,10 +113,10 @@ include(SHARED_PATH . "/top.php");
         </div>
 
         <div class="product-card">
-          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../../../media/image/best_buy_shop/laptop/20_best_buy.jpg"></a>
+          <a href="<?=url_for("/store/content/product-detail");?>"><img alt="image of a product" src="../../../media/image/best_buy_shop/laptop/20_best_buy.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/content/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/content");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">30% Off</div>
@@ -124,10 +124,10 @@ include(SHARED_PATH . "/top.php");
         </div>
 
         <div class="product-card">
-          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../../../media/image/zappos_shop/heels/7_zappos.jpg"></a>
+          <a href="<?=url_for("/store/content/product-detail");?>"><img alt="image of a product" src="../../../media/image/zappos_shop/heels/7_zappos.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/content/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/content");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">30% Off</div>
@@ -135,10 +135,10 @@ include(SHARED_PATH . "/top.php");
         </div>
 
         <div class="product-card">
-          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../../../media/image/zappos_shop/sandals/10_zappos.jpg"></a>
+          <a href="<?=url_for("/store/content/product-detail");?>"><img alt="image of a product" src="../../../media/image/zappos_shop/sandals/10_zappos.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/content/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/content");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">30% Off</div>
@@ -146,10 +146,10 @@ include(SHARED_PATH . "/top.php");
         </div>
 
         <div class="product-card">
-          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../../../media/image/best_buy_shop/camera/10_best_buy.jpg"></a>
+          <a href="<?=url_for("/store/content/product-detail");?>"><img alt="image of a product" src="../../../media/image/best_buy_shop/camera/10_best_buy.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/content/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/content");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">30% Off</div>
@@ -157,10 +157,10 @@ include(SHARED_PATH . "/top.php");
         </div>
 
         <div class="product-card">
-          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../../../media/image/best_buy_shop/laptop/5_best_buy.jpg"></a>
+          <a href="<?=url_for("/store/content/product-detail");?>"><img alt="image of a product" src="../../../media/image/best_buy_shop/laptop/5_best_buy.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/content/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/content");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">30% Off</div>
@@ -168,10 +168,10 @@ include(SHARED_PATH . "/top.php");
         </div>
 
         <div class="product-card">
-          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product" src="../../../media/image/sephora_shop/body/6_sephora.jpg"></a>
+          <a href="<?=url_for("/store/content/product-detail");?>"><img alt="image of a product" src="../../../media/image/sephora_shop/body/6_sephora.jpg"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/content/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/content");?>">Shop Name Goes Here</a>
             <p class="product-card-price-crossed-out">$22.99</p>
             <p class="product-card-price">$16.95</p>
             <div class="product-card-sale-card">30% Off</div>

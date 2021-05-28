@@ -14,7 +14,7 @@
 <ul class="breadcrumb">
     <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
     <li><a href="<?=url_for("/mall/browse/?by-store=by-category");?>"><?=$store_cat["name"];?></a>/</li>
-    <li><a href="<?=url_for("/store/store-template?id=" . $store["id"]);?>"><?=$store["name"];?></a></li>
+    <li><a href="<?=url_for("/store/content?id=" . $store["id"]);?>"><?=$store["name"];?></a></li>
 </ul>
 
 <div class="content-body">
@@ -34,17 +34,17 @@
             et rerum quod blanditiis ducimus voluptatem adipisci!</p>
         
         <div class="store-nav">
-            <div class="store-nav-bttn"><a href="<?=url_for("/store/store-template?id=" . $store["id"]);?>">HOME</a></div>
+            <div class="store-nav-bttn"><a href="<?=url_for("/store/content?id=" . $store["id"]);?>">HOME</a></div>
             <div class="store-nav-bttn store-nav-dropdown">PRODUCTS
                 <i class="fas fa-caret-down store-nav-dropdown-icon"></i>
                 <div class="store-nav-dropdown-list">
-                    <a href="<?=url_for("/store/store-template/browse-product/by-category.php?id=" . $store["id"]);?>">CATEGORY</a>
+                    <a href="<?=url_for("/store/content/browse-product/by-category.php?id=" . $store["id"]);?>">CATEGORY</a>
                     <hr>
-                    <a href="<?=url_for("/store/store-template/browse-product/by-date.php?id=" . $store["id"]);?>">DATE</a>
+                    <a href="<?=url_for("/store/content/browse-product/by-date.php?id=" . $store["id"]);?>">DATE</a>
                 </div>
             </div>
-            <div class="store-nav-bttn"><a href="<?=url_for("/store/store-template/pages/contact.php?id=" . $store["id"]);?>">CONTACT</a></div>
-            <div class="store-nav-bttn"><a href="<?=url_for("/store/store-template/pages/bio.php?id=" . $store["id"]);?>">BIO</a></div>
+            <div class="store-nav-bttn"><a href="<?=url_for("/store/content/pages/contact.php?id=" . $store["id"]);?>">CONTACT</a></div>
+            <div class="store-nav-bttn"><a href="<?=url_for("/store/content/pages/bio.php?id=" . $store["id"]);?>">BIO</a></div>
             
             <div id="responsive-store-navbar">
                 <input type="checkbox" id="navbar-icon">
@@ -53,18 +53,18 @@
                     <i class="fas fa-caret-down"></i>
                 </div>
                 <ul class="responsive-store-navbar-content">
-                    <li><a href="<?=url_for("/store/store-template?id=" . $store["id"]);?>">Home</a></li>
+                    <li><a href="<?=url_for("/store/content?id=" . $store["id"]);?>">Home</a></li>
                     <li>
                         <input type="checkbox" id="nav-product-bttn">
                         <label for="nav-product-bttn">Products</label>
                         <i class="fas fa-caret-down"></i>
                         <ul class="responsive-store-navbar-content-dropdown">
-                            <li><a href="<?=url_for("/store/store-template/browse-product/by-category.php?id=" . $store["id"]);?>">Category</a></li>
-                            <li><a href="<?=url_for("/store/store-template/browse-product/by-date.php?id=" . $store["id"]);?>">Date</a></li>
+                            <li><a href="<?=url_for("/store/content/browse-product/by-category.php?id=" . $store["id"]);?>">Category</a></li>
+                            <li><a href="<?=url_for("/store/content/browse-product/by-date.php?id=" . $store["id"]);?>">Date</a></li>
                         </ul>
                     </li>
-                    <li><a href="<?=url_for("/store/store-template/pages/contact.php?id=" . $store["id"]);?>">Contact</a></li>
-                    <li><a href="<?=url_for("/store/store-template/pages/bio.php?id=" . $store["id"]);?>">Bio</a></li>
+                    <li><a href="<?=url_for("/store/content/pages/contact.php?id=" . $store["id"]);?>">Contact</a></li>
+                    <li><a href="<?=url_for("/store/content/pages/bio.php?id=" . $store["id"]);?>">Bio</a></li>
                 </ul>
             </div>
         </div>

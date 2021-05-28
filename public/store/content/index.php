@@ -13,6 +13,8 @@
     $stores = read_csv("../../../private/database/stores.csv", true);
     $products = read_csv("../../../private/database/products.csv", true);
     
+    no_id_redirect(count($stores));
+	
     $specific_store = get_item_data($stores);
     
     
@@ -36,10 +38,10 @@
      */
     function display_product_cards($product) {
         echo "<div class='product-card'>";
-        echo "<a href='" . url_for("/store/store-template/product-detail?id=" . $product["id"]) . "'>
+        echo "<a href='" . url_for("/store/content/product-detail?id=" . $product["id"]) . "'>
                 <img alt='image of a product' src='../../media/image/placeholder_262x250.png'></a>";
         echo "<div class='product-card-details'>";
-        echo "<a class='product-card-title' href='" . url_for("/store/store-template/product-detail?id=" . $product["id"]) . "'>" . $product["name"] . "</a>";
+        echo "<a class='product-card-title' href='" . url_for("/store/content/product-detail?id=" . $product["id"]) . "'>" . $product["name"] . "</a>";
         echo "<p class='product-card-shop'>Short description</p>";
         echo "<p class='product-card-price'>&dollar;" . $product["price"] . "</p>";
         echo "<div class='product-card-sale-card'>" . substr($product["created_time"],0,10) . "</div>";
@@ -70,7 +72,7 @@
         <section class="store-home-content-new mb-80">
           <div class="store-home-content-header text-align-center">
             <h1 class="mr-10">NEW PRODUCTS</h1>
-            <a href="<?=url_for("/store/store-template/browse-product/by-date.php");?>">VIEW MORE</a>
+            <a href="<?=url_for("/store/content/browse-product/by-date.php");?>">VIEW MORE</a>
           </div>
 
           <section class="store-product-cards">
