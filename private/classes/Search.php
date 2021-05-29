@@ -4,6 +4,7 @@
         public const FILTER_ALL = "All";
         public const FILTER_PRODUCTS = "Products";
         public const FILTER_STORES = "Stores";
+        public const PREG_SPLIT_PATTERN = "/[\s\"',]+/";
         
         public string $query;
         public string $filter;
@@ -15,7 +16,7 @@
         
         public function __construct(string $query, string $filter=self::FILTER_ALL) {
             $this->query = $query;
-            $search_terms = preg_split("/[\s,]+/", $this->query);
+            $search_terms = preg_split(self::PREG_SPLIT_PATTERN, $this->query);
             
             if ($filter === "Filter") {
                 $this->filter = self::FILTER_ALL;
@@ -24,8 +25,16 @@
             }
             switch ($this->filter) {
                 case self::FILTER_ALL:
-                    $this->data = new Database(Database::STORE_DATABASE);
-                    $this->data = Database::merge($this->data, new Database(Database::PRODUCT_DATABASE));
+                    $this->data = new Database(Database::PRODUCT_DATABASE);
+                    $store_database = new Database(Database::STORE_DATABASE);
+                    
+                    $product_database_entries = $store_database->getAllEntries();
+                    foreach ($product_database_entries as $product_database_entry) {
+                        $product_database_entry->id = "store" . $product_database_entry->id;
+                    }
+                    $store_database->setAllEntries($product_database_entries);
+                    
+                    $this->data = Database::merge($this->data, $store_database);
                     break;
                 case self::FILTER_PRODUCTS:
                     $this->data = new Database(Database::PRODUCT_DATABASE);
@@ -65,9 +74,5 @@
                     }
                 }
             }
-            
-            usort($this->results, function (DatabaseEntry $entry_1, DatabaseEntry $entry_2) {
-                return $entry_2->search_relevance - $entry_1->search_relevance;
-            });
         }
     }
