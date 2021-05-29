@@ -11,7 +11,7 @@
         $min_item = 1;
         
         if (!isset($_GET) || !isset($_GET["id"]) || $_GET["id"] > $num_items || $_GET["id"] < $min_item) {
-            redirect_to(url_for("/mall"));
+            redirect_to(url_for("/404"));
         }
     }
     
