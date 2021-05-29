@@ -1,8 +1,6 @@
 <?php
     
     class SearchTerm {
-        public const LEVENSHTEIN_MATCH_THRESHOLD = 2;
-        
         private string $content;
         private array $matches = [];
         
@@ -17,7 +15,7 @@
         
         public function generateMatches(Database $search_data) {
             foreach ($search_data->getAllEntries() as $entry) {
-                if ($entry->isSearchTermMatch($this->content, self::LEVENSHTEIN_MATCH_THRESHOLD)) {
+                if ($entry->isSearchTermMatch($this->content, strlen($this->content))) {
                     $this->matches[] = $entry;
                 }
             }
