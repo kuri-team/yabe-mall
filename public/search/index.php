@@ -77,7 +77,7 @@
                               <div class='product-card-details'>
                                 <a class='product-card-title' href='" . url_for("/store/content/product-detail?id={$result->id}") . "'>{$result->name}</a>
                                 <a class='product-card-shop' href='" . url_for("/store/content?id={$result->store->id}") . "'>{$result->store->name}</a>
-                                <p class='product-card-price'>\${$result->price}</p>
+                                <p class='product-card-price'>$" . number_format($result->price, 2, ".", "") . "</p>
                                 <div class='product-card-sale-card'>" . date("Y-m-d", $result->created_time) . "</div>
                               </div>
                             </div>";
