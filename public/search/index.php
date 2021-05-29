@@ -18,7 +18,7 @@
     $filter = "";
     $search = null;
     if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET["q"]) && isset($_GET["filter"])) {
-        $query = $_GET["q"];
+        $query = trim($_GET["q"]);
         $filter = $_GET["filter"];
         if ($filter === "Filter") {
             $filter = "All";
