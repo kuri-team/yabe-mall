@@ -3,7 +3,7 @@
     class DatabaseProduct extends DatabaseEntry {
         private static int $count = 0;
         
-        public int $price;
+        public float $price;
         public int $created_time;  // MUST be an Unix timestamp (number of seconds since the Unix Epoch - January 1 1970 00:00:00 GMT)
         public DatabaseStore $store;
         public bool $featured_in_mall;
@@ -13,7 +13,7 @@
         public function __construct(
             string $id,
             string $name,
-            int $price,
+            float $price,
             DatabaseStore $store,
             int $created_time=null,
             bool $featured_in_mall=false,
