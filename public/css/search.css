@@ -10,3 +10,19 @@
 .search-store-category {
     padding: 0 20px;
 }
+
+.store-card h2 {
+    font-size: larger;
+    padding: 10px 30px 20px 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.store-card p {
+    font-size: smaller;
+    padding: 0 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

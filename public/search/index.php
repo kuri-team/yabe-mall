@@ -5,8 +5,8 @@
     $page_title = "Yabe | Search";
     $style_sheets = [
         "/css/common.css",
-        "/css/search.css",
         "/css/cards.css",
+        "/css/search.css",
     ];
     $scripts = [
         "/js/common.js",
@@ -107,8 +107,8 @@
                     if (get_class($result) === "DatabaseStore") {
                         echo "<div class='store-card'>
                                 <a href='" . url_for("/store/content") . "'><img class='store-card-thumbnail' alt='image representation of a shop' src='" . url_for("media/image/profile-placeholder_143x143.png") . "'></a>
-                                <a class='store-card-name' href='" . url_for("/store/content?id={$result->id}") . "'>{$result->name}</a>
-                                <p class='search-store-category text-align-center'>In category: {$result->category->name}</p>
+                                <a class='store-card-name' href='" . url_for("/store/content?id={$result->id}") . "'><h2>{$result->name}</h2></a>
+                                <p class='search-store-category text-align-center'><strong>Category</strong><br>{$result->category->name}</p>
                               </div>";
                     }
                 }
