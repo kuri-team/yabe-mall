@@ -1,7 +1,7 @@
 <?php
     
     class SearchTerm {
-        public const LEVENSHTEIN_MATCH_THRESHOLD = 1;
+        public const LEVENSHTEIN_MATCH_THRESHOLD = 2;
         
         private string $content;
         private array $matches = [];

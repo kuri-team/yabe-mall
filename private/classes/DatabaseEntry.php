@@ -12,7 +12,7 @@
         
         
         public function isSearchTermMatch(string $search_term, int $levenshtein_match_threshold=0): bool {
-            $name_elements = preg_split("/[\s,]+/", $this->name);
+            $name_elements = preg_split(Search::PREG_SPLIT_PATTERN, $this->name);
             foreach ($name_elements as $name_element) {
                 if (levenshtein(strtoupper($name_element), strtoupper($search_term)) <= $levenshtein_match_threshold) {
                     return true;

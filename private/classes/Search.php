@@ -4,6 +4,7 @@
         public const FILTER_ALL = "All";
         public const FILTER_PRODUCTS = "Products";
         public const FILTER_STORES = "Stores";
+        public const PREG_SPLIT_PATTERN = "/[\s\"',]+/";
         
         public string $query;
         public string $filter;
@@ -15,7 +16,7 @@
         
         public function __construct(string $query, string $filter=self::FILTER_ALL) {
             $this->query = $query;
-            $search_terms = preg_split("/[\s,]+/", $this->query);
+            $search_terms = preg_split(self::PREG_SPLIT_PATTERN, $this->query);
             
             if ($filter === "Filter") {
                 $this->filter = self::FILTER_ALL;
