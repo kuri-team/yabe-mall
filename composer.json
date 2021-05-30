@@ -1,6 +1,6 @@
 {
     "name": "kuri-team/yabe-mall",
-    "description": "RMIT University Vietnam - COSC2430 Web Programming - Student Project - Fullstack web application",
+    "description": "RMIT University Vietnam - COSC2430 Web Programming - Student Project - Fullstack web application using vanilla PHP, HTML/CSS, and Javascript",
     "minimum-stability": "stable",
     "license": "MIT",
     "authors": [

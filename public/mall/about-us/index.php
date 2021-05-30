@@ -64,6 +64,14 @@
         <section id="about-us-content-bio">
           <?php include(SHARED_PATH . "/about-us-bio.php"); ?>
         </section>
+        
+        <div class="about-us-video flex-container flex-justify-content-center">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/eyqTy56Vx4Y" title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+        </div>
+        
         <p><strong>The Yabe online mall e-commerce website is our latest study project. It involves the following Kuri members:</strong></p>
       </div>
     </div>
