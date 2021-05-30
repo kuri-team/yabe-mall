@@ -27,12 +27,6 @@
         echo "<noscript>Please enable Javascript for this feature to work</noscript>";
     }
     
-    function display_headers(string $url): void {
-        echo "<pre>";
-        print_r(get_headers($url, 1));
-        echo "</pre>";
-    }
-    
     function display_errors($errors=array()): string {
         $output = "";
         if(!empty($errors)) {
