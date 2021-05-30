@@ -46,6 +46,8 @@
     spl_autoload_register("yabe_autoload");
     require_once("functions.php");
     
+    display_headers($_SERVER["REQUEST_URI"]);
+    
     $errors = [];
     
     // install.php logic
