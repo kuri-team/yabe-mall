@@ -1,1 +1,2 @@
-ErrorDocument 404 /404
+RewriteEngine on
+ErrorDocument 404 /404/
