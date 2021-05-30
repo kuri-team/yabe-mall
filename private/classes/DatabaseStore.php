@@ -22,14 +22,12 @@
         }
     
         public function isSearchTermMatch(string $search_term, int $levenshtein_match_threshold=0): bool {
-            $name_elements = preg_split("/[\s,]+/", $this->name);
+            $name_elements = preg_split(Search::PREG_SPLIT_PATTERN, $this->name);
             foreach ($name_elements as $name_element) {
-                if (levenshtein(strtoupper($name_element), strtoupper($search_term), 1, 10, 100) <= $levenshtein_match_threshold) {
-                    $this->search_relevance -= $this->category->search_relevance * 2;
+                if (levenshtein(strtoupper($name_element), strtoupper($search_term), 3, 3, 3) <= $levenshtein_match_threshold) {
                     return true;
                 }
             }
-            $this->search_relevance += $this->category->search_relevance;
             return $this->category->isSearchTermMatch($search_term, $levenshtein_match_threshold);
         }
     }

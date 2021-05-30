@@ -10,7 +10,7 @@
 ?>
 
 <section class="store-footer flex-container flex-justify-content-center flex-align-items-center flex-wrap">
-    <div class="store-logo"><a href="<?=url_for("/store/store-template?id=" . $store["id"]);?>">
+    <div class="store-logo"><a href="<?=url_for("/store/content?id=" . $store["id"]);?>">
             <img class="circle-img" src="<?=url_for("/media/image/profile-placeholder_143x143.png");?>" alt="Store logo"></a>
     </div>
     <div class="store-footer-bttn"><a href="<?=url_for("/mall/legal/copyright");?>">Copyright</a></div>

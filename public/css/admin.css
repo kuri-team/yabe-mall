@@ -48,19 +48,19 @@ form input[type="submit"]:active {
 
 
 /* Database manager styles */
-.dtbm-table-title {
+.admin-content-section-title {
     margin: 50px 0 0 0;
     scroll-margin-top: 120px;
 }
 
-.dtbm-table-title .toggle-visibility {
+.admin-content-section-title .toggle-visibility {
     color: #eb5e28;
     margin-left: 25px;
     margin-right: 20px;
     font-size: 0.8em;
 }
 
-.dtbm-table-title .toggle-visibility:hover {
+.admin-content-section-title .toggle-visibility:hover {
     cursor: pointer;
 }
 

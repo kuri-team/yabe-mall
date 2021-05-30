@@ -50,7 +50,7 @@
       </ul>
     </aside>
 
-    <section class="content-child admin-content">
+    <section class="content-child admin-content overflow-hidden">
       <noscript>Please enable Javascript for this feature to work properly.</noscript>
       <article>
         <h2>Table of Contents</h2>
@@ -69,7 +69,7 @@
         <?php
         
             foreach ($database_names as $database_name) {
-                echo "<h2 id='" . $database_name . "' class='dtbm-table-title'>" . $database_name . "<i class='fas fa-low-vision toggle-visibility'></i><a href='#'><i class='fas fa-angle-up ml-10'></i></a></h2>";
+                echo "<h2 id='" . $database_name . "' class='admin-content-section-title'>" . $database_name . "<i class='fas fa-low-vision toggle-visibility'></i><a href='#'><i class='fas fa-angle-up ml-10'></i></a></h2>";
                 $database = read_csv("../../private/database/" . $database_name, true);
                 if (count($database) === 0) {
                     $database = read_csv("../../private/database/" . $database_name);

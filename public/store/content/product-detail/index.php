@@ -1,7 +1,8 @@
 <?php
+	
     require_once("../../../../private/initialize.php");
-    require_once(PRIVATE_PATH . "\csv.php");
-    require_once(PRIVATE_PATH . "\dynamic-display.php");
+    require_once("../../../../private/csv.php");
+    require_once("../../../../private/dynamic-display.php");
 
 ?>
 
@@ -12,13 +13,15 @@
     $products = read_csv(PRIVATE_PATH . "\database/products.csv", true);
     $categories = read_csv(PRIVATE_PATH . "\database/categories.csv", true);
     
+    no_id_redirect(count($products));
+    
     // get data of the current product and its store
     $specific_product = get_item_data($products);
     $specific_store = get_item_info($specific_product["store_id"], $stores);
     $store_cat = get_item_info($specific_store["category_id"], $categories);
     
     
-    $page_title = $specific_product["name"];
+    $page_title = $specific_store["name"] . " | " . $specific_product["name"];
     $style_sheets = [
         "/css/common.css",
         "/css/cards.css",
@@ -38,8 +41,8 @@
     <ul class="breadcrumb">
       <li><a href="<?=url_for("/mall");?>">Home</a>/</li>
       <li><a href="<?=url_for("/mall/browse/?by-store=by-category");?>"><?=$store_cat["name"]; ?></a>/</li>
-      <li><a href="<?=url_for("/store/store-template?id=" . $specific_product["store_id"]);?>" id="store-name"><?=$specific_store["name"]; ?></a>/</li>
-      <li><a href="<?=url_for("/store/store-template/product-detail?id=" . $specific_product["id"]);?>"><?=$specific_product["name"]; ?></a></li>
+      <li><a href="<?=url_for("/store/content?id=" . $specific_product["store_id"]);?>" id="store-name"><?=$specific_store["name"]; ?></a>/</li>
+      <li><a href="<?=url_for("/store/content/product-detail?id=" . $specific_product["id"]);?>"><?=$specific_product["name"]; ?></a></li>
     </ul>
 
     <section id="product-info" class="content-body flex-container">
@@ -114,66 +117,66 @@
       <button class="card-gallery-left-bttn"><i class="fas fa-angle-left"></i></button>
       <div class="card-gallery-content flex-container flex-justify-content-space-between flex-align-items-center overflow-hidden clear-both">
         <div class="product-card">
-          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
+          <a href="<?=url_for("/store/content/product-detail");?>"><img alt="image of a product"
              src="../../../media/image/placeholder_262x250.png"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/content/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/content");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$12.99</p>
             <div class="product-card-sale-card">2016-04-01</div>
           </div>
         </div>
 
         <div class="product-card">
-          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
+          <a href="<?=url_for("/store/content/product-detail");?>"><img alt="image of a product"
             src="../../../media/image/placeholder_262x250.png"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/content/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/content");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$6.50</p>
             <div class="product-card-sale-card">2012-12-20</div>
           </div>
         </div>
 
         <div class="product-card">
-          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
+          <a href="<?=url_for("/store/content/product-detail");?>"><img alt="image of a product"
             src="../../../media/image/placeholder_262x250.png"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/content/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/content");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$7.30</p>
             <div class="product-card-sale-card">2019-02-14</div>
           </div>
         </div>
 
         <div class="product-card">
-          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
+          <a href="<?=url_for("/store/content/product-detail");?>"><img alt="image of a product"
             src="../../../media/image/placeholder_262x250.png"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/content/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/content");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$12.99</p>
             <div class="product-card-sale-card">2016-02-15</div>
           </div>
         </div>
 
         <div class="product-card">
-          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
+          <a href="<?=url_for("/store/content/product-detail");?>"><img alt="image of a product"
             src="../../../media/image/placeholder_262x250.png"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/content/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/content");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$12.99</p>
             <div class="product-card-sale-card">2018-08-03</div>
           </div>
         </div>
 
         <div class="product-card">
-          <a href="<?=url_for("/store/store-template/product-detail");?>"><img alt="image of a product"
+          <a href="<?=url_for("/store/content/product-detail");?>"><img alt="image of a product"
             src="../../../media/image/placeholder_262x250.png"></a>
           <div class="product-card-details">
-            <a class="product-card-title" href="<?=url_for("/store/store-template/product-detail");?>">Product Title Goes Here</a>
-            <a class="product-card-shop" href="<?=url_for("/store/store-template");?>">Shop Name Goes Here</a>
+            <a class="product-card-title" href="<?=url_for("/store/content/product-detail");?>">Product Title Goes Here</a>
+            <a class="product-card-shop" href="<?=url_for("/store/content");?>">Shop Name Goes Here</a>
             <p class="product-card-price">$12.99</p>
             <div class="product-card-sale-card">2020-10-13</div>
           </div>

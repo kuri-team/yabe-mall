@@ -43,9 +43,9 @@
 
     <section class="content-child admin-content">
       <article>
-        <p>Welcome to Yabe CMS Administrator's Dashboard.</p>
+        <p>Welcome to Yabe&copy; CMS Administrator's Dashboard.</p>
         <noscript><strong>Please enable Javascript for this system to function properly.</strong></noscript>
-        <p class="text-align-justify">CMS stands for Content Management System. You can use the administrative tools provided here to modify website database, configure website settings, add/remove account manually, and more advanced operations... If you're new to CMS systems, please refer to the <a href="<?=url_for("/admin/manual.php");?>">Administrator's Manual</a> to learn how to operate Yabe CMS.</p>
+        <p class="text-align-justify">CMS stands for Content Management System. You can use the administrative tools provided here to modify website database, access website settings, add/remove account manually, and more advanced operations... If you're new to CMS systems, please refer to the <a href="<?=url_for("/admin/manual.php");?>">Administrator's Manual</a> to learn how to operate this CMS.</p>
       </article>
       
       <article>

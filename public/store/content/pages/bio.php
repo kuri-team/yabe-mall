@@ -1,8 +1,20 @@
-<?php require_once("../../../../private/initialize.php"); ?>
+<?php
+    
+    require_once("../../../../private/initialize.php");
+    require_once("../../../../private/csv.php");
+    require_once("../../../../private/dynamic-display.php");
+	
+?>
 
 <?php
-
-    $page_title = "HSY Shop | Bio";
+    
+    $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
+    
+    no_id_redirect(count($stores));
+    
+    $specific_store = get_item_data($stores);
+    
+    $page_title = $specific_store["name"] . " | Bio";
     $style_sheets = [
         "/css/common.css",
         "/css/store/store.css",

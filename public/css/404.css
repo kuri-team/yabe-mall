@@ -1,0 +1,78 @@
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    margin: 70px auto;
+    width: 700px;
+}
+
+.first-4 {
+    color: #000000;
+    font-weight: bolder;
+    font-size: 11rem;
+}
+
+.yabe-crying-face {
+    font-size: 8.5rem;
+    color: #eb5e28;
+}
+
+.second-4 {
+    color: #000000;
+    font-weight: bolder;
+    font-size: 11rem;
+}
+
+.message {
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+p {
+    font-weight: initial;
+    font-size: initial;
+}
+
+/*change to smile pointer when hovering over a link*/
+a:hover {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='30' height='33' viewport='0 0 100 100' style='fill:black;font-size:18px;'><text y='50%'>😊</text></svg>") 8 0, auto;
+}
+
+
+/* Responsive 404 page */
+@media only screen and (min-width: 768px) and (max-width: 1060px){
+    .container {
+        margin: 0;
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .container {
+        margin: 0;
+        padding: 50px 0;
+        width: 100%;
+        height: auto;
+    }
+
+    .yabe-crying-face {
+        width: 50%;
+    }
+
+    .first-4 {
+        display: none;
+    }
+
+    .second-4 {
+        display: none;
+    }
+
+    .message {
+        font-size: 1.5rem;
+    }
+
+    .message,
+    p {
+        padding: 0 50px;
+    }
+}
+
