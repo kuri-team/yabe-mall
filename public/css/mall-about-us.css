@@ -60,6 +60,10 @@ main div {
     width: 100%;
 }
 
+.about-us-video {
+    margin: 0;
+}
+
 #about-us-members {
     padding: 50px 0 200px 0;
 }
@@ -74,6 +78,13 @@ main div {
 
 
 /* Responsive About Us */
+@media only screen and (min-width: 1290px) {
+    .about-us-video iframe {
+        width: 900px;
+        height: 506px;
+    }
+}
+
 @media only screen and (max-width: 1290px) {
     .flip-card, .about-us-member {
         width: 250px;
@@ -109,5 +120,10 @@ main div {
         width: 70%;
         font-size: smaller;
         padding: 5px;
+    }
+
+    .about-us-video iframe {
+        width: 300px;
+        height: 168px;
     }
 }
