@@ -97,8 +97,7 @@ setTimeout(function () {
 ACCEPT_BUTTON.addEventListener("click", function () {
     let date = new Date();  // Get current time
     date.setTime(date.getTime() + 1000*60*60*24*30);  // Set time to 30 days from current time
-    document.cookie = `yabe-cookie=accepted; Expires=${date.toUTCString()}; Path=/; SameSite=Lax`;  // cookie exists for 30 days
-    // document.cookie = `yabe-cookie=accepted; Expires=${date.toUTCString()}; Path=/; SameSite=None; Secure`;  // For HTTPS enabled deployments only
+    document.cookie = `yabe-cookie=accepted; Expires=${date.toUTCString()}; Path=/; SameSite=None; Secure`;  // cookie exists for 30 days
     COOKIE_CONSENT.classList.remove("active");
 });
 
