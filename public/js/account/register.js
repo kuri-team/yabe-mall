@@ -128,7 +128,7 @@ function Validator(object) {
     }
 
     // get element from forms that requires validation
-    let formInput = document.querySelector(object.form);
+    let formInput = document.querySelector(object.formGroupSelector);
     if (formInput) {
         // Register form
         formInput.onsubmit = function () {
