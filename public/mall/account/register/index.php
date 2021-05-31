@@ -18,7 +18,7 @@
     $scripts = [
         "/js/common.js",
         "/js/account/common.js",
-//        "/js/account/register.js",
+        "/js/account/register.js",
     ];
     
     
