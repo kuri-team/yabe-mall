@@ -34,37 +34,39 @@
         
         if (is_csv($path)) {
             $file = fopen($path, "r");
-            flock($file, LOCK_SH);
-            
-            if (!$first_line_header) {
-                
-                // $first_line_header = false
-                while (!feof($file)) {
-                    $line = fgetcsv($file);
-                    if (!empty($line)) {
-                        $data[] = $line;
-                    }
-                }
-                
-            } else {
+            if ($file !== false) {
+                flock($file, LOCK_SH);
     
-                // $first_line_header = true
-                $header_line = fgetcsv($file);
-                while (!feof($file)) {
-                    $line = fgetcsv($file);
-                    if (!empty($line)) {
-                        $data_fields = [];
-                        for ($index = 0; $index < count($header_line); $index++) {
-                            $data_fields[$header_line[$index]] = $line[$index];
+                if (!$first_line_header) {
+        
+                    // $first_line_header = false
+                    while (!feof($file)) {
+                        $line = fgetcsv($file);
+                        if (!empty($line)) {
+                            $data[] = $line;
                         }
-                        $data[] = $data_fields;
                     }
+        
+                } else {
+        
+                    // $first_line_header = true
+                    $header_line = fgetcsv($file);
+                    while (!feof($file)) {
+                        $line = fgetcsv($file);
+                        if (!empty($line)) {
+                            $data_fields = [];
+                            for ($index = 0; $index < count($header_line); $index++) {
+                                $data_fields[$header_line[$index]] = $line[$index];
+                            }
+                            $data[] = $data_fields;
+                        }
+                    }
+        
                 }
-                
-            }
     
-            flock($file, LOCK_UN);
-            fclose($file);
+                flock($file, LOCK_UN);
+                fclose($file);
+            }
         }
         
         return $data;
@@ -126,33 +128,35 @@
     function write_csv(string $path, array $data, bool $first_line_header=false): bool {
         if (is_csv($path)) {
             $file = fopen($path, "w");
-            flock($file, LOCK_EX);
+            if ($file !== false) {
+                flock($file, LOCK_EX);
     
-            if (!$first_line_header) {
+                if (!$first_line_header) {
         
-                // $first_line_header = false
-                foreach ($data as $fields) {
-                    fputcsv($file, $fields);
-                }
+                    // $first_line_header = false
+                    foreach ($data as $fields) {
+                        fputcsv($file, $fields);
+                    }
         
-            } else {
-                
-                // $first_line_header = true
-                $header_line = [];
-                foreach ($data[0] as $header => $field) {
-                    $header_line[] = $header;
+                } else {
+        
+                    // $first_line_header = true
+                    $header_line = [];
+                    foreach ($data[0] as $header => $field) {
+                        $header_line[] = $header;
+                    }
+        
+                    fputcsv($file, $header_line);
+                    foreach ($data as $fields) {
+                        fputcsv($file, $fields);
+                    }
+        
                 }
     
-                fputcsv($file, $header_line);
-                foreach ($data as $fields) {
-                    fputcsv($file, $fields);
-                }
-        
+                flock($file, LOCK_UN);
+                fclose($file);
+                return true;
             }
-            
-            flock($file, LOCK_UN);
-            fclose($file);
-            return true;
         }
         
         return false;

@@ -26,7 +26,7 @@
         $featured_mall_products = [];
         
         foreach ($products as $product) {
-            if ($product['featured_in_mall'] === "TRUE") {
+            if ($product["featured_in_mall"] === "TRUE") {
                 $featured_mall_products[] = $product;
             }
         }
@@ -44,7 +44,7 @@
         $featured_mall_stores = [];
         
         foreach ($stores as $store) {
-            if ($store['featured'] === "TRUE") {
+            if ($store["featured"] === "TRUE") {
                 $featured_mall_stores[] = $store;
             }
         }
@@ -62,7 +62,7 @@
         $featured_store_products = [];
         
         foreach ($products as $product) {
-            if ($product['featured_in_store'] === "TRUE") {
+            if ($product["featured_in_store"] === "TRUE") {
                 $featured_store_products[] = $product;
             }
         }

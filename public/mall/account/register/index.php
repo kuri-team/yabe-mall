@@ -182,7 +182,7 @@
       </div>
     </div>
 
-    <form id="register-form" class="register-form" action="<?=url_for("mall/account/register" . $piped_query);?>" method="post" target="_self" enctype="multipart/form-data">
+    <form id="register-form" class="register-form" action="<?=url_for("mall/account/register/index.php" . $piped_query);?>" method="post" target="_self" enctype="multipart/form-data">
       <div id="register-avatar-upload-field" class="register-field flex-container flex-align-items-center flex-justify-content-center">
         <div class="register-item no-border register-item-photo-upload flex-container animated">
           <label><input id="avatar" name="avatar" type="file" accept=".png,.jpg,.jpeg,image/bmp,image/jpeg,image/png"></label> <span>Please upload an 1:1 image</span>
