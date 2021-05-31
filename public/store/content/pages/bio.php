@@ -8,7 +8,7 @@
 
 <?php
     
-    $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
+    $stores = read_csv(PRIVATE_PATH . "/database/stores.csv", true);
     
     no_id_redirect(count($stores));
     

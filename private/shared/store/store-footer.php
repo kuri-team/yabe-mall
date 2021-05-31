@@ -3,7 +3,7 @@
     require_once(PRIVATE_PATH . "\csv.php");
     require_once(PRIVATE_PATH . "\dynamic-display.php");
     
-    $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
+    $stores = read_csv(PRIVATE_PATH . "/database/stores.csv", true);
     
     $store = get_item_data($stores);
     
