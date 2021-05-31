@@ -41,6 +41,7 @@
     $unique_registration_info = true;  // User submission unique validity flag
     if (isset($_POST["register"])) {
         // get all user input
+        echo "Form submitted";
         $fname = validate_form($_POST["fname"]);
         $lname = validate_form($_POST["lname"]);
         $gender = $_POST["gender"];
