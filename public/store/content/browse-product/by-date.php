@@ -10,8 +10,8 @@
 <?php
     
     // get all stores and products data
-    $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
-    $products = read_csv(PRIVATE_PATH . "\database/products.csv", true);
+    $stores = read_csv(PRIVATE_PATH . "/database/stores.csv", true);
+    $products = read_csv(PRIVATE_PATH . "/database/products.csv", true);
     
     no_id_redirect(count($stores));
     

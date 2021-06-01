@@ -9,9 +9,9 @@
 <?php
     
     // get all stores, products, and categories data
-    $stores = read_csv(PRIVATE_PATH . "\database/stores.csv", true);
-    $products = read_csv(PRIVATE_PATH . "\database/products.csv", true);
-    $categories = read_csv(PRIVATE_PATH . "\database/categories.csv", true);
+    $stores = read_csv(PRIVATE_PATH . "/database/stores.csv", true);
+    $products = read_csv(PRIVATE_PATH . "/database/products.csv", true);
+    $categories = read_csv(PRIVATE_PATH . "/database/categories.csv", true);
     
     no_id_redirect(count($products));
     
@@ -62,7 +62,7 @@
       </span>
 
       <div class="product-info-main">
-        <p><?= strtoupper($specific_store["name"]); ?></p>
+        <p class="product-detail-store-name"><?= strtoupper($specific_store["name"]); ?></p>
         <h2><?=$specific_product["name"]; ?></h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         <div class="product-info-details">

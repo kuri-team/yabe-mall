@@ -18,7 +18,7 @@
     ob_start(); // output buffering is turned on
     
     // Development mode
-    $dev = true;
+    $dev = false;
     if (!$dev) {
         error_reporting(E_ERROR & E_CORE_ERROR & E_COMPILE_ERROR);
     }

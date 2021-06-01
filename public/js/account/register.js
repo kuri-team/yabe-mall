@@ -128,7 +128,7 @@ function Validator(object) {
     }
 
     // get element from forms that requires validation
-    let formInput = document.querySelector(object.form);
+    let formInput = document.querySelector(object.formGroupSelector);
     if (formInput) {
         // Register form
         formInput.onsubmit = function () {
@@ -144,8 +144,7 @@ function Validator(object) {
             });
 
             if (isFormValid) {
-                // Register
-                if (typeof object.onSubmit === "function") {
+                if (typeof object.onSubmit === "function") {  // Register
                     let enterInput = formInput.querySelectorAll("[name]");
                     let inputForm = Array.from(enterInput).reduce(function (values, input) {
 
@@ -174,8 +173,7 @@ function Validator(object) {
                     }, {});
                     object.onSubmit(inputForm);
                 }
-                // default submit
-                else {
+                else {  // default submit
                     formInput.submit();
                 }
             }
