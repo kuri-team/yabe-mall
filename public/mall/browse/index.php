@@ -76,14 +76,14 @@ include(SHARED_PATH . "/top.php");
                     }
 
                     for ($letter = "A"; $letter < "Z"; $letter++) {
-                        if ($_GET['browse-option'] != $letter) {
+                        if (strtoupper($_GET['browse-option']) != strtoupper($letter)) {
                             echo "<option value='$letter' name='$letter' id='dropdown-value'>$letter</option>";
                         } else { //set selected value as default displayed value
                             echo "<option value='$letter' name='$letter' id='dropdown-value' selected='selected'>$letter</option>";
                         }
                     }
                     $letter = 'Z';
-                    if ($_GET['browse-option'] != 'Z') {
+                    if (strtoupper($_GET['browse-option']) != 'Z') {
                         echo "<option value='$letter' name='$letter' id='dropdown-value'>$letter</option>";
                     } else { //set selected value as default displayed value
                         echo "<option value='$letter' name='$letter' id='dropdown-value' selected='selected'>$letter</option>";

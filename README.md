@@ -65,7 +65,9 @@ More requirements are listed below:
 
 ### 1. Deployment
 #### Yabe online mall e-commerce website, deployed with Heroku: https://yabe-mall.herokuapp.com/ (`main` branch)
-Backup: https://kuri-team.github.io/yabe-mall/ (`release-2.4-05-08-21` branch) - static website
+**Usage Notice:** Heroku provides an [ephemeral filesystem](https://help.heroku.com/K1PPS2WM/why-are-my-file-uploads-missing-deleted); and for this assignment, we were restricted by our instructor [@TriDang](https://github.com/TriDang) to only use static .csv assets as database. For these two reasons, any user created data such as registration, password change, file upload, etc. will be purged each day at midnight UTC±00:00 as a new instance of the application is automatically redeployed by Heroku. Do not save any important data on this demonstrative web application.
+
+#### Backup: https://kuri-team.github.io/yabe-mall/ (`release-2.4-05-08-21` branch) - static website
 
 ### 2. Coding styles & conventions
 #### Front-end
@@ -98,7 +100,12 @@ Please make sure that you have PHP version 7.4 installed on your system. No othe
 * Step 1: Unzip our submission .zip file to a location of your choice. E.g. `/home/documents/yabe-mall/`
 * Step 2: Use the command line to navigate to the aforementioned folder
 * Step 3: Start the PHP built-in web server on `localhost:80`, with the document root set to the `public` folder __!!IMPORTANT!!__. If you have added PHP in your `PATH` variable, you can use this command: `php -S localhost:80 -t public`
+* Step 4: Open a browser and go to `localhost:80`
 
 Please note that you **must** set the document root of your web server to `public`, otherwise our application would not work.
+
+The .csv database files that you gave us can be found in `/private/database/` among our own custom .csv databases in case you need to access them.
+
+To access the CMS Dashboard, please go to `localhost:80/admin`.
 
 The grading Rubric is available on the [Assignment Page](https://rmit.instructure.com/courses/86190/assignments/571078) (RMIT ID required to login).

@@ -62,7 +62,7 @@
       </span>
 
       <div class="product-info-main">
-        <p><?= strtoupper($specific_store["name"]); ?></p>
+        <p class="product-detail-store-name"><?= strtoupper($specific_store["name"]); ?></p>
         <h2><?=$specific_product["name"]; ?></h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         <div class="product-info-details">
