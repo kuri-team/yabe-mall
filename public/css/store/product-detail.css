@@ -30,6 +30,11 @@
     font-weight: normal;
 }
 
+#product-content .product-detail-store-name {
+    color: #555555;
+    font-size: smaller;
+}
+
 .add-to-fave, .product-info-date, #product-description p, .product-info-table {
     font-size: 14px;
 }
