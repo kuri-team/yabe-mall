@@ -80,7 +80,7 @@ More requirements are listed below:
 - [PSR-1 by PHP-Fig](https://www.php-fig.org/psr/psr-1/)
 - [PSR-12 by PHP-Fig](https://www.php-fig.org/psr/psr-12/)
 
-#### Further readings
+##### Further readings
 - [PHP The Right Way](https://phptherightway.com/)
 
 ### 3. Key people
